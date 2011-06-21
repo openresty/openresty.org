@@ -5,10 +5,18 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Tue, 21 Jun 2011 05:55:11 GMT</pubDate>
-<lastBuildDate>Tue, 21 Jun 2011 05:55:11 GMT</lastBuildDate>
+<pubDate>Tue, 21 Jun 2011 06:00:25 GMT</pubDate>
+<lastBuildDate>Tue, 21 Jun 2011 06:00:25 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
+<item>
+<title>DefaultTiddlers</title>
+<description>&lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; &lt;a tiddlylink=&quot;About&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#About&quot; href=&quot;null#About&quot; class=&quot;externalLink null&quot;&gt;About&lt;/a&gt;</description>
+<category>admin</category>
+<link>null#DefaultTiddlers</link>
+<pubDate>Tue, 21 Jun 2011 06:00:25 GMT</pubDate>
+
+</item>
 <item>
 <title>Benchmark</title>
 <description>&lt;a tiddler=&quot;Benchmark&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;h1&gt;HelloWorld&lt;/h1&gt;Testing the performance of a HelloWorld server does not mean many things but it does tell us where the ceiling is.&lt;br&gt;&lt;br&gt;The HelloWorld server based on &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; is described in the &lt;a tiddlylink=&quot;GettingStarted&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GettingStarted&quot; href=&quot;null#GettingStarted&quot; class=&quot;externalLink null&quot;&gt;GettingStarted&lt;/a&gt; document.&lt;br&gt;&lt;br&gt;Below is the result using the command &lt;code&gt;ab -c10 -n50000 http://localhost:8080/&lt;/code&gt; on my ThinkPad T400 laptop with ngx_openresty 0.8.54.6:&lt;br&gt;&lt;pre&gt;Server Software:        ngx_openresty/0.8.54
@@ -163,14 +171,6 @@ cd ngx_openresty-VERSION/
 <description>GitHub is social coding network based on git, a very popular version control system. See its homepage: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com&quot; href=&quot;http://github.com&quot; class=&quot;externalLink&quot;&gt;http://github.com&lt;/a&gt;.</description>
 <link>null#GitHub</link>
 <pubDate>Tue, 21 Jun 2011 04:20:00 GMT</pubDate>
-
-</item>
-<item>
-<title>DefaultTiddlers</title>
-<description>&lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;</description>
-<category>admin</category>
-<link>null#DefaultTiddlers</link>
-<pubDate>Tue, 21 Jun 2011 04:05:00 GMT</pubDate>
 
 </item>
 <item>
