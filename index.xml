@@ -5,148 +5,171 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Tue, 21 Jun 2011 09:14:33 GMT</pubDate>
-<lastBuildDate>Tue, 21 Jun 2011 09:14:33 GMT</lastBuildDate>
+<pubDate>Tue, 21 Jun 2011 09:18:14 GMT</pubDate>
+<lastBuildDate>Tue, 21 Jun 2011 09:18:14 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
+<item>
+<title>GettingStarted</title>
+<description>&lt;a tiddler=&quot;GettingStarted&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;First of all, please go to the &lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;Download&lt;/a&gt; page to get the source code tarball of &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;, and see the &lt;a tiddlylink=&quot;Installation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Installation&quot; href=&quot;null#Installation&quot; class=&quot;externalLink null&quot;&gt;Installation&lt;/a&gt; page for how to build and install it into your system.&lt;br&gt;&lt;br&gt;&lt;h1&gt;HelloWorld&lt;/h1&gt;&lt;h2&gt;Prepare directory layout&lt;/h2&gt;We first create a separate directory for our experiments. You can use an arbitrary directory. Here for simplicity, we just use &lt;code&gt;~/work&lt;/code&gt;:&lt;br&gt;&lt;pre&gt;mkdir ~/work
+cd ~/work
+mkdir logs/ conf/
+&lt;/pre&gt;Note that we've also created the &lt;code&gt;logs/&lt;/code&gt; directory for logging files and &lt;code&gt;conf/&lt;/code&gt; for our config files.&lt;br&gt;&lt;h2&gt;Prepare the nginx.conf config file&lt;/h2&gt;Create a simple plain text file named &lt;code&gt;conf/nginx.conf&lt;/code&gt; with the following contents in it:&lt;br&gt;&lt;pre&gt;worker_processes  1;
+error_log logs/error.log;
+events {
+    worker_connections 1024;
+}
+http {
+    server {
+        listen 8080;
+        location / {
+            content_by_lua '
+                ngx.say(&quot;&amp;lt;p&amp;gt;hello, world&amp;lt;/p&amp;gt;&quot;)
+            ';
+        }
+    }
+}
+&lt;/pre&gt;If you're familiar with Nginx configuration, it should look very familiar to you. &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; is just an enhanced version of Nginx by means of addon modules anyway. You can take advantage of all the exisitng goodies in the Nginx world.&lt;br&gt;&lt;h2&gt;Start the Nginx server&lt;/h2&gt;Assuming you have installed &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; into &lt;code&gt;/usr/local/openresty&lt;/code&gt; (this is the default), we make our &lt;code&gt;nginx&lt;/code&gt; executable of our &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; installation available in our &lt;code&gt;PATH&lt;/code&gt; environment:&lt;br&gt;&lt;pre&gt;PATH=/usr/local/openresty/nginx/sbin:$PATH
+export PATH
+&lt;/pre&gt;Then we start the nginx server with our config file this way:&lt;br&gt;&lt;pre&gt;nginx -p `pwd`/ -c conf/nginx.conf
+&lt;/pre&gt;Error messages will go to the stderr device or the default error log files &lt;code&gt;logs/error.log&lt;/code&gt; in the current working directory.&lt;br&gt;&lt;h2&gt;Access our HelloWorld web service&lt;/h2&gt;We can use curl to access our new web service that says HelloWorld:&lt;br&gt;&lt;pre&gt;curl http://localhost:8080/
+&lt;/pre&gt;If everything is okay, we should get the output&lt;br&gt;&lt;pre&gt;&amp;lt;p&amp;gt;hello, world&amp;lt;/p&amp;gt;
+&lt;/pre&gt;You can surely point your favorite web browser to the location &lt;code&gt;http://localhost:8080/&lt;/code&gt;.&lt;br&gt;&lt;h2&gt;Test performance&lt;/h2&gt;See &lt;a tiddlylink=&quot;Benchmark&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Benchmark&quot; href=&quot;null#Benchmark&quot; class=&quot;externalLink null&quot;&gt;Benchmark&lt;/a&gt; for details.&lt;br&gt;&lt;br&gt;&lt;h1&gt;Where to go from here&lt;/h1&gt;&lt;br&gt;View the documentation of each component at the &lt;a tiddlylink=&quot;Components&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Components&quot; href=&quot;null#Components&quot; class=&quot;externalLink null&quot;&gt;Components&lt;/a&gt; page and find Nginx related stuffs on the &lt;a target=&quot;_blank&quot; title=&quot;External link to http://wiki.nginx.org/&quot; href=&quot;http://wiki.nginx.org/&quot; class=&quot;externalLink&quot;&gt;Nginx Wiki site&lt;/a&gt;.&lt;br&gt;</description>
+<link>null#GettingStarted</link>
+<pubDate>Tue, 21 Jun 2011 09:18:14 GMT</pubDate>
+
+</item>
 <item>
 <title>ZhangYichun</title>
 <description>agentzh, 章亦春, one of the main authors of this OpenResty bundle.&lt;br&gt;&lt;br&gt;Homepage: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://agentzh.org&quot; href=&quot;http://agentzh.org&quot; class=&quot;externalLink&quot;&gt;http://agentzh.org&lt;/a&gt;</description>
 <link>null#ZhangYichun</link>
-<pubDate>Tue, 21 Jun 2011 09:14:33 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 09:14:00 GMT</pubDate>
 
 </item>
 <item>
 <title>HeadersMoreNginxModule</title>
 <description>This module allows you to add, set, or clear any response or request headers that you specify.&lt;br&gt;&lt;br&gt;This is an enhanced version of the standard headers module because it provides more utilities like resetting or clearing &quot;builtin headers&quot; like Content-Type, Content-Length, and Server. &lt;br&gt;&lt;br&gt;Documentation: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://wiki.nginx.org/NginxHttpHeadersMoreModule&quot; href=&quot;http://wiki.nginx.org/NginxHttpHeadersMoreModule&quot; class=&quot;externalLink&quot;&gt;http://wiki.nginx.org/NginxHttpHeadersMoreModule&lt;/a&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/agentzh/headers-more-nginx-module&quot; href=&quot;http://github.com/agentzh/headers-more-nginx-module&quot; class=&quot;externalLink&quot;&gt;http://github.com/agentzh/headers-more-nginx-module&lt;/a&gt;</description>
 <link>null#HeadersMoreNginxModule</link>
-<pubDate>Tue, 21 Jun 2011 09:13:04 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 09:13:00 GMT</pubDate>
 
 </item>
 <item>
 <title>Components</title>
 <description>&lt;a tiddler=&quot;Components&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;a tiddlylink=&quot;LuaJIT&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaJIT&quot; href=&quot;null#LuaJIT&quot; class=&quot;externalLink null&quot;&gt;LuaJIT&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;ArrayVarNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ArrayVarNginxModule&quot; href=&quot;null#ArrayVarNginxModule&quot; class=&quot;externalLink null&quot;&gt;ArrayVarNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;AuthRequestNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#AuthRequestNginxModule&quot; href=&quot;null#AuthRequestNginxModule&quot; class=&quot;externalLink null&quot;&gt;AuthRequestNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;DrizzleNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DrizzleNginxModule&quot; href=&quot;null#DrizzleNginxModule&quot; class=&quot;externalLink null&quot;&gt;DrizzleNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;EchoNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#EchoNginxModule&quot; href=&quot;null#EchoNginxModule&quot; class=&quot;externalLink null&quot;&gt;EchoNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;EncryptedSessionNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#EncryptedSessionNginxModule&quot; href=&quot;null#EncryptedSessionNginxModule&quot; class=&quot;externalLink null&quot;&gt;EncryptedSessionNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;FormInputNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#FormInputNginxModule&quot; href=&quot;null#FormInputNginxModule&quot; class=&quot;externalLink null&quot;&gt;FormInputNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;HeadersMoreNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#HeadersMoreNginxModule&quot; href=&quot;null#HeadersMoreNginxModule&quot; class=&quot;externalLink null&quot;&gt;HeadersMoreNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;IconvNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#IconvNginxModule&quot; href=&quot;null#IconvNginxModule&quot; class=&quot;externalLink null&quot;&gt;IconvNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;libdrizzle&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#libdrizzle&quot; href=&quot;null#libdrizzle&quot; class=&quot;externalLink null&quot;&gt;libdrizzle&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;StandardLuaInterpreter&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#StandardLuaInterpreter&quot; href=&quot;null#StandardLuaInterpreter&quot; class=&quot;externalLink null&quot;&gt;StandardLuaInterpreter&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;MemcNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#MemcNginxModule&quot; href=&quot;null#MemcNginxModule&quot; class=&quot;externalLink null&quot;&gt;MemcNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;NginxDevelKit&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#NginxDevelKit&quot; href=&quot;null#NginxDevelKit&quot; class=&quot;externalLink null&quot;&gt;NginxDevelKit&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;PostgresNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#PostgresNginxModule&quot; href=&quot;null#PostgresNginxModule&quot; class=&quot;externalLink null&quot;&gt;PostgresNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;RdsJsonNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#RdsJsonNginxModule&quot; href=&quot;null#RdsJsonNginxModule&quot; class=&quot;externalLink null&quot;&gt;RdsJsonNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;Redis2NginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Redis2NginxModule&quot; href=&quot;null#Redis2NginxModule&quot; class=&quot;externalLink null&quot;&gt;Redis2NginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;SetMiscNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SetMiscNginxModule&quot; href=&quot;null#SetMiscNginxModule&quot; class=&quot;externalLink null&quot;&gt;SetMiscNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;SrcacheNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SrcacheNginxModule&quot; href=&quot;null#SrcacheNginxModule&quot; class=&quot;externalLink null&quot;&gt;SrcacheNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;UpstreamKeepaliveNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UpstreamKeepaliveNginxModule&quot; href=&quot;null#UpstreamKeepaliveNginxModule&quot; class=&quot;externalLink null&quot;&gt;UpstreamKeepaliveNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;XssNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#XssNginxModule&quot; href=&quot;null#XssNginxModule&quot; class=&quot;externalLink null&quot;&gt;XssNginxModule&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
 <link>null#Components</link>
-<pubDate>Tue, 21 Jun 2011 09:12:52 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 09:12:00 GMT</pubDate>
 
 </item>
 <item>
 <title>EchoNginxModule</title>
 <description>&lt;a tiddler=&quot;EchoNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This module wraps lots of Nginx internal APIs for streaming input and output, parallel/sequential subrequests, timers and sleeping, as well as various meta data accessing.&lt;br&gt;&lt;br&gt;Basically it provides various utilities that help testing and debugging of other modules by trivially emulating different kinds of faked subrequest locations.&lt;br&gt;&lt;br&gt;Documentation: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://wiki.nginx.org/NginxHttpEchoModule&quot; href=&quot;http://wiki.nginx.org/NginxHttpEchoModule&quot; class=&quot;externalLink&quot;&gt;http://wiki.nginx.org/NginxHttpEchoModule&lt;/a&gt;&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/agentzh/echo-nginx-module&quot; href=&quot;https://github.com/agentzh/echo-nginx-module&quot; class=&quot;externalLink&quot;&gt;https://github.com/agentzh/echo-nginx-module&lt;/a&gt;</description>
 <link>null#EchoNginxModule</link>
-<pubDate>Tue, 21 Jun 2011 09:12:20 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 09:12:00 GMT</pubDate>
 
 </item>
 <item>
 <title>LuaJIT</title>
 <description>&lt;a tiddler=&quot;LuaJIT&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a tiddlylink=&quot;LuaJIT&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaJIT&quot; href=&quot;null#LuaJIT&quot; class=&quot;externalLink null&quot;&gt;LuaJIT&lt;/a&gt; is a Just-In-Time Compiler for the Lua programming language. &lt;br&gt;&lt;br&gt;Homepage: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://luajit.org/luajit.html&quot; href=&quot;http://luajit.org/luajit.html&quot; class=&quot;externalLink&quot;&gt;http://luajit.org/luajit.html&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a tiddlylink=&quot;LuaJIT&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaJIT&quot; href=&quot;null#LuaJIT&quot; class=&quot;externalLink null&quot;&gt;LuaJIT&lt;/a&gt; is not enabled by default. Please specify the &lt;code&gt;--with-luajit&lt;/code&gt; option while configuring &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; while building it. See &lt;a tiddlylink=&quot;Installation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Installation&quot; href=&quot;null#Installation&quot; class=&quot;externalLink null&quot;&gt;Installation&lt;/a&gt; for details.&lt;br&gt;</description>
 <link>null#LuaJIT</link>
-<pubDate>Tue, 21 Jun 2011 09:11:58 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 09:11:00 GMT</pubDate>
 
 </item>
 <item>
 <title>UpstreamKeepaliveNginxModule</title>
 <description>&lt;a tiddler=&quot;UpstreamKeepaliveNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This is a keepalive balancer module for nginx that implements cache for backend connections.&lt;br&gt;&lt;br&gt;Documentation: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://mdounin.ru/hg/ngx_http_upstream_keepalive/raw-file/tip/README&quot; href=&quot;http://mdounin.ru/hg/ngx_http_upstream_keepalive/raw-file/tip/README&quot; class=&quot;externalLink&quot;&gt;http://mdounin.ru/hg/ngx_http_upstream_keepalive/raw-file/tip/README&lt;/a&gt;&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://mdounin.ru/hg/ngx_http_upstream_keepalive/&quot; href=&quot;http://mdounin.ru/hg/ngx_http_upstream_keepalive/&quot; class=&quot;externalLink&quot;&gt;http://mdounin.ru/hg/ngx_http_upstream_keepalive/&lt;/a&gt;</description>
 <link>null#UpstreamKeepaliveNginxModule</link>
-<pubDate>Tue, 21 Jun 2011 09:11:27 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 09:11:00 GMT</pubDate>
 
 </item>
 <item>
 <title>SrcacheNginxModule</title>
 <description>&lt;a tiddler=&quot;SrcacheNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This module provides a transparent caching layer for arbitrary nginx locations (like those use an upstream or even serve static disk files).&lt;br&gt;&lt;br&gt;Usually, the &lt;a tiddlylink=&quot;MemcNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#MemcNginxModule&quot; href=&quot;null#MemcNginxModule&quot; class=&quot;externalLink null&quot;&gt;MemcNginxModule&lt;/a&gt; is used together with this module to provide a concrete caching storage backend. But technically, any modules that provide a REST interface can be used as the fetching and storage subrequests used by this module.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/agentzh/srcache-nginx-module&quot; href=&quot;http://github.com/agentzh/srcache-nginx-module&quot; class=&quot;externalLink&quot;&gt;http://github.com/agentzh/srcache-nginx-module&lt;/a&gt;</description>
 <link>null#SrcacheNginxModule</link>
-<pubDate>Tue, 21 Jun 2011 09:08:43 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 09:08:00 GMT</pubDate>
 
 </item>
 <item>
 <title>XssNginxModule</title>
 <description>&lt;a tiddler=&quot;XssNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This module adds cross-site AJAX support to nginx. Currently only cross-site GET is supported.&lt;br&gt;&lt;br&gt;The cross-site GET is currently implemented as JSONP (or &quot;JSON with padding&quot;). See &lt;a target=&quot;_blank&quot; title=&quot;External link to http://en.wikipedia.org/wiki/JSON#JSONP&quot; href=&quot;http://en.wikipedia.org/wiki/JSON#JSONP&quot; class=&quot;externalLink&quot;&gt;http://en.wikipedia.org/wiki/JSON#JSONP&lt;/a&gt; for more details.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/agentzh/xss-nginx-module&quot; href=&quot;http://github.com/agentzh/xss-nginx-module&quot; class=&quot;externalLink&quot;&gt;http://github.com/agentzh/xss-nginx-module&lt;/a&gt;</description>
 <link>null#XssNginxModule</link>
-<pubDate>Tue, 21 Jun 2011 09:07:27 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 09:07:00 GMT</pubDate>
 
 </item>
 <item>
 <title>IconvNginxModule</title>
 <description>&lt;a tiddler=&quot;IconvNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This is an &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt; module that uses libiconv to convert characters of different encoding. It brings the &lt;code&gt;set_iconv&lt;/code&gt; and &lt;code&gt;iconv_filter&lt;/code&gt; commands to &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt;.&lt;br&gt;&lt;br&gt;It can either process Nginx variables or process response bodies as an output filter.&lt;br&gt;&lt;br&gt;Use cases: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://forum.nginx.org/read.php?2,206658,207119&quot; href=&quot;http://forum.nginx.org/read.php?2,206658,207119&quot; class=&quot;externalLink&quot;&gt;http://forum.nginx.org/read.php?2,206658,207119&lt;/a&gt;&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/calio/iconv-nginx-module&quot; href=&quot;https://github.com/calio/iconv-nginx-module&quot; class=&quot;externalLink&quot;&gt;https://github.com/calio/iconv-nginx-module&lt;/a&gt;&lt;br&gt;</description>
 <link>null#IconvNginxModule</link>
-<pubDate>Tue, 21 Jun 2011 09:04:16 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 09:04:00 GMT</pubDate>
 
 </item>
 <item>
 <title>FormInputNginxModule</title>
 <description>&lt;a tiddler=&quot;FormInputNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This is an &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt; module that reads HTTP POST and PUT request body encoded in &quot;application/x-www-form-urlencoded&quot;, and parse the arguments in request body into &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt; variables.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/calio/form-input-nginx-module&quot; href=&quot;https://github.com/calio/form-input-nginx-module&quot; class=&quot;externalLink&quot;&gt;https://github.com/calio/form-input-nginx-module&lt;/a&gt;&lt;br&gt;</description>
 <link>null#FormInputNginxModule</link>
-<pubDate>Tue, 21 Jun 2011 09:01:18 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 09:01:00 GMT</pubDate>
 
 </item>
 <item>
 <title>Redis2NginxModule</title>
 <description>&lt;a tiddler=&quot;Redis2NginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This is an &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt; upstream module that makes nginx talk to a redis 2.x server in a non-blocking way. The full Redis 2.0 unified protocol has been implemented including the redis pipelining support.&lt;br&gt;&lt;br&gt;This module returns the raw TCP response from the redis server.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/agentzh/redis2-nginx-module&quot; href=&quot;https://github.com/agentzh/redis2-nginx-module&quot; class=&quot;externalLink&quot;&gt;https://github.com/agentzh/redis2-nginx-module&lt;/a&gt;</description>
 <link>null#Redis2NginxModule</link>
-<pubDate>Tue, 21 Jun 2011 08:59:47 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 08:59:00 GMT</pubDate>
 
 </item>
 <item>
 <title>libdrizzle</title>
 <description>&lt;a tiddler=&quot;libdrizzle&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This is the the client and protocol library for the Drizzle project.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to https://launchpad.net/libdrizzle&quot; href=&quot;https://launchpad.net/libdrizzle&quot; class=&quot;externalLink&quot;&gt;https://launchpad.net/libdrizzle&lt;/a&gt;</description>
 <link>null#libdrizzle</link>
-<pubDate>Tue, 21 Jun 2011 08:42:37 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 08:42:00 GMT</pubDate>
 
 </item>
 <item>
 <title>RdsJsonNginxModule</title>
 <description>&lt;a tiddler=&quot;RdsJsonNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This is an output filter module that formats Resty DBD Streams (RDS) generated by ngx_drizzle and others to JSON streams.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/agentzh/rds-json-nginx-module&quot; href=&quot;http://github.com/agentzh/rds-json-nginx-module&quot; class=&quot;externalLink&quot;&gt;http://github.com/agentzh/rds-json-nginx-module&lt;/a&gt;&lt;br&gt;</description>
 <link>null#RdsJsonNginxModule</link>
-<pubDate>Tue, 21 Jun 2011 08:40:04 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 08:40:00 GMT</pubDate>
 
 </item>
 <item>
 <title>EncryptedSessionNginxModule</title>
 <description>&lt;a tiddler=&quot;EncryptedSessionNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This module provides encryption and decryption support for &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt; variables based on AES-256 with Mac.&lt;br&gt;&lt;br&gt;This module is usually used with &lt;a tiddlylink=&quot;SetMiscNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SetMiscNginxModule&quot; href=&quot;null#SetMiscNginxModule&quot; class=&quot;externalLink null&quot;&gt;SetMiscNginxModule&lt;/a&gt; and the standard &lt;a target=&quot;_blank&quot; title=&quot;External link to http://wiki.nginx.org/NginxHttpRewriteModule&quot; href=&quot;http://wiki.nginx.org/NginxHttpRewriteModule&quot; class=&quot;externalLink&quot;&gt;rewrite module&lt;/a&gt;'s directives.&lt;br&gt;&lt;br&gt;This module can be used to implement simple user login and access control of web applications.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/agentzh/encrypted-session-nginx-module&quot; href=&quot;http://github.com/agentzh/encrypted-session-nginx-module&quot; class=&quot;externalLink&quot;&gt;http://github.com/agentzh/encrypted-session-nginx-module&lt;/a&gt;</description>
 <link>null#EncryptedSessionNginxModule</link>
-<pubDate>Tue, 21 Jun 2011 08:39:59 GMT</pubDate>
-
-</item>
-<item>
-<title>SetMiscNginxModule</title>
-<description>&lt;a tiddler=&quot;SetMiscNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This module adds various &lt;code&gt;set_xxx&lt;/code&gt; directives added to &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt;'s &lt;a target=&quot;_blank&quot; title=&quot;External link to http://wiki.nginx.org/NginxHttpRewriteModule&quot; href=&quot;http://wiki.nginx.org/NginxHttpRewriteModule&quot; class=&quot;externalLink&quot;&gt;rewrite module&lt;/a&gt; (MD5/SHA1, SQL/JSON quoting, and many more).&lt;br&gt;&lt;br&gt;Every directive provided by this module can be mixed freely with other nginx rewrite module's&lt;br&gt;  directives, like &lt;code&gt;if&lt;/code&gt; and &lt;code&gt;set&lt;/code&gt;.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/agentzh/set-misc-nginx-module&quot; href=&quot;http://github.com/agentzh/set-misc-nginx-module&quot; class=&quot;externalLink&quot;&gt;http://github.com/agentzh/set-misc-nginx-module&lt;/a&gt;</description>
-<link>null#SetMiscNginxModule</link>
-<pubDate>Tue, 21 Jun 2011 08:39:50 GMT</pubDate>
-
-</item>
-<item>
-<title>StandardLuaInterpreter</title>
-<description>&lt;a tiddler=&quot;StandardLuaInterpreter&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;The standard Lua interpreter is enabled by default. If &lt;a tiddlylink=&quot;LuaJIT&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaJIT&quot; href=&quot;null#LuaJIT&quot; class=&quot;externalLink null&quot;&gt;LuaJIT&lt;/a&gt; is enabled, this interpreter will be disabled automatically.&lt;br&gt;&lt;br&gt;See Lua's homepage: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.lua.org/&quot; href=&quot;http://www.lua.org/&quot; class=&quot;externalLink&quot;&gt;http://www.lua.org/&lt;/a&gt;</description>
-<link>null#StandardLuaInterpreter</link>
-<pubDate>Tue, 21 Jun 2011 08:39:45 GMT</pubDate>
-
-</item>
-<item>
-<title>MemcNginxModule</title>
-<description>&lt;a tiddler=&quot;MemcNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This module extends the standard memcached module  to support almost the whole memcached ascii protocol.&lt;br&gt;&lt;br&gt;It allows you to define a custom REST interface to your memcached servers or access memcached in a very efficient way from within the nginx server by means of subrequests or independent fake requests. &lt;br&gt;&lt;br&gt;Documentation: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://wiki.nginx.org/NginxHttpMemcModule&quot; href=&quot;http://wiki.nginx.org/NginxHttpMemcModule&quot; class=&quot;externalLink&quot;&gt;http://wiki.nginx.org/NginxHttpMemcModule&lt;/a&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/agentzh/memc-nginx-module&quot; href=&quot;http://github.com/agentzh/memc-nginx-module&quot; class=&quot;externalLink&quot;&gt;http://github.com/agentzh/memc-nginx-module&lt;/a&gt;</description>
-<link>null#MemcNginxModule</link>
-<pubDate>Tue, 21 Jun 2011 08:39:39 GMT</pubDate>
-
-</item>
-<item>
-<title>PostgresNginxModule</title>
-<description>&lt;a tiddler=&quot;PostgresNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;ngx_postgres is an upstream module that allows &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt; to communicate directly with PostgreSQL database.&lt;br&gt;&lt;br&gt;Response is generated in rds format, so it's compatible with &lt;a tiddlylink=&quot;RdsJsonNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#RdsJsonNginxModule&quot; href=&quot;null#RdsJsonNginxModule&quot; class=&quot;externalLink null&quot;&gt;RdsJsonNginxModule&lt;/a&gt; and &lt;a tiddlylink=&quot;DrizzleNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DrizzleNginxModule&quot; href=&quot;null#DrizzleNginxModule&quot; class=&quot;externalLink null&quot;&gt;DrizzleNginxModule&lt;/a&gt; modules.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/FRiCKLE/ngx_postgres&quot; href=&quot;http://github.com/FRiCKLE/ngx_postgres&quot; class=&quot;externalLink&quot;&gt;http://github.com/FRiCKLE/ngx_postgres&lt;/a&gt;&lt;br&gt;</description>
-<link>null#PostgresNginxModule</link>
-<pubDate>Tue, 21 Jun 2011 08:39:33 GMT</pubDate>
-
-</item>
-<item>
-<title>NginxDevelKit</title>
-<description>&lt;a tiddler=&quot;NginxDevelKit&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;The NDK is an Nginx module that is designed to extend the core functionality of the    excellent Nginx webserver in a way that can be used as a basis of other Nginx modules.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/simpl/ngx_devel_kit&quot; href=&quot;https://github.com/simpl/ngx_devel_kit&quot; class=&quot;externalLink&quot;&gt;https://github.com/simpl/ngx_devel_kit&lt;/a&gt;</description>
-<link>null#NginxDevelKit</link>
-<pubDate>Tue, 21 Jun 2011 08:39:27 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 08:39:00 GMT</pubDate>
 
 </item>
 <item>
 <title>LuaNginxModule</title>
 <description>&lt;a tiddler=&quot;LuaNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This module embeds the Lua interpreter or &lt;a tiddlylink=&quot;LuaJIT&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaJIT&quot; href=&quot;null#LuaJIT&quot; class=&quot;externalLink null&quot;&gt;LuaJIT&lt;/a&gt; into the nginx core and integrates the powerful Lua threads (aka Lua coroutines) into the nginx event model by means of nginx subrequests.&lt;br&gt;&lt;br&gt;Unlike Apache's mod_lua and Lighttpd's mod_magnet, Lua code written atop this module can be 100% non-blocking on network traffic as long as you use the ngx.location.capture or ngx.location.capture_multi interfaces to let the nginx core do all your requests to mysql, postgresql, memcached, upstream http web services, and etc etc etc (see ngx_drizzle, ngx_postgres, ngx_memc, and ngx_proxy modules for details).&lt;br&gt;&lt;br&gt;The Lua interpreter instance is shared across all the requests in a single nginx worker process.&lt;br&gt;&lt;br&gt;Request contexts are isolated from each other by means of Lua (lightweight) threads (aka Lua coroutines). And Lua modules loaded are persistent on the nginx worker process level. So the memory footprint is quite small even when your nginx worker process is handling 10K requests at the same time.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/chaoslawful/lua-nginx-module&quot; href=&quot;http://github.com/chaoslawful/lua-nginx-module&quot; class=&quot;externalLink&quot;&gt;http://github.com/chaoslawful/lua-nginx-module&lt;/a&gt;</description>
 <link>null#LuaNginxModule</link>
-<pubDate>Tue, 21 Jun 2011 08:39:18 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 08:39:00 GMT</pubDate>
+
+</item>
+<item>
+<title>MemcNginxModule</title>
+<description>&lt;a tiddler=&quot;MemcNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This module extends the standard memcached module  to support almost the whole memcached ascii protocol.&lt;br&gt;&lt;br&gt;It allows you to define a custom REST interface to your memcached servers or access memcached in a very efficient way from within the nginx server by means of subrequests or independent fake requests. &lt;br&gt;&lt;br&gt;Documentation: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://wiki.nginx.org/NginxHttpMemcModule&quot; href=&quot;http://wiki.nginx.org/NginxHttpMemcModule&quot; class=&quot;externalLink&quot;&gt;http://wiki.nginx.org/NginxHttpMemcModule&lt;/a&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/agentzh/memc-nginx-module&quot; href=&quot;http://github.com/agentzh/memc-nginx-module&quot; class=&quot;externalLink&quot;&gt;http://github.com/agentzh/memc-nginx-module&lt;/a&gt;</description>
+<link>null#MemcNginxModule</link>
+<pubDate>Tue, 21 Jun 2011 08:39:00 GMT</pubDate>
+
+</item>
+<item>
+<title>NginxDevelKit</title>
+<description>&lt;a tiddler=&quot;NginxDevelKit&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;The NDK is an Nginx module that is designed to extend the core functionality of the    excellent Nginx webserver in a way that can be used as a basis of other Nginx modules.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/simpl/ngx_devel_kit&quot; href=&quot;https://github.com/simpl/ngx_devel_kit&quot; class=&quot;externalLink&quot;&gt;https://github.com/simpl/ngx_devel_kit&lt;/a&gt;</description>
+<link>null#NginxDevelKit</link>
+<pubDate>Tue, 21 Jun 2011 08:39:00 GMT</pubDate>
+
+</item>
+<item>
+<title>PostgresNginxModule</title>
+<description>&lt;a tiddler=&quot;PostgresNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;ngx_postgres is an upstream module that allows &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt; to communicate directly with PostgreSQL database.&lt;br&gt;&lt;br&gt;Response is generated in rds format, so it's compatible with &lt;a tiddlylink=&quot;RdsJsonNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#RdsJsonNginxModule&quot; href=&quot;null#RdsJsonNginxModule&quot; class=&quot;externalLink null&quot;&gt;RdsJsonNginxModule&lt;/a&gt; and &lt;a tiddlylink=&quot;DrizzleNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DrizzleNginxModule&quot; href=&quot;null#DrizzleNginxModule&quot; class=&quot;externalLink null&quot;&gt;DrizzleNginxModule&lt;/a&gt; modules.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/FRiCKLE/ngx_postgres&quot; href=&quot;http://github.com/FRiCKLE/ngx_postgres&quot; class=&quot;externalLink&quot;&gt;http://github.com/FRiCKLE/ngx_postgres&lt;/a&gt;&lt;br&gt;</description>
+<link>null#PostgresNginxModule</link>
+<pubDate>Tue, 21 Jun 2011 08:39:00 GMT</pubDate>
+
+</item>
+<item>
+<title>SetMiscNginxModule</title>
+<description>&lt;a tiddler=&quot;SetMiscNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This module adds various &lt;code&gt;set_xxx&lt;/code&gt; directives added to &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt;'s &lt;a target=&quot;_blank&quot; title=&quot;External link to http://wiki.nginx.org/NginxHttpRewriteModule&quot; href=&quot;http://wiki.nginx.org/NginxHttpRewriteModule&quot; class=&quot;externalLink&quot;&gt;rewrite module&lt;/a&gt; (MD5/SHA1, SQL/JSON quoting, and many more).&lt;br&gt;&lt;br&gt;Every directive provided by this module can be mixed freely with other nginx rewrite module's&lt;br&gt;  directives, like &lt;code&gt;if&lt;/code&gt; and &lt;code&gt;set&lt;/code&gt;.&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/agentzh/set-misc-nginx-module&quot; href=&quot;http://github.com/agentzh/set-misc-nginx-module&quot; class=&quot;externalLink&quot;&gt;http://github.com/agentzh/set-misc-nginx-module&lt;/a&gt;</description>
+<link>null#SetMiscNginxModule</link>
+<pubDate>Tue, 21 Jun 2011 08:39:00 GMT</pubDate>
 
 </item>
 </channel>
