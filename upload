@@ -1,4 +1,0 @@
-#!/bin/bash
-
-scp index.html index.xml agentzh.org:~/www/openresty/
-
