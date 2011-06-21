@@ -1,0 +1,7 @@
+This project holds the Tiddlywiki file for the homepage of
+openresty.org.
+
+To edit the site, just clone this repository on your local
+machine, and open up the index.html file with your favorite
+web browser (like Firefox) locally.
+
