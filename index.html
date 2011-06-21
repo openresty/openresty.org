@@ -714,14 +714,16 @@ See [[Benchmark]] for details.
 <div title="GitHub" creator="ZhangYichun" modifier="ZhangYichun" created="201106210420" modified="201106210420" changecount="2">
 <pre>~GitHub is social coding network based on git, a very popular version control system. See its homepage: http://github.com.</pre>
 </div>
-<div title="Installation" creator="ZhangYichun" modifier="ZhangYichun" created="201106210440" modified="201106210508" changecount="31">
+<div title="Installation" creator="ZhangYichun" modifier="ZhangYichun" created="201106210440" modified="201106210728" changecount="33">
 <pre>If you haven't downloaded the OpenResty source code tarball, please go to the [[Download]] page first.
 
 Basically, building and installing OpenResty is as simple as
 {{{
 tar xzvf ngx_openresty-VERSION.tar.gz
 cd ngx_openresty-VERSION/
-./configure &amp;&amp; make &amp;&amp; make install
+./configure
+make
+make install
 }}}
 where {{{VERSION}}} should be replaced by a concrete version number of OpenResty, like {{{0.8.54.6}}}.
 If you have problems while building or want finer control over the building process, please read on.
@@ -745,8 +747,12 @@ brew install pcre
 Alternatively you can install PCRE from source all by yourself :)
 !Build ~OpenResty
 !!Download
-download the latest ngx_openresty tarball can be fetched from the [[Download]] page.
-!!Configure
+download the latest ngx_openresty tarball can be fetched from the [[Download]] page and unpack it like this:
+{{{
+tar xzvf ngx_openresty-VERSION.tar.gz
+}}}
+where {{{VERSION}}} should be replaced by real version numbers like {{{0.8.54.6}}}.
+!!./configure
 Then enter the {{{ngx_openresty-VERSION/}}} directory, and type the following command to configure:
 {{{
 ./configure
@@ -766,6 +772,22 @@ Try {{{./configure --help}}} to see more options.
 For Solaris, it's common to install libraries like ~OpenSSL to {{{/lib}}}, so when it complaints about ~OpenSSL and you have indeed already installed it, specify the {{{--with-ld-opt='-L/lib'}}} option.
 
 Errors in running the ./configure script can be found in the file {{{build/nginx-VERSION/objs/autoconf.err}}} where {{{VERSION}}} should be replaced by a concrete version number of OpenResty, like {{{0.8.54.6}}}.
+!!make
+Now you can compile everything up using the command
+{{{
+make
+}}}
+If your machine has multiple cores and your {{{make}}} supports the jobserver feature, you can compile things in parallel like this:
+{{{
+make -j2
+}}}
+assuming you have 2 CPU cores.
+!!make install
+If all the previous steps go without problems, you can install OpenResty into your system by typing the command
+{{{
+make install
+}}}
+On Linux, it often requires {{{sudo}}} to gain root access.
 </pre>
 </div>
 <div title="MainMenu" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210547" tags="admin" changecount="8">
