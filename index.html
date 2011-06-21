@@ -530,6 +530,20 @@ http://github.com/agentzh/openresty.org
 Feel free to fork it or just [[contact us|ContactUs]] to obtain a git commit bit if you want to edit and improve this site.
 </pre>
 </div>
+<div title="ArrayVarNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210819" modified="201106210824" changecount="3">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This [[Nginx]] module adds support for array variables to nginx config files.
+
+Project page: https://github.com/agentzh/array-var-nginx-module</pre>
+</div>
+<div title="AuthRequestNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210821" modified="201106210825" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+Introduction: http://www.ruby-forum.com/topic/205063
+
+Project page: http://mdounin.ru/hg/ngx_http_auth_request_module/</pre>
+</div>
 <div title="Benchmark" creator="ZhangYichun" modifier="ZhangYichun" created="201106210550" modified="201106210734" changecount="5">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !~HelloWorld
@@ -596,9 +610,9 @@ So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, 
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201106210515" changecount="11">
+<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201106210826" changecount="12">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
-* [[LuaJIT2.0]]
+* [[LuaJIT]]
 * [[ArrayVarNginxModule]]
 * [[AuthRequestNginxModule]]
 * [[DrizzleNginxModule]]
@@ -651,6 +665,35 @@ Sometimes, users may want to download old releases.
 * [[ngx_openresty-0.8.54.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.5.tar.gz]] 2.7MB [[Changes|ChangeLog8054]]
 See [[Installation]] for installation instructions.
 </pre>
+</div>
+<div title="DrizzleNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210822" modified="201106210825" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This is an nginx upstream module that talks to ~MySQL and/or Drizzle database servers by libdrizzle.
+
+Project page: https://github.com/chaoslawful/drizzle-nginx-module</pre>
+</div>
+<div title="EchoNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210824" modified="201106210825" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This module wraps lots of Nginx internal APIs for streaming input and output, parallel/sequential subrequests, timers and sleeping, as well as various meta data accessing.
+
+Basically it provides various utilities that help testing and debugging of other modules by trivially emulating different kinds of faked subrequest locations.
+
+Documentation: http://wiki.nginx.org/NginxHttpEchoModule
+
+Project page: https://github.com/agentzh/echo-nginx-module</pre>
+</div>
+<div title="EncryptedSessionNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210834" modified="201106210839" changecount="3">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This module provides encryption and decryption support for [[Nginx]] variables based on ~AES-256 with Mac.
+
+This module is usually used with [[SetMiscNginxModule]] and the standard [[rewrite module|http://wiki.nginx.org/NginxHttpRewriteModule]]'s directives.
+
+This module can be used to implement simple user login and access control of web applications.
+
+Project page: http://github.com/agentzh/encrypted-session-nginx-module</pre>
 </div>
 <div title="GettingStarted" creator="ZhangYichun" modifier="ZhangYichun" created="201106201139" modified="201106210552" changecount="26">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
@@ -790,6 +833,29 @@ make install
 On Linux, it often requires {{{sudo}}} to gain root access.
 </pre>
 </div>
+<div title="LuaJIT" creator="ZhangYichun" modifier="ZhangYichun" created="201106210816" modified="201106210826" changecount="5">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+LuaJIT is a Just-In-Time Compiler for the Lua programming language. 
+
+Homepage: http://luajit.org/luajit.html
+
+LuaJIT is not enabled by default. Please specify the {{{--with-luajit}}} option while configuring OpenResty while building it. See [[Installation]] for details.
+</pre>
+</div>
+<div title="LuaNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210826" modified="201106210839" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This module embeds the Lua interpreter or LuaJIT into the nginx core and integrates the powerful Lua threads (aka Lua coroutines) into the nginx event model by means of nginx subrequests.
+
+Unlike Apache's mod_lua and Lighttpd's mod_magnet, Lua code written atop this module can be 100% non-blocking on network traffic as long as you use the ngx.location.capture or ngx.location.capture_multi interfaces to let the nginx core do all your requests to mysql, postgresql, memcached, upstream http web services, and etc etc etc (see ngx_drizzle, ngx_postgres, ngx_memc, and ngx_proxy modules for details).
+
+The Lua interpreter instance is shared across all the requests in a single nginx worker process.
+
+Request contexts are isolated from each other by means of Lua (lightweight) threads (aka Lua coroutines). And Lua modules loaded are persistent on the nginx worker process level. So the memory footprint is quite small even when your nginx worker process is handling 10K requests at the same time.
+
+Project page: http://github.com/chaoslawful/lua-nginx-module</pre>
+</div>
 <div title="MainMenu" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210739" tags="admin" changecount="10">
 <pre>[[Overview|OpenResty]]
 [[Getting started|GettingStarted]]
@@ -801,8 +867,27 @@ On Linux, it often requires {{{sudo}}} to gain root access.
 [[About]]
 [img[feed-icon-14x14.png]] [[RSS feed|RSSFeed]]</pre>
 </div>
-<div title="Nginx" creator="ZhangYichun" modifier="ZhangYichun" created="201106210422" modified="201106210422" changecount="2">
-<pre>Nginx is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/~POP3 proxy server. See its homepage: http://nginx.org.</pre>
+<div title="MemcNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210830" modified="201106210839" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This module extends the standard memcached module  to support almost the whole memcached ascii protocol.
+
+It allows you to define a custom REST interface to your memcached servers or access memcached in a very efficient way from within the nginx server by means of subrequests or independent fake requests. 
+
+Documentation: http://wiki.nginx.org/NginxHttpMemcModule
+Project page: http://github.com/agentzh/memc-nginx-module</pre>
+</div>
+<div title="Nginx" creator="ZhangYichun" modifier="ZhangYichun" created="201106210422" modified="201106210824" changecount="3">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+Nginx is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/~POP3 proxy server. See its homepage: http://nginx.org.</pre>
+</div>
+<div title="NginxDevelKit" creator="ZhangYichun" modifier="ZhangYichun" created="201106210827" modified="201106210839" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+The NDK is an Nginx module that is designed to extend the core functionality of the    excellent Nginx webserver in a way that can be used as a basis of other Nginx modules.
+
+Project page: https://github.com/simpl/ngx_devel_kit</pre>
 </div>
 <div title="OpenResty" creator="ZhangYichun" modifier="ZhangYichun" created="201106210403" modified="201106210509" changecount="9">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
@@ -818,16 +903,58 @@ See [[Components]] for the complete list of software bundled in ~OpenResty.
 See [[GettingStarted]] on how to quickly setup an ~OpenResty server that can say hello world over HTTP. Or you can go to the [[Download]] section to grab ~OpenResty's source code tarball directly.
 </pre>
 </div>
+<div title="PostgresNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210828" modified="201106210839" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+ngx_postgres is an upstream module that allows [[Nginx]] to communicate directly with ~PostgreSQL database.
+
+Response is generated in rds format, so it's compatible with RdsJsonNginxModule and DrizzleNginxModule modules.
+
+Project page: http://github.com/FRiCKLE/ngx_postgres
+</pre>
+</div>
 <div title="RSSFeed" creator="ZhangYichun" modifier="ZhangYichun" created="201106210735" modified="201106210739" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This site's RSS  feed is available at http://openresty.org/index.xml [img[feed-icon-28x28.png]].</pre>
+</div>
+<div title="RdsJsonNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210839" modified="201106210840" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This is an output filter module that formats Resty DBD Streams (RDS) generated by ngx_drizzle and others to JSON streams.
+
+Project page: http://github.com/agentzh/rds-json-nginx-module
+</pre>
+</div>
+<div title="SetMiscNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210836" modified="201106210839" changecount="6">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This module adds various {{{set_xxx}}} directives added to [[Nginx]]'s [[rewrite module|http://wiki.nginx.org/NginxHttpRewriteModule]] (~MD5/~SHA1, SQL/JSON quoting, and many more).
+
+Every directive provided by this module can be mixed freely with other nginx rewrite module's
+  directives, like {{{if}}} and {{{set}}}.
+
+Project page: http://github.com/agentzh/set-misc-nginx-module</pre>
 </div>
 <div title="SiteSubtitle" creator="ZhangYichun" modifier="ZhangYichun" created="201106201138" modified="201106210357" tags="admin" changecount="2">
 <pre>a powerful web app server by extending nginx</pre>
 </div>
 <div title="SiteTitle" creator="ZhangYichun" modifier="ZhangYichun" created="201106201137" modified="201106210357" tags="admin" changecount="3">
 <pre>OpenResty</pre>
+</div>
+<div title="StandardLuaInterpreter" creator="ZhangYichun" modifier="ZhangYichun" created="201106210831" modified="201106210839" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+The standard Lua interpreter is enabled by default. If [[LuaJIT]] is enabled, this interpreter will be disabled automatically.
+
+See Lua's homepage: http://www.lua.org/</pre>
+</div>
+<div title="libdrizzle" creator="ZhangYichun" modifier="ZhangYichun" created="201106210842" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This is the the client and protocol library for the Drizzle project.
+
+Project page: https://launchpad.net/libdrizzle</pre>
 </div>
 </div>
 <!--POST-STOREAREA-->
