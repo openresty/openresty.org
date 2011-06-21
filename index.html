@@ -530,7 +530,7 @@ http://github.com/agentzh/openresty.org
 Feel free to fork it or just [[contact us|ContactUs]] to obtain a git commit bit if you want to edit and improve this site.
 </pre>
 </div>
-<div title="Benchmark" creator="ZhangYichun" modifier="ZhangYichun" created="201106210550" modified="201106210555" changecount="4">
+<div title="Benchmark" creator="ZhangYichun" modifier="ZhangYichun" created="201106210550" modified="201106210734" changecount="5">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !~HelloWorld
 Testing the performance of a ~HelloWorld server does not mean many things but it does tell us where the ceiling is.
@@ -577,7 +577,7 @@ Percentage of the requests served within a certain time (ms)
  100%      8 (longest request)
 }}}
 
-So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, ~HelloWorld servers using nginx + php-fpm 5.2.8 gives 4k r/s, Erlang ~R14B2 raw gen_tcp server gives 8k r/s, and [[node.js|http://nodejs.org/]] 5.7k r/s.
+So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, ~HelloWorld servers using nginx + php-fpm 5.2.8 gives 4k r/s, Erlang ~R14B2 raw gen_tcp server gives 8k r/s, and [[node.js|http://nodejs.org/] v0.4.8 yields 5.7k r/s.
 </pre>
 </div>
 <div title="ChangeLog8054" creator="ZhangYichun" modifier="ZhangYichun" created="201106210431" modified="201106210516" changecount="5">
@@ -790,7 +790,7 @@ make install
 On Linux, it often requires {{{sudo}}} to gain root access.
 </pre>
 </div>
-<div title="MainMenu" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210547" tags="admin" changecount="8">
+<div title="MainMenu" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210739" tags="admin" changecount="10">
 <pre>[[Overview|OpenResty]]
 [[Getting started|GettingStarted]]
 [[Components]]
@@ -799,7 +799,7 @@ On Linux, it often requires {{{sudo}}} to gain root access.
 [[Installation]]
 [[Contact us|ContactUs]]
 [[About]]
-</pre>
+[img[feed-icon-14x14.png]] [[RSS feed|RSSFeed]]</pre>
 </div>
 <div title="Nginx" creator="ZhangYichun" modifier="ZhangYichun" created="201106210422" modified="201106210422" changecount="2">
 <pre>Nginx is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/~POP3 proxy server. See its homepage: http://nginx.org.</pre>
@@ -817,6 +817,11 @@ See [[Components]] for the complete list of software bundled in ~OpenResty.
 
 See [[GettingStarted]] on how to quickly setup an ~OpenResty server that can say hello world over HTTP. Or you can go to the [[Download]] section to grab ~OpenResty's source code tarball directly.
 </pre>
+</div>
+<div title="RSSFeed" creator="ZhangYichun" modifier="ZhangYichun" created="201106210735" modified="201106210739" changecount="3">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This site's RSS  feed is available at http://openresty.org/index.xml [img[feed-icon-28x28.png]].</pre>
 </div>
 <div title="SiteSubtitle" creator="ZhangYichun" modifier="ZhangYichun" created="201106201138" modified="201106210357" tags="admin" changecount="2">
 <pre>a powerful web app server by extending nginx</pre>
