@@ -1,13 +1,35 @@
 <?xml version="1.0"?>
 <rss version="2.0">
 <channel>
-<title>My TiddlyWiki</title>
-<description>a reusable non-linear personal web notebook</description>
+<title>OpenResty</title>
+<description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Mon, 20 Jun 2011 09:15:20 GMT</pubDate>
-<lastBuildDate>Mon, 20 Jun 2011 09:15:20 GMT</lastBuildDate>
+<pubDate>Mon, 20 Jun 2011 11:39:12 GMT</pubDate>
+<lastBuildDate>Mon, 20 Jun 2011 11:39:12 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
+<item>
+<title>GettingStarted</title>
+<description>To get started with this blank &lt;a tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#TiddlyWiki&quot; href=&quot;null#TiddlyWiki&quot; class=&quot;externalLink null&quot;&gt;TiddlyWiki&lt;/a&gt;, you'll need to modify the following tiddlers:&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;a tiddlylink=&quot;SiteTitle&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SiteTitle&quot; href=&quot;null#SiteTitle&quot; class=&quot;externalLink null&quot;&gt;SiteTitle&lt;/a&gt; &amp;amp; &lt;a tiddlylink=&quot;SiteSubtitle&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SiteSubtitle&quot; href=&quot;null#SiteSubtitle&quot; class=&quot;externalLink null&quot;&gt;SiteSubtitle&lt;/a&gt;: The title and subtitle of the site, as shown above (after saving, they will also appear in the browser title bar)&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;MainMenu&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#MainMenu&quot; href=&quot;null#MainMenu&quot; class=&quot;externalLink null&quot;&gt;MainMenu&lt;/a&gt;: The menu (usually on the left)&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;DefaultTiddlers&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DefaultTiddlers&quot; href=&quot;null#DefaultTiddlers&quot; class=&quot;externalLink null&quot;&gt;DefaultTiddlers&lt;/a&gt;: Contains the names of the tiddlers that you want to appear when the &lt;a tiddlylink=&quot;TiddlyWiki&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#TiddlyWiki&quot; href=&quot;null#TiddlyWiki&quot; class=&quot;externalLink null&quot;&gt;TiddlyWiki&lt;/a&gt; is opened&lt;/li&gt;&lt;/ul&gt;You'll also need to enter your username for signing your edits: &lt;input title=&quot;Username for signing your edits&quot; class=&quot;txtOptionInput&quot; option=&quot;txtUserName&quot;&gt;</description>
+<category>admin</category>
+<link>null#GettingStarted</link>
+<pubDate>Mon, 20 Jun 2011 11:39:12 GMT</pubDate>
+
+</item>
+<item>
+<title>SiteSubtitle</title>
+<description>a powerful web app server by extending nginx</description>
+<link>null#SiteSubtitle</link>
+<pubDate>Mon, 20 Jun 2011 11:38:41 GMT</pubDate>
+
+</item>
+<item>
+<title>SiteTitle</title>
+<description>&lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;</description>
+<link>null#SiteTitle</link>
+<pubDate>Mon, 20 Jun 2011 11:37:29 GMT</pubDate>
+
+</item>
 </channel>
 </rss>
