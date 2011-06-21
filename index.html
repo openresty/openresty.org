@@ -610,7 +610,7 @@ So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, 
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201106210826" changecount="12">
+<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201106210912" changecount="13">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 * [[LuaJIT]]
 * [[ArrayVarNginxModule]]
@@ -619,7 +619,7 @@ So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, 
 * [[EchoNginxModule]]
 * [[EncryptedSessionNginxModule]]
 * [[FormInputNginxModule]]
-* [[HeadersMoreModule]]
+* [[HeadersMoreNginxModule]]
 * [[IconvNginxModule]]
 * [[libdrizzle]]
 * [[StandardLuaInterpreter]]
@@ -673,10 +673,10 @@ This is an nginx upstream module that talks to ~MySQL and/or Drizzle database se
 
 Project page: https://github.com/chaoslawful/drizzle-nginx-module</pre>
 </div>
-<div title="EchoNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210824" modified="201106210825" changecount="2">
+<div title="EchoNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210824" modified="201106210912" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
-This module wraps lots of Nginx internal APIs for streaming input and output, parallel/sequential subrequests, timers and sleeping, as well as various meta data accessing.
+This module wraps lots of Nginx internal ~APIs for streaming input and output, parallel/sequential subrequests, timers and sleeping, as well as various meta data accessing.
 
 Basically it provides various utilities that help testing and debugging of other modules by trivially emulating different kinds of faked subrequest locations.
 
@@ -694,6 +694,14 @@ This module is usually used with [[SetMiscNginxModule]] and the standard [[rewri
 This module can be used to implement simple user login and access control of web applications.
 
 Project page: http://github.com/agentzh/encrypted-session-nginx-module</pre>
+</div>
+<div title="FormInputNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210901" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This is an [[Nginx]] module that reads HTTP POST and PUT request body encoded in &quot;application/x-www-form-urlencoded&quot;, and parse the arguments in request body into [[Nginx]] variables.
+
+Project page: https://github.com/calio/form-input-nginx-module
+</pre>
 </div>
 <div title="GettingStarted" creator="ZhangYichun" modifier="ZhangYichun" created="201106201139" modified="201106210552" changecount="26">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
@@ -756,6 +764,26 @@ See [[Benchmark]] for details.
 </div>
 <div title="GitHub" creator="ZhangYichun" modifier="ZhangYichun" created="201106210420" modified="201106210420" changecount="2">
 <pre>~GitHub is social coding network based on git, a very popular version control system. See its homepage: http://github.com.</pre>
+</div>
+<div title="HeadersMoreNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210859" modified="201106210913" changecount="3">
+<pre>This module allows you to add, set, or clear any response or request headers that you specify.
+
+This is an enhanced version of the standard headers module because it provides more utilities like resetting or clearing &quot;builtin headers&quot; like ~Content-Type, ~Content-Length, and Server. 
+
+Documentation: http://wiki.nginx.org/NginxHttpHeadersMoreModule
+Project page: http://github.com/agentzh/headers-more-nginx-module</pre>
+</div>
+<div title="IconvNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210904" modified="201106210904" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This is an [[Nginx]] module that uses libiconv to convert characters of different encoding. It brings the {{{set_iconv}}} and {{{iconv_filter}}} commands to [[Nginx]].
+
+It can either process Nginx variables or process response bodies as an output filter.
+
+Use cases: http://forum.nginx.org/read.php?2,206658,207119
+
+Project page: https://github.com/calio/iconv-nginx-module
+</pre>
 </div>
 <div title="Installation" creator="ZhangYichun" modifier="ZhangYichun" created="201106210440" modified="201106210728" changecount="33">
 <pre>If you haven't downloaded the OpenResty source code tarball, please go to the [[Download]] page first.
@@ -833,10 +861,10 @@ make install
 On Linux, it often requires {{{sudo}}} to gain root access.
 </pre>
 </div>
-<div title="LuaJIT" creator="ZhangYichun" modifier="ZhangYichun" created="201106210816" modified="201106210826" changecount="5">
+<div title="LuaJIT" creator="ZhangYichun" modifier="ZhangYichun" created="201106210816" modified="201106210911" changecount="6">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
-LuaJIT is a Just-In-Time Compiler for the Lua programming language. 
+LuaJIT is a ~Just-In-Time Compiler for the Lua programming language. 
 
 Homepage: http://luajit.org/luajit.html
 
@@ -926,6 +954,15 @@ This is an output filter module that formats Resty DBD Streams (RDS) generated b
 Project page: http://github.com/agentzh/rds-json-nginx-module
 </pre>
 </div>
+<div title="Redis2NginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210847" modified="201106210859" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This is an [[Nginx]] upstream module that makes nginx talk to a redis 2.x server in a non-blocking way. The full Redis 2.0 unified protocol has been implemented including the redis pipelining support.
+
+This module returns the raw TCP response from the redis server.
+
+Project page: https://github.com/agentzh/redis2-nginx-module</pre>
+</div>
 <div title="SetMiscNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210836" modified="201106210839" changecount="6">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
@@ -942,12 +979,39 @@ Project page: http://github.com/agentzh/set-misc-nginx-module</pre>
 <div title="SiteTitle" creator="ZhangYichun" modifier="ZhangYichun" created="201106201137" modified="201106210357" tags="admin" changecount="3">
 <pre>OpenResty</pre>
 </div>
+<div title="SrcacheNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210907" modified="201106210908" changecount="3">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This module provides a transparent caching layer for arbitrary nginx locations (like those use an upstream or even serve static disk files).
+
+Usually, the MemcNginxModule is used together with this module to provide a concrete caching storage backend. But technically, any modules that provide a REST interface can be used as the fetching and storage subrequests used by this module.
+
+Project page: http://github.com/agentzh/srcache-nginx-module</pre>
+</div>
 <div title="StandardLuaInterpreter" creator="ZhangYichun" modifier="ZhangYichun" created="201106210831" modified="201106210839" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 The standard Lua interpreter is enabled by default. If [[LuaJIT]] is enabled, this interpreter will be disabled automatically.
 
 See Lua's homepage: http://www.lua.org/</pre>
+</div>
+<div title="UpstreamKeepaliveNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210908" modified="201106210911" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This is a keepalive balancer module for nginx that implements cache for backend connections.
+
+Documentation: http://mdounin.ru/hg/ngx_http_upstream_keepalive/raw-file/tip/README
+
+Project page: http://mdounin.ru/hg/ngx_http_upstream_keepalive/</pre>
+</div>
+<div title="XssNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210905" modified="201106210907" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This module adds cross-site AJAX support to nginx. Currently only cross-site GET is supported.
+
+The cross-site GET is currently implemented as JSONP (or &quot;JSON with padding&quot;). See http://en.wikipedia.org/wiki/JSON#JSONP for more details.
+
+Project page: http://github.com/agentzh/xss-nginx-module</pre>
 </div>
 <div title="libdrizzle" creator="ZhangYichun" modifier="ZhangYichun" created="201106210842" changecount="1">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
