@@ -5,43 +5,13 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Tue, 21 Jun 2011 05:52:36 GMT</pubDate>
-<lastBuildDate>Tue, 21 Jun 2011 05:52:36 GMT</lastBuildDate>
+<pubDate>Tue, 21 Jun 2011 05:55:11 GMT</pubDate>
+<lastBuildDate>Tue, 21 Jun 2011 05:55:11 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
-<title>GettingStarted</title>
-<description>&lt;a tiddler=&quot;GettingStarted&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;First of all, please go to the &lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;Download&lt;/a&gt; page to get the source code tarball of &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;, and see the &lt;a tiddlylink=&quot;Installation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Installation&quot; href=&quot;null#Installation&quot; class=&quot;externalLink null&quot;&gt;Installation&lt;/a&gt; page for how to build and install it into your system.&lt;br&gt;&lt;br&gt;&lt;h1&gt;HelloWorld&lt;/h1&gt;&lt;h2&gt;Prepare directory layout&lt;/h2&gt;We first create a separate directory for our experiments. You can use an arbitrary directory. Here for simplicity, we just use &lt;code&gt;~/work&lt;/code&gt;:&lt;br&gt;&lt;pre&gt;mkdir ~/work
-cd ~/work
-mkdir logs/ conf/
-&lt;/pre&gt;Note that we've also created the &lt;code&gt;logs/&lt;/code&gt; directory for logging files and &lt;code&gt;conf/&lt;/code&gt; for our config files.&lt;br&gt;&lt;h2&gt;Prepare the nginx.conf config file&lt;/h2&gt;Create a simple plain text file named &lt;code&gt;conf/nginx.conf&lt;/code&gt; with the following contents in it:&lt;br&gt;&lt;pre&gt;worker_processes  1;
-error_log logs/error.log;
-events {
-    worker_connections 1024;
-}
-http {
-    server {
-        listen 8080;
-        location / {
-            content_by_lua '
-                ngx.say(&quot;&amp;lt;p&amp;gt;hello, world&amp;lt;/p&amp;gt;&quot;)
-            ';
-        }
-    }
-}
-&lt;/pre&gt;If you're familiar with Nginx configuration, it should look very familiar to you. &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; is just an enhanced version of Nginx by means of addon modules anyway. You can take advantage of all the exisitng goodies in the Nginx world.&lt;br&gt;&lt;h2&gt;Start the Nginx server&lt;/h2&gt;Assuming you have installed &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; into &lt;code&gt;/usr/local/openresty&lt;/code&gt; (this is the default), we make our &lt;code&gt;nginx&lt;/code&gt; executable of our &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; installation available in our &lt;code&gt;PATH&lt;/code&gt; environment:&lt;br&gt;&lt;pre&gt;PATH=/usr/local/openresty/nginx/sbin:$PATH
-export PATH
-&lt;/pre&gt;Then we start the nginx server with our config file this way:&lt;br&gt;&lt;pre&gt;nginx -p `pwd`/ -c conf/nginx.conf
-&lt;/pre&gt;Error messages will go to the stderr device or the default error log files &lt;code&gt;logs/error.log&lt;/code&gt; in the current working directory.&lt;br&gt;&lt;h2&gt;Access our HelloWorld web service&lt;/h2&gt;We can use curl to access our new web service that says HelloWorld:&lt;br&gt;&lt;pre&gt;curl http://localhost:8080/
-&lt;/pre&gt;If everything is okay, we should get the output&lt;br&gt;&lt;pre&gt;&amp;lt;p&amp;gt;hello, world&amp;lt;/p&amp;gt;
-&lt;/pre&gt;You can surely point your favorite web browser to the location &lt;code&gt;http://localhost:8080/&lt;/code&gt;.&lt;br&gt;&lt;h2&gt;Test performance&lt;/h2&gt;See &lt;a tiddlylink=&quot;Benchmark&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Benchmark&quot; href=&quot;null#Benchmark&quot; class=&quot;externalLink null&quot;&gt;Benchmark&lt;/a&gt; for details.&lt;br&gt;</description>
-<link>null#GettingStarted</link>
-<pubDate>Tue, 21 Jun 2011 05:52:36 GMT</pubDate>
-
-</item>
-<item>
 <title>Benchmark</title>
-<description>&lt;h1&gt;HelloWorld&lt;/h1&gt;Testing the performance of a HelloWorld server does not mean many things but it does tell us where the ceiling is.&lt;br&gt;&lt;br&gt;The HelloWorld server based on &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; is described in the &lt;a tiddlylink=&quot;GettingStarted&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GettingStarted&quot; href=&quot;null#GettingStarted&quot; class=&quot;externalLink null&quot;&gt;GettingStarted&lt;/a&gt; document.&lt;br&gt;&lt;br&gt;Below is the result using the command &lt;code&gt;ab -c10 -n50000 http://localhost:8080/&lt;/code&gt; on my ThinkPad T400 laptop with ngx_openresty 0.8.54.6:&lt;br&gt;&lt;pre&gt;Server Software:        ngx_openresty/0.8.54
+<description>&lt;a tiddler=&quot;Benchmark&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;h1&gt;HelloWorld&lt;/h1&gt;Testing the performance of a HelloWorld server does not mean many things but it does tell us where the ceiling is.&lt;br&gt;&lt;br&gt;The HelloWorld server based on &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; is described in the &lt;a tiddlylink=&quot;GettingStarted&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GettingStarted&quot; href=&quot;null#GettingStarted&quot; class=&quot;externalLink null&quot;&gt;GettingStarted&lt;/a&gt; document.&lt;br&gt;&lt;br&gt;Below is the result using the command &lt;code&gt;ab -c10 -n50000 http://localhost:8080/&lt;/code&gt; on my ThinkPad T400 laptop with ngx_openresty 0.8.54.6:&lt;br&gt;&lt;pre&gt;Server Software:        ngx_openresty/0.8.54
 Server Hostname:        localhost
 Server Port:            8080
 
@@ -79,7 +49,37 @@ Percentage of the requests served within a certain time (ms)
  100%      8 (longest request)
 &lt;/pre&gt;&lt;br&gt;So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, HelloWorld servers using nginx + php-fpm 5.2.8 gives 4k r/s, Erlang R14B2 raw gen_tcp server gives 8k r/s, and &lt;a target=&quot;_blank&quot; title=&quot;External link to http://nodejs.org/&quot; href=&quot;http://nodejs.org/&quot; class=&quot;externalLink&quot;&gt;node.js&lt;/a&gt; 5.7k r/s.&lt;br&gt;</description>
 <link>null#Benchmark</link>
-<pubDate>Tue, 21 Jun 2011 05:52:12 GMT</pubDate>
+<pubDate>Tue, 21 Jun 2011 05:55:11 GMT</pubDate>
+
+</item>
+<item>
+<title>GettingStarted</title>
+<description>&lt;a tiddler=&quot;GettingStarted&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;First of all, please go to the &lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;Download&lt;/a&gt; page to get the source code tarball of &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;, and see the &lt;a tiddlylink=&quot;Installation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Installation&quot; href=&quot;null#Installation&quot; class=&quot;externalLink null&quot;&gt;Installation&lt;/a&gt; page for how to build and install it into your system.&lt;br&gt;&lt;br&gt;&lt;h1&gt;HelloWorld&lt;/h1&gt;&lt;h2&gt;Prepare directory layout&lt;/h2&gt;We first create a separate directory for our experiments. You can use an arbitrary directory. Here for simplicity, we just use &lt;code&gt;~/work&lt;/code&gt;:&lt;br&gt;&lt;pre&gt;mkdir ~/work
+cd ~/work
+mkdir logs/ conf/
+&lt;/pre&gt;Note that we've also created the &lt;code&gt;logs/&lt;/code&gt; directory for logging files and &lt;code&gt;conf/&lt;/code&gt; for our config files.&lt;br&gt;&lt;h2&gt;Prepare the nginx.conf config file&lt;/h2&gt;Create a simple plain text file named &lt;code&gt;conf/nginx.conf&lt;/code&gt; with the following contents in it:&lt;br&gt;&lt;pre&gt;worker_processes  1;
+error_log logs/error.log;
+events {
+    worker_connections 1024;
+}
+http {
+    server {
+        listen 8080;
+        location / {
+            content_by_lua '
+                ngx.say(&quot;&amp;lt;p&amp;gt;hello, world&amp;lt;/p&amp;gt;&quot;)
+            ';
+        }
+    }
+}
+&lt;/pre&gt;If you're familiar with Nginx configuration, it should look very familiar to you. &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; is just an enhanced version of Nginx by means of addon modules anyway. You can take advantage of all the exisitng goodies in the Nginx world.&lt;br&gt;&lt;h2&gt;Start the Nginx server&lt;/h2&gt;Assuming you have installed &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; into &lt;code&gt;/usr/local/openresty&lt;/code&gt; (this is the default), we make our &lt;code&gt;nginx&lt;/code&gt; executable of our &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; installation available in our &lt;code&gt;PATH&lt;/code&gt; environment:&lt;br&gt;&lt;pre&gt;PATH=/usr/local/openresty/nginx/sbin:$PATH
+export PATH
+&lt;/pre&gt;Then we start the nginx server with our config file this way:&lt;br&gt;&lt;pre&gt;nginx -p `pwd`/ -c conf/nginx.conf
+&lt;/pre&gt;Error messages will go to the stderr device or the default error log files &lt;code&gt;logs/error.log&lt;/code&gt; in the current working directory.&lt;br&gt;&lt;h2&gt;Access our HelloWorld web service&lt;/h2&gt;We can use curl to access our new web service that says HelloWorld:&lt;br&gt;&lt;pre&gt;curl http://localhost:8080/
+&lt;/pre&gt;If everything is okay, we should get the output&lt;br&gt;&lt;pre&gt;&amp;lt;p&amp;gt;hello, world&amp;lt;/p&amp;gt;
+&lt;/pre&gt;You can surely point your favorite web browser to the location &lt;code&gt;http://localhost:8080/&lt;/code&gt;.&lt;br&gt;&lt;h2&gt;Test performance&lt;/h2&gt;See &lt;a tiddlylink=&quot;Benchmark&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Benchmark&quot; href=&quot;null#Benchmark&quot; class=&quot;externalLink null&quot;&gt;Benchmark&lt;/a&gt; for details.&lt;br&gt;</description>
+<link>null#GettingStarted</link>
+<pubDate>Tue, 21 Jun 2011 05:52:36 GMT</pubDate>
 
 </item>
 <item>
