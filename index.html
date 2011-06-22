@@ -610,26 +610,33 @@ So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, 
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="ColorPalette" creator="ZhangYichun" modifier="ZhangYichun" created="201106220418" modified="201106220709" changecount="80">
+<div title="ColorPalette" creator="ZhangYichun" modifier="ZhangYichun" created="201106220418" modified="201106220719" changecount="84">
 <pre>Background: #fff
 Foreground: #000
 PrimaryPale: #effa72
-PrimaryLight: #8DF825
+PrimaryLight: #007E00
 PrimaryMid: #007E00
 PrimaryDark: #145D00
 SecondaryPale: #ffc
 SecondaryLight: #fe8
 SecondaryMid: #bd4
 SecondaryDark: #04859d
-TertiaryPale: #dbfe75
+TertiaryPale: #c9f76f
 TertiaryLight: #60d5ac
 TertiaryMid: #00a383
 TertiaryDark: #666
 Error: #f88
 </pre>
 </div>
-<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201106210912" changecount="13">
+<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201106220737" changecount="16">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+Below lists all the components bundled in OpenResty. All of the components can be enabled or disabled on need.
+
+Most of the components are enabled by default, some are not.
+
+[[LuaJIT]], [[PostgresNginxModule]], and [[IconvNginxModule]] are not enabled by default. You need to specify the {{{--with-luajit}}}, {{{--with-http_postgres_module}}}, and {{{--with-http_iconv_module}}} options, respectively, to enable them while [[building OpenResty|Installation]].
+
 * [[LuaJIT]]
 * [[ArrayVarNginxModule]]
 * [[AuthRequestNginxModule]]
@@ -795,12 +802,14 @@ This is an enhanced version of the standard headers module because it provides m
 Documentation: http://wiki.nginx.org/NginxHttpHeadersMoreModule
 Project page: http://github.com/agentzh/headers-more-nginx-module</pre>
 </div>
-<div title="IconvNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210904" modified="201106210904" changecount="2">
+<div title="IconvNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210904" modified="201106220736" changecount="5">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is an [[Nginx]] module that uses libiconv to convert characters of different encoding. It brings the {{{set_iconv}}} and {{{iconv_filter}}} commands to [[Nginx]].
 
 It can either process Nginx variables or process response bodies as an output filter.
+
+This module is not enabled by default, and you need to specify the {{{--with-http_iconv_module}}} option while [[building OpenResty|Installation]]. This Nginx module requires libiconv to be installed into your system.
 
 Use cases: http://forum.nginx.org/read.php?2,206658,207119
 
@@ -953,12 +962,14 @@ See [[Components]] for the complete list of software bundled in ~OpenResty.
 See [[GettingStarted]] on how to quickly setup an ~OpenResty server that can say hello world over HTTP. Or you can go to the [[Download]] section to grab ~OpenResty's source code tarball directly.
 </pre>
 </div>
-<div title="PostgresNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210828" modified="201106210839" changecount="2">
+<div title="PostgresNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210828" modified="201106220736" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 ngx_postgres is an upstream module that allows [[Nginx]] to communicate directly with ~PostgreSQL database.
 
-Response is generated in rds format, so it's compatible with RdsJsonNginxModule and DrizzleNginxModule modules.
+Response is generated in RDS format, so it's compatible with RdsJsonNginxModule and DrizzleNginxModule modules.
+
+This module is not enabled by default, and you need to specify the {{{--with-http_postgres_module}}} option while [[building OpenResty|Installation]]. This Nginx module requires libpq to be installed into your system.
 
 Project page: http://github.com/FRiCKLE/ngx_postgres
 </pre>
