@@ -594,9 +594,17 @@ Percentage of the requests served within a certain time (ms)
 So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, ~HelloWorld servers using nginx + php-fpm 5.2.8 gives 4k r/s, Erlang ~R14B2 raw gen_tcp server gives 8k r/s, and [[node.js|http://nodejs.org/] v0.4.8 yields 5.7k r/s.
 </pre>
 </div>
-<div title="ChangeLog8054" creator="ZhangYichun" modifier="ZhangYichun" created="201106210431" modified="201106210516" changecount="5">
+<div title="ChangeLog8054" creator="ZhangYichun" modifier="ZhangYichun" created="201106210431" modified="201106271321" changecount="9">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
+! Stable Release 0.8.54.7 - 27 June 2011
+* identical to 0.8.54.7rc5.
+! Devel Release 0.8.54.7rc5 - 27 June 2011
+* we should preserve timestamps when copying bundle/ to build/ in ./configure script. this should fix luajit build on some systems.
+! Devel Release 0.8.54.7rc4 - 27 June 2011
+upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx_srcache to 0.12rc5, ngx_redis2 to 0.07rc3.
+! Devel Release 0.8.54.7rc3 - 27 June 2011
+* upgraded LuaJIT to 2.0.0beta8, ngx_lua to 0.1.6rc15, and ngx_echo to 0.36rc4.
 ! Devel Release 0.8.54.7rc2
 * Upgraded [[LuaNginxModule]] to v0.1.16rc14 and [[HeadersMoreNginxModule]] to v0.15rc3.
 ! Devel Release 0.8.54.7rc1
@@ -676,17 +684,18 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201106210437" changecount="10">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201106271322" changecount="17">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Current release
 Most of the users should use the current release, i.e., the latest stable release.
-* [[ngx_openresty-0.8.54.6.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.6.tar.gz]] 2.7MB [[Changes|ChangeLog8054]]
+* [[ngx_openresty-0.8.54.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.7.tar.gz]] 2.7MB [[Changes|ChangeLog8054]] - 27 June 2011
 !! Development releases
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openrest-0.8.54.7rc2.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.7rc2.tar.gz]] 2.7MB [[Changes|ChangeLog8054]]
+* [[ngx_openrest-0.8.54.7rc5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.7rc5.tar.gz]] 2.7MB [[Changes|ChangeLog8054]] - 27 June 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
+* [[ngx_openresty-0.8.54.6.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.6.tar.gz]] 2.7MB [[Changes|ChangeLog8054]]
 * [[ngx_openresty-0.8.54.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.5.tar.gz]] 2.7MB [[Changes|ChangeLog8054]]
 See [[Installation]] for installation instructions.
 </pre>
