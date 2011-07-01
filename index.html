@@ -594,9 +594,39 @@ Percentage of the requests served within a certain time (ms)
 So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, ~HelloWorld servers using nginx + php-fpm 5.2.8 gives 4k r/s, Erlang ~R14B2 raw gen_tcp server gives 8k r/s, and [[node.js|http://nodejs.org/] v0.4.8 yields 5.7k r/s.
 </pre>
 </div>
-<div title="ChangeLog8054" creator="ZhangYichun" modifier="ZhangYichun" created="201106210431" modified="201106271321" changecount="9">
+<div title="ChangeLog8054" creator="ZhangYichun" modifier="ZhangYichun" created="201106210431" modified="201107010455" changecount="14">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Stable Release 0.8.54.8 - 1 July 2011
+This release is the same as  0.8.54.8rc2.
 
+The following components are bundled by this release:
+* ~LuaJIT-2.0.0-beta8
+* array-var-nginx-module-0.02
+* auth-request-nginx-module-0.2
+* drizzle-nginx-module-0.0.15rc13
+* echo-nginx-module-0.36rc6
+* encrypted-session-nginx-module-0.01
+* form-input-nginx-module-0.07rc4
+* headers-more-nginx-module-0.15rc3
+* iconv-nginx-module-0.10rc3
+* lua-5.1.4
+* memc-nginx-module-0.12rc2
+* nginx-0.8.54
+* ngx_devel_kit-0.2.17
+* ngx_lua-0.1.6rc17
+* ngx_postgres-0.8
+* rds-json-nginx-module-0.11rc2
+* redis2-nginx-module-0.07rc4
+* set-misc-nginx-module-0.21
+* srcache-nginx-module-0.12rc6
+* upstream-keepalive-nginx-module-0.3
+* xss-nginx-module-0.03rc3
+! Devel Release 0.8.54.8rc2 - 1 July 2011
+* upgraded ngx_echo to 0.36rc6, ngx_lua to 0.1.6rc17, ngx_srcache to 0.12rc6, and ngx_redis2 to 0.07rc4.
+! Devel Release 0.8.54.8rc1 - 28 June 2011
+* we no longer bundle libdrizzle because [[libdrizzle 1.0|https://launchpad.net/libdrizzle]] is distributed with the drizzle server and hard to separate.
+* now ngx_drizzle is disabled by default. you need to enable it via the {{{--with-http_drizzle_module}}} option.
+* added {{{--with-libdrizzle}}} option to specify the (lib)drizzle installation prefix.
 ! Stable Release 0.8.54.7 - 27 June 2011
 * identical to 0.8.54.7rc5.
 ! Devel Release 0.8.54.7rc5 - 27 June 2011
@@ -606,7 +636,7 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 ! Devel Release 0.8.54.7rc3 - 27 June 2011
 * upgraded LuaJIT to 2.0.0beta8, ngx_lua to 0.1.6rc15, and ngx_echo to 0.36rc4.
 ! Devel Release 0.8.54.7rc2
-* Upgraded [[LuaNginxModule]] to v0.1.16rc14 and [[HeadersMoreNginxModule]] to v0.15rc3.
+* Upgraded [[LuaNginxModule]] to v0.1.6rc14 and [[HeadersMoreNginxModule]] to v0.15rc3.
 ! Devel Release 0.8.54.7rc1
 * Upgraded [[HeadersMoreNginxModule]] to v0.15rc2 and [[LuaNginxModule]] to v0.1.6rc13.
 ! Release 0.8.54.6
@@ -636,14 +666,14 @@ TertiaryDark: #666
 Error: #f88
 </pre>
 </div>
-<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201106220737" changecount="16">
+<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201107010447" changecount="18">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 Below lists all the components bundled in OpenResty. All of the components can be enabled or disabled on need.
 
 Most of the components are enabled by default, some are not.
 
-[[LuaJIT]], [[PostgresNginxModule]], and [[IconvNginxModule]] are not enabled by default. You need to specify the {{{--with-luajit}}}, {{{--with-http_postgres_module}}}, and {{{--with-http_iconv_module}}} options, respectively, to enable them while [[building OpenResty|Installation]].
+[[LuaJIT]], [[DrizzleNginxModule]], [[PostgresNginxModule]], and [[IconvNginxModule]] are not enabled by default. You need to specify the {{{--with-luajit}}}, {{{--with-http_drizzle_module}}}, {{{--with-http_postgres_module}}}, and {{{--with-http_iconv_module}}} options, respectively, to enable them while [[building OpenResty|Installation]].
 
 * [[LuaJIT]]
 * [[ArrayVarNginxModule]]
@@ -654,7 +684,6 @@ Most of the components are enabled by default, some are not.
 * [[FormInputNginxModule]]
 * [[HeadersMoreNginxModule]]
 * [[IconvNginxModule]]
-* [[libdrizzle]]
 * [[StandardLuaInterpreter]]
 * [[MemcNginxModule]]
 * [[Nginx]]
@@ -684,26 +713,47 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201106271322" changecount="17">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201107010455" changecount="21">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Current release
 Most of the users should use the current release, i.e., the latest stable release.
-* [[ngx_openresty-0.8.54.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.7.tar.gz]] 2.7MB [[Changes|ChangeLog8054]] - 27 June 2011
+* [[ngx_openresty-0.8.54.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.8.tar.gz]] 2.2MB [[Changes|ChangeLog8054]] - 1 July 2011
 !! Development releases
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openrest-0.8.54.7rc5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.7rc5.tar.gz]] 2.7MB [[Changes|ChangeLog8054]] - 27 June 2011
+* [[ngx_openrest-0.8.54.8rc2.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.8rc2.tar.gz]] 2.2MB [[Changes|ChangeLog8054]] - 1 July 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
+* [[ngx_openresty-0.8.54.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.7.tar.gz]] 2.7MB [[Changes|ChangeLog8054]] - 27 June 2011
 * [[ngx_openresty-0.8.54.6.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.6.tar.gz]] 2.7MB [[Changes|ChangeLog8054]]
 * [[ngx_openresty-0.8.54.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.5.tar.gz]] 2.7MB [[Changes|ChangeLog8054]]
 See [[Installation]] for installation instructions.
 </pre>
 </div>
-<div title="DrizzleNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210822" modified="201106210825" changecount="2">
+<div title="DrizzleNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210822" modified="201107010453" changecount="7">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
-This is an nginx upstream module that talks to ~MySQL and/or Drizzle database servers by libdrizzle.
+This is an nginx upstream module that talks to ~MySQL and/or Drizzle database servers by [[libdrizzle]].
+
+This ngx_drizzle module is not enabled by default. You should specify the {{{--with-http_drizzle_module}}} optiotn while configuring OpenResty.
+
+The [[libdrizzle]] C library is no longer bundled by OpenResty. You need to download the drizzle server tarball from https://launchpad.net/drizzle.
+
+When you get the drizzle7 release tarball, you can install libdrizzle-1.0 like this:
+{{{
+tar xzvf drizzle7-VERSION.tar.gz
+cd drizzle7-VERSION/
+./configure --without-server
+make libdrizzle-1.0
+make install-libdrizzle-1.0
+}}}
+where {{{VERSION}}} is the drizzle7 release version number like {{{2011.06.20}}}.
+
+When you install the libdrizzle-1.0 library to a custom path prefix, you can specify the libdrizzle prefix to OpenResty like this:
+{{{
+cd /path/to/ngx_openresty-VERSION/
+./configure --with-libdrizzle=/path/to/drizzle --with-http_drizzle_module
+}}}
 
 Project page: https://github.com/chaoslawful/drizzle-nginx-module</pre>
 </div>
@@ -1271,12 +1321,13 @@ Project page: http://github.com/agentzh/xss-nginx-module</pre>
 
 Homepage: http://agentzh.org</pre>
 </div>
-<div title="libdrizzle" creator="ZhangYichun" modifier="ZhangYichun" created="201106210842" changecount="1">
+<div title="libdrizzle" creator="ZhangYichun" modifier="ZhangYichun" created="201106210842" modified="201107010450" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
-This is the the client and protocol library for the Drizzle project.
+This is the the client and protocol library for the Drizzle project. This library is now distributed with the Drizzle server release.
 
-Project page: https://launchpad.net/libdrizzle</pre>
+Project page: https://launchpad.net/drizzle
+</pre>
 </div>
 </div>
 <!--POST-STOREAREA-->
