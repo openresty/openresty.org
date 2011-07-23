@@ -594,8 +594,10 @@ Percentage of the requests served within a certain time (ms)
 So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, ~HelloWorld servers using nginx + php-fpm 5.2.8 gives 4k r/s, Erlang ~R14B2 raw gen_tcp server gives 8k r/s, and [[node.js|http://nodejs.org/] v0.4.8 yields 5.7k r/s.
 </pre>
 </div>
-<div title="ChangeLog1000004" creator="ZhangYichun" modifier="ZhangYichun" created="201107081222" modified="201107230400" changecount="17">
-<pre>! Devel Release 1.0.4.1rc2 - 23 July 2011
+<div title="ChangeLog1000004" creator="ZhangYichun" modifier="ZhangYichun" created="201107081222" modified="201107230440" changecount="19">
+<pre>! Devel Release 1.0.4.1rc3 - 23 July 2011
+* now the {{{--with-cc}}} option of {{{./configure}}} also controls the C compiler used by Lua and LuaJIT. thanks @姜大炮 for reporting the issue.
+! Devel Release 1.0.4.1rc2 - 23 July 2011
 * upgraded ngx_lua to v0.2.1rc2 and ngx_redis2 to v0.07.
 ! Devel Release 1.0.4.1rc1 - 14 July 2011
 * upgraded ngx_rds_json to v0.12rc1, ngx_drizzle to v0.1.1rc2, ngx_lua to v0.2.1rc1, ngx_postgres to v0.9rc1, ngx_redis2 to v0.07rc6.
@@ -794,7 +796,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201107230359" changecount="38">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201107230439" changecount="39">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Current release
@@ -802,7 +804,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.4.0.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.0.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 12 July 2011
 !! Development releases
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.4.1rc2.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.1rc2.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 23 July 2011
+* [[ngx_openresty-1.0.4.1rc3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.1rc3.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 23 July 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-0.8.54.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.9.tar.gz]] 2.2MB [[Changes|ChangeLog8054]] - 8 July 2011
