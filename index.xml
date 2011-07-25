@@ -5,15 +5,15 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Mon, 25 Jul 2011 15:20:40 GMT</pubDate>
-<lastBuildDate>Mon, 25 Jul 2011 15:20:40 GMT</lastBuildDate>
+<pubDate>Mon, 25 Jul 2011 15:31:40 GMT</pubDate>
+<lastBuildDate>Mon, 25 Jul 2011 15:31:40 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
 <title>MarkupPostBody</title>
-<description>&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;&lt;br&gt;&lt;br&gt;  var _gaq = _gaq || [];&lt;br&gt;  _gaq.push(['_setAccount', '&lt;a tiddlylink=&quot;UA-24724965-1&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UA-24724965-1&quot; href=&quot;null#UA-24724965-1&quot; class=&quot;externalLink null&quot;&gt;UA-24724965-1&lt;/a&gt;']);&lt;br&gt;  _gaq.push(['_trackPageview']);&lt;br&gt;&lt;br&gt;  var ga = function() {&lt;br&gt;    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;&lt;br&gt;    ga.src = ('https:' == document.location.protocol ? '&lt;a target=&quot;_blank&quot; title=&quot;External link to https://ssl&quot; href=&quot;https://ssl&quot; class=&quot;externalLink&quot;&gt;https://ssl&lt;/a&gt;' : '&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www&quot; href=&quot;http://www&quot; class=&quot;externalLink&quot;&gt;http://www&lt;/a&gt;') + '.google-analytics.com/ga.js';&lt;br&gt;    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);&lt;br&gt;  };&lt;br&gt;  setTimeout(ga, 200);&lt;br&gt;&lt;br&gt;&amp;lt;/script&amp;gt;</description>
+<description>&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;&lt;br&gt;&lt;br&gt;  var _gaq = _gaq || [];&lt;br&gt;  _gaq.push(['_setAccount', '&lt;a tiddlylink=&quot;UA-24724965-1&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UA-24724965-1&quot; href=&quot;null#UA-24724965-1&quot; class=&quot;externalLink null&quot;&gt;UA-24724965-1&lt;/a&gt;']);&lt;br&gt;  _gaq.push(['_trackPageview']);&lt;br&gt;&lt;br&gt;  var ga_f = function() {&lt;br&gt;    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;&lt;br&gt;    ga.src = ('https:' == document.location.protocol ? '&lt;a target=&quot;_blank&quot; title=&quot;External link to https://ssl&quot; href=&quot;https://ssl&quot; class=&quot;externalLink&quot;&gt;https://ssl&lt;/a&gt;' : '&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www&quot; href=&quot;http://www&quot; class=&quot;externalLink&quot;&gt;http://www&lt;/a&gt;') + '.google-analytics.com/ga.js';&lt;br&gt;    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);&lt;br&gt;  };&lt;br&gt;  setTimeout(ga_f, 200);&lt;br&gt;&lt;br&gt;&amp;lt;/script&amp;gt;</description>
 <link>null#MarkupPostBody</link>
-<pubDate>Mon, 25 Jul 2011 15:20:40 GMT</pubDate>
+<pubDate>Mon, 25 Jul 2011 15:31:40 GMT</pubDate>
 
 </item>
 <item>
