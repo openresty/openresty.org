@@ -55,19 +55,7 @@ DAMAGE.
 #javascriptWarning {width:100%; text-align:center; font-weight:bold; background-color:#dd1100; color:#fff; padding:1em 0em;}
 </style>
 <!--POST-HEAD-START-->
-<script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-24724965-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 <!--POST-HEAD-END-->
 </head>
 <body onload="main();" onunload="if(window.unload) unload();">
@@ -1095,20 +1083,24 @@ Project page: http://github.com/chaoslawful/lua-nginx-module</pre>
 [[About]]
 [img[feed-icon-14x14.png]] [[RSS feed|RSSFeed]]</pre>
 </div>
-<div title="MarkupPostHead" creator="ZhangYichun" modifier="ZhangYichun" created="201107240444" modified="201107240446" changecount="2">
+<div title="MarkupPostBody" creator="ZhangYichun" modifier="ZhangYichun" created="201107251515" modified="201107251520" changecount="6">
 <pre>&lt;script type=&quot;text/javascript&quot;&gt;
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-24724965-1']);
   _gaq.push(['_trackPageview']);
 
-  (function() {
+  var ga = function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+  };
+  setTimeout(ga, 200);
 
 &lt;/script&gt;</pre>
+</div>
+<div title="MarkupPostHead" creator="ZhangYichun" modifier="ZhangYichun" created="201107240444" modified="201107251514" changecount="4">
+<pre></pre>
 </div>
 <div title="MemcNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210830" modified="201106210839" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
@@ -10924,7 +10916,20 @@ if(useJavaSaver)
 //]]>
 </script>
 <!--POST-SCRIPT-START-->
+<script type="text/javascript">
 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24724965-1']);
+  _gaq.push(['_trackPageview']);
+
+  var ga = function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  };
+  setTimeout(ga, 200);
+
+</script>
 <!--POST-SCRIPT-END-->
 </body>
 </html>
