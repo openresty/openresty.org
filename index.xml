@@ -5,20 +5,13 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Wed, 27 Jul 2011 04:11:39 GMT</pubDate>
-<lastBuildDate>Wed, 27 Jul 2011 04:11:39 GMT</lastBuildDate>
+<pubDate>Wed, 27 Jul 2011 07:15:26 GMT</pubDate>
+<lastBuildDate>Wed, 27 Jul 2011 07:15:26 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
-<title>Samples</title>
-<description>&lt;ul&gt;&lt;li&gt; &lt;a tiddlylink=&quot;DynamicRoutingBasedOnRedis&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DynamicRoutingBasedOnRedis&quot; href=&quot;null#DynamicRoutingBasedOnRedis&quot; class=&quot;externalLink null&quot;&gt;Dynamic request routing based on redis&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-<link>null#Samples</link>
-<pubDate>Wed, 27 Jul 2011 04:11:39 GMT</pubDate>
-
-</item>
-<item>
 <title>DynamicRoutingBasedOnRedis</title>
-<description>This sample demonstrates how to use redis to route incoming requests to different HTTP backends based on the requests' &lt;code&gt;User-Agent&lt;/code&gt; header.&lt;br&gt;&lt;br&gt;This demo uses the modules &lt;a tiddlylink=&quot;Redis2NginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Redis2NginxModule&quot; href=&quot;null#Redis2NginxModule&quot; class=&quot;externalLink null&quot;&gt;Redis2NginxModule&lt;/a&gt;, &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt;, and &lt;a tiddlylink=&quot;SetMiscNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SetMiscNginxModule&quot; href=&quot;null#SetMiscNginxModule&quot; class=&quot;externalLink null&quot;&gt;SetMiscNginxModule&lt;/a&gt; bundled by &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;:&lt;br&gt;&lt;br&gt;Here's the complete code listing for the nginx.conf:&lt;br&gt;&lt;br&gt;&lt;pre&gt;worker_processes  1;
+<description>&lt;a tiddler=&quot;DynamicRoutingBasedOnRedis&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This sample demonstrates how to use redis to route incoming requests to different HTTP backends based on the requests' &lt;code&gt;User-Agent&lt;/code&gt; header.&lt;br&gt;&lt;br&gt;This demo uses the modules &lt;a tiddlylink=&quot;Redis2NginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Redis2NginxModule&quot; href=&quot;null#Redis2NginxModule&quot; class=&quot;externalLink null&quot;&gt;Redis2NginxModule&lt;/a&gt;, &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt;, and &lt;a tiddlylink=&quot;SetMiscNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SetMiscNginxModule&quot; href=&quot;null#SetMiscNginxModule&quot; class=&quot;externalLink null&quot;&gt;SetMiscNginxModule&lt;/a&gt; bundled by &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;:&lt;br&gt;&lt;br&gt;Here's the complete code listing for the nginx.conf:&lt;br&gt;&lt;br&gt;&lt;pre&gt;worker_processes  1;
 error_log logs/error.log info;
 
 events {
@@ -96,7 +89,14 @@ http {
    &amp;lt;nginx.org home page goes here&amp;gt;
 &lt;/pre&gt;To further tune the performance, one could enable the connection pool for the redis connections, as documented in &lt;a tiddlylink=&quot;Redis2NginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Redis2NginxModule&quot; href=&quot;null#Redis2NginxModule&quot; class=&quot;externalLink null&quot;&gt;Redis2NginxModule&lt;/a&gt;'s README.</description>
 <link>null#DynamicRoutingBasedOnRedis</link>
-<pubDate>Wed, 27 Jul 2011 04:10:53 GMT</pubDate>
+<pubDate>Wed, 27 Jul 2011 07:15:25 GMT</pubDate>
+
+</item>
+<item>
+<title>Samples</title>
+<description>&lt;a tiddler=&quot;Samples&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;a tiddlylink=&quot;DynamicRoutingBasedOnRedis&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DynamicRoutingBasedOnRedis&quot; href=&quot;null#DynamicRoutingBasedOnRedis&quot; class=&quot;externalLink null&quot;&gt;Dynamic request routing based on redis&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+<link>null#Samples</link>
+<pubDate>Wed, 27 Jul 2011 07:15:18 GMT</pubDate>
 
 </item>
 <item>
@@ -104,7 +104,7 @@ http {
 <description>&lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;Overview&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Components&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Components&quot; href=&quot;null#Components&quot; class=&quot;externalLink null&quot;&gt;Components&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;GettingStarted&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GettingStarted&quot; href=&quot;null#GettingStarted&quot; class=&quot;externalLink null&quot;&gt;Getting started&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Samples&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Samples&quot; href=&quot;null#Samples&quot; class=&quot;externalLink null&quot;&gt;Samples&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Benchmark&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Benchmark&quot; href=&quot;null#Benchmark&quot; class=&quot;externalLink null&quot;&gt;Benchmark&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Presentations&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Presentations&quot; href=&quot;null#Presentations&quot; class=&quot;externalLink null&quot;&gt;Presentations&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;Download&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Installation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Installation&quot; href=&quot;null#Installation&quot; class=&quot;externalLink null&quot;&gt;Installation&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;ContactUs&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ContactUs&quot; href=&quot;null#ContactUs&quot; class=&quot;externalLink null&quot;&gt;Contact us&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;About&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#About&quot; href=&quot;null#About&quot; class=&quot;externalLink null&quot;&gt;About&lt;/a&gt;&lt;br&gt;&lt;img src=&quot;feed-icon-14x14.png&quot;&gt; &lt;a tiddlylink=&quot;RSSFeed&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#RSSFeed&quot; href=&quot;null#RSSFeed&quot; class=&quot;externalLink null&quot;&gt;RSS feed&lt;/a&gt;</description>
 <category>admin</category>
 <link>null#MainMenu</link>
-<pubDate>Wed, 27 Jul 2011 03:59:37 GMT</pubDate>
+<pubDate>Wed, 27 Jul 2011 03:59:00 GMT</pubDate>
 
 </item>
 <item>
