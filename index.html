@@ -594,8 +594,12 @@ Percentage of the requests served within a certain time (ms)
 So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, ~HelloWorld servers using nginx + php-fpm 5.2.8 gives 4k r/s, Erlang ~R14B2 raw gen_tcp server gives 8k r/s, and [[node.js|http://nodejs.org/] v0.4.8 yields 5.7k r/s.
 </pre>
 </div>
-<div title="ChangeLog1000004" creator="ZhangYichun" modifier="ZhangYichun" created="201107081222" modified="201107250753" changecount="20">
-<pre>! Devel Release 1.0.4.1rc4 - 25 July 2011
+<div title="ChangeLog1000004" creator="ZhangYichun" modifier="ZhangYichun" created="201107081222" modified="201107260422" changecount="22">
+<pre>! Devel Release 1.0.4.1rc5 - 26 July 2011
+* upgraded ngx_iconv to 0.10rc3, ngx_form_input to 0.07rc5, ngx_array_var to 0.03rc1, and ngx_set_misc to 0.22rc1.
+* now {{{--with-debug}}} option also enables the {{{gcc -g}}} compilation option for LuaJIT.
+* disabled target stripping in LuaJIT.
+! Devel Release 1.0.4.1rc4 - 25 July 2011
 * applied the official hotfix #1 patch for LuaJIT 2.0.0 beta8.
 ! Devel Release 1.0.4.1rc3 - 23 July 2011
 * now the {{{--with-cc}}} option of {{{./configure}}} also controls the C compiler used by Lua and LuaJIT. thanks @姜大炮 for reporting the issue.
@@ -798,7 +802,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201107250752" changecount="40">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201107260422" changecount="42">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Current release
@@ -806,7 +810,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.4.0.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.0.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 12 July 2011
 !! Development releases
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.4.1rc4.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.1rc4.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 25 July 2011
+* [[ngx_openresty-1.0.4.1rc5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.1rc5.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 26 July 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-0.8.54.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.9.tar.gz]] 2.2MB [[Changes|ChangeLog8054]] - 8 July 2011
@@ -853,6 +857,104 @@ cd /path/to/ngx_openresty-VERSION/
 }}}
 
 Project page: https://github.com/chaoslawful/drizzle-nginx-module</pre>
+</div>
+<div title="DynamicRoutingBasedOnRedis" creator="ZhangYichun" modifier="ZhangYichun" created="201107270402" modified="201107270410" changecount="6">
+<pre>This sample demonstrates how to use redis to route incoming requests to different HTTP backends based on the requests' {{{User-Agent}}} header.
+
+This demo uses the modules Redis2NginxModule, LuaNginxModule, and SetMiscNginxModule bundled by OpenResty:
+
+Here's the complete code listing for the nginx.conf:
+
+{{{
+worker_processes  1;
+error_log logs/error.log info;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    upstream apache.org {
+        server 140.211.11.131;
+    }
+
+    upstream nginx.org {
+        server 206.251.255.63;
+    }
+
+    server {
+        listen 8080;
+
+        location = /redis {
+            internal;
+            set_unescape_uri $key $arg_key;
+            redis2_query get $key;
+            redis2_pass 127.0.0.1:6379;
+        }
+
+        location / {
+            set $target '';
+            access_by_lua '
+                local key = ngx.var.http_user_agent
+                local res = ngx.location.capture(
+                    &quot;/redis&quot;, { args = { key = key } }
+                )
+
+                print(&quot;key: &quot;, key)
+
+                if res.status ~= 200 then
+                    ngx.log(ngx.ERR, &quot;redis server returned bad status: &quot;,
+                        res.status)
+                    ngx.exit(res.status)
+                end
+
+                if not res.body then
+                    ngx.log(ngx.ERR, &quot;redis returned empty body&quot;)
+                    ngx.exit(500)
+                end
+
+                -- we can use the lua-redis-parser library
+                -- to parse the reply here instead
+                local server = string.match(res.body,
+                           &quot;^$%d+\\r\\n(%S+)\\r\\n&quot;)
+                if not server then
+                    ngx.log(ngx.ERR, &quot;bad redis response: &quot;, res.body)
+                    ngx.exit(500)
+                end
+
+                print(&quot;server: &quot;, server)
+
+                ngx.var.target = server
+            ';
+
+            proxy_pass http://$target;
+        }
+    }
+}
+}}}
+
+And then let's start the redis server on the localhost:6379:
+{{{
+$ ./redis-server  # default port is 6379
+}}}
+
+and feed some keys into this using the redis-cli utility:
+{{{
+   $ ./redis-cli
+   redis&gt; set foo apache.org
+   OK
+   redis&gt; set bar nginx.org
+   OK
+}}}
+And then let's test our nginx app!
+{{{
+   $ curl --user-agent foo localhost:8080
+   &lt;apache.org home page goes here&gt;
+
+   $ curl --user-agent bar localhost:8080
+   &lt;nginx.org home page goes here&gt;
+}}}
+To further tune the performance, one could enable the connection pool for the redis connections, as documented in Redis2NginxModule's README.</pre>
 </div>
 <div title="EchoNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210824" modified="201106210912" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
@@ -1071,10 +1173,11 @@ Request contexts are isolated from each other by means of Lua (lightweight) thre
 
 Project page: http://github.com/chaoslawful/lua-nginx-module</pre>
 </div>
-<div title="MainMenu" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106241026" tags="admin" changecount="11">
+<div title="MainMenu" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201107270359" tags="admin" changecount="13">
 <pre>[[Overview|OpenResty]]
-[[Getting started|GettingStarted]]
 [[Components]]
+[[Getting started|GettingStarted]]
+[[Samples]]
 [[Benchmark]]
 [[Presentations]]
 [[Download]]
@@ -1215,6 +1318,9 @@ This is an [[Nginx]] upstream module that makes nginx talk to a redis 2.x server
 This module returns the raw TCP response from the redis server.
 
 Project page: https://github.com/agentzh/redis2-nginx-module</pre>
+</div>
+<div title="Samples" creator="ZhangYichun" modifier="ZhangYichun" created="201107270400" modified="201107270411" changecount="4">
+<pre>* [[Dynamic request routing based on redis|DynamicRoutingBasedOnRedis]]</pre>
 </div>
 <div title="SetMiscNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210836" modified="201106210839" changecount="6">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
