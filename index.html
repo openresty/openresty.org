@@ -858,7 +858,7 @@ cd /path/to/ngx_openresty-VERSION/
 
 Project page: https://github.com/chaoslawful/drizzle-nginx-module</pre>
 </div>
-<div title="DynamicRoutingBasedOnRedis" creator="ZhangYichun" modifier="ZhangYichun" created="201107270402" modified="201107270715" changecount="7">
+<div title="DynamicRoutingBasedOnRedis" creator="ZhangYichun" modifier="ZhangYichun" created="201107270402" modified="201107280424" changecount="8">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This sample demonstrates how to use redis to route incoming requests to different HTTP backends based on the requests' {{{User-Agent}}} header.
@@ -915,7 +915,7 @@ http {
                     ngx.exit(500)
                 end
 
-                -- we can use the lua-redis-parser library
+                -- we could use the lua-redis-parser library
                 -- to parse the reply here instead
                 local server = string.match(res.body,
                            &quot;^$%d+\\r\\n(%S+)\\r\\n&quot;)

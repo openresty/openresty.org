@@ -5,8 +5,8 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Wed, 27 Jul 2011 07:15:26 GMT</pubDate>
-<lastBuildDate>Wed, 27 Jul 2011 07:15:26 GMT</lastBuildDate>
+<pubDate>Thu, 28 Jul 2011 04:24:29 GMT</pubDate>
+<lastBuildDate>Thu, 28 Jul 2011 04:24:29 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
@@ -58,7 +58,7 @@ http {
                     ngx.exit(500)
                 end
 
-                -- we can use the lua-redis-parser library
+                -- we could use the lua-redis-parser library
                 -- to parse the reply here instead
                 local server = string.match(res.body,
                            &quot;^$%d+\\r\\n(%S+)\\r\\n&quot;)
@@ -89,14 +89,14 @@ http {
    &amp;lt;nginx.org home page goes here&amp;gt;
 &lt;/pre&gt;To further tune the performance, one could enable the connection pool for the redis connections, as documented in &lt;a tiddlylink=&quot;Redis2NginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Redis2NginxModule&quot; href=&quot;null#Redis2NginxModule&quot; class=&quot;externalLink null&quot;&gt;Redis2NginxModule&lt;/a&gt;'s README.</description>
 <link>null#DynamicRoutingBasedOnRedis</link>
-<pubDate>Wed, 27 Jul 2011 07:15:25 GMT</pubDate>
+<pubDate>Thu, 28 Jul 2011 04:24:27 GMT</pubDate>
 
 </item>
 <item>
 <title>Samples</title>
 <description>&lt;a tiddler=&quot;Samples&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;a tiddlylink=&quot;DynamicRoutingBasedOnRedis&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DynamicRoutingBasedOnRedis&quot; href=&quot;null#DynamicRoutingBasedOnRedis&quot; class=&quot;externalLink null&quot;&gt;Dynamic request routing based on redis&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
 <link>null#Samples</link>
-<pubDate>Wed, 27 Jul 2011 07:15:18 GMT</pubDate>
+<pubDate>Wed, 27 Jul 2011 07:15:00 GMT</pubDate>
 
 </item>
 <item>
