@@ -594,8 +594,11 @@ Percentage of the requests served within a certain time (ms)
 So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, ~HelloWorld servers using nginx + php-fpm 5.2.8 gives 4k r/s, Erlang ~R14B2 raw gen_tcp server gives 8k r/s, and [[node.js|http://nodejs.org/] v0.4.8 yields 5.7k r/s.
 </pre>
 </div>
-<div title="ChangeLog1000004" creator="ZhangYichun" modifier="ZhangYichun" created="201107081222" modified="201108040358" changecount="28">
-<pre>! Devel Release 1.0.4.2rc2 - 4 August 2011
+<div title="ChangeLog1000004" creator="ZhangYichun" modifier="ZhangYichun" created="201107081222" modified="201108040733" changecount="29">
+<pre>! Devel Release 1.0.4.2rc3 - 4 August 2011
+* upgraded ngx_drizzle to v0.1.1rc3.
+** fixed segmentation faults on Linux i386. thanks @魏世江 and @stefanli for reporting this issue.
+! Devel Release 1.0.4.2rc2 - 4 August 2011
 * fixed a regression while specifying {{{--with-http_iconv_module}}} during {{{./configure}}}. thanks 冯新国 for reporting this issue.
 ! Devel Release 1.0.4.2rc1 - 30 July 2011
 * upgraded ngx_set_misc to 0.22rc2.
@@ -834,7 +837,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201108040357" changecount="49">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201108040731" changecount="50">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Current release
@@ -842,7 +845,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.4.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.1.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 30 July 2011
 !! Development releases
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.4.2rc2.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.2rc2.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 4 August 2011
+* [[ngx_openresty-1.0.4.2rc3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.2rc3.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 4 August 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-0.8.54.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.9.tar.gz]] 2.2MB [[Changes|ChangeLog8054]] - 8 July 2011
