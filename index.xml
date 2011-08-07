@@ -5,8 +5,8 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Sun, 07 Aug 2011 11:34:51 GMT</pubDate>
-<lastBuildDate>Sun, 07 Aug 2011 11:34:51 GMT</lastBuildDate>
+<pubDate>Sun, 07 Aug 2011 11:56:00 GMT</pubDate>
+<lastBuildDate>Sun, 07 Aug 2011 11:56:00 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
@@ -91,9 +91,17 @@ Requests per second:    16380.48 [#/sec] (mean)
 Time per request:       0.610 [ms] (mean)
 Time per request:       0.061 [ms] (mean, across all concurrent requests)
 Transfer rate:          3007.41 [Kbytes/sec] received
-&lt;/pre&gt;Note that the throughput is achieved by a single nginx worker process. While doing such benchmark on your own, just be careful about error log level settings in your nginx.conf and not to run out of dynamic port range on your local machine, or it'll be significantly slow after a short of period of time.&lt;br&gt;</description>
+&lt;/pre&gt;Note that the throughput is achieved by a single nginx worker process. While doing such benchmark on your own, just be careful about error log level settings in your nginx.conf and not to run out of dynamic port range on your local machine, or it'll be significantly slow after a short of period of time.&lt;br&gt;&lt;h1&gt; Known issues&lt;/h1&gt;It's known that turning &lt;code&gt;lua_code_cache&lt;/code&gt; on will cause LuaRocks atop &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt; to throw out the following exception in &lt;code&gt;error.log&lt;/code&gt;:&lt;br&gt;&lt;pre&gt;lua handler aborted: runtime error: stack overflow
+&lt;/pre&gt;It's expected to be fixed in the near future.&lt;br&gt;</description>
 <link>null#UsingLuaRocks</link>
-<pubDate>Sun, 07 Aug 2011 11:34:51 GMT</pubDate>
+<pubDate>Sun, 07 Aug 2011 11:56:00 GMT</pubDate>
+
+</item>
+<item>
+<title>MarkupPostBody</title>
+<description>&amp;lt;p/&amp;gt;&amp;lt;p/&amp;gt;&lt;br&gt;&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;&lt;br&gt;&lt;br&gt;  var _gaq = _gaq || [];&lt;br&gt;  _gaq.push(['_setAccount', '&lt;a tiddlylink=&quot;UA-24724965-1&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UA-24724965-1&quot; href=&quot;null#UA-24724965-1&quot; class=&quot;externalLink null&quot;&gt;UA-24724965-1&lt;/a&gt;']);&lt;br&gt;  _gaq.push(['_trackPageview']);&lt;br&gt;&lt;br&gt;  var ga_f = function() {&lt;br&gt;    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;&lt;br&gt;    ga.src = ('https:' == document.location.protocol ? '&lt;a target=&quot;_blank&quot; title=&quot;External link to https://ssl&quot; href=&quot;https://ssl&quot; class=&quot;externalLink&quot;&gt;https://ssl&lt;/a&gt;' : '&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www&quot; href=&quot;http://www&quot; class=&quot;externalLink&quot;&gt;http://www&lt;/a&gt;') + '.google-analytics.com/ga.js';&lt;br&gt;    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);&lt;br&gt;  };&lt;br&gt;  setTimeout(ga_f, 200);&lt;br&gt;&lt;br&gt;&amp;lt;/script&amp;gt;</description>
+<link>null#MarkupPostBody</link>
+<pubDate>Sun, 07 Aug 2011 11:42:00 GMT</pubDate>
 
 </item>
 <item>
@@ -231,13 +239,6 @@ http {
 <category>admin</category>
 <link>null#MainMenu</link>
 <pubDate>Wed, 27 Jul 2011 03:59:00 GMT</pubDate>
-
-</item>
-<item>
-<title>MarkupPostBody</title>
-<description>&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;&lt;br&gt;&lt;br&gt;  var _gaq = _gaq || [];&lt;br&gt;  _gaq.push(['_setAccount', '&lt;a tiddlylink=&quot;UA-24724965-1&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UA-24724965-1&quot; href=&quot;null#UA-24724965-1&quot; class=&quot;externalLink null&quot;&gt;UA-24724965-1&lt;/a&gt;']);&lt;br&gt;  _gaq.push(['_trackPageview']);&lt;br&gt;&lt;br&gt;  var ga_f = function() {&lt;br&gt;    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;&lt;br&gt;    ga.src = ('https:' == document.location.protocol ? '&lt;a target=&quot;_blank&quot; title=&quot;External link to https://ssl&quot; href=&quot;https://ssl&quot; class=&quot;externalLink&quot;&gt;https://ssl&lt;/a&gt;' : '&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www&quot; href=&quot;http://www&quot; class=&quot;externalLink&quot;&gt;http://www&lt;/a&gt;') + '.google-analytics.com/ga.js';&lt;br&gt;    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);&lt;br&gt;  };&lt;br&gt;  setTimeout(ga_f, 200);&lt;br&gt;&lt;br&gt;&amp;lt;/script&amp;gt;</description>
-<link>null#MarkupPostBody</link>
-<pubDate>Mon, 25 Jul 2011 15:31:00 GMT</pubDate>
 
 </item>
 <item>

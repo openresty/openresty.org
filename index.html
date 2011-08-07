@@ -1243,8 +1243,9 @@ Project page: http://github.com/chaoslawful/lua-nginx-module</pre>
 [[About]]
 [img[feed-icon-14x14.png]] [[RSS feed|RSSFeed]]</pre>
 </div>
-<div title="MarkupPostBody" creator="ZhangYichun" modifier="ZhangYichun" created="201107251515" modified="201107251531" changecount="7">
-<pre>&lt;script type=&quot;text/javascript&quot;&gt;
+<div title="MarkupPostBody" creator="ZhangYichun" modifier="ZhangYichun" created="201107251515" modified="201108071142" changecount="9">
+<pre>&lt;p/&gt;&lt;p/&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-24724965-1']);
@@ -1598,7 +1599,7 @@ Documentation: http://mdounin.ru/hg/ngx_http_upstream_keepalive/raw-file/tip/REA
 
 Project page: http://mdounin.ru/hg/ngx_http_upstream_keepalive/</pre>
 </div>
-<div title="UsingLuaRocks" creator="ZhangYichun" modifier="ZhangYichun" created="201108070232" modified="201108071134" changecount="26">
+<div title="UsingLuaRocks" creator="ZhangYichun" modifier="ZhangYichun" created="201108070232" modified="201108071156" changecount="31">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This sample demonstrates usage of [[LuaRocks|http://www.luarocks.org/]] with OpenResty. It's been tested on Linux and Mac OS X, with the standard Lua interpreter or with LuaJIT.
@@ -1736,6 +1737,12 @@ Time per request:       0.061 [ms] (mean, across all concurrent requests)
 Transfer rate:          3007.41 [Kbytes/sec] received
 }}}
 Note that the throughput is achieved by a single nginx worker process. While doing such benchmark on your own, just be careful about error log level settings in your nginx.conf and not to run out of dynamic port range on your local machine, or it'll be significantly slow after a short of period of time.
+! Known issues
+It's known that turning {{{lua_code_cache}}} on will cause ~LuaRocks atop LuaNginxModule to throw out the following exception in {{{error.log}}}:
+{{{
+lua handler aborted: runtime error: stack overflow
+}}}
+It's expected to be fixed in the near future.
 </pre>
 </div>
 <div title="XssNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210905" modified="201106210907" changecount="2">
@@ -11222,6 +11229,7 @@ if(useJavaSaver)
 //]]>
 </script>
 <!--POST-SCRIPT-START-->
+<p/><p/>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
