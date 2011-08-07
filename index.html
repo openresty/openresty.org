@@ -1598,7 +1598,7 @@ Documentation: http://mdounin.ru/hg/ngx_http_upstream_keepalive/raw-file/tip/REA
 
 Project page: http://mdounin.ru/hg/ngx_http_upstream_keepalive/</pre>
 </div>
-<div title="UsingLuaRocks" creator="ZhangYichun" modifier="ZhangYichun" created="201108070232" modified="201108071034" changecount="24">
+<div title="UsingLuaRocks" creator="ZhangYichun" modifier="ZhangYichun" created="201108070232" modified="201108071134" changecount="26">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This sample demonstrates usage of [[LuaRocks|http://www.luarocks.org/]] with OpenResty. It's been tested on Linux and Mac OS X, with the standard Lua interpreter or with LuaJIT.
@@ -1686,6 +1686,7 @@ end
 ! Start the Nginx server
 Now we start the Nginx server with our app:
 {{{
+ulimit -n1024   # increase the maximal fd count limit per process
 ./sbin/nginx
 }}}
 If you have already started the Nginx server, then stop it before starting it:
