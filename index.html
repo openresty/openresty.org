@@ -594,8 +594,10 @@ Percentage of the requests served within a certain time (ms)
 So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, ~HelloWorld servers using nginx + php-fpm 5.2.8 gives 4k r/s, Erlang ~R14B2 raw gen_tcp server gives 8k r/s, and [[node.js|http://nodejs.org/] v0.4.8 yields 5.7k r/s.
 </pre>
 </div>
-<div title="ChangeLog1000004" creator="ZhangYichun" modifier="ZhangYichun" created="201107081222" modified="201108061132" changecount="38">
+<div title="ChangeLog1000004" creator="ZhangYichun" modifier="ZhangYichun" created="201107081222" modified="201108070919" changecount="40">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.4.2rc9 - 7 August 2011
+* now we use {{{gmake}}} if it is available in {{{PATH}}} during {{{./configure}}}; also added the {{{--with-make=PATH}}} option to allow the user to specify a custom {{{make}}} utility.
 ! Devel Release 1.0.4.2rc8 - 6 August 2011
 * fixed a regression that we should use the {{{CC}}} variable instead of {{{HOST_CC}}} while passing the {{{--with-cc}}} option to the LuaJIT 2.0 build system. thanks @姜大炮 for reporting this issue.
 ! Devel Release 1.0.4.2rc7 - 5 August 2011
@@ -849,7 +851,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201108061133" changecount="59">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201108070917" changecount="60">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -857,7 +859,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.4.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.1.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 30 July 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.4.2rc8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.2rc8.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 6 August 2011
+* [[ngx_openresty-1.0.4.2rc9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.2rc9.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 6 August 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.4.0.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.0.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 12 July 2011
@@ -1124,7 +1126,7 @@ Use cases: http://forum.nginx.org/read.php?2,206658,207119
 Project page: https://github.com/calio/iconv-nginx-module
 </pre>
 </div>
-<div title="Installation" creator="ZhangYichun" modifier="ZhangYichun" created="201106210440" modified="201106210728" changecount="33">
+<div title="Installation" creator="ZhangYichun" modifier="ZhangYichun" created="201106210440" modified="201108070342" changecount="36">
 <pre>If you haven't downloaded the OpenResty source code tarball, please go to the [[Download]] page first.
 
 Basically, building and installing OpenResty is as simple as
@@ -1155,6 +1157,11 @@ You're recommended to install prerequisites PCRE using some package management t
 brew install pcre
 }}}
 Alternatively you can install PCRE from source all by yourself :)
+!!~FreeBSD users
+You need to install the following ports:
+* devel/gmake
+* security/openssl
+* devel/pcre
 !Build ~OpenResty
 !!Download
 download the latest ngx_openresty tarball can be fetched from the [[Download]] page and unpack it like this:
@@ -1369,10 +1376,12 @@ This module returns the raw TCP response from the redis server.
 
 Project page: https://github.com/agentzh/redis2-nginx-module</pre>
 </div>
-<div title="Samples" creator="ZhangYichun" modifier="ZhangYichun" created="201107270400" modified="201107270715" changecount="5">
+<div title="Samples" creator="ZhangYichun" modifier="ZhangYichun" created="201107270400" modified="201108070230" changecount="6">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
-* [[Dynamic request routing based on redis|DynamicRoutingBasedOnRedis]]</pre>
+* [[Dynamic request routing based on redis|DynamicRoutingBasedOnRedis]]
+* [[Using LuaRocks]]
+</pre>
 </div>
 <div title="SetMiscNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210836" modified="201106210839" changecount="6">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
@@ -1589,6 +1598,13 @@ This is a keepalive balancer module for nginx that implements cache for backend 
 Documentation: http://mdounin.ru/hg/ngx_http_upstream_keepalive/raw-file/tip/README
 
 Project page: http://mdounin.ru/hg/ngx_http_upstream_keepalive/</pre>
+</div>
+<div title="Using LuaRocks" creator="ZhangYichun" modifier="ZhangYichun" created="201108070232" modified="201108070232" changecount="3">
+<pre>This sample demonstrates usage of [[LuaRocks|http://www.luarocks.org/]] with OpenResty.
+
+We assume that you have installed OpenResty into the default location, i.e., {{{/usr/local/openresty}}}. You can adjust the paths in this sample according to the actual installation prefix of your OpenResty installation.
+
+</pre>
 </div>
 <div title="XssNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210905" modified="201106210907" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
