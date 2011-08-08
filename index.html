@@ -1602,7 +1602,7 @@ Documentation: http://mdounin.ru/hg/ngx_http_upstream_keepalive/raw-file/tip/REA
 
 Project page: http://mdounin.ru/hg/ngx_http_upstream_keepalive/</pre>
 </div>
-<div title="UsingLuaRocks" creator="ZhangYichun" modifier="ZhangYichun" created="201108070232" modified="201108071156" changecount="31">
+<div title="UsingLuaRocks" creator="ZhangYichun" modifier="ZhangYichun" created="201108070232" modified="201108080058" changecount="33">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This sample demonstrates usage of [[LuaRocks|http://www.luarocks.org/]] with OpenResty. It's been tested on Linux and Mac OS X, with the standard Lua interpreter or with LuaJIT.
@@ -1720,7 +1720,7 @@ ab -c10 -n50000 http://127.0.0.1/luarocks
 }}}
 On my Thinkpad T400 laptop (~Core2Duo T9600 CPU), it yields
 {{{
-Server Software:        ngx_openresty/1.0.4.2rc8
+Server Software:        ngx_openresty/1.0.4.2rc10
 Server Hostname:        localhost
 Server Port:            80
 
@@ -1741,11 +1741,11 @@ Transfer rate:          3007.41 [Kbytes/sec] received
 }}}
 Note that the throughput is achieved by a single nginx worker process. While doing such benchmark on your own, just be careful about error log level settings in your nginx.conf and not to run out of dynamic port range on your local machine, or it'll be significantly slow after a short of period of time.
 ! Known issues
-It's known that turning {{{lua_code_cache}}} on will cause ~LuaRocks atop LuaNginxModule to throw out the following exception in {{{error.log}}}:
+Pior to OpenResty 1.0.4.2rc10, it's known that turning {{{lua_code_cache}}} on will cause ~LuaRocks atop LuaNginxModule to throw out the following exception in {{{error.log}}}:
 {{{
 lua handler aborted: runtime error: stack overflow
 }}}
-It's expected to be fixed in the near future.
+If you're using any version of OpenResty before 1.0.4.2rc10, please consider upgrading.
 </pre>
 </div>
 <div title="XssNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210905" modified="201106210907" changecount="2">
