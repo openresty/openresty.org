@@ -1135,7 +1135,7 @@ Use cases: http://forum.nginx.org/read.php?2,206658,207119
 Project page: https://github.com/calio/iconv-nginx-module
 </pre>
 </div>
-<div title="Installation" creator="ZhangYichun" modifier="ZhangYichun" created="201106210440" modified="201108080839" changecount="42">
+<div title="Installation" creator="ZhangYichun" modifier="ZhangYichun" created="201106210440" modified="201108080900" changecount="44">
 <pre>If you haven't downloaded the OpenResty source code tarball, please go to the [[Download]] page first.
 
 Basically, building and installing OpenResty is as simple as
@@ -1197,7 +1197,7 @@ You can specify various options, as in
 {{{
 ./configure --prefix=/opt/openresty \
             --with-luajit \
-            --without-http_drizzle_module \
+            --without-http_redis2_module \
             --with-http_iconv_module \
             --with-http_postgres_module
 }}}

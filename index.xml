@@ -5,8 +5,8 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Mon, 08 Aug 2011 08:39:24 GMT</pubDate>
-<lastBuildDate>Mon, 08 Aug 2011 08:39:24 GMT</lastBuildDate>
+<pubDate>Mon, 08 Aug 2011 09:00:19 GMT</pubDate>
+<lastBuildDate>Mon, 08 Aug 2011 09:00:19 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
@@ -24,7 +24,7 @@ make install
 &lt;/pre&gt;where &lt;code&gt;VERSION&lt;/code&gt; should be replaced by real version numbers like &lt;code&gt;0.8.54.6&lt;/code&gt;.&lt;br&gt;&lt;h2&gt;./configure&lt;/h2&gt;Then enter the &lt;code&gt;ngx_openresty-VERSION/&lt;/code&gt; directory, and type the following command to configure:&lt;br&gt;&lt;pre&gt;./configure
 &lt;/pre&gt;By default, &lt;code&gt;--prefix=/usr/local/openresty&lt;/code&gt; is assumed.&lt;br&gt;&lt;br&gt;You can specify various options, as in&lt;br&gt;&lt;pre&gt;./configure --prefix=/opt/openresty \
             --with-luajit \
-            --without-http_drizzle_module \
+            --without-http_redis2_module \
             --with-http_iconv_module \
             --with-http_postgres_module
 &lt;/pre&gt;Try &lt;code&gt;./configure --help&lt;/code&gt; to see more options.&lt;br&gt;&lt;br&gt;Errors in running the ./configure script can be found in the file &lt;code&gt;build/nginx-VERSION/objs/autoconf.err&lt;/code&gt; where &lt;code&gt;VERSION&lt;/code&gt; should be replaced by a concrete version number of &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;, like &lt;code&gt;0.8.54.6&lt;/code&gt;.&lt;br&gt;&lt;h3&gt;Notes for Solaris users&lt;/h3&gt;For Solaris, it's common to install libraries like OpenSSL to &lt;code&gt;/lib&lt;/code&gt;, so when it complaints about missing OpenSSL and you have indeed already installed it, specify the &lt;code&gt;--with-ld-opt='-L/lib'&lt;/code&gt; option.&lt;br&gt;&lt;h2&gt;make&lt;/h2&gt;Now you can compile everything up using the command&lt;br&gt;&lt;pre&gt;make
@@ -32,7 +32,7 @@ make install
 &lt;/pre&gt;assuming you have 2 CPU cores.&lt;br&gt;&lt;h2&gt;make install&lt;/h2&gt;If all the previous steps go without problems, you can install &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; into your system by typing the command&lt;br&gt;&lt;pre&gt;make install
 &lt;/pre&gt;On Linux, it often requires &lt;code&gt;sudo&lt;/code&gt; to gain root access.&lt;br&gt;</description>
 <link>null#Installation</link>
-<pubDate>Mon, 08 Aug 2011 08:39:24 GMT</pubDate>
+<pubDate>Mon, 08 Aug 2011 09:00:19 GMT</pubDate>
 
 </item>
 <item>
