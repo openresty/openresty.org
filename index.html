@@ -729,13 +729,13 @@ The following components are bundled by this release:
 
 See [[ChangeLog8054]] for change log for ngx_openresty 0.8.54.x.</pre>
 </div>
-<div title="ChangeLog1000005" creator="ZhangYichun" modifier="ZhangYichun" created="201108090717" modified="201108110202" changecount="5">
+<div title="ChangeLog1000005" creator="ZhangYichun" modifier="ZhangYichun" created="201108090717" modified="201108110211" changecount="6">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.0.5.0rc3 - 11 August 2011
-* now we bundle the lua-redis-parser library with us and it is enabled by default. tested on Linux i386, Linux x86_64, Mac OS X, ~FreeBSD 8.2 i386, and Solaris 11.
+* now we bundle the LuaRedisParserLibrary with us and it is enabled by default. tested on Linux i386, Linux x86_64, Mac OS X, ~FreeBSD 8.2 i386, and Solaris 11.
 * added the new option {{{--without-lua_redis_parser}}} to the {{{./configure}}} script.
 ! Devel Release 1.0.5.0rc2 - 10 August 2011
-* now we bundle the lua-cjson library with us and it is enabled by default. tested on Linux i386, Linux x86_64, Mac OS X, ~FreeBSD 8.2 i386, and Solaris 11.
+* now we bundle the LuaCjsonLibrary with us and it is enabled by default. tested on Linux i386, Linux x86_64, Mac OS X, ~FreeBSD 8.2 i386, and Solaris 11.
 * added the new option {{{--without-lua_cjson}}} to the {{{./configure}}} script.
 * added {{{&lt;prefix&gt;/lualib}}} to the default {{{path}}} and {{{cpath}}} settings of the ngx_lua's Lua VM.
 ! Devel Release 1.0.5.0rc1 - 9 August 2011
@@ -853,7 +853,7 @@ TertiaryDark: #666
 Error: #f88
 </pre>
 </div>
-<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201107010447" changecount="18">
+<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201108110206" changecount="19">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 Below lists all the components bundled in OpenResty. All of the components can be enabled or disabled on need.
@@ -876,6 +876,8 @@ Most of the components are enabled by default, some are not.
 * [[Nginx]]
 * [[NginxDevelKit]]
 * [[LuaNginxModule]]
+* [[LuaCjsonLibrary]]
+* [[LuaRedisParserLibrary]]
 * [[PostgresNginxModule]]
 * [[RdsJsonNginxModule]]
 * [[Redis2NginxModule]]
@@ -1265,6 +1267,14 @@ make install
 On Linux, it often requires {{{sudo}}} to gain root access.
 </pre>
 </div>
+<div title="LuaCjsonLibrary" creator="ZhangYichun" modifier="ZhangYichun" created="201108110208" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+Lua CJSON is a Lua C module that provides fast JSON parsing and encoding support for Lua.
+
+Project homepage: http://www.kyne.com.au/~mark/software/lua-cjson.php
+</pre>
+</div>
 <div title="LuaJIT" creator="ZhangYichun" modifier="ZhangYichun" created="201106210816" modified="201106210911" changecount="6">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
@@ -1287,6 +1297,14 @@ The Lua interpreter instance is shared across all the requests in a single nginx
 Request contexts are isolated from each other by means of Lua (lightweight) threads (aka Lua coroutines). And Lua modules loaded are persistent on the nginx worker process level. So the memory footprint is quite small even when your nginx worker process is handling 10K requests at the same time.
 
 Project page: http://github.com/chaoslawful/lua-nginx-module</pre>
+</div>
+<div title="LuaRedisParserLibrary" creator="ZhangYichun" modifier="ZhangYichun" created="201108110210" modified="201108110211" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+The lua-redis-parser library implements a thin and fast redis raw response parser that constructs corresponding lua data strucutres, as well as a function that constructs redis raw requests.
+
+Project homepage: https://github.com/agentzh/lua-redis-parser
+</pre>
 </div>
 <div title="MainMenu" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201107270359" tags="admin" changecount="13">
 <pre>[[Overview|OpenResty]]

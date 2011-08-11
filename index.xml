@@ -5,15 +5,36 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Thu, 11 Aug 2011 02:02:05 GMT</pubDate>
-<lastBuildDate>Thu, 11 Aug 2011 02:02:05 GMT</lastBuildDate>
+<pubDate>Thu, 11 Aug 2011 02:11:46 GMT</pubDate>
+<lastBuildDate>Thu, 11 Aug 2011 02:11:46 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
+<title>LuaRedisParserLibrary</title>
+<description>&lt;a tiddler=&quot;LuaRedisParserLibrary&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;The lua-redis-parser library implements a thin and fast redis raw response parser that constructs corresponding lua data strucutres, as well as a function that constructs redis raw requests.&lt;br&gt;&lt;br&gt;Project homepage: &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/agentzh/lua-redis-parser&quot; href=&quot;https://github.com/agentzh/lua-redis-parser&quot; class=&quot;externalLink&quot;&gt;https://github.com/agentzh/lua-redis-parser&lt;/a&gt;&lt;br&gt;</description>
+<link>null#LuaRedisParserLibrary</link>
+<pubDate>Thu, 11 Aug 2011 02:11:46 GMT</pubDate>
+
+</item>
+<item>
 <title>ChangeLog1000005</title>
-<description>&lt;a tiddler=&quot;ChangeLog1000005&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;h1&gt; Devel Release 1.0.5.0rc3 - 11 August 2011&lt;/h1&gt;&lt;ul&gt;&lt;li&gt; now we bundle the lua-redis-parser library with us and it is enabled by default. tested on Linux i386, Linux x86_64, Mac OS X, FreeBSD 8.2 i386, and Solaris 11.&lt;/li&gt;&lt;li&gt; added the new option &lt;code&gt;--without-lua_redis_parser&lt;/code&gt; to the &lt;code&gt;./configure&lt;/code&gt; script.&lt;/li&gt;&lt;/ul&gt;&lt;h1&gt; Devel Release 1.0.5.0rc2 - 10 August 2011&lt;/h1&gt;&lt;ul&gt;&lt;li&gt; now we bundle the lua-cjson library with us and it is enabled by default. tested on Linux i386, Linux x86_64, Mac OS X, FreeBSD 8.2 i386, and Solaris 11.&lt;/li&gt;&lt;li&gt; added the new option &lt;code&gt;--without-lua_cjson&lt;/code&gt; to the &lt;code&gt;./configure&lt;/code&gt; script.&lt;/li&gt;&lt;li&gt; added &lt;code&gt;&amp;lt;prefix&amp;gt;/lualib&lt;/code&gt; to the default &lt;code&gt;path&lt;/code&gt; and &lt;code&gt;cpath&lt;/code&gt; settings of the ngx_lua's Lua VM.&lt;/li&gt;&lt;/ul&gt;&lt;h1&gt; Devel Release 1.0.5.0rc1 - 9 August 2011&lt;/h1&gt;&lt;ul&gt;&lt;li&gt; based on ngx_openresty 1.0.4.2, but with nginx core upgraded to nginx 1.0.5.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;See &lt;a tiddlylink=&quot;ChangeLog1000004&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ChangeLog1000004&quot; href=&quot;null#ChangeLog1000004&quot; class=&quot;externalLink null&quot;&gt;ChangeLog1000004&lt;/a&gt; for change log for ngx_openresty 1.0.4.x.&lt;br&gt;</description>
+<description>&lt;a tiddler=&quot;ChangeLog1000005&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;h1&gt; Devel Release 1.0.5.0rc3 - 11 August 2011&lt;/h1&gt;&lt;ul&gt;&lt;li&gt; now we bundle the &lt;a tiddlylink=&quot;LuaRedisParserLibrary&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaRedisParserLibrary&quot; href=&quot;null#LuaRedisParserLibrary&quot; class=&quot;externalLink null&quot;&gt;LuaRedisParserLibrary&lt;/a&gt; with us and it is enabled by default. tested on Linux i386, Linux x86_64, Mac OS X, FreeBSD 8.2 i386, and Solaris 11.&lt;/li&gt;&lt;li&gt; added the new option &lt;code&gt;--without-lua_redis_parser&lt;/code&gt; to the &lt;code&gt;./configure&lt;/code&gt; script.&lt;/li&gt;&lt;/ul&gt;&lt;h1&gt; Devel Release 1.0.5.0rc2 - 10 August 2011&lt;/h1&gt;&lt;ul&gt;&lt;li&gt; now we bundle the &lt;a tiddlylink=&quot;LuaCjsonLibrary&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaCjsonLibrary&quot; href=&quot;null#LuaCjsonLibrary&quot; class=&quot;externalLink null&quot;&gt;LuaCjsonLibrary&lt;/a&gt; with us and it is enabled by default. tested on Linux i386, Linux x86_64, Mac OS X, FreeBSD 8.2 i386, and Solaris 11.&lt;/li&gt;&lt;li&gt; added the new option &lt;code&gt;--without-lua_cjson&lt;/code&gt; to the &lt;code&gt;./configure&lt;/code&gt; script.&lt;/li&gt;&lt;li&gt; added &lt;code&gt;&amp;lt;prefix&amp;gt;/lualib&lt;/code&gt; to the default &lt;code&gt;path&lt;/code&gt; and &lt;code&gt;cpath&lt;/code&gt; settings of the ngx_lua's Lua VM.&lt;/li&gt;&lt;/ul&gt;&lt;h1&gt; Devel Release 1.0.5.0rc1 - 9 August 2011&lt;/h1&gt;&lt;ul&gt;&lt;li&gt; based on ngx_openresty 1.0.4.2, but with nginx core upgraded to nginx 1.0.5.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;See &lt;a tiddlylink=&quot;ChangeLog1000004&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ChangeLog1000004&quot; href=&quot;null#ChangeLog1000004&quot; class=&quot;externalLink null&quot;&gt;ChangeLog1000004&lt;/a&gt; for change log for ngx_openresty 1.0.4.x.&lt;br&gt;</description>
 <link>null#ChangeLog1000005</link>
-<pubDate>Thu, 11 Aug 2011 02:02:05 GMT</pubDate>
+<pubDate>Thu, 11 Aug 2011 02:11:14 GMT</pubDate>
+
+</item>
+<item>
+<title>LuaCjsonLibrary</title>
+<description>&lt;a tiddler=&quot;LuaCjsonLibrary&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;Lua CJSON is a Lua C module that provides fast JSON parsing and encoding support for Lua.&lt;br&gt;&lt;br&gt;Project homepage: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.kyne.com.au/~mark/software/lua-cjson.php&quot; href=&quot;http://www.kyne.com.au/%7Emark/software/lua-cjson.php&quot; class=&quot;externalLink&quot;&gt;http://www.kyne.com.au/~mark/software/lua-cjson.php&lt;/a&gt;&lt;br&gt;</description>
+<link>null#LuaCjsonLibrary</link>
+<pubDate>Thu, 11 Aug 2011 02:08:49 GMT</pubDate>
+
+</item>
+<item>
+<title>Components</title>
+<description>&lt;a tiddler=&quot;Components&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;Below lists all the components bundled in &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;. All of the components can be enabled or disabled on need.&lt;br&gt;&lt;br&gt;Most of the components are enabled by default, some are not.&lt;br&gt;&lt;br&gt;&lt;a tiddlylink=&quot;LuaJIT&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaJIT&quot; href=&quot;null#LuaJIT&quot; class=&quot;externalLink null&quot;&gt;LuaJIT&lt;/a&gt;, &lt;a tiddlylink=&quot;DrizzleNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DrizzleNginxModule&quot; href=&quot;null#DrizzleNginxModule&quot; class=&quot;externalLink null&quot;&gt;DrizzleNginxModule&lt;/a&gt;, &lt;a tiddlylink=&quot;PostgresNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#PostgresNginxModule&quot; href=&quot;null#PostgresNginxModule&quot; class=&quot;externalLink null&quot;&gt;PostgresNginxModule&lt;/a&gt;, and &lt;a tiddlylink=&quot;IconvNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#IconvNginxModule&quot; href=&quot;null#IconvNginxModule&quot; class=&quot;externalLink null&quot;&gt;IconvNginxModule&lt;/a&gt; are not enabled by default. You need to specify the &lt;code&gt;--with-luajit&lt;/code&gt;, &lt;code&gt;--with-http_drizzle_module&lt;/code&gt;, &lt;code&gt;--with-http_postgres_module&lt;/code&gt;, and &lt;code&gt;--with-http_iconv_module&lt;/code&gt; options, respectively, to enable them while &lt;a tiddlylink=&quot;Installation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Installation&quot; href=&quot;null#Installation&quot; class=&quot;externalLink null&quot;&gt;building OpenResty&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;a tiddlylink=&quot;LuaJIT&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaJIT&quot; href=&quot;null#LuaJIT&quot; class=&quot;externalLink null&quot;&gt;LuaJIT&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;ArrayVarNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ArrayVarNginxModule&quot; href=&quot;null#ArrayVarNginxModule&quot; class=&quot;externalLink null&quot;&gt;ArrayVarNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;AuthRequestNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#AuthRequestNginxModule&quot; href=&quot;null#AuthRequestNginxModule&quot; class=&quot;externalLink null&quot;&gt;AuthRequestNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;DrizzleNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DrizzleNginxModule&quot; href=&quot;null#DrizzleNginxModule&quot; class=&quot;externalLink null&quot;&gt;DrizzleNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;EchoNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#EchoNginxModule&quot; href=&quot;null#EchoNginxModule&quot; class=&quot;externalLink null&quot;&gt;EchoNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;EncryptedSessionNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#EncryptedSessionNginxModule&quot; href=&quot;null#EncryptedSessionNginxModule&quot; class=&quot;externalLink null&quot;&gt;EncryptedSessionNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;FormInputNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#FormInputNginxModule&quot; href=&quot;null#FormInputNginxModule&quot; class=&quot;externalLink null&quot;&gt;FormInputNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;HeadersMoreNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#HeadersMoreNginxModule&quot; href=&quot;null#HeadersMoreNginxModule&quot; class=&quot;externalLink null&quot;&gt;HeadersMoreNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;IconvNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#IconvNginxModule&quot; href=&quot;null#IconvNginxModule&quot; class=&quot;externalLink null&quot;&gt;IconvNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;StandardLuaInterpreter&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#StandardLuaInterpreter&quot; href=&quot;null#StandardLuaInterpreter&quot; class=&quot;externalLink null&quot;&gt;StandardLuaInterpreter&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;MemcNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#MemcNginxModule&quot; href=&quot;null#MemcNginxModule&quot; class=&quot;externalLink null&quot;&gt;MemcNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;NginxDevelKit&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#NginxDevelKit&quot; href=&quot;null#NginxDevelKit&quot; class=&quot;externalLink null&quot;&gt;NginxDevelKit&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;LuaCjsonLibrary&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaCjsonLibrary&quot; href=&quot;null#LuaCjsonLibrary&quot; class=&quot;externalLink null&quot;&gt;LuaCjsonLibrary&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;LuaRedisParserLibrary&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaRedisParserLibrary&quot; href=&quot;null#LuaRedisParserLibrary&quot; class=&quot;externalLink null&quot;&gt;LuaRedisParserLibrary&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;PostgresNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#PostgresNginxModule&quot; href=&quot;null#PostgresNginxModule&quot; class=&quot;externalLink null&quot;&gt;PostgresNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;RdsJsonNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#RdsJsonNginxModule&quot; href=&quot;null#RdsJsonNginxModule&quot; class=&quot;externalLink null&quot;&gt;RdsJsonNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;Redis2NginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Redis2NginxModule&quot; href=&quot;null#Redis2NginxModule&quot; class=&quot;externalLink null&quot;&gt;Redis2NginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;SetMiscNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SetMiscNginxModule&quot; href=&quot;null#SetMiscNginxModule&quot; class=&quot;externalLink null&quot;&gt;SetMiscNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;SrcacheNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SrcacheNginxModule&quot; href=&quot;null#SrcacheNginxModule&quot; class=&quot;externalLink null&quot;&gt;SrcacheNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;UpstreamKeepaliveNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UpstreamKeepaliveNginxModule&quot; href=&quot;null#UpstreamKeepaliveNginxModule&quot; class=&quot;externalLink null&quot;&gt;UpstreamKeepaliveNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;XssNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#XssNginxModule&quot; href=&quot;null#XssNginxModule&quot; class=&quot;externalLink null&quot;&gt;XssNginxModule&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+<link>null#Components</link>
+<pubDate>Thu, 11 Aug 2011 02:06:25 GMT</pubDate>
 
 </item>
 <item>
@@ -297,13 +318,6 @@ make: *** [.plugin.scan] Error 1
 
 </item>
 <item>
-<title>Components</title>
-<description>&lt;a tiddler=&quot;Components&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;Below lists all the components bundled in &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;. All of the components can be enabled or disabled on need.&lt;br&gt;&lt;br&gt;Most of the components are enabled by default, some are not.&lt;br&gt;&lt;br&gt;&lt;a tiddlylink=&quot;LuaJIT&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaJIT&quot; href=&quot;null#LuaJIT&quot; class=&quot;externalLink null&quot;&gt;LuaJIT&lt;/a&gt;, &lt;a tiddlylink=&quot;DrizzleNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DrizzleNginxModule&quot; href=&quot;null#DrizzleNginxModule&quot; class=&quot;externalLink null&quot;&gt;DrizzleNginxModule&lt;/a&gt;, &lt;a tiddlylink=&quot;PostgresNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#PostgresNginxModule&quot; href=&quot;null#PostgresNginxModule&quot; class=&quot;externalLink null&quot;&gt;PostgresNginxModule&lt;/a&gt;, and &lt;a tiddlylink=&quot;IconvNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#IconvNginxModule&quot; href=&quot;null#IconvNginxModule&quot; class=&quot;externalLink null&quot;&gt;IconvNginxModule&lt;/a&gt; are not enabled by default. You need to specify the &lt;code&gt;--with-luajit&lt;/code&gt;, &lt;code&gt;--with-http_drizzle_module&lt;/code&gt;, &lt;code&gt;--with-http_postgres_module&lt;/code&gt;, and &lt;code&gt;--with-http_iconv_module&lt;/code&gt; options, respectively, to enable them while &lt;a tiddlylink=&quot;Installation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Installation&quot; href=&quot;null#Installation&quot; class=&quot;externalLink null&quot;&gt;building OpenResty&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;a tiddlylink=&quot;LuaJIT&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaJIT&quot; href=&quot;null#LuaJIT&quot; class=&quot;externalLink null&quot;&gt;LuaJIT&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;ArrayVarNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ArrayVarNginxModule&quot; href=&quot;null#ArrayVarNginxModule&quot; class=&quot;externalLink null&quot;&gt;ArrayVarNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;AuthRequestNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#AuthRequestNginxModule&quot; href=&quot;null#AuthRequestNginxModule&quot; class=&quot;externalLink null&quot;&gt;AuthRequestNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;DrizzleNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DrizzleNginxModule&quot; href=&quot;null#DrizzleNginxModule&quot; class=&quot;externalLink null&quot;&gt;DrizzleNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;EchoNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#EchoNginxModule&quot; href=&quot;null#EchoNginxModule&quot; class=&quot;externalLink null&quot;&gt;EchoNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;EncryptedSessionNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#EncryptedSessionNginxModule&quot; href=&quot;null#EncryptedSessionNginxModule&quot; class=&quot;externalLink null&quot;&gt;EncryptedSessionNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;FormInputNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#FormInputNginxModule&quot; href=&quot;null#FormInputNginxModule&quot; class=&quot;externalLink null&quot;&gt;FormInputNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;HeadersMoreNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#HeadersMoreNginxModule&quot; href=&quot;null#HeadersMoreNginxModule&quot; class=&quot;externalLink null&quot;&gt;HeadersMoreNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;IconvNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#IconvNginxModule&quot; href=&quot;null#IconvNginxModule&quot; class=&quot;externalLink null&quot;&gt;IconvNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;StandardLuaInterpreter&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#StandardLuaInterpreter&quot; href=&quot;null#StandardLuaInterpreter&quot; class=&quot;externalLink null&quot;&gt;StandardLuaInterpreter&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;MemcNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#MemcNginxModule&quot; href=&quot;null#MemcNginxModule&quot; class=&quot;externalLink null&quot;&gt;MemcNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;NginxDevelKit&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#NginxDevelKit&quot; href=&quot;null#NginxDevelKit&quot; class=&quot;externalLink null&quot;&gt;NginxDevelKit&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;PostgresNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#PostgresNginxModule&quot; href=&quot;null#PostgresNginxModule&quot; class=&quot;externalLink null&quot;&gt;PostgresNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;RdsJsonNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#RdsJsonNginxModule&quot; href=&quot;null#RdsJsonNginxModule&quot; class=&quot;externalLink null&quot;&gt;RdsJsonNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;Redis2NginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Redis2NginxModule&quot; href=&quot;null#Redis2NginxModule&quot; class=&quot;externalLink null&quot;&gt;Redis2NginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;SetMiscNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SetMiscNginxModule&quot; href=&quot;null#SetMiscNginxModule&quot; class=&quot;externalLink null&quot;&gt;SetMiscNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;SrcacheNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SrcacheNginxModule&quot; href=&quot;null#SrcacheNginxModule&quot; class=&quot;externalLink null&quot;&gt;SrcacheNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;UpstreamKeepaliveNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UpstreamKeepaliveNginxModule&quot; href=&quot;null#UpstreamKeepaliveNginxModule&quot; class=&quot;externalLink null&quot;&gt;UpstreamKeepaliveNginxModule&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;XssNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#XssNginxModule&quot; href=&quot;null#XssNginxModule&quot; class=&quot;externalLink null&quot;&gt;XssNginxModule&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-<link>null#Components</link>
-<pubDate>Fri, 01 Jul 2011 04:47:00 GMT</pubDate>
-
-</item>
-<item>
 <title>IconvNginxModule</title>
 <description>&lt;a tiddler=&quot;IconvNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This is an &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt; module that uses libiconv to convert characters of different encoding. It brings the &lt;code&gt;set_iconv&lt;/code&gt; and &lt;code&gt;iconv_filter&lt;/code&gt; commands to &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt;.&lt;br&gt;&lt;br&gt;It can either process Nginx variables or process response bodies as an output filter.&lt;br&gt;&lt;br&gt;This module is not enabled by default, and you need to specify the &lt;code&gt;--with-http_iconv_module&lt;/code&gt; option while &lt;a tiddlylink=&quot;Installation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Installation&quot; href=&quot;null#Installation&quot; class=&quot;externalLink null&quot;&gt;building OpenResty&lt;/a&gt;. This Nginx module requires libiconv to be installed into your system.&lt;br&gt;&lt;br&gt;Use cases: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://forum.nginx.org/read.php?2,206658,207119&quot; href=&quot;http://forum.nginx.org/read.php?2,206658,207119&quot; class=&quot;externalLink&quot;&gt;http://forum.nginx.org/read.php?2,206658,207119&lt;/a&gt;&lt;br&gt;&lt;br&gt;Project page: &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/calio/iconv-nginx-module&quot; href=&quot;https://github.com/calio/iconv-nginx-module&quot; class=&quot;externalLink&quot;&gt;https://github.com/calio/iconv-nginx-module&lt;/a&gt;&lt;br&gt;</description>
 <link>null#IconvNginxModule</link>
@@ -322,213 +336,6 @@ make: *** [.plugin.scan] Error 1
 <description>Background: #fff&lt;br&gt;Foreground: #000&lt;br&gt;&lt;a tiddlylink=&quot;PrimaryPale&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#PrimaryPale&quot; href=&quot;null#PrimaryPale&quot; class=&quot;externalLink null&quot;&gt;PrimaryPale&lt;/a&gt;: #effa72&lt;br&gt;&lt;a tiddlylink=&quot;PrimaryLight&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#PrimaryLight&quot; href=&quot;null#PrimaryLight&quot; class=&quot;externalLink null&quot;&gt;PrimaryLight&lt;/a&gt;: #007E00&lt;br&gt;&lt;a tiddlylink=&quot;PrimaryMid&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#PrimaryMid&quot; href=&quot;null#PrimaryMid&quot; class=&quot;externalLink null&quot;&gt;PrimaryMid&lt;/a&gt;: #007E00&lt;br&gt;&lt;a tiddlylink=&quot;PrimaryDark&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#PrimaryDark&quot; href=&quot;null#PrimaryDark&quot; class=&quot;externalLink null&quot;&gt;PrimaryDark&lt;/a&gt;: #145D00&lt;br&gt;&lt;a tiddlylink=&quot;SecondaryPale&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SecondaryPale&quot; href=&quot;null#SecondaryPale&quot; class=&quot;externalLink null&quot;&gt;SecondaryPale&lt;/a&gt;: #ffc&lt;br&gt;&lt;a tiddlylink=&quot;SecondaryLight&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SecondaryLight&quot; href=&quot;null#SecondaryLight&quot; class=&quot;externalLink null&quot;&gt;SecondaryLight&lt;/a&gt;: #fe8&lt;br&gt;&lt;a tiddlylink=&quot;SecondaryMid&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SecondaryMid&quot; href=&quot;null#SecondaryMid&quot; class=&quot;externalLink null&quot;&gt;SecondaryMid&lt;/a&gt;: #bd4&lt;br&gt;&lt;a tiddlylink=&quot;SecondaryDark&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SecondaryDark&quot; href=&quot;null#SecondaryDark&quot; class=&quot;externalLink null&quot;&gt;SecondaryDark&lt;/a&gt;: #04859d&lt;br&gt;&lt;a tiddlylink=&quot;TertiaryPale&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#TertiaryPale&quot; href=&quot;null#TertiaryPale&quot; class=&quot;externalLink null&quot;&gt;TertiaryPale&lt;/a&gt;: #c9f76f&lt;br&gt;&lt;a tiddlylink=&quot;TertiaryLight&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#TertiaryLight&quot; href=&quot;null#TertiaryLight&quot; class=&quot;externalLink null&quot;&gt;TertiaryLight&lt;/a&gt;: #60d5ac&lt;br&gt;&lt;a tiddlylink=&quot;TertiaryMid&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#TertiaryMid&quot; href=&quot;null#TertiaryMid&quot; class=&quot;externalLink null&quot;&gt;TertiaryMid&lt;/a&gt;: #00a383&lt;br&gt;&lt;a tiddlylink=&quot;TertiaryDark&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#TertiaryDark&quot; href=&quot;null#TertiaryDark&quot; class=&quot;externalLink null&quot;&gt;TertiaryDark&lt;/a&gt;: #666&lt;br&gt;Error: #f88&lt;br&gt;</description>
 <link>null#ColorPalette</link>
 <pubDate>Wed, 22 Jun 2011 07:19:00 GMT</pubDate>
-
-</item>
-<item>
-<title>StyleSheetLayout</title>
-<description>&lt;pre&gt;* html .tiddler {height:1%;}
-
-body {font-size:.75em; font-family:arial,helvetica; margin:0; padding:0;}
-
-h1,h2,h3,h4,h5,h6 {font-weight:bold; text-decoration:none;}
-h1,h2,h3 {padding-bottom:1px; margin-top:1.2em;margin-bottom:0.3em;}
-h4,h5,h6 {margin-top:1em;}
-h1 {font-size:1.35em;}
-h2 {font-size:1.25em;}
-h3 {font-size:1.1em;}
-h4 {font-size:1em;}
-h5 {font-size:.9em;}
-
-hr {height:1px;}
-
-a {text-decoration:none;}
-
-dt {font-weight:bold;}
-
-ol {list-style-type:decimal;}
-ol ol {list-style-type:lower-alpha;}
-ol ol ol {list-style-type:lower-roman;}
-ol ol ol ol {list-style-type:decimal;}
-ol ol ol ol ol {list-style-type:lower-alpha;}
-ol ol ol ol ol ol {list-style-type:lower-roman;}
-ol ol ol ol ol ol ol {list-style-type:decimal;}
-
-.txtOptionInput {width:11em;}
-
-#contentWrapper .chkOptionInput {border:0;}
-
-.externalLink {text-decoration:underline;}
-
-.indent {margin-left:3em;}
-.outdent {margin-left:3em; text-indent:-3em;}
-code.escaped {white-space:nowrap;}
-
-.tiddlyLinkExisting {font-weight:bold;}
-.tiddlyLinkNonExisting {font-style:italic;}
-
-/* the 'a' is required for IE, otherwise it renders the whole tiddler in bold */
-a.tiddlyLinkNonExisting.shadow {font-weight:bold;}
-
-#mainMenu .tiddlyLinkExisting,
-	#mainMenu .tiddlyLinkNonExisting,
-	#sidebarTabs .tiddlyLinkNonExisting {font-weight:normal; font-style:normal;}
-#sidebarTabs .tiddlyLinkExisting {font-weight:bold; font-style:normal;}
-
-.header {position:relative;}
-.header a:hover {background:transparent;}
-.headerShadow {position:relative; padding:2.5em 0 1em 1em; left:-1px; top:-1px;}
-.headerForeground {position:absolute; padding:2.5em 0 1em 1em; left:0px; top:0px;}
-
-.siteTitle {font-size:3em;}
-.siteSubtitle {font-size:1.2em;}
-
-#mainMenu {position:absolute; left:0; width:10em; text-align:right; line-height:1.6em; padding:1.5em 0.5em 0.5em 0.5em; font-size:1.1em;}
-
-#sidebar {position:absolute; right:3px; width:16em; font-size:.9em;}
-#sidebarOptions {padding-top:0.3em;}
-#sidebarOptions a {margin:0 0.2em; padding:0.2em 0.3em; display:block;}
-#sidebarOptions input {margin:0.4em 0.5em;}
-#sidebarOptions .sliderPanel {margin-left:1em; padding:0.5em; font-size:.85em;}
-#sidebarOptions .sliderPanel a {font-weight:bold; display:inline; padding:0;}
-#sidebarOptions .sliderPanel input {margin:0 0 0.3em 0;}
-#sidebarTabs .tabContents {width:15em; overflow:hidden;}
-
-.wizard {padding:0.1em 1em 0 2em;}
-.wizard h1 {font-size:2em; font-weight:bold; background:none; padding:0; margin:0.4em 0 0.2em;}
-.wizard h2 {font-size:1.2em; font-weight:bold; background:none; padding:0; margin:0.4em 0 0.2em;}
-.wizardStep {padding:1em 1em 1em 1em;}
-.wizard .button {margin:0.5em 0 0; font-size:1.2em;}
-.wizardFooter {padding:0.8em 0.4em 0.8em 0;}
-.wizardFooter .status {padding:0 0.4em; margin-left:1em;}
-.wizard .button {padding:0.1em 0.2em;}
-
-#messageArea {position:fixed; top:2em; right:0; margin:0.5em; padding:0.5em; z-index:2000; _position:absolute;}
-.messageToolbar {display:block; text-align:right; padding:0.2em;}
-#messageArea a {text-decoration:underline;}
-
-.tiddlerPopupButton {padding:0.2em;}
-.popupTiddler {position: absolute; z-index:300; padding:1em; margin:0;}
-
-.popup {position:absolute; z-index:300; font-size:.9em; padding:0; list-style:none; margin:0;}
-.popup .popupMessage {padding:0.4em;}
-.popup hr {display:block; height:1px; width:auto; padding:0; margin:0.2em 0;}
-.popup li.disabled {padding:0.4em;}
-.popup li a {display:block; padding:0.4em; font-weight:normal; cursor:pointer;}
-.listBreak {font-size:1px; line-height:1px;}
-.listBreak div {margin:2px 0;}
-
-.tabset {padding:1em 0 0 0.5em;}
-.tab {margin:0 0 0 0.25em; padding:2px;}
-.tabContents {padding:0.5em;}
-.tabContents ul, .tabContents ol {margin:0; padding:0;}
-.txtMainTab .tabContents li {list-style:none;}
-.tabContents li.listLink { margin-left:.75em;}
-
-#contentWrapper {display:block;}
-#splashScreen {display:none;}
-
-#displayArea {margin:1em 17em 0 14em;}
-
-.toolbar {text-align:right; font-size:.9em;}
-
-.tiddler {padding:1em 1em 0;}
-
-.missing .viewer,.missing .title {font-style:italic;}
-
-.title {font-size:1.6em; font-weight:bold;}
-
-.missing .subtitle {display:none;}
-.subtitle {font-size:1.1em;}
-
-.tiddler .button {padding:0.2em 0.4em;}
-
-.tagging {margin:0.5em 0.5em 0.5em 0; float:left; display:none;}
-.isTag .tagging {display:block;}
-.tagged {margin:0.5em; float:right;}
-.tagging, .tagged {font-size:0.9em; padding:0.25em;}
-.tagging ul, .tagged ul {list-style:none; margin:0.25em; padding:0;}
-.tagClear {clear:both;}
-
-.footer {font-size:.9em;}
-.footer li {display:inline;}
-
-.annotation {padding:0.5em; margin:0.5em;}
-
-* html .viewer pre {width:99%; padding:0 0 1em 0;}
-.viewer {line-height:1.4em; padding-top:0.5em;}
-.viewer .button {margin:0 0.25em; padding:0 0.25em;}
-.viewer blockquote {line-height:1.5em; padding-left:0.8em;margin-left:2.5em;}
-.viewer ul, .viewer ol {margin-left:0.5em; padding-left:1.5em;}
-
-.viewer table, table.twtable {border-collapse:collapse; margin:0.8em 1.0em;}
-.viewer th, .viewer td, .viewer tr,.viewer caption,.twtable th, .twtable td, .twtable tr,.twtable caption {padding:3px;}
-table.listView {font-size:0.85em; margin:0.8em 1.0em;}
-table.listView th, table.listView td, table.listView tr {padding:0px 3px 0px 3px;}
-
-.viewer pre {padding:0.5em; margin-left:0.5em; font-size:1.2em; line-height:1.4em; overflow:auto;}
-.viewer code {font-size:1.2em; line-height:1.4em;}
-
-.editor {font-size:1.1em;}
-.editor input, .editor textarea {display:block; width:100%; font:inherit;}
-.editorFooter {padding:0.25em 0; font-size:.9em;}
-.editorFooter .button {padding-top:0px; padding-bottom:0px;}
-
-.fieldsetFix {border:0; padding:0; margin:1px 0px;}
-
-.sparkline {line-height:1em;}
-.sparktick {outline:0;}
-
-.zoomer {font-size:1.1em; position:absolute; overflow:hidden;}
-.zoomer div {padding:1em;}
-
-* html #backstage {width:99%;}
-* html #backstageArea {width:99%;}
-#backstageArea {display:none; position:relative; overflow: hidden; z-index:150; padding:0.3em 0.5em;}
-#backstageToolbar {position:relative;}
-#backstageArea a {font-weight:bold; margin-left:0.5em; padding:0.3em 0.5em;}
-#backstageButton {display:none; position:absolute; z-index:175; top:0; right:0;}
-#backstageButton a {padding:0.1em 0.4em; margin:0.1em;}
-#backstage {position:relative; width:100%; z-index:50;}
-#backstagePanel {display:none; z-index:100; position:absolute; width:90%; margin-left:3em; padding:1em;}
-.backstagePanelFooter {padding-top:0.2em; float:right;}
-.backstagePanelFooter a {padding:0.2em 0.4em;}
-#backstageCloak {display:none; z-index:20; position:absolute; width:100%; height:100px;}
-
-.whenBackstage {display:none;}
-.backstageVisible .whenBackstage {display:block;}
-&lt;/pre&gt;</description>
-<link>null#StyleSheetLayout</link>
-<pubDate>Wed, 22 Jun 2011 07:04:00 GMT</pubDate>
-
-</item>
-<item>
-<title>GettingStarted</title>
-<description>&lt;a tiddler=&quot;GettingStarted&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;First of all, please go to the &lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;Download&lt;/a&gt; page to get the source code tarball of &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;, and see the &lt;a tiddlylink=&quot;Installation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Installation&quot; href=&quot;null#Installation&quot; class=&quot;externalLink null&quot;&gt;Installation&lt;/a&gt; page for how to build and install it into your system.&lt;br&gt;&lt;br&gt;&lt;h1&gt;HelloWorld&lt;/h1&gt;&lt;h2&gt;Prepare directory layout&lt;/h2&gt;We first create a separate directory for our experiments. You can use an arbitrary directory. Here for simplicity, we just use &lt;code&gt;~/work&lt;/code&gt;:&lt;br&gt;&lt;pre&gt;mkdir ~/work
-cd ~/work
-mkdir logs/ conf/
-&lt;/pre&gt;Note that we've also created the &lt;code&gt;logs/&lt;/code&gt; directory for logging files and &lt;code&gt;conf/&lt;/code&gt; for our config files.&lt;br&gt;&lt;h2&gt;Prepare the nginx.conf config file&lt;/h2&gt;Create a simple plain text file named &lt;code&gt;conf/nginx.conf&lt;/code&gt; with the following contents in it:&lt;br&gt;&lt;pre&gt;worker_processes  1;
-error_log logs/error.log;
-events {
-    worker_connections 1024;
-}
-http {
-    server {
-        listen 8080;
-        location / {
-            content_by_lua '
-                ngx.say(&quot;&amp;lt;p&amp;gt;hello, world&amp;lt;/p&amp;gt;&quot;)
-            ';
-        }
-    }
-}
-&lt;/pre&gt;If you're familiar with Nginx configuration, it should look very familiar to you. &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; is just an enhanced version of Nginx by means of addon modules anyway. You can take advantage of all the exisitng goodies in the Nginx world.&lt;br&gt;&lt;h2&gt;Start the Nginx server&lt;/h2&gt;Assuming you have installed &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; into &lt;code&gt;/usr/local/openresty&lt;/code&gt; (this is the default), we make our &lt;code&gt;nginx&lt;/code&gt; executable of our &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; installation available in our &lt;code&gt;PATH&lt;/code&gt; environment:&lt;br&gt;&lt;pre&gt;PATH=/usr/local/openresty/nginx/sbin:$PATH
-export PATH
-&lt;/pre&gt;Then we start the nginx server with our config file this way:&lt;br&gt;&lt;pre&gt;nginx -p `pwd`/ -c conf/nginx.conf
-&lt;/pre&gt;Error messages will go to the stderr device or the default error log files &lt;code&gt;logs/error.log&lt;/code&gt; in the current working directory.&lt;br&gt;&lt;h2&gt;Access our HelloWorld web service&lt;/h2&gt;We can use curl to access our new web service that says HelloWorld:&lt;br&gt;&lt;pre&gt;curl http://localhost:8080/
-&lt;/pre&gt;If everything is okay, we should get the output&lt;br&gt;&lt;pre&gt;&amp;lt;p&amp;gt;hello, world&amp;lt;/p&amp;gt;
-&lt;/pre&gt;You can surely point your favorite web browser to the location &lt;code&gt;http://localhost:8080/&lt;/code&gt;.&lt;br&gt;&lt;h2&gt;Test performance&lt;/h2&gt;See &lt;a tiddlylink=&quot;Benchmark&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Benchmark&quot; href=&quot;null#Benchmark&quot; class=&quot;externalLink null&quot;&gt;Benchmark&lt;/a&gt; for details.&lt;br&gt;&lt;br&gt;&lt;h1&gt;Where to go from here&lt;/h1&gt;&lt;br&gt;View the documentation of each component at the &lt;a tiddlylink=&quot;Components&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Components&quot; href=&quot;null#Components&quot; class=&quot;externalLink null&quot;&gt;Components&lt;/a&gt; page and find Nginx related stuffs on the &lt;a target=&quot;_blank&quot; title=&quot;External link to http://wiki.nginx.org/&quot; href=&quot;http://wiki.nginx.org/&quot; class=&quot;externalLink&quot;&gt;Nginx Wiki site&lt;/a&gt;.&lt;br&gt;</description>
-<link>null#GettingStarted</link>
-<pubDate>Tue, 21 Jun 2011 09:18:00 GMT</pubDate>
 
 </item>
 </channel>
