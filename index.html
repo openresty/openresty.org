@@ -729,12 +729,13 @@ The following components are bundled by this release:
 
 See [[ChangeLog8054]] for change log for ngx_openresty 0.8.54.x.</pre>
 </div>
-<div title="ChangeLog1000005" creator="ZhangYichun" modifier="ZhangYichun" created="201108090717" modified="201108120844" changecount="11">
+<div title="ChangeLog1000005" creator="ZhangYichun" modifier="ZhangYichun" created="201108090717" modified="201108120847" changecount="12">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.0.5.0rc5 - 12 August 2011
 * upgraded LuaNginxModule to v0.2.1rc6.
 ** implemented the {{{ngx.req.get_post_args()}}} method for fetching urlencoded POST query arguments from within Lua.
 ** renamed {{{ngx.req.get_query_args}}} to {{{ngx.req.get_uri_args}}}. the former is now deprecated.
+** fixed a bug in {{{ngx.req.get_uri_args}}}: it could not be used more than once in a single request.
 ! Devel Release 1.0.5.0rc4 - 12 August 2011
 * upgraded LuaNginxModule to v0.2.1rc5.
 ** implemented the {{{ngx.req.get_query_args()}}} method to fetch parsed URL query arguments from within Lua. thanks Bertrand Mansion (golgote).
