@@ -1300,7 +1300,7 @@ Homepage: http://luajit.org/luajit.html
 LuaJIT is not enabled by default. Please specify the {{{--with-luajit}}} option while configuring OpenResty while building it. See [[Installation]] for details.
 </pre>
 </div>
-<div title="LuaNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210826" modified="201106210839" changecount="2">
+<div title="LuaNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210826" modified="201108150147" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This module embeds the Lua interpreter or LuaJIT into the nginx core and integrates the powerful Lua threads (aka Lua coroutines) into the nginx event model by means of nginx subrequests.
@@ -1310,6 +1310,8 @@ Unlike Apache's mod_lua and Lighttpd's mod_magnet, Lua code written atop this mo
 The Lua interpreter instance is shared across all the requests in a single nginx worker process.
 
 Request contexts are isolated from each other by means of Lua (lightweight) threads (aka Lua coroutines). And Lua modules loaded are persistent on the nginx worker process level. So the memory footprint is quite small even when your nginx worker process is handling 10K requests at the same time.
+
+Documentation: http://wiki.nginx.org/NginxHttpLuaModule
 
 Project page: http://github.com/chaoslawful/lua-nginx-module</pre>
 </div>
