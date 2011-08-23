@@ -729,8 +729,16 @@ The following components are bundled by this release:
 
 See [[ChangeLog8054]] for change log for ngx_openresty 0.8.54.x.</pre>
 </div>
-<div title="ChangeLog1000005" creator="ZhangYichun" modifier="ZhangYichun" created="201108090717" modified="201108181250" changecount="21">
+<div title="ChangeLog1000005" creator="ZhangYichun" modifier="ZhangYichun" created="201108090717" modified="201108231648" changecount="23">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.5.1rc3 - 24 August 2011
+* upgraded LuaNginxModule to v0.2.1rc13.
+** implemented the {{{ngx.re.sub()}}} regex API for Lua: http://wiki.nginx.org/NginxHttpLuaModule#ngx.re.sub
+** added support for anchored match modifer {{{a}}} to {{{ngx.re.match}}}, {{{ngx.re.gmatch}}}, and {{{ngx.re.sub}}}.
+* upgraded DrizzleNginxModule to v0.1.1rc4
+** added new wiki documentation page: http://wiki.nginx.org/NginxHttpDrizzleModule
+** documented the {{{$drizzle_thread_id}}} variable.
+** added lots of debug outputs (enabled by the {{{--with-debug}}} option while building Nginx or OpenResty), inspired by github issue #10.
 ! Devel Release 1.0.5.1rc2 - 18 August 2011
 * upgraded LuaNginxModule to v0.2.1rc12.
 ** implemented the {{{ngx.re.gmatch()}}} regex API for Lua: http://wiki.nginx.org/NginxHttpLuaModule#ngx.re.gmatch
@@ -952,7 +960,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201108181249" changecount="77">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201108231643" changecount="78">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -960,7 +968,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.5.0.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.5.0.tar.gz]] 2.3MB [[Changes|ChangeLog1000005]] - 16 August 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.5.1rc2.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.5.1rc2.tar.gz]] 2.3MB [[Changes|ChangeLog1000005]] - 18 August 2011
+* [[ngx_openresty-1.0.5.1rc3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.5.1rc3.tar.gz]] 2.3MB [[Changes|ChangeLog1000005]] - 24 August 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.4.2.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.2.tar.gz]] 2.2MB [[Changes|ChangeLog1000004]] - 9 August 2011
@@ -974,7 +982,7 @@ Sometimes, users may want to download old releases.
 See [[Installation]] for installation instructions.
 </pre>
 </div>
-<div title="DrizzleNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210822" modified="201107120921" changecount="12">
+<div title="DrizzleNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210822" modified="201108231648" changecount="13">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is an nginx upstream module that talks to ~MySQL and/or Drizzle database servers by [[libdrizzle]].
@@ -1008,6 +1016,8 @@ When you install the libdrizzle-1.0 library to a custom path prefix, you can spe
 cd /path/to/ngx_openresty-VERSION/
 ./configure --with-libdrizzle=/path/to/drizzle --with-http_drizzle_module
 }}}
+
+Documentation page: http://wiki.nginx.org/NginxHttpDrizzleModule
 
 Project page: https://github.com/chaoslawful/drizzle-nginx-module</pre>
 </div>
