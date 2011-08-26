@@ -992,7 +992,7 @@ Sometimes, users may want to download old releases.
 See [[Installation]] for installation instructions.
 </pre>
 </div>
-<div title="DrizzleNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210822" modified="201108231648" changecount="13">
+<div title="DrizzleNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210822" modified="201108260112" changecount="14">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is an nginx upstream module that talks to ~MySQL and/or Drizzle database servers by [[libdrizzle]].
@@ -1027,7 +1027,7 @@ cd /path/to/ngx_openresty-VERSION/
 ./configure --with-libdrizzle=/path/to/drizzle --with-http_drizzle_module
 }}}
 
-Documentation page: http://wiki.nginx.org/NginxHttpDrizzleModule
+Documentation page: http://wiki.nginx.org/HttpDrizzleModule
 
 Project page: https://github.com/chaoslawful/drizzle-nginx-module</pre>
 </div>
@@ -1131,14 +1131,14 @@ And then let's test our nginx app!
 }}}
 To further tune the performance, one could enable the connection pool for the redis connections, as documented in Redis2NginxModule's README.</pre>
 </div>
-<div title="EchoNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210824" modified="201106210912" changecount="3">
+<div title="EchoNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210824" modified="201108260112" changecount="4">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This module wraps lots of Nginx internal ~APIs for streaming input and output, parallel/sequential subrequests, timers and sleeping, as well as various meta data accessing.
 
 Basically it provides various utilities that help testing and debugging of other modules by trivially emulating different kinds of faked subrequest locations.
 
-Documentation: http://wiki.nginx.org/NginxHttpEchoModule
+Documentation: http://wiki.nginx.org/HttpEchoModule
 
 Project page: https://github.com/agentzh/echo-nginx-module</pre>
 </div>
@@ -1227,12 +1227,12 @@ View the documentation of each component at the [[Components]] page and find Ngi
 <div title="GitHub" creator="ZhangYichun" modifier="ZhangYichun" created="201106210420" modified="201106210420" changecount="2">
 <pre>~GitHub is social coding network based on git, a very popular version control system. See its homepage: http://github.com.</pre>
 </div>
-<div title="HeadersMoreNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210859" modified="201106210913" changecount="3">
+<div title="HeadersMoreNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210859" modified="201108260110" changecount="4">
 <pre>This module allows you to add, set, or clear any response or request headers that you specify.
 
 This is an enhanced version of the standard headers module because it provides more utilities like resetting or clearing &quot;builtin headers&quot; like ~Content-Type, ~Content-Length, and Server. 
 
-Documentation: http://wiki.nginx.org/NginxHttpHeadersMoreModule
+Documentation: http://wiki.nginx.org/HttpHeadersMoreModule
 Project page: http://github.com/agentzh/headers-more-nginx-module</pre>
 </div>
 <div title="IconvNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210904" modified="201106220736" changecount="5">
@@ -1357,7 +1357,7 @@ Homepage: http://luajit.org/luajit.html
 LuaJIT is not enabled by default. Please specify the {{{--with-luajit}}} option while configuring OpenResty while building it. See [[Installation]] for details.
 </pre>
 </div>
-<div title="LuaNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210826" modified="201108150147" changecount="3">
+<div title="LuaNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210826" modified="201108260110" changecount="4">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This module embeds the Lua interpreter or LuaJIT into the nginx core and integrates the powerful Lua threads (aka Lua coroutines) into the nginx event model by means of nginx subrequests.
@@ -1368,7 +1368,7 @@ The Lua interpreter instance is shared across all the requests in a single nginx
 
 Request contexts are isolated from each other by means of Lua (lightweight) threads (aka Lua coroutines). And Lua modules loaded are persistent on the nginx worker process level. So the memory footprint is quite small even when your nginx worker process is handling 10K requests at the same time.
 
-Documentation: http://wiki.nginx.org/NginxHttpLuaModule
+Documentation: http://wiki.nginx.org/HttpLuaModule
 
 Project page: http://github.com/chaoslawful/lua-nginx-module</pre>
 </div>
@@ -1413,14 +1413,14 @@ Project homepage: https://github.com/agentzh/lua-redis-parser
 <div title="MarkupPostHead" creator="ZhangYichun" modifier="ZhangYichun" created="201107240444" modified="201107251514" changecount="4">
 <pre></pre>
 </div>
-<div title="MemcNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210830" modified="201106210839" changecount="2">
+<div title="MemcNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210830" modified="201108260111" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This module extends the standard memcached module  to support almost the whole memcached ascii protocol.
 
 It allows you to define a custom REST interface to your memcached servers or access memcached in a very efficient way from within the nginx server by means of subrequests or independent fake requests. 
 
-Documentation: http://wiki.nginx.org/NginxHttpMemcModule
+Documentation: http://wiki.nginx.org/HttpMemcModule
 Project page: http://github.com/agentzh/memc-nginx-module</pre>
 </div>
 <div title="Nginx" creator="ZhangYichun" modifier="ZhangYichun" created="201106210422" modified="201106210824" changecount="3">
@@ -1533,7 +1533,7 @@ Project page: https://github.com/agentzh/redis2-nginx-module</pre>
 * [[Using LuaRocks|UsingLuaRocks]]
 </pre>
 </div>
-<div title="SetMiscNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210836" modified="201108151118" changecount="7">
+<div title="SetMiscNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210836" modified="201108260110" changecount="8">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This module adds various {{{set_xxx}}} directives added to [[Nginx]]'s [[rewrite module|http://wiki.nginx.org/NginxHttpRewriteModule]] (~MD5/~SHA1, SQL/JSON quoting, and many more).
@@ -1541,7 +1541,7 @@ This module adds various {{{set_xxx}}} directives added to [[Nginx]]'s [[rewrite
 Every directive provided by this module can be mixed freely with other nginx rewrite module's
   directives, like {{{if}}} and {{{set}}}.
 
-Documentation: http://wiki.nginx.org/NginxHttpSetMiscModule
+Documentation: http://wiki.nginx.org/HttpSetMiscModule
 
 Project page: http://github.com/agentzh/set-misc-nginx-module</pre>
 </div>
@@ -1551,14 +1551,14 @@ Project page: http://github.com/agentzh/set-misc-nginx-module</pre>
 <div title="SiteTitle" creator="ZhangYichun" modifier="ZhangYichun" created="201106201137" modified="201106210357" tags="admin" changecount="3">
 <pre>OpenResty</pre>
 </div>
-<div title="SrcacheNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210907" modified="201108241616" changecount="4">
+<div title="SrcacheNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210907" modified="201108260111" changecount="5">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This module provides a transparent caching layer for arbitrary nginx locations (like those use an upstream or even serve static disk files).
 
 Usually, the MemcNginxModule is used together with this module to provide a concrete caching storage backend. But technically, any modules that provide a REST interface can be used as the fetching and storage subrequests used by this module.
 
-Documentation page: http://wiki.nginx.org/NginxHttpSRCacheModule
+Documentation page: http://wiki.nginx.org/HttpSRCacheModule
 
 Project page: http://github.com/agentzh/srcache-nginx-module
 </pre>
@@ -1745,12 +1745,12 @@ table.listView th, table.listView td, table.listView tr {padding:0px 3px 0px 3px
 /*}}}*/
 </pre>
 </div>
-<div title="UpstreamKeepaliveNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210908" modified="201106210911" changecount="2">
+<div title="UpstreamKeepaliveNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210908" modified="201108260111" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is a keepalive balancer module for nginx that implements cache for backend connections.
 
-Documentation: http://mdounin.ru/hg/ngx_http_upstream_keepalive/raw-file/tip/README
+Documentation: http://wiki.nginx.org/HttpUpstreamKeepaliveModule
 
 Project page: http://mdounin.ru/hg/ngx_http_upstream_keepalive/</pre>
 </div>
