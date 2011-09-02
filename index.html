@@ -594,7 +594,7 @@ Percentage of the requests served within a certain time (ms)
 So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, ~HelloWorld servers using nginx + php-fpm 5.2.8 gives 4k r/s, Erlang ~R14B2 raw gen_tcp server gives 8k r/s, and [[node.js|http://nodejs.org/] v0.4.8 yields 5.7k r/s.
 </pre>
 </div>
-<div title="ChangeLog1000004" creator="ZhangYichun" modifier="ZhangYichun" created="201107081222" modified="201108090716" changecount="46">
+<div title="ChangeLog1000004" creator="ZhangYichun" modifier="ZhangYichun" created="201107081222" modified="201109020756" changecount="47">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 1.0.4.2 - 9 August 2011
 This release is the same as  1.0.4.2rc13.
@@ -636,7 +636,7 @@ The following components are bundled by this release:
 * fixed a regression that we should use the {{{CC}}} variable instead of {{{HOST_CC}}} while passing the {{{--with-cc}}} option to the LuaJIT 2.0 build system. thanks @姜大炮 for reporting this issue.
 ! Devel Release 1.0.4.2rc7 - 5 August 2011
 *  upgraded ngx_lua to v0.2.1rc3.
-** fixed the {{{zero size buf in output}}} alert while combining {{{lua_need_requesty_body on}}} + {{{access_by_lua/rewrite_by_lua}}} + {{{proxy_pass/fastcgi_pass}}}. thanks 万珣新.
+** fixed the {{{zero size buf in output}}} alert while combining {{{lua_need_request_body on}}} + {{{access_by_lua/rewrite_by_lua}}} + {{{proxy_pass/fastcgi_pass}}}. thanks 万珣新.
 ! Devel Release 1.0.4.2rc6 - 5 August 2011
 * added the {{{--with-pg_config}}} option to the {{{./configure}}} script as per 罗翼's request.
 ! Devel Release 1.0.4.2rc5 - 5 August 2011
