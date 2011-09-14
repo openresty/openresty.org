@@ -874,7 +874,7 @@ The following components are bundled by this release:
 See [[ChangeLog1000004]] for change log for ngx_openresty 1.0.4.x.
 </pre>
 </div>
-<div title="ChangeLog1000006" creator="ZhangYichun" modifier="ZhangYichun" created="201109040816" modified="201109140759" changecount="5">
+<div title="ChangeLog1000006" creator="ZhangYichun" modifier="ZhangYichun" created="201109040816" modified="201109140803" changecount="6">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.0.6.3 - 14 September 2011
 * upgraded LuaNginxModule to 0.3.1rc3.
@@ -884,6 +884,8 @@ See [[ChangeLog1000004]] for change log for ngx_openresty 1.0.4.x.
 ** fixed a bug in {{{echo_after_body}}}: when network is not perfect, data truncation might occur. we should have taken into account {{{NGX_AGAIN}}} returned by the downstream output filters. thanks Sparsh Gupta.
 * upgraded HeadersMoreNginxModule to v0.16rc2.
 ** fixed a bug when setting a multi-value response header to a single value: the single value will be repeated on each old value.
+* applied the patch from Maxim Dounin to fix a bug in the standard ngx_gzip module when dealing with empty flush buffers: http://mailman.nginx.org/pipermail/nginx-devel/2011-February/000730.html
+* updated the no-pool-patch to eliminate the {{{-Wset-but-not-used}}} warnings issued by gcc 4.6.0.
 ! Devel Release 1.0.6.1 - 8 September 2011
 * upgraded LuaNginxModule to 0.3.1rc1.
 ** fixed a bug when the both the main request and the subrequest are POST requests with a body: we should not forward the main request's {{{Content-Length}}} headers to the user subrequests. thanks 朱峰.
