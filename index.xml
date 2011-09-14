@@ -5,22 +5,103 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Wed, 14 Sep 2011 08:03:50 GMT</pubDate>
-<lastBuildDate>Wed, 14 Sep 2011 08:03:50 GMT</lastBuildDate>
+<pubDate>Wed, 14 Sep 2011 10:16:05 GMT</pubDate>
+<lastBuildDate>Wed, 14 Sep 2011 10:16:05 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
+<item>
+<title>DynamicRoutingBasedOnRedis</title>
+<description>&lt;a tiddler=&quot;DynamicRoutingBasedOnRedis&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This sample demonstrates how to use redis to route incoming requests to different HTTP backends based on the requests' &lt;code&gt;User-Agent&lt;/code&gt; header.&lt;br&gt;&lt;br&gt;This demo uses the modules &lt;a tiddlylink=&quot;Redis2NginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Redis2NginxModule&quot; href=&quot;null#Redis2NginxModule&quot; class=&quot;externalLink null&quot;&gt;Redis2NginxModule&lt;/a&gt;, &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt;, &lt;a tiddlylink=&quot;LuaRedisParserLibrary&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaRedisParserLibrary&quot; href=&quot;null#LuaRedisParserLibrary&quot; class=&quot;externalLink null&quot;&gt;LuaRedisParserLibrary&lt;/a&gt;, and &lt;a tiddlylink=&quot;SetMiscNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SetMiscNginxModule&quot; href=&quot;null#SetMiscNginxModule&quot; class=&quot;externalLink null&quot;&gt;SetMiscNginxModule&lt;/a&gt; bundled by &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;:&lt;br&gt;&lt;br&gt;Here's the complete code listing for our &lt;code&gt;nginx.conf&lt;/code&gt;:&lt;br&gt;&lt;br&gt;&lt;pre&gt;worker_processes  1;
+error_log logs/error.log info;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    upstream apache.org {
+        server apache.org;
+    }
+
+    upstream nginx.org {
+        server nginx.org;
+    }
+
+    server {
+        listen 8080;
+
+        location = /redis {
+            internal;
+            set_unescape_uri $key $arg_key;
+            redis2_query get $key;
+            redis2_pass 127.0.0.1:6379;
+        }
+
+        location / {
+            set $target '';
+            access_by_lua '
+                local key = ngx.var.http_user_agent
+                local res = ngx.location.capture(
+                    &quot;/redis&quot;, { args = { key = key } }
+                )
+
+                print(&quot;key: &quot;, key)
+
+                if res.status ~= 200 then
+                    ngx.log(ngx.ERR, &quot;redis server returned bad status: &quot;,
+                        res.status)
+                    ngx.exit(res.status)
+                end
+
+                if not res.body then
+                    ngx.log(ngx.ERR, &quot;redis returned empty body&quot;)
+                    ngx.exit(500)
+                end
+
+                local parser = require &quot;redis.parser&quot;
+                local server, typ = parser.parse_reply(res.body)
+                if typ ~= parser.BULK_REPLY or not server then
+                    ngx.log(ngx.ERR, &quot;bad redis response: &quot;, res.body)
+                    ngx.exit(500)
+                end
+
+                print(&quot;server: &quot;, server)
+
+                ngx.var.target = server
+            ';
+
+            proxy_pass http://$target;
+        }
+    }
+}
+&lt;/pre&gt;&lt;br&gt;And then let's start the redis server on the localhost:6379:&lt;br&gt;&lt;pre&gt;$ ./redis-server  # default port is 6379
+&lt;/pre&gt;&lt;br&gt;and feed some keys into this using the redis-cli utility:&lt;br&gt;&lt;pre&gt;   $ ./redis-cli
+   redis&amp;gt; set foo apache.org
+   OK
+   redis&amp;gt; set bar nginx.org
+   OK
+&lt;/pre&gt;And then let's test our nginx app!&lt;br&gt;&lt;pre&gt;   $ curl --user-agent foo localhost:8080
+   &amp;lt;apache.org home page goes here&amp;gt;
+
+   $ curl --user-agent bar localhost:8080
+   &amp;lt;nginx.org home page goes here&amp;gt;
+&lt;/pre&gt;To further tune the performance, one could enable the connection pool for the redis connections, as documented in &lt;a tiddlylink=&quot;Redis2NginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Redis2NginxModule&quot; href=&quot;null#Redis2NginxModule&quot; class=&quot;externalLink null&quot;&gt;Redis2NginxModule&lt;/a&gt;'s README.</description>
+<link>null#DynamicRoutingBasedOnRedis</link>
+<pubDate>Wed, 14 Sep 2011 10:16:04 GMT</pubDate>
+
+</item>
 <item>
 <title>ChangeLog1000006</title>
 <description>&lt;a tiddler=&quot;ChangeLog1000006&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;h1&gt; Devel Release 1.0.6.3 - 14 September 2011&lt;/h1&gt;&lt;ul&gt;&lt;li&gt; upgraded &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt; to 0.3.1rc3.&lt;ul&gt;&lt;li&gt; implemented and documented the API for reading response headers from within Lua: &lt;code&gt;value = ngx.header.HEADER&lt;/code&gt;.&lt;/li&gt;&lt;li&gt; fixed a bug when setting a multi-value response header to a single value (via writing to &lt;code&gt;ngx.header.HEADER&lt;/code&gt;): the single value will be repeated on each old value.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt; upgraded &lt;a tiddlylink=&quot;EchoNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#EchoNginxModule&quot; href=&quot;null#EchoNginxModule&quot; class=&quot;externalLink null&quot;&gt;EchoNginxModule&lt;/a&gt; to 0.37rc4.&lt;ul&gt;&lt;li&gt; fixed a bug in &lt;code&gt;echo_after_body&lt;/code&gt;: when network is not perfect, data truncation might occur. we should have taken into account &lt;code&gt;NGX_AGAIN&lt;/code&gt; returned by the downstream output filters. thanks Sparsh Gupta.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt; upgraded &lt;a tiddlylink=&quot;HeadersMoreNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#HeadersMoreNginxModule&quot; href=&quot;null#HeadersMoreNginxModule&quot; class=&quot;externalLink null&quot;&gt;HeadersMoreNginxModule&lt;/a&gt; to v0.16rc2.&lt;ul&gt;&lt;li&gt; fixed a bug when setting a multi-value response header to a single value: the single value will be repeated on each old value.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt; applied the patch from Maxim Dounin to fix a bug in the standard ngx_gzip module when dealing with empty flush buffers: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://mailman.nginx.org/pipermail/nginx-devel/2011-February/000730.html&quot; href=&quot;http://mailman.nginx.org/pipermail/nginx-devel/2011-February/000730.html&quot; class=&quot;externalLink&quot;&gt;http://mailman.nginx.org/pipermail/nginx-devel/2011-February/000730.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt; updated the no-pool-patch to eliminate the &lt;code&gt;-Wset-but-not-used&lt;/code&gt; warnings issued by gcc 4.6.0.&lt;/li&gt;&lt;/ul&gt;&lt;h1&gt; Devel Release 1.0.6.1 - 8 September 2011&lt;/h1&gt;&lt;ul&gt;&lt;li&gt; upgraded &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt; to 0.3.1rc1.&lt;ul&gt;&lt;li&gt; fixed a bug when the both the main request and the subrequest are POST requests with a body: we should not forward the main request's &lt;code&gt;Content-Length&lt;/code&gt; headers to the user subrequests. thanks 朱峰.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h1&gt; Devel Release 1.0.6.0rc2 - 4 September 2011&lt;/h1&gt;&lt;ul&gt;&lt;li&gt; upgraded &lt;a tiddlylink=&quot;HeadersMoreNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#HeadersMoreNginxModule&quot; href=&quot;null#HeadersMoreNginxModule&quot; class=&quot;externalLink null&quot;&gt;HeadersMoreNginxModule&lt;/a&gt; to 0.16rc1.&lt;ul&gt;&lt;li&gt; fixed on-demand hander/filter registration trick for &lt;code&gt;HUP&lt;/code&gt; signal restarts.&lt;/li&gt;&lt;li&gt; added some debugging outputs that can be enabled by the &lt;code&gt;--with-debug&lt;/code&gt; option when building Nginx or &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h1&gt; Devel Release 1.0.6.0rc1 - 4 September 2011&lt;/h1&gt;&lt;ul&gt;&lt;li&gt; based on ngx_openresty 1.0.5.1, but with nginx core upgraded to nginx 1.0.6.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;See &lt;a tiddlylink=&quot;ChangeLog1000005&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ChangeLog1000005&quot; href=&quot;null#ChangeLog1000005&quot; class=&quot;externalLink null&quot;&gt;ChangeLog1000005&lt;/a&gt; for change log for ngx_openresty 1.0.5.x.&lt;br&gt;</description>
 <link>null#ChangeLog1000006</link>
-<pubDate>Wed, 14 Sep 2011 08:03:49 GMT</pubDate>
+<pubDate>Wed, 14 Sep 2011 08:03:00 GMT</pubDate>
 
 </item>
 <item>
 <title>Download</title>
 <description>&lt;a tiddler=&quot;Download&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;h1&gt;Releases&lt;/h1&gt;&lt;h2&gt; Stable release&lt;/h2&gt;Most of the users should use the current release, i.e., the latest stable release.&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;a target=&quot;_blank&quot; title=&quot;External link to http://agentzh.org/misc/nginx/ngx_openresty-1.0.5.1.tar.gz&quot; href=&quot;http://agentzh.org/misc/nginx/ngx_openresty-1.0.5.1.tar.gz&quot; class=&quot;externalLink&quot;&gt;ngx_openresty-1.0.5.1.tar.gz&lt;/a&gt; 2.4MB &lt;a tiddlylink=&quot;ChangeLog1000005&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ChangeLog1000005&quot; href=&quot;null#ChangeLog1000005&quot; class=&quot;externalLink null&quot;&gt;Changes&lt;/a&gt; - 4 September 2011&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt; Development release&lt;/h2&gt;Development releases are for developers or brave users to try out new bug fixes and new features.&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;a target=&quot;_blank&quot; title=&quot;External link to http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.3.tar.gz&quot; href=&quot;http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.3.tar.gz&quot; class=&quot;externalLink&quot;&gt;ngx_openresty-1.0.6.3.tar.gz&lt;/a&gt; 2.4MB &lt;a tiddlylink=&quot;ChangeLog1000006&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ChangeLog1000006&quot; href=&quot;null#ChangeLog1000006&quot; class=&quot;externalLink null&quot;&gt;Changes&lt;/a&gt; - 14 September 2011&lt;/li&gt;&lt;/ul&gt;&lt;h2&gt; Legacy releases&lt;/h2&gt;Sometimes, users may want to download old releases.&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;a target=&quot;_blank&quot; title=&quot;External link to http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.2.tar.gz&quot; href=&quot;http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.2.tar.gz&quot; class=&quot;externalLink&quot;&gt;ngx_openresty-1.0.4.2.tar.gz&lt;/a&gt; 2.2MB &lt;a tiddlylink=&quot;ChangeLog1000004&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ChangeLog1000004&quot; href=&quot;null#ChangeLog1000004&quot; class=&quot;externalLink null&quot;&gt;Changes&lt;/a&gt; - 9 August 2011&lt;/li&gt;&lt;li&gt; &lt;a target=&quot;_blank&quot; title=&quot;External link to http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.1.tar.gz&quot; href=&quot;http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.1.tar.gz&quot; class=&quot;externalLink&quot;&gt;ngx_openresty-1.0.4.1.tar.gz&lt;/a&gt; 2.3MB &lt;a tiddlylink=&quot;ChangeLog1000004&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ChangeLog1000004&quot; href=&quot;null#ChangeLog1000004&quot; class=&quot;externalLink null&quot;&gt;Changes&lt;/a&gt; - 30 July 2011&lt;/li&gt;&lt;li&gt; &lt;a target=&quot;_blank&quot; title=&quot;External link to http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.0.tar.gz&quot; href=&quot;http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.0.tar.gz&quot; class=&quot;externalLink&quot;&gt;ngx_openresty-1.0.4.0.tar.gz&lt;/a&gt; 2.3MB &lt;a tiddlylink=&quot;ChangeLog1000004&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ChangeLog1000004&quot; href=&quot;null#ChangeLog1000004&quot; class=&quot;externalLink null&quot;&gt;Changes&lt;/a&gt; - 12 July 2011&lt;/li&gt;&lt;li&gt; &lt;a target=&quot;_blank&quot; title=&quot;External link to http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.9.tar.gz&quot; href=&quot;http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.9.tar.gz&quot; class=&quot;externalLink&quot;&gt;ngx_openresty-0.8.54.9.tar.gz&lt;/a&gt; 2.2MB &lt;a tiddlylink=&quot;ChangeLog8054&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ChangeLog8054&quot; href=&quot;null#ChangeLog8054&quot; class=&quot;externalLink null&quot;&gt;Changes&lt;/a&gt; - 8 July 2011&lt;/li&gt;&lt;li&gt; &lt;a target=&quot;_blank&quot; title=&quot;External link to http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.8.tar.gz&quot; href=&quot;http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.8.tar.gz&quot; class=&quot;externalLink&quot;&gt;ngx_openresty-0.8.54.8.tar.gz&lt;/a&gt; 2.2MB &lt;a tiddlylink=&quot;ChangeLog8054&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ChangeLog8054&quot; href=&quot;null#ChangeLog8054&quot; class=&quot;externalLink null&quot;&gt;Changes&lt;/a&gt; - 1 July 2011&lt;/li&gt;&lt;li&gt; &lt;a target=&quot;_blank&quot; title=&quot;External link to http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.7.tar.gz&quot; href=&quot;http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.7.tar.gz&quot; class=&quot;externalLink&quot;&gt;ngx_openresty-0.8.54.7.tar.gz&lt;/a&gt; 2.7MB &lt;a tiddlylink=&quot;ChangeLog8054&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ChangeLog8054&quot; href=&quot;null#ChangeLog8054&quot; class=&quot;externalLink null&quot;&gt;Changes&lt;/a&gt; - 27 June 2011&lt;/li&gt;&lt;li&gt; &lt;a target=&quot;_blank&quot; title=&quot;External link to http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.6.tar.gz&quot; href=&quot;http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.6.tar.gz&quot; class=&quot;externalLink&quot;&gt;ngx_openresty-0.8.54.6.tar.gz&lt;/a&gt; 2.7MB &lt;a tiddlylink=&quot;ChangeLog8054&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ChangeLog8054&quot; href=&quot;null#ChangeLog8054&quot; class=&quot;externalLink null&quot;&gt;Changes&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a target=&quot;_blank&quot; title=&quot;External link to http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.5.tar.gz&quot; href=&quot;http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.5.tar.gz&quot; class=&quot;externalLink&quot;&gt;ngx_openresty-0.8.54.5.tar.gz&lt;/a&gt; 2.7MB &lt;a tiddlylink=&quot;ChangeLog8054&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ChangeLog8054&quot; href=&quot;null#ChangeLog8054&quot; class=&quot;externalLink null&quot;&gt;Changes&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;See &lt;a tiddlylink=&quot;Installation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Installation&quot; href=&quot;null#Installation&quot; class=&quot;externalLink null&quot;&gt;Installation&lt;/a&gt; for installation instructions.&lt;br&gt;</description>
 <link>null#Download</link>
-<pubDate>Wed, 14 Sep 2011 07:52:50 GMT</pubDate>
+<pubDate>Wed, 14 Sep 2011 07:52:00 GMT</pubDate>
 
 </item>
 <item>
@@ -171,94 +252,6 @@ make install
 <description>&lt;a tiddler=&quot;LuaCjsonLibrary&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;Lua CJSON is a Lua C module that provides fast JSON parsing and encoding support for Lua.&lt;br&gt;&lt;br&gt;Project homepage: &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.kyne.com.au/~mark/software/lua-cjson.php&quot; href=&quot;http://www.kyne.com.au/%7Emark/software/lua-cjson.php&quot; class=&quot;externalLink&quot;&gt;http://www.kyne.com.au/~mark/software/lua-cjson.php&lt;/a&gt;&lt;br&gt;</description>
 <link>null#LuaCjsonLibrary</link>
 <pubDate>Thu, 11 Aug 2011 02:08:00 GMT</pubDate>
-
-</item>
-<item>
-<title>UsingLuaRocks</title>
-<description>&lt;a tiddler=&quot;UsingLuaRocks&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This sample demonstrates usage of &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.luarocks.org/&quot; href=&quot;http://www.luarocks.org/&quot; class=&quot;externalLink&quot;&gt;LuaRocks&lt;/a&gt; with &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;. It's been tested on Linux and Mac OS X, with the standard Lua interpreter or with &lt;a tiddlylink=&quot;LuaJIT&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaJIT&quot; href=&quot;null#LuaJIT&quot; class=&quot;externalLink null&quot;&gt;LuaJIT&lt;/a&gt;.&lt;br&gt;&lt;br&gt;LuaRocks is a deployment and management system for Lua modules. LuaRocks allows one to install Lua modules as self-contained packages called &quot;rocks&quot;, which also contain version dependency  information.&lt;br&gt;&lt;br&gt;We assume that you have installed &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; into the default location, i.e., &lt;code&gt;/usr/local/openresty&lt;/code&gt;. You can adjust the paths in this sample according to the actual installation prefix of your &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; installation. If you haven't installed OpenResty yet, check out the &lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;Download&lt;/a&gt; and &lt;a tiddlylink=&quot;Installation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Installation&quot; href=&quot;null#Installation&quot; class=&quot;externalLink null&quot;&gt;Installation&lt;/a&gt; pages.&lt;br&gt;&lt;br&gt;&lt;h1&gt; Install LuaRocks&lt;/h1&gt;First of all, let's install LuaRocks:&lt;br&gt;&lt;br&gt;Download the latest LuaRocks tarball from &lt;a tiddlylink=&quot;http://www.luarocks.org/en/Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#http://www.luarocks.org/en/Download&quot; href=&quot;null#http://www.luarocks.org/en/Download&quot; class=&quot;externalLink null&quot;&gt;http://www.luarocks.org/en/Download&lt;/a&gt;. As of this writing, the latest version is &lt;code&gt;2.0.4.1&lt;/code&gt;, and we'll use this version throughout this sample.&lt;br&gt;&lt;pre&gt;wget http://luarocks.org/releases/luarocks-2.0.4.1.tar.gz
-tar -xzvf luarocks-2.0.4.1.tar.gz
-cd luarocks-2.0.4.1/
-./configure
-make
-sudo make install
-&lt;/pre&gt;&lt;h1&gt; Install the Lua MD5 library with LuaRocks&lt;/h1&gt;In this sample, we'll use the Lua MD5 library to serve as an example, so let's install it with LuaRocks:&lt;br&gt;&lt;pre&gt;sudo luarocks install md5
-&lt;/pre&gt;&lt;h1&gt; Configuring our OpenResty application&lt;/h1&gt;Let's change the current directory to &lt;code&gt;/usr/local/openresty/nginx/&lt;/code&gt;:&lt;br&gt;&lt;pre&gt;cd /usr/local/openresty/nginx/
-&lt;/pre&gt;Next, edit the &lt;code&gt;conf/nginx.conf&lt;/code&gt; file to the following contents with your favorite text editor (like vim or emacs):&lt;br&gt;&lt;pre&gt;worker_processes  1;   # we could enlarge this setting on a multi-core machine
-error_log  logs/error.log warn;
-
-events {
-    worker_connections  1024;
-}
-
-http {
-    lua_package_path 'conf/?.lua;;';
-
-    server {
-        listen       80;
-        server_name  localhost;
-
-        location = /luarocks {
-            content_by_lua '
-                local foo = require(&quot;foo&quot;)
-                foo.say(&quot;hello, luarocks!&quot;)
-            ';
-        }
-    }
-}
-&lt;/pre&gt;Finally, create the following two Lua module files &lt;code&gt;conf/foo.lua&lt;/code&gt;&lt;br&gt;&lt;pre&gt;-- conf/foo.lua
-
-module(&quot;foo&quot;, package.seeall)
-
-local bar = require &quot;bar&quot;
-
-ngx.say(&quot;bar loaded&quot;)
-
-function say (var)
-    bar.say(var)
-end
-&lt;/pre&gt;and &lt;code&gt;conf/bar.lua&lt;/code&gt;&lt;br&gt;&lt;pre&gt;-- conf/bar.lua
-
-module(&quot;bar&quot;, package.seeall)
-
-local rocks = require &quot;luarocks.loader&quot;
-local md5 = require &quot;md5&quot;
-
-ngx.say(&quot;rocks and md5 loaded&quot;)
-
-function say (a)
-    ngx.say(md5.sumhexa(a))
-end
-&lt;/pre&gt;&lt;h1&gt; Start the Nginx server&lt;/h1&gt;Now we start the Nginx server with our app:&lt;br&gt;&lt;pre&gt;ulimit -n1024   # increase the maximal fd count limit per process
-./sbin/nginx
-&lt;/pre&gt;If you have already started the Nginx server, then stop it before starting it:&lt;br&gt;&lt;pre&gt;./sbin/nginx -s stop
-&lt;/pre&gt;&lt;h1&gt; Test our app&lt;/h1&gt;Now we can test our app via the &lt;code&gt;curl&lt;/code&gt; utility or any HTTP compliant clients like a web browser:&lt;br&gt;&lt;pre&gt;curl http://localhost/luarocks
-&lt;/pre&gt;we could get the following outputs at the first run:&lt;br&gt;&lt;pre&gt;rocks and md5 loaded
-bar loaded
-85e73df5c41378f830c031b81e4453d2
-&lt;/pre&gt;then at the second run:&lt;br&gt;&lt;pre&gt;85e73df5c41378f830c031b81e4453d2
-&lt;/pre&gt;The output changed because &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt; by default caches already loaded Lua modules and those outputing code run at Lua module loading time will no longer be run.&lt;br&gt;&lt;br&gt;Now let's do some benchmark:&lt;br&gt;&lt;pre&gt;ab -c10 -n50000 http://127.0.0.1/luarocks
-&lt;/pre&gt;On my Thinkpad T400 laptop (Core2Duo T9600 CPU), it yields&lt;br&gt;&lt;pre&gt;Server Software:        ngx_openresty/1.0.4.2rc10
-Server Hostname:        localhost
-Server Port:            80
-
-Document Path:          /luarocks
-Document Length:        33 bytes
-
-Concurrency Level:      10
-Time taken for tests:   3.052 seconds
-Complete requests:      50000
-Failed requests:        0
-Write errors:           0
-Total transferred:      9400188 bytes
-HTML transferred:       1650033 bytes
-Requests per second:    16380.48 [#/sec] (mean)
-Time per request:       0.610 [ms] (mean)
-Time per request:       0.061 [ms] (mean, across all concurrent requests)
-Transfer rate:          3007.41 [Kbytes/sec] received
-&lt;/pre&gt;Note that the throughput is achieved by a single nginx worker process. While doing such benchmark on your own, just be careful about error log level settings in your nginx.conf and not to run out of dynamic port range on your local machine, or it'll be significantly slow after a short of period of time.&lt;br&gt;&lt;h1&gt; Known issues&lt;/h1&gt;Pior to &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; 1.0.4.2rc10, it's known that turning &lt;code&gt;lua_code_cache&lt;/code&gt; on will cause LuaRocks atop &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt; to throw out the following exception in &lt;code&gt;error.log&lt;/code&gt;:&lt;br&gt;&lt;pre&gt;lua handler aborted: runtime error: stack overflow
-&lt;/pre&gt;If you're using any version of &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; before 1.0.4.2rc10, please consider upgrading.&lt;br&gt;</description>
-<link>null#UsingLuaRocks</link>
-<pubDate>Mon, 08 Aug 2011 00:58:00 GMT</pubDate>
 
 </item>
 </channel>

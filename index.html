@@ -1120,14 +1120,14 @@ Documentation page: http://wiki.nginx.org/HttpDrizzleModule
 
 Project page: https://github.com/chaoslawful/drizzle-nginx-module</pre>
 </div>
-<div title="DynamicRoutingBasedOnRedis" creator="ZhangYichun" modifier="ZhangYichun" created="201107270402" modified="201107280424" changecount="8">
+<div title="DynamicRoutingBasedOnRedis" creator="ZhangYichun" modifier="ZhangYichun" created="201107270402" modified="201109141016" changecount="11">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This sample demonstrates how to use redis to route incoming requests to different HTTP backends based on the requests' {{{User-Agent}}} header.
 
-This demo uses the modules Redis2NginxModule, LuaNginxModule, and SetMiscNginxModule bundled by OpenResty:
+This demo uses the modules Redis2NginxModule, LuaNginxModule, LuaRedisParserLibrary, and SetMiscNginxModule bundled by OpenResty:
 
-Here's the complete code listing for the nginx.conf:
+Here's the complete code listing for our {{{nginx.conf}}}:
 
 {{{
 worker_processes  1;
@@ -1139,11 +1139,11 @@ events {
 
 http {
     upstream apache.org {
-        server 140.211.11.131;
+        server apache.org;
     }
 
     upstream nginx.org {
-        server 206.251.255.63;
+        server nginx.org;
     }
 
     server {
@@ -1177,11 +1177,9 @@ http {
                     ngx.exit(500)
                 end
 
-                -- we could use the lua-redis-parser library
-                -- to parse the reply here instead
-                local server = string.match(res.body,
-                           &quot;^$%d+\\r\\n(%S+)\\r\\n&quot;)
-                if not server then
+                local parser = require &quot;redis.parser&quot;
+                local server, typ = parser.parse_reply(res.body)
+                if typ ~= parser.BULK_REPLY or not server then
                     ngx.log(ngx.ERR, &quot;bad redis response: &quot;, res.body)
                     ngx.exit(500)
                 end
