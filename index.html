@@ -874,8 +874,11 @@ The following components are bundled by this release:
 See [[ChangeLog1000004]] for change log for ngx_openresty 1.0.4.x.
 </pre>
 </div>
-<div title="ChangeLog1000006" creator="ZhangYichun" modifier="ZhangYichun" created="201109040816" modified="201109211445" changecount="18">
+<div title="ChangeLog1000006" creator="ZhangYichun" modifier="ZhangYichun" created="201109040816" modified="201109220729" changecount="19">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.6.15 - 22 September 2011
+* upgraded LuaNginxModule to v0.3.1rc5.
+** now we also return the {{{Last-Modified}}} header (if any) for the subrequest response object. thanks @cyberty and sexybabes.
 ! Devel Release 1.0.6.13 - 21 September 2011
 * upgraded LuaNginxModule to v0.3.1rc4.
 ** fixed an issue in {{{ngx.redirect}}}, {{{ngx.exit}}}, and {{{ngx.exec}}}: these function calls would be intercepted by Lua {{{pcall}}}/{{{xpcall}}} because they used lua exceptions; now they use lua yield just as {{{ngx.location.capture}}}. thanks @hugozhu for reporting this.
@@ -1107,7 +1110,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201109211446" changecount="102">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201109220728" changecount="103">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1115,7 +1118,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.6.12.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.12.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 21 September 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.6.13.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.13.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 21 September 2011
+* [[ngx_openresty-1.0.6.15.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.15.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 22 September 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.5.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.5.1.tar.gz]] 2.4MB [[Changes|ChangeLog1000005]] - 4 September 2011
