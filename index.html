@@ -988,6 +988,51 @@ The following components are bundled by this release:
 See [[ChangeLog1000005]] for change log for ngx_openresty 1.0.5.x.
 </pre>
 </div>
+<div title="ChangeLog1000008" creator="ZhangYichun" modifier="ZhangYichun" created="201110100846" modified="201110100955" changecount="18">
+<pre>! Devel Release 1.0.8.1 - 10 October 2011
+* upgraded EchoNginxModule to 0.37rc5.
+** bug fix: now we properly set the {{{Content-Length}}} request header for subrequests.
+* upgraded LuaNginxModule to 0.3.1rc9.
+** feature: now for HTTP 1.0 requests, we disable the automatic full buffering mode if the user sets the {{{Content-Length}}} response header before sending out the headers. this allows streaming output for HTTP 1.0 requests if the content length can be calculated beforehand. thanks 李子义.
+** bug fix: now we properly support setting the {{{Cache-Control}}} response header via the {{{ngx.header.HEADER}}} interface.
+** bug fix: no longer set header hash to 1. use the {{{ngx_hash_key_lc}}} instead.
+* upgraded HeadersMoreNginxModule to 0.16rc3.
+** bug fix: we should set header hash using {{{ngx_hash_key_lc}}}, not simply to 1.
+** bug fix: fixed setting {{{Cache-Control}}} response headers. we should properly prepare the {{{r-&gt;cache_control}}} array as well.
+* upgraded SrcacheNginxModule to 0.13rc1.
+** implemented response status line and general response header caching and added new directives {{{srcache_store_hide_header}}} and {{{srcache_store_pass_header}}} to control which headers to cache and which not.
+** added new directive {{{srcache_response_cache_control}}} to control whether honor response headers {{{Cache-Control}}} and {{{Expires}}}, default {{{on}}}.
+** we disable {{{srcache_store}}} automatically by default when {{{Cache-Control: max-age=0}}} and {{{Expires: &lt;date no more recently than now&gt;}}} are seen.
+** implemented builtin nginx variable {{{$srcache_expire}}} for automatic expiration time calculation based on response headers {{{Cache-Control}}} ({{{max-age}}}) and {{{Expires}}}; also added new directives {{{srcache_max_expire}}} and {{{srcache_default_expire}}}.
+** implemented the {{{srcache_store_no_cache}}} directive; now by default, we do not store responses with the header {{{Cache-Control: no-cache}}} into the cache.
+** implemented {{{the srcache_store_no_store directive}}} (default {{{off}}}). Now by default, responses with the header {{{Cache-Control: no-store}}} will not be stored into the cache.
+** implemented the {{{srcache_store_private}}} directive to control whether to store responses with the header {{{Cache-Control: private}}}.
+** implemented the {{{srcache_request_cache_control}}} directive to allow request headers {{{Cache-Control: no-cache}}} or {{{Pragma: no-cache}}} to force bypassing cache lookup. it also honors the request header {{{Cache-Control: no-store}}}. this directive is turned off by default.
+** now we check response header {{{Content-Encoding}}} by default and a non-empty header value will {{{skip srcache_store}}}; also introduced a new directive named {{{srcache_ignore_content_encoding}}} to ignore this response header.
+** implemented the {{{srcache_methods}}} directive to specify request methods that are cacheable, by default, only {{{GET}}} and {{{HEAD}}} are cacheable.
+** bug fix: we no longer set header hash to 1; we use {{{ngx_hash_key_lc}}} instead.
+** bug fix: when we skip {{{srcache_fetch}}} by means of {{{srcache_fetch_skip}}}, we should not automatically skip {{{srcache_store}}}.
+** bug fix: now we ignore the {{{Content-Length}}} header (if any) of the main request for the subrequests.
+** bug fix: there might be a segfault when failing to allocate memory in {{{ngx_http_srcache_add_copy_chain}}}. thanks Shaun savage.
+* upgraded RdsJsonNginxModule to 0.12rc6.
+** bug fix: fixed compatibility with nginx 1.1.4+.
+* upgraded RdsCsvNginxModule to 0.04.
+** bug fix: fixed compatibility issues with nginx 1.1.4+.
+** optimization: now we only register our filters when {{{rds_csv}}} is actually used in {{{nginx.conf}}}.
+* upgraded Redis2NginxModule to 0.08rc1.
+** bug fix: fixed compatibility with nginx 1.1.4+.
+* upgraded DrizzleNginxModule to 0.1.2rc2.
+** bug fix: fixed compatibility with nginx 1.1.4+
+* upgraded MemcNginxModule to 0.13rc1.
+** bug fix: fixed compatibility with nginx 1.1.4+.
+* upgraded SetMiscNginxModule to v0.22rc3.
+** minor code cleanup.
+* applied the patch for the variable-header-ignore-no-hash issue. see http://forum.nginx.org/read.php?29,216062 for details.
+* based on OpenResty 1.0.6.22 and upgraded the Nginx core to 1.0.8.
+
+See [[ChangeLog1000006]] for change log for ngx_openresty 1.0.6.x.
+</pre>
+</div>
 <div title="ChangeLog8054" creator="ZhangYichun" modifier="ZhangYichun" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -1148,7 +1193,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201110070610" changecount="108">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201110100844" changecount="109">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1156,7 +1201,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.6.22.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.22.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 7 October 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.6.21.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.21.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 23 September 2011
+* [[ngx_openresty-1.0.8.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.1.tar.gz]] 2.4MB [[Changes|ChangeLog1000008]] - 10 October 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.6.12.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.12.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 21 September 2011
