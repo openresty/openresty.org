@@ -988,8 +988,14 @@ The following components are bundled by this release:
 See [[ChangeLog1000005]] for change log for ngx_openresty 1.0.5.x.
 </pre>
 </div>
-<div title="ChangeLog1000008" creator="ZhangYichun" modifier="ZhangYichun" created="201110100846" modified="201110190920" changecount="35">
+<div title="ChangeLog1000008" creator="ZhangYichun" modifier="ZhangYichun" created="201110100846" modified="201110220513" changecount="36">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.8.17 - 22 October 2011
+* upgraded LuaNginxModule to 0.3.1rc19.
+** feature: now we apply the patch to the nginx core so as to allow main request body modifications: https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.8-allow_request_body_updating.patch
+** feature: added new Lua API {{{ngx.req.set_body_file()}}}: http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_file
+** feature: added new Lua API {{{ngx.req.set_body_data()}}}: http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_data
+** bugfix: {{{lua_need_request_body}}} should not skip requests with methods other than {{{POST}}} and {{{PUT}}}. thanks Nginx User.
 ! Devel Release 1.0.8.15 - 19 October 2011
 * upgraded LuaNginxModule to 0.3.1rc17.
 ** feature: added new Lua functions {{{ngx.req.read_body()}}}, {{{ngx.req.discard_body()}}}, {{{ngx.req.get_body_data()}}}, and {{{ngx.req.get_body_file()}}}. see the docs here: http://wiki.nginx.org/HttpLuaModule#ngx.req.read_body
@@ -1226,7 +1232,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201110190917" changecount="117">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201110220447" changecount="118">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1234,7 +1240,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.6.22.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.22.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 7 October 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.8.15.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.15.tar.gz]] 2.4MB [[Changes|ChangeLog1000008]] - 19 October 2011
+* [[ngx_openresty-1.0.8.17.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.17.tar.gz]] 2.4MB [[Changes|ChangeLog1000008]] - 22 October 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.6.12.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.12.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 21 September 2011
