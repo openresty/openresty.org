@@ -988,11 +988,37 @@ The following components are bundled by this release:
 See [[ChangeLog1000005]] for change log for ngx_openresty 1.0.5.x.
 </pre>
 </div>
-<div title="ChangeLog1000008" creator="ZhangYichun" modifier="ZhangYichun" created="201110100846" modified="201111030751" changecount="45">
+<div title="ChangeLog1000008" creator="ZhangYichun" modifier="ZhangYichun" created="201110100846" modified="201111030908" changecount="46">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 1.0.8.26 - 3 November 2011
 * now we require {{{gmake}}} ({{{Gnu make}}}) for {{{*BSD}}} systems even if LuaJIT is not enabled. thanks [[@lhmwzy|http://weibo.com/lhmwzy]].
 * upgraded the official [[hotfix patch #4|http://www.lua.org/ftp/patch-lua-5.1.4-4]] for the standard Lua 5.1.4 interpreter.
+Components bundled in this release:
+* ~LuaJIT-2.0.0-beta8
+* array-var-nginx-module-0.03rc1
+* auth-request-nginx-module-0.2
+* drizzle-nginx-module-0.1.2rc2
+* echo-nginx-module-0.37rc7
+* encrypted-session-nginx-module-0.01
+* form-input-nginx-module-0.07rc5
+* headers-more-nginx-module-0.16rc3
+* iconv-nginx-module-0.10rc5
+* lua-5.1.4
+* lua-cjson-1.0.3
+* lua-rds-parser-0.03
+* lua-redis-parser-0.09rc5
+* memc-nginx-module-0.13rc1
+* nginx-1.0.8
+* ngx_devel_kit-0.2.17
+* ngx_lua-0.3.1rc23
+* ngx_postgres-0.9rc1
+* rds-csv-nginx-module-0.04
+* rds-json-nginx-module-0.12rc6
+* redis2-nginx-module-0.08rc1
+* set-misc-nginx-module-0.22rc3
+* srcache-nginx-module-0.13rc2
+* upstream-keepalive-nginx-module-0.3
+* xss-nginx-module-0.03rc3
 ! Devel Release 1.0.8.25 - 27 October 2011
 * upgraded LuaNginxModule to 0.3.1rc23.
 ** bugfix: {{{ndk.set_var.DIRECTIVE}}} had a memory issue and might pass empty argument values to the directive being called. thanks dannynoonan.
@@ -1841,6 +1867,9 @@ This module returns the raw TCP response from the redis server.
 Documentation wiki page: http://wiki.nginx.org/HttpRedis2Module
 
 Project page: https://github.com/agentzh/redis2-nginx-module</pre>
+</div>
+<div title="ReleaseNote" creator="ZhangYichun" modifier="ZhangYichun" created="201111030906" modified="201111030927" changecount="9">
+<pre></pre>
 </div>
 <div title="Resources" creator="ZhangYichun" modifier="ZhangYichun" created="201110240551" modified="201111030725" changecount="9">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
