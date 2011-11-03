@@ -1441,7 +1441,7 @@ This is an [[Nginx]] module that reads HTTP POST and PUT request body encoded in
 Project page: https://github.com/calio/form-input-nginx-module
 </pre>
 </div>
-<div title="GettingStarted" creator="ZhangYichun" modifier="ZhangYichun" created="201106201139" modified="201106210918" changecount="28">
+<div title="GettingStarted" creator="ZhangYichun" modifier="ZhangYichun" created="201106201139" modified="201111030651" changecount="29">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 First of all, please go to the [[Download]] page to get the source code tarball of OpenResty, and see the [[Installation]] page for how to build and install it into your system.
@@ -1467,6 +1467,7 @@ http {
     server {
         listen 8080;
         location / {
+            default_type text/html;
             content_by_lua '
                 ngx.say(&quot;&lt;p&gt;hello, world&lt;/p&gt;&quot;)
             ';
@@ -1837,7 +1838,7 @@ Documentation wiki page: http://wiki.nginx.org/HttpRedis2Module
 
 Project page: https://github.com/agentzh/redis2-nginx-module</pre>
 </div>
-<div title="Resources" creator="ZhangYichun" modifier="ZhangYichun" created="201110240551" modified="201110240613" changecount="7">
+<div title="Resources" creator="ZhangYichun" modifier="ZhangYichun" created="201110240551" modified="201111030714" changecount="8">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! English Articles
 * My beautiful dark twisted reverse-proxy LRU cache
@@ -1847,6 +1848,8 @@ Project page: https://github.com/agentzh/redis2-nginx-module</pre>
 ! Chinese Articles
 * An introduction to OpenResty
 : http://wdicc.com/intro-openresty/
+* Nginx 3rd-Party Module Experiments Journey
+: http://chenxiaoyu.org/2011/10/30/nginx-modules.html
 * Recommending OpenResty - An Nginx Version with Fully Capable Addons
 : http://wendal.net/338.html
 * Constructing Efficient and Transparent Caching Mechanism with MemcNginxModule and SrcacheNginxModule
