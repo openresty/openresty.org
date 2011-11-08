@@ -1119,6 +1119,25 @@ Components bundled in this release:
 See [[ChangeLog1000006]] for change log for ngx_openresty 1.0.6.x.
 </pre>
 </div>
+<div title="ChangeLog1000009" creator="ZhangYichun" modifier="ZhangYichun" created="201111080101" modified="201111080109" changecount="6">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.9.1 - 8 November 2011
+* upgraded the Nginx core to 1.0.9.
+* applied the [[epoll_check_stale_wev patch|http://mailman.nginx.org/pipermail/nginx-devel/2011-November/001408.html]] to the Nginx 1.0.9 core.
+* upgraded LuaNginxModule to 0.3.1rc26.
+** feature: added the {{{ctx}}} option to [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]]: you can now specify a custom Lua table to pass to the subrequest as its [[ngx.ctx|http://wiki.nginx.org/HttpLuaModule#ngx.ctx]]. thanks [[@hugozhu|http://weibo.com/hugozhu]].
+** bugfix: fixed compatibility with nginx 0.8.54. thanks [[@0579虾|http://weibo.com/shrimp0597]].
+* upgraded PostgresNginxModule to 0.9rc2
+** bugfix: now we log an error message when the {{{postgres_pass}}} target is not found at all and returns 500 in this case instead of returning empty response.
+**  bugfix: we should no longer return {{{NGX_AGAIN}}} when the re-polling returns IO WAIT in case of the &quot;connection made&quot; state.
+** feature: added some debugging outputs which be enabled by passing the {{{--with-debug}}} option while building Nginx or OpenResty.
+** bugfix: fixed compatibility issues with nginx 1.1.4: {{{ngx_chain_update_chains}}} now requires a pool argument.
+* upgraded LuaRdsParserLibrary to 0.04.
+** bugfix: fixed a serious memory leak reported by bearnard.
+* upgraded XssNginxModule to 0.03rc5.
+** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
+See [[ChangeLog1000006]] for change log for ngx_openresty 1.0.8.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="ZhangYichun" modifier="ZhangYichun" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -1279,7 +1298,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201111030746" changecount="124">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201111080056" changecount="125">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1287,7 +1306,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.8.26.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.26.tar.gz]] 2.5MB [[Changes|ChangeLog1000008]] - 3 November 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.8.25.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.25.tar.gz]] 2.5MB [[Changes|ChangeLog1000008]] - 27 October 2011
+* [[ngx_openresty-1.0.9.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.1.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 8 November 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.6.22.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.22.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 7 October 2011
