@@ -1119,7 +1119,7 @@ Components bundled in this release:
 See [[ChangeLog1000006]] for change log for ngx_openresty 1.0.6.x.
 </pre>
 </div>
-<div title="ChangeLog1000009" creator="ZhangYichun" modifier="ZhangYichun" created="201111080101" modified="201111080111" changecount="7">
+<div title="ChangeLog1000009" creator="ZhangYichun" modifier="ZhangYichun" created="201111080101" modified="201111080119" changecount="8">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.0.9.1 - 8 November 2011
 * upgraded the Nginx core to 1.0.9.
@@ -1131,7 +1131,7 @@ See [[ChangeLog1000006]] for change log for ngx_openresty 1.0.6.x.
 ** bugfix: now we log an error message when the {{{postgres_pass}}} target is not found at all and returns 500 in this case instead of returning empty response.
 **  bugfix: we should no longer return {{{NGX_AGAIN}}} when the re-polling returns IO WAIT in case of the &quot;connection made&quot; state.
 ** feature: added some debugging outputs which be enabled by passing the {{{--with-debug}}} option while building Nginx or OpenResty.
-** bugfix: fixed compatibility issues with nginx 1.1.4: {{{ngx_chain_update_chains}}} now requires a pool argument.
+** bugfix: fixed compatibility issues with Nginx 1.1.4+: {{{ngx_chain_update_chains}}} now requires a pool argument.
 * upgraded LuaRdsParserLibrary to 0.04.
 ** bugfix: fixed a serious memory leak reported by bearnard.
 * upgraded XssNginxModule to 0.03rc5.
