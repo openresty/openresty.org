@@ -1119,8 +1119,14 @@ Components bundled in this release:
 See [[ChangeLog1000006]] for change log for ngx_openresty 1.0.6.x.
 </pre>
 </div>
-<div title="ChangeLog1000009" creator="ZhangYichun" modifier="ZhangYichun" created="201111080101" modified="201111080120" changecount="9">
+<div title="ChangeLog1000009" creator="ZhangYichun" modifier="ZhangYichun" created="201111080101" modified="201111090924" changecount="12">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.9.3 - 9 November 2011
+* upgraded LuaNginxModule to 0.3.1rc27.
+** feature: added the [[ngx.encode_args|http://wiki.nginx.org/HttpLuaModule#ngx.encode_args]] method to encode a Lua code to a URI query string.
+** feature: [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] and [[ngx.exec|http://wiki.nginx.org/HttpLuaModule#ngx.exec]] now supports the same Lua args table format as in [[ngx.encode_args|http://wiki.nginx.org/HttpLuaModule#ngx.encode_args]].
+* upgraded DrizzleNginxModule to 0.1.2rc3.
+** bugfix: fixed issues with {{{poll}}}, {{{rtsig}}}, and {{{select}}} used by the Nginx event model by eliminating the {{{poll}}} syscall performed by {{{libdrizzle}}}. This also gives rise to a nice speedup (about 10% in simple cases).
 ! Devel Release 1.0.9.1 - 8 November 2011
 * upgraded the Nginx core to 1.0.9.
 * applied the [[epoll_check_stale_wev patch|http://mailman.nginx.org/pipermail/nginx-devel/2011-November/001408.html]] to the Nginx 1.0.9 core. thanks [[@晓旭XX|http://weibo.com/u/1878897190]].
@@ -1298,7 +1304,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201111080056" changecount="125">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201111090918" changecount="126">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1306,7 +1312,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.8.26.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.26.tar.gz]] 2.5MB [[Changes|ChangeLog1000008]] - 3 November 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.9.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.1.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 8 November 2011
+* [[ngx_openresty-1.0.9.3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.3.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 9 November 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.6.22.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.22.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 7 October 2011
@@ -1579,7 +1585,7 @@ Use cases: http://forum.nginx.org/read.php?2,206658,207119
 Project page: https://github.com/calio/iconv-nginx-module
 </pre>
 </div>
-<div title="Installation" creator="ZhangYichun" modifier="ZhangYichun" created="201106210440" modified="201108241145" changecount="45">
+<div title="Installation" creator="ZhangYichun" modifier="ZhangYichun" created="201106210440" modified="201111090929" changecount="48">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 If you haven't downloaded the OpenResty source code tarball, please go to the [[Download]] page first.
 
@@ -1587,7 +1593,7 @@ Basically, building and installing OpenResty is as simple as
 {{{
 tar xzvf ngx_openresty-VERSION.tar.gz
 cd ngx_openresty-VERSION/
-./configure
+./configure --with-luajit
 make
 make install
 }}}
@@ -1634,9 +1640,9 @@ where {{{VERSION}}} should be replaced by real version numbers like {{{0.8.54.6}
 !!./configure
 Then enter the {{{ngx_openresty-VERSION/}}} directory, and type the following command to configure:
 {{{
-./configure
+./configure --with-luajit
 }}}
-By default, {{{--prefix=/usr/local/openresty}}} is assumed.
+By default, {{{--prefix=/usr/local/openresty}}} is assumed. The {{{--with-luajit}}} option is strongly recommended because LuaJIT 2.0 can give a nice performance boost in terms of both CPU time and memory footprint and its VM is also fully resume-able, unlike the default standard Lua 5.1 interpreter. Enabling LuaJIT 2.0 should work on Linux, Mac OS X, FreeBSD, Solaris, and others. You should only disable LuaJIT 2.0 when your platform does not support LuaJIT.
 
 You can specify various options, as in
 {{{
@@ -1644,9 +1650,10 @@ You can specify various options, as in
             --with-luajit \
             --without-http_redis2_module \
             --with-http_iconv_module \
-            --with-http_postgres_module
+            --with-http_postgres_module \
+            -j2
 }}}
-Try {{{./configure --help}}} to see more options.
+All of the Nginx configure file options can be used here, including {{{--add-module=PATH}}}. Try {{{./configure --help}}} to see more options available.
 
 Errors in running the ./configure script can be found in the file {{{build/nginx-VERSION/objs/autoconf.err}}} where {{{VERSION}}} should be replaced by a concrete version number of OpenResty, like {{{0.8.54.6}}}.
 !!!Notes for Solaris users
