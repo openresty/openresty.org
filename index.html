@@ -1119,7 +1119,7 @@ Components bundled in this release:
 See [[ChangeLog1000006]] for change log for ngx_openresty 1.0.6.x.
 </pre>
 </div>
-<div title="ChangeLog1000009" creator="ZhangYichun" modifier="ZhangYichun" created="201111080101" modified="201111090924" changecount="12">
+<div title="ChangeLog1000009" creator="ZhangYichun" modifier="ZhangYichun" created="201111080101" modified="201111090941" changecount="15">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.0.9.3 - 9 November 2011
 * upgraded LuaNginxModule to 0.3.1rc27.
@@ -1127,6 +1127,7 @@ See [[ChangeLog1000006]] for change log for ngx_openresty 1.0.6.x.
 ** feature: [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] and [[ngx.exec|http://wiki.nginx.org/HttpLuaModule#ngx.exec]] now supports the same Lua args table format as in [[ngx.encode_args|http://wiki.nginx.org/HttpLuaModule#ngx.encode_args]].
 * upgraded DrizzleNginxModule to 0.1.2rc3.
 ** bugfix: fixed issues with {{{poll}}}, {{{rtsig}}}, and {{{select}}} used by the Nginx event model by eliminating the {{{poll}}} syscall performed by {{{libdrizzle}}}. This also gives rise to a nice speedup (about 10% in simple cases).
+* bugfix: [[nginx-1.0.9-variable_header_ignore_no_hash.patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.9-variable_header_ignore_no_hash.patch]] might introduce a memory overflow issue in multi-header variables. thanks Markus Linnala.
 ! Devel Release 1.0.9.1 - 8 November 2011
 * upgraded the Nginx core to 1.0.9.
 * applied the [[epoll_check_stale_wev patch|http://mailman.nginx.org/pipermail/nginx-devel/2011-November/001408.html]] to the Nginx 1.0.9 core. thanks [[@晓旭XX|http://weibo.com/u/1878897190]].
