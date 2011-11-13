@@ -1119,8 +1119,11 @@ Components bundled in this release:
 See [[ChangeLog1000006]] for change log for ngx_openresty 1.0.6.x.
 </pre>
 </div>
-<div title="ChangeLog1000009" creator="ZhangYichun" modifier="ZhangYichun" created="201111080101" modified="201111101436" changecount="20">
+<div title="ChangeLog1000009" creator="ZhangYichun" modifier="ZhangYichun" created="201111080101" modified="201111130327" changecount="21">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.9.9 - 13 November 2011
+* upgraded DrizzleNginxModule to 0.1.2rc4.
+** bugfix: it might prematurly remove a write event when still busily connecting to the database from the event model.
 ! Devel Release 1.0.9.7 - 10 November 2011
 * applied [[a patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.9-log_escape_non_ascii.patch]] to add new directives {{{log_escape_non_ascii}}} to prevent escaping non-ascii bytes in access log variable values. requested by [[@姜大炮|http://weibo.com/egis]]. It can be turned {{{on}}} and {{{off}}}, and default to {{{on}}} just as the standard Nginx version.
 ! Devel Release 1.0.9.5 - 9 November 2011
@@ -1312,7 +1315,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201111101432" changecount="128">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201111130325" changecount="129">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1320,7 +1323,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.8.26.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.26.tar.gz]] 2.5MB [[Changes|ChangeLog1000008]] - 3 November 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.9.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.7.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 10 November 2011
+* [[ngx_openresty-1.0.9.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.9.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 13 November 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.6.22.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.22.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 7 October 2011
