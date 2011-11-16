@@ -1965,7 +1965,7 @@ Project page: https://github.com/agentzh/redis2-nginx-module</pre>
 : http://chenxiaoyu.org/2011/11/09/nginx-session.html
 </pre>
 </div>
-<div title="RoutingMySQLQueriesBasedOnURIArgs" creator="ZhangYichun" modifier="ZhangYichun" created="201111160406" modified="201111160415" changecount="8">
+<div title="RoutingMySQLQueriesBasedOnURIArgs" creator="ZhangYichun" modifier="ZhangYichun" created="201111160406" modified="201111160422" changecount="9">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This sample demonstrates how to route incoming requests to different ~MySQL queries based on different combinations of URI query arguments, preserving streaming output capabilities provided by DrizzleNginxModule and RdsJsonNginxModule.
@@ -1993,7 +1993,8 @@ http {
         listen 8080;
 
         location @cats-by-name {
-            set_quote_sql_str $name $arg_name;
+            set_unescape_uri $name $arg_name;
+            set_quote_sql_str $name;
             drizzle_query 'select * from cats where name=$name';
             drizzle_pass backend;
             rds_json on;

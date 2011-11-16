@@ -5,10 +5,72 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Wed, 16 Nov 2011 04:17:58 GMT</pubDate>
-<lastBuildDate>Wed, 16 Nov 2011 04:17:58 GMT</lastBuildDate>
+<pubDate>Wed, 16 Nov 2011 04:22:18 GMT</pubDate>
+<lastBuildDate>Wed, 16 Nov 2011 04:22:18 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
+<item>
+<title>RoutingMySQLQueriesBasedOnURIArgs</title>
+<description>&lt;a tiddler=&quot;RoutingMySQLQueriesBasedOnURIArgs&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This sample demonstrates how to route incoming requests to different MySQL queries based on different combinations of URI query arguments, preserving streaming output capabilities provided by &lt;a tiddlylink=&quot;DrizzleNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DrizzleNginxModule&quot; href=&quot;null#DrizzleNginxModule&quot; class=&quot;externalLink null&quot;&gt;DrizzleNginxModule&lt;/a&gt; and &lt;a tiddlylink=&quot;RdsJsonNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#RdsJsonNginxModule&quot; href=&quot;null#RdsJsonNginxModule&quot; class=&quot;externalLink null&quot;&gt;RdsJsonNginxModule&lt;/a&gt;.&lt;br&gt;&lt;br&gt;This demo uses the modules &lt;a tiddlylink=&quot;DrizzleNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DrizzleNginxModule&quot; href=&quot;null#DrizzleNginxModule&quot; class=&quot;externalLink null&quot;&gt;DrizzleNginxModule&lt;/a&gt;, &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt;, &lt;a tiddlylink=&quot;RdsJsonNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#RdsJsonNginxModule&quot; href=&quot;null#RdsJsonNginxModule&quot; class=&quot;externalLink null&quot;&gt;RdsJsonNginxModule&lt;/a&gt;, and &lt;a tiddlylink=&quot;SetMiscNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SetMiscNginxModule&quot; href=&quot;null#SetMiscNginxModule&quot; class=&quot;externalLink null&quot;&gt;SetMiscNginxModule&lt;/a&gt; bundled by &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;.&lt;br&gt;&lt;br&gt;Here's the complete code listing for our &lt;code&gt;nginx.conf&lt;/code&gt;:&lt;br&gt;&lt;br&gt;&lt;pre&gt;worker_processes  2;
+error_log logs/error.log warn;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    upstream backend {
+        drizzle_server 127.0.0.1:3306 protocol=mysql
+                       dbname=ngx_test user=ngx_test password=ngx_test;
+        drizzle_keepalive max=10 overflow=ignore mode=single;
+    }
+
+    server {
+        listen 8080;
+
+        location @cats-by-name {
+            set_unescape_uri $name $arg_name;
+            set_quote_sql_str $name;
+            drizzle_query 'select * from cats where name=$name';
+            drizzle_pass backend;
+            rds_json on;
+        }
+
+        location @cats-by-id {
+            set_quote_sql_str $id $arg_id;
+            drizzle_query 'select * from cats where id=$id';
+            drizzle_pass backend;
+            rds_json on;
+        }
+
+        location = /cats {
+            access_by_lua '
+                if ngx.var.arg_name then
+                    return ngx.exec(&quot;@cats-by-name&quot;)
+                end
+
+                if ngx.var.arg_id then
+                    return ngx.exec(&quot;@cats-by-id&quot;)
+                end
+            ';
+
+            rds_json_ret 400 &quot;expecting \&quot;name\&quot; or \&quot;id\&quot; query arguments&quot;;
+        }
+    }
+}
+&lt;/pre&gt;&lt;br&gt;And then we start our Nginx server with this configure file and test with our &lt;code&gt;/cats&lt;/code&gt; service like this:&lt;br&gt;&lt;pre&gt;$ curl 'localhost:8080/cats'
+{&quot;errcode&quot;:400,&quot;errstr&quot;:&quot;expecting \&quot;name\&quot; or \&quot;id\&quot; query arguments&quot;}
+
+$ curl 'localhost:8080/cats?name=bob'
+[{&quot;id&quot;:3,&quot;name&quot;:&quot;bob&quot;}]
+
+$ curl 'localhost:8080/cats?id=2'
+[{&quot;id&quot;:2,&quot;name&quot;:null}]
+&lt;/pre&gt;The actual output rows may vary depending on the actual contents in your &lt;code&gt;cats&lt;/code&gt; table anyway.&lt;br&gt;</description>
+<link>null#RoutingMySQLQueriesBasedOnURIArgs</link>
+<pubDate>Wed, 16 Nov 2011 04:22:18 GMT</pubDate>
+
+</item>
 <item>
 <title>Samples</title>
 <description>&lt;a tiddler=&quot;Samples&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt; &lt;a tiddlylink=&quot;RoutingMySQLQueriesBasedOnURIArgs&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#RoutingMySQLQueriesBasedOnURIArgs&quot; href=&quot;null#RoutingMySQLQueriesBasedOnURIArgs&quot; class=&quot;externalLink null&quot;&gt;Routing requests to different MySQL queries based on URI arguments&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;DynamicRoutingBasedOnRedis&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DynamicRoutingBasedOnRedis&quot; href=&quot;null#DynamicRoutingBasedOnRedis&quot; class=&quot;externalLink null&quot;&gt;Dynamic Request Routing Based on Redis&lt;/a&gt;&lt;/li&gt;&lt;li&gt; &lt;a tiddlylink=&quot;UsingLuaRocks&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UsingLuaRocks&quot; href=&quot;null#UsingLuaRocks&quot; class=&quot;externalLink null&quot;&gt;Using LuaRocks&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
@@ -96,67 +158,6 @@ http {
 &lt;/pre&gt;because flushing error log is a very expensive operation and can hurt performance a lot.&lt;br&gt;</description>
 <link>null#DynamicRoutingBasedOnRedis</link>
 <pubDate>Wed, 16 Nov 2011 04:17:39 GMT</pubDate>
-
-</item>
-<item>
-<title>RoutingMySQLQueriesBasedOnURIArgs</title>
-<description>&lt;a tiddler=&quot;RoutingMySQLQueriesBasedOnURIArgs&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This sample demonstrates how to route incoming requests to different MySQL queries based on different combinations of URI query arguments, preserving streaming output capabilities provided by &lt;a tiddlylink=&quot;DrizzleNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DrizzleNginxModule&quot; href=&quot;null#DrizzleNginxModule&quot; class=&quot;externalLink null&quot;&gt;DrizzleNginxModule&lt;/a&gt; and &lt;a tiddlylink=&quot;RdsJsonNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#RdsJsonNginxModule&quot; href=&quot;null#RdsJsonNginxModule&quot; class=&quot;externalLink null&quot;&gt;RdsJsonNginxModule&lt;/a&gt;.&lt;br&gt;&lt;br&gt;This demo uses the modules &lt;a tiddlylink=&quot;DrizzleNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DrizzleNginxModule&quot; href=&quot;null#DrizzleNginxModule&quot; class=&quot;externalLink null&quot;&gt;DrizzleNginxModule&lt;/a&gt;, &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt;, &lt;a tiddlylink=&quot;RdsJsonNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#RdsJsonNginxModule&quot; href=&quot;null#RdsJsonNginxModule&quot; class=&quot;externalLink null&quot;&gt;RdsJsonNginxModule&lt;/a&gt;, and &lt;a tiddlylink=&quot;SetMiscNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#SetMiscNginxModule&quot; href=&quot;null#SetMiscNginxModule&quot; class=&quot;externalLink null&quot;&gt;SetMiscNginxModule&lt;/a&gt; bundled by &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;.&lt;br&gt;&lt;br&gt;Here's the complete code listing for our &lt;code&gt;nginx.conf&lt;/code&gt;:&lt;br&gt;&lt;br&gt;&lt;pre&gt;worker_processes  2;
-error_log logs/error.log warn;
-
-events {
-    worker_connections 1024;
-}
-
-http {
-    upstream backend {
-        drizzle_server 127.0.0.1:3306 protocol=mysql
-                       dbname=ngx_test user=ngx_test password=ngx_test;
-        drizzle_keepalive max=10 overflow=ignore mode=single;
-    }
-
-    server {
-        listen 8080;
-
-        location @cats-by-name {
-            set_quote_sql_str $name $arg_name;
-            drizzle_query 'select * from cats where name=$name';
-            drizzle_pass backend;
-            rds_json on;
-        }
-
-        location @cats-by-id {
-            set_quote_sql_str $id $arg_id;
-            drizzle_query 'select * from cats where id=$id';
-            drizzle_pass backend;
-            rds_json on;
-        }
-
-        location = /cats {
-            access_by_lua '
-                if ngx.var.arg_name then
-                    return ngx.exec(&quot;@cats-by-name&quot;)
-                end
-
-                if ngx.var.arg_id then
-                    return ngx.exec(&quot;@cats-by-id&quot;)
-                end
-            ';
-
-            rds_json_ret 400 &quot;expecting \&quot;name\&quot; or \&quot;id\&quot; query arguments&quot;;
-        }
-    }
-}
-&lt;/pre&gt;&lt;br&gt;And then we start our Nginx server with this configure file and test with our &lt;code&gt;/cats&lt;/code&gt; service like this:&lt;br&gt;&lt;pre&gt;$ curl 'localhost:8080/cats'
-{&quot;errcode&quot;:400,&quot;errstr&quot;:&quot;expecting \&quot;name\&quot; or \&quot;id\&quot; query arguments&quot;}
-
-$ curl 'localhost:8080/cats?name=bob'
-[{&quot;id&quot;:3,&quot;name&quot;:&quot;bob&quot;}]
-
-$ curl 'localhost:8080/cats?id=2'
-[{&quot;id&quot;:2,&quot;name&quot;:null}]
-&lt;/pre&gt;The actual output rows may vary depending on the actual contents in your &lt;code&gt;cats&lt;/code&gt; table anyway.&lt;br&gt;</description>
-<link>null#RoutingMySQLQueriesBasedOnURIArgs</link>
-<pubDate>Wed, 16 Nov 2011 04:15:43 GMT</pubDate>
 
 </item>
 <item>
