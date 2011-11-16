@@ -1119,8 +1119,37 @@ Components bundled in this release:
 See [[ChangeLog1000006]] for change log for ngx_openresty 1.0.6.x.
 </pre>
 </div>
-<div title="ChangeLog1000009" creator="ZhangYichun" modifier="ZhangYichun" created="201111080101" modified="201111130327" changecount="21">
+<div title="ChangeLog1000009" creator="ZhangYichun" modifier="ZhangYichun" created="201111080101" modified="201111160314" changecount="23">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Stable Release 1.0.9.10 - 16 November 2011
+* bugfix: fixed the error message length while the {{{./configure}}} script fails.
+
+Components bundled in this release:
+* ~LuaJIT-2.0.0-beta8
+* array-var-nginx-module-0.03rc1
+* auth-request-nginx-module-0.2
+* drizzle-nginx-module-0.1.2rc4
+* echo-nginx-module-0.37rc7
+* encrypted-session-nginx-module-0.01
+* form-input-nginx-module-0.07rc5
+* headers-more-nginx-module-0.16rc4
+* iconv-nginx-module-0.10rc5
+* lua-5.1.4
+* lua-cjson-1.0.3
+* lua-rds-parser-0.04
+* lua-redis-parser-0.09rc5
+* memc-nginx-module-0.13rc1
+* nginx-1.0.9
+* ngx_devel_kit-0.2.17
+* ngx_lua-0.3.1rc28
+* ngx_postgres-0.9rc2
+* rds-csv-nginx-module-0.04
+* rds-json-nginx-module-0.12rc6
+* redis2-nginx-module-0.08rc1
+* set-misc-nginx-module-0.22rc3
+* srcache-nginx-module-0.13rc2
+* upstream-keepalive-nginx-module-0.3
+* xss-nginx-module-0.03rc5
 ! Devel Release 1.0.9.9 - 13 November 2011
 * upgraded DrizzleNginxModule to 0.1.2rc4.
 ** bugfix: it might prematurly remove a write event when still busily connecting to the database from the event model.
@@ -1315,17 +1344,18 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201111130325" changecount="129">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201111160311" changecount="130">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
 Most of the users should use the current release, i.e., the latest stable release.
-* [[ngx_openresty-1.0.8.26.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.26.tar.gz]] 2.5MB [[Changes|ChangeLog1000008]] - 3 November 2011
+* [[ngx_openresty-1.0.9.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 16 November 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
 * [[ngx_openresty-1.0.9.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.9.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 13 November 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
+* [[ngx_openresty-1.0.8.26.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.26.tar.gz]] 2.5MB [[Changes|ChangeLog1000008]] - 3 November 2011
 * [[ngx_openresty-1.0.6.22.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.22.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 7 October 2011
 * [[ngx_openresty-1.0.6.12.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.12.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 21 September 2011
 * [[ngx_openresty-1.0.5.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.5.1.tar.gz]] 2.4MB [[Changes|ChangeLog1000005]] - 4 September 2011
