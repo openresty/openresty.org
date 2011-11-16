@@ -5,51 +5,37 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Wed, 16 Nov 2011 11:47:37 GMT</pubDate>
-<lastBuildDate>Wed, 16 Nov 2011 11:47:37 GMT</lastBuildDate>
+<pubDate>Wed, 16 Nov 2011 12:34:13 GMT</pubDate>
+<lastBuildDate>Wed, 16 Nov 2011 12:34:13 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
 <title>Benchmark</title>
-<description>&lt;a tiddler=&quot;Benchmark&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;h1&gt;HelloWorld&lt;/h1&gt;Testing the performance of a HelloWorld server does not mean many things but it does tell us where the ceiling is.&lt;br&gt;&lt;br&gt;The HelloWorld server based on &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; is described in the &lt;a tiddlylink=&quot;GettingStarted&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GettingStarted&quot; href=&quot;null#GettingStarted&quot; class=&quot;externalLink null&quot;&gt;GettingStarted&lt;/a&gt; document.&lt;br&gt;&lt;br&gt;Below is the result using the command &lt;code&gt;ab -c10 -n50000 http://localhost:8080/&lt;/code&gt; on my ThinkPad T400 laptop with ngx_openresty 0.8.54.6:&lt;br&gt;&lt;pre&gt;Server Software:        ngx_openresty/0.8.54
-Server Hostname:        localhost
-Server Port:            8080
-
-Document Path:          /
-Document Length:        20 bytes
-
-Concurrency Level:      10
-Time taken for tests:   2.459 seconds
-Complete requests:      50000
-Failed requests:        0
-Write errors:           0
-Total transferred:      8550342 bytes
-HTML transferred:       1000040 bytes
-Requests per second:    20335.69 [#/sec] (mean)
-Time per request:       0.492 [ms] (mean)
-Time per request:       0.049 [ms] (mean, across all concurrent requests)
-Transfer rate:          3396.04 [Kbytes/sec] received
-
-Connection Times (ms)
-              min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0       8
-Processing:     0    0   0.2      0       8
-Waiting:        0    0   0.1      0       8
-Total:          0    0   0.2      0       8
-
-Percentage of the requests served within a certain time (ms)
-  50%      0
-  66%      0
-  75%      0
-  80%      0
-  90%      1
-  95%      1
-  98%      1
-  99%      1
- 100%      8 (longest request)
-&lt;/pre&gt;&lt;br&gt;So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison, HelloWorld servers using nginx + php-fpm 5.2.8 gives 4k r/s, Erlang R14B2 raw gen_tcp server gives 8k r/s, and &lt;a target=&quot;_blank&quot; title=&quot;External link to http://nodejs.org/&quot; href=&quot;http://nodejs.org/&quot; class=&quot;externalLink&quot;&gt;node.js&lt;/a&gt; v0.4.8 yields 5.7k r/s.&lt;br&gt;</description>
+<description>&lt;a tiddler=&quot;Benchmark&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;h1&gt;HelloWorld&lt;/h1&gt;Testing the performance of a HelloWorld server does not mean many things but it does tell us where the ceiling is.&lt;br&gt;&lt;br&gt;The HelloWorld server based on &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; is described in the &lt;a tiddlylink=&quot;GettingStarted&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GettingStarted&quot; href=&quot;null#GettingStarted&quot; class=&quot;externalLink null&quot;&gt;GettingStarted&lt;/a&gt; document.&lt;br&gt;&lt;br&gt;Below is the result using the command &lt;code&gt;http_load -p 10 -s 5 http://localhost:8080/&lt;/code&gt; on my ThinkPad T400 laptop with ngx_openresty 1.0.10.1:&lt;br&gt;&lt;pre&gt;139620 fetches, 10 max parallel, 1.67544e+06 bytes, in 5.00001 seconds
+12 mean bytes/connection
+27923.9 fetches/sec, 335087 bytes/sec
+msecs/connect: 0.0531258 mean, 4.076 max, 0.014 min
+msecs/first-response: 0.258796 mean, 5.353 max, 0.067 min
+HTTP response codes:
+  code 200 -- 139620
+&lt;/pre&gt;&lt;br&gt;So on my laptop, for only a single worker nginx server, we've got ~28k r/s. The memory footprint of the &lt;code&gt;node&lt;/code&gt; process under load is 38.0m VIRT, 2.5m RES.&lt;br&gt;&lt;br&gt;For comparison, HelloWorld servers using nginx + php-fpm 5.2.8 gives ~6k r/s:&lt;br&gt;&lt;pre&gt;http_load -p 10 -s 5 url
+29703 fetches, 10 max parallel, 326733 bytes, in 5 seconds
+11 mean bytes/connection
+5940.6 fetches/sec, 65346.6 bytes/sec
+msecs/connect: 0.0394686 mean, 1.172 max, 0.02 min
+msecs/first-response: 1.62616 mean, 6.744 max, 0.719 min
+HTTP response codes:
+  code 200 -- 29703
+&lt;/pre&gt;And &lt;a target=&quot;_blank&quot; title=&quot;External link to http://nodejs.org/&quot; href=&quot;http://nodejs.org/&quot; class=&quot;externalLink&quot;&gt;node.js&lt;/a&gt; v0.6.1 yields 10k r/s:&lt;br&gt;&lt;pre&gt;51206 fetches, 10 max parallel, 614472 bytes, in 5 seconds
+12 mean bytes/connection
+10241.2 fetches/sec, 122894 bytes/sec
+msecs/connect: 0.0356567 mean, 1.316 max, 0.019 min
+msecs/first-response: 0.916395 mean, 14.236 max, 0.077 min
+HTTP response codes:
+  code 200 -- 51206
+&lt;/pre&gt;The memory footprint of the &lt;code&gt;node&lt;/code&gt; process under load is 629m  VIRT, 50m RES.&lt;br&gt;</description>
 <link>null#Benchmark</link>
-<pubDate>Wed, 16 Nov 2011 11:47:37 GMT</pubDate>
+<pubDate>Wed, 16 Nov 2011 12:34:13 GMT</pubDate>
 
 </item>
 <item>
