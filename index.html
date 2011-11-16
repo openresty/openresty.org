@@ -1409,17 +1409,17 @@ Documentation page: http://wiki.nginx.org/HttpDrizzleModule
 
 Project page: https://github.com/chaoslawful/drizzle-nginx-module</pre>
 </div>
-<div title="DynamicRoutingBasedOnRedis" creator="ZhangYichun" modifier="ZhangYichun" created="201107270402" modified="201109141016" changecount="11">
+<div title="DynamicRoutingBasedOnRedis" creator="ZhangYichun" modifier="ZhangYichun" created="201107270402" modified="201111160417" changecount="15">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
-This sample demonstrates how to use redis to route incoming requests to different HTTP backends based on the requests' {{{User-Agent}}} header.
+This sample demonstrates how to use Redis to route incoming requests to different HTTP backends based on the requests' {{{User-Agent}}} header.
 
-This demo uses the modules Redis2NginxModule, LuaNginxModule, LuaRedisParserLibrary, and SetMiscNginxModule bundled by OpenResty:
+This demo uses the modules Redis2NginxModule, LuaNginxModule, LuaRedisParserLibrary, and SetMiscNginxModule bundled by OpenResty.
 
 Here's the complete code listing for our {{{nginx.conf}}}:
 
 {{{
-worker_processes  1;
+worker_processes  2;
 error_log logs/error.log info;
 
 events {
@@ -1505,7 +1505,14 @@ And then let's test our nginx app!
    $ curl --user-agent bar localhost:8080
    &lt;nginx.org home page goes here&gt;
 }}}
-To further tune the performance, one could enable the connection pool for the redis connections, as documented in Redis2NginxModule's README.</pre>
+To further tune the performance, one could enable the connection pool for the redis connections, as documented in Redis2NginxModule's README.
+
+Before you benchmarking your interface defined here, please ensure that you've raised the error log level to {{{warn}}} in your {{{nginx.conf}}} file like this:
+{{{
+error_log logs/error.log warn;
+}}}
+because flushing error log is a very expensive operation and can hurt performance a lot.
+</pre>
 </div>
 <div title="EchoNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210824" modified="201108260112" changecount="4">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
@@ -1935,7 +1942,7 @@ Documentation wiki page: http://wiki.nginx.org/HttpRedis2Module
 
 Project page: https://github.com/agentzh/redis2-nginx-module</pre>
 </div>
-<div title="ReleaseNote" creator="ZhangYichun" modifier="ZhangYichun" created="201111030906" modified="201111030927" changecount="9">
+<div title="ReleaseNote" creator="ZhangYichun" modifier="ZhangYichun" created="201111030906" modified="201111160338" changecount="15">
 <pre></pre>
 </div>
 <div title="Resources" creator="ZhangYichun" modifier="ZhangYichun" created="201110240551" modified="201111091158" changecount="10">
@@ -1958,9 +1965,82 @@ Project page: https://github.com/agentzh/redis2-nginx-module</pre>
 : http://chenxiaoyu.org/2011/11/09/nginx-session.html
 </pre>
 </div>
-<div title="Samples" creator="ZhangYichun" modifier="ZhangYichun" created="201107270400" modified="201108071034" changecount="8">
+<div title="RoutingMySQLQueriesBasedOnURIArgs" creator="ZhangYichun" modifier="ZhangYichun" created="201111160406" modified="201111160415" changecount="8">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
-* [[Dynamic request routing based on redis|DynamicRoutingBasedOnRedis]]
+
+This sample demonstrates how to route incoming requests to different ~MySQL queries based on different combinations of URI query arguments, preserving streaming output capabilities provided by DrizzleNginxModule and RdsJsonNginxModule.
+
+This demo uses the modules DrizzleNginxModule, LuaNginxModule, RdsJsonNginxModule, and SetMiscNginxModule bundled by OpenResty.
+
+Here's the complete code listing for our {{{nginx.conf}}}:
+
+{{{
+worker_processes  2;
+error_log logs/error.log warn;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    upstream backend {
+        drizzle_server 127.0.0.1:3306 protocol=mysql
+                       dbname=ngx_test user=ngx_test password=ngx_test;
+        drizzle_keepalive max=10 overflow=ignore mode=single;
+    }
+
+    server {
+        listen 8080;
+
+        location @cats-by-name {
+            set_quote_sql_str $name $arg_name;
+            drizzle_query 'select * from cats where name=$name';
+            drizzle_pass backend;
+            rds_json on;
+        }
+
+        location @cats-by-id {
+            set_quote_sql_str $id $arg_id;
+            drizzle_query 'select * from cats where id=$id';
+            drizzle_pass backend;
+            rds_json on;
+        }
+
+        location = /cats {
+            access_by_lua '
+                if ngx.var.arg_name then
+                    return ngx.exec(&quot;@cats-by-name&quot;)
+                end
+
+                if ngx.var.arg_id then
+                    return ngx.exec(&quot;@cats-by-id&quot;)
+                end
+            ';
+
+            rds_json_ret 400 &quot;expecting \&quot;name\&quot; or \&quot;id\&quot; query arguments&quot;;
+        }
+    }
+}
+}}}
+
+And then we start our Nginx server with this configure file and test with our {{{/cats}}} service like this:
+{{{
+$ curl 'localhost:8080/cats'
+{&quot;errcode&quot;:400,&quot;errstr&quot;:&quot;expecting \&quot;name\&quot; or \&quot;id\&quot; query arguments&quot;}
+
+$ curl 'localhost:8080/cats?name=bob'
+[{&quot;id&quot;:3,&quot;name&quot;:&quot;bob&quot;}]
+
+$ curl 'localhost:8080/cats?id=2'
+[{&quot;id&quot;:2,&quot;name&quot;:null}]
+}}}
+The actual output rows may vary depending on the actual contents in your {{{cats}}} table anyway.
+</pre>
+</div>
+<div title="Samples" creator="ZhangYichun" modifier="ZhangYichun" created="201107270400" modified="201111160417" changecount="10">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Routing requests to different MySQL queries based on URI arguments|RoutingMySQLQueriesBasedOnURIArgs]]
+* [[Dynamic Request Routing Based on Redis|DynamicRoutingBasedOnRedis]]
 * [[Using LuaRocks|UsingLuaRocks]]
 </pre>
 </div>
