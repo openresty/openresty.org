@@ -5,10 +5,17 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2011 ZhangYichun</copyright>
-<pubDate>Wed, 16 Nov 2011 12:34:13 GMT</pubDate>
-<lastBuildDate>Wed, 16 Nov 2011 12:34:13 GMT</lastBuildDate>
+<pubDate>Thu, 17 Nov 2011 04:03:17 GMT</pubDate>
+<lastBuildDate>Thu, 17 Nov 2011 04:03:17 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
+<item>
+<title>About</title>
+<description>&lt;a tiddler=&quot;About&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This bundle is maintained by us, &lt;a target=&quot;_blank&quot; title=&quot;External link to http://agentzh.org&quot; href=&quot;http://agentzh.org&quot; class=&quot;externalLink&quot;&gt;agentzh&lt;/a&gt;, &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/chaoslawful&quot; href=&quot;https://github.com/chaoslawful&quot; class=&quot;externalLink&quot;&gt;chaoslawful&lt;/a&gt;, &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/kindy61&quot; href=&quot;https://github.com/kindy61&quot; class=&quot;externalLink&quot;&gt;Kindy Lin&lt;/a&gt;, &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/liseen&quot; href=&quot;https://github.com/liseen&quot; class=&quot;externalLink&quot;&gt;Liseen Wan&lt;/a&gt;, and Jiale Zhi. It was originally sponsored by &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.taobao.com&quot; href=&quot;http://www.taobao.com&quot; class=&quot;externalLink&quot;&gt;Taobao.com&lt;/a&gt;, Alibaba Group.&lt;br&gt;&lt;br&gt;Because most of the nginx modules are developed by the bundle maintainers, it can ensure&lt;br&gt;that all these modules are played well together.&lt;br&gt;&lt;br&gt;The bundled software components are copyrighted by the respective copyright holders.&lt;br&gt;&lt;br&gt;This web site is a &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/&quot; href=&quot;http://www.tiddlywiki.com/&quot; class=&quot;externalLink&quot;&gt;TiddlyWiki&lt;/a&gt; page that is under the version control of a repository on &lt;a tiddlylink=&quot;GitHub&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GitHub&quot; href=&quot;null#GitHub&quot; class=&quot;externalLink null&quot;&gt;GitHub&lt;/a&gt;:&lt;br&gt;&lt;br&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/agentzh/openresty.org&quot; href=&quot;http://github.com/agentzh/openresty.org&quot; class=&quot;externalLink&quot;&gt;http://github.com/agentzh/openresty.org&lt;/a&gt;&lt;br&gt;&lt;br&gt;Feel free to fork it or just &lt;a tiddlylink=&quot;ContactUs&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ContactUs&quot; href=&quot;null#ContactUs&quot; class=&quot;externalLink null&quot;&gt;contact us&lt;/a&gt; to obtain a git commit bit if you want to edit and improve this site.&lt;br&gt;</description>
+<link>null#About</link>
+<pubDate>Thu, 17 Nov 2011 04:03:17 GMT</pubDate>
+
+</item>
 <item>
 <title>Benchmark</title>
 <description>&lt;a tiddler=&quot;Benchmark&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;h1&gt;HelloWorld&lt;/h1&gt;Testing the performance of a HelloWorld server does not mean many things but it does tell us where the ceiling is.&lt;br&gt;&lt;br&gt;The HelloWorld server based on &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; is described in the &lt;a tiddlylink=&quot;GettingStarted&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GettingStarted&quot; href=&quot;null#GettingStarted&quot; class=&quot;externalLink null&quot;&gt;GettingStarted&lt;/a&gt; document.&lt;br&gt;&lt;br&gt;Below is the result using the command &lt;code&gt;http_load -p 10 -s 5 http://localhost:8080/&lt;/code&gt; on my ThinkPad T400 laptop with ngx_openresty 1.0.10.1:&lt;br&gt;&lt;pre&gt;139620 fetches, 10 max parallel, 1.67544e+06 bytes, in 5.00001 seconds
@@ -35,7 +42,7 @@ HTTP response codes:
   code 200 -- 51206
 &lt;/pre&gt;The memory footprint of the &lt;code&gt;node&lt;/code&gt; process under load is 629m  VIRT, 50m RES.&lt;br&gt;</description>
 <link>null#Benchmark</link>
-<pubDate>Wed, 16 Nov 2011 12:34:13 GMT</pubDate>
+<pubDate>Wed, 16 Nov 2011 12:34:00 GMT</pubDate>
 
 </item>
 <item>
@@ -295,13 +302,6 @@ export PATH
 <category>admin</category>
 <link>null#MainMenu</link>
 <pubDate>Mon, 24 Oct 2011 05:47:00 GMT</pubDate>
-
-</item>
-<item>
-<title>About</title>
-<description>&lt;a tiddler=&quot;About&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This bundle is maintained by us, &lt;a target=&quot;_blank&quot; title=&quot;External link to http://agentzh.org&quot; href=&quot;http://agentzh.org&quot; class=&quot;externalLink&quot;&gt;agentzh&lt;/a&gt;, &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/chaoslawful&quot; href=&quot;https://github.com/chaoslawful&quot; class=&quot;externalLink&quot;&gt;chaoslawful&lt;/a&gt;, &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/kindy61&quot; href=&quot;https://github.com/kindy61&quot; class=&quot;externalLink&quot;&gt;Kindy Lin&lt;/a&gt;, &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/liseen&quot; href=&quot;https://github.com/liseen&quot; class=&quot;externalLink&quot;&gt;Liseen Wan&lt;/a&gt;, and Jiale Zhi. It is sponsored by &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.taobao.com&quot; href=&quot;http://www.taobao.com&quot; class=&quot;externalLink&quot;&gt;Taobao.com&lt;/a&gt;, Alibaba Group.&lt;br&gt;&lt;br&gt;Because most of the nginx modules are developed by the bundle maintainers, it can ensure&lt;br&gt;that all these modules are played well together.&lt;br&gt;&lt;br&gt;The bundled software components are copyrighted by the respective copyright holders.&lt;br&gt;&lt;br&gt;This web site is a &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.tiddlywiki.com/&quot; href=&quot;http://www.tiddlywiki.com/&quot; class=&quot;externalLink&quot;&gt;TiddlyWiki&lt;/a&gt; page that is under the version control of a repository on &lt;a tiddlylink=&quot;GitHub&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GitHub&quot; href=&quot;null#GitHub&quot; class=&quot;externalLink null&quot;&gt;GitHub&lt;/a&gt;:&lt;br&gt;&lt;br&gt;&lt;a target=&quot;_blank&quot; title=&quot;External link to http://github.com/agentzh/openresty.org&quot; href=&quot;http://github.com/agentzh/openresty.org&quot; class=&quot;externalLink&quot;&gt;http://github.com/agentzh/openresty.org&lt;/a&gt;&lt;br&gt;&lt;br&gt;Feel free to fork it or just &lt;a tiddlylink=&quot;ContactUs&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ContactUs&quot; href=&quot;null#ContactUs&quot; class=&quot;externalLink null&quot;&gt;contact us&lt;/a&gt; to obtain a git commit bit if you want to edit and improve this site.&lt;br&gt;</description>
-<link>null#About</link>
-<pubDate>Sun, 23 Oct 2011 11:56:00 GMT</pubDate>
 
 </item>
 <item>
