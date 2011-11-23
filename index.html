@@ -1178,8 +1178,12 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201111211458" changecount="6">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201111230245" changecount="7">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.10.7 - 23 November 2011
+* upgraded LuaNginxModule to 0.3.1rc31.
+** feature: added opions {{{copy_all_vars}}} and {{{vars}}} to [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] and [[ngx.location.capture_multi|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi]]. thanks Marcus Clyne for the patch
+** bugfix: fixed a bad regression in [[ngx.location.capture_multi|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi]] when the request option table is specified. this bug had appeared in ngx_lua 0.3.1rc26 and ngx_openresty 1.0.9.1.
 ! Devel Release 1.0.10.5 - 21 November 2011
 * upgraded LuaNginxModule to 0.3.1rc30.
 ** feature: added new regex options {{{&quot;j&quot;}}} and {{{&quot;d&quot;}}} to [[ngx.re.match|http://wiki.nginx.org/HttpLuaModule#ngx.re.match]], [[ngx.re.gmatch|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]], [[ngx.re.sub|http://wiki.nginx.org/HttpLuaModule#ngx.re.sub]], and [[ngx.re.gsub|http://wiki.nginx.org/HttpLuaModule#ngx.re.gsub]]  so as to enable the PCRE [[JIT mode|http://www.manpagez.com/man/3/pcrejit/]] and DFA mode, respectively. thanks [[@姜大炮|http://weibo.com/egis]] for providing the patch.
@@ -1354,7 +1358,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201111211454" changecount="133">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201111230241" changecount="134">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1362,7 +1366,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.9.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 16 November 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.10.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.5.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 21 November 2011
+* [[ngx_openresty-1.0.10.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.7.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 23 November 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.8.26.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.26.tar.gz]] 2.5MB [[Changes|ChangeLog1000008]] - 3 November 2011
