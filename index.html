@@ -1178,8 +1178,11 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201111241429" changecount="11">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201111251326" changecount="14">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.10.13 - 25 November 2011
+* upgraded LuaNginxModule to 0.3.1rc34.
+** feature: added {{{wait}}} boolean argument to [[ngx.flush()|http://wiki.nginx.org/HttpLuaModule#ngx.flush]] to support synchronous flushing; {{{ngx.flush(true)}}} will not return until all the data has been flushed into the system send buffer or the send timeout has expired.
 ! Devel Release 1.0.10.11 - 24 November 2011
 * upgraded LuaNginxModule to 0.3.1rc33.
 ** feature: added new Lua API [[ngx.now|http://wiki.nginx.org/HttpLuaModule#ngx.now]] to return the current time (including the ms part as the decimal part). thanks 林青.
@@ -1187,9 +1190,9 @@ See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 ** docs: massive documentation improvement done by Nginx User.
 ! Devel Release 1.0.10.9 - 24 November 2011
 * upgraded XssNginxModule to 0.03rc6.
-** bugfix: now we use {{{signed char}}} explicitly instead of the vague {{{char}}} type which could be unsigned by default in certain systems like PowerPC. thanks Dmitry E. Oboukhov.
+** bugfix: now we use {{{signed char}}} explicitly instead of the vague {{{char}}} type which could be unsigned by default in certain systems like ~PowerPC. thanks Dmitry E. Oboukhov.
 * upgraded MemcNginxModule to 0.13rc2.
-** bugfix: now we use {{{signed char}}} explicitly instead of the vague {{{char}}} type which could be unsigned by default in certain systems like PowerPC. thanks Dmitry E. Oboukhov.
+** bugfix: now we use {{{signed char}}} explicitly instead of the vague {{{char}}} type which could be unsigned by default in certain systems like ~PowerPC. thanks Dmitry E. Oboukhov.
 * upgraded Redis2NginxModule to 0.08rc2.
 ** bugfix: when {{{char}}} defaults to {{{unsigned char}}}, the Ragel-based Redis response parser could not accept non-ascci bytes. thanks Dmitry E. Oboukhov.
 ! Devel Release 1.0.10.7 - 23 November 2011
@@ -1370,7 +1373,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201111241426" changecount="136">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201111251252" changecount="137">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1378,7 +1381,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.9.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 16 November 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.10.11.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.11.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 24 November 2011
+* [[ngx_openresty-1.0.10.13.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.13.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 25 November 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.8.26.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.26.tar.gz]] 2.5MB [[Changes|ChangeLog1000008]] - 3 November 2011
