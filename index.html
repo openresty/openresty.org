@@ -1405,7 +1405,7 @@ Sometimes, users may want to download old releases.
 See [[Installation]] for installation instructions.
 </pre>
 </div>
-<div title="DrizzleNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210822" modified="201108260112" changecount="14">
+<div title="DrizzleNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210822" modified="201111280639" changecount="15">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is an nginx upstream module that talks to ~MySQL and/or Drizzle database servers by [[libdrizzle]].
@@ -1414,15 +1414,18 @@ This ngx_drizzle module is not enabled by default. You should specify the {{{--w
 
 The [[libdrizzle]] C library is no longer bundled by OpenResty. You need to download the drizzle server tarball from https://launchpad.net/drizzle.
 
-When you get the drizzle7 release tarball, you can install libdrizzle-1.0 like this:
+Latest drizzle7 release does not support building libdrizzle 1.0 separately and requires a lot of external dependencies like Boost and Protobuf which are painful to install. The last version supporting building libdrizzle 1.0 separately is {{{2011.07.21}}}. You can download it from here:
+
+http://agentzh.org/misc/nginx/drizzle7-2011.07.21.tar.gz
+
+When you get the drizzle7 2011.07.21 release tarball, you can install libdrizzle-1.0 like this:
 {{{
-tar xzvf drizzle7-VERSION.tar.gz
-cd drizzle7-VERSION/
+tar xzvf drizzle7-2011.07.21.tar.gz
+cd drizzle7-2011.07.21/
 ./configure --without-server
 make libdrizzle-1.0
 make install-libdrizzle-1.0
 }}}
-where {{{VERSION}}} is the drizzle7 release version number like {{{2011.06.20}}}.
 
 Please ensure that you have the {{{python}}} command point to a {{{python2}}} interpreter. It's known that on recent Arch Linux distribution, {{{python}}} is linked to {{{python3}}} by default, and while running {{{make libdrizzle-1.0}}} will yield the following error:
 {{{
