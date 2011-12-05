@@ -1178,8 +1178,15 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201111300355" changecount="20">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201112051259" changecount="22">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.10.23 - 5 December 2011
+* upgraded RdsJsonNginxModule to v0.12rc7.
+** added more debug level error log outputs to ease debugging (as discussed in [[github issue #2|https://github.com/agentzh/rds-json-nginx-module/issues/2]]).
+* upgraded XssNginxModule to v0.03rc7.
+** now we use the {{{ngx_log_debugN}}} macros to emit debugging outputs instead of {{{info}}} level error logging because the latter is costly in production.
+* upgraded LuaNginxModule to 0.3.1rc38.
+** added constant {{{ngx.HTTP_GATEWAY_TIMEOUT}}} (504) per Fry-kun in [[github issue #73|https://github.com/chaoslawful/lua-nginx-module/issues/73]].
 ! Devel Release 1.0.10.21 - 30 November 2011
 * fixed a serious regression for Linux AIO in [[nginx-1.0.10-epoll_check_stale_wev.patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.10-epoll_check_stale_wev.patch]], thanks Maxim Dounin for the patch's patch.
 ! Devel Release 1.0.10.19 - 29 November 2011
@@ -1385,7 +1392,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201111300353" changecount="141">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201112051254" changecount="142">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1393,7 +1400,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.9.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 16 November 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.10.21.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.21.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 30 November 2011
+* [[ngx_openresty-1.0.10.23.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.23.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 5 December 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.8.26.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.26.tar.gz]] 2.5MB [[Changes|ChangeLog1000008]] - 3 November 2011
