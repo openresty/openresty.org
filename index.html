@@ -1178,12 +1178,12 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201112141305" changecount="26">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201112141309" changecount="27">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.0.10.25 - 14 December 2011
 * upgraded SrcacheNginxModule to v0.13rc3.
 ** bugfix: fixed a regression with XssNginxModule for cache hits. this bug had appeared in v0.13rc1. thanks [[万珣新|http://weibo.com/liseen]].
-** bugfix: we did not cache the Location response header at all for {{{301}}}/{{{302}}} responses.
+** bugfix: we did not cache the {{{Location}}} response header at all for {{{301}}}/{{{302}}} responses.
 ** bugfix: we should not blindly cache the {{{Accept-Ranges: bytes}}} response headers regardless of the actual current requests.
 * upgraded XssNginxModule to v0.03rc8.
 ** bugfix: fixed a few debug-level log messages; the old text was misleading.
