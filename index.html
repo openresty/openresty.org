@@ -1178,8 +1178,15 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201112111330" changecount="23">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201112141233" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Stable Release 1.0.10.25 - 14 December 2011
+* upgraded SrcacheNginxModule to v0.13rc3.
+** bugfix: fixed a regression with XssNginxModule for cache hits. this bug had appeared in v0.13rc1. thanks [[万珣新|http://weibo.com/liseen]].
+** bugfix: we did not cache the Location response header at all for {{{301}}}/{{{302}}} responses.
+** bugfix: we should not blindly cache the {{{Accept-Ranges: bytes}}} response headers regardless of the actual current requests.
+* upgraded XssNginxModule to v0.03rc8.
+** bugfix: fixed a few debug-level log messages; the old text was misleading.
 ! Stable Release 1.0.10.24 - 11 December 2011
 Same as the devel version 1.0.10.23.
 
@@ -1421,7 +1428,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201112111329" changecount="143">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201112141228" changecount="145">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1429,7 +1436,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.24.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.24.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 11 December 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.10.23.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.23.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 5 December 2011
+* [[ngx_openresty-1.0.10.25.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.25.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 14 December 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.9.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 16 November 2011
@@ -2025,7 +2032,7 @@ Documentation wiki page: http://wiki.nginx.org/HttpRedis2Module
 
 Project page: https://github.com/agentzh/redis2-nginx-module</pre>
 </div>
-<div title="ReleaseNote" creator="ZhangYichun" modifier="ZhangYichun" created="201111030906" modified="201111160338" changecount="15">
+<div title="ReleaseNote" creator="ZhangYichun" modifier="ZhangYichun" created="201111030906" modified="201112141250" changecount="23">
 <pre></pre>
 </div>
 <div title="Resources" creator="ZhangYichun" modifier="ZhangYichun" created="201110240551" modified="201112060744" changecount="11">
