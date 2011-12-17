@@ -1178,9 +1178,9 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201112161350" changecount="35">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201112170322" changecount="37">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
-! Devel Release 1.0.10.27 - 14 December 2011
+! Devel Release 1.0.10.27 - 16 December 2011
 * upgraded LuaNginxModule to v0.3.1rc40.
 ** bugfix: {{{ngx.flush(true)}}} could not be used before I/O calls like [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]]. this bug had appeared in v0.3.1rc34.
 ** bugfix: {{{ngx.var.VARIABLE}}} did not evaluate to {{{nil}}} when the Nginx variable's {{{valid}}} flag is {{{0}}}.
@@ -1189,6 +1189,7 @@ See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 * upgraded SetMiscNginxModule to v0.22rc4.
 ** bugfix: fixed one place that does not check the pointer returned by the memory allocator.
 ** src: converted {{{CRLF}}} in the source files and test files to {{{LF}}}.
+* bugfix: some old version of shell {{{cp}}} command does not support trailing slashes in the destination argument and could break our {{{./configure}}} script. thanks [[姚伟斌|http://weibo.com/yaoweibin]] for reporting it.
 ! Devel Release 1.0.10.25 - 14 December 2011
 * upgraded SrcacheNginxModule to v0.13rc3.
 ** bugfix: fixed a regression with XssNginxModule for cache hits. this bug had appeared in v0.13rc1. thanks [[万珣新|http://weibo.com/liseen]].
