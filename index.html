@@ -1178,8 +1178,16 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201112170501" changecount="39">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201112251238" changecount="45">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.10.31 - 25 December 2011
+* upgraded LuaJIT to 2.0.0beta9.
+** changes: http://luajit.org/changes.html
+* upgraded LuaNginxModule to v0.3.1rc42.
+** bugfix: [[ngx.req.set_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header]] might cause invalid memory reads because Nginx request header values must be null terminated. thanks Maxim Dounin.
+** bugfix: {{{ngx.var.VARIABLE}}} might evaluate to nil even if there is a valid value because the Nginx variable value's {{{valid}}} flag might not be initialized properly. this bad had appeared in v0.3.1rc40.
+* upgraded HeadersMoreNginxModule to v0.16rc6.
+** bugfix: the [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_headers]] directive might cause invalid memory reads because Nginx request header values must be null terminated. thanks Maxim Dounin.
 ! Devel Release 1.0.10.29 - 17 December 2011
 * upgraded LuaNginxModule to v0.3.1rc41.
 ** bugfix: [[ngx.req.set_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header]] and [[ngx.req.clear_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] did not handle the {{{Accept-Encoding}}} request headers properly. thanks 天街夜色.
@@ -1443,7 +1451,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201112170456" changecount="147">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201112251242" changecount="150">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1451,7 +1459,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.24.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.24.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 11 December 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.10.29.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.29.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 17 December 2011
+* [[ngx_openresty-1.0.10.31.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.31.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 25 December 2011
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.9.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 16 November 2011
