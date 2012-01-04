@@ -1178,11 +1178,16 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201112301555" changecount="49">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201201041054" changecount="54">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.10.39 - 4 January 2012
+* upgraded LuaNginxModule to v0.3.1rc45.
+** bugfix: [[ngx.req.get_uri_args|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_uri_args]] and [[ngx.req.get_post_args|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_post_args]] now only parse up to 100 arguments by default. but one can specify the optional argument to these two methods to specify a custom maximum number of args. thanks Tzury Bar Yochay for reporting this.
+** bugfix:  [[ngx.req.get_headers|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers]] now only parse up to 100 request headers by default. but one can specify the optional argument to this method to specify a custom maximum number of headers.
 ! Devel Release 1.0.10.37 - 30 December 2011
 * upgraded LuaNginxModule to v0.3.1rc43.
 ** bugfix: removing builtin headers via [[ngx.req.clear_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] and its equivalent in huge request headers with 20+ entries could result in data loss. thanks Chris Dumoulin for the patch in [[github issue #6|https://github.com/agentzh/headers-more-nginx-module/issues/6]].
+** bugfix: could not compile with Nginx 1.1.12+ because Nginx 1.1.12 changed its regex API. now we call PCRE API directly and require at least PCRE 8.21 for the PCRE JIT support in our {{{ngx.re}}} API (since PCRE 8.20 had a bug in its JIT engine that it did not honor {{{pcre_malloc}}} and {{{pcre_free}}} at all).
 ! Devel Release 1.0.10.35 - 30 December 2011
 * upgraded HeadersMoreNginxModule to v0.16rc7.
 ** bugfix: removing builtin headers in huge request headers with 20+ entries could result in data loss. thanks Chris Dumoulin for the patch in [[github issue #6|https://github.com/agentzh/headers-more-nginx-module/issues/6]].
@@ -1460,7 +1465,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201112301555" changecount="153">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201201040930" changecount="154">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1468,7 +1473,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.24.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.24.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 11 December 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.10.37.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.37.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 30 December 2011
+* [[ngx_openresty-1.0.10.39.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.39.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 4 January 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.9.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 16 November 2011
