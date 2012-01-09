@@ -1178,8 +1178,19 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201201041054" changecount="54">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201201091027" changecount="55">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.10.41 - 9 January 2012
+* upgraded UpstreamKeepaliveNginxModule to 0.7.
+** Bugfix: unbuffered connection might not be kept alive under Linux.
+** Bugfix: module could not be built on Windows.
+** Bugfix: module could not be built without the ngx_http_ssl_module.
+** Feature: https connections support (requires patches).
+** Bugfix: invalid connections might be cached.
+** Bugfix: the &quot;[alert] ... open socket ... left in connection ...&quot; messages were logged on nginx worker process gracefull exit for each cached connection; the bug had appeared in version 0.3.
+* upgraded EchoNginxModule to 0.37rc8.
+** bugfix: fixed two spots that we did not check null pointers returned by the memory allocator.
+** bugfix: attempt to fix places where {{{ngx_time_update}}} might not be compiled properly.
 ! Devel Release 1.0.10.39 - 4 January 2012
 * upgraded LuaNginxModule to v0.3.1rc45.
 ** bugfix: [[ngx.req.get_uri_args|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_uri_args]] and [[ngx.req.get_post_args|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_post_args]] now only parse up to 100 arguments by default. but one can specify the optional argument to these two methods to specify a custom maximum number of args. thanks Tzury Bar Yochay for reporting this.
@@ -1465,7 +1476,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201201040930" changecount="154">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201201091022" changecount="155">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1473,7 +1484,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.24.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.24.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 11 December 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.10.39.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.39.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 4 January 2012
+* [[ngx_openresty-1.0.10.41.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.41.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 9 January 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.9.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 16 November 2011
