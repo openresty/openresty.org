@@ -1178,8 +1178,13 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201201091027" changecount="55">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201201121326" changecount="56">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.10.43 - 12 January 2012
+* upgraded LuaNginxModule to 0.4.0.
+* upgraded EncryptedSessionNginxModule to 0.02.
+** bugfix: the {{{-lssl}}} option broke nginx linking when {{{--with-openssl=DIR}}} is specified. thanks charlieyang for reporting this issue.
+* bugfix: fixed issues with relative path DIR in the {{{--with-openssl=DIR}}} option for {{{./configure}}}.
 ! Devel Release 1.0.10.41 - 9 January 2012
 * upgraded UpstreamKeepaliveNginxModule to 0.7.
 ** Bugfix: unbuffered connection might not be kept alive under Linux.
@@ -1510,7 +1515,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201201091022" changecount="155">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201201121147" changecount="156">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1518,7 +1523,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.24.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.24.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 11 December 2011
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.10.41.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.41.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 9 January 2012
+* [[ngx_openresty-1.0.10.43.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.43.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 12 January 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.9.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 16 November 2011
@@ -2617,13 +2622,13 @@ Project page: http://github.com/agentzh/xss-nginx-module</pre>
 
 Homepage: http://agentzh.org</pre>
 </div>
-<div title="eBooks" creator="ZhangYichun" modifier="ZhangYichun" created="201201051515" modified="201201071501" changecount="9">
-<pre>! Chinese eBooks
+<div title="eBooks" creator="ZhangYichun" modifier="ZhangYichun" created="201201051515" modified="201201121323" changecount="11">
+<pre>! Chinese eBooks for Nginx &amp; OpenResty
 &lt;&lt;toolbar permalink&gt;&gt;
-* &quot;agentzh's Nginx tutorials&quot; (version 2012.01.07)
-** [[MOBI Format|http://agentzh.org/misc/nginx/agentzh-nginx-tutorials-zhcn-2012.01.07.mobi]] (Kindle users)
-** [[EPUB Format|http://agentzh.org/misc/nginx/agentzh-nginx-tutorials-zhcn-2012.01.07.epub]] (Sony, Apple and other users)
-** [[PDF Format|http://agentzh.org/misc/nginx/agentzh-nginx-tutorials-zhcn-2012.01.07.pdf]] (PC users)
+* &quot;agentzh's Nginx tutorials&quot; (version 2012.01.12)
+** [[MOBI Format|http://agentzh.org/misc/nginx/agentzh-nginx-tutorials-zhcn-2012.01.12.mobi]] (Kindle users)
+** [[EPUB Format|http://agentzh.org/misc/nginx/agentzh-nginx-tutorials-zhcn-2012.01.12.epub]] (Sony, Apple and other users)
+** [[PDF Format|http://agentzh.org/misc/nginx/agentzh-nginx-tutorials-zhcn-2012.01.12.pdf]] (PC users)
 </pre>
 </div>
 <div title="libdrizzle" creator="ZhangYichun" modifier="ZhangYichun" created="201106210842" modified="201107010450" changecount="2">
