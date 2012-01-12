@@ -5,34 +5,10 @@
 <description>a powerful web app server by extending nginx</description>
 <language>en</language>
 <copyright>Copyright 2012 ZhangYichun</copyright>
-<pubDate>Thu, 12 Jan 2012 09:14:54 GMT</pubDate>
-<lastBuildDate>Thu, 12 Jan 2012 09:14:54 GMT</lastBuildDate>
+<pubDate>Thu, 12 Jan 2012 10:22:33 GMT</pubDate>
+<lastBuildDate>Thu, 12 Jan 2012 10:22:33 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
-<item>
-<title>MainMenu</title>
-<description>&lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;Overview&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Components&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Components&quot; href=&quot;null#Components&quot; class=&quot;externalLink null&quot;&gt;Components&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;GettingStarted&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GettingStarted&quot; href=&quot;null#GettingStarted&quot; class=&quot;externalLink null&quot;&gt;Getting started&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Samples&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Samples&quot; href=&quot;null#Samples&quot; class=&quot;externalLink null&quot;&gt;Samples&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Benchmark&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Benchmark&quot; href=&quot;null#Benchmark&quot; class=&quot;externalLink null&quot;&gt;Benchmark&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Presentations&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Presentations&quot; href=&quot;null#Presentations&quot; class=&quot;externalLink null&quot;&gt;Presentations&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;eBooks&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#eBooks&quot; href=&quot;null#eBooks&quot; class=&quot;externalLink null&quot;&gt;eBooks&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Resources&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Resources&quot; href=&quot;null#Resources&quot; class=&quot;externalLink null&quot;&gt;Resources&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;Download&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Installation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Installation&quot; href=&quot;null#Installation&quot; class=&quot;externalLink null&quot;&gt;Installation&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;ContactUs&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ContactUs&quot; href=&quot;null#ContactUs&quot; class=&quot;externalLink null&quot;&gt;Contact us&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;About&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#About&quot; href=&quot;null#About&quot; class=&quot;externalLink null&quot;&gt;About&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;DonateOnline&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DonateOnline&quot; href=&quot;null#DonateOnline&quot; class=&quot;externalLink null&quot;&gt;Donate Online&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;feed-icon-14x14.png&quot;&gt; &lt;a tiddlylink=&quot;RSSFeed&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#RSSFeed&quot; href=&quot;null#RSSFeed&quot; class=&quot;externalLink null&quot;&gt;RSS feed&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;span&gt;
-&lt;form name=&quot;_xclick&quot; action=&quot;https://www.paypal.com/cgi-bin/webscr&quot; method=&quot;post&quot; target=&quot;_blank&quot;&gt;
-&lt;input name=&quot;cmd&quot; value=&quot;_xclick&quot; type=&quot;hidden&quot;&gt;
-&lt;input name=&quot;business&quot; value=&quot;agentzh@gmail.com&quot; type=&quot;hidden&quot;&gt;
-&lt;input name=&quot;item_name&quot; value=&quot;OpenResty Donation (in USD)&quot; type=&quot;hidden&quot;&gt;
-&lt;input name=&quot;currency_code&quot; value=&quot;USD&quot; type=&quot;hidden&quot;&gt;
-&lt;input name=&quot;amount&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;
-&lt;input src=&quot;donate_button_paypal_01.gif&quot; name=&quot;submit&quot; alt=&quot;Donate with PayPal&quot; border=&quot;0&quot; type=&quot;image&quot;&gt;
-&lt;/form&gt;
-&lt;/span&gt;</description>
-<category>admin</category>
-<link>null#MainMenu</link>
-<pubDate>Thu, 12 Jan 2012 09:14:53 GMT</pubDate>
-
-</item>
-<item>
-<title>MarkupPostBody</title>
-<description>&amp;lt;p/&amp;gt;&amp;lt;p/&amp;gt;&lt;br&gt;&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;&lt;br&gt;&lt;br&gt;  var _gaq = _gaq || [];&lt;br&gt;  _gaq.push(['_setAccount', '&lt;a tiddlylink=&quot;UA-24724965-1&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UA-24724965-1&quot; href=&quot;null#UA-24724965-1&quot; class=&quot;externalLink null&quot;&gt;UA-24724965-1&lt;/a&gt;']);&lt;br&gt;  _gaq.push(['_trackPageview']);&lt;br&gt;&lt;br&gt;  var ga_f = function() {&lt;br&gt;    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;&lt;br&gt;    ga.src = ('https:' == document.location.protocol ? '&lt;a target=&quot;_blank&quot; title=&quot;External link to https://ssl&quot; href=&quot;https://ssl&quot; class=&quot;externalLink&quot;&gt;https://ssl&lt;/a&gt;' : '&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www&quot; href=&quot;http://www&quot; class=&quot;externalLink&quot;&gt;http://www&lt;/a&gt;') + '.google-analytics.com/ga.js';&lt;br&gt;    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);&lt;br&gt;  };&lt;br&gt;  setTimeout(ga_f, 200);&lt;br&gt;&lt;br&gt;&amp;lt;/script&amp;gt;&lt;br&gt;</description>
-<link>null#MarkupPostBody</link>
-<pubDate>Thu, 12 Jan 2012 09:14:01 GMT</pubDate>
-
-</item>
 <item>
 <title>DonateOnline</title>
 <description>&lt;a tiddler=&quot;DonateOnline&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;h1&gt; Donate With PayPal&lt;/h1&gt;&lt;br&gt;If you'd like to make a one-time donation to &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;, you can use PayPal to make it fast and easy.&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt; PayPal members can donate directly from their PayPal accounts by logging in via the PayPal website and clicking &quot;send money&quot; to &lt;code&gt;agentzh@gmail.com&lt;/code&gt;, or just click the button below.&lt;/li&gt;&lt;li&gt; Non-PayPal members can still pay with a credit card without signing up for PayPal. Click the button below then follow the instructions at the bottom of the page for non-PayPal members.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Either way, it's a convenient way to support ocean wildlife.&lt;br&gt;&lt;br&gt;&lt;span&gt;
@@ -44,9 +20,37 @@
 &lt;input name=&quot;amount&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;
 &lt;input src=&quot;donate_button_paypal_01.gif&quot; name=&quot;submit&quot; alt=&quot;Donate with PayPal&quot; border=&quot;0&quot; type=&quot;image&quot;&gt;
 &lt;/form&gt;
-&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;h1&gt; Donate with AliPay (支付宝)&lt;/h1&gt;&lt;br&gt;If you're in China, it's usually more convenient to send donation is to send money via the &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.alipay.com/&quot; href=&quot;http://www.alipay.com/&quot; class=&quot;externalLink&quot;&gt;AliPay&lt;/a&gt; to my account &lt;code&gt;agentzh@yahoo.cn&lt;/code&gt;&lt;br&gt;&lt;br&gt;Any amount will be highly appreciated!&lt;br&gt;</description>
+&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;h1&gt; Donate with AliPay (支付宝)&lt;/h1&gt;&lt;br&gt;If you're in China, it's usually more convenient to send donation is to send money via the &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.alipay.com/&quot; href=&quot;http://www.alipay.com/&quot; class=&quot;externalLink&quot;&gt;AliPay&lt;/a&gt; to my account &lt;code&gt;agentzh@yahoo.cn&lt;/code&gt; or just click the following button:&lt;br&gt;&lt;br&gt;&lt;span&gt;
+&lt;a href=&quot;http://me.alipay.com/agentzh&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;donate-with-alipay.png&quot;&gt;&lt;/a&gt;
+&lt;/span&gt;&lt;br&gt;&lt;br&gt;Any amount will be highly appreciated!&lt;br&gt;</description>
 <link>null#DonateOnline</link>
-<pubDate>Thu, 12 Jan 2012 09:12:00 GMT</pubDate>
+<pubDate>Thu, 12 Jan 2012 10:22:33 GMT</pubDate>
+
+</item>
+<item>
+<title>MainMenu</title>
+<description>&lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;Overview&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Components&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Components&quot; href=&quot;null#Components&quot; class=&quot;externalLink null&quot;&gt;Components&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;GettingStarted&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GettingStarted&quot; href=&quot;null#GettingStarted&quot; class=&quot;externalLink null&quot;&gt;Getting started&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Samples&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Samples&quot; href=&quot;null#Samples&quot; class=&quot;externalLink null&quot;&gt;Samples&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Benchmark&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Benchmark&quot; href=&quot;null#Benchmark&quot; class=&quot;externalLink null&quot;&gt;Benchmark&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Presentations&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Presentations&quot; href=&quot;null#Presentations&quot; class=&quot;externalLink null&quot;&gt;Presentations&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;eBooks&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#eBooks&quot; href=&quot;null#eBooks&quot; class=&quot;externalLink null&quot;&gt;eBooks&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Resources&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Resources&quot; href=&quot;null#Resources&quot; class=&quot;externalLink null&quot;&gt;Resources&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;Download&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;Installation&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Installation&quot; href=&quot;null#Installation&quot; class=&quot;externalLink null&quot;&gt;Installation&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;ContactUs&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#ContactUs&quot; href=&quot;null#ContactUs&quot; class=&quot;externalLink null&quot;&gt;Contact us&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;About&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#About&quot; href=&quot;null#About&quot; class=&quot;externalLink null&quot;&gt;About&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;DonateOnline&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#DonateOnline&quot; href=&quot;null#DonateOnline&quot; class=&quot;externalLink null&quot;&gt;Donate Online&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;feed-icon-14x14.png&quot;&gt; &lt;a tiddlylink=&quot;RSSFeed&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#RSSFeed&quot; href=&quot;null#RSSFeed&quot; class=&quot;externalLink null&quot;&gt;RSS feed&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;span&gt;
+&lt;form name=&quot;_xclick&quot; action=&quot;https://www.paypal.com/cgi-bin/webscr&quot; method=&quot;post&quot; target=&quot;_blank&quot;&gt;
+&lt;input name=&quot;cmd&quot; value=&quot;_xclick&quot; type=&quot;hidden&quot;&gt;
+&lt;input name=&quot;business&quot; value=&quot;agentzh@gmail.com&quot; type=&quot;hidden&quot;&gt;
+&lt;input name=&quot;item_name&quot; value=&quot;OpenResty Donation (in USD)&quot; type=&quot;hidden&quot;&gt;
+&lt;input name=&quot;currency_code&quot; value=&quot;USD&quot; type=&quot;hidden&quot;&gt;
+&lt;input name=&quot;amount&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;
+&lt;input src=&quot;donate_button_paypal_01.gif&quot; name=&quot;submit&quot; alt=&quot;Donate with PayPal&quot; border=&quot;0&quot; type=&quot;image&quot;&gt;
+&lt;/form&gt;
+&lt;/span&gt;&lt;br&gt;&lt;span&gt;
+&lt;a href=&quot;http://me.alipay.com/agentzh&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;donate-with-alipay.png&quot;&gt;&lt;/a&gt;
+&lt;/span&gt;</description>
+<category>admin</category>
+<link>null#MainMenu</link>
+<pubDate>Thu, 12 Jan 2012 10:21:39 GMT</pubDate>
+
+</item>
+<item>
+<title>MarkupPostBody</title>
+<description>&amp;lt;p/&amp;gt;&amp;lt;p/&amp;gt;&lt;br&gt;&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;&lt;br&gt;&lt;br&gt;  var _gaq = _gaq || [];&lt;br&gt;  _gaq.push(['_setAccount', '&lt;a tiddlylink=&quot;UA-24724965-1&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#UA-24724965-1&quot; href=&quot;null#UA-24724965-1&quot; class=&quot;externalLink null&quot;&gt;UA-24724965-1&lt;/a&gt;']);&lt;br&gt;  _gaq.push(['_trackPageview']);&lt;br&gt;&lt;br&gt;  var ga_f = function() {&lt;br&gt;    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;&lt;br&gt;    ga.src = ('https:' == document.location.protocol ? '&lt;a target=&quot;_blank&quot; title=&quot;External link to https://ssl&quot; href=&quot;https://ssl&quot; class=&quot;externalLink&quot;&gt;https://ssl&lt;/a&gt;' : '&lt;a target=&quot;_blank&quot; title=&quot;External link to http://www&quot; href=&quot;http://www&quot; class=&quot;externalLink&quot;&gt;http://www&lt;/a&gt;') + '.google-analytics.com/ga.js';&lt;br&gt;    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);&lt;br&gt;  };&lt;br&gt;  setTimeout(ga_f, 200);&lt;br&gt;&lt;br&gt;&amp;lt;/script&amp;gt;&lt;br&gt;</description>
+<link>null#MarkupPostBody</link>
+<pubDate>Thu, 12 Jan 2012 09:14:01 GMT</pubDate>
 
 </item>
 <item>
