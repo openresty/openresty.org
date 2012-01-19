@@ -1178,13 +1178,21 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201201161413" changecount="57">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201201190453" changecount="63">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.10.45 - 19 January 2012
+* upgraded LuaNginxModule to 0.4.1rc3.
+** bugfix: fixed all the warnings from the {{{clang}}} static analyzer.
+** bugfix: ngx.exit, ngx.redirect, ngx.exec, and ngx.set_uri(uri, true) could return (they should never return as per the documentation). this bug had appeared in ngx_lua v0.3.1rc4 and ngx_openresty 1.0.6.13. thanks [[@cyberty|http://weibo.com/cyberty]] for reporting it.
+** feature: allow use of the {{{DDEBUG}}} macro from the outside (via the {{{-D DDEBUG=1}}} cc opton).
+* upgraded DrizzleNginxModule to v0.1.2rc6.
+** bugfix: fixed all the warnings from the {{{clang}}} static analyzer.
+** feature: allow use of the {{{DDEBUG}}} macro from the outside (via the {{{-D DDEBUG=1}}} cc opton).
+* upgraded EchoNginxModule to 0.38rc1, SetMiscNginxModule to 0.22rc5, HeadersMoreNginxModule to 0.17rc1, and MemcNginxModule to 0.13rc3, to allow use of the {{{DDEBUG}}} macro from the outside (via the {{{-D DDEBUG=1}}} cc opton).
 ! Stable Release 1.0.10.44 - 16 January 2012
 * upgraded EchoNginxModule to 0.37.
 * upgraded HeadersMoreNginxModule to 0.16.
 * bugfix: fixed compatibility of the packaging scripts on Darwin and *BSD. thanks nightsailer and Piotr Sikora.
-
 Components bundled with this release:
 * ~LuaJIT-2.0.0-beta9
 * array-var-nginx-module-0.03rc1
@@ -1546,7 +1554,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201201161409" changecount="157">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201201190444" changecount="158">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1554,7 +1562,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.10.43.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.43.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 12 January 2012
+* [[ngx_openresty-1.0.10.45.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.45.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 19 January 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.24.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.24.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 11 December 2011
@@ -2169,7 +2177,7 @@ Documentation wiki page: http://wiki.nginx.org/HttpRedis2Module
 
 Project page: https://github.com/agentzh/redis2-nginx-module</pre>
 </div>
-<div title="ReleaseNote" creator="ZhangYichun" modifier="ZhangYichun" created="201111030906" modified="201112141250" changecount="23">
+<div title="ReleaseNote" creator="ZhangYichun" modifier="ZhangYichun" created="201111030906" modified="201201190454" changecount="26">
 <pre></pre>
 </div>
 <div title="Resources" creator="ZhangYichun" modifier="ZhangYichun" created="201110240551" modified="201112060744" changecount="11">
