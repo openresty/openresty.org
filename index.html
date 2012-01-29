@@ -1178,8 +1178,11 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201201190453" changecount="63">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201201291451" changecount="64">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.10.47 - 29 January 2012
+* upgraded LuaNginxModule to 0.4.1rc4.
+** bugfix: {{{ngx_http_lua_header_filter_init}}} was called with an argument which actually accepts none. this could cause compilation errors at least with gcc 4.3.4 as reported in github [[issue #80|http://github.com/chaoslawful/lua-nginx-module/issues/80]]. thanks bigplum (Simon).
 ! Devel Release 1.0.10.45 - 19 January 2012
 * upgraded LuaNginxModule to 0.4.1rc3.
 ** bugfix: fixed all the warnings from the {{{clang}}} static analyzer.
@@ -1554,7 +1557,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201201190444" changecount="158">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201201291449" changecount="159">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1562,7 +1565,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.10.45.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.45.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 19 January 2012
+* [[ngx_openresty-1.0.10.47.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.47.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 29 January 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.24.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.24.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 11 December 2011
