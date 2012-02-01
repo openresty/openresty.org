@@ -1178,15 +1178,43 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201201291451" changecount="64">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201202010430" changecount="67">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Stable Release 1.0.10.48 - 1 February 2012
+* upgraded LuaNginxModule to 0.4.1.
+Components bundled with this release:
+* ~LuaJIT-2.0.0-beta9
+* array-var-nginx-module-0.03rc1
+* auth-request-nginx-module-0.2
+* drizzle-nginx-module-0.1.2rc6
+* echo-nginx-module-0.38rc1
+* encrypted-session-nginx-module-0.02
+* form-input-nginx-module-0.07rc5
+* headers-more-nginx-module-0.17rc1
+* iconv-nginx-module-0.10rc5
+* lua-5.1.4
+* lua-cjson-1.0.3
+* lua-rds-parser-0.04
+* lua-redis-parser-0.09rc5
+* memc-nginx-module-0.13rc3
+* nginx-1.0.10
+* ngx_devel_kit-0.2.17
+* ngx_lua-0.4.1
+* ngx_postgres-0.9rc2
+* rds-csv-nginx-module-0.04
+* rds-json-nginx-module-0.12rc7
+* redis2-nginx-module-0.08rc2
+* set-misc-nginx-module-0.22rc5
+* srcache-nginx-module-0.13rc3
+* upstream-keepalive-nginx-module-0.7
+* xss-nginx-module-0.03rc8
 ! Devel Release 1.0.10.47 - 29 January 2012
 * upgraded LuaNginxModule to 0.4.1rc4.
 ** bugfix: {{{ngx_http_lua_header_filter_init}}} was called with an argument which actually accepts none. this could cause compilation errors at least with gcc 4.3.4 as reported in github [[issue #80|http://github.com/chaoslawful/lua-nginx-module/issues/80]]. thanks bigplum (Simon).
 ! Devel Release 1.0.10.45 - 19 January 2012
 * upgraded LuaNginxModule to 0.4.1rc3.
 ** bugfix: fixed all the warnings from the {{{clang}}} static analyzer.
-** bugfix: ngx.exit, ngx.redirect, ngx.exec, and ngx.set_uri(uri, true) could return (they should never return as per the documentation). this bug had appeared in ngx_lua v0.3.1rc4 and ngx_openresty 1.0.6.13. thanks [[@cyberty|http://weibo.com/cyberty]] for reporting it.
+** bugfix: [[ngx.exit|http://wiki.nginx.org/HttpLuaModule#ngx.exit]], [[ngx.redirect|http://wiki.nginx.org/HttpLuaModule#ngx.redirect]], [[ngx.exec|http://wiki.nginx.org/HttpLuaModule#ngx.exec]], and [[ngx.req.set_uri(uri, true)|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_uri]] could return (they should never return as per the documentation). this bug had appeared in ngx_lua v0.3.1rc4 and ngx_openresty 1.0.6.13. thanks [[@cyberty|http://weibo.com/cyberty]] for reporting it.
 ** feature: allow use of the {{{DDEBUG}}} macro from the outside (via the {{{-D DDEBUG=1}}} cc opton).
 * upgraded DrizzleNginxModule to v0.1.2rc6.
 ** bugfix: fixed all the warnings from the {{{clang}}} static analyzer.
@@ -1557,17 +1585,18 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201201291449" changecount="159">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201202010428" changecount="160">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
 Most of the users should use the current release, i.e., the latest stable release.
-* [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
+* [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
 * [[ngx_openresty-1.0.10.47.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.47.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 29 January 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
+* [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
 * [[ngx_openresty-1.0.10.24.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.24.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 11 December 2011
 * [[ngx_openresty-1.0.9.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 16 November 2011
 * [[ngx_openresty-1.0.8.26.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.26.tar.gz]] 2.5MB [[Changes|ChangeLog1000008]] - 3 November 2011
