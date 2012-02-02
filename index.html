@@ -1178,7 +1178,7 @@ Components bundled in this release:
 ** bugfix: the callback argument value parser did not accept ~JavaScript identifier names started with underscores. thanks Sam Mulube.
 See [[ChangeLog1000008]] for change log for ngx_openresty 1.0.8.x.</pre>
 </div>
-<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201202010430" changecount="67">
+<div title="ChangeLog1000010" creator="ZhangYichun" modifier="ZhangYichun" created="201111160721" modified="201202020452" changecount="72">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 1.0.10.48 - 1 February 2012
 * upgraded LuaNginxModule to 0.4.1.
@@ -1391,6 +1391,22 @@ Components bundled with this release:
 See [[ChangeLog1000009]] for change log for ngx_openresty 1.0.9.x.
 </pre>
 </div>
+<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201202020500" changecount="3">
+<pre>! Devel Release 1.0.11.1 - 2 February 2012
+* upgraded the Nginx core to 1.0.11.
+** see the changes here: http://nginx.org/en/CHANGES-1.0
+* upgraded LuaNginxModule to 0.5.0rc1.
+** feature: implemented the coroutine-based TCP and Unix Domain client socket API (aka the &quot;cosocket&quot; API) that is mostly compatible with the [[LuaSocket|http://w3.impa.br/~diego/software/luasocket/tcp.html]] library.
+** feature: implemented built-in connection pool support for the cosocket API.
+** feature: added new function [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] to return a cosocket object for the downstream connection so as to do streaming request body reading. thanks Taylor Weibley for sponsoring the development work.
+** optimization: optimized the chain-link and buf recycle logic for the subrequest API and make it share free buffers with the cosocket API.
+* upgraded PostgresNginxModule to 0.9.
+** bugfix: Fix compatibility with poll, select and /dev/poll event models.
+** bugfix: Fix compatibility with ~PostgreSQL 9.x.
+** bugfix: Fix compatibility with nginx-1.1.4+.
+
+See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="ZhangYichun" modifier="ZhangYichun" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -1585,7 +1601,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201202010428" changecount="160">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201202020452" changecount="162">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1593,7 +1609,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.10.47.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.47.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 29 January 2012
+* [[ngx_openresty-1.0.11.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.1.tar.gz]] 2.6MB [[Changes|ChangeLog1000011]] - 2 February 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
@@ -2209,7 +2225,7 @@ Documentation wiki page: http://wiki.nginx.org/HttpRedis2Module
 
 Project page: https://github.com/agentzh/redis2-nginx-module</pre>
 </div>
-<div title="ReleaseNote" creator="ZhangYichun" modifier="ZhangYichun" created="201111030906" modified="201201190454" changecount="26">
+<div title="ReleaseNote" creator="ZhangYichun" modifier="ZhangYichun" created="201111030906" modified="201202020501" changecount="28">
 <pre></pre>
 </div>
 <div title="Resources" creator="ZhangYichun" modifier="ZhangYichun" created="201110240551" modified="201112060744" changecount="11">
