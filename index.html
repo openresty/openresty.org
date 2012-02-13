@@ -1391,8 +1391,15 @@ Components bundled with this release:
 See [[ChangeLog1000009]] for change log for ngx_openresty 1.0.9.x.
 </pre>
 </div>
-<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201202071210" changecount="12">
+<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201202131300" changecount="16">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.11.9 - 13 February 2012
+* upgraded LuaNginxModule to 0.5.0rc6.
+** bugfix: could not compile with nginx 0.8.x. thanks 欧远宁. this bug had appeared in LuaNginxModule v0.5.0rc1.
+** feature: added the [[ngx.sha1_bin|http://wiki.nginx.org/HttpLuaModule#ngx.sha1_bin]] method which returns the binary form of the {{{SHA-1}}} digest.
+** bugfix: we incorrectly allowed {{{ngx.null}}} in the string table argument to [[cosocket:send()|http://wiki.nginx.org/HttpLuaModule#tcpsock:send]] method.
+** feature: allow use of ngx.null in [[ngx.log()|http://wiki.nginx.org/HttpLuaModule#ngx.log]] and [[print()|http://wiki.nginx.org/HttpLuaModule#print]] arguments.
+* added Piotr Sikora's CoolkitNginxModule 0.2rc1 to the bundle, which is also enabled by default.
 ! Devel Release 1.0.11.7 - 7 February 2012
 * upgraded LuaNginxModule to 0.5.0rc5.
 ** feature: added constant {{{ngx.null}}} which is a {{{NULL}}} light userdata to represent {{{nil}}} values in Lua tables and etc. this is compatible with at least [[lua-cjson|http://www.kyne.com.au/~mark/software/lua-cjson.php]] library's {{{cjson.null}}} constant.
@@ -1578,6 +1585,14 @@ https://github.com/agentzh/ngx_openresty/issues
 Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: agentzh at gmail dot com.
 </pre>
 </div>
+<div title="CoolkitNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201202131259" changecount="1">
+<pre>This module is collection of small and useful Nginx add-ons.
+
+Project homepage and documentation: https://github.com/FRiCKLE/ngx_coolkit/
+
+This module is enabled by default and could be disabled by passing {{{--without-http_coolkit_module}}} option to OpenResty's {{{./configure}}} script.
+</pre>
+</div>
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
@@ -1615,7 +1630,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201202071208" changecount="165">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201202131239" changecount="166">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1623,7 +1638,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.11.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.7.tar.gz]] 2.6MB [[Changes|ChangeLog1000011]] - 7 February 2012
+* [[ngx_openresty-1.0.11.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.9.tar.gz]] 2.6MB [[Changes|ChangeLog1000011]] - 13 February 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
