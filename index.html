@@ -1391,8 +1391,32 @@ Components bundled with this release:
 See [[ChangeLog1000009]] for change log for ngx_openresty 1.0.9.x.
 </pre>
 </div>
-<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201202141101" changecount="18">
+<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201202240429" changecount="24">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.11.15 - 24 February 2012
+* now we enable the {{{-DLUAJIT_USE_VALGRIND -DLUA_USE_APICHECK -DLUA_USE_ASSERT}}} flags for LuaJIT when the {{{--with-debug}}} option is specified.
+* apply the [[max_subrequests patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.11-max_subrequests.patch]] to allow the {{{NGX_HTTP_MAX_SUBREQUESTS}}} macro to be overridden from the outside and adjusted the default value from 50 to 100 because 50 is a little too conservative.
+* upgraded XssNginxModule to 0.03rc9, RdsCsvNginxModule to 0.05rc1, and Redis2NginxModule to 0.08rc3, allowing enabling {{{DDEBUG=1}}} globally.
+* upgraded IconvNginxModule to 0.10rc7.
+** bugfix: enabling {{{DDEBUG=1}}} globally lead to compilation errors.
+** bugfix: could not work with HTTP 1.0 requests.
+** optimize: only register output filters when the {{{iconv_filter}}} is actually used in the config file.
+* upgraded LuaNginxModule to 0.5.0rc15.
+** bugfix: the {{{exptime}}} argument to {{{shdict:set/add/etc}}} methods was incorrectly ignored when the {{{flags}}} argument is also specified. thanks the patch from Brian Akins.
+** docs: fixed various typos in docs. thanks 王斌.
+** bugfix: for big input data, the cosocket reading methods could result in crashes due to incorrect use of {{{luaL_Buffer}}}. now we eliminate {{{luaL_Buffer}}} altogether by managing the recv buffers ourselves. the recv buffers can also be recycled.
+** bugfix: now we avoid using {{{luaL_checkstring}}} which could do another {{{long jump}}} on its own. thanks 王斌.
+** bugfix: {{{tcpsocket:setkeepalive()}}} did not return errors when the current connection has readable data or there is still unread data in the LuaNginxModule upstream buffer.
+** bugfix: cosocket methods no longer explicitly return {{{nil}}} error strings upon success.
+** bugfix: when the parent request takes a request body, the subrequest does not take any bodies, and the subrequest's method is neither {{{PUT}}} nor {{{POST}}}, then the subrequest will no longer inherit the parent request's request body. thanks 欧远宁 for reporting this issue.
+** bugfix: data might be accidentally read into the Lua space on idle sockets when the last operation is a read operation *and* a read event suddenly arrives for edge-triggered event models. the same might also apply to write operations too.
+** bugfix: invalid reads might happen in the reading iterators returned by the {{{receiveuntil()}}} method which could lead to segfaults. this was a bug in the DFA minimizer's optimized code path.
+** bugfix: the {{{closed}}} error would occur for long-running requests that hold the idle cosocket object for a period of time that is longer than the read timeout setting: we should delete the read event timer in time when the {{{receive}}} call has already got a read event. thanks 欧远宁 for reporting this issue.
+** logs: added error logs for cosocket timeout errors.
+** logs: added detailed error logs for cosocket {{{closed}}} errors.
+** optimize: introduced a minor optimization that we can save one {{{recv}}} call when the read event is active *and* the read event is not ready.
+** optimize: now we recycle the downstream output buffers to save memory and dynamic allocation times for long-running requests with huge outputs.
+** bugfix: C macro directives were used inside a C macro argument which made (at least) gcc 3.2.3 unhappy. thanks Feng Bin.
 ! Devel Release 1.0.11.11 - 14 February 2012
 * upgraded LuaNginxModule to 0.5.0rc7.
 ** bugfix: cosocket API could not be used before [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] and its friends for fast network access: [[tcpsock:send()|http://wiki.nginx.org/HttpLuaModule#tcpsock:send]] method did not reset {{{u-&gt;waiting}}} properly. thanks 欧远宁.
@@ -1633,7 +1657,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201202141059" changecount="167">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201202240408" changecount="168">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1641,7 +1665,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.11.11.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.11.tar.gz]] 2.6MB [[Changes|ChangeLog1000011]] - 14 February 2012
+* [[ngx_openresty-1.0.11.15.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.15.tar.gz]] 2.6MB [[Changes|ChangeLog1000011]] - 24 February 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
