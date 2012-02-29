@@ -1391,7 +1391,7 @@ Components bundled with this release:
 See [[ChangeLog1000009]] for change log for ngx_openresty 1.0.9.x.
 </pre>
 </div>
-<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201202290724" changecount="27">
+<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201202290754" changecount="28">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.0.11.17 - 29 February 2012
 * feature: bundle LuaRestyMySQLLibrary 0.06, which is enabled by default.
@@ -1400,7 +1400,7 @@ See [[ChangeLog1000009]] for change log for ngx_openresty 1.0.9.x.
 * feature: bundle LuaRestyUploadLibrary 0.02, which is enabled by default.
 * feature: bundle LuaRestyStringLibrary 0.04, which is enabled by default.
 * bugfix: no longer enable {{{-DLUAJIT_USE_VALGRIND}}} for LuaJIT when {{{--with-debug}}} option is specified.
-* bugfix: applied the official [[hotfix #1 patch|http://luajit.org/download/beta9_hotfix1.patch]] for luajit 2.0.0 beta9.
+* bugfix: applied the official [[hotfix #1 patch|http://luajit.org/download/beta9_hotfix1.patch]] for LuaJIT 2.0.0 beta9.
 * feature: raised the default {{{NGX_HTTP_MAX_SUBREQUESTS}}} to 200, in sync with the official repository.
 * upgraded LuaNginxModule to 0.5.0rc16.
 ** bugfix: the shared dict storage might leak memory in the store: {{{ngx_http_lua_shdict_lookup}}} incorrectly assumed that nodes with identical keys are linked together, which might not be true after tree re-balancing. thanks the patch from Lanshun Zhou.
