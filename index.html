@@ -1391,8 +1391,20 @@ Components bundled with this release:
 See [[ChangeLog1000009]] for change log for ngx_openresty 1.0.9.x.
 </pre>
 </div>
-<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201202240429" changecount="24">
+<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201202290724" changecount="27">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.11.17 - 29 February 2012
+* feature: bundle LuaRestyMySQLLibrary 0.06, which is enabled by default.
+* feature: bundle LuaRestyRedisLibrary 0.06, which is enabled by default.
+* feature: bundle LuaRestyMemcachedLibrary 0.06, which is enabled by default.
+* feature: bundle LuaRestyUploadLibrary 0.02, which is enabled by default.
+* feature: bundle LuaRestyStringLibrary 0.04, which is enabled by default.
+* bugfix: no longer enable {{{-DLUAJIT_USE_VALGRIND}}} for LuaJIT when {{{--with-debug}}} option is specified.
+* bugfix: applied the official [[hotfix #1 patch|http://luajit.org/download/beta9_hotfix1.patch]] for luajit 2.0.0 beta9.
+* feature: raised the default {{{NGX_HTTP_MAX_SUBREQUESTS}}} to 200, in sync with the official repository.
+* upgraded LuaNginxModule to 0.5.0rc16.
+** bugfix: the shared dict storage might leak memory in the store: {{{ngx_http_lua_shdict_lookup}}} incorrectly assumed that nodes with identical keys are linked together, which might not be true after tree re-balancing. thanks the patch from Lanshun Zhou.
+** optimize: removed a redundant piece of code for subrequest {{{headers_in}}} fixes in {{{ngx_http_lua_adjust_subrequest}}}.
 ! Devel Release 1.0.11.15 - 24 February 2012
 * now we enable the {{{-DLUAJIT_USE_VALGRIND -DLUA_USE_APICHECK -DLUA_USE_ASSERT}}} flags for LuaJIT when the {{{--with-debug}}} option is specified.
 * apply the [[max_subrequests patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.11-max_subrequests.patch]] to allow the {{{NGX_HTTP_MAX_SUBREQUESTS}}} macro to be overridden from the outside and adjusted the default value from 50 to 100 because 50 is a little too conservative.
@@ -1564,7 +1576,7 @@ TertiaryDark: #666
 Error: #f88
 </pre>
 </div>
-<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201108310743" changecount="20">
+<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201202290728" changecount="21">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 Below lists all the components bundled in OpenResty. All of the components can be enabled or disabled on need.
@@ -1590,6 +1602,11 @@ Most of the components are enabled by default, some are not.
 * [[LuaNginxModule]]
 * [[LuaRdsParserLibrary]]
 * [[LuaRedisParserLibrary]]
+* [[LuaRestyMemcachedLibrary]]
+* [[LuaRestyMySQLLibrary]]
+* [[LuaRestyRedisLibrary]]
+* [[LuaRestyStringLibrary]]
+* [[LuaRestyUploadLibrary]]
 * [[PostgresNginxModule]]
 * [[RdsCsvNginxModule]]
 * [[RdsJsonNginxModule]]
@@ -1657,7 +1674,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201202240408" changecount="168">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201202290743" changecount="170">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1665,7 +1682,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.11.15.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.15.tar.gz]] 2.6MB [[Changes|ChangeLog1000011]] - 24 February 2012
+* [[ngx_openresty-1.0.11.17.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.17.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 29 February 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
@@ -2043,12 +2060,14 @@ make install
 On Linux, it often requires {{{sudo}}} to gain root access.
 </pre>
 </div>
-<div title="LuaCjsonLibrary" creator="ZhangYichun" modifier="ZhangYichun" created="201108110208" changecount="1">
+<div title="LuaCjsonLibrary" creator="ZhangYichun" modifier="ZhangYichun" created="201108110208" modified="201202290727" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 Lua CJSON is a Lua C module that provides fast JSON parsing and encoding support for Lua.
 
 Project homepage: http://www.kyne.com.au/~mark/software/lua-cjson.php
+
+This library is enabled by default. You can specify the {{{--without-lua_cjson}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
 </pre>
 </div>
 <div title="LuaJIT" creator="ZhangYichun" modifier="ZhangYichun" created="201106210816" modified="201106210911" changecount="6">
@@ -2096,6 +2115,56 @@ The lua-redis-parser library implements a thin and fast redis raw response parse
 Documentation page: http://wiki.nginx.org/LuaRedisParser
 
 Project homepage: https://github.com/agentzh/lua-redis-parser
+</pre>
+</div>
+<div title="LuaRestyMemcachedLibrary" creator="ZhangYichun" modifier="ZhangYichun" created="201202290732" modified="201202290736" changecount="4">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+Lua [[Memcached|http://memcached.org/]] client driver for LuaNginxModule based on the cosocket API.
+
+Project homepage: https://github.com/agentzh/lua-resty-memcached
+
+This library is enabled by default. You can specify the {{{--without-lua_resty_memcached}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
+</pre>
+</div>
+<div title="LuaRestyMySQLLibrary" creator="ZhangYichun" modifier="ZhangYichun" created="201202290733" modified="201202290735" changecount="3">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+Lua [[MySQL|http://en.wikipedia.org/wiki/MySQL]] client driver for LuaNginxModule based on the cosocket API.
+
+Project homepage: https://github.com/agentzh/lua-resty-mysql
+
+This library is enabled by default. You can specify the {{{--without-lua_resty_mysql}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
+</pre>
+</div>
+<div title="LuaRestyRedisLibrary" creator="ZhangYichun" modifier="ZhangYichun" created="201202290735" modified="201202290736" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+Lua [[Redis|http://redis.io/]] client driver for LuaNginxModule based on the cosocket API.
+
+Project homepage: https://github.com/agentzh/lua-resty-redis
+
+This library is enabled by default. You can specify the {{{--without-lua_resty_redis}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
+</pre>
+</div>
+<div title="LuaRestyStringLibrary" creator="ZhangYichun" modifier="ZhangYichun" created="201202290738" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+A Lua library that provides string utilities and common hash functions for LuaNginxModule.
+
+Project homepage: https://github.com/agentzh/lua-resty-string
+
+This library is enabled by default. You can specify the {{{--without-lua_resty_string}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
+</pre>
+</div>
+<div title="LuaRestyUploadLibrary" creator="ZhangYichun" modifier="ZhangYichun" created="201202290739" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+Streaming reader and parser for HTTP file uploading based on LuaNginxModule's cosocket API.
+
+Project homepage: https://github.com/agentzh/lua-resty-upload
+
+This library is enabled by default. You can specify the {{{--without-lua_resty_upload}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
 </pre>
 </div>
 <div title="MainMenu" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201201121021" tags="admin" changecount="24">
