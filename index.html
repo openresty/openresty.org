@@ -44,7 +44,7 @@ DAMAGE.
 <!--}}}-->
 
 <!--PRE-HEAD-END-->
-<title> OpenResty - a powerful web app server by extending nginx </title>
+<title> OpenResty - a powerful web app server by extending nginx  </title>
 <style id="styleArea" type="text/css">
 #saveTest {display:none;}
 #messageArea {display:none;}
@@ -1622,7 +1622,7 @@ Most of the components are enabled by default, some are not.
 * [[XssNginxModule]]
 </pre>
 </div>
-<div title="ContactUs" creator="ZhangYichun" modifier="ZhangYichun" created="201106210414" modified="201106210438" changecount="5">
+<div title="ContactUs" creator="ZhangYichun" modifier="ZoomQuiet" created="201106210414" modified="201203070806" tags="abt" changecount="10">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You're encouraged to send general questions regarding OpenResty and Nginx to the [[nginx mailing list|http://nginx.org/mailman/listinfo/nginx]].
@@ -1632,7 +1632,16 @@ Reporting bugs are encouraged to file tickets for the ngx_openresty project on G
 https://github.com/agentzh/ngx_openresty/issues
 
 Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: agentzh at gmail dot com.
-</pre>
+
+esp. for Chinese:
+     严正建议:&quot;去邮件列表沟通令众人受益;-)&quot;
++ 订阅: 请发邮件至 openresty+subscribe@googlegroups.com
++ 发言: 请发邮件到 openresty@googlegroups.com
++ 退订: 请发邮件至 openresty+unsubscribe@googlegroups.com
++ 详情: http://groups.google.com/group/openresty
++ 仓库: https://github.com/agentzh/ngx_openresty
++ 提案: https://github.com/agentzh/ngx_openresty/issues
++ 中文版维基: http://openresty.org/cn/</pre>
 </div>
 <div title="CoolkitNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201202131259" changecount="1">
 <pre>This module is collection of small and useful Nginx add-ons.
@@ -1974,7 +1983,7 @@ Use cases: http://forum.nginx.org/read.php?2,206658,207119
 Project page: https://github.com/calio/iconv-nginx-module
 </pre>
 </div>
-<div title="Installation" creator="ZhangYichun" modifier="ZhangYichun" created="201106210440" modified="201202070306" changecount="49">
+<div title="Installation" creator="ZhangYichun" modifier="ZoomQuiet" created="201106210440" modified="201203070744" tags="doc install" changecount="50">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 If you haven't downloaded the OpenResty source code tarball, please go to the [[Download]] page first.
 
@@ -2006,6 +2015,17 @@ You're recommended to install prerequisites PCRE using some package management t
 brew install pcre
 }}}
 Alternatively you can install PCRE from source all by yourself :)
+
+see: [[Issue #3: |https://github.com/agentzh/ngx_openresty/issues/3]]
+
+after installed pcre, need appended path for cc/ld e.g
+{{{
+$./configure \
+             --with-cc-opt=&quot;-I/usr/local/Cellar/pcre/8.21/include&quot;
+             --with-ld-opt=&quot;-L/usr/local/Cellar/pcre/8.21/lib&quot;
+             ...
+}}}
+
 !!~FreeBSD users
 You need to install the following ports:
 * devel/gmake
@@ -2172,7 +2192,7 @@ Project homepage: https://github.com/agentzh/lua-resty-upload
 This library is enabled by default. You can specify the {{{--without-lua_resty_upload}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
 </pre>
 </div>
-<div title="MainMenu" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201201121021" tags="admin" changecount="24">
+<div title="MainMenu" creator="ZhangYichun" modifier="ZoomQuiet" created="201106210357" modified="201203070749" tags="admin" changecount="27">
 <pre>[[Overview|OpenResty]]
 [[Components]]
 [[Getting started|GettingStarted]]
@@ -2186,6 +2206,7 @@ This library is enabled by default. You can specify the {{{--without-lua_resty_u
 [[Contact us|ContactUs]]
 [[About]]
 [[Donate Online|DonateOnline]]
+[[中文维基|http://openresty.org/cn]]
 
 [img[feed-icon-14x14.png]] [[RSS feed|RSSFeed]]
 
@@ -2201,7 +2222,8 @@ This library is enabled by default. You can specify the {{{--without-lua_resty_u
 &lt;/html&gt;
 &lt;html&gt;
 &lt;a href=&quot;http://me.alipay.com/agentzh&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;donate-with-alipay.png&quot;&gt;&lt;/a&gt;
-&lt;/html&gt;</pre>
+&lt;/html&gt;
+</pre>
 </div>
 <div title="MarkupPostBody" creator="ZhangYichun" modifier="ZhangYichun" created="201107251515" modified="201201120914" changecount="12">
 <pre>&lt;p/&gt;&lt;p/&gt;
@@ -2483,8 +2505,8 @@ Documentation: http://wiki.nginx.org/HttpSetMiscModule
 
 Project page: http://github.com/agentzh/set-misc-nginx-module</pre>
 </div>
-<div title="SiteSubtitle" creator="ZhangYichun" modifier="ZhangYichun" created="201106201138" modified="201106210357" tags="admin" changecount="2">
-<pre>a powerful web app server by extending nginx</pre>
+<div title="SiteSubtitle" creator="ZhangYichun" modifier="ZoomQuiet" created="201106201138" modified="201203070748" tags="admin" changecount="4">
+<pre>a powerful web app server by extending nginx </pre>
 </div>
 <div title="SiteTitle" creator="ZhangYichun" modifier="ZhangYichun" created="201106201137" modified="201106210357" tags="admin" changecount="3">
 <pre>OpenResty</pre>
