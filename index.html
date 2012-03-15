@@ -1391,8 +1391,20 @@ Components bundled with this release:
 See [[ChangeLog1000009]] for change log for ngx_openresty 1.0.9.x.
 </pre>
 </div>
-<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201203071003" changecount="35">
+<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201203150823" changecount="46">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.11.23 - 15 March 2012
+* upgraded LuaNginxModule to 0.5.0rc19.
+** feature: added new directive [[lua_http10_buffering|http://wiki.nginx.org/HttpLuaModule#lua_http10_buffering]] which is {{{on}}} by default.
+** feature: added new constant {{{ngx.DECLINED}}}.
+** bugfix: [[access_by_lua|http://wiki.nginx.org/HttpLuaModule#access_by_lua]] could not work with the {{{satisfy any}}} configuration.
+** bugfix: now we recycle the special flush buffer and chain link for [[ngx.flush|http://wiki.nginx.org/HttpLuaModule#ngx.flush]] to prevent request-scoped memory leaks when emitting long data streams to the downstream.
+* upgraded SrcacheNginxModule to 0.13rc5.
+** feature: now [[srcache_store|http://wiki.nginx.org/HttpSRCacheModule#srcache_store]] discards responses that are obviously truncated when the actual output data is shorter than what is declared in its {{{Content-Length}}} response header. thanks  Greg Grensteiner.
+** bugfix: the access phase handler actually ran in a phase later than the {{{access}}} phase.
+** bugfix: HTTP HEAD requests that lead to a cache hits would cause memory issues like invalid reads.
+* upgraded LuaRestyRedisLibrary to 0.08.
+** feature: implemened redis pipelining API by adding new methods {{{init_pipeline}}}, {{{commit_pipeline}}}, and {{{cancel_pipeline}}}.
 ! Devel Release 1.0.11.21 - 7 March 2012
 * upgraded LuaRestyRedisLibrary to 0.07.
 ** feature: added the [[evalsha|http://redis.io/commands/eval]] command to the redis command table. thanks Chris Love.
@@ -1698,7 +1710,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201203070955" changecount="172">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201203150751" changecount="173">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1706,7 +1718,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.11.21.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.21.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 7 March 2012
+* [[ngx_openresty-1.0.11.23.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.23.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 15 March 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
