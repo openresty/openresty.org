@@ -1391,8 +1391,12 @@ Components bundled with this release:
 See [[ChangeLog1000009]] for change log for ngx_openresty 1.0.9.x.
 </pre>
 </div>
-<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201203150823" changecount="46">
+<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201203160339" changecount="47">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.11.25 - 16 March 2012
+* applied the null-character-fixes patch from the mainstream. The bug did result in a disclosure of previously freed memory if upstream server returned specially crafted response, potentially exposing sensitive information.
+* upgraded SrcacheNginxModule to 0.13rc6.
+** bugfix: fixed a typo in an error message text for response truncation check in [[srcache_store|http://wiki.nginx.org/HttpSRCacheModule#srcache_store]].
 ! Devel Release 1.0.11.23 - 15 March 2012
 * upgraded LuaNginxModule to 0.5.0rc19.
 ** feature: added new directive [[lua_http10_buffering|http://wiki.nginx.org/HttpLuaModule#lua_http10_buffering]] which is {{{on}}} by default.
@@ -1710,7 +1714,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201203150751" changecount="173">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201203160336" changecount="174">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1718,7 +1722,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.11.23.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.23.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 15 March 2012
+* [[ngx_openresty-1.0.11.25.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.25.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 16 March 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
