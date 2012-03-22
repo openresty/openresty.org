@@ -1391,8 +1391,17 @@ Components bundled with this release:
 See [[ChangeLog1000009]] for change log for ngx_openresty 1.0.9.x.
 </pre>
 </div>
-<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201203160339" changecount="47">
+<div title="ChangeLog1000011" creator="ZhangYichun" modifier="ZhangYichun" created="201202020453" modified="201203220807" changecount="53">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.11.27 - 22 March 2012
+* upgraded LuaNginxModule to 0.5.0rc21.
+** bugfix: made the sha1 library (or ~OpenSSL) an optional dependency, as suggested by runner-mei in [[github issue #94|https://github.com/chaoslawful/lua-nginx-module/issues/94]].
+** bugfix: we did not declare C variables at the beginning of the current code block in {{{ngx_http_lua_del_thread}}}, reported by runner-mei in [[github issue #93|https://github.com/chaoslawful/lua-nginx-module/issues/93]].
+** bugfix: incorrectly used {{{ngx_conf_log_error}}} by feeding {{{NGX_ERROR}}} as the first argument, as reported by runner-mei in [[github issue #92|https://github.com/chaoslawful/lua-nginx-module/issues/92]].
+** bugfix: spelling errors in Lua exception message text.
+* upgraded EchoNginxModule to 0.38rc2.
+** bugfix: [[$echo_request_body|http://wiki.nginx.org/HttpEchoModule#.24echo_request_body]] variable was not able to work on arbitrary request body chains (i.e., more than 2 chain links), just like the standard [[$request_body|http://wiki.nginx.org/HttpCoreModule#.24request_body]] variable that only processes the first two chain links. now [[$echo_request_body|http://wiki.nginx.org/HttpEchoModule#.24echo_request_body]] no longer has this limitation.
+* applied the upstream_pipelining patch to the nginx core, as discussed here: http://mailman.nginx.org/pipermail/nginx-devel/2012-March/002040.html this patch is required at least for the pipelined requests support in nginx upstream modules.
 ! Devel Release 1.0.11.25 - 16 March 2012
 * applied the null-character-fixes patch from the mainstream. The bug did result in a disclosure of previously freed memory if upstream server returned specially crafted response, potentially exposing sensitive information.
 * upgraded SrcacheNginxModule to 0.13rc6.
@@ -1404,7 +1413,7 @@ See [[ChangeLog1000009]] for change log for ngx_openresty 1.0.9.x.
 ** bugfix: [[access_by_lua|http://wiki.nginx.org/HttpLuaModule#access_by_lua]] could not work with the {{{satisfy any}}} configuration.
 ** bugfix: now we recycle the special flush buffer and chain link for [[ngx.flush|http://wiki.nginx.org/HttpLuaModule#ngx.flush]] to prevent request-scoped memory leaks when emitting long data streams to the downstream.
 * upgraded SrcacheNginxModule to 0.13rc5.
-** feature: now [[srcache_store|http://wiki.nginx.org/HttpSRCacheModule#srcache_store]] discards responses that are obviously truncated when the actual output data is shorter than what is declared in its {{{Content-Length}}} response header. thanks  Greg Grensteiner.
+** feature: now [[srcache_store|http://wiki.nginx.org/HttpSRCacheModule#srcache_store]] discards responses that are obviously truncated when the actual output data is shorter than what is declared in its {{{Content-Length}}} response header. thanks Greg Grensteiner.
 ** bugfix: the access phase handler actually ran in a phase later than the {{{access}}} phase.
 ** bugfix: HTTP HEAD requests that lead to a cache hits would cause memory issues like invalid reads.
 * upgraded LuaRestyRedisLibrary to 0.08.
@@ -1714,7 +1723,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201203160336" changecount="174">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201203220745" changecount="175">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1722,7 +1731,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.11.25.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.25.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 16 March 2012
+* [[ngx_openresty-1.0.11.27.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.27.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 22 March 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
