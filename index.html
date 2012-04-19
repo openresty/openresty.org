@@ -545,7 +545,7 @@ Introduction: http://www.ruby-forum.com/topic/205063
 
 Project page: http://mdounin.ru/hg/ngx_http_auth_request_module/</pre>
 </div>
-<div title="Benchmark" creator="ZhangYichun" modifier="ZhangYichun" created="201106210550" modified="201111161234" changecount="9">
+<div title="Benchmark" creator="ZhangYichun" modifier="ZhangYichun" created="201106210550" modified="201204190212" changecount="14">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !~HelloWorld
 Testing the performance of a ~HelloWorld server does not mean many things but it does tell us where the ceiling is.
@@ -587,6 +587,17 @@ HTTP response codes:
   code 200 -- 51206
 }}}
 The memory footprint of the {{{node}}} process under load is 629m  VIRT, 50m RES.
+
+!! For Mac OS X Lion Users
+Note that Mac OS X Lion has known issues that need to be fixed on your system before attempting to replicate our benchmark results.
+
+In brief, raise the number of  available ephemeral ports using [[this fix|http://serverfault.com/questions/145907/does-mac-os-x-throttle-the-rate-of-socket-creation]].
+
+Compile an up-to-date version of ab (Apache's benchmark tool) according to [[this post|http://superuser.com/questions/323840/apache-bench-test-erroron-os-x-apr-socket-recv-connection-reset-by-peer-54]].
+
+Then, {{{ab -k -c10 -n10000 -t1 -r 'http://127.0.0.1:8080/'}}} will deliver benchmark results.
+
+Otherwise use an alternative lightweight HTTP load-testing tool [[weighttp|http://redmine.lighttpd.net/projects/weighttp/wiki]] and the invocation {{{weighttp -k -c10 -n10000 'http://127.0.0.1:8080/'}}} for benchmarking.
 </pre>
 </div>
 <div title="ChangeLog1000004" creator="ZhangYichun" modifier="ZhangYichun" created="201107081222" modified="201109020756" changecount="47">
