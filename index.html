@@ -1553,7 +1553,7 @@ Components bundled with this release:
 
 See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 </div>
-<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201204290324" changecount="19">
+<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201204290338" changecount="20">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.0.15.1 - 29 April 2012
 * upgraded the Nginx core to 1.0.15.
@@ -1567,8 +1567,8 @@ See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 ** bugfix: certain compilers might complain about missing declarations for types like {{{int8_t}}}. now we explicitly included {{{stdint.h}}}. thanks runner-mei for reporting it in [[github issue #98|https://github.com/chaoslawful/lua-nginx-module/issues/98]].
 ** feature: added new constant {{{ngx.HTTP_OPTIONS}}} for the HTTP OPTIONS method.
 ** feature: added support for OPTIONS method in the subrequest capture ~APIs. thanks Jónas Tryggvi Jóhannsson for requesting this in [[github issue #102|https://github.com/chaoslawful/lua-nginx-module/issues/102]].
-** feature: added publich C functions {{{ngx_http_lua_add_package_preload}}}, {{{ngx_http_lua_get_global_state}}}, and {{{ngx_http_lua_get_request}}} to help other Nginx C modules expose new functionalities to ngx_lua. thanks Brian Akins for suggesting them in [[github pull request #101|https://github.com/chaoslawful/lua-nginx-module/pull/101]].
-** feature: made {{{ngx_http_lua_api.h}}} visible to other nginx modules by adding {{{src/api/}}} to the {{{CORE_INCS}}} config variable value in the config file. thanks Brian Akins for suggesting this in [[github pull request #105|https://github.com/chaoslawful/lua-nginx-module/pull/105]].
+** feature: added publich C functions {{{ngx_http_lua_add_package_preload}}}, {{{ngx_http_lua_get_global_state}}}, and {{{ngx_http_lua_get_request}}} to help other Nginx C modules expose new functionalities to LuaNginxModule. thanks Brian Akins for suggesting them in [[github pull request #101|https://github.com/chaoslawful/lua-nginx-module/pull/101]].
+** feature: made {{{ngx_http_lua_api.h}}} visible to other Nginx modules by adding {{{src/api/}}} to the {{{CORE_INCS}}} config variable value in the config file. thanks Brian Akins for suggesting this in [[github pull request #105|https://github.com/chaoslawful/lua-nginx-module/pull/105]].
 ** feature: add the {{{gdbinit}}} script to ease Lua user code debugging (Wang Xiaozhe).
 ** optimize: various optimizations in cosocket's timeout handling. this gives about 2.5+% performance boost in some benchmarks using LuaRestyRedisLibrary and LuaRestyMySQLLibrary.
 * upgraded RdsJsonNginxModule to v0.12rc8.
