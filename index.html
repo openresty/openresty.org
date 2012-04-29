@@ -1553,6 +1553,37 @@ Components bundled with this release:
 
 See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 </div>
+<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201204290324" changecount="19">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.15.1 - 29 April 2012
+* upgraded the Nginx core to 1.0.15.
+* bugfix: now we also add {{{&lt;openresty_prefix&gt;/lualib/?/init.lua}}} to the default {{{package.path}}} search list. thanks bigplum for reporting this issue.
+* upgraded LuaNginxModule to 0.5.0rc25.
+** bugfix: cosocket connections from the connection pool might lead to segfaults if it is not used immediately. thanks xukaifu for reporting this as [[github issue #108|https://github.com/chaoslawful/lua-nginx-module/issues/108]].
+** bugfix: debug logging in the cosocket receive line method could lead to invalid memory reads under extreme network conditions. this issue was caught by [[mockeagain|https://github.com/agentzh/mockeagain]] in reading mode.
+** bugfix: downstream cosockets might hang on the receive(size) method call for slow connections. [[mockeagain|https://github.com/agentzh/mockeagain]] in reading mode caught this issue.
+** bugfix: we no longer forcibly quit the lua threads by clearing out its environment and running it blindly to the end because Lua GC will collect all those unfinished coroutines anyway.
+** bugfix: improved the longjmp handling when Lua panic happens.
+** bugfix: certain compilers might complain about missing declarations for types like {{{int8_t}}}. now we explicitly included {{{stdint.h}}}. thanks runner-mei for reporting it in [[github issue #98|https://github.com/chaoslawful/lua-nginx-module/issues/98]].
+** feature: added new constant {{{ngx.HTTP_OPTIONS}}} for the HTTP OPTIONS method.
+** feature: added support for OPTIONS method in the subrequest capture ~APIs. thanks Jónas Tryggvi Jóhannsson for requesting this in [[github issue #102|https://github.com/chaoslawful/lua-nginx-module/issues/102]].
+** feature: added publich C functions {{{ngx_http_lua_add_package_preload}}}, {{{ngx_http_lua_get_global_state}}}, and {{{ngx_http_lua_get_request}}} to help other Nginx C modules expose new functionalities to ngx_lua. thanks Brian Akins for suggesting them in [[github pull request #101|https://github.com/chaoslawful/lua-nginx-module/pull/101]].
+** feature: made {{{ngx_http_lua_api.h}}} visible to other nginx modules by adding {{{src/api/}}} to the {{{CORE_INCS}}} config variable value in the config file. thanks Brian Akins for suggesting this in [[github pull request #105|https://github.com/chaoslawful/lua-nginx-module/pull/105]].
+** feature: add the {{{gdbinit}}} script to ease Lua user code debugging (Wang Xiaozhe).
+** optimize: various optimizations in cosocket's timeout handling. this gives about 2.5+% performance boost in some benchmarks using LuaRestyRedisLibrary and LuaRestyMySQLLibrary.
+* upgraded RdsJsonNginxModule to v0.12rc8.
+** bugfix: Microsoft C compilers complained about missing declarations of the type {{{int8_t}}}. now we explicitly include {{{stdint.h}}}. thanks runner-mei for reporting this issue in [[github issue #3|https://github.com/agentzh/rds-json-nginx-module/issues/3]].
+* upgraded SetMiscNginxModule to 0.22rc7.
+** bugfix: we should omit the [[set_sha1|http://wiki.nginx.org/HttpSetMiscModule#set_sha1]] directive when we do not have any ~SHA1 libraries (including ~OpenSSL) installed. thanks runner-mei for reporting this in [[github issue #9|https://github.com/agentzh/set-misc-nginx-module/issues/9]].
+** feature: added new config directive [[set_rotate|http://wiki.nginx.org/HttpSetMiscModule#set_rotate]].
+* upgraded DrizzleNginxModule to 0.1.2rc7.
+** bugfix: reading data on a reused ~MySQL connection (coming from the connection pool) could hang due to the inactive read event when {{{poll}}} event API is used in nginx.
+* upgraded LuaRestyMySQLLibrary to 0.07.
+** fixed a typo in error messages.
+** skipped parsing those column fields that we do not use (yet). this makes things noticeably faster.
+
+See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="ZhangYichun" modifier="ZhangYichun" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -1770,7 +1801,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201203250712" changecount="177">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201204290255" changecount="179">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1778,7 +1809,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.11.27.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.27.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 22 March 2012
+* [[ngx_openresty-1.0.15.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.1.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 29 April 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
