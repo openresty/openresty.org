@@ -1553,10 +1553,10 @@ Components bundled with this release:
 
 See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 </div>
-<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201205130449" changecount="31">
+<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201205130530" changecount="32">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.0.15.3 - 13 May 2012
-* now we bundle Sergey A. Osokin's RedisNginxModule which is also enabled by default.
+* now we bundle Sergey A. Osokin's RedisNginxModule which is also enabled by default. thanks Zhu Feng for requesting this.
 * upgraded LuaNginxModule to 0.5.0rc27.
 ** bugfix: nginx could crash on request finalization when running the cosocket cleanup handle due to the lack of check of the {{{ctx}}} pointer. thanks shaneeb for reporting this in [[github issue #110|https://github.com/chaoslawful/lua-nginx-module/issues/110]].
 ** bugfix: [[ngx.req.get_body_data()|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_body_data]] could not handle multi-buffer request bodies and discarded the body data after the first buffer.
