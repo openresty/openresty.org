@@ -1553,10 +1553,10 @@ Components bundled with this release:
 
 See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 </div>
-<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201205130530" changecount="32">
+<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201205130545" changecount="34">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.0.15.3 - 13 May 2012
-* now we bundle Sergey A. Osokin's RedisNginxModule which is also enabled by default. thanks Zhu Feng for requesting this.
+* now we bundle Sergey A. Osokin's RedisNginxModule, 0.3.6, which is also enabled by default. thanks Zhu Feng for requesting this.
 * upgraded LuaNginxModule to 0.5.0rc27.
 ** bugfix: nginx could crash on request finalization when running the cosocket cleanup handle due to the lack of check of the {{{ctx}}} pointer. thanks shaneeb for reporting this in [[github issue #110|https://github.com/chaoslawful/lua-nginx-module/issues/110]].
 ** bugfix: [[ngx.req.get_body_data()|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_body_data]] could not handle multi-buffer request bodies and discarded the body data after the first buffer.
@@ -1577,7 +1577,7 @@ See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 ** feature: added {{{redis.parser._VERSION}}}.
 ** bugfix: now we use Lua userdata to allocate memory used on the C side to prevent potential leaks caused by malloc/free, as discussed in [[github issue #6|https://github.com/agentzh/lua-redis-parser/issues/6]].
 * upgraded LuaRestyMemcachedLibrary to 0.07.
-** feature: now the methods for the Memcached storage commands now accept Lua tables as the {{{value}}} argument.
+** feature: now the methods for the Memcached storage commands now accept Lua tables as the {{{value}}} argument. thanks Brian Akins for the patch.
 * upgraded LuaRestyUploadLibrary to 0.03.
 ** feature: now the raw headers for each part are also returned, as suggested by zou2062 in [[github issue #1|https://github.com/agentzh/lua-resty-upload/issues/1]].
 * applied the patch for a bug in {{{ngx_http_named_location}}} to the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002166.html
