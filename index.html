@@ -1553,8 +1553,35 @@ Components bundled with this release:
 
 See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 </div>
-<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201204290338" changecount="20">
+<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201205130449" changecount="31">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.15.3 - 13 May 2012
+* now we bundle Sergey A. Osokin's RedisNginxModule which is also enabled by default.
+* upgraded LuaNginxModule to 0.5.0rc27.
+** bugfix: nginx could crash on request finalization when running the cosocket cleanup handle due to the lack of check of the {{{ctx}}} pointer. thanks shaneeb for reporting this in [[github issue #110|https://github.com/chaoslawful/lua-nginx-module/issues/110]].
+** bugfix: [[ngx.req.get_body_data()|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_body_data]] could not handle multi-buffer request bodies and discarded the body data after the first buffer.
+** bugfix: [[ngx.ctx|http://wiki.nginx.org/HttpLuaModule#ngx.ctx]] was not accessible at all in {{{set_by_lua*}}}. thanks Pierre.
+** bugfix: fixed typo &quot;on-array&quot;, which should be &quot;non-array&quot;, in an error message.
+** optimize: now [[ngx.log|http://wiki.nginx.org/HttpLuaModule#ngx.log]] is much faster when the log level argument is lower than the actual [[error_log|http://wiki.nginx.org/CoreModule#error_log]] level specified in nginx.conf. thanks Matthieu Tourne for providing the patch.
+** optimize: now we call {{{ngx_http_lua_socket_finalize}}} in {{{cosocket:setkeepalive()}}} to help buffer reuse.
+* upgraded SetMiscNginxModule to 0.22rc8.
+** feature: added new directives [[set_secure_random_alphanum|http://wiki.nginx.org/HttpSetMiscModule#set_secure_random_alphanum]] and [[set_secure_random_lcalpha|http://wiki.nginx.org/HttpSetMiscModule#set_secure_random_lcalpha|]] for generating cryptographically strong random strings based on the {{{/dev/urandom}}} device. thanks Jeremy Wohl for the patch.
+* upgraded SrcacheNginxModule to 0.13rc8.
+** bugfix: the {{{Content-Length}}} response header for HEAD requests should leave intact when cache hits happen.
+** bugfix: the [[srcache_store|http://wiki.nginx.org/HttpSRCacheModule#srcache_store]] subrequest did not set the {{{Content-Length}}} request header properly for multi-buffer request bodies. thanks Feibo Lee for submitting the patch.
+** feature: HTTP conditional GET requests are now supported (both {{{If-Modified-Since}}} and {{{If-Unmodified-Since}}} request headers are properly handled). thanks ~Nginx_User777.
+* upgraded LuaRedisParserLibrary to v0.09.
+** feature: added {{{redis.parser._VERSION}}}.
+** bugfix: now we use Lua userdata to allocate memory used on the C side to prevent potential leaks caused by malloc/free, as discussed in [[github issue #6|https://github.com/agentzh/lua-redis-parser/issues/6]].
+* upgraded LuaRdsParserLibrary to 0.05.
+** feature: added {{{redis.parser._VERSION}}}.
+** bugfix: now we use Lua userdata to allocate memory used on the C side to prevent potential leaks caused by malloc/free, as discussed in [[github issue #6|https://github.com/agentzh/lua-redis-parser/issues/6]].
+* upgraded LuaRestyMemcachedLibrary to 0.07.
+** feature: now the methods for the Memcached storage commands now accept Lua tables as the {{{value}}} argument.
+* upgraded LuaRestyUploadLibrary to 0.03.
+** feature: now the raw headers for each part are also returned, as suggested by zou2062 in [[github issue #1|https://github.com/agentzh/lua-resty-upload/issues/1]].
+* applied the patch for a bug in {{{ngx_http_named_location}}} to the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002166.html
+* applied the patch for a bug in the filter finalizer to the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002190.html
 ! Devel Release 1.0.15.1 - 29 April 2012
 * upgraded the Nginx core to 1.0.15.
 * bugfix: now we also add {{{&lt;openresty_prefix&gt;/lualib/?/init.lua}}} to the default {{{package.path}}} search list. thanks bigplum for reporting this issue.
@@ -1693,7 +1720,7 @@ TertiaryDark: #666
 Error: #f88
 </pre>
 </div>
-<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201202290728" changecount="21">
+<div title="Components" creator="ZhangYichun" modifier="ZhangYichun" created="201106210424" modified="201205130414" changecount="22">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 Below lists all the components bundled in OpenResty. All of the components can be enabled or disabled on need.
@@ -1727,6 +1754,7 @@ Most of the components are enabled by default, some are not.
 * [[PostgresNginxModule]]
 * [[RdsCsvNginxModule]]
 * [[RdsJsonNginxModule]]
+* [[RedisNginxModule]]
 * [[Redis2NginxModule]]
 * [[SetMiscNginxModule]]
 * [[SrcacheNginxModule]]
@@ -1801,7 +1829,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201204290255" changecount="179">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201205130404" changecount="180">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1809,7 +1837,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.15.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.1.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 29 April 2012
+* [[ngx_openresty-1.0.15.3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.3.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 13 May 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
@@ -2502,16 +2530,32 @@ This is an output filter module that formats Resty DBD Streams (RDS) generated b
 Project page: http://github.com/agentzh/rds-json-nginx-module
 </pre>
 </div>
-<div title="Redis2NginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210847" modified="201109060834" changecount="7">
+<div title="Redis2NginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210847" modified="201205130419" changecount="9">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is an [[Nginx]] upstream module that makes nginx talk to a redis 2.x server in a non-blocking way. The full Redis 2.0 unified protocol has been implemented including the redis pipelining support.
 
-This module returns the raw TCP response from the redis server.
+This module returns the raw TCP response from the Redis server.
+
+This module is enabled by default and can be disabled by passing the {{{--without-http_redis2_module}}} option to the {{{./configure}}} script for OpenResty.
 
 Documentation wiki page: http://wiki.nginx.org/HttpRedis2Module
 
 Project page: https://github.com/agentzh/redis2-nginx-module</pre>
+</div>
+<div title="RedisNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201205130416" modified="201205130418" changecount="3">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This is an [[Nginx]] upstream module that makes nginx talk to a redis 2.x server in a non-blocking way. It has a similar interface with the standard [[ngx_memcached module|http://wiki.nginx.org/HttpMemcachedModule]], but only Redis {{{GET}}} command is supported.
+
+This module returns the decoded result from the Redis server.
+
+This module is written by Sergey A. Osokin.
+
+This module is enabled by default and can be disabled by passing the {{{--without-http_redis_module}}} option to the {{{./configure}}} script for OpenResty.
+
+Documentation wiki page: http://wiki.nginx.org/HttpRedisModule
+</pre>
 </div>
 <div title="ReleaseNote" creator="ZhangYichun" modifier="ZhangYichun" created="201111030906" modified="201203250711" changecount="38">
 <pre></pre>
