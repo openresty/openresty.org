@@ -1553,7 +1553,7 @@ Components bundled with this release:
 
 See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 </div>
-<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201205161029" changecount="43">
+<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201205161056" changecount="44">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.0.15.5 - 16 May 2012
 * upgraded LuaJIT to 2.0.0beta10.
@@ -1568,8 +1568,8 @@ See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 * upgraded RdsCsvNginxModule to 0.05rc2.
 ** bugfix: the output buffer size would get wrong when the {{{affected_rows}}} field is larger than a single-digit number. thanks Wendal Chen for reporting this by using clang.
 * upgraded LuaRestyStringLibrary to 0.06.
-** added new Lua module {{{resty.random}}} that implements secure random and pseudo-random string generators. thanks Chase Colman for the patch.
-** added new Lua module {{{resty.aes}}} that exposes the AES submodule of ~OpenSSL via LuaJIT FFI. thanks Chase Colman for the patch.
+** feature: added new Lua module {{{resty.random}}} that implements secure random and pseudo-random string generators. thanks Chase Colman for the patch.
+** feature: added new Lua module {{{resty.aes}}} that exposes the AES submodule of ~OpenSSL via LuaJIT FFI. thanks Chase Colman for the patch.
 ! Devel Release 1.0.15.3 - 13 May 2012
 * now we bundle Sergey A. Osokin's RedisNginxModule, 0.3.6, which is also enabled by default. thanks Zhu Feng for requesting this.
 * upgraded LuaNginxModule to 0.5.0rc27.
