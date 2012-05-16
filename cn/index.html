@@ -1501,8 +1501,23 @@ Components bundled with this release:
 
 See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 </div>
-<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201205131345" changecount="1">
+<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201205131345" modified="201205161050" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.15.5 - 16 May 2012
+* upgraded LuaJIT to 2.0.0beta10.
+** see changes here: http://luajit.org/changes.html
+* feature: added the {{{--with-luajit-xcflags=FLAGS}}} option to {{{./configure}}} to add more C compiler options to LuaJIT's build system.
+* upgraded LuaNginxModule to 0.5.0rc28.
+** bugfix: [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] did not honor the {{{Expect: 100-continue}}} request header and could hang. thanks Matthieu Tourne for the patch in [[pull request #107|https://github.com/chaoslawful/lua-nginx-module/pull/107]].
+** bugfix: the [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] object (i.e., the downstream cosocket object) did not work with HTTP 1.1 pipelined requests at all.
+** bugfix: the [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] object might lose the last part of the request body when receiving data. this regression had appeared in v0.5.0rc25. thanks Matthieu Tourne for reporting it.
+** feature: detailed backtraces (Lua callstack) will be automatically printed to {{{error.log}}} when the user Lua code is interrupted by Lua exceptions. thanks Matthieu Tourne for the patch in [[pull request #107|https://github.com/chaoslawful/lua-nginx-module/pull/107]].
+** optimize: removed dead code found by Simon Liu via scan-build.
+* upgraded RdsCsvNginxModule to 0.05rc2.
+** bugfix: the output buffer size would get wrong when the {{{affected_rows}}} field is larger than a single-digit number. thanks Wendal Chen for reporting this by using clang.
+* upgraded LuaRestyStringLibrary to 0.06.
+** added new Lua module {{{resty.random}}} that implements secure random and pseudo-random string generators. thanks Chase Colman for the patch.
+** added new Lua module {{{resty.aes}}} that exposes the AES submodule of ~OpenSSL via LuaJIT FFI. thanks Chase Colman for the patch.
 ! Devel Release 1.0.15.3 - 13 May 2012
 * now we bundle Sergey A. Osokin's RedisNginxModule, 0.3.6, which is also enabled by default. thanks Zhu Feng for requesting this.
 * upgraded LuaNginxModule to 0.5.0rc27.
@@ -1726,7 +1741,7 @@ Alternatively you can send mails privately to [[agentzh|http://agentzh.org]]: ag
 <div title="DefaultTiddlers" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201205131344" changecount="126">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201205161050" changecount="127">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1734,7 +1749,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.15.3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.3.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 13 May 2012
+* [[ngx_openresty-1.0.15.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.5.tar.gz]] 2.8MB [[Changes|ChangeLog1000015]] - 16 May 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
