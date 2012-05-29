@@ -1553,7 +1553,7 @@ Components bundled with this release:
 
 See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 </div>
-<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201205290443" changecount="56">
+<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201205290504" changecount="57">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.0.15.7 - 29 May 2012
 * bugfix: applied the [[add_core_vars_polluting_globals patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-add_core_vars_polluting_globals.patch]] to fix a bug in the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002231.html
@@ -1567,7 +1567,7 @@ See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 hello}}}. thanks Matthieu Tourne for the patch.
 ** feature: added the [[rewrite_by_lua_no_postpone|http://wiki.nginx.org/HttpLuaModule#rewrite_by_lua_no_postpone]] directive which can control whether or not to disable postponing [[rewrite_by_lua|http://wiki.nginx.org/HttpLuaModule#rewrite_by_lua]] and [[rewrite_by_lua_file|http://wiki.nginx.org/HttpLuaModule#rewrite_by_lua_file]] to the end of the {{{access}}} request-processing phase. thanks Matthieu Tourne for the patches.
 ** feature: added new Lua method [[ngx.decode_args|http://wiki.nginx.org/HttpLuaModule#ngx.decode_args]] to decode ~URI-encoded query strings into Lua tables. thanks Matthieu Tourne for the patches.
-** feature: the special {{{$prefix}}} and {{{${prefix}}}} notations can now be used in the directives [[lua_package_path|http://wiki.nginx.org/HttpLuaModule#lua_package_path]] and [[lua_package_cpath|http://wiki.nginx.org/HttpLuaModule#lua_package_cpath]] to indicate the nginx {{{server prefix}}} path (usually determined by the {{{-p PATH}}} command-line option while starting the Nginx server. thanks Matthieu Tourne for the patches.
+** feature: the special {{{$prefix}}} and {{{${prefix} }}} notations can now be used in the directives [[lua_package_path|http://wiki.nginx.org/HttpLuaModule#lua_package_path]] and [[lua_package_cpath|http://wiki.nginx.org/HttpLuaModule#lua_package_cpath]] to indicate the nginx {{{server prefix}}} path (usually determined by the {{{-p PATH}}} command-line option while starting the Nginx server. thanks Matthieu Tourne for the patches.
 ** docs: various wording improvements in the documentation from Joshua Zhu.
 * upgraded RdsJsonNginxModule to 0.12rc9.
 ** feature: added the {{{rds_json_errcode_key}}} directive to override the default {{{errcode}}} key in the JSON output. thanks Liseen Wan for the patches.
