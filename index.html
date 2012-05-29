@@ -1553,8 +1553,28 @@ Components bundled with this release:
 
 See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 </div>
-<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201205161056" changecount="44">
+<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201205290443" changecount="56">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.15.7 - 29 May 2012
+* bugfix: applied the [[add_core_vars_polluting_globals patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-add_core_vars_polluting_globals.patch]] to fix a bug in the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002231.html
+* bugfix: fixed the [[filter_finalize_hang patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-filter_finalize_hang.patch]] for a regression in the image filters. thanks Maxim Dounin.
+* upgraded LuaNginxModule to 0.5.0rc29.
+** bugfix: {{{cosocket:receive(0)}}} was not allowed and would throw an error saying {{{0}}} was a bad pattern. thanks huang kun for reporting this issue. This issue at least made LuaRestyRedisLibrary reject reading 0-size values.
+** bugfix: the [[set_by_lua|http://wiki.nginx.org/HttpLuaModule#set_by_lua]] directive did support nginx variable interpolation and there was no easy way to use the dollar sign characters in the literal Lua source. the [[set_by_lua_file|http://wiki.nginx.org/HttpLuaModule#set_by_lua_file]] directive still supports nginx variable interpolation in its lua file path argument. thanks Vittly for reporting this in [[github issue #111|https://github.com/chaoslawful/lua-nginx-module/issues/111]] and jinglong for the test in [[github pull #115|https://github.com/chaoslawful/lua-nginx-module/pull/115]].
+** bugfix: fixed compilation errors when PCRE is missing. thanks Dirk Feytons for the patch.
+** feature: added the {{{[lua]}}} prefix to the log messages produced by [[ngx.log()|http://wiki.nginx.org/HttpLuaModule#ngx.log]] and [[print()|http://wiki.nginx.org/HttpLuaModule#print]]. thanks Matthieu Tourne for the patches.
+** feature: [[ngx.log()|http://wiki.nginx.org/HttpLuaModule#ngx.log]] and [[print()|http://wiki.nginx.org/HttpLuaModule#print]] now output more debugging info, i.e., the current lua source file name (if any), the current source line number, and the current calling Lua function name (if any), into the Nginx {{{error.log}}} file. An example message is {{{[error] 56651#0: *1 [lua] test.lua:6: bar():
+hello}}}. thanks Matthieu Tourne for the patch.
+** feature: added the [[rewrite_by_lua_no_postpone|http://wiki.nginx.org/HttpLuaModule#rewrite_by_lua_no_postpone]] directive which can control whether or not to disable postponing [[rewrite_by_lua|http://wiki.nginx.org/HttpLuaModule#rewrite_by_lua]] and [[rewrite_by_lua_file|http://wiki.nginx.org/HttpLuaModule#rewrite_by_lua_file]] to the end of the {{{access}}} request-processing phase. thanks Matthieu Tourne for the patches.
+** feature: added new Lua method [[ngx.decode_args|http://wiki.nginx.org/HttpLuaModule#ngx.decode_args]] to decode ~URI-encoded query strings into Lua tables. thanks Matthieu Tourne for the patches.
+** feature: the special {{{$prefix}}} and {{{${prefix}}}} notations can now be used in the directives [[lua_package_path|http://wiki.nginx.org/HttpLuaModule#lua_package_path]] and [[lua_package_cpath|http://wiki.nginx.org/HttpLuaModule#lua_package_cpath]] to indicate the nginx {{{server prefix}}} path (usually determined by the {{{-p PATH}}} command-line option while starting the Nginx server. thanks Matthieu Tourne for the patches.
+** docs: various wording improvements in the documentation from Joshua Zhu.
+* upgraded RdsJsonNginxModule to 0.12rc9.
+** feature: added the {{{rds_json_errcode_key}}} directive to override the default {{{errcode}}} key in the JSON output. thanks Liseen Wan for the patches.
+** feature: added the {{{rds_json_errstr_key}}} directive to override the default {{{errstr}}} key in the JSON output. thanks Liseen Wan for the patches.
+* upgraded LuaRestyRedisLibrary to 0.09.
+** feature: the {{{hmset}}} method can now take a key and a hash-like table as its arguments. thanks Brian Akins for the patches.
+** docs: fixed a typo found by Lance in {{{README}}}.
 ! Devel Release 1.0.15.5 - 16 May 2012
 * upgraded LuaJIT to 2.0.0beta10.
 ** see changes here: http://luajit.org/changes.html
@@ -1844,7 +1864,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201205161013" changecount="181">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201205290405" changecount="182">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1852,7 +1872,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.15.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.5.tar.gz]] 2.8MB [[Changes|ChangeLog1000015]] - 16 May 2012
+* [[ngx_openresty-1.0.15.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.7.tar.gz]] 2.8MB [[Changes|ChangeLog1000015]] - 29 May 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
