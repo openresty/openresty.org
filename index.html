@@ -1553,7 +1553,7 @@ Components bundled with this release:
 
 See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 </div>
-<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201206071307" changecount="72">
+<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201206071321" changecount="73">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.0.15.9 - 7 June 2012
 * upgraded LuaNginxModule to 0.5.0rc30.
@@ -1568,6 +1568,7 @@ See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 ** optimize: now we no longer call {{{ngx_http_post_request}}} to wake up the request associated with the current cosocket upstream from within the cosocket upstream event handlers, but rather call {{{r-&gt;write_event_handler}}} directly. this change can also make backtraces more meaningful because we preserve the original calling stack.
 ** docs: massive wording improvements from the Nginx Wiki site. thanks Dayo.
 * upgraded RdsJsonNginxModule to 0.12rc10.
+** bugfix: refactored on-demand handler registration. the old approach rewrites to static (global) variables at config-time, which could have potential problems with nginx config reloading via the {{{HUP}}} signal.
 * bugfix: the (optional) [[no-pool patch|https://github.com/shrimp/no-pool-nginx/]] might leak memory. now we have updated the no-pool patch to the latest version that is a thorough rewrite.
 * bugfix: applied [[poll_del_event_at_exit patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-poll_del_event_at_exit.patch]] that fixed a segmentation fault in the nginx core when the poll event type is used: http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002328.html
 * bugfix: applied the [[resolver_debug_log patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-resolver_debug_log_overflow.patch]] that fixed reads of uninitialized memory in the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002281.html
