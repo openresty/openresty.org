@@ -1553,8 +1553,24 @@ Components bundled with this release:
 
 See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 </div>
-<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201205290504" changecount="57">
+<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201206071307" changecount="72">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.15.9 - 7 June 2012
+* upgraded LuaNginxModule to 0.5.0rc30.
+** feature: new Lua API, [[ngx.sleep()|http://wiki.nginx.org/HttpLuaModule#ngx.sleep]], for doing non-blocking sleep in Lua. thanks jinglong for the patch.
+** feature: [[ngx.log()|http://wiki.nginx.org/HttpLuaModule#ngx.log]] now checks if the log level number is in the valid range (0 ~ 8). thanks Xiaoyu Chen (smallfish) for suggesting this improvement.
+** bugfix: [[cosocket:receiveuntil|http://wiki.nginx.org/HttpLuaModule#tcpsock:receiveuntil]] could leak memory, especially for long pattern string arguments. this bug was caught by [[Test::Nginx::Socket|http://search.cpan.org/perldoc?Test::Nginx::Socket]] when setting the environment {{{TEST_NGINX_CHECK_LEAK=1}}}.
+** bugfix: [[ngx.re.sub()|http://wiki.nginx.org/HttpLuaModule#ngx.re.sub]] could leak memory when the {{{replace}}} template argument string is not well-formed and the {{{o}}} regex option is also specified. this issue was caught by [[Test::Nginx::Socket|http://search.cpan.org/perldoc?Test::Nginx::Socket]] when setting environment {{{TEST_NGINX_CHECK_LEAK=1}}}.
+** bugfix: [[ngx.re.gmatch|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]] leaked memory when the {{{o}}} option was not specified. this bug was caught by [[Test::Nginx::Socket|http://search.cpan.org/perldoc?Test::Nginx::Socket]] when setting the environment {{{TEST_NGINX_CHECK_LEAK=1}}}.
+** bugfix: the Lua {{{_G}}} special table did not get cleared when [[lua_code_cache|http://wiki.nginx.org/HttpLuaModule#lua_code_cache]] is turned off. thanks Moven for reporting this issue.
+** bugfix: [[cosocket:connect()|http://wiki.nginx.org/HttpLuaModule#tcpsock:connect]] might hang on socket creation errors or segfault later due to left-over state flags.
+** bugfix: refactored on-demand handler registration. the old approach rewrites to static (global) variables at config-time, which could have potential problems with nginx config reloading via the {{{HUP}}} signal.
+** optimize: now we no longer call {{{ngx_http_post_request}}} to wake up the request associated with the current cosocket upstream from within the cosocket upstream event handlers, but rather call {{{r-&gt;write_event_handler}}} directly. this change can also make backtraces more meaningful because we preserve the original calling stack.
+** docs: massive wording improvements from the Nginx Wiki site. thanks Dayo.
+* upgraded RdsJsonNginxModule to 0.12rc10.
+* bugfix: the (optional) [[no-pool patch|https://github.com/shrimp/no-pool-nginx/]] might leak memory. now we have updated the no-pool patch to the latest version that is a thorough rewrite.
+* bugfix: applied [[poll_del_event_at_exit patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-poll_del_event_at_exit.patch]] that fixed a segmentation fault in the nginx core when the poll event type is used: http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002328.html
+* bugfix: applied the [[resolver_debug_log patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-resolver_debug_log_overflow.patch]] that fixed reads of uninitialized memory in the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002281.html
 ! Devel Release 1.0.15.7 - 29 May 2012
 * bugfix: applied the [[add_core_vars_polluting_globals patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-add_core_vars_polluting_globals.patch]] to fix a bug in the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002231.html
 * bugfix: fixed the [[filter_finalize_hang patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-filter_finalize_hang.patch]] for a regression in the image filters. thanks Maxim Dounin.
@@ -1864,7 +1880,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZoomQuiet" created="201106210425" modified="201205291422" tags="Resources" changecount="183">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201206071246" tags="Resources" changecount="184">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1872,7 +1888,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.15.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.7.tar.gz]] 2.8MB [[Changes|ChangeLog1000015]] - 29 May 2012
+* [[ngx_openresty-1.0.15.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.9.tar.gz]] 2.8MB [[Changes|ChangeLog1000015]] - 7 June 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
