@@ -1553,8 +1553,44 @@ Components bundled with this release:
 
 See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 </div>
-<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201206071321" changecount="73">
+<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201206131040" changecount="75">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Stable Release 1.0.15.10 - 13 June 2012
+This release is essentially equivalent to the devel version 1.0.15.9 except excluding all the vim backup files *~ from the source code distribution. thanks Xiaoyu Chen.
+
+Components bundled:
+* ~LuaJIT-2.0.0-beta10
+* array-var-nginx-module-0.03rc1
+* auth-request-nginx-module-0.2
+* drizzle-nginx-module-0.1.2rc7
+* echo-nginx-module-0.38rc2
+* encrypted-session-nginx-module-0.02
+* form-input-nginx-module-0.07rc5
+* headers-more-nginx-module-0.17rc1
+* iconv-nginx-module-0.10rc7
+* lua-5.1.4
+* lua-cjson-1.0.3
+* lua-rds-parser-0.05
+* lua-redis-parser-0.09
+* lua-resty-memcached-0.07
+* lua-resty-mysql-0.07
+* lua-resty-redis-0.09
+* lua-resty-string-0.06
+* lua-resty-upload-0.03
+* memc-nginx-module-0.13rc3
+* nginx-1.0.15
+* ngx_coolkit-0.2rc1
+* ngx_devel_kit-0.2.17
+* ngx_lua-0.5.0rc30
+* ngx_postgres-0.9
+* rds-csv-nginx-module-0.05rc2
+* rds-json-nginx-module-0.12rc10
+* redis-nginx-module-0.3.6
+* redis2-nginx-module-0.08rc4
+* set-misc-nginx-module-0.22rc8
+* srcache-nginx-module-0.13rc8
+* upstream-keepalive-nginx-module-0.7
+* xss-nginx-module-0.03rc9
 ! Devel Release 1.0.15.9 - 7 June 2012
 * upgraded LuaNginxModule to 0.5.0rc30.
 ** feature: new Lua API, [[ngx.sleep()|http://wiki.nginx.org/HttpLuaModule#ngx.sleep]], for doing non-blocking sleep in Lua. thanks jinglong for the patch.
@@ -1881,17 +1917,18 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201206071246" tags="Resources" changecount="184">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201206131039" tags="Resources" changecount="185">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
 Most of the users should use the current release, i.e., the latest stable release.
-* [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
+* [[ngx_openresty-1.0.15.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.10.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 13 June 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
 * [[ngx_openresty-1.0.15.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.9.tar.gz]] 2.8MB [[Changes|ChangeLog1000015]] - 7 June 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
+* [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
 * [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
 * [[ngx_openresty-1.0.10.24.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.24.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 11 December 2011
