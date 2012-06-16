@@ -1553,8 +1553,29 @@ Components bundled with this release:
 
 See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 </div>
-<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201206131040" changecount="75">
+<div title="ChangeLog1000015" creator="ZhangYichun" modifier="ZhangYichun" created="201204290256" modified="201206160329" changecount="100">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.0.15.11 - 16 June 2012
+* upgraded LuaNginxModule to 0.5.0rc32.
+** bugfix: [[header_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#header_filter_by_lua]] and its friend would leak memory when it is the only directive of LuaNginxModule configured in a location and the [[ngx.ctx|http://wiki.nginx.org/HttpLuaModule#ngx.ctx]] API is also used there.
+** bugfix: Lua global variables was dangerously shared by all the concurrent requests if the special {{{_G}}} table was used in all those {{{*_by_lua}}} and {{{*_by_lua_file}}} directives. thanks chaoslawful for the patches. but please also note that {{{_G}}} is still shared among all the requests if used in the context of Lua modules, just like all those Lua module level variables.
+** bugfix: the [[ngx.arg|http://wiki.nginx.org/HttpLuaModule#ngx.arg]] API was not usable within external Lua module files in [[set_by_lua|http://wiki.nginx.org/HttpLuaModule#set_by_lua]] or [[set_by_lua_file|http://wiki.nginx.org/HttpLuaModule#set_by_lua_file]].
+** bugfix: unexpected values on the Lua stack might be concatenated when generating tracebacks for Lua errors and the Lua VM would crash when there happened to be values on the Lua stack that could not be concatenated (like {{{nil}}}).
+** bugfix: the Lua main thread stack might leak when [[header_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#header_filter_by_lua]] or [[header_filter_by_lua_file|http://wiki.nginx.org/HttpLuaModule#header_filter_by_lua_file]] are used.
+** bugfix: the Lua VM might crash when calling the cosocket methods with a bad-typed {{{self}}} argument.
+** bufix: fixed the directive context for [[set_by_lua|http://wiki.nginx.org/HttpLuaModule#set_by_lua]] and [[set_by_lua_file|http://wiki.nginx.org/HttpLuaModule#set_by_lua_file]]. they really work in the contexts {{{server}}}, {{{server if}}}, {{{location}}}, and {{{location if}}}. thanks Liu Taihua.
+** feature: added new directives [[log_by_lua|http://wiki.nginx.org/HttpLuaModule#log_by_lua]] and [[log_by_lua_file|http://wiki.nginx.org/HttpLuaModule#log_by_lua_file]] to support user Lua code running at the {{{log}}} request processing phase. thanks Matthieu Tourne for the patches.
+** feature: added new directives [[body_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#body_filter_by_lua]] and [[body_filter_by_lua_file|http://wiki.nginx.org/HttpLuaModule#body_filter_by_lua_file]] to allow the user implement nginx output body filters in pure Lua.
+** feature: added support for loading Lua/LuaJIT raw bytecode files automatically in all those {{{*_by_lua_file}}} config directives. thanks jinglong and chaoslawful for the patches. benchmark results have shown that, for very big Lua-based web applications, bytecode loading gives an order of magnitude speedup at first requests that trigger the Lua code loading.
+** feature: added new directive [[lua_transform_underscores_in_response_headers|http://wiki.nginx.org/HttpLuaModule#lua_transform_underscores_in_response_headers]]. thanks Kindy Lin.
+** optimize: now we no longer register the {{{ndk}}} and {{{ngx}}} API for [[set_by_lua|http://wiki.nginx.org/HttpLuaModule#set_by_lua]]* and [[header_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#header_filter_by_lua]]* at config time rather than request time. this makes these directives 200+% faster.
+** optimize: eliminated unnecessary string concatenations when generating tracebacks for Lua errors.
+** optimize: now we store the metatables for [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] and [[ngx.socket.tcp()|http://wiki.nginx.org/HttpLuaModule#ngx.socket.tcp]] objects into the Lua registry.
+** optimize: changed the string keys to light userdata for various tracking tables (coroutines table, regex cache table, cosocket connection pool table, [[ngx.ctx|http://wiki.nginx.org/HttpLuaModule#ngx.ctx]] table, and etc). This gives minor performance improvement from eliminating key hashing and etc. thanks Dirk Feytons.
+** diagnosis: now we issue user-friendly error messages when the Nginx Lua ~APIs are used in the wrong configure directive contexts (e.g., using [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] in [[set_by_lua|http://wiki.nginx.org/HttpLuaModule#set_by_lua]]).
+** docs: fixed a typo: [[ngx.now|http://wiki.nginx.org/HttpLuaModule#ngx.now]] returns time of the resolution of milliseconds, rather than microseconds. thanks Wang Xi.
+** docs: added a note for installation with Lua 5.1 on ubuntu 11.10. thanks Dan Sosedoff.
+* updated [[nginx-1.0.15-poll_del_event_at_exit.patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-poll_del_event_at_exit.patch]]. thanks Maxim Dounin.
 ! Stable Release 1.0.15.10 - 13 June 2012
 This release is essentially equivalent to the devel version 1.0.15.9 except excluding all the vim backup files *~ from the source code distribution. thanks Xiaoyu Chen.
 
@@ -1917,7 +1938,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201206131039" tags="Resources" changecount="185">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201206160324" tags="Resources" changecount="187">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1925,7 +1946,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.15.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.10.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 13 June 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.15.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.9.tar.gz]] 2.8MB [[Changes|ChangeLog1000015]] - 7 June 2012
+* [[ngx_openresty-1.0.15.11.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.11.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 16 June 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
