@@ -1720,6 +1720,26 @@ hello}}}. thanks Matthieu Tourne for the patch.
 
 See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
 </div>
+<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201206221504" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.1.1 - 22 June 2012
+* upgraded the Nginx core to 1.2.1.
+** see the change log: http://nginx.org/en/CHANGES-1.2
+* upgraded LuaNginxModule to 0.5.2.
+** bugfix: [[header_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#header_filter_by_lua]]* did not run at all when [[body_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#body_filter_by_lua]]* is defined at the same time. thanks Tzury Bar Yochay for reporting this issue.
+** feature: added the {{{inclusive}}} option to the [[cosocket:receiveuntil|http://wiki.nginx.org/HttpLuaModule#tcpsock:receiveuntil]] method to include the delimiter pattern string in the resulting data read. thanks Matthieu Tourne for the patch.
+** optimize: merged two successive Nginx pool allocations in {{{ngx_http_lua_socket_resolve_handler}}} to reduce overhead.
+* upgraded EchoNginxModule to 0.39.
+** bugfix: EchoNginxModule's configure directives was not inherited automatically by {{{location if}}} inner blocks.
+** bugfix: the old HTTP 1.0 protocol handling was wrong. we should leave that to the Nginx core and just output responses without a {{{Content-Length}}} response header.
+** bugfix: reading the [[$echo_it|http://wiki.nginx.org/HttpEchoModule#.24echo_it]] variable outside of the [[echo_foreach_split|http://wiki.nginx.org/HttpEchoModule#echo_foreach_split]] loop resulted in memory invalid reads and hence segfaults; now it is evaluates to the special {{{not found}}} value. thanks baqs for reporting this.
+* upgraded PostgresNginxModule to 1.0rc1.
+** bugfix: memory leak might happen if nginx 1.1.14+ is used and (at least) {{{libpq}}} fails to connect to the remote database.
+* upgraded the (optional) no-pool patch to the latest version, {{{642ae25}}}.
+** bugfix: we should postpone freeing the {{{elts}}} storage for {{{ngx_array_t}}} to {{{ngx_array_destroy}}} when resizing the array because at least the {{{ngx_rewrite}}} module stores external references to the array elements.
+
+See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="ZhangYichun" modifier="ZhangYichun" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -1938,7 +1958,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201206160324" tags="Resources" changecount="187">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201206221500" tags="Resources" changecount="188">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1946,7 +1966,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.15.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.10.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 13 June 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.0.15.11.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.11.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 16 June 2012
+* [[ngx_openresty-1.2.1.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.1.tar.gz]] 2.8MB [[Changes|ChangeLog1002001]] - 22 June 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
