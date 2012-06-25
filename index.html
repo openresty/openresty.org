@@ -1720,8 +1720,14 @@ hello}}}. thanks Matthieu Tourne for the patch.
 
 See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
 </div>
-<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201206230204" changecount="3">
+<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201206250359" changecount="5">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.1.3 - 25 June 2012
+* upgraded EchoNginxModule to 0.40.
+** feature: added new directive [[echo_status|http://wiki.nginx.org/HttpEchoModule#echo_status]] which can be used to specify a different default response status code other than 200. thanks Maxime Corbeau for requesting this.
+* upgraded LuaNginxModule to 0.5.3.
+** bugfix: [[ngx.say|http://wiki.nginx.org/HttpLuaModule#ngx.say]] and [[ngx.print|http://wiki.nginx.org/HttpLuaModule#ngx.print]] might cause nginx to crash when table-typed arguments were given. thanks sztanpet for reporting this in [[github issue #54|https://github.com/chaoslawful/lua-nginx-module/issues/54#issuecomment-6527745]].
+* applied [[location_if_inherits_proxy.patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.1-location_if_inherits_proxy.patch]] to the nginx core. see http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002374.html for details.
 ! Devel Release 1.2.1.1 - 22 June 2012
 * upgraded the Nginx core to 1.2.1.
 ** see the change log: http://nginx.org/en/CHANGES-1.2
@@ -1958,7 +1964,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201206221500" tags="Resources" changecount="188">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201206250348" tags="Resources" changecount="189">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1966,7 +1972,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.15.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.10.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 13 June 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.2.1.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.1.tar.gz]] 2.8MB [[Changes|ChangeLog1002001]] - 22 June 2012
+* [[ngx_openresty-1.2.1.3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.3.tar.gz]] 2.8MB [[Changes|ChangeLog1002001]] - 25 June 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
