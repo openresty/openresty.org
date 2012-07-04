@@ -1720,8 +1720,22 @@ hello}}}. thanks Matthieu Tourne for the patch.
 
 See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
 </div>
-<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201206250359" changecount="5">
+<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201207042122" changecount="9">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.1.5 - 4 July 2012
+* upgraded LuaNginxModule to 0.5.5.
+** feature: added new configure directives [[init_by_lua|http://wiki.nginx.org/HttpLuaModule#init_by_lua]] and [[init_by_lua_file|http://wiki.nginx.org/HttpLuaModule#init_by_lua_file]]. they can be used to pre-load Lua modules, registering true Lua global variables, and initializing the shared-memory storage defined via [[lua_shared_dict|http://wiki.nginx.org/HttpLuaModule#lua_shared_dict]], at Nginx config-loading time. thanks drdrxp for suggesting this new feature.
+** feature: now we print backtrace to {{{error.log}}} when Lua errors happen in [[set_by_lua|http://wiki.nginx.org/HttpLuaModule#set_by_lua]]*, [[header_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#header_filter_by_lua]]*, [[body_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#body_filter_by_lua]]*, and [[log_by_lua|http://wiki.nginx.org/HttpLuaModule#log_by_lua]].
+** bugfix: upstream data buffers were not marked as fully consumed when [[body_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#body_filter_by_lua]]* is used and {{{ngx.arg[1]}}} is overwritten. this could result in connection hang for large response bodies. thanks Tzury Bar Yochay for reporting this issue.
+** bugfix: gcc complained that &quot;dereferencing type-punned pointer will break strict-aliasing rules&quot; when {{{-O2}}} or above was enabled while compiling. thanks Ryan Ooi for reporting this and chaoslawful for fixing it.
+* upgraded LuaRestyRedisLibrary to 0.10.
+** feature: added the Redis {{{script}}} command introduced in Redis 2.6. thanks Evgeniy Dolzhenko for suggesting this.
+** docs: documented that storing the object instance into lua module-level variables will result in failures for concurrent requests.
+** docs: documented that this lib cannot be used in those contexts where the ngx_lua cosocket API is unavailable.
+* upgraded SrcacheNginxModule to 0.14.
+** feature: added new nginx variable [[$srcache_fetch_status|http://wiki.nginx.org/HttpSRCacheModule#.24srcache_fetch_status]] which takes one of three values, {{{BYASS}}}, {{{MISS}}}, and {{{HIT}}}. thanks Feibo Li for the patch.
+** feature: added new Nginx variable [[$srcache_store_status|http://wiki.nginx.org/HttpSRCacheModule#.24srcache_store_status]] which takes the value {{{BYASS}}} or {{{STORE}}}.
+** optimize: removed unused context data field {{{fetch_sr}}} on the C level to reduce the memory footprint a bit.
 ! Devel Release 1.2.1.3 - 25 June 2012
 * upgraded EchoNginxModule to 0.40.
 ** feature: added new directive [[echo_status|http://wiki.nginx.org/HttpEchoModule#echo_status]] which can be used to specify a different default response status code other than 200. thanks Maxime Corbeau for requesting this.
@@ -1964,7 +1978,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201206250348" tags="Resources" changecount="189">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201207042101" tags="Resources" changecount="190">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -1972,7 +1986,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.15.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.10.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 13 June 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.2.1.3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.3.tar.gz]] 2.8MB [[Changes|ChangeLog1002001]] - 25 June 2012
+* [[ngx_openresty-1.2.1.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.5.tar.gz]] 2.8MB [[Changes|ChangeLog1002001]] - 4 July 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
