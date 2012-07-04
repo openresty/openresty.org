@@ -1574,6 +1574,32 @@ See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 
 See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
 </div>
+<div title="ChangeLog1002001" creator="ZoomQuiet" modifier="ZoomQuiet" created="201206250649" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.1.3 - 25 June 2012
+* upgraded EchoNginxModule to 0.40.
+** feature: added new directive [[echo_status|http://wiki.nginx.org/HttpEchoModule#echo_status]] which can be used to specify a different default response status code other than 200. thanks Maxime Corbeau for requesting this.
+* upgraded LuaNginxModule to 0.5.3.
+** bugfix: [[ngx.say|http://wiki.nginx.org/HttpLuaModule#ngx.say]] and [[ngx.print|http://wiki.nginx.org/HttpLuaModule#ngx.print]] might cause nginx to crash when table-typed arguments were given. thanks sztanpet for reporting this in [[github issue #54|https://github.com/chaoslawful/lua-nginx-module/issues/54#issuecomment-6527745]].
+* applied [[location_if_inherits_proxy.patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.1-location_if_inherits_proxy.patch]] to the nginx core. see http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002374.html for details.
+! Devel Release 1.2.1.1 - 22 June 2012
+* upgraded the Nginx core to 1.2.1.
+** see the change log: http://nginx.org/en/CHANGES-1.2
+* upgraded LuaNginxModule to 0.5.2.
+** bugfix: [[header_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#header_filter_by_lua]]* did not run at all when [[body_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#body_filter_by_lua]]* was defined at the same time. thanks Tzury Bar Yochay for reporting this issue.
+** feature: added the {{{inclusive}}} option to the [[cosocket:receiveuntil|http://wiki.nginx.org/HttpLuaModule#tcpsock:receiveuntil]] method to include the delimiter pattern string in the resulting data read. thanks Matthieu Tourne for the patch.
+** optimize: merged two successive Nginx pool allocations in {{{ngx_http_lua_socket_resolve_handler}}} to reduce overhead.
+* upgraded EchoNginxModule to 0.39.
+** bugfix: EchoNginxModule's configure directives was not inherited automatically by {{{location if}}} inner blocks.
+** bugfix: the old HTTP 1.0 protocol handling was wrong. we should leave that to the Nginx core and just output responses without a {{{Content-Length}}} response header.
+** bugfix: reading the [[$echo_it|http://wiki.nginx.org/HttpEchoModule#.24echo_it]] variable outside the [[echo_foreach_split|http://wiki.nginx.org/HttpEchoModule#echo_foreach_split]] loop resulted in memory invalid reads and hence segfaults; now it is evaluates to the special {{{not found}}} value. thanks baqs for reporting this.
+* upgraded PostgresNginxModule to 1.0rc1.
+** bugfix: memory leak might happen if nginx 1.1.14+ was used and (at least) {{{libpq}}} failed to connect to the remote database.
+* upgraded the (optional) no-pool patch to the latest version, {{{642ae25}}}.
+** bugfix: we should postpone freeing the {{{elts}}} storage for {{{ngx_array_t}}} to {{{ngx_array_destroy}}} when resizing the array because at least the {{{ngx_rewrite}}} module stores external references to the array elements.
+
+See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="ZhangYichun" modifier="ZhangYichun" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -1778,7 +1804,7 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZoomQuiet" created="201106210425" modified="201206160415" tags="Resources" changecount="133">
+<div title="Download" creator="ZhangYichun" modifier="ZoomQuiet" created="201106210425" modified="201206250648" tags="Resources" changecount="134">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 稳定版
@@ -1790,7 +1816,7 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 !! 开发版
 针对开发者及够爷们儿的用户,体验最新问题修复成果和新增特性.
 
-* [[ngx_openresty-1.0.15.11.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.11.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 2012.6.16
+* [[ngx_openresty-1.2.1.3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.3.tar.gz]] 2.8MB [[Changes|ChangeLog1002001]] - 2012.6.25
 
 !! 遗留版
 有时我们的确需要老版本.
