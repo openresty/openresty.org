@@ -1720,13 +1720,13 @@ hello}}}. thanks Matthieu Tourne for the patch.
 
 See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
 </div>
-<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201207042122" changecount="9">
+<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201207042324" changecount="10">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.1.5 - 4 July 2012
 * upgraded LuaNginxModule to 0.5.5.
 ** feature: added new configure directives [[init_by_lua|http://wiki.nginx.org/HttpLuaModule#init_by_lua]] and [[init_by_lua_file|http://wiki.nginx.org/HttpLuaModule#init_by_lua_file]]. they can be used to pre-load Lua modules, registering true Lua global variables, and initializing the shared-memory storage defined via [[lua_shared_dict|http://wiki.nginx.org/HttpLuaModule#lua_shared_dict]], at Nginx config-loading time. thanks drdrxp for suggesting this new feature.
 ** feature: now we print backtrace to {{{error.log}}} when Lua errors happen in [[set_by_lua|http://wiki.nginx.org/HttpLuaModule#set_by_lua]]*, [[header_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#header_filter_by_lua]]*, [[body_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#body_filter_by_lua]]*, and [[log_by_lua|http://wiki.nginx.org/HttpLuaModule#log_by_lua]].
-** bugfix: upstream data buffers were not marked as fully consumed when [[body_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#body_filter_by_lua]]* is used and {{{ngx.arg[1]}}} is overwritten. this could result in connection hang for large response bodies. thanks Tzury Bar Yochay for reporting this issue.
+** bugfix: upstream data buffers were not marked as fully consumed when [[body_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#body_filter_by_lua]]* was used and {{{ngx.arg[1]}}} was overwritten. this could result in connection hang for large response bodies. thanks Tzury Bar Yochay for reporting this issue.
 ** bugfix: gcc complained that &quot;dereferencing type-punned pointer will break strict-aliasing rules&quot; when {{{-O2}}} or above was enabled while compiling. thanks Ryan Ooi for reporting this and chaoslawful for fixing it.
 * upgraded LuaRestyRedisLibrary to 0.10.
 ** feature: added the Redis {{{script}}} command introduced in Redis 2.6. thanks Evgeniy Dolzhenko for suggesting this.
