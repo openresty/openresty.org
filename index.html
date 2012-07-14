@@ -1720,8 +1720,38 @@ hello}}}. thanks Matthieu Tourne for the patch.
 
 See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
 </div>
-<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201207042324" changecount="10">
+<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201207141930" changecount="20">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.1.7 - 14 July 2012
+* upraded HeadersMoreNginxModule to 0.17.
+** bugfix: [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] did not remove all the instances for the built-in headers or custom headers.
+** bugfix: [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] might accidentally remove request headers that were not specified at all and leaved the specified headers with just empty header values when removing multiple built-in headers. thanks Matthieu Tourne for reporting the issues.
+* upgraded LuaNginxModule to 0.5.7.
+** feature: added an optional &quot;option table&quot; to [[tcpsock:connect()|http://wiki.nginx.org/HttpLuaModule#tcpsock:connect]] which accepts a {{{pool}}} option to allow the user specify a custom pool name intead of the automatically generated one based on the host-port pair or the socket file path. thanks Brian Akins for the patches.
+** feature: implemented the UDP/unix-datagram cosocket API. the entry point is [[ngx.socket.udp|http://wiki.nginx.org/HttpLuaModule#ngx.socket.udp]]. we preserve API compatibility with the ~LuaSocket library but everything is non-blocking in our implementation.
+** feature: added new Nginx API for Lua: [[ngx.req.set_method(method_id)|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_method]] and [[ngx.req.get_method|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_method]]. thanks Matthieu Tourne for suggesting these.
+** bugfix: the tcp/stream-unix cosocket object might hang when another concurrent request is accessing it while its operation is still in progress; now we always check for potential access conflicts and return the {{{socket busy}}} error string if it is indeed the case.
+** bugfix: the [[tcpsock:connect()|http://wiki.nginx.org/HttpLuaModule#tcpsock:connect]] method always returned the (vague) error strng {{{&quot;connect peer error&quot;}}} instead of the (detailed) system error string when the connect syscall failed.
+** bugfix: the TCP/stream-unix cosocket object might went wrong after it connected successfully in a single run (that is, no {{{EAGAIN}}} returned in the middle) and DNS domain names were used.
+** bugfix: [[tcpsock:receive()|http://wiki.nginx.org/HttpLuaModule#tcpsock:receive]] and [[tcpsock:send()|http://wiki.nginx.org/HttpLuaModule#tcpsock:send]] always returned {{{&quot;error&quot;}}} as the error message instead of the (detailed) system error string.
+** bugfix: [[ngx.req.clear_header()|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] did not remove all the instances for the built-in headers or custom headers.
+** bugfix: [[ngx.req.clear_header()|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] might accidentally remove request headers that are not specified at all and leave the specified headers with just empty header values when removing multiple built-in headers. thanks Matthieu Tourne for reporting the issues.
+** bugfix: we did not always test if the request object pointer is null in the {{{ngx.req.*_body}}} API.
+** bugfix: [[ngx.exec()|http://wiki.nginx.org/HttpLuaModule#ngx.exec]] did not accept the {{{nil}}} value for its second (optional) argument.
+** bugfix: {{{ngx.exit(404/500/...)}}} would throw out Lua errors when the response headers with exactly the same status code had already been sent. thanks Matthieu Tourne for reporting this.
+** bugfix: gcc might issue the &quot;unused variable&quot; warning when PCRE was disabled. thanks Dirk Feytons for the patch.
+* upgraded LuaRestyRedisLibrary to 0.11.
+** feature: added the {{{array_to_hash}}} method. thanks Brian Akins for the patch in [[github #8|https://github.com/agentzh/lua-resty-redis/pull/8]].
+* upgraded LuaRestyMySQLLibrary to 0.09.
+** feature: added the {{{compact_arrays}}} option to the {{{connect()}}} method to make the driver return arrays of arrays instead of the (default) arrays of hashes. thanks Lance Li for requesting this feature.
+** feature: added new method {{{set_compact_arrays}}} to change the current {{{compact_arrays}}} option value used by the current object for subsequent queries. thanks Lance Li for suggesting it.
+** feature: added the {{{pool}}} option to the {{{connect()}}} method.
+** bugfix: connections to different ~MySQL databases and/or different ~MySQL users would incorrectly share the same connection pool as long as they were connecting to the same ~MySQL server. thanks lhmwzy for reporting the issue.
+** docs: fixed the {{{path}}} option value for the {{{connect()}}} method in README. it should not take the {{{unix:}}} prefix. thanks Lance Li.
+** docs: documented that storing the object instance into lua module-level variables will result in failures for concurrent requests.
+** docs: documented that this library cannot be used in those contexts where the cosocket API is unavailable.
+* upgraded the standard Lua interpreter to 5.1.5.
+* disabled the Lua 5.0 compatibility in the standard Lua interpreter bundled.
 ! Devel Release 1.2.1.5 - 4 July 2012
 * upgraded LuaNginxModule to 0.5.5.
 ** feature: added new configure directives [[init_by_lua|http://wiki.nginx.org/HttpLuaModule#init_by_lua]] and [[init_by_lua_file|http://wiki.nginx.org/HttpLuaModule#init_by_lua_file]]. they can be used to pre-load Lua modules, registering true Lua global variables, and initializing the shared-memory storage defined via [[lua_shared_dict|http://wiki.nginx.org/HttpLuaModule#lua_shared_dict]], at Nginx config-loading time. thanks drdrxp for suggesting this new feature.
@@ -1992,7 +2022,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201207042101" tags="Resources" changecount="190">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201207141940" tags="Resources" changecount="192">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -2000,7 +2030,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.15.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.10.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 13 June 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.2.1.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.5.tar.gz]] 2.8MB [[Changes|ChangeLog1002001]] - 4 July 2012
+* [[ngx_openresty-1.2.1.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.7.tar.gz]] 2.8MB [[Changes|ChangeLog1002001]] - 14 July 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
