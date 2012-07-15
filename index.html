@@ -1720,22 +1720,22 @@ hello}}}. thanks Matthieu Tourne for the patch.
 
 See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
 </div>
-<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201207141930" changecount="20">
+<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201207150104" changecount="23">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.1.7 - 14 July 2012
 * upraded HeadersMoreNginxModule to 0.17.
 ** bugfix: [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] did not remove all the instances for the built-in headers or custom headers.
-** bugfix: [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] might accidentally remove request headers that were not specified at all and leaved the specified headers with just empty header values when removing multiple built-in headers. thanks Matthieu Tourne for reporting the issues.
+** bugfix: [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] might accidentally remove request headers that were not specified at all and left the specified headers with just empty header values when removing multiple built-in headers. thanks Matthieu Tourne for reporting the issues.
 * upgraded LuaNginxModule to 0.5.7.
 ** feature: added an optional &quot;option table&quot; to [[tcpsock:connect()|http://wiki.nginx.org/HttpLuaModule#tcpsock:connect]] which accepts a {{{pool}}} option to allow the user specify a custom pool name intead of the automatically generated one based on the host-port pair or the socket file path. thanks Brian Akins for the patches.
 ** feature: implemented the UDP/unix-datagram cosocket API. the entry point is [[ngx.socket.udp|http://wiki.nginx.org/HttpLuaModule#ngx.socket.udp]]. we preserve API compatibility with the ~LuaSocket library but everything is non-blocking in our implementation.
 ** feature: added new Nginx API for Lua: [[ngx.req.set_method(method_id)|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_method]] and [[ngx.req.get_method|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_method]]. thanks Matthieu Tourne for suggesting these.
 ** bugfix: the tcp/stream-unix cosocket object might hang when another concurrent request is accessing it while its operation is still in progress; now we always check for potential access conflicts and return the {{{socket busy}}} error string if it is indeed the case.
 ** bugfix: the [[tcpsock:connect()|http://wiki.nginx.org/HttpLuaModule#tcpsock:connect]] method always returned the (vague) error strng {{{&quot;connect peer error&quot;}}} instead of the (detailed) system error string when the connect syscall failed.
-** bugfix: the TCP/stream-unix cosocket object might went wrong after it connected successfully in a single run (that is, no {{{EAGAIN}}} returned in the middle) and DNS domain names were used.
+** bugfix: the TCP/stream-unix cosocket object might go wrong after it connected successfully in a single run (that is, no {{{EAGAIN}}} returned in the middle) and DNS domain names were used.
 ** bugfix: [[tcpsock:receive()|http://wiki.nginx.org/HttpLuaModule#tcpsock:receive]] and [[tcpsock:send()|http://wiki.nginx.org/HttpLuaModule#tcpsock:send]] always returned {{{&quot;error&quot;}}} as the error message instead of the (detailed) system error string.
 ** bugfix: [[ngx.req.clear_header()|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] did not remove all the instances for the built-in headers or custom headers.
-** bugfix: [[ngx.req.clear_header()|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] might accidentally remove request headers that are not specified at all and leave the specified headers with just empty header values when removing multiple built-in headers. thanks Matthieu Tourne for reporting the issues.
+** bugfix: [[ngx.req.clear_header()|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] might accidentally remove request headers that are not specified at all and left the specified headers with just empty header values when removing multiple built-in headers. thanks Matthieu Tourne for reporting the issues.
 ** bugfix: we did not always test if the request object pointer is null in the {{{ngx.req.*_body}}} API.
 ** bugfix: [[ngx.exec()|http://wiki.nginx.org/HttpLuaModule#ngx.exec]] did not accept the {{{nil}}} value for its second (optional) argument.
 ** bugfix: {{{ngx.exit(404/500/...)}}} would throw out Lua errors when the response headers with exactly the same status code had already been sent. thanks Matthieu Tourne for reporting this.
