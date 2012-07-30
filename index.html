@@ -1720,29 +1720,8 @@ hello}}}. thanks Matthieu Tourne for the patch.
 
 See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
 </div>
-<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201207301954" changecount="37">
+<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201207150104" changecount="23">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
-! Devel Release 1.2.1.9 - 30 July 2012
-* upgraded LuaRestyMySQLLibrary to 0.10.
-** bugfix: the ~MySQL {{{bigint}}} fields might overflow when converting to lua numbers. now we no longer convert such fields into Lua numbers and instead, just treat them as Lua strings. thanks Lance Li for reporting this issue.
-* upgraded LuaNginxModule to 0.5.10.
-** feature: added new Lua API [[ngx.req.init_body|http://wiki.nginx.org/HttpLuaModule#ngx.req.init_body]], [[ngx.req.append_body|http://wiki.nginx.org/HttpLuaModule#ngx.req.append_body]], and [[ngx.req.finish_body|http://wiki.nginx.org/HttpLuaModule#ngx.req.finish_body]]. thanks Matthieu Tourne for the patches. These new functions can be used with the existing &quot;downstream cosocket API&quot; (provided by [[ngx.req.socket|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]]) to implement efficient Nginx &quot;input filters&quot; in pure Lua.
-** feature: added new Lua API [[ngx.get_phase|http://wiki.nginx.org/HttpLuaModule#ngx.get_phase]] for retrieving the current running phase of the Lua code being executed. thanks James Hurst for the patch.
-** feature: added the first dtrace static probe: {{{nginx_lua:::http-lua-register-preload-package}}}.
-** bugfix: {{{buffer error}}} would happen when the {{{args}}} option table to [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] (and [[ngx.encode_args|http://wiki.nginx.org/HttpLuaModule#ngx.encode_args]]) contained a multi-value argument whose key also required URI escaping. thanks Matthieu Tourne for reporting this.
-** bugfix: [[ngx.re.gmatch()|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]] might result in segmentation faults during nginx request cleanups if the iterator returned by [[ngx.re.gmatch()|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]] was collected (by Lua GC) before request cleanups. this bug had appeared in LuaNginxModule 0.5.0rc30 (and OpenResty 1.0.15.9). thanks Wayne for reporting this issue.
-** bugfix: 3rd-party nginx C modules that use the public C API function, {{{ngx_http_lua_add_package_preload}}}, could result in segmentation faults at nginx server startup due to uninitialized Lua VM pointer. thanks Ray Bejjani for reporting this.
-** bugfix: Proper error messages were not always thrown when the iterator returned by [[ngx.re.gmatch|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]] was (incorrectly) used in the context of another nginx request.
-** bugfix: fixed several Clang compilation warnings.
-* feature: applied the [[dtrace patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.1-dtrace.patch]] to the nginx core that adds dtrace static probing support for both the Nginx core and 3rd-party modules to the Nginx build system. this support can be enabled by {{{./configure --with-dtrace-probes}}}.
-* feature: added new dtrace static probes to the Nginx core
-** added 8 kinds of static probes to the subrequest mechanism: {{{nginx:::http-subrequest-cycle}}}, {{{nginx:::http-subrequest-start}}}, {{{nginx:::http-subrequest-finalize-writing}}}, {{{nginx:::http-subrequest-finalize-nonactive}}}, {{{nginx:::http-subrequest-wake-parent}}}, {{{nginx:::http-subrequest-done}}}, {{{nginx:::http-subrequest-post-start}}}, and {{{nginx:::http-subrequest-post-done}}}.
-** added 2 kinds of static probes to the standard request body reader: {{{nginx:::http-read-body-abort}}} and {{{nginx:::http-read-body-done}}}.
-** added 2 kinds of static probes to the standard main request header reader: {{{nginx:::http-read-req-line-done}}} and {{{nginx:::http-read-req-header-done}}}.
-** added 1 kind of static probes to the configuration loader: {{{nginx:::http-module-post-config}}}.
-** added the {{{nginx.stp}}} stapset script for systemtap: https://github.com/agentzh/nginx-dtrace/blob/master/src/dtrace/nginx.stp
-** added the [[stap-nginx|https://github.com/agentzh/nginx-dtrace/blob/master/src/dtrace/stap-nginx]] wrapper sh script for systemtap's {{{stap}}} command for nginx. this script will be installed to {{{$PREFIX/sbin/}}} when the {{{./configure}}} option {{{--with-dtrace-probes}}} is specified.
-* bugfix: fixed an issue regarding subrequests in [[allow_request_body_updating.patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.1-allow_request_body_updating.patch]].
 ! Devel Release 1.2.1.7 - 14 July 2012
 * upraded HeadersMoreNginxModule to 0.17.
 ** bugfix: [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] did not remove all the instances for the built-in headers or custom headers.
@@ -2043,7 +2022,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201207301925" tags="Resources" changecount="193">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201207141940" tags="Resources" changecount="192">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -2051,7 +2030,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.15.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.10.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 13 June 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.2.1.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.9.tar.gz]] 2.9MB [[Changes|ChangeLog1002001]] - 30 July 2012
+* [[ngx_openresty-1.2.1.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.7.tar.gz]] 2.8MB [[Changes|ChangeLog1002001]] - 14 July 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
