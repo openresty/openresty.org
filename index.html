@@ -1720,15 +1720,15 @@ hello}}}. thanks Matthieu Tourne for the patch.
 
 See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
 </div>
-<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201207301954" changecount="37">
+<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201207310502" changecount="38">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.1.9 - 30 July 2012
 * upgraded LuaRestyMySQLLibrary to 0.10.
 ** bugfix: the ~MySQL {{{bigint}}} fields might overflow when converting to lua numbers. now we no longer convert such fields into Lua numbers and instead, just treat them as Lua strings. thanks Lance Li for reporting this issue.
-* upgraded LuaNginxModule to 0.5.10.
+* upgraded LuaNginxModule to 0.5.11.
 ** feature: added new Lua API [[ngx.req.init_body|http://wiki.nginx.org/HttpLuaModule#ngx.req.init_body]], [[ngx.req.append_body|http://wiki.nginx.org/HttpLuaModule#ngx.req.append_body]], and [[ngx.req.finish_body|http://wiki.nginx.org/HttpLuaModule#ngx.req.finish_body]]. thanks Matthieu Tourne for the patches. These new functions can be used with the existing &quot;downstream cosocket API&quot; (provided by [[ngx.req.socket|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]]) to implement efficient Nginx &quot;input filters&quot; in pure Lua.
 ** feature: added new Lua API [[ngx.get_phase|http://wiki.nginx.org/HttpLuaModule#ngx.get_phase]] for retrieving the current running phase of the Lua code being executed. thanks James Hurst for the patch.
-** feature: added the first dtrace static probe: {{{nginx_lua:::http-lua-register-preload-package}}}.
+** feature: added the first dtrace static probe: {{{nginx_lua:::http-lua-register-preload-package}}} and {{{nginx_lua:::http-lua-req-socket-consume-preread}}}.
 ** bugfix: {{{buffer error}}} would happen when the {{{args}}} option table to [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] (and [[ngx.encode_args|http://wiki.nginx.org/HttpLuaModule#ngx.encode_args]]) contained a multi-value argument whose key also required URI escaping. thanks Matthieu Tourne for reporting this.
 ** bugfix: [[ngx.re.gmatch()|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]] might result in segmentation faults during nginx request cleanups if the iterator returned by [[ngx.re.gmatch()|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]] was collected (by Lua GC) before request cleanups. this bug had appeared in LuaNginxModule 0.5.0rc30 (and OpenResty 1.0.15.9). thanks Wayne for reporting this issue.
 ** bugfix: 3rd-party nginx C modules that use the public C API function, {{{ngx_http_lua_add_package_preload}}}, could result in segmentation faults at nginx server startup due to uninitialized Lua VM pointer. thanks Ray Bejjani for reporting this.
