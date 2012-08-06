@@ -1720,10 +1720,10 @@ hello}}}. thanks Matthieu Tourne for the patch.
 
 See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
 </div>
-<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201208060653" changecount="43">
+<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201208061816" changecount="45">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.1.11 - 5 August 2012
-* bundled LuaRestyDNSLibrary 0.04 and enabled it by default: https://github.com/agentzh/lua-resty-dns
+* bundled LuaRestyDNSLibrary 0.04 and enabled it by default: https://github.com/agentzh/lua-resty-dns it is a nonblocking DNS (Domain Name System) resolver library based on LuaNginxModule's cosocket API.
 * upgraded LuaNginxModule to 0.5.12.
 ** bugfix: the [[UDP cosocket object|http://wiki.nginx.org/HttpLuaModule#ngx.socket.udp]] could no longer be used after an read or write error happened.
 ** bugfix: [[ngx.exit(status)|http://wiki.nginx.org/HttpLuaModule#ngx.exit]] always resulted in {{{200 OK}}} response status when status &gt; 200 and status &lt; 300. thanks Nginx User for reporting this issue.
