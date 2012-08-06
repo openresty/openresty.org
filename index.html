@@ -1720,8 +1720,18 @@ hello}}}. thanks Matthieu Tourne for the patch.
 
 See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
 </div>
-<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201207310502" changecount="38">
+<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201208060653" changecount="43">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.1.11 - 5 August 2012
+* bundled LuaRestyDNSLibrary 0.04 and enabled it by default: https://github.com/agentzh/lua-resty-dns
+* upgraded LuaNginxModule to 0.5.12.
+** bugfix: the [[UDP cosocket object|http://wiki.nginx.org/HttpLuaModule#ngx.socket.udp]] could no longer be used after an read or write error happened.
+** bugfix: [[ngx.exit(status)|http://wiki.nginx.org/HttpLuaModule#ngx.exit]] always resulted in {{{200 OK}}} response status when status &gt; 200 and status &lt; 300. thanks Nginx User for reporting this issue.
+* upgraded HeadersMoreNginxModule to 0.18.
+** bugfix: fixed a {{{set-but-not-read}}} warning from the {{{clang}}} static code analyzer.
+** fixed compatibility with nginx 0.7.65. thanks Banping for reporting this.
+* upgraded DrizzleNginxModule to 0.1.2.
+** minor code cleanup in the built-in connection pool.
 ! Devel Release 1.2.1.9 - 30 July 2012
 * upgraded LuaRestyMySQLLibrary to 0.10.
 ** bugfix: the ~MySQL {{{bigint}}} fields might overflow when converting to lua numbers. now we no longer convert such fields into Lua numbers and instead, just treat them as Lua strings. thanks Lance Li for reporting this issue.
@@ -2047,7 +2057,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201207301925" tags="Resources" changecount="193">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201208060502" tags="Resources" changecount="194">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -2055,7 +2065,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.15.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.10.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 13 June 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.2.1.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.9.tar.gz]] 2.9MB [[Changes|ChangeLog1002001]] - 30 July 2012
+* [[ngx_openresty-1.2.1.11.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.11.tar.gz]] 2.9MB [[Changes|ChangeLog1002001]] - 5 August 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
@@ -2502,6 +2512,15 @@ Documentation page: http://wiki.nginx.org/LuaRedisParser
 Project homepage: https://github.com/agentzh/lua-redis-parser
 </pre>
 </div>
+<div title="LuaRestyDNSLibrary" creator="ZhangYichun" modifier="ZhangYichun" created="201208060654" modified="201208060655" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+Nonblocking DNS (Domain Name System) resolver for LuaNginxModule based on the cosocket API.
+
+Project homepage: https://github.com/agentzh/lua-resty-dns
+
+This library is enabled by default. You can specify the {{{--without-lua_resty_dns}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.</pre>
+</div>
 <div title="LuaRestyMemcachedLibrary" creator="ZhangYichun" modifier="ZhangYichun" created="201202290732" modified="201202290736" changecount="4">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
@@ -2522,7 +2541,7 @@ Project homepage: https://github.com/agentzh/lua-resty-mysql
 This library is enabled by default. You can specify the {{{--without-lua_resty_mysql}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
 </pre>
 </div>
-<div title="LuaRestyRedisLibrary" creator="ZhangYichun" modifier="ZhangYichun" created="201202290735" modified="201202290736" changecount="2">
+<div title="LuaRestyRedisLibrary" creator="ZhangYichun" modifier="ZhangYichun" created="201202290735" modified="201208060655" changecount="4">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 Lua [[Redis|http://redis.io/]] client driver for LuaNginxModule based on the cosocket API.
@@ -2552,7 +2571,7 @@ Project homepage: https://github.com/agentzh/lua-resty-upload
 This library is enabled by default. You can specify the {{{--without-lua_resty_upload}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
 </pre>
 </div>
-<div title="MainMenu" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201208042258" tags="admin" changecount="33">
+<div title="MainMenu" creator="ZhangYichun" modifier="ZhangYichun" created="201106210357" modified="201208060318" tags="admin" changecount="36">
 <pre>[[Overview|OpenResty]]
 [[Components]]
 [[Getting started|GettingStarted]]
