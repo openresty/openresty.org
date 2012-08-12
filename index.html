@@ -1720,12 +1720,12 @@ hello}}}. thanks Matthieu Tourne for the patch.
 
 See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
 </div>
-<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201208121854" changecount="56">
+<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201208122248" changecount="57">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.1.13 - 12 August 2012
 * upgraded LuaNginxModule to 0.5.13.
 ** feature: added new directive [[lua_socket_log_errors|http://wiki.nginx.org/HttpLuaModule#lua_socket_log_errors]] that can be used to disable automatic error logging for both the TCP and UDP cosockets. thanks Brian Akins for the patch.
-** bugfix: segmentation faults might happen when 1. the nginx worker was shutting down (i.e., the Lua VM is closing),  2. ngx.re.gmatch was used, and 3. regex cache is enabled via the {{{o}}} regex flag. this bug had appeared in LuaNginxModule 0.5.0rc30 (and OpenResty 1.0.15.9).
+** bugfix: segmentation faults might happen when 1. the nginx worker was shutting down (i.e., the Lua VM is closing),  2. [[ngx.re.gmatch|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]] was used, and 3. regex cache is enabled via the {{{o}}} regex flag. this bug had appeared in LuaNginxModule 0.5.0rc30 (and OpenResty 1.0.15.9).
 ** bugfix: segmentation faults might happen when the system is out of memory: there was one place where we did not check the pointer returned from {{{ngx_array_push}}}.
 ** bugfix: we should avoid complicated Lua stack operations that might require memory allocaitons in the Lua {{{atpanic}}} handler because it would produce another exception in the handler leading to infinite loops.
 * upgraded EchoNginxModule to 0.41.
