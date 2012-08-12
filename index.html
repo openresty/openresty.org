@@ -1720,8 +1720,21 @@ hello}}}. thanks Matthieu Tourne for the patch.
 
 See ChangeLog1000011 for change log for ngx_openresty 1.0.11.x.</pre>
 </div>
-<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201208061816" changecount="45">
+<div title="ChangeLog1002001" creator="ZhangYichun" modifier="ZhangYichun" created="201206221503" modified="201208121854" changecount="56">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.1.13 - 12 August 2012
+* upgraded LuaNginxModule to 0.5.13.
+** feature: added new directive [[lua_socket_log_errors|http://wiki.nginx.org/HttpLuaModule#lua_socket_log_errors]] that can be used to disable automatic error logging for both the TCP and UDP cosockets. thanks Brian Akins for the patch.
+** bugfix: segmentation faults might happen when 1. the nginx worker was shutting down (i.e., the Lua VM is closing),  2. ngx.re.gmatch was used, and 3. regex cache is enabled via the {{{o}}} regex flag. this bug had appeared in LuaNginxModule 0.5.0rc30 (and OpenResty 1.0.15.9).
+** bugfix: segmentation faults might happen when the system is out of memory: there was one place where we did not check the pointer returned from {{{ngx_array_push}}}.
+** bugfix: we should avoid complicated Lua stack operations that might require memory allocaitons in the Lua {{{atpanic}}} handler because it would produce another exception in the handler leading to infinite loops.
+* upgraded EchoNginxModule to 0.41.
+** bugfix: we incorrectly returned the {{{500}}} error code in our nginx output body filters.
+** bugfix: segmentation faults might happen when the system is out of memory: we forgot to check the returned pointer from {{{ngx_calloc_buf}}} in our nginx output body filter.
+* upgraded LuaRestyDNSLibrary to 0.05.
+** feature: now we use 4096 as the receive buffer size instead of the value 512 that is suggested by RFC 1035. this could avoid data truncation when the DNS server supports datagram sizes larger than 512 bytes.
+** feature: now we pick a random nameserver from the nameservers list at the first time.
+** docs: fixed a mistake in the sample code and tuned it to be more illustrative. thanks Sandesh Kotwal for reporting.
 ! Devel Release 1.2.1.11 - 5 August 2012
 * bundled LuaRestyDNSLibrary 0.04 and enabled it by default: https://github.com/agentzh/lua-resty-dns it is a nonblocking DNS (Domain Name System) resolver library based on LuaNginxModule's cosocket API.
 * upgraded LuaNginxModule to 0.5.12.
@@ -2057,7 +2070,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201208060502" tags="Resources" changecount="194">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201208121840" tags="Resources" changecount="195">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -2065,7 +2078,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.0.15.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.10.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 13 June 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.2.1.11.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.11.tar.gz]] 2.9MB [[Changes|ChangeLog1002001]] - 5 August 2012
+* [[ngx_openresty-1.2.1.13.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.13.tar.gz]] 2.9MB [[Changes|ChangeLog1002001]] - 12 August 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
