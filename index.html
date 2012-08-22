@@ -1872,7 +1872,7 @@ Components bundled:
 
 See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
 </div>
-<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201208222244" changecount="32">
+<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201208222249" changecount="33">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.3.1 - 22 August 2012
 * upgraded the Nginx core to 1.2.3.
@@ -1898,7 +1898,7 @@ See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
 ** bugfix: the {{{open socket #N left in connection}}} alerts would appear in the nginx error log file when the ~PostgreSQL connection pool was used and the worker process was shutting down.
 ** bugfix: removed the useless http-cache related code from {{{ngx_postgres_upstream_finalize_request}}} to suppress clang warnings.
 * added more dtrace static probes to the Nginx core: {{{timer-add}}}, {{{timer-del}}}, and {{{timer-expire}}}.
-* added more systemtap tapset functions: {{{ngx_chain_next}}}, {{{ngx_chain_writer_ctx_out}}}, {{{ngx_chain_dump}}}, and {{{ngx_iovec_dump}}}.
+* added more [[systemtap|http://sourceware.org/systemtap/]] tapset functions: {{{ngx_chain_next}}}, {{{ngx_chain_writer_ctx_out}}}, {{{ngx_chain_dump}}}, and {{{ngx_iovec_dump}}}.
 
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
