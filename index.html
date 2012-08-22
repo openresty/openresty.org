@@ -1872,6 +1872,36 @@ Components bundled:
 
 See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
 </div>
+<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201208222232" changecount="27">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.3.1 - 22 August 2012
+* upgraded the Nginx core to 1.2.3.
+** see http://nginx.org/en/CHANGES-1.2 for changes.
+* upgraded LuaNginxModule to 0.6.2.
+** feature: (re)implemented the standard Lua [[coroutine API|http://wiki.nginx.org/HttpLuaModule#coroutine.create]], which means that the user is now free to create and run their own coroutines within the boilerplate coroutine created automatically by LuaNginxModule. thanks chaoslawful and jinglong for the design and implementation.
+** feature: added new dtrace static probes for the user coroutine mechanism: {{{http-lua-coroutine-create}}} and {{{http-lua-coroutine-resume}}}.
+** feature: added new dtrace static probes for the cosocket mechanism: {{{http-lua-socket-tcp-send-start}}}, {{{http-lua-socket-tcp-receive-done}}}, and {{{http-lua-socket-tcp-keepalive-buf-unread}}}.
+** bugfix: the send timeout timer for downstream output was not deleted in time in our write event handler, which might result in request abortion for long running requests. thanks Demiao Lin (ldmiao) for reporting this issue.
+** bugfix: [[tcpsock:send()|http://wiki.nginx.org/HttpLuaModule#tcpsock:send]] might send garbage if it was not the first call: we did not properly initialize the chain writer ctx for every {{{send()}}} call. thanks Zhu Dejiang for reporting this issue.
+** bugfix: the {{{ngx_http_lua_probe.h}}} header file was not listed in the {{{NGX_ADDON_DEPS}}} list in the {{{config}}} file.
+** optimize: removed unnecessary code that was for the old coroutine abortion mechanism based on Lua exceptions. we no longer need that at all because we have switched to using coroutine yield to abort the current coroutine for {{{ngx.exec}}}, {{{ngx.exit}}}, {{{ngx.redirect}}}, and {{{ngx.req.set_uri(uri, true)}}}.
+* upgraded LuaRestyDNSLibrary to 0.06.
+** feature: added support for MX type records.
+* upgraded LuaRestyRedisLibrary to 0.13.
+** feature: added new method [[read_reply|https://github.com/agentzh/lua-resty-redis#read_reply]], mostly for using the [[Redis Pub/Sub API|http://redis.io/topics/pubsub/]].
+** feature: added new class method [[add_commands|https://github.com/agentzh/lua-resty-redis#add_commands]] to allow adding support for new Redis commands on-the-fly. thanks Praveen Saxena for requesting this feature.
+** docs: added a code sample for using the [[Redis transactions|https://github.com/agentzh/lua-resty-redis#redis-transactions]].
+* upgraded DrizzleNginxModule to 0.1.4.
+** bugfix: the {{{open socket #N left in connection}}} alerts would appear in the nginx error log file when the ~MySQL/Drizzle connection pool was used and the worker process was shutting down.
+* upgraded PostgresNginxModule to 1.0rc2.
+** bugfix: the {{{open socket #N left in connection}}} alerts would appear in the nginx error log file when the ~PostgreSQL connection pool was used and the worker process was shutting down.
+** bugfix: removed the useless http-cache related code from {{{ngx_postgres_upstream_finalize_request}}} to suppress clang warnings.
+* added more dtrace static probes to the Nginx core: {{{timer-add}}}, {{{timer-del}}}, and {{{timer-expire}}}.
+* added more systemtap tapset functions: {{{ngx_chain_next}}}, {{{ngx_chain_writer_ctx_out}}}, {{{ngx_chain_dump}}}, and {{{ngx_iovec_dump}}}.
+
+See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
+</pre>
+</div>
 <div title="ChangeLog8054" creator="ZhangYichun" modifier="ZhangYichun" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -2108,7 +2138,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201208150410" tags="Resources" changecount="196">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201208221915" tags="Resources" changecount="198">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Stable release
@@ -2116,7 +2146,7 @@ Most of the users should use the current release, i.e., the latest stable releas
 * [[ngx_openresty-1.2.1.14.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.14.tar.gz]] 2.9MB [[Changes|ChangeLog1002001]] - 14 August 2012
 !! Development release
 Development releases are for developers or brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.2.1.13.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.13.tar.gz]] 2.9MB [[Changes|ChangeLog1002001]] - 12 August 2012
+* [[ngx_openresty-1.2.3.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.1.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 22 August 2012
 !! Legacy releases
 Sometimes, users may want to download old releases.
 * [[ngx_openresty-1.0.15.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.10.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 13 June 2012
