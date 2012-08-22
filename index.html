@@ -1872,7 +1872,7 @@ Components bundled:
 
 See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
 </div>
-<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201208222232" changecount="27">
+<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201208222244" changecount="32">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.3.1 - 22 August 2012
 * upgraded the Nginx core to 1.2.3.
@@ -1886,7 +1886,8 @@ See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
 ** bugfix: the {{{ngx_http_lua_probe.h}}} header file was not listed in the {{{NGX_ADDON_DEPS}}} list in the {{{config}}} file.
 ** optimize: removed unnecessary code that was for the old coroutine abortion mechanism based on Lua exceptions. we no longer need that at all because we have switched to using coroutine yield to abort the current coroutine for {{{ngx.exec}}}, {{{ngx.exit}}}, {{{ngx.redirect}}}, and {{{ngx.req.set_uri(uri, true)}}}.
 * upgraded LuaRestyDNSLibrary to 0.06.
-** feature: added support for MX type records.
+** feature: added support for MX type resource records.
+** feature: unrecognized types of resource records will return their raw resource data (RDATA) as the {{{rdata}}} Lua table field.
 * upgraded LuaRestyRedisLibrary to 0.13.
 ** feature: added new method [[read_reply|https://github.com/agentzh/lua-resty-redis#read_reply]], mostly for using the [[Redis Pub/Sub API|http://redis.io/topics/pubsub/]].
 ** feature: added new class method [[add_commands|https://github.com/agentzh/lua-resty-redis#add_commands]] to allow adding support for new Redis commands on-the-fly. thanks Praveen Saxena for requesting this feature.
