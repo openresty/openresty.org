@@ -1872,7 +1872,7 @@ Components bundled:
 
 See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
 </div>
-<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201208222249" changecount="33">
+<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201208222337" changecount="34">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.3.1 - 22 August 2012
 * upgraded the Nginx core to 1.2.3.
@@ -1880,7 +1880,7 @@ See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
 * upgraded LuaNginxModule to 0.6.2.
 ** feature: (re)implemented the standard Lua [[coroutine API|http://wiki.nginx.org/HttpLuaModule#coroutine.create]], which means that the user is now free to create and run their own coroutines within the boilerplate coroutine created automatically by LuaNginxModule. thanks chaoslawful and jinglong for the design and implementation.
 ** feature: added new dtrace static probes for the user coroutine mechanism: {{{http-lua-coroutine-create}}} and {{{http-lua-coroutine-resume}}}.
-** feature: added new dtrace static probes for the cosocket mechanism: {{{http-lua-socket-tcp-send-start}}}, {{{http-lua-socket-tcp-receive-done}}}, and {{{http-lua-socket-tcp-keepalive-buf-unread}}}.
+** feature: added new dtrace static probes for the cosocket mechanism: {{{http-lua-socket-tcp-send-start}}}, {{{http-lua-socket-tcp-receive-done}}}, and {{{http-lua-socket-tcp-setkeepalive-buf-unread}}}.
 ** bugfix: the send timeout timer for downstream output was not deleted in time in our write event handler, which might result in request abortion for long running requests. thanks Demiao Lin (ldmiao) for reporting this issue.
 ** bugfix: [[tcpsock:send()|http://wiki.nginx.org/HttpLuaModule#tcpsock:send]] might send garbage if it was not the first call: we did not properly initialize the chain writer ctx for every {{{send()}}} call. thanks Zhu Dejiang for reporting this issue.
 ** bugfix: the {{{ngx_http_lua_probe.h}}} header file was not listed in the {{{NGX_ADDON_DEPS}}} list in the {{{config}}} file.
