@@ -2174,12 +2174,12 @@ Sometimes, users may want to download old releases.
 See [[Installation]] for installation instructions.
 </pre>
 </div>
-<div title="DrizzleNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210822" modified="201111280639" changecount="15">
+<div title="DrizzleNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210822" modified="201209131834" changecount="22">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is an nginx upstream module that talks to ~MySQL and/or Drizzle database servers by [[libdrizzle]].
 
-This ngx_drizzle module is not enabled by default. You should specify the {{{--with-http_drizzle_module}}} optiotn while configuring OpenResty.
+This ngx_drizzle module is not enabled by default. You should specify the {{{--with-http_drizzle_module}}} option while configuring OpenResty.
 
 The [[libdrizzle]] C library is no longer bundled by OpenResty. You need to download the drizzle server tarball from https://launchpad.net/drizzle.
 
@@ -2214,7 +2214,10 @@ cd /path/to/ngx_openresty-VERSION/
 
 Documentation page: http://wiki.nginx.org/HttpDrizzleModule
 
-Project page: https://github.com/chaoslawful/drizzle-nginx-module</pre>
+Project page: https://github.com/chaoslawful/drizzle-nginx-module
+
+When used in conjunction with [[LuaNginxModule]], it is recommended to use [[LuaRestyMySQLLibrary]] instead of this one, since it is more flexible and more memory-efficient.
+</pre>
 </div>
 <div title="DynamicRoutingBasedOnRedis" creator="ZhangYichun" modifier="ZhangYichun" created="201107270402" modified="201111160417" changecount="15">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
@@ -2342,6 +2345,9 @@ This module is usually used with [[SetMiscNginxModule]] and the standard [[rewri
 This module can be used to implement simple user login and access control of web applications.
 
 Project page: http://github.com/agentzh/encrypted-session-nginx-module</pre>
+</div>
+<div title="FastCGINginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201209131829" changecount="1">
+<pre>This is a standard Nginx module for talking to the remote FastCGI servers: http://wiki.nginx.org/HttpFastcgiModule</pre>
 </div>
 <div title="FormInputNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210901" changecount="1">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
@@ -2561,16 +2567,29 @@ Homepage: http://luajit.org/luajit.html
 LuaJIT is not enabled by default. Please specify the {{{--with-luajit}}} option while configuring OpenResty while building it. See [[Installation]] for details.
 </pre>
 </div>
-<div title="LuaNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210826" modified="201108260110" changecount="4">
+<div title="LuaNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210826" modified="201209131837" changecount="19">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
-This module embeds the Lua interpreter or LuaJIT into the nginx core and integrates the powerful Lua threads (aka Lua coroutines) into the nginx event model by means of nginx subrequests.
+This module embeds the Lua interpreter or LuaJIT 2.0 into the nginx core and integrates the powerful Lua threads (aka Lua coroutines) into the Nginx event model by means of Nginx subrequests.
 
-Unlike Apache's mod_lua and Lighttpd's mod_magnet, Lua code written atop this module can be 100% non-blocking on network traffic as long as you use the ngx.location.capture or ngx.location.capture_multi interfaces to let the nginx core do all your requests to mysql, postgresql, memcached, upstream http web services, and etc etc etc (see ngx_drizzle, ngx_postgres, ngx_memc, and ngx_proxy modules for details).
+Unlike Apache's mod_lua and Lighttpd's mod_magnet, Lua code executed using this module can be 100% non-blocking on network traffic as long as the [[Nginx API for Lua|http://wiki.nginx.org/HttpLuaModule#Nginx_API_for_Lua]] provided by this module is used to handle requests to upstream services such as ~MySQL, ~PostgreSQL, Memcached, Redis, or upstream HTTP web services.
 
-The Lua interpreter instance is shared across all the requests in a single nginx worker process.
+At least the following Lua libraries and Nginx modules can be used with this LuaNginxModule:
+* LuaRestyMemcachedLibrary
+* LuaRestyMySQLLibrary
+* LuaRestyRedisLibrary
+* LuaRestyDNSLibrary
+* LuaRestyUploadLibrary
+* MemcNginxModule
+* PostgresNginxModule
+* Redis2NginxModule
+* RedisNginxModule
+* ProxyNginxModule
+* FastCGINginxModule
 
-Request contexts are isolated from each other by means of Lua (lightweight) threads (aka Lua coroutines). And Lua modules loaded are persistent on the nginx worker process level. So the memory footprint is quite small even when your nginx worker process is handling 10K requests at the same time.
+Almost all the Nginx modules can be used with this LuaNginxModule by means of [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] or [[ngx.location.capture_multi|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi]] but it is recommended to use those {{{lua-resty-*}}} libraries instead of creating subrequests to access the Nginx upstream modules because the former is usually much more flexible and memory-efficient.
+
+The Lua interpreter or LuaJIT instance is shared across all the requests in a single nginx worker process but request contexts are segregated using lightweight Lua coroutines. Loaded Lua modules persist in the nginx worker process level resulting in a small memory footprint in Lua even when under heavy loads.
 
 Documentation: http://wiki.nginx.org/HttpLuaModule
 
@@ -2714,7 +2733,7 @@ This library is enabled by default. You can specify the {{{--without-lua_resty_u
 <div title="MarkupPostHead" creator="ZhangYichun" modifier="ZhangYichun" created="201107240444" modified="201107251514" changecount="4">
 <pre></pre>
 </div>
-<div title="MemcNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210830" modified="201108260111" changecount="3">
+<div title="MemcNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210830" modified="201209131756" changecount="4">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This module extends the standard memcached module  to support almost the whole memcached ascii protocol.
@@ -2722,7 +2741,11 @@ This module extends the standard memcached module  to support almost the whole m
 It allows you to define a custom REST interface to your memcached servers or access memcached in a very efficient way from within the nginx server by means of subrequests or independent fake requests. 
 
 Documentation: http://wiki.nginx.org/HttpMemcModule
-Project page: http://github.com/agentzh/memc-nginx-module</pre>
+
+Project page: http://github.com/agentzh/memc-nginx-module
+
+When used in conjunction with [[LuaNginxModule]], it is recommended to use [[LuaRestyMemcachedLibrary]] instead of this one, since it is more flexible and more memory-efficient.
+</pre>
 </div>
 <div title="Nginx" creator="ZhangYichun" modifier="ZhangYichun" created="201106210422" modified="201106210824" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
@@ -2825,6 +2848,9 @@ View the (English) slides in your web browser: http://agentzh.org/misc/slides/ng
 Download the slides as PDF: http://agentzh.org/misc/slides/nginx-state-of-the-art.pdf
 </pre>
 </div>
+<div title="ProxyNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201209131828" modified="201209131828" changecount="3">
+<pre>This is a standard Nginx module for talking to remote HTTP or HTTPS servers: http://wiki.nginx.org/HttpProxyModule</pre>
+</div>
 <div title="QualityAssurance" creator="ZhangYichun" modifier="ZhangYichun" created="201204290240" modified="201204290241" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
@@ -2858,7 +2884,7 @@ This is an output filter module that formats Resty DBD Streams (RDS) generated b
 Project page: http://github.com/agentzh/rds-json-nginx-module
 </pre>
 </div>
-<div title="Redis2NginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210847" modified="201205130419" changecount="9">
+<div title="Redis2NginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210847" modified="201209131754" changecount="11">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is an [[Nginx]] upstream module that makes nginx talk to a redis 2.x server in a non-blocking way. The full Redis 2.0 unified protocol has been implemented including the redis pipelining support.
@@ -2869,9 +2895,12 @@ This module is enabled by default and can be disabled by passing the {{{--withou
 
 Documentation wiki page: http://wiki.nginx.org/HttpRedis2Module
 
-Project page: https://github.com/agentzh/redis2-nginx-module</pre>
+Project page: https://github.com/agentzh/redis2-nginx-module
+
+When used in conjunction with [[LuaNginxModule]], it is recommended to use [[LuaRestyRedisLibrary]] module instead of this one, since it is more flexible and more memory-efficient.
+</pre>
 </div>
-<div title="RedisNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201205130416" modified="201205140322" changecount="4">
+<div title="RedisNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201205130416" modified="201209131755" changecount="8">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is an [[Nginx]] upstream module that makes nginx talk to a redis 2.x server in a non-blocking way. It has a similar interface with the standard [[ngx_memcached module|http://wiki.nginx.org/HttpMemcachedModule]], but only Redis {{{GET}}} and {{{SELECT}}} commands are supported.
@@ -2883,6 +2912,8 @@ This module is written by Sergey A. Osokin.
 This module is enabled by default and can be disabled by passing the {{{--without-http_redis_module}}} option to the {{{./configure}}} script for OpenResty.
 
 Documentation wiki page: http://wiki.nginx.org/HttpRedisModule
+
+When used in conjunction with [[LuaNginxModule]], it is recommended to use [[LuaRestyRedisLibrary]] instead of this one, since it is more flexible and more memory-efficient.
 </pre>
 </div>
 <div title="ReleaseNote" creator="ZhangYichun" modifier="ZhangYichun" created="201111030906" modified="201203250711" changecount="38">
