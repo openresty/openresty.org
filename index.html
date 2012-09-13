@@ -639,21 +639,21 @@ The following components are bundled by this release:
 ! Devel Release 1.0.4.2rc9 - 7 August 2011
 * now we use {{{gmake}}} if it is available in {{{PATH}}} during {{{./configure}}}; also added the {{{--with-make=PATH}}} option to allow the user to specify a custom {{{make}}} utility.
 ! Devel Release 1.0.4.2rc8 - 6 August 2011
-* fixed a regression that we should use the {{{CC}}} variable instead of {{{HOST_CC}}} while passing the {{{--with-cc}}} option to the LuaJIT 2.0 build system. thanks @姜大炮 for reporting this issue.
+* fixed a regression that we should use the {{{CC}}} variable instead of {{{HOST_CC}}} while passing the {{{--with-cc}}} option to the LuaJIT 2.0 build system. thanks @??? for reporting this issue.
 ! Devel Release 1.0.4.2rc7 - 5 August 2011
 *  upgraded ngx_lua to v0.2.1rc3.
-** fixed the {{{zero size buf in output}}} alert while combining {{{lua_need_request_body on}}} + {{{access_by_lua/rewrite_by_lua}}} + {{{proxy_pass/fastcgi_pass}}}. thanks 万珣新.
+** fixed the {{{zero size buf in output}}} alert while combining {{{lua_need_request_body on}}} + {{{access_by_lua/rewrite_by_lua}}} + {{{proxy_pass/fastcgi_pass}}}. thanks ???.
 ! Devel Release 1.0.4.2rc6 - 5 August 2011
-* added the {{{--with-pg_config}}} option to the {{{./configure}}} script as per 罗翼's request.
+* added the {{{--with-pg_config}}} option to the {{{./configure}}} script as per ??'s request.
 ! Devel Release 1.0.4.2rc5 - 5 August 2011
 * added the {{{--with-no-pool-patch}}} option to the {{{./configure}}} script, to allow enabling the no-pool patch for debugging memory issues with valgrind, for example.
 ! Devel Release 1.0.4.2rc4 - 4 August 2011
-* added the {{{--with-libpq=DIR}}} option to the {{{./configure}}} script. thanks 郭颖 for suggesting this.
+* added the {{{--with-libpq=DIR}}} option to the {{{./configure}}} script. thanks ?? for suggesting this.
 ! Devel Release 1.0.4.2rc3 - 4 August 2011
 * upgraded ngx_drizzle to v0.1.1rc3.
-** fixed segmentation faults on Linux i386. thanks @魏世江 and @stefanli for reporting this issue.
+** fixed segmentation faults on Linux i386. thanks @??? and @stefanli for reporting this issue.
 ! Devel Release 1.0.4.2rc2 - 4 August 2011
-* fixed a regression while specifying {{{--with-http_iconv_module}}} during {{{./configure}}}. thanks 冯新国 for reporting this issue.
+* fixed a regression while specifying {{{--with-http_iconv_module}}} during {{{./configure}}}. thanks ??? for reporting this issue.
 ! Devel Release 1.0.4.2rc1 - 30 July 2011
 * upgraded ngx_set_misc to 0.22rc2.
 ** added the set_misc_base32_padding directive.
@@ -691,13 +691,13 @@ The following components are bundled by this release:
 ! Devel Release 1.0.4.1rc4 - 25 July 2011
 * applied the official hotfix #1 patch for LuaJIT 2.0.0 beta8.
 ! Devel Release 1.0.4.1rc3 - 23 July 2011
-* now the {{{--with-cc}}} option of {{{./configure}}} also controls the C compiler used by Lua and LuaJIT. thanks @姜大炮 for reporting the issue.
+* now the {{{--with-cc}}} option of {{{./configure}}} also controls the C compiler used by Lua and LuaJIT. thanks @??? for reporting the issue.
 ! Devel Release 1.0.4.1rc2 - 23 July 2011
 * upgraded ngx_lua to v0.2.1rc2 and ngx_redis2 to v0.07.
 ! Devel Release 1.0.4.1rc1 - 14 July 2011
 * upgraded ngx_rds_json to v0.12rc1, ngx_drizzle to v0.1.1rc2, ngx_lua to v0.2.1rc1, ngx_postgres to v0.9rc1, ngx_redis2 to v0.07rc6.
 * now we no longer enable {{{gcc -O2}}} by default, because it's bad for debugging issues.
-* fixed linking issues when doing {{{./configure --with-cc-opt=-fast}}} on Mac OS X. thanks @姜大炮.
+* fixed linking issues when doing {{{./configure --with-cc-opt=-fast}}} on Mac OS X. thanks @???.
 ! Stable Release 1.0.4.0 - 12 July 2011
 This release is the same as  1.0.4.0rc5.
 
@@ -854,7 +854,7 @@ The following components are bundled by this release:
 * xss-nginx-module-0.03rc3
 ! Devel Release 1.0.5.0rc7 - 13 August 2011
 * upgraded LuaNginxModule to v0.2.1rc9.
-** implemented the special {{{ngx.ctx}}} Lua table for user programmers to store per-request Lua context data for their applications. thanks 欧远宁 for suggesting this feature.
+** implemented the special {{{ngx.ctx}}} Lua table for user programmers to store per-request Lua context data for their applications. thanks ??? for suggesting this feature.
 ! Devel Release 1.0.5.0rc6 - 12 August 2011
 * upgraded LuaNginxModule to v0.2.1rc8.
 ** now {{{ngx.print}}} and {{{ngx.say}}} allow (nested) array-like table arguments. the array elements in them will be sent piece by piece. this will avoid string concatenation for templating engines like [[ltp|http://www.savarese.com/software/ltp/]].
@@ -957,7 +957,7 @@ The following components are bundled by this release:
 * xss-nginx-module-0.03rc3
 ! Devel Release 1.0.6.11 - 20 September 2011
 * upgraded RdsJsonNginxModule to v0.12rc4.
-** made {{{rds_json_ret}}} honor {{{rds_json_success_property}}} and {{{rds_json_user_property}}}. thanks Liseen Wan (万珣新)
+** made {{{rds_json_ret}}} honor {{{rds_json_success_property}}} and {{{rds_json_user_property}}}. thanks Liseen Wan (???)
 ** only register our output filters when the {{{rds_json}}} directive is actually used in {{{nginx.conf}}}.
 * upgraded RdsCsvNginxModule to v0.03.
 ** only register our output filters when the {{{rds_csv}}} directive is actually used in {{{nginx.conf}}}.
@@ -983,7 +983,7 @@ The following components are bundled by this release:
 * updated the no-pool-patch to eliminate the {{{-Wset-but-not-used}}} warnings issued by gcc 4.6.0.
 ! Devel Release 1.0.6.1 - 8 September 2011
 * upgraded LuaNginxModule to 0.3.1rc1.
-** fixed a bug when the both the main request and the subrequest are POST requests with a body: we should not forward the main request's {{{Content-Length}}} headers to the user subrequests. thanks 朱峰.
+** fixed a bug when the both the main request and the subrequest are POST requests with a body: we should not forward the main request's {{{Content-Length}}} headers to the user subrequests. thanks ??.
 ! Devel Release 1.0.6.0rc2 - 4 September 2011
 * upgraded HeadersMoreNginxModule to 0.16rc1.
 ** fixed on-demand hander/filter registration trick for {{{HUP}}} signal restarts.
@@ -1080,12 +1080,12 @@ Components bundled in this release:
 * upgraded LuaNginxModule to 0.3.1rc10.
 ** bugfix: calling {{{ngx.exec()}}} to jump to a named location did not clear the context object of LuaNginxModule properly and might cause evil problems. thanks Nginx User.
 * upgraded IconvNginxModule to 0.10rc5.
-** bugfix: fixed {{{-Wset-but-not-used}}} warnings issued by gcc 4.6.0. thanks 支家乐 (Calio).
+** bugfix: fixed {{{-Wset-but-not-used}}} warnings issued by gcc 4.6.0. thanks ??? (Calio).
 ! Devel Release 1.0.8.1 - 10 October 2011
 * upgraded EchoNginxModule to 0.37rc5.
 ** bugfix: now we properly set the {{{Content-Length}}} request header for subrequests.
 * upgraded LuaNginxModule to 0.3.1rc9.
-** feature: now for HTTP 1.0 requests, we disable the automatic full buffering mode if the user sets the {{{Content-Length}}} response header before sending out the headers. this allows streaming output for HTTP 1.0 requests if the content length can be calculated beforehand. thanks 李子义.
+** feature: now for HTTP 1.0 requests, we disable the automatic full buffering mode if the user sets the {{{Content-Length}}} response header before sending out the headers. this allows streaming output for HTTP 1.0 requests if the content length can be calculated beforehand. thanks ???.
 ** bugfix: now we properly support setting the {{{Cache-Control}}} response header via the {{{ngx.header.HEADER}}} interface.
 ** bugfix: no longer set header hash to 1. use the {{{ngx_hash_key_lc}}} instead.
 * upgraded HeadersMoreNginxModule to 0.16rc3.
@@ -1160,7 +1160,7 @@ Components bundled in this release:
 * upgraded DrizzleNginxModule to 0.1.2rc4.
 ** bugfix: it might prematurly remove a write event when still busily connecting to the database from the event model.
 ! Devel Release 1.0.9.7 - 10 November 2011
-* applied [[a patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.9-log_escape_non_ascii.patch]] to add new directives {{{log_escape_non_ascii}}} to prevent escaping non-ascii bytes in access log variable values. requested by [[@姜大炮|http://weibo.com/egis]]. It can be turned {{{on}}} and {{{off}}}, and default to {{{on}}} just as the standard Nginx version.
+* applied [[a patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.9-log_escape_non_ascii.patch]] to add new directives {{{log_escape_non_ascii}}} to prevent escaping non-ascii bytes in access log variable values. requested by [[@???|http://weibo.com/egis]]. It can be turned {{{on}}} and {{{off}}}, and default to {{{on}}} just as the standard Nginx version.
 ! Devel Release 1.0.9.5 - 9 November 2011
 * upgraded LuaNginxModule to 0.3.1rc28.
 ** bugfix: {{{Cache-Control}}} header modification might introduce empty value headers when using with the standard [[ngx_headers|http://wiki.nginx.org/HttpHeadersModule]] module.
@@ -1168,17 +1168,17 @@ Components bundled in this release:
 ** bugfix: {{{Cache-Control}}} header modification might introduce empty value headers when using with the standard [[ngx_headers|http://wiki.nginx.org/HttpHeadersModule]] module.
 ! Devel Release 1.0.9.3 - 9 November 2011
 * upgraded LuaNginxModule to 0.3.1rc27.
-** feature: added the [[ngx.encode_args|http://wiki.nginx.org/HttpLuaModule#ngx.encode_args]] method to encode a Lua code to a URI query string. thanks 郭颖 ([[0597虾|http://weibo.com/shrimp0597]]).
-** feature: [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] and [[ngx.exec|http://wiki.nginx.org/HttpLuaModule#ngx.exec]] now supports the same Lua args table format as in [[ngx.encode_args|http://wiki.nginx.org/HttpLuaModule#ngx.encode_args]]. thanks 郭颖 ([[0597虾|http://weibo.com/shrimp0597]]).
+** feature: added the [[ngx.encode_args|http://wiki.nginx.org/HttpLuaModule#ngx.encode_args]] method to encode a Lua code to a URI query string. thanks ?? ([[0597?|http://weibo.com/shrimp0597]]).
+** feature: [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] and [[ngx.exec|http://wiki.nginx.org/HttpLuaModule#ngx.exec]] now supports the same Lua args table format as in [[ngx.encode_args|http://wiki.nginx.org/HttpLuaModule#ngx.encode_args]]. thanks ?? ([[0597?|http://weibo.com/shrimp0597]]).
 * upgraded DrizzleNginxModule to 0.1.2rc3.
 ** bugfix: fixed issues with {{{poll}}}, {{{rtsig}}}, and {{{select}}} used by the Nginx event model by eliminating the {{{poll}}} syscall performed by {{{libdrizzle}}}. This also gives rise to a nice speedup (about 10% in simple cases).
 * bugfix: [[nginx-1.0.9-variable_header_ignore_no_hash.patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.9-variable_header_ignore_no_hash.patch]] might introduce a memory overflow issue in multi-header variables. thanks Markus Linnala.
 ! Devel Release 1.0.9.1 - 8 November 2011
 * upgraded the Nginx core to 1.0.9.
-* applied the [[epoll_check_stale_wev patch|http://mailman.nginx.org/pipermail/nginx-devel/2011-November/001408.html]] to the Nginx 1.0.9 core. thanks [[@晓旭XX|http://weibo.com/u/1878897190]].
+* applied the [[epoll_check_stale_wev patch|http://mailman.nginx.org/pipermail/nginx-devel/2011-November/001408.html]] to the Nginx 1.0.9 core. thanks [[@??XX|http://weibo.com/u/1878897190]].
 * upgraded LuaNginxModule to 0.3.1rc26.
 ** feature: added the {{{ctx}}} option to [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]]: you can now specify a custom Lua table to pass to the subrequest as its [[ngx.ctx|http://wiki.nginx.org/HttpLuaModule#ngx.ctx]]. thanks [[@hugozhu|http://weibo.com/hugozhu]].
-** bugfix: fixed compatibility with nginx 0.8.54. thanks [[@0579虾|http://weibo.com/shrimp0597]].
+** bugfix: fixed compatibility with nginx 0.8.54. thanks [[@0579?|http://weibo.com/shrimp0597]].
 * upgraded PostgresNginxModule to 0.9rc2
 ** bugfix: now we log an error message when the {{{postgres_pass}}} target is not found at all and returns 500 in this case instead of returning empty response.
 **  bugfix: we should no longer return {{{NGX_AGAIN}}} when the re-polling returns IO WAIT in case of the &quot;connection made&quot; state.
@@ -1289,9 +1289,9 @@ Components bundled with this release:
 ! Devel Release 1.0.10.35 - 30 December 2011
 * upgraded HeadersMoreNginxModule to v0.16rc7.
 ** bugfix: removing builtin headers in huge request headers with 20+ entries could result in data loss. thanks Chris Dumoulin for the patch in [[github issue #6|https://github.com/agentzh/headers-more-nginx-module/issues/6]].
-* bugfix: the {{{install}}} phony target did not depend on the {{{all}}} phony target in the Makefile generated by {{{./configure}}}. thanks [[姚伟斌|http://weibo.com/yaoweibin]] for reporting this issue.
+* bugfix: the {{{install}}} phony target did not depend on the {{{all}}} phony target in the Makefile generated by {{{./configure}}}. thanks [[???|http://weibo.com/yaoweibin]] for reporting this issue.
 ! Devel Release 1.0.10.33 - 29 December 2011
-* bugfix: the {{{./configure}}} script's  {{{--add-module}}} option did not accept relative path values. thanks [[姚伟斌|http://weibo.com/yaoweibin]] for the patch.
+* bugfix: the {{{./configure}}} script's  {{{--add-module}}} option did not accept relative path values. thanks [[???|http://weibo.com/yaoweibin]] for the patch.
 ! Devel Release 1.0.10.31 - 25 December 2011
 * upgraded LuaJIT to 2.0.0beta9.
 ** changes: http://luajit.org/changes.html
@@ -1302,9 +1302,9 @@ Components bundled with this release:
 ** bugfix: the [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_headers]] directive might cause invalid memory reads because Nginx request header values must be null terminated. thanks Maxim Dounin.
 ! Devel Release 1.0.10.29 - 17 December 2011
 * upgraded LuaNginxModule to v0.3.1rc41.
-** bugfix: [[ngx.req.set_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header]] and [[ngx.req.clear_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] did not handle the {{{Accept-Encoding}}} request headers properly. thanks 天街夜色.
+** bugfix: [[ngx.req.set_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header]] and [[ngx.req.clear_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] did not handle the {{{Accept-Encoding}}} request headers properly. thanks ????.
 * upgraded HeadersMoreNginxModule to 0.16rc5.
-** bugfix: [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] and [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] did not handle the {{{Accept-Encoding}}} request headers properly. thanks 天街夜色.
+** bugfix: [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] and [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] did not handle the {{{Accept-Encoding}}} request headers properly. thanks ????.
 ! Devel Release 1.0.10.27 - 16 December 2011
 * upgraded LuaNginxModule to v0.3.1rc40.
 ** bugfix: {{{ngx.flush(true)}}} could not be used before I/O calls like [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]]. this bug had appeared in v0.3.1rc34.
@@ -1314,10 +1314,10 @@ Components bundled with this release:
 * upgraded SetMiscNginxModule to v0.22rc4.
 ** bugfix: fixed one place that does not check the pointer returned by the memory allocator.
 ** src: converted {{{CRLF}}} in the source files and test files to {{{LF}}}.
-* bugfix: some old version of shell {{{cp}}} command does not support trailing slashes in the destination argument and could break our {{{./configure}}} script. thanks [[姚伟斌|http://weibo.com/yaoweibin]] for reporting it.
+* bugfix: some old version of shell {{{cp}}} command does not support trailing slashes in the destination argument and could break our {{{./configure}}} script. thanks [[???|http://weibo.com/yaoweibin]] for reporting it.
 ! Devel Release 1.0.10.25 - 14 December 2011
 * upgraded SrcacheNginxModule to v0.13rc3.
-** bugfix: fixed a regression with XssNginxModule for cache hits. this bug had appeared in v0.13rc1. thanks [[万珣新|http://weibo.com/liseen]].
+** bugfix: fixed a regression with XssNginxModule for cache hits. this bug had appeared in v0.13rc1. thanks [[???|http://weibo.com/liseen]].
 ** bugfix: we did not cache the {{{Location}}} response header at all for {{{301}}}/{{{302}}} responses.
 ** bugfix: we should not blindly cache the {{{Accept-Ranges: bytes}}} response headers regardless of the actual current requests.
 * upgraded XssNginxModule to v0.03rc8.
@@ -1375,7 +1375,7 @@ Components bundled with this release:
 ** feature: added {{{wait}}} boolean argument to [[ngx.flush()|http://wiki.nginx.org/HttpLuaModule#ngx.flush]] to support synchronous flushing; {{{ngx.flush(true)}}} will not return until all the data has been flushed into the system send buffer or the send timeout has expired.
 ! Devel Release 1.0.10.11 - 24 November 2011
 * upgraded LuaNginxModule to 0.3.1rc33.
-** feature: added new Lua API [[ngx.now|http://wiki.nginx.org/HttpLuaModule#ngx.now]] to return the current time (including the ms part as the decimal part). thanks 林青.
+** feature: added new Lua API [[ngx.now|http://wiki.nginx.org/HttpLuaModule#ngx.now]] to return the current time (including the ms part as the decimal part). thanks ??.
 ** feature: added new Lua API [[ngx.update_time|http://wiki.nginx.org/HttpLuaModule#ngx.update_time]] to forcibly updating nginx's time cache.
 ** docs: massive documentation improvement done by Nginx User.
 ! Devel Release 1.0.10.9 - 24 November 2011
@@ -1391,7 +1391,7 @@ Components bundled with this release:
 ** bugfix: fixed a bad regression in [[ngx.location.capture_multi|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi]] when the request option table is specified. this bug had appeared in ngx_lua 0.3.1rc26 and ngx_openresty 1.0.9.1.
 ! Devel Release 1.0.10.5 - 21 November 2011
 * upgraded LuaNginxModule to 0.3.1rc30.
-** feature: added new regex options {{{&quot;j&quot;}}} and {{{&quot;d&quot;}}} to [[ngx.re.match|http://wiki.nginx.org/HttpLuaModule#ngx.re.match]], [[ngx.re.gmatch|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]], [[ngx.re.sub|http://wiki.nginx.org/HttpLuaModule#ngx.re.sub]], and [[ngx.re.gsub|http://wiki.nginx.org/HttpLuaModule#ngx.re.gsub]]  so as to enable the PCRE [[JIT mode|http://www.manpagez.com/man/3/pcrejit/]] and DFA mode, respectively. thanks [[@姜大炮|http://weibo.com/egis]] for providing the patch.
+** feature: added new regex options {{{&quot;j&quot;}}} and {{{&quot;d&quot;}}} to [[ngx.re.match|http://wiki.nginx.org/HttpLuaModule#ngx.re.match]], [[ngx.re.gmatch|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]], [[ngx.re.sub|http://wiki.nginx.org/HttpLuaModule#ngx.re.sub]], and [[ngx.re.gsub|http://wiki.nginx.org/HttpLuaModule#ngx.re.gsub]]  so as to enable the PCRE [[JIT mode|http://www.manpagez.com/man/3/pcrejit/]] and DFA mode, respectively. thanks [[@???|http://weibo.com/egis]] for providing the patch.
 ! Devel Release 1.0.10.3 - 17 November 2011
 * upgraded LuaNginxModule to 0.3.1rc29.
 ** feature: added [[ngx.hmac_sha1|http://wiki.nginx.org/HttpLuaModule#ngx.hmac_sha1]]. thanks [[drdrxp|http://weibo.com/drdrxp]].
@@ -1476,9 +1476,9 @@ Components bundled with this release:
 ** docs: documented the max concurrent subrequest count limitation and max error log line size limit.
 ! Devel Release 1.0.11.19 - 1 March 2012
 * upgraded Redis2NginxModule to 0.08rc4.
-** bugfix: redis &quot;nil multi bulk replies&quot; did not parse at all. thanks 郭颖 for reporting this issue.
+** bugfix: redis &quot;nil multi bulk replies&quot; did not parse at all. thanks ?? for reporting this issue.
 * upgraded LuaRedisParserLibrary to 0.09rc7.
-** bugfix: redis &quot;nil multi bulk replies&quot; did not parse at all. thanks 郭颖 for reporting this issue.
+** bugfix: redis &quot;nil multi bulk replies&quot; did not parse at all. thanks ?? for reporting this issue.
 ! Devel Release 1.0.11.17 - 29 February 2012
 * feature: bundle LuaRestyMySQLLibrary 0.06, which is enabled by default.
 * feature: bundle LuaRestyRedisLibrary 0.06, which is enabled by default.
@@ -1501,15 +1501,15 @@ Components bundled with this release:
 ** optimize: only register output filters when the {{{iconv_filter}}} is actually used in the config file.
 * upgraded LuaNginxModule to 0.5.0rc15.
 ** bugfix: the {{{exptime}}} argument to {{{shdict:set/add/etc}}} methods was incorrectly ignored when the {{{flags}}} argument is also specified. thanks the patch from Brian Akins.
-** docs: fixed various typos in docs. thanks 王斌.
+** docs: fixed various typos in docs. thanks ??.
 ** bugfix: for big input data, the cosocket reading methods could result in crashes due to incorrect use of {{{luaL_Buffer}}}. now we eliminate {{{luaL_Buffer}}} altogether by managing the recv buffers ourselves. the recv buffers can also be recycled.
-** bugfix: now we avoid using {{{luaL_checkstring}}} which could do another {{{long jump}}} on its own. thanks 王斌.
+** bugfix: now we avoid using {{{luaL_checkstring}}} which could do another {{{long jump}}} on its own. thanks ??.
 ** bugfix: {{{tcpsocket:setkeepalive()}}} did not return errors when the current connection has readable data or there is still unread data in the LuaNginxModule upstream buffer.
 ** bugfix: cosocket methods no longer explicitly return {{{nil}}} error strings upon success.
-** bugfix: when the parent request takes a request body, the subrequest does not take any bodies, and the subrequest's method is neither {{{PUT}}} nor {{{POST}}}, then the subrequest will no longer inherit the parent request's request body. thanks 欧远宁 for reporting this issue.
+** bugfix: when the parent request takes a request body, the subrequest does not take any bodies, and the subrequest's method is neither {{{PUT}}} nor {{{POST}}}, then the subrequest will no longer inherit the parent request's request body. thanks ??? for reporting this issue.
 ** bugfix: data might be accidentally read into the Lua space on idle sockets when the last operation is a read operation *and* a read event suddenly arrives for edge-triggered event models. the same might also apply to write operations too.
 ** bugfix: invalid reads might happen in the reading iterators returned by the {{{receiveuntil()}}} method which could lead to segfaults. this was a bug in the DFA minimizer's optimized code path.
-** bugfix: the {{{closed}}} error would occur for long-running requests that hold the idle cosocket object for a period of time that is longer than the read timeout setting: we should delete the read event timer in time when the {{{receive}}} call has already got a read event. thanks 欧远宁 for reporting this issue.
+** bugfix: the {{{closed}}} error would occur for long-running requests that hold the idle cosocket object for a period of time that is longer than the read timeout setting: we should delete the read event timer in time when the {{{receive}}} call has already got a read event. thanks ??? for reporting this issue.
 ** logs: added error logs for cosocket timeout errors.
 ** logs: added detailed error logs for cosocket {{{closed}}} errors.
 ** optimize: introduced a minor optimization that we can save one {{{recv}}} call when the read event is active *and* the read event is not ready.
@@ -1517,10 +1517,10 @@ Components bundled with this release:
 ** bugfix: C macro directives were used inside a C macro argument which made (at least) gcc 3.2.3 unhappy. thanks Feng Bin.
 ! Devel Release 1.0.11.11 - 14 February 2012
 * upgraded LuaNginxModule to 0.5.0rc7.
-** bugfix: cosocket API could not be used before [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] and its friends for fast network access: [[tcpsock:send()|http://wiki.nginx.org/HttpLuaModule#tcpsock:send]] method did not reset {{{u-&gt;waiting}}} properly. thanks 欧远宁.
+** bugfix: cosocket API could not be used before [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] and its friends for fast network access: [[tcpsock:send()|http://wiki.nginx.org/HttpLuaModule#tcpsock:send]] method did not reset {{{u-&gt;waiting}}} properly. thanks ???.
 ! Devel Release 1.0.11.9 - 13 February 2012
 * upgraded LuaNginxModule to 0.5.0rc6.
-** bugfix: could not compile with nginx 0.8.x. thanks 欧远宁. this bug had appeared in LuaNginxModule v0.5.0rc1.
+** bugfix: could not compile with nginx 0.8.x. thanks ???. this bug had appeared in LuaNginxModule v0.5.0rc1.
 ** feature: added the [[ngx.sha1_bin|http://wiki.nginx.org/HttpLuaModule#ngx.sha1_bin]] method which returns the binary form of the {{{SHA-1}}} digest.
 ** bugfix: we incorrectly allowed {{{ngx.null}}} in the string table argument to [[cosocket:send()|http://wiki.nginx.org/HttpLuaModule#tcpsock:send]] method.
 ** feature: allow use of ngx.null in [[ngx.log()|http://wiki.nginx.org/HttpLuaModule#ngx.log]] and [[print()|http://wiki.nginx.org/HttpLuaModule#print]] arguments.
@@ -1702,7 +1702,7 @@ hello}}}. thanks Matthieu Tourne for the patch.
 ** bugfix: improved the longjmp handling when Lua panic happens.
 ** bugfix: certain compilers might complain about missing declarations for types like {{{int8_t}}}. now we explicitly included {{{stdint.h}}}. thanks runner-mei for reporting it in [[github issue #98|https://github.com/chaoslawful/lua-nginx-module/issues/98]].
 ** feature: added new constant {{{ngx.HTTP_OPTIONS}}} for the HTTP OPTIONS method.
-** feature: added support for OPTIONS method in the subrequest capture ~APIs. thanks Jónas Tryggvi Jóhannsson for requesting this in [[github issue #102|https://github.com/chaoslawful/lua-nginx-module/issues/102]].
+** feature: added support for OPTIONS method in the subrequest capture ~APIs. thanks Jonas Tryggvi Johannsson for requesting this in [[github issue #102|https://github.com/chaoslawful/lua-nginx-module/issues/102]].
 ** feature: added publich C functions {{{ngx_http_lua_add_package_preload}}}, {{{ngx_http_lua_get_global_state}}}, and {{{ngx_http_lua_get_request}}} to help other Nginx C modules expose new functionalities to LuaNginxModule. thanks Brian Akins for suggesting them in [[github pull request #101|https://github.com/chaoslawful/lua-nginx-module/pull/101]].
 ** feature: made {{{ngx_http_lua_api.h}}} visible to other Nginx modules by adding {{{src/api/}}} to the {{{CORE_INCS}}} config variable value in the config file. thanks Brian Akins for suggesting this in [[github pull request #105|https://github.com/chaoslawful/lua-nginx-module/pull/105]].
 ** feature: add the {{{gdbinit}}} script to ease Lua user code debugging (Wang Xiaozhe).
@@ -2131,7 +2131,7 @@ Either way, it's a convenient way to support ocean wildlife.
 &lt;/form&gt;
 &lt;/html&gt;
 
-! Donate with ~AliPay (支付宝)
+! Donate with ~AliPay (???)
 
 If you're in China, it's usually more convenient to send donation is to send money via the [[AliPay|http://www.alipay.com/]] to my account {{{agentzh@yahoo.cn}}} or just click the following button:
 
@@ -2174,14 +2174,16 @@ Sometimes, users may want to download old releases.
 See [[Installation]] for installation instructions.
 </pre>
 </div>
-<div title="DrizzleNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210822" modified="201111280639" changecount="15">
+<div title="DrizzleNginxModule" creator="ZhangYichun" modifier="YourName" created="201106210822" modified="201209130821" changecount="16">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is an nginx upstream module that talks to ~MySQL and/or Drizzle database servers by [[libdrizzle]].
 
-This ngx_drizzle module is not enabled by default. You should specify the {{{--with-http_drizzle_module}}} optiotn while configuring OpenResty.
+This ngx_drizzle module is not enabled by default. You should specify the {{{--with-http_drizzle_module}}} option while configuring OpenResty.
 
 The [[libdrizzle]] C library is no longer bundled by OpenResty. You need to download the drizzle server tarball from https://launchpad.net/drizzle.
+
+If used in conjunction with [[LuaNginxModule]], it is recommended to use [[LuaRestyMySQLLibrary]] module instead of this one, since it is more memory-friendly.
 
 Latest drizzle7 release does not support building libdrizzle 1.0 separately and requires a lot of external dependencies like Boost and Protobuf which are painful to install. The last version supporting building libdrizzle 1.0 separately is {{{2011.07.21}}}. You can download it from here:
 
@@ -2561,16 +2563,16 @@ Homepage: http://luajit.org/luajit.html
 LuaJIT is not enabled by default. Please specify the {{{--with-luajit}}} option while configuring OpenResty while building it. See [[Installation]] for details.
 </pre>
 </div>
-<div title="LuaNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210826" modified="201108260110" changecount="4">
+<div title="LuaNginxModule" creator="ZhangYichun" modifier="YourName" created="201106210826" modified="201209130820" changecount="5">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This module embeds the Lua interpreter or LuaJIT into the nginx core and integrates the powerful Lua threads (aka Lua coroutines) into the nginx event model by means of nginx subrequests.
 
-Unlike Apache's mod_lua and Lighttpd's mod_magnet, Lua code written atop this module can be 100% non-blocking on network traffic as long as you use the ngx.location.capture or ngx.location.capture_multi interfaces to let the nginx core do all your requests to mysql, postgresql, memcached, upstream http web services, and etc etc etc (see ngx_drizzle, ngx_postgres, ngx_memc, and ngx_proxy modules for details).
+Unlike Apache's mod_lua and Lighttpd's mod_magnet, Lua code written atop this module can be 100% non-blocking on network traffic as long as you use the ngx.location.capture, ngx.location.capture_multi and cosocket API to let the nginx core do all your requests to mysql, postgresql, memcached, upstream http web services, and etc etc etc (see [[LuaRestyMySQLLibrary]], [[LuaRestyRedisLibrary]], [[LuaRestyMemcachedLibrary]], ngx_postgres, and ngx_proxy modules for details).
 
 The Lua interpreter instance is shared across all the requests in a single nginx worker process.
 
-Request contexts are isolated from each other by means of Lua (lightweight) threads (aka Lua coroutines). And Lua modules loaded are persistent on the nginx worker process level. So the memory footprint is quite small even when your nginx worker process is handling 10K requests at the same time.
+Request contexts are isolated from each other by means of Lua (lightweight) threads (aka Lua coroutines). And Lua modules loaded are persistent on the nginx worker process level. So the memory footprint of Lua is quite small even when your nginx worker process is handling 10K requests at the same time. Note, that additional modules build around cosocket API are more memory-friendly in general, since ngx.location.* are using nginx subrequest feature (which is not indended to be used frequently in single request)
 
 Documentation: http://wiki.nginx.org/HttpLuaModule
 
@@ -2674,7 +2676,7 @@ This library is enabled by default. You can specify the {{{--without-lua_resty_u
 [[Contact us|ContactUs]]
 [[About]]
 [[Donate Online|DonateOnline]]
-[[中文维基|cn/index.html]]
+[[????|cn/index.html]]
 
 [img[feed-icon-14x14.png]] [[RSS feed|RSSFeed]]
 
@@ -2858,7 +2860,7 @@ This is an output filter module that formats Resty DBD Streams (RDS) generated b
 Project page: http://github.com/agentzh/rds-json-nginx-module
 </pre>
 </div>
-<div title="Redis2NginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201106210847" modified="201205130419" changecount="9">
+<div title="Redis2NginxModule" creator="ZhangYichun" modifier="YourName" created="201106210847" modified="201209130821" changecount="10">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is an [[Nginx]] upstream module that makes nginx talk to a redis 2.x server in a non-blocking way. The full Redis 2.0 unified protocol has been implemented including the redis pipelining support.
@@ -2867,11 +2869,13 @@ This module returns the raw TCP response from the Redis server.
 
 This module is enabled by default and can be disabled by passing the {{{--without-http_redis2_module}}} option to the {{{./configure}}} script for OpenResty.
 
+If used in conjunction with [[LuaNginxModule]], it is recommended to use [[LuaRestyRedisLibrary]] module instead of this one, since it is more memory-friendly.
+
 Documentation wiki page: http://wiki.nginx.org/HttpRedis2Module
 
 Project page: https://github.com/agentzh/redis2-nginx-module</pre>
 </div>
-<div title="RedisNginxModule" creator="ZhangYichun" modifier="ZhangYichun" created="201205130416" modified="201205140322" changecount="4">
+<div title="RedisNginxModule" creator="ZhangYichun" modifier="YourName" created="201205130416" modified="201209130821" changecount="5">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is an [[Nginx]] upstream module that makes nginx talk to a redis 2.x server in a non-blocking way. It has a similar interface with the standard [[ngx_memcached module|http://wiki.nginx.org/HttpMemcachedModule]], but only Redis {{{GET}}} and {{{SELECT}}} commands are supported.
@@ -2881,6 +2885,8 @@ This module returns the decoded result from the Redis server.
 This module is written by Sergey A. Osokin.
 
 This module is enabled by default and can be disabled by passing the {{{--without-http_redis_module}}} option to the {{{./configure}}} script for OpenResty.
+
+If used in conjunction with [[LuaNginxModule]], it is recommended to use [[LuaRestyRedisLibrary]] module instead of this one, since it is more memory-friendly.
 
 Documentation wiki page: http://wiki.nginx.org/HttpRedisModule
 </pre>
@@ -3370,7 +3376,7 @@ The cross-site GET is currently implemented as JSONP (or &quot;JSON with padding
 Project page: http://github.com/agentzh/xss-nginx-module</pre>
 </div>
 <div title="ZhangYichun" creator="ZhangYichun" modifier="ZhangYichun" created="201106210914" changecount="1">
-<pre>agentzh, 章亦春, one of the main authors of this ~OpenResty bundle.
+<pre>agentzh, ???, one of the main authors of this ~OpenResty bundle.
 
 Homepage: http://agentzh.org</pre>
 </div>
