@@ -2179,9 +2179,11 @@ See [[Installation]] for installation instructions.
 
 This is an nginx upstream module that talks to ~MySQL and/or Drizzle database servers by [[libdrizzle]].
 
-This ngx_drizzle module is not enabled by default. You should specify the {{{--with-http_drizzle_module}}} optiotn while configuring OpenResty.
+This ngx_drizzle module is not enabled by default. You should specify the {{{--with-http_drizzle_module}}} option while configuring OpenResty.
 
 The [[libdrizzle]] C library is no longer bundled by OpenResty. You need to download the drizzle server tarball from https://launchpad.net/drizzle.
+
+If used in conjunction with [[LuaNginxModule]], it is recommended to use [[LuaRestyMySQLLibrary]] module instead of this one, since it is more memory-friendly.
 
 Latest drizzle7 release does not support building libdrizzle 1.0 separately and requires a lot of external dependencies like Boost and Protobuf which are painful to install. The last version supporting building libdrizzle 1.0 separately is {{{2011.07.21}}}. You can download it from here:
 
@@ -2566,11 +2568,11 @@ LuaJIT is not enabled by default. Please specify the {{{--with-luajit}}} option 
 
 This module embeds the Lua interpreter or LuaJIT into the nginx core and integrates the powerful Lua threads (aka Lua coroutines) into the nginx event model by means of nginx subrequests.
 
-Unlike Apache's mod_lua and Lighttpd's mod_magnet, Lua code written atop this module can be 100% non-blocking on network traffic as long as you use the ngx.location.capture or ngx.location.capture_multi interfaces to let the nginx core do all your requests to mysql, postgresql, memcached, upstream http web services, and etc etc etc (see ngx_drizzle, ngx_postgres, ngx_memc, and ngx_proxy modules for details).
+Unlike Apache's mod_lua and Lighttpd's mod_magnet, Lua code written atop this module can be 100% non-blocking on network traffic as long as you use the ngx.location.capture, ngx.location.capture_multi and cosocket API to let the nginx core do all your requests to mysql, postgresql, memcached, upstream http web services, and etc etc etc (see [[LuaRestyMySQLLibrary]], [[LuaRestyRedisLibrary]], [[LuaRestyMemcachedLibrary]], ngx_postgres, and ngx_proxy modules for details).
 
 The Lua interpreter instance is shared across all the requests in a single nginx worker process.
 
-Request contexts are isolated from each other by means of Lua (lightweight) threads (aka Lua coroutines). And Lua modules loaded are persistent on the nginx worker process level. So the memory footprint is quite small even when your nginx worker process is handling 10K requests at the same time.
+Request contexts are isolated from each other by means of Lua (lightweight) threads (aka Lua coroutines). And Lua modules loaded are persistent on the nginx worker process level. So the memory footprint of Lua is quite small even when your nginx worker process is handling 10K requests at the same time. Note, that additional modules build around cosocket API are more memory-friendly in general, since ngx.location.* are using nginx subrequest feature (which is not indended to be used frequently in single request)
 
 Documentation: http://wiki.nginx.org/HttpLuaModule
 
@@ -2867,6 +2869,8 @@ This module returns the raw TCP response from the Redis server.
 
 This module is enabled by default and can be disabled by passing the {{{--without-http_redis2_module}}} option to the {{{./configure}}} script for OpenResty.
 
+If used in conjunction with [[LuaNginxModule]], it is recommended to use [[LuaRestyRedisLibrary]] module instead of this one, since it is more memory-friendly.
+
 Documentation wiki page: http://wiki.nginx.org/HttpRedis2Module
 
 Project page: https://github.com/agentzh/redis2-nginx-module</pre>
@@ -2881,6 +2885,8 @@ This module returns the decoded result from the Redis server.
 This module is written by Sergey A. Osokin.
 
 This module is enabled by default and can be disabled by passing the {{{--without-http_redis_module}}} option to the {{{./configure}}} script for OpenResty.
+
+If used in conjunction with [[LuaNginxModule]], it is recommended to use [[LuaRestyRedisLibrary]] module instead of this one, since it is more memory-friendly.
 
 Documentation wiki page: http://wiki.nginx.org/HttpRedisModule
 </pre>
