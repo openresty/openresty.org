@@ -1872,7 +1872,7 @@ Components bundled:
 
 See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
 </div>
-<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201209270004" changecount="81">
+<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201209271822" changecount="83">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.3.3 - 26 September 2012
 * upgraded LuaNginxModule to 0.6.7.
@@ -1904,7 +1904,7 @@ See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
 ** feature: added support for {{{PTR}}} queries and records.
 ** feature: added support for {{{TXT}}} queries and records.
 ** feature: added support for {{{NS}}} queries and records.
-** bugfix: the udp resolver did not discard DNS replies with unmatched IDs for 128 times as originally designed.
+** bugfix: the udp resolver did not discard DNS replies with unmatched ~IDs for 128 times as originally designed.
 * upgraded LuaRestyRedisLibrary to 0.14.
 ** optimize: now we do the string concatenation for Redis queries on the Lua land instead of on the C land, which gives 6% ~ 7% over-all performance boost when using LuaJIT 2.0 beta10.
 ** docs: fixed a typo in the sample code. thanks xingxing for reporting it.
@@ -1915,7 +1915,7 @@ See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
 ** docs: documented that this library cannot be used in those contexts where the LuaNginxModule cosocket API is unavailable.
 ** docs: documented that storing the object instance into Lua module-level variables will result in failures for concurrent requests.
 * upgraded SrcacheNginxModule to 0.16.
-** bugfix: [[srcache_fetch|http://wiki.nginx.org/HttpSRCacheModule#srcache_fetch]] would use truncated responses from MemcNginxModule or other upstream modules. this usually happened when the upstream read time expired or the upstream prematurely closed the connection. this fix also requires the [[nonbuffered-upsteram-truncation patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-nonbuffered-upstream-truncation.patch]] to cancel a limitation in the Nginx core. thanks Bryan Alger for reporting the issue.
+** bugfix: [[srcache_fetch|http://wiki.nginx.org/HttpSRCacheModule#srcache_fetch]] would use truncated responses from MemcNginxModule or other upstream modules. this usually happened when the upstream read timer is expired or the upstream prematurely closed the connection. this fix also requires the [[nonbuffered-upsteram-truncation patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-nonbuffered-upstream-truncation.patch]] to cancel a limitation in the Nginx core. thanks Bryan Alger for reporting the issue.
 ** bugfix: the main request response was not discarded by [[srcache_store|http://wiki.nginx.org/HttpSRCacheModule#srcache_store]] when there was an error in the last minute (like a read-timeout error or premature connection close happens when {{{ngx_http_upstream}}} reads the upstream response body). this fix also requires the [[nonbuffered-upstream-truncation patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-nonbuffered-upstream-truncation.patch]] for the Nginx core to cancel a limitation in {{{ngx_http_upstream}}}.
 ** bugfix: the main request might prematurely terminate if the [[srcache_store|http://wiki.nginx.org/HttpSRCacheModule#srcache_store]] subrequest was finalized with error codes.
 * upgraded Redis2NginxModule to 0.09.
