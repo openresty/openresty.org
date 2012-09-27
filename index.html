@@ -1872,8 +1872,59 @@ Components bundled:
 
 See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
 </div>
-<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201208222337" changecount="34">
+<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201209270004" changecount="81">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.3.3 - 26 September 2012
+* upgraded LuaNginxModule to 0.6.7.
+** feature: implemented the [[shdict:flush_expired(max_count?)|http://wiki.nginx.org/HttpLuaModule#ngx.shared.DICT.flush_expired]] method for flushing out and removing expired items up to {{{max_count}}} (or unlimited when {{{max_count == 0}}}). thanks Brian Akins for the patch.
+** optimize: [[tcpsock:send()|http://wiki.nginx.org/HttpLuaModule#tcpsock:send]] now calls {{{c-&gt;send()}}} instead of {{{ngx_output_chain()}}}, which gives about 4% ~ 5% performance boost for a simple test case accessing Redis for several times.
+** optimize: we now skip processing in the default write event handler when the write event is not ready.
+** refactor: the I/O scheduler has been rewritten to keep track of the coroutine associated with each (non-blocking) I/O operation automatically, which paves a way to the upcoming {{{ngx.thread}}} API (aka the &quot;lightweight thread&quot; API).
+** refactor: now we use a new Nginx subrequest model that bypasses {{{ngx_http_postpone_filter_module}}} completely, which paves a way for arbitrary order of outputting among subrequests and their parents when the {{{ngx.thread API}}} lands in the near future.
+** bugfix: the &quot;http finalize non-active request&quot; alerts might happen when subrequests were used. thanks Lance Li for reporting this issue.
+** bugfix: reset the subrequest status code when the {{{ngx_http_upstream}}} request in the subrequest fails due to timeout errors or premature connection close and etc. this fix also requires the [[nonbuffered-upstream-truncation patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-nonbuffered-upstream-truncation.patch]] for the Nginx core to cancel a limitation in {{{ngx_http_upstream}}}.
+** bugfix: fixed the gcc error {{{-Werror=strict-aliasing}}} in the Lua/LuaJIT bytecode loader when {{{-O2}}} or above is used. thanks jinglong for the patch.
+** bugfix: the main request might be prematurely terminated if a subrequest issued by [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] (or its friends) was finalized with error codes.
+** bugfix: the Nginx built-in resolver might not be destroyed in time when it was used by [[ngx.socket.tcp|http://wiki.nginx.org/HttpLuaModule#ngx.socket.tcp]] and [[ngx.socket.udp|http://wiki.nginx.org/HttpLuaModule#ngx.socket.udp]].
+** bugfix: [[coroutine.status()|http://wiki.nginx.org/HttpLuaModule#coroutine.status]] returned {{{suspended}}} for {{{normal}}} coroutines.
+** bugfix: [[coroutine.resume()|http://wiki.nginx.org/HttpLuaModule#coroutine.resume]] did not return an error immediately when operating on {{{normal}}} coroutines.
+** bugfix: when the entry coroutine was yielded by [[coroutine.yield()|http://wiki.nginx.org/HttpLuaModule#coroutine.yield]] then after it was resumed automatically its status would still be {{{suspended}}}.
+** bugfix: the write event timer might not be removed in time in [[ngx.flush(true)|http://wiki.nginx.org/HttpLuaModule#ngx.flush]] when {{{ngx_handle_write_event}}} failed.
+** bugfix: always remove the read event timer during downstream cosocket finalization if it is not removed yet.
+** bugfix: [[ngx.flush(true)|http://wiki.nginx.org/HttpLuaModule#ngx.flush]] might not return immediately when it should.
+** bugfix: the {{{resume_handler}}} field of the subrequest {{{ctx}}} was not properly initialized.
+** feature: added new dtrace static probes {{{http-lua-user-coroutine-yield}}} and {{{http-lua-entry-coroutine-yield}}}.
+** docs: fixed the documentation for [[ngx.req.set_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header]] and made it clear that the modified request headers will be inherited by the subrequests by default. thanks James Hurst for reporting this issue.
+** docs: documented the trick for doing background asynchronous jobs by using [[ngx.eof()|http://wiki.nginx.org/HttpLuaModule#ngx.eof]] + {{{keepalive_timeout 0}}}. thanks Lance Li for the suggestion.
+* upgraded LuaRedisParserLibrary to 0.10.
+** bugfix: Lua stack overflow would happen when too many Redis arguments were passed into the [[build_query|http://wiki.nginx.org/LuaRedisParser#build_query]] method. thanks Guo Yin for reporting this issue.
+* upgraded LuaRestyDNSLibrary to 0.08.
+** feature: added new method [[tcp_query|https://github.com/agentzh/lua-resty-dns#tcp_query]] to enforce pure TCP transportation for the DNS queries.
+** feature: added support for TCP retries when the UDP reply gets truncated.
+** feature: added support for {{{PTR}}} queries and records.
+** feature: added support for {{{TXT}}} queries and records.
+** feature: added support for {{{NS}}} queries and records.
+** bugfix: the udp resolver did not discard DNS replies with unmatched IDs for 128 times as originally designed.
+* upgraded LuaRestyRedisLibrary to 0.14.
+** optimize: now we do the string concatenation for Redis queries on the Lua land instead of on the C land, which gives 6% ~ 7% over-all performance boost when using LuaJIT 2.0 beta10.
+** docs: fixed a typo in the sample code. thanks xingxing for reporting it.
+* upgraded LuaRestyMemcachedLibrary to 0.08.
+** feature: added new option {{{key_transform}}} to the [[new method|https://github.com/agentzh/lua-resty-memcached#new]] to allow the user to override the default escaping and unescaping methods for Memcached keys. thanks Matthieu Tourne for the patch.
+** bugfix: now the [[new method|https://github.com/agentzh/lua-resty-memcached#new]] will return a string describing the error as the second return value in case of failures.
+** docs: added more documentation for the [[set_keepalive|https://github.com/agentzh/lua-resty-memcached#set_keepalive]] method.
+** docs: documented that this library cannot be used in those contexts where the LuaNginxModule cosocket API is unavailable.
+** docs: documented that storing the object instance into Lua module-level variables will result in failures for concurrent requests.
+* upgraded SrcacheNginxModule to 0.16.
+** bugfix: [[srcache_fetch|http://wiki.nginx.org/HttpSRCacheModule#srcache_fetch]] would use truncated responses from MemcNginxModule or other upstream modules. this usually happened when the upstream read time expired or the upstream prematurely closed the connection. this fix also requires the [[nonbuffered-upsteram-truncation patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-nonbuffered-upstream-truncation.patch]] to cancel a limitation in the Nginx core. thanks Bryan Alger for reporting the issue.
+** bugfix: the main request response was not discarded by [[srcache_store|http://wiki.nginx.org/HttpSRCacheModule#srcache_store]] when there was an error in the last minute (like a read-timeout error or premature connection close happens when {{{ngx_http_upstream}}} reads the upstream response body). this fix also requires the [[nonbuffered-upstream-truncation patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-nonbuffered-upstream-truncation.patch]] for the Nginx core to cancel a limitation in {{{ngx_http_upstream}}}.
+** bugfix: the main request might prematurely terminate if the [[srcache_store|http://wiki.nginx.org/HttpSRCacheModule#srcache_store]] subrequest was finalized with error codes.
+* upgraded Redis2NginxModule to 0.09.
+** bugfix: directives [[redis2_query|http://wiki.nginx.org/HttpRedis2Module#redis2_query]], [[redis2_literal_raw_query|http://wiki.nginx.org/HttpRedis2Module#redis2_literal_raw_query]], and [[redis2_raw_queries|http://wiki.nginx.org/HttpRedis2Module#redis2_raw_queries]] could not be inherited automatically by the {{{location if}}} blocks, resulting in the &quot;no redis2 query specified or the query is empty&quot; error. thanks Tomasz Prus for the patch.
+* feature: updated the [[dtrace patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-dtrace.patch]] to add new static probe {{{create-pool-done}}}.
+* feature: updated the [[dtrace patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-dtrace.patch]] to include new tapset functions {{{ngx_indent}}}, {{{ngx_http_subreq_depth}}}, and {{{ngx_http_req_parent}}}.
+* bugfix: added the [[nonbuffered-upstream-truncation patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-nonbuffered-upstream-truncation.patch]] for the Nginx core to make {{{ngx_http_upstream}}} provide a way in the context of a subrequest to signal the parent of errors when upstream data truncation happens. thanks Bryan Alger for reporting this issue. (This is a temporary solution and I'll work on a new patch as per Maxim Dounin's suggestions.)
+* bugfix: applied the [[channel-uninit-params patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-channel-uninit-params.patch]] for the Nginx core to fix Valgrind/Memcheck warnings about unitialized bytes in the parameters of {{{sendmsg}}}.
+* feature: updated the [[allow_request_body_updating patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-allow_request_body_updating.patch]] to define the {{{HAVE_ALLOW_REQUEST_BODY_UPDATING_PATCH}}} macro.
 ! Devel Release 1.2.3.1 - 22 August 2012
 * upgraded the Nginx core to 1.2.3.
 ** see http://nginx.org/en/CHANGES-1.2 for changes.
@@ -2142,12 +2193,12 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201209172311" tags="Resources" changecount="200">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201209260600" tags="Resources" changecount="202">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.2.3.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.1.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 22 August 2012
+* [[ngx_openresty-1.2.3.3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.3.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 26 September 2012
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.1.14.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.14.tar.gz]] 2.9MB [[Changes|ChangeLog1002001]] - 14 August 2012
