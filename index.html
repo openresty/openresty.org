@@ -1872,8 +1872,14 @@ Components bundled:
 
 See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
 </div>
-<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201209271825" changecount="84">
+<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201210011817" changecount="85">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.3.5 - 1 October 2012
+* upgraded LuaNginxModule to 0.6.8.
+** bugfix: [[ngx.re.gmatch|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]] might loop infinitely when the pattern matches an empty string. thanks Lance Li and xingxing for tracking this issue down.
+** bugfix: pattern matching an empty substring in [[ngx.re.gmatch|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]] did not match at the end of the subject string.
+** bugfix: [[ngx.re.gsub|http://wiki.nginx.org/HttpLuaModule#ngx.re.gsub]] might enter infinite loops because it could not handle patterns matching empty strings properly.
+** bugfix: [[ngx.re.gsub|http://wiki.nginx.org/HttpLuaModule#ngx.re.gsub]] incorrectly skipped matching altogether when the subject string was empty.
 ! Devel Release 1.2.3.3 - 26 September 2012
 * upgraded LuaNginxModule to 0.6.7.
 ** feature: implemented the [[shdict:flush_expired(max_count?)|http://wiki.nginx.org/HttpLuaModule#ngx.shared.DICT.flush_expired]] method for flushing out and removing expired items up to {{{max_count}}} (or unlimited when {{{max_count == 0}}}). thanks Brian Akins for the patch.
@@ -2194,14 +2200,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201209291655" tags="Resources" changecount="207">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201210011812" tags="Resources" changecount="208">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features.
-* [[ngx_openresty-1.2.3.3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.3.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 26 September 2012
+* [[ngx_openresty-1.2.3.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.5.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 1 October 2012
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.1.14.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.14.tar.gz]] 2.9MB [[Changes|ChangeLog1002001]] - 14 August 2012
