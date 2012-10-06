@@ -1872,8 +1872,15 @@ Components bundled:
 
 See ChangeLog1000015 for change log for ngx_openresty 1.0.15.x.</pre>
 </div>
-<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201210011817" changecount="85">
+<div title="ChangeLog1002003" creator="ZhangYichun" modifier="ZhangYichun" created="201208221916" modified="201210061906" changecount="104">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.3.7 - 6 October 2012
+* upgraded LuaNginxModule to 0.6.10.
+** feature: now [[ngx.req.get_headers()|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers]] returns a Lua table with keys in the all-lower-case form by default. thanks James Hurst and Matthieu Tourne for the feature request.
+** feature: now [[ngx.req.get_headers()|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers]] adds an {{{__index}}} metamethod to the resulting Lua table by default, which will automatically normalize the lookup key by converting upper-case letters and underscores in case of a lookup miss. thanks James Hurst and Matthieu Tourne for suggesting this feature.
+** feature: now [[ngx.req.get_headers()|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers]] accepts a second (optional) argument, {{{raw}}}, for controlling whether to return the original form of the header names (that is, the original letter-case).
+** feature: added public C API functions {{{ngx_http_shared_dict_get}}} and {{{ngx_http_lua_find_zone}}} to allow other Nginx C modules or a patched Nginx core to directly access the [[shared memory dictionaries|http://wiki.nginx.org/HttpLuaModule#lua_shared_dict]] created by LuaNginxModule. thanks Piotr Sikora for requesting this feature.
+** bugfix: fixed a compilation warning in the TCP/stream cosocket codebase when using (at least) gcc 3.4.6 for MIPS. thanks Dirk Feytons for reporting this as [[GitHub issue #162|https://github.com/chaoslawful/lua-nginx-module/issues/162]].
 ! Devel Release 1.2.3.5 - 1 October 2012
 * upgraded LuaNginxModule to 0.6.8.
 ** bugfix: [[ngx.re.gmatch|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]] might loop infinitely when the pattern matches an empty string. thanks Lance Li and xingxing for tracking this issue down.
@@ -2200,14 +2207,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201210011904" tags="Resources" changecount="212">
+<div title="Download" creator="ZhangYichun" modifier="ZhangYichun" created="201106210425" modified="201210061850" tags="Resources" changecount="213">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.2.3.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.5.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 1 October 2012
+* [[ngx_openresty-1.2.3.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.7.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 6 October 2012
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.1.14.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.14.tar.gz]] 2.9MB [[Changes|ChangeLog1002001]] - 14 August 2012
