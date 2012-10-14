@@ -2003,7 +2003,7 @@ The following components are bundled:
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
 </div>
-<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201210141938" changecount="14">
+<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201210142047" changecount="15">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.4.1 - 14 October 2012
 * upgraded the Nginx core to 1.2.4.
@@ -2017,7 +2017,7 @@ See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 ** docs: added a warning for [[ngx.var.VARIABLE|http://wiki.nginx.org/HttpLuaModule#ngx.var.VARIABLE]] that memory is allocated in the per-request memory pool. thanks lilydjwg.
 ** docs: made it clear why {{{return}}} is recommended to be used with [[ngx.exit()|http://wiki.nginx.org/HttpLuaModule#ngx.exit]]. thanks Antoine.
 ** docs: massive wording improvements from Dayo.
-* now we add SrcacheNginxModule before both LuaNginxModule and HeadersMoreNginxModule so that the former's output filter runs //after// those of the latter's.
+* now we add SrcacheNginxModule before both LuaNginxModule and HeadersMoreNginxModule so that the former's output filter runs //after// those of the latter.
 
 See ChangeLog1002003 for change log for OpenResty 1.2.3.x.</pre>
 </div>
