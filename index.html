@@ -2003,6 +2003,24 @@ The following components are bundled:
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
 </div>
+<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201210141938" changecount="14">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.4.1 - 14 October 2012
+* upgraded the Nginx core to 1.2.4.
+** see http://nginx.org/en/CHANGES-1.2 for changes.
+* upgraded LuaNginxModule to 0.7.1.
+** feature: implemented the &quot;light threads&quot; API, which allows asynchronous concurrent processing within a single Nginx request handler, based on automatically-scheduled Lua coroutines. thanks Lee Holloway for requesting this feature.
+*** http://wiki.nginx.org/HttpLuaModule#ngx.thread.spawn
+*** http://wiki.nginx.org/HttpLuaModule#ngx.thread.wait
+** bugfix: [[ngx.re.gsub()|http://wiki.nginx.org/HttpLuaModule#ngx.re.gsub]] might throw out the exception {{{attempt to call a string value}}} when the {{{replace}}} argument was a Lua function and the subject string was large. thanks Zhu Maohai for reporting this issue.
+** bugfix: older gcc versions might issue warnings like {{{variable 'nrets' might be clobbered by 'longjmp' or 'vfork'}}}, like gcc 3.4.3 (for Solaris 11) and gcc 4.1.2 (for Red Hat Linux). thanks Wenhua Zhang for reporting this issue.
+** docs: added a warning for [[ngx.var.VARIABLE|http://wiki.nginx.org/HttpLuaModule#ngx.var.VARIABLE]] that memory is allocated in the per-request memory pool. thanks lilydjwg.
+** docs: made it clear why {{{return}}} is recommended to be used with [[ngx.exit()|http://wiki.nginx.org/HttpLuaModule#ngx.exit]]. thanks Antoine.
+** docs: massive wording improvements from Dayo.
+* now we add SrcacheNginxModule before both LuaNginxModule and HeadersMoreNginxModule so that the former's output filter runs //after// those of the latter's.
+
+See ChangeLog1002003 for change log for OpenResty 1.2.3.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -2243,14 +2261,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201210082153" tags="Resources" changecount="214">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201210141912" tags="Resources" changecount="215">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.2.3.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.7.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 6 October 2012
+* [[ngx_openresty-1.2.4.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.1.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 14 October 2012
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.3.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.8.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 8 October 2012
