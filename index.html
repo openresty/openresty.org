@@ -2003,8 +2003,17 @@ The following components are bundled:
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
 </div>
-<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201210142047" changecount="15">
+<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201210172242" changecount="23">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.4.3 - 17 October 2012
+* upgraded LuaJIT to 2.0.0 beta11.
+** made LuaRestyRedisLibrary 27% faster, LuaRestyMemcachedLibrary 22% faster, and LuaRestyMySQLLibrary 15% faster, all for simple test cases loaded by ab, at least on Linux x86_64.
+** all Lua ~APIs involved with I/O in LuaNginxModule are faster in general.
+** complete change log: http://luajit.org/changes.html
+* upgraded LuaRestyMemcachedLibrary to 0.09.
+** optimize: we now use Lua's own {{{table.concat()}}} to do string concatenation for all the memcached requests instead of relying on the [[cosocket API|http://wiki.nginx.org/HttpLuaModule#tcpsock:send]] (on the C level) because calling the Lua C API is much slower especially when LuaJIT is in use. now for simple test cases loaded by {{{ab -k -c10}}}, we get 11.3% overall performance boost.
+* upgraded LuaNginxModule to 0.7.2.
+** feature: now we can automatically detect the vendor-provided ~LuaJIT-2.0 package on Gentoo. thanks Il'ya V. Yesin for the patch. it is still recommended, however, to explicitly set the environments {{{LUAJIT_INC}}} and {{{LUAJIT_LIB}}}.
 ! Devel Release 1.2.4.1 - 14 October 2012
 * upgraded the Nginx core to 1.2.4.
 ** see http://nginx.org/en/CHANGES-1.2 for changes.
@@ -2262,14 +2271,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201210141912" tags="Resources" changecount="215">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201210172212" tags="Resources" changecount="216">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.2.4.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.1.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 14 October 2012
+* [[ngx_openresty-1.2.4.3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.3.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 17 October 2012
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.3.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.8.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 8 October 2012
