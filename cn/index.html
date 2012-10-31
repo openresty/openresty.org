@@ -1731,8 +1731,13 @@ The following components are bundled:
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
 </div>
-<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210142036" modified="201210172303" changecount="2">
+<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210142036" modified="201210310047" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.4.5 - 30 October 2012
+* applied the official [[hotfix #1 patch|http://luajit.org/download/beta11_hotfix1.patch]] to LuaJIT 2.0.0 beta11.
+** see details here: http://www.freelists.org/post/luajit/Hotfix1-for-LuaJIT200beta11
+* upgraded LuaNginxModule to 0.7.3.
+** feature: added the [[get_keys|http://wiki.nginx.org/HttpLuaModule#ngx.shared.DICT.get_keys]] method for the shared memory dictionaries for fetching all the (or the specified number of) keys (default to 1024 keys). thanks Brian Akins for the patch.
 ! Devel Release 1.2.4.3 - 17 October 2012
 * upgraded LuaJIT to 2.0.0 beta11.
 ** made LuaRestyRedisLibrary 27% faster, LuaRestyMemcachedLibrary 22% faster, and LuaRestyMySQLLibrary 15% faster, all for simple test cases loaded by ab, tested on Linux x86_64.
@@ -1978,12 +1983,12 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="ZhangYichun" modifier="YichunZhang" created="201106210425" modified="201210172303" tags="Resources" changecount="140">
+<div title="Download" creator="ZhangYichun" modifier="YichunZhang" created="201106210425" modified="201210310047" tags="Resources" changecount="141">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 开发版
 提供给开发者和比较勇敢的用户，包含了最新的问题修复和特性。开发版的质量也是按生产级别来保证的。
-* [[ngx_openresty-1.2.4.3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.3.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 2012年10月17日
+* [[ngx_openresty-1.2.4.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.5.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 2012年10月30日
 !! 稳定版
 提供给比较保守的用户。
 * [[ngx_openresty-1.2.3.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.8.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 2012年10月8日
