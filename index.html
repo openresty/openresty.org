@@ -2003,8 +2003,34 @@ The following components are bundled:
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
 </div>
-<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201210310036" changecount="28">
+<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201211120209" changecount="50">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.4.7 - 11 November 2012
+* upgraded LuaJIT to 2.0.0rc3.
+* upgraded LuaNginxModule to 0.7.4.
+** feature: added new directive [[lua_check_client_abort|http://wiki.nginx.org/HttpLuaModule#lua_check_client_abort]] (default to {{{off}}}) for monitoring and processing the event that the client closes the (downstream) connection prematurely. thanks Zhu Dejiang for request this feature.
+** feature: added new Lua API [[ngx.on_abort()|http://wiki.nginx.org/HttpLuaModule#ngx.on_abort]] which is used to register user Lua function callback for the event that the client closes the (downstream) connection prematurely. thanks Matthieu Tourne for suggesting this feature.
+** feature: [[ngx.exit|http://wiki.nginx.org/HttpLuaModule#ngx.exit]](N) can now abort pending subrequests when {{{N = 408}}} (request time out) or {{{N = 499}}} (client closed request) or {{{N = -1}}} (error).
+** bugfix: The TCP/stream cosocket's [[connect()|http://wiki.nginx.org/HttpLuaModule#tcpsock:connect]] method could not detect errors like &quot;connection refused&quot; when kqueue was used (on ~FreeBSD or Mac OS X, for example). thanks smallfish for reporting this issue.
+** bugfix: reading operations on [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] did not return any errors when the request body got truncated; now we return the &quot;client aborted&quot; error.
+* upgraded LuaRestyDNSLibrary to 0.09.
+** refactor: avoided using {{{package.seeall}}} in Lua module definitions, which improves performance and also prevents subtle bad side-effects.
+** bugfix: a debugging output might be sent to stdout unexpectedly in some code path.
+* upgraded LuaRestyMemcachedLibrary to 0.10.
+** refactor: avoided using {{{package.seeall}}} in Lua module definitions, which improves performance and also prevents subtle bad side-effects.
+** docs: fixed typos in README. thanks cyberty for the patch.
+* upgraded LuaRestyRedisLibrary to 0.15.
+** refactor: avoided using {{{package.seeall}}} in Lua module definitions, which improves performance and also prevents subtle bad side-effects.
+** optimize: avoided using {{{ipairs()}}} which is slower than plain {{{for i=1,N}}} loops.
+* upgraded LuaRestyMySQLLibrary to 0.11.
+** refactor: avoided using {{{package.seeall}}} in Lua module definitions, which improves performance and also prevents subtle bad side-effects.
+** feature: now the [[new()|https://github.com/agentzh/lua-resty-mysql#new]] method will return a string describing the error as the second return value in case of failures.
+* upgraded LuaRestyUploadLibrary to 0.04.
+** refactor: avoided using {{{package.seeall}}} in Lua module definitions, which improves performance and also prevents subtle bad side-effects.
+* upgraded LuaRestyStringLibrary to 0.07.
+** refactor: avoided using {{{package.seeall}}} in Lua module definitions, which improves performance and also prevents subtle bad side-effects.
+** docs: typo-fixes in the code samples from Bearnard Hibbins.
+* bugfix: nginx upstream modules could not detect the &quot;connection refused&quot; error in time if kqueue was used; now we apply the [[upstream_test_connect_kqueue patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.4-upstream_test_connect_kqueue.patch]] for the Nginx core.
 ! Devel Release 1.2.4.5 - 30 October 2012
 * applied the official [[hotfix #1 patch|http://luajit.org/download/beta11_hotfix1.patch]] to LuaJIT 2.0.0 beta11.
 ** see details here: http://www.freelists.org/post/luajit/Hotfix1-for-LuaJIT200beta11
@@ -2276,14 +2302,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201210310027" tags="Resources" changecount="217">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201211111955" tags="Resources" changecount="218">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.2.4.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.5.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 30 October 2012
+* [[ngx_openresty-1.2.4.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.7.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 11 November 2012
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.3.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.8.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 8 October 2012
