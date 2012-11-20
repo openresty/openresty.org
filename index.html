@@ -2003,8 +2003,23 @@ The following components are bundled:
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
 </div>
-<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201211120209" changecount="50">
+<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201211202327" changecount="62">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.4.9 - 20 November 2012
+* upgraded LuaJIT to 2.0.0 final.
+** change logs: http://luajit.org/changes.html
+* upgraded LuaNginxModule to 0.7.5.
+** bugfix: [[ngx.req.clear_header()|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] would result in memory invalid reads when removing the 21st, 41st, 61st (and etc) request headers. thanks Umesh Sirsiwal for reporting this issue.
+** bugfix: [[ngx.log()|http://wiki.nginx.org/HttpLuaModule#ngx.log]] would truncate the log messages which have null characters ({{{\0}}}) in it. thanks Wang Xi for reporting this issue.
+** docs: eliminated the use of {{{package.seeall}}} in code samples and also explicitly discouraged the use of it.
+** docs: documented the special case that client closes the connection before [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] finishes reading the whole body.
+* upgraded HeadersMoreNginxModule to 0.19.
+**  bugfix: [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] would result in memory invalid reads when removing the 21st, 41st, 61st (and etc) request headers. thanks Umesh Sirsiwal for reporting this issue.
+** docs: fixed an issue in the sample code that tried to clear {{{Transfer-Encoding}}} which cannot actually be cleared. thanks koukou73gr.
+* upgraded LuaRestyStringLibrary to 0.08.
+** bugfix: the {{{new()}}} method in the {{{resty.aes}}} module might use a random key when the {{{method}}} option is omitted in the {{{hash}}} table argument. thanks wsser for the patch.
+** feature: we now return a second string describing the error when either {{{iv}}} or {{{key}}} is bad.
+* bugfix: {{{./configure --with-pcre=PATH}}} did not accept relative paths as {{{PATH}}}. thanks smallfish for reporting this issue.
 ! Devel Release 1.2.4.7 - 11 November 2012
 * upgraded LuaJIT to 2.0.0rc3.
 * upgraded LuaNginxModule to 0.7.4.
@@ -2302,14 +2317,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201211111955" tags="Resources" changecount="218">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201211202315" tags="Resources" changecount="219">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.2.4.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.7.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 11 November 2012
+* [[ngx_openresty-1.2.4.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.9.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 20 November 2012
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.3.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.8.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 8 October 2012
