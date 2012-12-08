@@ -1731,8 +1731,24 @@ The following components are bundled:
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
 </div>
-<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210142036" modified="201211202331" changecount="5">
+<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210142036" modified="201212080816" changecount="6">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.4.11 - 8 December 2012
+* upgraded LuaNginxModule to 0.7.7.
+** feature: added [[ngx.req.start_time()|http://wiki.nginx.org/HttpLuaModule#ngx.req.start_time]] to return the request starting time in seconds (the milliseconds part is the decimal part just as in [[ngx.now|http://wiki.nginx.org/HttpLuaModule#ngx.now]]). thanks Matthieu Tourne for the patch.
+** feature: setting [[ngx.status|http://wiki.nginx.org/HttpLuaModule#ngx.status]] or calling [[ngx.exit(N)|http://wiki.nginx.org/HttpLuaModule#ngx.exit]] (where {{{N &gt;= 300}}}) after sending out response headers no longer yields a Lua exception but only leaves an error message in the error.log file, which is useful for Lua land debugging. thanks Matthieu Tourne for requesting this.
+** feature: the user can now call [[ngx.exit(444)|http://wiki.nginx.org/HttpLuaModule#ngx.exit]] to abort pending subrequests in other &quot;light threads&quot; from within a &quot;light thread&quot;.
+** feature: added new dtrace static probe {{{http-lua-user-thread-wait}}}.
+** bugfix: [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] and [[ngx.location.capture_multi|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi]] might hang infinitely because the parent request might not be waken up right after the first time the {{{post_subrequest}}} callback was called.
+** bugfix: the &quot;light thread&quot; object created by [[ngx.thread.spawn()|http://wiki.nginx.org/HttpLuaModule#ngx.thread.spawn]] or [[ngx.on_abort()|http://wiki.nginx.org/HttpLuaModule#ngx.on_abort]] might be prematurely collected by the Lua GC because we did not correctly register its coroutine object into the Lua regsitry table. this bug may crash the Lua VM and Nginx workers under load. thanks Zhu Dejiang for reporting this issue.
+** bugfix: [[ngx.thread.wait()|http://wiki.nginx.org/HttpLuaModule#ngx.thread.wait]] might hang infinitely when more than 4 user &quot;light threads&quot; are created in the same request handler due to the incorrect use of {{{ngx_array_t}}} for {{{ngx_list_t}}}. thanks Junwei Shi for reporting this issue.
+** bugfix: when a user coroutine or user &quot;light thread&quot; dies with an error, our Lua backtrace dumper written in C may access one of its dead parent threads (if any) which could lead to segmentation faults.
+** bugfix: [[ngx.exit(N)|http://wiki.nginx.org/HttpLuaModule#ngx.exit]] incorrectly threw out Lua exceptions when {{{N}}} was 408, 499, or 444 and the response header was already sent. thanks Kindy Lin for reporting this issue.
+** bugfix: when the user callback function registered by [[ngx.on_abort()|http://wiki.nginx.org/HttpLuaModule#ngx.on_abort]] discarded the client abort event, the request would be aborted by force when the next client abort event happened.
+** bugfix: an English typo in the error message for [[init_by_lua*|http://wiki.nginx.org/HttpLuaModule#init_by_lua]].
+* applied [[slab_alloc_no_memory_as_info.patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.4-slab_alloc_no_memory_as_info.patch]] to lower the log level of the error message &quot;ngx_slab_alloc() failed: no memory&quot; from &quot;crit&quot; to &quot;info&quot;.
+* bugfix: the [[upstream_pipelining patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.4-upstream_pipelining.patch]] introduced a regression that when {{{upstream_next}}} is in action, Nginx might hang. thanks Kindy Lin for reporting this issue.
+* bugfix: include the latest chagnes in the LuaJIT 2.0 git repository (up to git commit 2ad9834d).
 ! Devel Release 1.2.4.9 - 20 November 2012
 * upgraded LuaJIT to 2.0.0 final.
 ** change logs: http://luajit.org/changes.html
@@ -2024,12 +2040,12 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201211202330" tags="Resources" changecount="143">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201212080815" tags="Resources" changecount="144">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 开发版
 提供给开发者和比较勇敢的用户，包含了最新的问题修复和特性。开发版的质量也是按生产级别来保证的。
-* [[ngx_openresty-1.2.4.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.9.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 2012年11月20日
+* [[ngx_openresty-1.2.4.11.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.11.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 2012年12月8日
 !! 稳定版
 提供给比较保守的用户。
 * [[ngx_openresty-1.2.3.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.8.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 2012年10月8日
