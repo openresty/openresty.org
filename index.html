@@ -2003,7 +2003,7 @@ The following components are bundled:
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
 </div>
-<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201212080806" changecount="81">
+<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201212082038" changecount="82">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.4.11 - 8 December 2012
 * upgraded LuaNginxModule to 0.7.7.
@@ -2020,7 +2020,7 @@ See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 ** bugfix: an English typo in the error message for [[init_by_lua*|http://wiki.nginx.org/HttpLuaModule#init_by_lua]].
 * applied [[slab_alloc_no_memory_as_info.patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.4-slab_alloc_no_memory_as_info.patch]] to lower the log level of the error message &quot;ngx_slab_alloc() failed: no memory&quot; from &quot;crit&quot; to &quot;info&quot;.
 * bugfix: the [[upstream_pipelining patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.4-upstream_pipelining.patch]] introduced a regression that when {{{upstream_next}}} is in action, Nginx might hang. thanks Kindy Lin for reporting this issue.
-* bugfix: include the latest chagnes in the LuaJIT 2.0 git repository (up to git commit 2ad9834d).
+* bugfix: include the latest changes in the LuaJIT 2.0 git repository (up to git commit 2ad9834d).
 ! Devel Release 1.2.4.9 - 20 November 2012
 * upgraded LuaJIT to 2.0.0 final.
 ** change logs: http://luajit.org/changes.html
