@@ -1731,8 +1731,14 @@ The following components are bundled:
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
 </div>
-<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210142036" modified="201212082038" changecount="7">
+<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210142036" modified="201212111954" changecount="8">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.4.13 - 11 December 2012
+* upgraded LuaNginxModule to 0.7.8.
+** bugfix: [[ngx.req.set_body_file()|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_file]] might lead to memory issues because it directly used the storage of Lua strings allocated by the Lua GC (we should have allocated a new memory block on the Nginx side and copy the string data over).
+* upgraded LuaRestyMySQLLibrary to 0.12.
+** feature: convert the ~MySQL {{{newdecimal}}} typed fields to Lua numbers by default as requested by shedar.
+** optimize: marked the internal Lua function {{{_recv_packet}}} as a {{{local}}} function.
 ! Devel Release 1.2.4.11 - 8 December 2012
 * upgraded LuaNginxModule to 0.7.7.
 ** feature: added [[ngx.req.start_time()|http://wiki.nginx.org/HttpLuaModule#ngx.req.start_time]] to return the request starting time in seconds (the milliseconds part is the decimal part just as in [[ngx.now|http://wiki.nginx.org/HttpLuaModule#ngx.now]]). thanks Matthieu Tourne for the patch.
@@ -2040,12 +2046,12 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201212080815" tags="Resources" changecount="144">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201212111954" tags="Resources" changecount="145">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 开发版
 提供给开发者和比较勇敢的用户，包含了最新的问题修复和特性。开发版的质量也是按生产级别来保证的。
-* [[ngx_openresty-1.2.4.11.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.11.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 2012年12月8日
+* [[ngx_openresty-1.2.4.13.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.13.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 2012年12月8日
 !! 稳定版
 提供给比较保守的用户。
 * [[ngx_openresty-1.2.3.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.8.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 2012年10月8日
@@ -2755,9 +2761,11 @@ Project page: https://github.com/agentzh/redis2-nginx-module</pre>
 <div title="ReleaseNote" creator="YichunZhang" modifier="YichunZhang" created="201111030906" modified="201111030927" changecount="9">
 <pre></pre>
 </div>
-<div title="Resources" creator="YichunZhang" modifier="ZoomQuiet" created="201110240551" modified="201205291423" tags="Resources" changecount="10">
+<div title="Resources" creator="YichunZhang" modifier="YichunZhang" created="201110240551" modified="201212111953" tags="Resources" changecount="11">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! English Articles
+* Pushing Nginx to its limit with Lua
+: http://blog.cloudflare.com/pushing-nginx-to-its-limit-with-lua
 * My beautiful dark twisted reverse-proxy LRU cache
 : http://mikeferrier.com/2011/05/14/my-beautiful-dark-twisted-reverse-proxy-LRU-cache/
 * Day 41 - Setting up ngx_openresty (WAS: testing Test::Nginx) 
