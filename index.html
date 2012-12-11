@@ -2003,8 +2003,14 @@ The following components are bundled:
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
 </div>
-<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201212082038" changecount="82">
+<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201212111948" changecount="88">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.4.13 - 11 December 2012
+* upgraded LuaNginxModule to 0.7.8.
+** bugfix: [[ngx.req.set_body_file()|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_file]] might lead to memory issues because it directly used the storage of Lua strings allocated by the Lua GC (we should have allocated a new memory block on the Nginx side and copy the string data over).
+* upgraded LuaRestyMySQLLibrary to 0.12.
+** feature: convert the ~MySQL {{{newdecimal}}} typed fields to Lua numbers by default as requested by shedar.
+** optimize: marked the internal Lua function {{{_recv_packet}}} as a {{{local}}} function.
 ! Devel Release 1.2.4.11 - 8 December 2012
 * upgraded LuaNginxModule to 0.7.7.
 ** feature: added [[ngx.req.start_time()|http://wiki.nginx.org/HttpLuaModule#ngx.req.start_time]] to return the request starting time in seconds (the milliseconds part is the decimal part just as in [[ngx.now|http://wiki.nginx.org/HttpLuaModule#ngx.now]]). thanks Matthieu Tourne for the patch.
@@ -2012,7 +2018,7 @@ See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 ** feature: the user can now call [[ngx.exit(444)|http://wiki.nginx.org/HttpLuaModule#ngx.exit]] to abort pending subrequests in other &quot;light threads&quot; from within a &quot;light thread&quot;.
 ** feature: added new dtrace static probe {{{http-lua-user-thread-wait}}}.
 ** bugfix: [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] and [[ngx.location.capture_multi|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi]] might hang infinitely because the parent request might not be waken up right after the first time the {{{post_subrequest}}} callback was called.
-** bugfix: the &quot;light thread&quot; object created by [[ngx.thread.spawn()|http://wiki.nginx.org/HttpLuaModule#ngx.thread.spawn]] or [[ngx.on_abort()|http://wiki.nginx.org/HttpLuaModule#ngx.on_abort]] might be prematurely collected by the Lua GC because we did not correctly register its coroutine object into the Lua regsitry table. this bug may crash the Lua VM and Nginx workers under load. thanks Zhu Dejiang for reporting this issue.
+** bugfix: the &quot;light thread&quot; object created by [[ngx.thread.spawn()|http://wiki.nginx.org/HttpLuaModule#ngx.thread.spawn]] or [[ngx.on_abort()|http://wiki.nginx.org/HttpLuaModule#ngx.on_abort]] might be prematurely collected by the Lua GC because we did not correctly register its coroutine object into the Lua registry table. this bug may crash the Lua VM and Nginx workers under load. thanks Zhu Dejiang for reporting this issue.
 ** bugfix: [[ngx.thread.wait()|http://wiki.nginx.org/HttpLuaModule#ngx.thread.wait]] might hang infinitely when more than 4 user &quot;light threads&quot; are created in the same request handler due to the incorrect use of {{{ngx_array_t}}} for {{{ngx_list_t}}}. thanks Junwei Shi for reporting this issue.
 ** bugfix: when a user coroutine or user &quot;light thread&quot; dies with an error, our Lua backtrace dumper written in C may access one of its dead parent threads (if any) which could lead to segmentation faults.
 ** bugfix: [[ngx.exit(N)|http://wiki.nginx.org/HttpLuaModule#ngx.exit]] incorrectly threw out Lua exceptions when {{{N}}} was 408, 499, or 444 and the response header was already sent. thanks Kindy Lin for reporting this issue.
@@ -2030,7 +2036,7 @@ See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 ** docs: eliminated the use of {{{package.seeall}}} in code samples and also explicitly discouraged the use of it.
 ** docs: documented the special case that client closes the connection before [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] finishes reading the whole body.
 * upgraded HeadersMoreNginxModule to 0.19.
-**  bugfix: [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] would result in memory invalid reads when removing the 21st, 41st, 61st (and etc) request headers. thanks Umesh Sirsiwal for reporting this issue.
+**  bugfix: [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] would result in memory invalid reads when removing the 21st, 41st, 61st (and etc.) request headers. thanks Umesh Sirsiwal for reporting this issue.
 ** docs: fixed an issue in the sample code that tried to clear {{{Transfer-Encoding}}} which cannot actually be cleared. thanks koukou73gr.
 * upgraded LuaRestyStringLibrary to 0.08.
 ** bugfix: the {{{new()}}} method in the {{{resty.aes}}} module might use a random key when the {{{method}}} option is omitted in the {{{hash}}} table argument. thanks wsser for the patch.
@@ -2333,14 +2339,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201212080805" tags="Resources" changecount="221">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201212111942" tags="Resources" changecount="222">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.2.4.11.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.11.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 8 December 2012
+* [[ngx_openresty-1.2.4.13.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.13.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 11 December 2012
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.3.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.8.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 8 October 2012
