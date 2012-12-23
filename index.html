@@ -2003,7 +2003,7 @@ The following components are bundled:
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
 </div>
-<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201212232215" changecount="96">
+<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201212232223" changecount="99">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.4.14 - 23 December 2012
 * upgraded LuaNginxModule to 0.7.9.
@@ -2015,6 +2015,39 @@ See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 ** bugfix: unexpected runtime exceptions would be thrown when {{{resty.upload}}} met a in-part header field line or a terminating boundary line that was too long.
 ** bugfix: {{{resty.upload}}} could not parse {{{Content-Type}}} request header values like {{{boundary=&quot;simple boundary&quot;}}}, that is, with double quotes around the boundary value.
 ** optimize: marked internal auxiliary functions as Lua {{{local}}} functions.
+The following components are bundled:
+* ~LuaJIT-2.0.0
+* array-var-nginx-module-0.03rc1
+* auth-request-nginx-module-0.2
+* drizzle-nginx-module-0.1.4
+* echo-nginx-module-0.41
+* encrypted-session-nginx-module-0.02
+* form-input-nginx-module-0.07rc5
+* headers-more-nginx-module-0.19
+* iconv-nginx-module-0.10rc7
+* lua-5.1.5
+* lua-cjson-1.0.3
+* lua-rds-parser-0.05
+* lua-redis-parser-0.10
+* lua-resty-dns-0.09
+* lua-resty-memcached-0.10
+* lua-resty-mysql-0.12
+* lua-resty-redis-0.15
+* lua-resty-string-0.08
+* lua-resty-upload-0.05
+* memc-nginx-module-0.13rc3
+* nginx-1.2.4
+* ngx_coolkit-0.2rc1
+* ngx_devel_kit-0.2.17
+* ngx_lua-0.7.9
+* ngx_postgres-1.0rc2
+* rds-csv-nginx-module-0.05rc2
+* rds-json-nginx-module-0.12rc10
+* redis-nginx-module-0.3.6
+* redis2-nginx-module-0.09
+* set-misc-nginx-module-0.22rc8
+* srcache-nginx-module-0.16
+* xss-nginx-module-0.03rc9
 ! Devel Release 1.2.4.13 - 11 December 2012
 * upgraded LuaNginxModule to 0.7.8.
 ** bugfix: [[ngx.req.set_body_file()|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_file]] might lead to memory issues because it directly used the storage of Lua strings allocated by the Lua GC (we should have allocated a new memory block on the Nginx side and copy the string data over).
