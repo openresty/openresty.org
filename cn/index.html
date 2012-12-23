@@ -1731,8 +1731,18 @@ The following components are bundled:
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
 </div>
-<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210142036" modified="201212111954" changecount="8">
+<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210142036" modified="201212232219" changecount="9">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.4.14 - 23 December 2012
+* upgraded LuaNginxModule to 0.7.9.
+** bugfix: assignment to [[ngx.status|http://wiki.nginx.org/HttpLuaModule#ngx.status]] would always be overridden by the later [[ngx.exit()|http://wiki.nginx.org/HttpLuaModule#ngx.exit]] calls for HTTP 1.0 requests if [[lua_http10_buffering|http://wiki.nginx.org/HttpLuaModule#lua_http10_buffering]] is on (the default setting). thanks chenshu for reporting this issue.
+** bugfix: there was a typo in the error message when accessing an Nginx variable that has not been defined.
+** docs: documented the request body automatic inheritance behaviour in [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]].
+** docs: fixed incorrect dates shown in the code samples for [[ngx.http_time|http://wiki.nginx.org/HttpLuaModule#ngx.http_time]] and [[ngx.parse_http_time|http://wiki.nginx.org/HttpLuaModule#ngx.parse_http_time]]. thanks Gosuke Miyashita for the patch.
+* upgraded LuaRestyUploadLibrary to 0.05.
+** bugfix: unexpected runtime exceptions would be thrown when {{{resty.upload}}} met a in-part header field line or a terminating boundary line that was too long.
+** bugfix: {{{resty.upload}}} could not parse {{{Content-Type}}} request header values like {{{boundary=&quot;simple boundary&quot;}}}, that is, with double quotes around the boundary value.
+** optimize: marked internal auxiliary functions as Lua {{{local}}} functions.
 ! Devel Release 1.2.4.13 - 11 December 2012
 * upgraded LuaNginxModule to 0.7.8.
 ** bugfix: [[ngx.req.set_body_file()|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_file]] might lead to memory issues because it directly used the storage of Lua strings allocated by the Lua GC (we should have allocated a new memory block on the Nginx side and copy the string data over).
@@ -2046,7 +2056,7 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201212111954" tags="Resources" changecount="145">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201212232218" tags="Resources" changecount="146">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 开发版
@@ -2054,9 +2064,10 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 * [[ngx_openresty-1.2.4.13.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.13.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 2012年12月8日
 !! 稳定版
 提供给比较保守的用户。
-* [[ngx_openresty-1.2.3.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.8.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 2012年10月8日
+* [[ngx_openresty-1.2.4.14.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.14.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 2012年12月23日
 !! 历史遗留版
 有的时候我们可能会需要较老的版本：
+* [[ngx_openresty-1.2.3.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.8.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 2012年10月8日
 * [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
 * [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
 * [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
@@ -2064,16 +2075,7 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 * [[ngx_openresty-1.0.9.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 16 November 2011
 * [[ngx_openresty-1.0.8.26.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.26.tar.gz]] 2.5MB [[Changes|ChangeLog1000008]] - 3 November 2011
 * [[ngx_openresty-1.0.6.22.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.22.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 7 October 2011
-* [[ngx_openresty-1.0.6.12.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.12.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 21 September 2011
-* [[ngx_openresty-1.0.5.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.5.1.tar.gz]] 2.4MB [[Changes|ChangeLog1000005]] - 4 September 2011
-* [[ngx_openresty-1.0.4.2.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.2.tar.gz]] 2.2MB [[Changes|ChangeLog1000004]] - 9 August 2011
-* [[ngx_openresty-1.0.4.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.1.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 30 July 2011
-* [[ngx_openresty-1.0.4.0.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.4.0.tar.gz]] 2.3MB [[Changes|ChangeLog1000004]] - 12 July 2011
-* [[ngx_openresty-0.8.54.9.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.9.tar.gz]] 2.2MB [[Changes|ChangeLog8054]] - 8 July 2011
-* [[ngx_openresty-0.8.54.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.8.tar.gz]] 2.2MB [[Changes|ChangeLog8054]] - 1 July 2011
-* [[ngx_openresty-0.8.54.7.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.7.tar.gz]] 2.7MB [[Changes|ChangeLog8054]] - 27 June 2011
-* [[ngx_openresty-0.8.54.6.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.6.tar.gz]] 2.7MB [[Changes|ChangeLog8054]]
-* [[ngx_openresty-0.8.54.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-0.8.54.5.tar.gz]] 2.7MB [[Changes|ChangeLog8054]]
+
 安装介绍参考: [[安装|Installation]]
 </pre>
 </div>
