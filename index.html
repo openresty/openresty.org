@@ -2003,7 +2003,7 @@ The following components are bundled:
 See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 </pre>
 </div>
-<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201212232223" changecount="99">
+<div title="ChangeLog1002004" creator="YichunZhang" modifier="YichunZhang" created="201210141913" modified="201212232250" changecount="100">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.4.14 - 23 December 2012
 * upgraded LuaNginxModule to 0.7.9.
@@ -2012,7 +2012,7 @@ See ChangeLog1002001 for change log for OpenResty 1.2.1.x.
 ** docs: documented the request body automatic inheritance behaviour in [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]].
 ** docs: fixed incorrect dates shown in the code samples for [[ngx.http_time|http://wiki.nginx.org/HttpLuaModule#ngx.http_time]] and [[ngx.parse_http_time|http://wiki.nginx.org/HttpLuaModule#ngx.parse_http_time]]. thanks Gosuke Miyashita for the patch.
 * upgraded LuaRestyUploadLibrary to 0.05.
-** bugfix: unexpected runtime exceptions would be thrown when {{{resty.upload}}} met a in-part header field line or a terminating boundary line that was too long.
+** bugfix: unexpected runtime exceptions would be thrown when {{{resty.upload}}} met a in-part header field line or a terminating boundary line that was too long. this bug had appeared in LuaRestyUploadLibrary 0.04 and OpenResty 1.2.4.7.
 ** bugfix: {{{resty.upload}}} could not parse {{{Content-Type}}} request header values like {{{boundary=&quot;simple boundary&quot;}}}, that is, with double quotes around the boundary value.
 ** optimize: marked internal auxiliary functions as Lua {{{local}}} functions.
 The following components are bundled:
