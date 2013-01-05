@@ -1869,6 +1869,27 @@ The following components are bundled:
 
 See ChangeLog1002003 for change log for OpenResty 1.2.3.x.</pre>
 </div>
+<div title="ChangeLog1002006" creator="YichunZhang" modifier="YichunZhang" created="201301050732" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.6.1 - 4 January 2013
+* upgraded the Nginx core to 1.2.6.
+** see http://nginx.org/en/CHANGES-1.2 for changes.
+* upgraded LuaNginxModule to 0.7.13.
+** bugfix: [[ngx.decode_args()|http://wiki.nginx.org/HttpLuaModule#ngx.decode_args]] might modify (read-only) Lua strings in-place, which could lead to bad Lua string values. thanks Xu Jian for the report and Kindy Lin for the patch.
+** bugfix: using a key with underscores in [[ngx.header.KEY|http://wiki.nginx.org/HttpLuaModule#ngx.header.HEADER]] resulted in Lua string storage corruption. thanks rkearsley for reporting this issue.
+** bugfix: accessing [[ngx.var.VARIABLE|http://wiki.nginx.org/HttpLuaModule#ngx.var.VARIABLE]] allocated temporary memory buffers in the request memory pool, which could lead to unnecessarily large memory footprint. now it allocates such buffers via Lua GC.
+** feature: automatically detect LuaJIT 2.0 on ~FreeBSD by default. thanks rkearsley for the patch.
+** docs: explained why {{{local foo = require &quot;foo&quot;}}} is required for loading a Lua module. thanks rkearsley for asking.
+** docs: fixed a typo in the code sample for [[tcpsock:receiveuntil()|http://wiki.nginx.org/HttpLuaModule#tcpsock:receiveuntil]]. thanks Yecheng Fu for the patch.
+** docs: fixed a typo in the Lua code sample for [[ngx.re.gmatch|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]] (we forgot to add {{{do}}} there). thanks Guo Yin for reporting this issue.
+* upgraded LuaRestyUploadLibrary to 0.06.
+** optimize: use the pure lower-case form of the key {{{content-type}}} to index the headers table returned by [[ngx.req.get_headers()|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers]] so as to avoid the overhead of calling the {{{__index}}} metamethod.
+* upgraded SrcacheNginxModule to 0.17.
+** bugfix: [[srcache_store|http://wiki.nginx.org/HttpSRCacheModule#srcache_store]] would emit the misleading error message &quot;srcache_store: skipped because response body truncated: N &gt; 0&quot; for HEAD requests (because a HEAD request's response never carries a body). It should just skip them silently. thanks Yang Jin for reporting this issue.
+* bugfix: when relative paths are used in {{{--with-zlib=DIR}}}, {{{--with-libatomic=DIR}}}, {{{--with-md5=DIR}}}, and {{{--with-sha1=DIR}}}, the build system of Nginx could not find {{{DIR}}} at all. thanks ~LazyZhu for reporting this issue.
+
+See ChangeLog1002004 for change log for OpenResty 1.2.4.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -1960,8 +1981,9 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201210172306" changecount="1">
+<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201210172306" modified="201301050731" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Release 1.2.6.x|ChangeLog1002006]]
 * [[Release 1.2.4.x|ChangeLog1002004]]
 * [[Release 1.2.3.x|ChangeLog1002003]]
 * [[Release 1.2.1.x|ChangeLog1002001]]
@@ -2089,12 +2111,12 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201212232218" tags="Resources" changecount="146">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201301050733" tags="Resources" changecount="147">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 开发版
 提供给开发者和比较勇敢的用户，包含了最新的问题修复和特性。开发版的质量也是按生产级别来保证的。
-* [[ngx_openresty-1.2.4.13.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.13.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 2012年12月8日
+* [[ngx_openresty-1.2.6.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.6.1.tar.gz]] 2.9MB [[Changes|ChangeLog1002006]] - 2013年1月4日
 !! 稳定版
 提供给比较保守的用户。
 * [[ngx_openresty-1.2.4.14.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.14.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 2012年12月23日
