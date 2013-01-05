@@ -1869,15 +1869,15 @@ The following components are bundled:
 
 See ChangeLog1002003 for change log for OpenResty 1.2.3.x.</pre>
 </div>
-<div title="ChangeLog1002006" creator="YichunZhang" modifier="YichunZhang" created="201301050732" changecount="1">
+<div title="ChangeLog1002006" creator="YichunZhang" modifier="YichunZhang" created="201301050732" modified="201301050745" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Devel Release 1.2.6.1 - 4 January 2013
 * upgraded the Nginx core to 1.2.6.
 ** see http://nginx.org/en/CHANGES-1.2 for changes.
 * upgraded LuaNginxModule to 0.7.13.
-** bugfix: [[ngx.decode_args()|http://wiki.nginx.org/HttpLuaModule#ngx.decode_args]] might modify (read-only) Lua strings in-place, which could lead to bad Lua string values. thanks Xu Jian for the report and Kindy Lin for the patch.
+** bugfix: [[ngx.decode_args()|http://wiki.nginx.org/HttpLuaModule#ngx.decode_args]] might result in Lua string storage corruption. thanks Xu Jian for the report and Kindy Lin for the patch.
 ** bugfix: using a key with underscores in [[ngx.header.KEY|http://wiki.nginx.org/HttpLuaModule#ngx.header.HEADER]] resulted in Lua string storage corruption. thanks rkearsley for reporting this issue.
-** bugfix: accessing [[ngx.var.VARIABLE|http://wiki.nginx.org/HttpLuaModule#ngx.var.VARIABLE]] allocated temporary memory buffers in the request memory pool, which could lead to unnecessarily large memory footprint. now it allocates such buffers via Lua GC.
+** bugfix: accessing [[ngx.var.VARIABLE|http://wiki.nginx.org/HttpLuaModule#ngx.var.VARIABLE]] allocated temporary memory buffers in the request memory pool, which could lead to unnecessarily large memory footprint; now it allocates such buffers via Lua GC.
 ** feature: automatically detect LuaJIT 2.0 on ~FreeBSD by default. thanks rkearsley for the patch.
 ** docs: explained why {{{local foo = require &quot;foo&quot;}}} is required for loading a Lua module. thanks rkearsley for asking.
 ** docs: fixed a typo in the code sample for [[tcpsock:receiveuntil()|http://wiki.nginx.org/HttpLuaModule#tcpsock:receiveuntil]]. thanks Yecheng Fu for the patch.
@@ -1885,8 +1885,8 @@ See ChangeLog1002003 for change log for OpenResty 1.2.3.x.</pre>
 * upgraded LuaRestyUploadLibrary to 0.06.
 ** optimize: use the pure lower-case form of the key {{{content-type}}} to index the headers table returned by [[ngx.req.get_headers()|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers]] so as to avoid the overhead of calling the {{{__index}}} metamethod.
 * upgraded SrcacheNginxModule to 0.17.
-** bugfix: [[srcache_store|http://wiki.nginx.org/HttpSRCacheModule#srcache_store]] would emit the misleading error message &quot;srcache_store: skipped because response body truncated: N &gt; 0&quot; for HEAD requests (because a HEAD request's response never carries a body). It should just skip them silently. thanks Yang Jin for reporting this issue.
-* bugfix: when relative paths are used in {{{--with-zlib=DIR}}}, {{{--with-libatomic=DIR}}}, {{{--with-md5=DIR}}}, and {{{--with-sha1=DIR}}}, the build system of Nginx could not find {{{DIR}}} at all. thanks ~LazyZhu for reporting this issue.
+** bugfix: [[srcache_store|http://wiki.nginx.org/HttpSRCacheModule#srcache_store]] would emit the misleading error message &quot;srcache_store: skipped because response body truncated: N &gt; 0&quot; for HEAD requests (because a HEAD request's response never carries a body); now it just skips such responses silently. thanks Yang Jin for reporting this issue.
+* bugfix: when relative paths were used in {{{--with-zlib=DIR}}}, {{{--with-libatomic=DIR}}}, {{{--with-md5=DIR}}}, and {{{--with-sha1=DIR}}}, the build system of Nginx could not find {{{DIR}}} at all. thanks ~LazyZhu for reporting this issue.
 
 See ChangeLog1002004 for change log for OpenResty 1.2.4.x.</pre>
 </div>
