@@ -2141,8 +2141,40 @@ The following components are bundled:
 
 See ChangeLog1002003 for change log for OpenResty 1.2.3.x.</pre>
 </div>
-<div title="ChangeLog1002006" creator="YichunZhang" modifier="YichunZhang" created="201301050704" modified="201301050744" changecount="28">
+<div title="ChangeLog1002006" creator="YichunZhang" modifier="YichunZhang" created="201301050704" modified="201302040642" changecount="57">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.6.3 - 3 February 2013
+* upgraded LuaNginxModule to 0.7.14.
+** feature: implemented named subpattern support in [[ngx.re.match|http://wiki.nginx.org/HttpLuaModule#ngx.re.match]], [[ngx.re.gmatch|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]], [[ngx.re.sub|http://wiki.nginx.org/HttpLuaModule#ngx.re.sub]], and [[ngx.re.gsub|http://wiki.nginx.org/HttpLuaModule#ngx.re.gsub]]; also added new regex option {{{D}}} to allow duplicate named subpattern names. thanks Ray Bejjani for the patch.
+** feature: implemented the {{{J}}} regex option for the PCRE Javascript compatible mode in the [[ngx.re API|http://wiki.nginx.org/HttpLuaModule#ngx.re.match]]. thanks lhmwzy for requesting this.
+** feature: setting [[ngx.header.HEADER|http://wiki.nginx.org/HttpLuaModule#ngx.header.HEADER]] after sending out the response headers now only produced an error message in the Nginx error logs and does not throw out a Lua exception. this should be handy for Lua development. thanks Matthieu Tourne for requesting this.
+** feature: automatic Lua 5.1 interpreter detection on ~OpenBSD 5.2. thanks Ilya Shipitsin for the patch.
+** refactor: when the Nginx core fails to send the &quot;100 Continue&quot; response in case of the &quot;Expect: 100-continue&quot; request header (or just running out of memory), [[ngx.req.read_body()|http://wiki.nginx.org/HttpLuaModule#ngx.req.read_body]] will no longer throw out a &quot;failed to read request body&quot; Lua error but will just terminate the current request and returns the 500 error page immediately, just as what the Nginx core currently does in this case.
+** bugfix: because of the recent API behaviour changes in nginx 1.2.6+ and 1.3.9+, the &quot;http request count is zero&quot; alert might happen when [[ngx.req.read_body()|http://wiki.nginx.org/HttpLuaModule#ngx.req.read_body]] was called to read the request body and Nginx failed to send out the &quot;100 Continue&quot; response (like client connection early abortion and etc). thanks stonehuzhan for reporting this issue.
+** bugfix: setting the &quot;eof&quot; argument (i.e., {{{ngx.arg[2]}}}) in [[body_filter_by_lua*|http://wiki.nginx.org/HttpLuaModule#body_filter_by_lua]] for a subrequest could truncate the main request's response data stream.
+** bugfix: in [[body_filter_by_lua*|http://wiki.nginx.org/HttpLuaModule#body_filter_by_lua]], the &quot;eof&quot; argument (i.e., {{{ngx.arg[2]}}}) was never set in Nginx subrequests.
+** bugfix: for nginx 1.3.9+ compatibility, we return an error while using [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] to read the chunked request body (for now), because chunked support in the downstream cosocket API is still a TODO.
+** bugfix: for nginx 1.3.9+ compatibility, [[rewrite_by_lua*|http://wiki.nginx.org/HttpLuaModule#rewrite_by_lua]] or [[access_by_lua*|http://wiki.nginx.org/HttpLuaModule#access_by_lua]] handlers might hang if the request body was read there, because the Nginx core now overwrites {{{r-&gt;write_event_handler}}} to {{{ngx_http_request_empty_handler}}} in its {{{ngx_http_read_client_request_body}}} API.
+** bugfix: for nginx 1.3.9+ compatibility, we now throw an error in [[ngx.req.init_body()|http://wiki.nginx.org/HttpLuaModule#ngx.req.init_body]], [[ngx.req.set_body_data()|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_data]], and [[ngx.req.set_body_file()|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_file]] when calling them without calling [[ngx.req.read_body()|http://wiki.nginx.org/HttpLuaModule#ngx.req.read_body]] or after calling [[ngx.req.discard_body()|http://wiki.nginx.org/HttpLuaModule#ngx.req.discard_body]].
+** bugfix: a compilation error would happen when building with an Nginx core patched by the SPDY patch 58_1.3.11 because the patch had removed a request field from the Nginx core. thanks Chris Lea for reporting this.
+** bugfix: we did not get the request reference counter (i.e., {{{r-&gt;main-&gt;count}}}) right when [[lua_need_request_body|http://wiki.nginx.org/HttpLuaModule#lua_need_request_body]] was turned on and nginx versions older than 1.2.6 or 1.2.9 were used.
+** optimize: we no longer traverse the captured body chain everytime we append a new link to it in [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] and [[ngx.location.capture_multi|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi]].
+** docs: documented the [[ngx.quote_sql_str|http://wiki.nginx.org/HttpLuaModule#ngx.quote_sql_str]] API.
+* upgraded SrcacheNginxModule to 0.18.
+** bugfix: we might serve a truncated [[srcache_fetch|http://wiki.nginx.org/HttpSRCacheModule#srcache_fetch]] subrequest's response body as the cached response.
+* upgraded EchoNginxModule to 0.42.
+** feature: the [[echo_after_body|http://wiki.nginx.org/HttpEchoModule#echo_after_body]] directive is now enabled in Nginx subrequests (again).
+** bugfix: we did not set the &quot;last_in_chain&quot; buffer flag when [[echo_after_body|http://wiki.nginx.org/HttpEchoModule#echo_after_body]] was used in subrequests.
+* upgraded FormInputNginxModule to 0.07.
+** bugfix: Nginx might hang when it failed to send the &quot;100 Continue&quot; response for Nginx versions older than 1.2.6 (and those older than 1.3.9 in the 1.3.x series).
+* upgraded NginxDevelKit ot 0.2.18.
+** bugfix: various fixes for C89 compliance. also stripped some line-trailing spaces.
+** bugfix: guard macros were missing in the {{{ndk_set_var.h}}} header file.
+** bugfix: the {{{ndk_string}}} submodule failed to compile with gcc 4.6. thanks Jon Kolb for the patch.
+** bugfix: the {{{ndk_set_var}}} example did not use the new way in its {{{config}}} file. thanks Amos Wenger for the patch.
+** docs: fixes in README to reflect recent changes. thanks Amos Wenger for the patch.
+* applied Ruslan Ermilov's [[resolver_wev_handler_segfault_with_poll patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.6-resolver_wev_handler_segfault_with_poll.patch]] to the Nginx core bundled. see [[the related nginx-devel thread|http://mailman.nginx.org/pipermail/nginx-devel/2013-January/003275.html]] for details.
+* excluded the [[allow_request_body_updating patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.5-allow_request_body_updating.patch]] from the Nginx core bundled.
 ! Devel Release 1.2.6.1 - 4 January 2013
 * upgraded the Nginx core to 1.2.6.
 ** see http://nginx.org/en/CHANGES-1.2 for changes.
@@ -2404,14 +2436,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201301050703" tags="Resources" changecount="226">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201302040408" tags="Resources" changecount="227">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.2.6.1.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.6.1.tar.gz]] 2.9MB [[Changes|ChangeLog1002006]] - 4 January 2013
+* [[ngx_openresty-1.2.6.3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.6.3.tar.gz]] 2.9MB [[Changes|ChangeLog1002006]] - 3 February 2013
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.4.14.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.14.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 23 December 2012
