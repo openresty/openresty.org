@@ -3550,7 +3550,7 @@ Documentation: http://wiki.nginx.org/HttpUpstreamKeepaliveModule
 
 Project page: http://mdounin.ru/hg/ngx_http_upstream_keepalive/</pre>
 </div>
-<div title="UsingLuaRocks" creator="YichunZhang" modifier="YichunZhang" created="201108070232" modified="201108080058" changecount="33">
+<div title="UsingLuaRocks" creator="YichunZhang" modifier="ChenYufei" created="201108070232" modified="201302081044" changecount="34">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This sample demonstrates usage of [[LuaRocks|http://www.luarocks.org/]] with OpenResty. It's been tested on Linux and Mac OS X, with the standard Lua interpreter or with LuaJIT.
@@ -3562,12 +3562,15 @@ We assume that you have installed OpenResty into the default location, i.e., {{{
 ! Install ~LuaRocks
 First of all, let's install ~LuaRocks:
 
-Download the latest ~LuaRocks tarball from [[http://www.luarocks.org/en/Download]]. As of this writing, the latest version is {{{2.0.4.1}}}, and we'll use this version throughout this sample.
+Download the latest ~LuaRocks tarball from [[http://www.luarocks.org/en/Download]]. As of this writing, the latest version is {{{2.0.12}}}, and we'll use this version throughout this sample.
 {{{
-wget http://luarocks.org/releases/luarocks-2.0.4.1.tar.gz
-tar -xzvf luarocks-2.0.4.1.tar.gz
-cd luarocks-2.0.4.1/
-./configure
+wget http://luarocks.org/releases/luarocks-2.0.12.tar.gz
+tar -xzvf luarocks-2.0.12.tar.gz
+cd luarocks-2.0.12/
+./configure --prefix=/usr/local/openresty/luajit \
+    --with-lua=/usr/local/openresty/luajit/ \
+    --lua-suffix=jit \
+    --with-lua-include=/usr/local/openresty/luajit/include/luajit-2.0
 make
 sudo make install
 }}}
