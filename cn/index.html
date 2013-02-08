@@ -1869,8 +1869,14 @@ The following components are bundled:
 
 See ChangeLog1002003 for change log for OpenResty 1.2.3.x.</pre>
 </div>
-<div title="ChangeLog1002006" creator="YichunZhang" modifier="YichunZhang" created="201301050732" modified="201302040715" changecount="3">
+<div title="ChangeLog1002006" creator="YichunZhang" modifier="YichunZhang" created="201301050732" modified="201302082039" changecount="4">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.6.5 - 8 February 2013
+* upgraded SrcacheNginxModule to 0.19.
+** bugfix: HEAD and conditional GET requests would still fall back to content handler execution (leading to backend accesses) even in case of a cache hit. thanks Wang Lichao for reporting this issue.
+** style: massive coding style fixes.
+* upgraded LuaRestyUploadLibrary to 0.07.
+** bugfix: the boundary string could not be parsed if no space was present before the {{{boundary=xxx}}} parameter in the {{{Content-Type}}} request header. thanks chenshu for reporting this issue.
 ! Devel Release 1.2.6.3 - 3 February 2013
 * upgraded LuaNginxModule to 0.7.14.
 ** feature: implemented named subpattern support in [[ngx.re.match|http://wiki.nginx.org/HttpLuaModule#ngx.re.match]], [[ngx.re.gmatch|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]], [[ngx.re.sub|http://wiki.nginx.org/HttpLuaModule#ngx.re.sub]], and [[ngx.re.gsub|http://wiki.nginx.org/HttpLuaModule#ngx.re.gsub]]; also added new regex option {{{D}}} to allow duplicate named subpattern names. thanks Ray Bejjani for the patch.
@@ -2143,12 +2149,12 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201302040715" tags="Resources" changecount="148">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201302082039" tags="Resources" changecount="149">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 开发版
 提供给开发者和比较勇敢的用户，包含了最新的问题修复和特性。开发版的质量也是按生产级别来保证的。
-* [[ngx_openresty-1.2.6.3.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.6.3.tar.gz]] 2.9MB [[Changes|ChangeLog1002006]] - 2013年2月3日
+* [[ngx_openresty-1.2.6.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.6.5.tar.gz]] 2.9MB [[Changes|ChangeLog1002006]] - 2013年2月8日
 !! 稳定版
 提供给比较保守的用户。
 * [[ngx_openresty-1.2.4.14.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.14.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 2012年12月23日
