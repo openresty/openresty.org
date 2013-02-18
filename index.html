@@ -2141,8 +2141,46 @@ The following components are bundled:
 
 See ChangeLog1002003 for change log for OpenResty 1.2.3.x.</pre>
 </div>
-<div title="ChangeLog1002006" creator="YichunZhang" modifier="YichunZhang" created="201301050704" modified="201302082002" changecount="62">
+<div title="ChangeLog1002006" creator="YichunZhang" modifier="YichunZhang" created="201301050704" modified="201302180306" changecount="65">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.6.6 - 17 February 2013
+* upgraded LuaNginxModule to 0.7.15.
+** bugfix: the original Lua VM error messages might get lost in case of Lua code crashes when user coroutines were used. thanks Dirk Feytons for the report.
+** diagnose: added more info about {{{r-&gt;main-&gt;count}}} to the debugging logs.
+** style: massive coding style fixes according to the Nginx coding style.
+The following components are bundled:
+* ~LuaJIT-2.0.0
+* array-var-nginx-module-0.03rc1
+* auth-request-nginx-module-0.2
+* drizzle-nginx-module-0.1.4
+* echo-nginx-module-0.42
+* encrypted-session-nginx-module-0.02
+* form-input-nginx-module-0.07
+* headers-more-nginx-module-0.19
+* iconv-nginx-module-0.10rc7
+* lua-5.1.5
+* lua-cjson-1.0.3
+* lua-rds-parser-0.05
+* lua-redis-parser-0.10
+* lua-resty-dns-0.09
+* lua-resty-memcached-0.10
+* lua-resty-mysql-0.12
+* lua-resty-redis-0.15
+* lua-resty-string-0.08
+* lua-resty-upload-0.07
+* memc-nginx-module-0.13rc3
+* nginx-1.2.6
+* ngx_coolkit-0.2rc1
+* ngx_devel_kit-0.2.18
+* ngx_lua-0.7.15
+* ngx_postgres-1.0rc2
+* rds-csv-nginx-module-0.05rc2
+* rds-json-nginx-module-0.12rc10
+* redis-nginx-module-0.3.6
+* redis2-nginx-module-0.09
+* set-misc-nginx-module-0.22rc8
+* srcache-nginx-module-0.19
+* xss-nginx-module-0.03rc9
 ! Devel Release 1.2.6.5 - 8 February 2013
 * upgraded SrcacheNginxModule to 0.19.
 ** bugfix: HEAD and conditional GET requests would still fall back to content handler execution (leading to backend accesses) even in case of a cache hit. thanks Wang Lichao for reporting this issue.
@@ -2442,29 +2480,30 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201302081958" tags="Resources" changecount="228">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201302180335" tags="Resources" changecount="247">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.2.6.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.6.5.tar.gz]] 2.9MB [[Changes|ChangeLog1002006]] - 8 February 2013
+* [[ngx_openresty-1.2.6.5.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.6.5.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://agentzh.org/misc/nginx/ngx_openresty-1.2.6.5.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002006]] - 8 February 2013
 !! Stable release
 Stable releases are for really conservative users.
-* [[ngx_openresty-1.2.4.14.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.14.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 23 December 2012
+* [[ngx_openresty-1.2.6.6.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.6.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://agentzh.org/misc/nginx/ngx_openresty-1.2.6.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002006]] - 17 February 2013
 !! Legacy releases
 Sometimes, users may want to download old releases.
-* [[ngx_openresty-1.2.3.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.8.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 8 October 2012
-* [[ngx_openresty-1.2.1.14.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.14.tar.gz]] 2.9MB [[Changes|ChangeLog1002001]] - 14 August 2012
-* [[ngx_openresty-1.0.15.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.10.tar.gz]] 2.7MB [[Changes|ChangeLog1000015]] - 13 June 2012
-* [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
-* [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] 2.6MB [[Changes|ChangeLog1000010]] - 1 February 2012
-* [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 16 January 2012
-* [[ngx_openresty-1.0.10.24.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.24.tar.gz]] 2.5MB [[Changes|ChangeLog1000010]] - 11 December 2011
-* [[ngx_openresty-1.0.9.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz]] 2.5MB [[Changes|ChangeLog1000009]] - 16 November 2011
-* [[ngx_openresty-1.0.8.26.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.26.tar.gz]] 2.5MB [[Changes|ChangeLog1000008]] - 3 November 2011
-* [[ngx_openresty-1.0.6.22.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.22.tar.gz]] 2.4MB [[Changes|ChangeLog1000006]] - 7 October 2011
+* [[ngx_openresty-1.2.4.14.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.14.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://agentzh.org/misc/nginx/ngx_openresty-1.2.4.14.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002004]] - 23 December 2012
+* [[ngx_openresty-1.2.3.8.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.8.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://agentzh.org/misc/nginx/ngx_openresty-1.2.3.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002003]] - 8 October 2012
+* [[ngx_openresty-1.2.1.14.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.14.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://agentzh.org/misc/nginx/ngx_openresty-1.2.1.14.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002001]] - 14 August 2012
+* [[ngx_openresty-1.0.15.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.10.tar.gz]] &amp;nbsp; 2.7MB &amp;nbsp; [[PGP|http://agentzh.org/misc/nginx/ngx_openresty-1.0.15.10.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000015]] - 13 June 2012
+* [[ngx_openresty-1.0.11.28.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz]] &amp;nbsp; 2.7MB &amp;nbsp; [[PGP|http://agentzh.org/misc/nginx/ngx_openresty-1.0.11.28.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000011]] - 25 March 2012
+* [[ngx_openresty-1.0.10.48.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz]] &amp;nbsp; 2.6MB &amp;nbsp; [[PGP|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.48.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000010]] - 1 February 2012
+* [[ngx_openresty-1.0.10.44.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz]] &amp;nbsp; 2.5MB &amp;nbsp; [[PGP|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.44.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000010]] - 16 January 2012
+* [[ngx_openresty-1.0.10.24.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.24.tar.gz]] &amp;nbsp; 2.5MB &amp;nbsp; [[PGP|http://agentzh.org/misc/nginx/ngx_openresty-1.0.10.24.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000010]] - 11 December 2011
+* [[ngx_openresty-1.0.9.10.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz]] &amp;nbsp; 2.5MB &amp;nbsp; [[PGP|http://agentzh.org/misc/nginx/ngx_openresty-1.0.9.10.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000009]] - 16 November 2011
+* [[ngx_openresty-1.0.8.26.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.26.tar.gz]] &amp;nbsp; 2.5MB &amp;nbsp; [[PGP|http://agentzh.org/misc/nginx/ngx_openresty-1.0.8.26.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000008]] - 3 November 2011
+* [[ngx_openresty-1.0.6.22.tar.gz|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.22.tar.gz]] &amp;nbsp; 2.4MB &amp;nbsp; [[PGP|http://agentzh.org/misc/nginx/ngx_openresty-1.0.6.22.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000006]] - 7 October 2011
 
 See [[Installation]] for installation instructions.
 </pre>
