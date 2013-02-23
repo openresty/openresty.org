@@ -2238,6 +2238,18 @@ The following components are bundled:
 
 See ChangeLog1002004 for change log for OpenResty 1.2.4.x.</pre>
 </div>
+<div title="ChangeLog1002007" creator="YichunZhang" modifier="YichunZhang" created="201302230651" modified="201302230655" changecount="4">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.7.1 - 22 February 2013
+* upgraded the Nginx core to 1.2.7.
+** see http://nginx.org/en/CHANGES-1.2 for changes.
+* upgraded LuaJIT 2.0 to 2.0.1.
+** see http://luajit.org/changes.html for changes.
+* upgraded LuaNginxModule to 0.7.16.
+** optimize: removed the unsed {{{size}}} field and related computatins from the script engine for the {{{ngx.re}}} API.
+** optimize: saved a little memory in the script engine for the {{{ngx.re}}} API.
+See ChangeLog1002006 for change log for OpenResty 1.2.6.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -2329,8 +2341,9 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201301050705" changecount="6">
+<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201302230654" changecount="7">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Release 1.2.7.x|ChangeLog1002007]]
 * [[Release 1.2.6.x|ChangeLog1002006]]
 * [[Release 1.2.4.x|ChangeLog1002004]]
 * [[Release 1.2.3.x|ChangeLog1002003]]
@@ -2480,14 +2493,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201302180335" tags="Resources" changecount="247">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201302230649" tags="Resources" changecount="248">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.2.6.5.tar.gz|http://openresty.org/download/ngx_openresty-1.2.6.5.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.6.5.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002006]] - 8 February 2013
+* [[ngx_openresty-1.2.7.1.tar.gz|http://openresty.org/download/ngx_openresty-1.2.7.1.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.7.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 22 February 2013
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.6.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002006]] - 17 February 2013
