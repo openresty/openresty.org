@@ -2238,8 +2238,37 @@ The following components are bundled:
 
 See ChangeLog1002004 for change log for OpenResty 1.2.4.x.</pre>
 </div>
-<div title="ChangeLog1002007" creator="YichunZhang" modifier="YichunZhang" created="201302230651" modified="201302230655" changecount="4">
+<div title="ChangeLog1002007" creator="YichunZhang" modifier="YichunZhang" created="201302230651" modified="201303250632" changecount="31">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.7.3 - 24 March 2013
+* upgraded LuaNginxModule to 0.7.18.
+** feature: implemented [[ngx.req.http_version()|http://wiki.nginx.org/HttpLuaModule#ngx.req.http_version]] that returns the HTTP version number for the current request. thanks Matthieu Tourne for requesting this.
+** feature: implemented the [[ngx.req.raw_header()|http://wiki.nginx.org/HttpLuaModule#ngx.req.raw_header]] function for returning the original raw HTTP protocol header string received by Nginx. thanks Matthieu Tourne for requesting this.
+** feature: added new methods [[safe_set|http://wiki.nginx.org/HttpLuaModule#ngx.shared.DICT.safe_set]] and [[safe_add|http://wiki.nginx.org/HttpLuaModule#ngx.shared.DICT.safe_add]] to ngx.shared.DICT objects, which never override existing unexpired items but immediately return nil and a &quot;no memory&quot; string message when running out of storage. thanks Matthieu Tourne for requesting this.
+** feature: datagram Unix domain sockets created by [[ngx.socket.udp()|http://wiki.nginx.org/HttpLuaModule#ngx.socket.udp]] can now receive data from the other endpoint via &quot;autobind&quot; on Linux. thanks Dirk Feytons for the patch.
+** change: the [[ngx.re.match|http://wiki.nginx.org/HttpLuaModule#ngx.re.match]], [[ngx.re.gmatch|http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch]], [[ngx.re.sub|http://wiki.nginx.org/HttpLuaModule#ngx.re.sub]], and [[ngx.re.gsub|http://wiki.nginx.org/HttpLuaModule#ngx.re.gsub]] functions used to throw Lua exceptions aggressively for all the error conditions; now they just return an additional Lua string describing the error for almost all common errors instead of throwing exceptions, including pcre compile-time and exec-time failures. thanks Matthieu Tourne for requesting this change.
+** bugfix: use of [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] could make socket reading hang infinitely when the request did not take a request body at all (that is, when the ~Content-Length request header is missing). thanks Matthieu Tourne for reporting this issue.
+** bugfix: when a non-table value was specified for the &quot;args&quot; option in the [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] or [[ngx.location.capture_multi|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi]] call, memory invalid access might happen, which resulted in garbage data at least. thanks Siddon Tang for reporting this issue.
+** bugfix: when the Lua code using UDP/TCP cosockets + resolver was run in a subrequest, the subrequest could hang due to missing calls to {{{ngx_http_run_posted_requests}}} in the UDP/TCP cosocket resolver handler. thanks Lanshun Zhou for reporting this issue.
+** bugfix: [[ngx.socket.udp|http://wiki.nginx.org/HttpLuaModule#ngx.socket.udp]]: memory leaks or invalid memory accesses might happen when the DNS resolver failed to resolve.
+** bugfix: [[rewrite_by_lua_no_postpone|http://wiki.nginx.org/HttpLuaModule#rewrite_by_lua_no_postpone]] can only work globally and did not reject contexts like &quot;server&quot; and &quot;location&quot; configuration blocks. thanks Matthieu Tourne for reporting this issue.
+** bugfix: (large) in-file request bodies could not be inherited correctly by multiple subrequests issued by [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]]. thanks Matthieu Tourne for reporting this issue.
+** bugfix: [[ngx.req.get_headers(limit, true)|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers]] would still return header names in the pure lower-case form when the &quot;limit&quot; argument was an integer. thanks Matthieu Tourne for reporting this issue.
+** bugfix: [[ngx.re.match|http://wiki.nginx.org/HttpLuaModule#ngx.re.match]]: when the &quot;D&quot; regular expression option was specified, an empty Lua table would always be created even when the named capture was actually empty. thanks Matthieu Tourne for reporting this issue.
+** docs: made it explicit that redirecting to external domains is also supported in [[ngx.redirect()|http://wiki.nginx.org/HttpLuaModule#ngx.redirect]]. thanks Ron Gomes for asking.
+* upgraded EchoNginxModule to 0.44.
+** bugfix: [[$echo_client_request_headers|http://wiki.nginx.org/HttpEchoModule#.24echo_client_request_headers]] was evaluated to only the last part of the request header when &quot;large header buffers&quot; were used.
+** change: preserve the trailing {{{CR LF}}} at the end of the whole HTTP protocol header returned by [[$echo_client_request_headers|http://wiki.nginx.org/HttpEchoModule#.24echo_client_request_headers]].
+* upgraded Redis2NginxModule to 0.10.
+** feature: allow use of the request body data in Nginx variables for main requests by always reading the request body automatically; we used to always discard the request body just like the standard ngx_memcached module. thanks Ristona Hua for sharing this usage.
+** docs: updated the docs for the limitations on Redis pub/sub. thanks ~LazyZhu for pointing out the potential confusions.
+** docs: now we recommend LuaRestyRedisLibrary instead when being used with LuaNginxModule.
+* upgraded LuaRestyUploadLibrary to 0.08.
+** bugfix: when multiple {{{Content-Type}}} request headers were given, a Lua exception would be thrown; now we just pick up the first one.
+** docs: better error handling in the code sample. thanks wgm.china for the report.
+* feature: applied [[the variables_in_redis_pass patch|https://raw.github.com/agentzh/ngx_openresty/master/patches/ngx_http_redis-0.3.6-variables_in_redis_pass.patch]] to RedisNginxModule 0.3.6 to allow use of Nginx variables in the [[redis_pass|http://wiki.nginx.org/HttpRedisModule#redis_pass]] directive. thanks Diptamay Sanyal for requesting this feature.
+* bugfix: applied Lanshun Zhou's [[run_posted_requests_in_resolver patch|https://raw.github.com/agentzh/ngx_openresty/master/patches/nginx-1.2.7-run_posted_requests_in_resolver.patch]] to the Nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2013-March/003476.html
+* bugfix:  applied the official [[hotfix #1 patch|http://luajit.org/download/v2.0.1_hotfix1.patch]] for the bundled LuaJIT 2.0.1.
 ! Devel Release 1.2.7.1 - 22 February 2013
 * upgraded the Nginx core to 1.2.7.
 ** see http://nginx.org/en/CHANGES-1.2 for changes.
@@ -2493,14 +2522,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201302230649" tags="Resources" changecount="248">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201303250538" tags="Resources" changecount="249">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.2.7.1.tar.gz|http://openresty.org/download/ngx_openresty-1.2.7.1.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.7.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 22 February 2013
+* [[ngx_openresty-1.2.7.3.tar.gz|http://openresty.org/download/ngx_openresty-1.2.7.3.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.7.3.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 24 March 2013
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.6.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002006]] - 17 February 2013
