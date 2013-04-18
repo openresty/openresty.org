@@ -1966,8 +1966,49 @@ The following components are bundled:
 
 See ChangeLog1002004 for change log for OpenResty 1.2.4.x.</pre>
 </div>
-<div title="ChangeLog1002007" creator="YichunZhang" modifier="YichunZhang" created="201302230659" modified="201304100104" changecount="3">
+<div title="ChangeLog1002007" creator="YichunZhang" modifier="YichunZhang" created="201302230659" modified="201304180610" changecount="4">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Stable Release 1.2.7.6 - 17 April 2013
+* upgraded LuaNginxModule to 0.7.21.
+** bugfix: boolean values in an array table were rejected with the exception &quot;attempt to use boolean as query arg value&quot; while encoding a Lua (hash) table as URL arguments. thanks Calin Don for reporting this issue.
+** bugfix: [[ngx.req.raw_header()|http://wiki.nginx.org/HttpLuaModule#ngx.req.raw_header]] would return an empty string value when the default header buffer ({{{c-&gt;buffer}}}) can hold the request line but not the whole header. thanks ~KDr2 for reporting this issue.
+* upgraded EncryptedSessionNginxModule to 0.03.
+** refactor: fixed typos in the source code: replacing &quot;3des&quot; with &quot;aes&quot;; thanks Edgar Liu for reporting this issue.
+* upgraded IconvNginxModule to 0.10.
+** bugfix: failed to build on Solaris with the bogus error message &quot;ngx_devel_kit is required to build ngx_iconv; please put it before ngx_iconv&quot;.
+The following components are bundled:
+* ~LuaJIT-2.0.1 (with hotfix #1)
+* array-var-nginx-module-0.03rc1
+* auth-request-nginx-module-0.2
+* drizzle-nginx-module-0.1.5
+* echo-nginx-module-0.45
+* encrypted-session-nginx-module-0.03
+* form-input-nginx-module-0.07
+* headers-more-nginx-module-0.19
+* iconv-nginx-module-0.10
+* lua-5.1.5
+* lua-cjson-1.0.3
+* lua-rds-parser-0.05
+* lua-redis-parser-0.10
+* lua-resty-dns-0.09
+* lua-resty-memcached-0.11
+* lua-resty-mysql-0.13
+* lua-resty-redis-0.15
+* lua-resty-string-0.08
+* lua-resty-upload-0.08
+* memc-nginx-module-0.13rc3
+* nginx-1.2.7
+* ngx_coolkit-0.2rc1
+* ngx_devel_kit-0.2.18
+* ngx_lua-0.7.21
+* ngx_postgres-1.0rc2
+* rds-csv-nginx-module-0.05rc2
+* rds-json-nginx-module-0.12rc10
+* redis-nginx-module-0.3.6
+* redis2-nginx-module-0.10
+* set-misc-nginx-module-0.22rc8
+* srcache-nginx-module-0.19
+* xss-nginx-module-0.03rc9
 ! Devel Release 1.2.7.5 - 9 April 2013
 * upgraded EchoNginxModule to 0.45.
 ** bugfix: [[$echo_client_request_headers|http://wiki.nginx.org/HttpEchoModule#.24echo_client_request_headers]] would return the first part of the request body when request body was read before reading this variable.
@@ -2257,7 +2298,7 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201304100103" tags="Resources" changecount="155">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201304180609" tags="Resources" changecount="156">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 开发版
@@ -2265,9 +2306,10 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 * [[ngx_openresty-1.2.7.5.tar.gz|http://openresty.org/download/ngx_openresty-1.2.7.5.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.7.5.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 2013年4月9日
 !! 稳定版
 提供给比较保守的用户。
-* [[ngx_openresty-1.2.6.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002006]] - 2013年2月17日
+* [[ngx_openresty-1.2.7.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.7.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.7.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 2013年4月17日
 !! 历史遗留版
 有的时候我们可能会需要较老的版本：
+* [[ngx_openresty-1.2.6.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002006]] - 2013年2月17日
 * [[ngx_openresty-1.2.4.14.tar.gz|http://openresty.org/download/ngx_openresty-1.2.4.14.tar.gz]] 2.9MB [[Changes|ChangeLog1002004]] - 2012年12月23日
 * [[ngx_openresty-1.2.3.8.tar.gz|http://openresty.org/download/ngx_openresty-1.2.3.8.tar.gz]] 2.9MB [[Changes|ChangeLog1002003]] - 2012年10月8日
 * [[ngx_openresty-1.0.11.28.tar.gz|http://openresty.org/download/ngx_openresty-1.0.11.28.tar.gz]] 2.7MB [[Changes|ChangeLog1000011]] - 25 March 2012
