@@ -2348,6 +2348,35 @@ The following components are bundled:
 ** optimize: saved a little memory in the script engine for the {{{ngx.re}}} API.
 See ChangeLog1002006 for change log for OpenResty 1.2.6.x.</pre>
 </div>
+<div title="ChangeLog1002008" creator="YichunZhang" modifier="YichunZhang" created="201304262302" modified="201304262334" changecount="29">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.8.1 - 26 April 2013
+* upgraded the Nginx core to 1.2.8.
+** see http://nginx.org/en/CHANGES-1.2 for changes.
+* upgraded LuaNginxModule to 0.8.1.
+** feature: implemented the new timer API: the [[ngx.timer.at|http://wiki.nginx.org/HttpLuaModule#ngx.timer.at]] Lua function and two configure directives [[lua_max_pending_timers|http://wiki.nginx.org/HttpLuaModule#lua_max_pending_timers]] and [[lua_max_running_timers|http://wiki.nginx.org/HttpLuaModule#lua_max_running_timers]]. thanks Matthieu Tourne for requesting this feature.
+** feature: added the &quot;U&quot; regex option to the [[ngx.re API|http://wiki.nginx.org/HttpLuaModule#ngx.re.match]] to mean enabling the ~UTF-8 matching mode but disabling ~UTF-8 validity check on the subject strings. thanks Lance Li for the patch.
+** bugfix: setting [[ngx.header.etag|http://wiki.nginx.org/HttpLuaModule#ngx.header.HEADER]] could not affect other things reading the {{{ETag}}} response header (like the [[etag|http://nginx.org/en/docs/http/ngx_http_core_module.html#etag]] directive introduced in Nginx 1.3.3+). thanks Brian Akins for the patch.
+** bugfix: when [[lua_http10_buffering|http://wiki.nginx.org/HttpLuaModule#lua_http10_buffering]] is on, for HTTP 1.0 requests, [[ngx.exit|http://wiki.nginx.org/HttpLuaModule#ngx.exit]](N) would always trigger the Nginx's own error pages when N &gt;= 300. thanks Matthieu Tourne for reporting this issue.
+** bugfix: modifying the {{{Cookie}}} request headers via [[ngx.req.set_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header]] or [[ngx.req.clear_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] did not update the Nginx internal data structure, {{{r-&gt;headers_in.cookies}}}, at the same time, which might cause issues when reading variables [[$cookie_COOKIE|http://wiki.nginx.org/HttpCoreModule#.24cookie_COOKIE]], for example. thanks Matthieu Tourne for the patch.
+** bugfix: modifying the {{{Via}}} request header with [[ngx.req.set_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header]] or [[ngx.req.clear_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] did not update the special field {{{r-&gt;headers_in.via}}} when the [[ngx_gzip|http://wiki.nginx.org/HttpGzipModule]] module was enabled.
+** bugfix: modifying the {{{X-Real-IP}}} request header with [[ngx.req.set_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header]] or [[ngx.req.clear_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] did not update the special field {{{r-&gt;headers_in.x_real_ip}}} when the [[ngx_realip|http://wiki.nginx.org/HttpRealipModule]] module was enabled. thanks Matthieu Tourne for the patch.
+** bugfix: modifying the {{{Connection}}} request header via [[ngx.req.set_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header]] or [[ngx.req.clear_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] did not update the special internal field in the Nginx core, {{{r-&gt;headers_in.connection_type}}}. Thanks Matthieu Tourne for the patch.
+** bugfix: modifying the {{{User-Agent}}} request header via [[ngx.req.set_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header]] or [[ngx.req.clear_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] did not update those special internal flags in the Nginx core, like {{{r-&gt;headers_in.msie6}}} and {{{r-&gt;headers_in.opera}}}. Thanks Matthieu Tourne for the patch.
+** bugfix: fixed several places in the header API where we should return {{{NGX_ERROR}}} instead of {{{NGX_HTTP_INTERNAL_SERVER_ERROR}}}.
+* upgraded SrcacheNginxModule to 0.20.
+** bugfix: use of C global variables at the configuration phase would cause troubles when {{{HUP}}} reload failed.
+* upgraded HeadersMoreNginxModule to 0.20.
+** bugfix: modifying the {{{Cookie}}} request headers via [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] or [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] did not update the Nginx internal data structure, {{{r-&gt;headers_in.cookies}}}, at the same time, which might cause issues when reading variable [[$cookie_COOKIE|http://wiki.nginx.org/HttpCoreModule#.24cookie_COOKIE]], for example.
+** bugfix: modifying the {{{Via}}} request header via [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] or [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] did not update the special internal field in the Nginx core, {{{r-&gt;headers_in.via}}}, when the [[ngx_gzip|http://wiki.nginx.org/HttpGzipModule]] module was enabled.
+** bugfix: modifying the {{{X-Real-IP}}} request header via [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] or [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] did not update the special internal field in the Nginx core, {{{r-&gt;headers_in.x_real_ip}}}, when the [[ngx_realip|http://wiki.nginx.org/HttpRealipModule]] module was enabled.
+** bugfix: modifying the {{{Connection}}} request header via [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] or [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] did not update the special internal field in the Nginx core, {{{r-&gt;headers_in.connection_type}}}.
+** bugfix: modifying the {{{User-Agent}}} request header via [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] or [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] did not update those special internal flags in the Nginx core, like {{{r-&gt;headers_in.msie6}}} and {{{r-&gt;headers_in.opera}}}.
+** bugfix: fixed places where we should return {{{NGX_ERROR}}} instead of {{{NGX_HTTP_INTERNAL_SERVER_ERROR}}}.
+* feature: always enable debuginfo in the bundled LuaJIT 2.0.1 build and Lua 5.1.5 build to support [[Nginx Systemtap Toolkit|https://github.com/agentzh/nginx-systemtap-toolkit]].
+* bugfix: no longer pass {{{-O0}}} to gcc when the {{{--with-debug}}} configure option is specified because gcc often generates bogus DWARF info when optimization is turned off.
+See ChangeLog1002007 for change log for OpenResty 1.2.7.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -2591,14 +2620,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201304180549" tags="Resources" changecount="251">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201304262300" tags="Resources" changecount="252">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.2.7.5.tar.gz|http://openresty.org/download/ngx_openresty-1.2.7.5.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.7.5.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 9 April 2013
+* [[ngx_openresty-1.2.8.1.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.1.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 26 April 2013
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.7.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.7.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.7.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 17 April 2013
