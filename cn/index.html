@@ -2078,8 +2078,25 @@ The following components are bundled:
 ** optimize: saved a little memory in the script engine for the {{{ngx.re}}} API.
 See ChangeLog1002006 for change log for OpenResty 1.2.6.x.</pre>
 </div>
-<div title="ChangeLog1002008" creator="YichunZhang" modifier="YichunZhang" created="201304270137" modified="201305131939" changecount="2">
+<div title="ChangeLog1002008" creator="YichunZhang" modifier="YichunZhang" created="201304270137" modified="201305240015" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.2.8.5 - 23 May 2013
+* upgraded LuaNginxModule to 0.8.2.
+** feature: added {{{ngx.HTTP_MKCOL}}}, {{{ngx.HTTP_COPY}}}, {{{ngx.HTTP_MOVE}}}, and other ~WebDAV request method constants; also added corresponding support to [[ngx.req.set_method|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_method]] and [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]]. thanks Adallom Roy for the patch.
+** feature: allow injecting new user Lua ~APIs (and overriding existing Lua ~APIs) in the &quot;ngx&quot; table.
+** bugfix: [[ngx.req.set_body_file()|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_file]] always enabled Direct I/O which caused the alert message &quot;fcntl(~O_DIRECT) ... Invalid argument&quot; in error logs on file systems lacking the Direct I/O support.  thanks Matthieu Tourne for reporting this issue.
+** bugfix: buffer corruption might happen in [[ngx.req.set_body_file()|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_file]] when Nginx upstream modules were used later because [[ngx.req.set_body_file()|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_file]] incorrectly set {{{r-&gt;request_body-&gt;buf}}} to the in-file buffer which could get reused by {{{ngx_http_upstream}}} for its own purposes.
+** bugfix: no longer automatically turn underscores (_) to dashes (-) in header names for [[ngx.req.set_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header]] and [[ngx.req.clear_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]]. thanks aviramc for the report.
+** bugfix: segmentation fault might happen in nginx 1.4.x when calling [[ngx.req.set_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header]] on the {{{Cookie}}} request headers because recent versions of Nginx no longer always initialize {{{r-&gt;headers_in.cookies}}}. thanks Rob W for reporting this issue.
+** bugfix: fixed the C compiler warning &quot;argument 'nret' might be clobbered by 'longjmp' or 'vfork'&quot; when compiling with Ubuntu 13.04's gcc 4.7.3. thanks jacky and Rajeev's reports.
+** bugfix: temporary memory leaks might happen when using [[ngx.escape_uri|http://wiki.nginx.org/HttpLuaModule#ngx.escape_uri]], [[ngx.unescape_uri|http://wiki.nginx.org/HttpLuaModule#ngx.unescape_uri]], [[ngx.quote_sql_str|http://wiki.nginx.org/HttpLuaModule#ngx.quote_sql_str]], [[ngx.decode_base64|http://wiki.nginx.org/HttpLuaModule#ngx.decode_base64]], and [[ngx.encode_base64|http://wiki.nginx.org/HttpLuaModule#ngx.encode_base64]] in tight Lua loops because we allocated memory in nginx's request memory pool for these methods.
+** optimize: [[ngx.escape_uri|http://wiki.nginx.org/HttpLuaModule#ngx.escape_uri]] now runs faster when the input string contains no special bytes to be escaped.
+** testing: added custom test scaffold t::~TestNginxLua which subclasses [[Test::Nginx::Socket|http://search.cpan.org/perldoc?Test%3A%3ANginx%3A%3ASocket]]. it supports the environment {{{TEST_NGINX_INIT_BY_LUA}}} which can be used to add more custom Lua code to the value of the [[init_by_lua|http://wiki.nginx.org/HttpLuaModule#init_by_lua]] directive in the Nginx configuration.
+* upgraded SrcacheNginxModule to 0.21.
+** bugfix: responses with a status code smaller than all the status codes specified in the [[srcache_store_statuses|http://wiki.nginx.org/HttpSRCacheModule#srcache_store_statuses]] directive were not skipped as expected. thanks Lanshun Zhou for the patch.
+* feature: applied the [[invalid_referer_hash patch|https://raw.github.com/agentzh/ngx_openresty/master/patches/nginx-1.2.8-invalid_referer_hash.patch]] to the Nginx core to make the {{{$invalid_referer}}} variable accessible in embedded dynamic languages like Perl and Lua. thanks Fry-kun for requesting this.
+* updated the [[dtrace patch|https://raw.github.com/agentzh/ngx_openresty/master/patches/nginx-1.2.8-dtrace.patch]] for the Nginx core.
+** print out more info about the Nginx in-file bufs in the tapset function {{{ngx_chain_dump}}}.
 ! Devel Release 1.2.8.3 - 13 May 2013
 * applied the official patch for the nginx core to address the recent nginx security vulnerability ~CVE-2013-2070.
 ! Devel Release 1.2.8.1 - 26 April 2013
@@ -2331,12 +2348,12 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201305131940" tags="Resources" changecount="159">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201305240015" tags="Resources" changecount="160">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 开发版
 提供给开发者和比较勇敢的用户，包含了最新的问题修复和特性。开发版的质量也是按生产级别来保证的。
-* [[ngx_openresty-1.2.8.3.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.3.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.3.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 2013年5月13日
+* [[ngx_openresty-1.2.8.5.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.5.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.5.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 2013年5月23日
 !! 稳定版
 提供给比较保守的用户。
 * [[ngx_openresty-1.2.7.8.tar.gz|http://openresty.org/download/ngx_openresty-1.2.7.8.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.7.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 2013年5月13日
