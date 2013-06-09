@@ -2716,12 +2716,12 @@ Project page: https://github.com/chaoslawful/drizzle-nginx-module
 When used in conjunction with [[LuaNginxModule]], it is recommended to use [[LuaRestyMySQLLibrary]] instead of this one, since it is more flexible and more memory-efficient.
 </pre>
 </div>
-<div title="DynamicRoutingBasedOnRedis" creator="YichunZhang" modifier="YichunZhang" created="201107270402" modified="201111160417" changecount="15">
+<div title="DynamicRoutingBasedOnRedis" creator="YichunZhang" modifier="YichunZhang" created="201107270402" modified="201306090149" changecount="16">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This sample demonstrates how to use Redis to route incoming requests to different HTTP backends based on the requests' {{{User-Agent}}} header.
 
-This demo uses the modules Redis2NginxModule, LuaNginxModule, LuaRedisParserLibrary, and SetMiscNginxModule bundled by OpenResty.
+This demo uses the components LuaNginxModule and LuaRestyRedisLibrary enabled by default in OpenResty.
 
 Here's the complete code listing for our {{{nginx.conf}}}:
 
@@ -2734,55 +2734,43 @@ events {
 }
 
 http {
-    upstream apache.org {
-        server apache.org;
-    }
-
-    upstream nginx.org {
-        server nginx.org;
-    }
-
     server {
         listen 8080;
 
-        location = /redis {
-            internal;
-            set_unescape_uri $key $arg_key;
-            redis2_query get $key;
-            redis2_pass 127.0.0.1:6379;
-        }
-
         location / {
+            resolver 8.8.4.4;  # use Google's open DNS server
+
             set $target '';
             access_by_lua '
                 local key = ngx.var.http_user_agent
-                local res = ngx.location.capture(
-                    &quot;/redis&quot;, { args = { key = key } }
-                )
-
-                print(&quot;key: &quot;, key)
-
-                if res.status ~= 200 then
-                    ngx.log(ngx.ERR, &quot;redis server returned bad status: &quot;,
-                        res.status)
-                    ngx.exit(res.status)
+                if not key then
+                    ngx.log(ngx.ERR, &quot;no user-agent found&quot;)
+                    return ngx.exit(400)
                 end
 
-                if not res.body then
-                    ngx.log(ngx.ERR, &quot;redis returned empty body&quot;)
-                    ngx.exit(500)
+                local redis = require &quot;resty.redis&quot;
+                local red = redis:new()
+
+                red:set_timeout(1000) -- 1 second
+
+                local ok, err = red:connect(&quot;127.0.0.1&quot;, 6379)
+                if not ok then
+                    ngx.log(ngx.ERR, &quot;failed to connect to redis: &quot;, err)
+                    return ngx.exit(500)
                 end
 
-                local parser = require &quot;redis.parser&quot;
-                local server, typ = parser.parse_reply(res.body)
-                if typ ~= parser.BULK_REPLY or not server then
-                    ngx.log(ngx.ERR, &quot;bad redis response: &quot;, res.body)
-                    ngx.exit(500)
+                local host, err = red:get(key)
+                if not host then
+                    ngx.log(ngx.ERR, &quot;failed to get redis key: &quot;, err)
+                    return ngx.exit(500)
                 end
 
-                print(&quot;server: &quot;, server)
+                if host == ngx.null then
+                    ngx.log(ngx.ERR, &quot;no host found for key &quot;, key)
+                    return ngx.exit(400)
+                end
 
-                ngx.var.target = server
+                ngx.var.target = host
             ';
 
             proxy_pass http://$target;
@@ -2812,9 +2800,9 @@ And then let's test our nginx app!
    $ curl --user-agent bar localhost:8080
    &lt;nginx.org home page goes here&gt;
 }}}
-To further tune the performance, one could enable the connection pool for the redis connections, as documented in Redis2NginxModule's README.
+To further tune the performance, one could enable the connection pool for the redis connections, as documented in LuaRestyRedisLibrary's README.
 
-Before you benchmarking your interface defined here, please ensure that you've raised the error log level to {{{warn}}} in your {{{nginx.conf}}} file like this:
+Before you benchmarking your interface defined here, please ensure that you've raised the error log level to {{{warn}}} or {{{notice}}} in your {{{nginx.conf}}} file, as in
 {{{
 error_log logs/error.log warn;
 }}}
