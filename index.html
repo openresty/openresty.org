@@ -2434,6 +2434,32 @@ The following components are bundled:
 * bugfix: no longer pass {{{-O0}}} to gcc when the {{{--with-debug}}} configure option is specified because gcc often generates bogus DWARF info when optimization is turned off.
 See ChangeLog1002007 for change log for OpenResty 1.2.7.x.</pre>
 </div>
+<div title="ChangeLog1004001" creator="YichunZhang" modifier="YichunZhang" created="201307182007" modified="201307182252" changecount="25">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.4.1.1 - 18 July 2013
+* upgraded the Nginx core to 1.4.1.
+** see http://nginx.org/en/CHANGES-1.4 for changes.
+* bugfix: ./configure: use of spaces in the {{{--with-cc}}} option values resulted in errors.
+* bugfix: applied the [[unix_socket_accept_over_read patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.1-unix_socket_accept_over_read.patch]] to fix a buffer over-read issue in  the Nginx core when Nginx is configured to listen on a unix domain socket.
+* bugfix: applied the [[gcc-maybe-uninitialized-warning patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.1-gcc-maybe-uninitialized-warning.patch]] to the Nginx core to fix a gcc warning with gcc 4.7.3/4.7.2.
+* upgraded LuaNginxModule to 0.8.5.
+** change: made [[ngx.say|http://wiki.nginx.org/HttpLuaModule#ngx.say]]/[[ngx.print|http://wiki.nginx.org/HttpLuaModule#ngx.print]]/[[ngx.eof|http://wiki.nginx.org/HttpLuaModule#ngx.eof]]/[[ngx.flush|http://wiki.nginx.org/HttpLuaModule#ngx.flush]]/[[ngx.send_headers|http://wiki.nginx.org/HttpLuaModule#ngx.send_headers]] return {{{nil}}} and a string describing the error in case of most of the common errors (instead of throwing out an exception), and return 1 for success.
+** feature: added new directive [[lua_regex_match_limit|http://wiki.nginx.org/HttpLuaModule#lua_regex_match_limit]] for setting PCRE's &quot;match_limit&quot; protection for regex execution.
+** feature: now we store the nginx request object as a named Lua global variable {{{__ngx_req}}} to help ~FFI-based Lua code directly access it.
+** bugfix: the [[ngx.ctx|http://wiki.nginx.org/HttpLuaModule#ngx.ctx]] tables would leak memory when [[ngx.ctx|http://wiki.nginx.org/HttpLuaModule#ngx.ctx]], [[ngx.exec()|http://wiki.nginx.org/HttpLuaModule#ngx.exec]]/[[ngx.req.set_uri|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_uri]](uri, true), and [[log_by_lua|http://wiki.nginx.org/HttpLuaModule#log_by_lua]] were used together in a single location. thanks Guanlan Dai for writing the gdb utils to catch this.
+** bugfix: setting [[ngx.var.VARIABLE|http://wiki.nginx.org/HttpLuaModule#ngx.var.VARIABLE]] could lead to buffer over-read in {{{luaL_error}}} when an error happened.
+** bugfix: [[tcpsock:send|http://wiki.nginx.org/HttpLuaModule#tcpsock:send]](&quot;&quot;) resulted in the error log alert message &quot;send() returned zero&quot;.
+** bugfix: [[ngx.flush|http://wiki.nginx.org/HttpLuaModule#ngx.flush]](true) might not return 1 on success.
+** bugfix: when compiling with {{{-DDDEBUG=1}}}, there was a compilation error. thanks tigeryang for the report.
+** optimize: avoided use of the nginx request objects in [[ngx.escape_uri|http://wiki.nginx.org/HttpLuaModule#ngx.escape_uri]], [[ngx.unescape_uri|http://wiki.nginx.org/HttpLuaModule#ngx.unescape_uri]], [[ngx.quote_sql_str|http://wiki.nginx.org/HttpLuaModule#ngx.quote_sql_str]], [[ngx.decode_base64|http://wiki.nginx.org/HttpLuaModule#ngx.decode_base64]], [[ngx.encode_base64|http://wiki.nginx.org/HttpLuaModule#ngx.encode_base64]], [[ngx.encode_args|http://wiki.nginx.org/HttpLuaModule#ngx.encode_args]], and [[ngx.decode_args|http://wiki.nginx.org/HttpLuaModule#ngx.decode_args]].
+** optimize: no longer store {{{cf-&gt;log}}} into the Lua registry table because we can always directly access the global {{{ngx_cycle-&gt;log}}} thing.
+** refactor: added inline functions {{{ngx_http_lua_get_req}}} and {{{ngx_http_lua_set_req}}} to eliminate code duplication when storing or fetching the nginx request object from the lua global variable table.
+** docs: typo fixes in the code sample for [[body_filter_by_lua|http://wiki.nginx.org/HttpLuaModule#body_filter_by_lua]]. thanks cyberty for the patch.
+** docs: mentioned my [[Nginx Systemtap Toolkit|https://github.com/agentzh/nginx-systemtap-toolkit]] which is very useful for online debugging on Linux.
+* upgraded HeadersMoreNginxModule to 0.21.
+** bugfix: segmentation fault might happen in Nginx 1.4.x when using the [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] directive on the Cookie request headers because recent versions of Nginx no longer always initialize {{{r-&gt;headers_in.cookies}}}.
+See ChangeLog1002008 for change log for OpenResty 1.2.8.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -2525,8 +2551,9 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201306102233" changecount="8">
+<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201307182008" changecount="9">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Release 1.4.1.x|ChangeLog1004001]]
 * [[Release 1.2.8.x|ChangeLog1002008]]
 * [[Release 1.2.7.x|ChangeLog1002007]]
 * [[Release 1.2.6.x|ChangeLog1002006]]
@@ -2678,14 +2705,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201306101852" tags="Resources" changecount="256">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201307182006" tags="Resources" changecount="257">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.2.8.5.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.5.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.5.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 23 May 2013
+* [[ngx_openresty-1.4.1.1.tar.gz|http://openresty.org/download/ngx_openresty-1.4.1.1.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.1.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004001]] - 18 July 2013
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.8.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 10 June 2013
