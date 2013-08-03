@@ -2907,6 +2907,23 @@ This is an [[Nginx]] module that reads HTTP POST and PUT request body encoded in
 Project page: https://github.com/calio/form-input-nginx-module
 </pre>
 </div>
+<div title="GettingInvolved" creator="YichunZhang" modifier="YichunZhang" created="201308030425" modified="201308030442" changecount="7">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+The OpenResty project has a loose organization. Most of the components are self-contained open-source projects and are developed separately. They all have their own code repositories, their own test suites, or even their own maintainers. The maintainer of the OpenResty bundle, [[agentzh|YichunZhang]], is also maintaining most of the components included.
+
+The [[ngx_openresty GitHub repository|https://github.com/agentzh/ngx_openresty/]] only contains the facilities to generate a tarball from all the components' releases for the bundle itself.
+
+You can contribute patches or report bugs to each of the component separately. Please check out the [[Components]] page for more details about each component project.
+
+For example, one of the core components, LuaNginxModule, has its official code repository hosted on GitHub as well: https://github.com/chaoslawful/lua-nginx-module
+
+Another core component, the Nginx core, is developed by the [[Nginx company|http://nginx.com]]. And the opensource development of the Nginx core usually happens on the official [[nginx-devel mailing list|http://mailman.nginx.org/mailman/listinfo/nginx-devel]]. But also keep in mind that the OpenResty bundle also maintains [[a set of small patches|https://github.com/agentzh/ngx_openresty/tree/master/patches/]] for the Nginx core to fix some urgent bugs or add a few really important features that must reside in the core.
+
+Discussions not specific to the Nginx core should happen on the [[openresty-en mailing list|https://groups.google.com/group/openresty-en]] (or the [[openresty Chinese mailing list|https://groups.google.com/group/openresty]]). See the [[Community]] page for more details. You are always welcome to join us there.
+
+The maintainer of the OpenResty bundle periodically runs a big test cluster on [[Amazon EC2|http://aws.amazon.com/ec2/]] where the test suite of each component bundled is run against the latest Nginx releases. You can always check out the test reports on the [[qa.openresty.org site|http://qa.openresty.org]].</pre>
+</div>
 <div title="GettingStarted" creator="YichunZhang" modifier="YichunZhang" created="201106201139" modified="201111030651" changecount="29">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
@@ -3226,7 +3243,7 @@ Project homepage: https://github.com/agentzh/lua-resty-upload
 This library is enabled by default. You can specify the {{{--without-lua_resty_upload}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
 </pre>
 </div>
-<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201208060318" tags="admin" changecount="36">
+<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201308030425" tags="admin" changecount="38">
 <pre>[[Overview|OpenResty]]
 [[Components]]
 [[Getting started|GettingStarted]]
@@ -3242,6 +3259,7 @@ This library is enabled by default. You can specify the {{{--without-lua_resty_u
 [[Community]]
 [[Contact us|ContactUs]]
 [[About]]
+[[Getting Involved|GettingInvolved]]
 [[Donate Online|DonateOnline]]
 [[中文维基|cn/index.html]]
 
