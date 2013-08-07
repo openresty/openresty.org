@@ -2162,8 +2162,34 @@ The following components are bundled:
 * bugfix: no longer pass {{{-O0}}} to gcc when the {{{--with-debug}}} configure option is specified because gcc often generates bogus DWARF info when optimization is turned off.
 See ChangeLog1002007 for change log for OpenResty 1.2.7.x.</pre>
 </div>
-<div title="ChangeLog1004001" creator="YichunZhang" modifier="YichunZhang" created="201307182312" changecount="1">
+<div title="ChangeLog1004001" creator="YichunZhang" modifier="YichunZhang" created="201307182312" modified="201308070331" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.4.1.3 - 6 August 2013
+* upgraded LuaNginxModule to 0.8.6.
+** feature: added new method [[get_stale|http://wiki.nginx.org/HttpLuaModule#ngx.shared.DICT.get_stale]] to shared dict objects, which returns the value (if not freed yet) even if the key has already expired. thanks Matthieu Tourne for the patch.
+** bugfix: segfaults would happen in [[ngx.req.set_header()|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header]] and [[ngx.req.clear_header()|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] for HTTP 0.9 requests. thanks Bin Wang for the report.
+** bugfix: segfault might happen when reading or writing to a response header via the [[ngx.header.HEADER|http://wiki.nginx.org/HttpLuaModule#ngx.header.HEADER]] API in the case that the nginx core initiated a 301 (auto) redirect. this issue was caused by an optimization in the Nginx core where {{{ngx_http_core_find_config_phase}}}, for example, does not fully initialize the &quot;Location&quot; response header after creating the header. thanks Vladimir Protasov for the report.
+** bugfix: memory leak would happen when using the [[ngx.ctx|http://wiki.nginx.org/HttpLuaModule#ngx.ctx]] API before another Nginx module (other than LuaNginxModule) initiates an internal redirect.
+** bugfix: use of the [[ngx.ctx|http://wiki.nginx.org/HttpLuaModule#ngx.ctx]] table in the context of [[ngx.timer|http://wiki.nginx.org/HttpLuaModule#ngx.timer.at]] callbacks would leak memory.
+** bugfix: the &quot;connect() failed&quot; error message was still logged even when [[lua_socket_log_errors|http://wiki.nginx.org/HttpLuaModule#lua_socket_log_errors]] was off. thanks Dong Fang Fan for the report.
+** bugfix: we incorrectly returned the 500 error code in our output header filter, body filter, and log-phase handlers upon Lua code loading errors.
+** bugfix: Lua stack overflow might happen when we failed to load Lua code from the code cache.
+** bugfix: the error message was misleading when the {{{*_by_lua_file}}} config directives failed to load the Lua file specified.
+** bugfix: give the argument of 'void' to function definitions which has no arguments. thanks Tatsuhiko Kubo for the patch.
+** bugfix: when our {{{at-panic}}} handler for Lua VM gets called, the Lua VM is not recoverable for future use. so now we try to quit the current Nginx worker gracefully so that the Nginx master can spawn a new one.
+* upgraded HeadersMoreNginxModule to 0.22.
+** bugfix: segfaults would happen in [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] and [[more_clear_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers]] when processing HTTP 0.9 requests. thanks Bin Wang for the patch.
+** bugfix: segfault might happen when using [[more_set_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_headers]] or [[more_clear_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_headers]] in the case that the Nginx core initiated a 301 (auto) redirect. this issue was caused by an optimization in the Nginx core where {{{ngx_http_core_find_config_phase}}}, for example, does not fully initialize the &quot;Location&quot; response header after creating the header. thanks Brian Akins for the report.
+* upgraded SrcacheNginxModule to 0.22.
+** bugfix: we did not always read the client request body before initiating [[srcache_fetch|http://wiki.nginx.org/HttpSRCacheModule#srcache_fetch]] subrequests at the &quot;access phase&quot;, which could lead to bad consequences.
+* upgraded EchoNginxModule to 0.46.
+** bugfix: the request body was not discarded properly in the content handler when the request body was not read yet. thanks Peter Sabaini for the report.
+** bugfix: we did not ensure that the main request body is always read before subrequests are initiated, which could lead to bad consequences.
+** bugfix: [[$echo_client_request_headers|http://wiki.nginx.org/HttpEchoModule#.24echo_client_request_headers]] may evaluate to an empty value when the default header buffer ({{{c-&gt;buffer}}}) can hold the request line but not the whole header. thanks ~KDr2 for reporting this issue.
+** docs: fixed a typo in Synopsis reported by saighost.
+** docs: use https for github links. thanks Olivier Mengué for the patch.
+* upgraded PostgresNginxModule to 1.0rc3.
+** bugfix: compilation error happened with nginx 1.5.3+ because the Nginx core changes the {{{ngx_sock_ntop}}} API. thanks an0ma1ia for the report.
 ! Devel Release 1.4.1.1 - 18 July 2013
 * upgraded the Nginx core to 1.4.1.
 ** see http://nginx.org/en/CHANGES-1.4 for changes.
@@ -2412,12 +2438,12 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201307182311" tags="Resources" changecount="162">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201308070331" tags="Resources" changecount="163">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 开发版
 提供给开发者和比较勇敢的用户，包含了最新的问题修复和特性。开发版的质量也是按生产级别来保证的。
-* [[ngx_openresty-1.4.1.1.tar.gz|http://openresty.org/download/ngx_openresty-1.4.1.1.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.1.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004001]] - 2013年7月18日
+* [[ngx_openresty-1.4.1.3.tar.gz|http://openresty.org/download/ngx_openresty-1.4.1.3.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.1.3.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004001]] - 2013年8月6日
 !! 稳定版
 提供给比较保守的用户。
 * [[ngx_openresty-1.2.8.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 2013年6月10日
