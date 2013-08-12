@@ -2214,6 +2214,15 @@ See ChangeLog1002007 for change log for OpenResty 1.2.7.x.</pre>
 ** bugfix: segmentation fault might happen in Nginx 1.4.x when using the [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] directive on the Cookie request headers because recent versions of Nginx no longer always initialize {{{r-&gt;headers_in.cookies}}}.
 See ChangeLog1002008 for change log for OpenResty 1.2.8.x.</pre>
 </div>
+<div title="ChangeLog1004002" creator="YichunZhang" modifier="YichunZhang" created="201308120420" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.4.2.1 - 11 August 2013
+* upgraded the Nginx core to 1.4.2.
+** see http://nginx.org/en/CHANGES-1.4 for changes.
+* upgraded LuaRestyDNSLibrary to 0.10.
+** feature: now we return all the answer records even when the DNS server returns a non-zero error code, in which case the error code and error string are now set as the &quot;errcode&quot; and &quot;errstr&quot; fields in the Lua table returned. thanks Matthieu Tourne for requesting this.
+See ChangeLog1004001 for change log for OpenResty 1.4.1.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -2305,8 +2314,9 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201210172306" modified="201307182312" changecount="5">
+<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201210172306" modified="201308120421" changecount="6">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Release 1.4.2.x|ChangeLog1004002]]
 * [[Release 1.4.1.x|ChangeLog1004001]]
 * [[Release 1.2.8.x|ChangeLog1002008]]
 * [[Release 1.2.7.x|ChangeLog1002007]]
@@ -2438,12 +2448,12 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201308070331" tags="Resources" changecount="163">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201308120420" tags="Resources" changecount="164">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 开发版
 提供给开发者和比较勇敢的用户，包含了最新的问题修复和特性。开发版的质量也是按生产级别来保证的。
-* [[ngx_openresty-1.4.1.3.tar.gz|http://openresty.org/download/ngx_openresty-1.4.1.3.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.1.3.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004001]] - 2013年8月6日
+* [[ngx_openresty-1.4.2.1.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.1.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 2013年8月11日
 !! 稳定版
 提供给比较保守的用户。
 * [[ngx_openresty-1.2.8.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 2013年6月10日
