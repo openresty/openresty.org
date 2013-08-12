@@ -2486,6 +2486,15 @@ See ChangeLog1002007 for change log for OpenResty 1.2.7.x.</pre>
 ** bugfix: segmentation fault might happen in Nginx 1.4.x when using the [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] directive on the Cookie request headers because recent versions of Nginx no longer always initialize {{{r-&gt;headers_in.cookies}}}.
 See ChangeLog1002008 for change log for OpenResty 1.2.8.x.</pre>
 </div>
+<div title="ChangeLog1004002" creator="YichunZhang" modifier="YichunZhang" created="201308120413" modified="201308120415" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.4.2.1 - 11 August 2013
+* upgraded the Nginx core to 1.4.2.
+** see http://nginx.org/en/CHANGES-1.4 for changes.
+* upgraded LuaRestyDNSLibrary to 0.10.
+** feature: now we return all the answer records even when the DNS server returns a non-zero error code, in which case the error code and error string are now set as the &quot;errcode&quot; and &quot;errstr&quot; fields in the Lua table returned. thanks Matthieu Tourne for requesting this.
+See ChangeLog1004001 for change log for OpenResty 1.4.1.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -2577,8 +2586,9 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201307182008" changecount="9">
+<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201308120416" changecount="10">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Release 1.4.2.x|ChangeLog1004002]]
 * [[Release 1.4.1.x|ChangeLog1004001]]
 * [[Release 1.2.8.x|ChangeLog1002008]]
 * [[Release 1.2.7.x|ChangeLog1002007]]
@@ -2731,14 +2741,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201308062347" tags="Resources" changecount="260">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201308120411" tags="Resources" changecount="261">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.4.1.3.tar.gz|http://openresty.org/download/ngx_openresty-1.4.1.3.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.1.3.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004001]] - 6 August 2013
+* [[ngx_openresty-1.4.2.1.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.1.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 11 August 2013
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.8.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 10 June 2013
