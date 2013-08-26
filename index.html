@@ -3279,7 +3279,7 @@ Project homepage: https://github.com/agentzh/lua-resty-upload
 This library is enabled by default. You can specify the {{{--without-lua_resty_upload}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
 </pre>
 </div>
-<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201308030425" tags="admin" changecount="38">
+<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201308262319" tags="admin" changecount="39">
 <pre>[[Overview|OpenResty]]
 [[Components]]
 [[Getting started|GettingStarted]]
@@ -3290,6 +3290,7 @@ This library is enabled by default. You can specify the {{{--without-lua_resty_u
 [[Resources]]
 [[Download]]
 [[Installation]]
+[[Upgrading]]
 [[Changes]]
 [[Quality Assurance|QualityAssurance]]
 [[Community]]
@@ -3892,6 +3893,21 @@ table.listView th, table.listView td, table.listView tr {padding:0px 3px 0px 3px
 .backstageVisible .whenBackstage {display:block;}
 /*}}}*/
 </pre>
+</div>
+<div title="Upgrading" creator="YichunZhang" modifier="YichunZhang" created="201308262321" modified="201308262321" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+You can upgrade OpenResty to a newer release in the exactly same way of upgrading Nginx.
+
+You can override the existing installation tree but you still need to restart your running Nginx server from the new executable. Usually we do something like this:
+
+http://wiki.nginx.org/CommandLine#Upgrading_To_a_New_Binary_On_The_Fly
+
+You can also just stop your current Nginx server and start it from scratch again if you don't care about the down time in between.
+
+But please note that HUP reload won't update the running Nginx server processes with the newly installed executable file.
+
+If you are using shared memory storage in your Nginx server (like LuaNginxModule's shared memory dictionaries), then a full server restart will clear all the data in the shared memory zones. So be careful here.</pre>
 </div>
 <div title="UpstreamKeepaliveNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210908" modified="201108260111" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
