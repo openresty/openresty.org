@@ -2486,8 +2486,28 @@ See ChangeLog1002007 for change log for OpenResty 1.2.7.x.</pre>
 ** bugfix: segmentation fault might happen in Nginx 1.4.x when using the [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] directive on the Cookie request headers because recent versions of Nginx no longer always initialize {{{r-&gt;headers_in.cookies}}}.
 See ChangeLog1002008 for change log for OpenResty 1.2.8.x.</pre>
 </div>
-<div title="ChangeLog1004002" creator="YichunZhang" modifier="YichunZhang" created="201308120413" modified="201308120415" changecount="2">
+<div title="ChangeLog1004002" creator="YichunZhang" modifier="YichunZhang" created="201308120413" modified="201309030727" changecount="18">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.4.2.3 - 2 September 2013
+* upgraded LuaNginxModule to 0.8.7.
+** feature: [[log_by_lua*|http://wiki.nginx.org/HttpLuaModule#log_by_lua]] now always runs before the standard [[ngx_http_log_module|http://nginx.org/en/docs/http/ngx_http_log_module.html]] (for access logging). thanks Calin Don for the suggestion.
+** feature: added new API [[ngx.config.debug|http://wiki.nginx.org/HttpLuaModule#ngx.config.debug]] to indicate whether this is a debug build of Nginx (that is, being built by the {{{./configure}}} option {{{--with-debug}}}).
+** bugfix: the global Lua state's {{{_G}}} table was cleared when [[lua_code_cache|http://wiki.nginx.org/HttpLuaModule#lua_code_cache]] was off, which could confuse the setup in [[init_by_lua*|http://wiki.nginx.org/HttpLuaModule#init_by_lua]]. thanks Robert Andrew Ditthardt for the report.
+** bugfix: [[ngx.flush()|http://wiki.nginx.org/HttpLuaModule#ngx.flush]] triggered response header sending when the header was not sent yet. now it just returned the error string &quot;nothing to flush&quot; for this case. thanks linbo liao for the report.
+** bugfix: when a Lua line comment was used in the last line of the inlined Lua code chunk, a bogus Lua syntax error would be thrown.
+** bugfix: [[ngx.exit|http://wiki.nginx.org/HttpLuaModule#ngx.exit]](204) could try to send the response header twice. Nginx 1.5.4 caught this issue.
+** bugfix: the error message for failures in loading inlined Lua code was misleading.
+* upgraded EchoNginxModule to 0.47.
+** bugfix: use of C global variables at configuration time could lead to issues when HUP reload failed in the middle.
+** bugfix: we might send the response header twice when an error happens. this issue is exposed by Nginx 1.5.4. thanks Markus Linnala for the report.
+* upgraded DrizzleNginxModule to 0.1.6.
+** bugfix: compilation error happened with nginx 1.5.3+ because Nginx changes the {{{ngx_sock_ntop}}} API.
+** docs: typo fixes from smallfish.
+* upgraded MemcNginxModule to 0.13.
+** bugfix: fixed compatibility issues with the new upstream C API in Nginx 1.5.3+. thanks Markus Linnala for the patch.
+** bugfix: use of C global variables at configuration time could cause issues when HUP reload failed in the middle.
+** docs: now we recommend LuaRestyMemcachedLibrary instead when being used with LuaNginxModule.
+* applied the [[unix_socket_accept_over_read patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.2-unix_socket_accept_over_read.patch]] the Nginx core to fix a memory over-read issue when Nginx was accepting a unix domain socket.
 ! Devel Release 1.4.2.1 - 11 August 2013
 * upgraded the Nginx core to 1.4.2.
 ** see http://nginx.org/en/CHANGES-1.4 for changes.
@@ -2741,14 +2761,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201308120411" tags="Resources" changecount="261">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201309030706" tags="Resources" changecount="262">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Development release
 Development releases are for developers and brave users to try out new bug fixes and new features. Development releases are also considered production-ready.
-* [[ngx_openresty-1.4.2.1.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.1.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 11 August 2013
+* [[ngx_openresty-1.4.2.3.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.3.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.3.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 2 September 2013
 !! Stable release
 Stable releases are for really conservative users.
 * [[ngx_openresty-1.2.8.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 10 June 2013
