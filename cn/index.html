@@ -2214,8 +2214,19 @@ See ChangeLog1002007 for change log for OpenResty 1.2.7.x.</pre>
 ** bugfix: segmentation fault might happen in Nginx 1.4.x when using the [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] directive on the Cookie request headers because recent versions of Nginx no longer always initialize {{{r-&gt;headers_in.cookies}}}.
 See ChangeLog1002008 for change log for OpenResty 1.2.8.x.</pre>
 </div>
-<div title="ChangeLog1004002" creator="YichunZhang" modifier="YichunZhang" created="201308120420" modified="201309030743" changecount="2">
+<div title="ChangeLog1004002" creator="YichunZhang" modifier="YichunZhang" created="201308120420" modified="201309090017" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Devel Release 1.4.2.5 - 8 September 2013
+* upgraded SetMiscNginxModule to 0.22.
+** bugfix: we did not escape {{{\0}}}, {{{\z}}}, {{{\b}}}, and {{{\t}}} properly in set_quote_sql_str according to the ~MySQL quoting rules. thanks Siddon Tang for the report.
+* upgraded LuaNginxModule to 0.8.8.
+** feature: added new option &quot;always_forward_body&quot; to [[ngx.location.capture()|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] and [[ngx.location.capture_multi()|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi]], which controls whether to always forward the parent request's request body to the subrequest (even when the subrequest is not of the POST or PUT request method). thanks Matthieu Tourne for the request.
+** feature: now timeout errors in [[tcpsock:receive()|http://wiki.nginx.org/HttpLuaModule#tcpsock:receive]] and [[tcpsock:receiveuntil()|http://wiki.nginx.org/HttpLuaModule#tcpsock:receiveuntil]] no longer automatically close the current cosocket object (for both upstream and downstream connections). thanks Aviram Cohen for the original patch.
+** bugfix: we did not escape {{{\0}}}, {{{\z}}}, {{{\t}}}, and {{{\b}}} properly in [[ngx.quote_sql_str()|http://wiki.nginx.org/HttpLuaModule#ngx.quote_sql_str]]. thanks Siddon Tang for the report.
+** bugfix: Lua backtrace dumps upon uncaught Lua exceptions did not work with the standard Lua 5.1 interpreter when the backtrace was deeper than 22 levels.
+** change: now we just dump the top 22 levels in the backtrace for uncaught Lua exceptions for the sake of simplicity.
+** change: we now limit the number of nested coroutines in the backtrace dump for uncaught Lua exceptions by 5.
+** optimize: grouped the Lua string concatenation operations when constructing the backtrace string for uncaught Lua exceptions.
 ! Devel Release 1.4.2.3 - 2 September 2013
 * upgraded LuaNginxModule to 0.8.7.
 ** feature: [[log_by_lua*|http://wiki.nginx.org/HttpLuaModule#log_by_lua]] now always runs before the standard [[ngx_http_log_module|http://nginx.org/en/docs/http/ngx_http_log_module.html]] (for access logging). thanks Calin Don for the suggestion.
@@ -2468,12 +2479,12 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201309030743" tags="Resources" changecount="165">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201309090017" tags="Resources" changecount="166">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 开发版
 提供给开发者和比较勇敢的用户，包含了最新的问题修复和特性。开发版的质量也是按生产级别来保证的。
-* [[ngx_openresty-1.4.2.3.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.3.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.3.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 2013年9月2日
+* [[ngx_openresty-1.4.2.5.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.5.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.5.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 2013年9月8日
 !! 稳定版
 提供给比较保守的用户。
 * [[ngx_openresty-1.2.8.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 2013年6月10日
