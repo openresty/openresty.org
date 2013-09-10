@@ -3080,7 +3080,7 @@ Use cases: http://forum.nginx.org/read.php?2,206658,207119
 Project page: https://github.com/calio/iconv-nginx-module
 </pre>
 </div>
-<div title="Installation" creator="YichunZhang" modifier="YichunZhang" created="201106210440" modified="201305072235" tags="doc install" changecount="52">
+<div title="Installation" creator="YichunZhang" modifier="YichunZhang" created="201106210440" modified="201309101818" tags="doc install" changecount="56">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 If you haven't downloaded the OpenResty source code tarball, please go to the [[Download]] page first.
 
@@ -3113,14 +3113,16 @@ brew install pcre
 }}}
 Alternatively you can install PCRE from source all by yourself :)
 
-After installing PCRE, you may need to specify the paths for PCRE's headers and libraries to your C compiler and linker:
+After installing PCRE, you may need to specify the paths for PCRE's headers and libraries to your C compiler and linker, for example,
 {{{
 $ ./configure \
-             --with-cc-opt=&quot;-I/usr/local/Cellar/pcre/8.21/include&quot; \
-             --with-ld-opt=&quot;-L/usr/local/Cellar/pcre/8.21/lib&quot; \
+             --with-cc-opt=&quot;-I/usr/local/include&quot; \
+             --with-ld-opt=&quot;-L/usr/local/lib&quot; \
              ...
 }}}
-See also [[Issue #3: |https://github.com/agentzh/ngx_openresty/issues/3]]
+assuming that your PCRE is installed under the prefix {{{/usr/local/}}}.
+
+See also [[Issue #3|https://github.com/agentzh/ngx_openresty/issues/3]].
 
 !!~FreeBSD users
 You need to install the following ports:
