@@ -2486,8 +2486,46 @@ See ChangeLog1002007 for change log for OpenResty 1.2.7.x.</pre>
 ** bugfix: segmentation fault might happen in Nginx 1.4.x when using the [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] directive on the Cookie request headers because recent versions of Nginx no longer always initialize {{{r-&gt;headers_in.cookies}}}.
 See ChangeLog1002008 for change log for OpenResty 1.2.8.x.</pre>
 </div>
-<div title="ChangeLog1004002" creator="YichunZhang" modifier="YichunZhang" created="201308120413" modified="201309152113" changecount="33">
+<div title="ChangeLog1004002" creator="YichunZhang" modifier="YichunZhang" created="201308120413" modified="201309222213" changecount="34">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Stable Version 1.4.2.8 - 22 September 2013
+* upgraded LuaNginxModule to 0.8.10.
+** bugfix: we did not declare the &quot;level&quot; local variable of {{{ngx_http_lua_ngx_log}}} at the beginning of the code block. thanks Edwin Cleton for the report.
+** docs: documented more limitations in the current implementation.
+** docs: avoided using [[module()|http://www.lua.org/manual/5.1/manual.html#pdf-module]] and also recommended the [[lua-releng tool|https://github.com/agentzh/nginx-devel-utils/blob/master/lua-releng]] to locate misuse of Lua globals.
+The following components are bundled in this release:
+* ~LuaJIT-2.0.2
+* array-var-nginx-module-0.03rc1
+* auth-request-nginx-module-0.2
+* drizzle-nginx-module-0.1.6
+* echo-nginx-module-0.48
+* encrypted-session-nginx-module-0.03
+* form-input-nginx-module-0.07
+* headers-more-nginx-module-0.22
+* iconv-nginx-module-0.10
+* lua-5.1.5
+* lua-cjson-1.0.3
+* lua-rds-parser-0.05
+* lua-redis-parser-0.10
+* lua-resty-dns-0.10
+* lua-resty-memcached-0.11
+* lua-resty-mysql-0.13
+* lua-resty-redis-0.15
+* lua-resty-string-0.08
+* lua-resty-upload-0.08
+* memc-nginx-module-0.13
+* nginx-1.4.2
+* ngx_coolkit-0.2rc1
+* ngx_devel_kit-0.2.18
+* ngx_lua-0.8.10
+* ngx_postgres-1.0rc3
+* rds-csv-nginx-module-0.05rc2
+* rds-json-nginx-module-0.12rc10
+* redis-nginx-module-0.3.6
+* redis2-nginx-module-0.10
+* set-misc-nginx-module-0.22
+* srcache-nginx-module-0.22
+* xss-nginx-module-0.03rc9
 ! Mainline Version 1.4.2.7 - 15 September 2013
 * upgraded LuaNginxModule to 0.8.9.
 ** bugfix: the Nginx core does not send a default status line for the 101 status code. now we construct one ourselves in this case.
@@ -2782,7 +2820,7 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201309152103" tags="Resources" changecount="266">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201309222205" tags="Resources" changecount="267">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
@@ -2792,9 +2830,10 @@ Mainline releases contain the latest bug fixes and new features. Mainline releas
 * [[ngx_openresty-1.4.2.7.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.7.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.7.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 15 September 2013
 !! Stable releases
 Stable releases are for really conservative users and they may contain known bugs that have already been fixed in the mainline versions.
-* [[ngx_openresty-1.2.8.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 10 June 2013
+* [[ngx_openresty-1.4.2.8.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 22 September 2013
 !! Legacy releases
 Sometimes, users may want to download old releases.
+* [[ngx_openresty-1.2.8.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 10 June 2013
 * [[ngx_openresty-1.2.7.8.tar.gz|http://openresty.org/download/ngx_openresty-1.2.7.8.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.7.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 13 May 2013
 * [[ngx_openresty-1.2.7.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.7.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.7.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 17 April 2013
 * [[ngx_openresty-1.2.6.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002006]] - 17 February 2013
