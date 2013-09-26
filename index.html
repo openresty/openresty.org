@@ -2719,7 +2719,7 @@ Error: #f88
 * Unsuscribing: send emails to {{{openresty+unsubscribe@googlegroups.com}}}
 </pre>
 </div>
-<div title="Components" creator="YichunZhang" modifier="YichunZhang" created="201106210424" modified="201209051801" changecount="25">
+<div title="Components" creator="YichunZhang" modifier="YichunZhang" created="201106210424" modified="201309261800" changecount="26">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 Below lists all the components bundled in OpenResty. All of the components can be enabled or disabled on need.
@@ -2759,7 +2759,6 @@ Most of the components are enabled by default, some are not.
 * [[Redis2NginxModule]]
 * [[SetMiscNginxModule]]
 * [[SrcacheNginxModule]]
-* [[UpstreamKeepaliveNginxModule]]
 * [[XssNginxModule]]
 </pre>
 </div>
@@ -3995,8 +3994,10 @@ But please note that HUP reload won't update the running Nginx server processes 
 
 If you are using shared memory storage in your Nginx server (like LuaNginxModule's shared memory dictionaries), then a full server restart will clear all the data in the shared memory zones. So be careful here.</pre>
 </div>
-<div title="UpstreamKeepaliveNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210908" modified="201108260111" changecount="3">
+<div title="UpstreamKeepaliveNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210908" modified="201309261800" changecount="8">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+//This module is now part of the official Nginx core.//
 
 This is a keepalive balancer module for nginx that implements cache for backend connections.
 
