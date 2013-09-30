@@ -2486,8 +2486,36 @@ See ChangeLog1002007 for change log for OpenResty 1.2.7.x.</pre>
 ** bugfix: segmentation fault might happen in Nginx 1.4.x when using the [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] directive on the Cookie request headers because recent versions of Nginx no longer always initialize {{{r-&gt;headers_in.cookies}}}.
 See ChangeLog1002008 for change log for OpenResty 1.2.8.x.</pre>
 </div>
-<div title="ChangeLog1004002" creator="YichunZhang" modifier="YichunZhang" created="201308120413" modified="201309222213" changecount="34">
+<div title="ChangeLog1004002" creator="YichunZhang" modifier="YichunZhang" created="201308120413" modified="201309300650" changecount="68">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Stable Version 1.4.2.9 - 29 September 2013
+* bundled the new LuaRestyWebSocketLibrary 0.01.
+** this Lua library implements both a nonblocking ~WebSocket server and a nonblocking ~WebSocket client based on LuaNginxModule's cosocket API. thanks Hendrik Schumacher.
+* bundled the new LuaRestyLockLibrary 0.01.
+** this Lua library implements a simple nonblocking mutex lock API based on LuaNginxModule's shared memory dictionaries. Mostly useful for eliminating &quot;dog-pile effects&quot; and etc. thanks Sri Rao for the suggestion.
+* upgraded LuaRestyRedisLibrary to 0.16.
+** feature: added new redis commands bitcount, bitop, client, dump, hincrbyfloat, incrbyfloat, migrate, pexpire, pexpireat, psetex, pubsub, pttl, restore, and time. thanks alex-yam for the patch.
+** optimize: eliminated the [[table.insert()|http://www.lua.org/manual/5.1/manual.html#pdf-table.insert]] calls because they are slower than {{{tb[#tb + 1] = val}}}. thanks alex-yam for the patch. this gives 1.9% speed up for trivial set and get examples when LuaJIT 2.0.2 is used and 4.9% speed up when LuaJIT's v2.1 git branch is used.
+** refactor: avoided using Lua 5.1's [[module() function|http://www.lua.org/manual/5.1/manual.html#pdf-module]] for defining our Lua modules because it has bad side effects.
+** docs: do not use 0 (i.e., unlimited) max idle time in the [[set_keepalive()|https://github.com/agentzh/lua-resty-redis#set_keepalive]] call in the code sample.
+** docs: added code samples for the redis commands {{{hmget}}} and {{{hmset}}}. this has already become a FAQ.
+** docs: added the [[Redis Authentication|https://github.com/agentzh/lua-resty-redis#redis-authentication]] section because it is already an FAQ.
+** docs: documented the {{{options}}} table argument for the [[connect() method|https://github.com/agentzh/lua-resty-redis#connect]].
+** docs: added a missing {{{local}}} keyword to the code sample. thanks Wendal Chen for the patch.
+* upgraded LuaRestyMemcachedLibrary to 0.12.
+** optimize: no longer use Lua tables and [[table.concat()|http://www.lua.org/manual/5.1/manual.html#pdf-table.concat]] to construct simple Memcached query strings. this gives 6.75% overall speed up for trivial {{{set}}} and {{{get}}} examples when LuaJIT 2.0.2 is used.
+** optimize: eliminated [[table.insert()|http://www.lua.org/manual/5.1/manual.html#pdf-table.insert]] because it is slower than {{{tb[#tb + 1] = val}}}.
+** refactor: avoided using Lua's [[module() function|http://www.lua.org/manual/5.1/manual.html#pdf-module]] for defining our Lua modules because it has bad side effects.
+** docs: use limited (10 sec) max idel timeout for in-pool connections in the code sample.
+* upgraded LuaNginxModule to 0.9.0.
+** feature: added support for raw downstream cosocket via the [[ngx.req.socket(true)|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] API, upon which http upgrading protocols like ~WebSocket can be implemented with pure Lua (see LuaRestyWebSocketLibrary). This API can also be used to bypass the Nginx output filters and emit raw HTTP response headers and/or HTTP response bodies. thanks Hendrik Schumacher and aviramc.
+** bugfix: memory invalid reads might happen when [[ngx.flush(true)|http://wiki.nginx.org/HttpLuaModule#ngx.flush]] was used: the &quot;ctx&quot; struct could get freed in the middle of processing and we should save the state explicitly on the C stack.
+** bugfix: the standard Lua coroutine API was not available in the context of [[init_by_lua*|http://wiki.nginx.org/HttpLuaModule#init_by_lua]] and threw out the &quot;no request found&quot; error. thanks Wolf Tivy for the report.
+** bugfix: massive compatibility fixes for the Microsoft Visual C++ compiler. thanks Edwin Cleton for the report.
+** bugfix: Lua VM might run out of memory when {{{lua_code_cache}}} is off; now we always enforce a full Lua GC cycle right after unloading most of the loaded Lua modules when the Lua code cache is turned off.
+** change: raised the &quot;lua_code_cache is off&quot; warning to an alert.
+* upgraded NginxDevelKit to 0.2.19.
+** bugfix: fixed warnings from the Microsoft Visual C++ compiler. thanks Edwin Cleton for the report.
 ! Stable Version 1.4.2.8 - 22 September 2013
 * upgraded LuaNginxModule to 0.8.10.
 ** bugfix: we did not declare the &quot;level&quot; local variable of {{{ngx_http_lua_ngx_log}}} at the beginning of the code block. thanks Edwin Cleton for the report.
@@ -2719,7 +2747,7 @@ Error: #f88
 * Unsuscribing: send emails to {{{openresty+unsubscribe@googlegroups.com}}}
 </pre>
 </div>
-<div title="Components" creator="YichunZhang" modifier="YichunZhang" created="201106210424" modified="201309261800" changecount="26">
+<div title="Components" creator="YichunZhang" modifier="YichunZhang" created="201106210424" modified="201309300623" changecount="27">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 Below lists all the components bundled in OpenResty. All of the components can be enabled or disabled on need.
@@ -2747,11 +2775,13 @@ Most of the components are enabled by default, some are not.
 * [[LuaRdsParserLibrary]]
 * [[LuaRedisParserLibrary]]
 * [[LuaRestyDNSLibrary]]
+* [[LuaRestyLockLibrary]]
 * [[LuaRestyMemcachedLibrary]]
 * [[LuaRestyMySQLLibrary]]
 * [[LuaRestyRedisLibrary]]
 * [[LuaRestyStringLibrary]]
 * [[LuaRestyUploadLibrary]]
+* [[LuaRestyWebSocketLibrary]]
 * [[PostgresNginxModule]]
 * [[RdsCsvNginxModule]]
 * [[RdsJsonNginxModule]]
@@ -2817,14 +2847,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201309222205" tags="Resources" changecount="267">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201309300652" tags="Resources" changecount="269">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Mainline releases
 Mainline releases contain the latest bug fixes and new features. Mainline releases are considered production-ready.
-* [[ngx_openresty-1.4.2.7.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.7.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.7.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 15 September 2013
+* [[ngx_openresty-1.4.2.9.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.9.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.9.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 29 September 2013
 !! Stable releases
 Stable releases are for really conservative users and they may contain known bugs that have already been fixed in the mainline versions.
 * [[ngx_openresty-1.4.2.8.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 22 September 2013
@@ -3308,6 +3338,15 @@ Project homepage: https://github.com/agentzh/lua-resty-dns
 
 This library is enabled by default. You can specify the {{{--without-lua_resty_dns}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.</pre>
 </div>
+<div title="LuaRestyLockLibrary" creator="YichunZhang" modifier="YichunZhang" created="201309300622" modified="201309300624" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This Lua library implements a simple nonblocking mutex lock API based on LuaNginxModule's shared memory dictionaries. Mostly useful for eliminating &quot;dog-pile effects&quot;.
+
+Project homepage: https://github.com/agentzh/lua-resty-lock
+
+This library is enabled by default. You can specify the {{{--without-lua_resty_lock}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.</pre>
+</div>
 <div title="LuaRestyMemcachedLibrary" creator="YichunZhang" modifier="YichunZhang" created="201202290732" modified="201202290736" changecount="4">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
@@ -3357,6 +3396,15 @@ Project homepage: https://github.com/agentzh/lua-resty-upload
 
 This library is enabled by default. You can specify the {{{--without-lua_resty_upload}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
 </pre>
+</div>
+<div title="LuaRestyWebSocketLibrary" creator="YichunZhang" modifier="YichunZhang" created="201309300620" modified="201309300624" changecount="3">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This Lua library implements both a nonblocking ~WebSocket server and a nonblocking ~WebSocket client based on LuaNginxModule's cosocket API.
+
+Project homepage: https://github.com/agentzh/lua-resty-websocket
+
+This library is enabled by default. You can specify the {{{--without-lua_resty_websocket}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.</pre>
 </div>
 <div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201308262319" tags="admin" changecount="39">
 <pre>[[Overview|OpenResty]]
