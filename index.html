@@ -2486,7 +2486,7 @@ See ChangeLog1002007 for change log for OpenResty 1.2.7.x.</pre>
 ** bugfix: segmentation fault might happen in Nginx 1.4.x when using the [[more_set_input_headers|http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers]] directive on the Cookie request headers because recent versions of Nginx no longer always initialize {{{r-&gt;headers_in.cookies}}}.
 See ChangeLog1002008 for change log for OpenResty 1.2.8.x.</pre>
 </div>
-<div title="ChangeLog1004002" creator="YichunZhang" modifier="YichunZhang" created="201308120413" modified="201309300656" changecount="69">
+<div title="ChangeLog1004002" creator="YichunZhang" modifier="YichunZhang" created="201308120413" modified="201309300724" changecount="70">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Mainline Version 1.4.2.9 - 29 September 2013
 * bundled the new LuaRestyWebSocketLibrary 0.01.
@@ -2511,7 +2511,7 @@ See ChangeLog1002008 for change log for OpenResty 1.2.8.x.</pre>
 ** feature: added support for raw downstream cosocket via the [[ngx.req.socket(true)|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] API, upon which http upgrading protocols like ~WebSocket can be implemented with pure Lua (see LuaRestyWebSocketLibrary). This API can also be used to bypass the Nginx output filters and emit raw HTTP response headers and/or HTTP response bodies. thanks Hendrik Schumacher and aviramc.
 ** bugfix: memory invalid reads might happen when [[ngx.flush(true)|http://wiki.nginx.org/HttpLuaModule#ngx.flush]] was used: the &quot;ctx&quot; struct could get freed in the middle of processing and we should save the state explicitly on the C stack.
 ** bugfix: the standard Lua coroutine API was not available in the context of [[init_by_lua*|http://wiki.nginx.org/HttpLuaModule#init_by_lua]] and threw out the &quot;no request found&quot; error. thanks Wolf Tivy for the report.
-** bugfix: massive compatibility fixes for the Microsoft Visual C++ compiler. thanks Edwin Cleton for the report.
+** bugfix: massive compatibility fixes for the Microsoft Visual C++ compiler. thanks Edwin Cleton for the report and jinglong for the patch for the LuaJIT/Lua bytecode loader.
 ** bugfix: Lua VM might run out of memory when {{{lua_code_cache}}} is off; now we always enforce a full Lua GC cycle right after unloading most of the loaded Lua modules when the Lua code cache is turned off.
 ** change: raised the &quot;lua_code_cache is off&quot; warning to an alert.
 * upgraded NginxDevelKit to 0.2.19.
@@ -2813,6 +2813,23 @@ Project homepage and documentation: https://github.com/FRiCKLE/ngx_coolkit/
 
 This module is enabled by default and could be disabled by passing {{{--without-http_coolkit_module}}} option to OpenResty's {{{./configure}}} script.
 </pre>
+</div>
+<div title="Debugging" creator="YichunZhang" modifier="YichunZhang" created="201310061812" modified="201310061819" changecount="7">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+You should always check out Nginx's error log file (specified by the {{{error_log}}} directive in {{{nginx.conf}}}) for any errors or warnings.
+
+If you prefer redirecting common Lua errors to the HTTP response body during Lua development, you can put a Lua [[pcall|http://www.lua.org/manual/5.1/manual.html#pdf-pcall]] call on the top level of your Lua code to catch and redirect any Lua exceptions. But keep in mind, not all errors can be captured this way because you could have errors when sending out the response, then it is impossible to put such errors into the response body.
+
+If you are on Linux, there are quite many real-time analysing tools based on systemtap, which can be used to inspect a running Nginx worker process in various ways:
+
+:https://github.com/agentzh/nginx-systemtap-toolkit
+
+You can find additional tools in the stap++ project:
+
+:https://github.com/agentzh/stapxx
+
+These tools can not only debug functional problems, but also profile online servers to find performance bottlenecks.</pre>
 </div>
 <div title="DefaultTiddlers" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
@@ -3408,7 +3425,7 @@ Project homepage: https://github.com/agentzh/lua-resty-websocket
 
 This library is enabled by default. You can specify the {{{--without-lua_resty_websocket}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.</pre>
 </div>
-<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201308262319" tags="admin" changecount="39">
+<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201310061811" tags="admin" changecount="40">
 <pre>[[Overview|OpenResty]]
 [[Components]]
 [[Getting started|GettingStarted]]
@@ -3421,6 +3438,7 @@ This library is enabled by default. You can specify the {{{--without-lua_resty_w
 [[Installation]]
 [[Upgrading]]
 [[Changes]]
+[[Debugging]]
 [[Quality Assurance|QualityAssurance]]
 [[Community]]
 [[Contact us|ContactUs]]
