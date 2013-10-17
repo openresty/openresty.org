@@ -2898,7 +2898,7 @@ Sometimes, users may want to download old releases.
 See [[Installation]] for installation instructions.
 </pre>
 </div>
-<div title="DrizzleNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210822" modified="201209131834" changecount="22">
+<div title="DrizzleNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210822" modified="201310172333" changecount="23">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is an nginx upstream module that talks to ~MySQL and/or Drizzle database servers by [[libdrizzle]].
@@ -2936,7 +2936,7 @@ cd /path/to/ngx_openresty-VERSION/
 ./configure --with-libdrizzle=/path/to/drizzle --with-http_drizzle_module
 }}}
 
-Documentation page: http://wiki.nginx.org/HttpDrizzleModule
+Documentation page: https://github.com/chaoslawful/drizzle-nginx-module#readme
 
 Project page: https://github.com/chaoslawful/drizzle-nginx-module
 
@@ -3036,14 +3036,14 @@ error_log logs/error.log warn;
 because flushing error log is a very expensive operation and can hurt performance a lot.
 </pre>
 </div>
-<div title="EchoNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210824" modified="201108260112" changecount="4">
+<div title="EchoNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210824" modified="201310172333" changecount="5">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This module wraps lots of Nginx internal ~APIs for streaming input and output, parallel/sequential subrequests, timers and sleeping, as well as various meta data accessing.
 
 Basically it provides various utilities that help testing and debugging of other modules by trivially emulating different kinds of faked subrequest locations.
 
-Documentation: http://wiki.nginx.org/HttpEchoModule
+Documentation: https://github.com/agentzh/echo-nginx-module#readme
 
 Project page: https://github.com/agentzh/echo-nginx-module</pre>
 </div>
@@ -3153,12 +3153,12 @@ View the documentation of each component at the [[Components]] page and find Ngi
 <div title="GitHub" creator="YichunZhang" modifier="YichunZhang" created="201106210420" modified="201106210420" changecount="2">
 <pre>~GitHub is social coding network based on git, a very popular version control system. See its homepage: http://github.com.</pre>
 </div>
-<div title="HeadersMoreNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210859" modified="201108260110" changecount="4">
+<div title="HeadersMoreNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210859" modified="201310172334" changecount="5">
 <pre>This module allows you to add, set, or clear any response or request headers that you specify.
 
 This is an enhanced version of the standard headers module because it provides more utilities like resetting or clearing &quot;builtin headers&quot; like ~Content-Type, ~Content-Length, and Server. 
 
-Documentation: http://wiki.nginx.org/HttpHeadersMoreModule
+Documentation: https://github.com/agentzh/headers-more-nginx-module#readme
 Project page: http://github.com/agentzh/headers-more-nginx-module</pre>
 </div>
 <div title="IconvNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210904" modified="201106220736" changecount="5">
@@ -3298,31 +3298,12 @@ Homepage: http://luajit.org/luajit.html
 LuaJIT is not enabled by default. Please specify the {{{--with-luajit}}} option while configuring OpenResty while building it. See [[Installation]] for details.
 </pre>
 </div>
-<div title="LuaNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210826" modified="201209131837" changecount="19">
+<div title="LuaNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210826" modified="201310172335" changecount="20">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
-This module embeds the Lua interpreter or LuaJIT 2.0 into the nginx core and integrates the powerful Lua threads (aka Lua coroutines) into the Nginx event model by means of Nginx subrequests.
+This module embeds the Lua interpreter or LuaJIT 2.0 into the nginx core and integrates the powerful Lua threads (aka Lua coroutines) into the Nginx event model by means of cosockets and Nginx subrequests.
 
-Unlike Apache's mod_lua and Lighttpd's mod_magnet, Lua code executed using this module can be 100% non-blocking on network traffic as long as the [[Nginx API for Lua|http://wiki.nginx.org/HttpLuaModule#Nginx_API_for_Lua]] provided by this module is used to handle requests to upstream services such as ~MySQL, ~PostgreSQL, Memcached, Redis, or upstream HTTP web services.
-
-At least the following Lua libraries and Nginx modules can be used with this LuaNginxModule:
-* LuaRestyMemcachedLibrary
-* LuaRestyMySQLLibrary
-* LuaRestyRedisLibrary
-* LuaRestyDNSLibrary
-* LuaRestyUploadLibrary
-* MemcNginxModule
-* PostgresNginxModule
-* Redis2NginxModule
-* RedisNginxModule
-* ProxyNginxModule
-* FastCGINginxModule
-
-Almost all the Nginx modules can be used with this LuaNginxModule by means of [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] or [[ngx.location.capture_multi|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi]] but it is recommended to use those {{{lua-resty-*}}} libraries instead of creating subrequests to access the Nginx upstream modules because the former is usually much more flexible and memory-efficient.
-
-The Lua interpreter or LuaJIT instance is shared across all the requests in a single nginx worker process but request contexts are segregated using lightweight Lua coroutines. Loaded Lua modules persist in the nginx worker process level resulting in a small memory footprint in Lua even when under heavy loads.
-
-Documentation: http://wiki.nginx.org/HttpLuaModule
+Documentation: https://github.com/chaoslawful/lua-nginx-module#readme
 
 Project page: http://github.com/chaoslawful/lua-nginx-module</pre>
 </div>
@@ -3338,12 +3319,12 @@ This library is enabled by default; use the {{{--without-lua_rds_parser}}} optio
 Project homepage: https://github.com/agentzh/lua-rds-parser
 </pre>
 </div>
-<div title="LuaRedisParserLibrary" creator="YichunZhang" modifier="YichunZhang" created="201108110210" modified="201108281337" changecount="3">
+<div title="LuaRedisParserLibrary" creator="YichunZhang" modifier="YichunZhang" created="201108110210" modified="201310172335" changecount="4">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 The lua-redis-parser library implements a thin and fast redis raw response parser that constructs corresponding lua data strucutres, as well as a function that constructs redis raw requests.
 
-Documentation page: http://wiki.nginx.org/LuaRedisParser
+Documentation page: https://github.com/agentzh/lua-redis-parser#readme
 
 Project homepage: https://github.com/agentzh/lua-redis-parser
 </pre>
@@ -3486,14 +3467,14 @@ This library is enabled by default. You can specify the {{{--without-lua_resty_w
 <div title="MarkupPostHead" creator="YichunZhang" modifier="YichunZhang" created="201107240444" modified="201107251514" changecount="4">
 <pre></pre>
 </div>
-<div title="MemcNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210830" modified="201209131756" changecount="4">
+<div title="MemcNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210830" modified="201310172334" changecount="5">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This module extends the standard memcached module  to support almost the whole memcached ascii protocol.
 
 It allows you to define a custom REST interface to your memcached servers or access memcached in a very efficient way from within the nginx server by means of subrequests or independent fake requests. 
 
-Documentation: http://wiki.nginx.org/HttpMemcModule
+Documentation: https://github.com/agentzh/memc-nginx-module#readme
 
 Project page: http://github.com/agentzh/memc-nginx-module
 
@@ -3671,7 +3652,7 @@ This is an output filter module that formats Resty DBD Streams (RDS) generated b
 Project page: http://github.com/agentzh/rds-json-nginx-module
 </pre>
 </div>
-<div title="Redis2NginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210847" modified="201209131754" changecount="11">
+<div title="Redis2NginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210847" modified="201310172336" changecount="12">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This is an [[Nginx]] upstream module that makes nginx talk to a redis 2.x server in a non-blocking way. The full Redis 2.0 unified protocol has been implemented including the redis pipelining support.
@@ -3680,7 +3661,7 @@ This module returns the raw TCP response from the Redis server.
 
 This module is enabled by default and can be disabled by passing the {{{--without-http_redis2_module}}} option to the {{{./configure}}} script for OpenResty.
 
-Documentation wiki page: http://wiki.nginx.org/HttpRedis2Module
+Documentation wiki page: https://github.com/agentzh/redis2-nginx-module#readme
 
 Project page: https://github.com/agentzh/redis2-nginx-module
 
@@ -3830,7 +3811,7 @@ The actual output rows may vary depending on the actual contents in your {{{cats
 * [[Using LuaRocks|UsingLuaRocks]]
 </pre>
 </div>
-<div title="SetMiscNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210836" modified="201108260110" changecount="8">
+<div title="SetMiscNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210836" modified="201310172336" changecount="9">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This module adds various {{{set_xxx}}} directives added to [[Nginx]]'s [[rewrite module|http://wiki.nginx.org/NginxHttpRewriteModule]] (~MD5/~SHA1, SQL/JSON quoting, and many more).
@@ -3838,7 +3819,7 @@ This module adds various {{{set_xxx}}} directives added to [[Nginx]]'s [[rewrite
 Every directive provided by this module can be mixed freely with other nginx rewrite module's
   directives, like {{{if}}} and {{{set}}}.
 
-Documentation: http://wiki.nginx.org/HttpSetMiscModule
+Documentation: https://github.com/agentzh/set-misc-nginx-module#readme
 
 Project page: http://github.com/agentzh/set-misc-nginx-module</pre>
 </div>
@@ -3848,14 +3829,14 @@ Project page: http://github.com/agentzh/set-misc-nginx-module</pre>
 <div title="SiteTitle" creator="YichunZhang" modifier="YichunZhang" created="201106201137" modified="201106210357" tags="admin" changecount="3">
 <pre>OpenResty</pre>
 </div>
-<div title="SrcacheNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210907" modified="201108260111" changecount="5">
+<div title="SrcacheNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210907" modified="201310172336" changecount="6">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 This module provides a transparent caching layer for arbitrary nginx locations (like those use an upstream or even serve static disk files).
 
 Usually, the MemcNginxModule is used together with this module to provide a concrete caching storage backend. But technically, any modules that provide a REST interface can be used as the fetching and storage subrequests used by this module.
 
-Documentation page: http://wiki.nginx.org/HttpSRCacheModule
+Documentation page: https://github.com/agentzh/srcache-nginx-module#readme
 
 Project page: http://github.com/agentzh/srcache-nginx-module
 </pre>
