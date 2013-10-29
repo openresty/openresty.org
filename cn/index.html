@@ -2330,13 +2330,13 @@ The following components are bundled in this release:
 ** feature: now we return all the answer records even when the DNS server returns a non-zero error code, in which case the error code and error string are now set as the &quot;errcode&quot; and &quot;errstr&quot; fields in the Lua table returned. thanks Matthieu Tourne for requesting this.
 See ChangeLog1004001 for change log for OpenResty 1.4.1.x.</pre>
 </div>
-<div title="ChangeLog1004003" creator="YichunZhang" modifier="YichunZhang" created="201310292041" changecount="1">
+<div title="ChangeLog1004003" creator="YichunZhang" modifier="YichunZhang" created="201310292041" modified="201310292247" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Mainline Version 1.4.3.1 - 29 October 2013
 * upgraded the Nginx core to 1.4.3.
 ** see the changes here: http://nginx.org/en/CHANGES-1.4
 * upgraded LuaNginxModule to 0.9.1.
-** feature: added the new configuration directive &quot;lua_use_default_type&quot; for controlling whether to send out a default {{{Content-Type}}} response header (as defined by the [[default_type|http://nginx.org/en/docs/http/ngx_http_core_module.html#default_type]] directive). default on. thanks aviramc for the patch.
+** feature: added the new configuration directive [[lua_use_default_type|https://github.com/chaoslawful/lua-nginx-module#lua_use_default_type]] for controlling whether to send out a default {{{Content-Type}}} response header (as defined by the [[default_type|http://nginx.org/en/docs/http/ngx_http_core_module.html#default_type]] directive). default on. thanks aviramc for the patch.
 ** feature: now the raw request cosocket returned by [[ngx.req.socket(true)|https://github.com/chaoslawful/lua-nginx-module#ngxreqsocket]] no longer requires the request body to be read already, which means that one can use this cosocket to read the raw request body data as well. thanks aviramc for the original patch.
 ** bugfix: when there were no existing {{{Cache-Control}}} response headers, {{{ngx.header.cache_control = nil}}} would (incorrectly) create a new {{{Cache-Control}}} header with an empty value. thanks jinglong for the patch.
 ** bugfix: the original letter-case of the header name was lost when creating the {{{Cache-Control}}} response header via the [[ngx.header.HEADER|https://github.com/chaoslawful/lua-nginx-module#ngxheaderheader]] API.
