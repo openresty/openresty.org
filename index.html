@@ -2602,7 +2602,7 @@ The following components are bundled in this release:
 ** feature: now we return all the answer records even when the DNS server returns a non-zero error code, in which case the error code and error string are now set as the &quot;errcode&quot; and &quot;errstr&quot; fields in the Lua table returned. thanks Matthieu Tourne for requesting this.
 See ChangeLog1004001 for change log for OpenResty 1.4.1.x.</pre>
 </div>
-<div title="ChangeLog1004003" creator="YichunZhang" modifier="YichunZhang" created="201310291917" modified="201310292031" changecount="59">
+<div title="ChangeLog1004003" creator="YichunZhang" modifier="YichunZhang" created="201310291917" modified="201310292040" changecount="60">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Mainline Version 1.4.3.1 - 29 October 2013
 * upgraded the Nginx core to 1.4.3.
@@ -2663,7 +2663,8 @@ See ChangeLog1004001 for change log for OpenResty 1.4.1.x.</pre>
 * feature: applied the [[proxy_host_port_vars patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-proxy_host_port_vars.patch]] to the Nginx core to make {{{$proxy_host}}} and {{{$proxy_port}}} accessible for dynamic languages like Lua and Perl.
 * bugfix: applied the [[gzip_flush_bug patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-gzip_flush_bug.patch]] to the Nginx core to fix request hang caused by the [[ngx_gzip|http://nginx.org/en/docs/http/ngx_http_gzip_module.html]] and [[ngx_gunzip|http://nginx.org/en/docs/http/ngx_http_gzip_module.html]] modules when using [[ngx.flush(true)|https://github.com/chaoslawful/lua-nginx-module#ngxflush]], for example. Thanks Maxim Dounin for the review.
 * bugfix: applied the [[cache_lock_hang_in_subreq patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-cache_lock_hang_in_subreq.patch]] to the Nginx core to fix the request hang when using [[proxy_cache_lock|http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_lock]] in subrequests and the cache lock timeout happens.
-* bugfix: backported Maxim Dounin's [[patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-gzip_buffered_bug.patch]] to fix an issue in the [[ngx_gzip module|http://nginx.org/en/docs/http/ngx_http_gzip_module.html]]: it did not clear {{{r-&gt;connection-&gt;buffered}}} when the pending data was already flushed out. this could hang LuaNginxModule's [[ngx.flush(true)|https://github.com/chaoslawful/lua-nginx-module#ngxflush]] call, for example.</pre>
+* bugfix: backported Maxim Dounin's [[patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-gzip_buffered_bug.patch]] to fix an issue in the [[ngx_gzip module|http://nginx.org/en/docs/http/ngx_http_gzip_module.html]]: it did not clear {{{r-&gt;connection-&gt;buffered}}} when the pending data was already flushed out. this could hang LuaNginxModule's [[ngx.flush(true)|https://github.com/chaoslawful/lua-nginx-module#ngxflush]] call, for example.
+See ChangeLog1004002 for change log for OpenResty 1.4.2.x.</pre>
 </div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;

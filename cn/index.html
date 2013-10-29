@@ -2330,6 +2330,70 @@ The following components are bundled in this release:
 ** feature: now we return all the answer records even when the DNS server returns a non-zero error code, in which case the error code and error string are now set as the &quot;errcode&quot; and &quot;errstr&quot; fields in the Lua table returned. thanks Matthieu Tourne for requesting this.
 See ChangeLog1004001 for change log for OpenResty 1.4.1.x.</pre>
 </div>
+<div title="ChangeLog1004003" creator="YichunZhang" modifier="YichunZhang" created="201310292041" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Mainline Version 1.4.3.1 - 29 October 2013
+* upgraded the Nginx core to 1.4.3.
+** see the changes here: http://nginx.org/en/CHANGES-1.4
+* upgraded LuaNginxModule to 0.9.1.
+** feature: added the new configuration directive &quot;lua_use_default_type&quot; for controlling whether to send out a default {{{Content-Type}}} response header (as defined by the [[default_type|http://nginx.org/en/docs/http/ngx_http_core_module.html#default_type]] directive). default on. thanks aviramc for the patch.
+** feature: now the raw request cosocket returned by [[ngx.req.socket(true)|https://github.com/chaoslawful/lua-nginx-module#ngxreqsocket]] no longer requires the request body to be read already, which means that one can use this cosocket to read the raw request body data as well. thanks aviramc for the original patch.
+** bugfix: when there were no existing {{{Cache-Control}}} response headers, {{{ngx.header.cache_control = nil}}} would (incorrectly) create a new {{{Cache-Control}}} header with an empty value. thanks jinglong for the patch.
+** bugfix: the original letter-case of the header name was lost when creating the {{{Cache-Control}}} response header via the [[ngx.header.HEADER|https://github.com/chaoslawful/lua-nginx-module#ngxheaderheader]] API.
+** bugfix: [[ngx.req.set_header(&quot;Host&quot;, value)|https://github.com/chaoslawful/lua-nginx-module#ngxreqset_header]] would overwrite the value of [[$host|http://nginx.org/en/docs/http/ngx_http_core_module.html#var_host]] with bad values. thanks aviramc for the patch.
+** bugfix: use of [[ngx.exit()|https://github.com/chaoslawful/lua-nginx-module#ngxexit]] to abort pending subrequests in other &quot;light threads&quot; might lead to segfault or request hang when HTTP 1.0 full buffering is in effect.
+** bugfix: removing a request header might lead to memory corruptions. thanks Bjørnar Ness for the report.
+** bugfix: reading [[ngx.status|https://github.com/chaoslawful/lua-nginx-module#ngxstatus]] might get different values than [[$status|http://nginx.org/en/docs/http/ngx_http_core_module.html#var_status]]. thanks Kevin Burke for the report.
+** bugfix: downstream write events might interfere with upstream cosockets that are slow to write to. thanks Aviram Cohen for the report.
+** bugfix: the bookkeeping state for already-freed user threads might be incorrectly used by newly-created threads that were completely different, which could lead to bad results. thanks Sam Lawrence for the report.
+** bugfix: calling [[ngx.thread.wait()|https://github.com/chaoslawful/lua-nginx-module#ngxthreadwait]] on a user thread object that is already waited (i.e., already dead) would hang forever. thanks Sam Lawrence for the report.
+** bugfix: the alert &quot;zero size buf&quot; could be logged when assigning an empty Lua string (&quot;&quot;) to {{{ngx.arg[1]}}} in [[body_filter_by_lua|https://github.com/chaoslawful/lua-nginx-module#body_filter_by_lua]]*.
+** bugfix: subrequests initiated by [[ngx.location.capture|https://github.com/chaoslawful/lua-nginx-module#ngxlocationcapture]]* could trigger unnecessary response header sending actions in the subrequest because our capturing output header filter did not set {{{r-&gt;header_sent}}}.
+** bugfix: the Lua error message for the case that [[ngx.sleep()|https://github.com/chaoslawful/lua-nginx-module#ngxsleep]] was used in [[log_by_lua|https://github.com/chaoslawful/lua-nginx-module#log_by_lua]]* was not friendly. thanks Jiale Zhi for the report.
+** bugfix: now [[ngx.req.socket(true)|https://github.com/chaoslawful/lua-nginx-module#ngxreqsocket]] returns proper error when there is some other &quot;light thread&quot; reading the request body.
+** bugfix: [[header_filter_by_lua|https://github.com/chaoslawful/lua-nginx-module#header_filter_by_lua]]*, [[body_filter_by_lua|https://github.com/chaoslawful/lua-nginx-module#body_filter_by_lua]]*, and [[ngx.location.capture|https://github.com/chaoslawful/lua-nginx-module#ngxlocationcapture]]* might not work properly with multiple &quot;http {}&quot; blocks in {{{nginx.conf}}}. thanks flygoast for the report.
+** optimize: made [[ngx.re.match|https://github.com/chaoslawful/lua-nginx-module#ngxrematch]] and [[ngx.re.gmatch|https://github.com/chaoslawful/lua-nginx-module#ngxregmatch]] faster for LuaJIT 2.x when there is no submatch captures.
+** optimize: pre-allocate space for the Lua tables in various places.
+** doc: fixed the context for the [[lua_package_path|https://github.com/chaoslawful/lua-nginx-module#lua_package_path]] and [[lua_package_cpath|https://github.com/chaoslawful/lua-nginx-module#lua_package_cpath]] directives. thanks duhoobo for the report.
+* upgraded HeadersMoreNginxModule to 0.23.
+** bugfix: removing request headers via [[more_clear_input_headers|https://github.com/agentzh/headers-more-nginx-module#more_clear_input_headers]] might lead to memory corruptions.
+** bugfix: [[more_set_input_headers|https://github.com/agentzh/headers-more-nginx-module#more_set_input_headers]] might overwrite the value of the [[$host|http://nginx.org/en/docs/http/ngx_http_core_module.html#var_host]] variable with bad values.
+** bugfix: [[more_set_headers|https://github.com/agentzh/headers-more-nginx-module#more_set_headers]] and [[more_clear_headers|https://github.com/agentzh/headers-more-nginx-module#more_clear_headers]] might not work when multiple &quot;http {}&quot; blocks were used in {{{nginx.conf}}}.
+** bugfix: eliminated use of C global variables during configuration phase because it might lead to issues when HUP reload failed.
+* upgraded SrcacheNginxModule to 0.23.
+** bugfix: this module might not work properly with multiple &quot;http {}&quot; blocks in {{{nginx.conf}}}.
+** bugfix: we might (incorrectly) return 500 in our output filters.
+** bugfix: we did not set {{{r-&gt;header_sent}}} when we want to discard the header in our header filter.
+* upgraded RdsJsonNginxModule to 0.12.
+** bugfix: in case of multiple &quot;http {}&quot; blocks in {{{nginx.conf}}}, our output filters might be disabled even when this module is configured properly.
+** bugix: we did not check the {{{NULL}}} pointer returned by an Nginx array element allocation.
+* upgraded RdsCsvNginxModule to 0.05.
+** optimize: we now only register our output filters when this module is indeed used (the only exception is when multiple &quot;http {}&quot; blocks are used).
+* upgraded XssNginxModule to 0.04.
+** optimize: we now only register our output filters when this module is indeed used (the only exception is when multiple &quot;http {}&quot; blocks are used).
+* upgraded EchoNginxModule to 0.49.
+** bugfix: [[echo_before_body|https://github.com/agentzh/echo-nginx-module#echo_before_body]] and [[echo_after_body|https://github.com/agentzh/echo-nginx-module#echo_after_body]] might now work properly when multiple &quot;http {}&quot; blocks were used in {{{nginx.conf}}}.
+* upgraded LuaRestyRedisLibrary to 0.17.
+** optimize: added an optional argument &quot;n&quot; to [[init_pipeline()|https://github.com/agentzh/lua-resty-redis#init_pipeline]] as a hint for the number of pipelined commands.
+** optimize: use LuaJIT 2.1's new [[table.new() primitive|http://repo.or.cz/w/luajit-2.0.git/commit/c8cfca055]] to pre-allocate space for Lua tables.
+* upgraded LuaRestyUploadLibrary to 0.09.
+** bugfix: removed use of the [[module()|http://www.lua.org/manual/5.1/manual.html#pdf-module]] function to prevent bad side-effects.
+** optimize: Removed use of lua tables and [[table.concat()|http://www.lua.org/manual/5.1/manual.html#pdf-table.concat]] for simple one-line Lua string concatenations.
+* upgraded LuaRestyMySQLLibrary to 0.14.
+** bugfix: avoided using Lua 5.1's [[module()|http://www.lua.org/manual/5.1/manual.html#pdf-module]] function for defining our Lua modules because it has bad side effects.
+** optimize: added an optional new argument &quot;nrows&quot; to the [[query()|https://github.com/agentzh/lua-resty-mysql#query]] and [[read_result()|https://github.com/agentzh/lua-resty-mysql#read_result]] methods, which can speed up things a bit.
+** optimize: use LuaJIT v2.1's new [[table.new()|http://repo.or.cz/w/luajit-2.0.git/commit/c8cfca055]] API to optimize Lua table allocations. when table.new is missing, just fall back to the good old &quot;{}&quot; constructor. this gives 12% overall speed-up for a typical result set with 500 rows when LuaJIT 2.1 is used.
+** optimize: eliminated use of [[table.insert()|http://www.lua.org/manual/5.1/manual.html#pdf-table.insert]] because it is slower than &quot;tb[#tb + 1] = val&quot;.
+** optimize: switched over to the multi-argument form of [[string.char()|http://www.lua.org/manual/5.1/manual.html#pdf-string.char]].
+** optimize: no longer use Lua tables and [[table.concat()|http://www.lua.org/manual/5.1/manual.html#pdf-table.concat]] to construct simple query strings.
+* upgraded LuaRestyWebSocketLibrary to 0.02.
+** optimize: use LuaJIT 2.1's [[table.new()|http://repo.or.cz/w/luajit-2.0.git/commit/c8cfca055]] to preallocate space for Lua tables, eliminating the overhead of Lua table rehash.
+* feature: applied the [[proxy_host_port_vars patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-proxy_host_port_vars.patch]] to the Nginx core to make {{{$proxy_host}}} and {{{$proxy_port}}} accessible for dynamic languages like Lua and Perl.
+* bugfix: applied the [[gzip_flush_bug patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-gzip_flush_bug.patch]] to the Nginx core to fix request hang caused by the [[ngx_gzip|http://nginx.org/en/docs/http/ngx_http_gzip_module.html]] and [[ngx_gunzip|http://nginx.org/en/docs/http/ngx_http_gzip_module.html]] modules when using [[ngx.flush(true)|https://github.com/chaoslawful/lua-nginx-module#ngxflush]], for example. Thanks Maxim Dounin for the review.
+* bugfix: applied the [[cache_lock_hang_in_subreq patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-cache_lock_hang_in_subreq.patch]] to the Nginx core to fix the request hang when using [[proxy_cache_lock|http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_lock]] in subrequests and the cache lock timeout happens.
+* bugfix: backported Maxim Dounin's [[patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-gzip_buffered_bug.patch]] to fix an issue in the [[ngx_gzip module|http://nginx.org/en/docs/http/ngx_http_gzip_module.html]]: it did not clear {{{r-&gt;connection-&gt;buffered}}} when the pending data was already flushed out. this could hang LuaNginxModule's [[ngx.flush(true)|https://github.com/chaoslawful/lua-nginx-module#ngxflush]] call, for example.
+See ChangeLog1004002 for change log for OpenResty 1.4.2.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -2573,12 +2637,12 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201309300655" tags="Resources" changecount="170">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201310292039" tags="Resources" changecount="171">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 主线版
 主线版本包含了最新的问题修复和特性，而且其质量也是按生产级别来保证的。
-* [[ngx_openresty-1.4.2.9.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.9.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.9.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 2013年9月29日
+* [[ngx_openresty-1.4.3.1.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年10月29日
 !! 稳定版
 稳定版是提供给非常保守的用户的。稳定版中经常会包含有最新的主线版已经修复了的问题。
 * [[ngx_openresty-1.4.2.8.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 2013年9月22日
