@@ -2330,8 +2330,19 @@ The following components are bundled in this release:
 ** feature: now we return all the answer records even when the DNS server returns a non-zero error code, in which case the error code and error string are now set as the &quot;errcode&quot; and &quot;errstr&quot; fields in the Lua table returned. thanks Matthieu Tourne for requesting this.
 See ChangeLog1004001 for change log for OpenResty 1.4.1.x.</pre>
 </div>
-<div title="ChangeLog1004003" creator="YichunZhang" modifier="YichunZhang" created="201310292041" modified="201310292247" changecount="2">
+<div title="ChangeLog1004003" creator="YichunZhang" modifier="YichunZhang" created="201310292041" modified="201311062127" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Mainline Version 1.4.3.3 - 6 November 2013
+* upgraded LuaNginxModule to 0.9.2.
+** feature: added new API function [[ngx.re.find()|https://github.com/chaoslawful/lua-nginx-module#ngxrefind]], which is similar to [[ngx.re.match|https://github.com/chaoslawful/lua-nginx-module#ngxrematch]], but only returns the beginning index and end index (1-based) of the whole match, which is 30% ~ 40% faster than {{{ngx.re.match}}} for simplest regexes.
+** feature: added new API function [[ngx.config.prefix()|https://github.com/chaoslawful/lua-nginx-module#ngxconfigprefix]] to return the Nginx server &quot;prefix&quot; path.
+** bugfix: reading [[ngx.header.HEADER|https://github.com/chaoslawful/lua-nginx-module#ngxheaderheader]] could result in Lua string storage corruptions. thanks Dane Knecht for the report.
+** bugfix: [[ngx.re.match|https://github.com/chaoslawful/lua-nginx-module#ngxrematch]]: the &quot;ctx&quot; parameter table's &quot;pos&quot; field should start from 1 instead of 0.
+** bugfix: fixed compilation errors with Nginx older than 1.0.0.
+** bugfix: localizing the [[coroutine.*|https://github.com/chaoslawful/lua-nginx-module#coroutinecreate]] API functions in [[init_by_lua*|https://github.com/chaoslawful/lua-nginx-module#init_by_lua]] for future use in contexts like [[content_by_lua*|https://github.com/chaoslawful/lua-nginx-module#content_by_lua]] might hang the request. thanks James Hurst for the report.
+* upgraded SrcacheNginxModule to 0.24.
+** bugfix: fixed compilation errors with Nginx older than 0.9.2.
+* bugfix: applied the [[cache_manager_exit patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-cache_manager_exit.patch]] to the Nginx core to fix an issue when the cache manager process is shutting down.
 ! Mainline Version 1.4.3.1 - 29 October 2013
 * upgraded the Nginx core to 1.4.3.
 ** see the changes here: http://nginx.org/en/CHANGES-1.4
@@ -2637,12 +2648,12 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201310292039" tags="Resources" changecount="171">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201311062126" tags="Resources" changecount="172">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 主线版
 主线版本包含了最新的问题修复和特性，而且其质量也是按生产级别来保证的。
-* [[ngx_openresty-1.4.3.1.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年10月29日
+* [[ngx_openresty-1.4.3.3.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.3.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.3.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年11月6日
 !! 稳定版
 稳定版是提供给非常保守的用户的。稳定版中经常会包含有最新的主线版已经修复了的问题。
 * [[ngx_openresty-1.4.2.8.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 2013年9月22日
