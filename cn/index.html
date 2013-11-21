@@ -2330,8 +2330,10 @@ The following components are bundled in this release:
 ** feature: now we return all the answer records even when the DNS server returns a non-zero error code, in which case the error code and error string are now set as the &quot;errcode&quot; and &quot;errstr&quot; fields in the Lua table returned. thanks Matthieu Tourne for requesting this.
 See ChangeLog1004001 for change log for OpenResty 1.4.1.x.</pre>
 </div>
-<div title="ChangeLog1004003" creator="YichunZhang" modifier="YichunZhang" created="201310292041" modified="201311130614" changecount="4">
+<div title="ChangeLog1004003" creator="YichunZhang" modifier="YichunZhang" created="201310292041" modified="201311210511" changecount="5">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Stable Version 1.4.3.6 - 20 November 2013
+* bugfix: applied the official patch [[patch.2013.space.txt|http://nginx.org/download/patch.2013.space.txt]] for the Nginx core to fix the security issue ~CVE-2013-4547.
 ! Stable Version 1.4.3.4 - 12 November 2013
 This release is essentially the same as the last mainline release, 1.4.3.3.
 
@@ -2686,7 +2688,7 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201311130614" tags="Resources" changecount="173">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201311210510" tags="Resources" changecount="174">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 主线版
@@ -2694,9 +2696,10 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 * [[ngx_openresty-1.4.3.3.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.3.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.3.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年11月6日
 !! 稳定版
 稳定版是提供给非常保守的用户的。稳定版中经常会包含有最新的主线版已经修复了的问题。
-* [[ngx_openresty-1.4.3.4.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年11月12日
+* [[ngx_openresty-1.4.3.6.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年11月20日
 !! 历史遗留版
 有的时候我们可能会需要较老的版本：
+* [[ngx_openresty-1.4.3.4.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年11月12日
 * [[ngx_openresty-1.4.2.8.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 2013年9月22日
 * [[ngx_openresty-1.2.8.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 2013年6月10日
 * [[ngx_openresty-1.2.7.8.tar.gz|http://openresty.org/download/ngx_openresty-1.2.7.8.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.7.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 2013年5月13日
