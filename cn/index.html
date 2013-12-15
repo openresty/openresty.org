@@ -2330,8 +2330,44 @@ The following components are bundled in this release:
 ** feature: now we return all the answer records even when the DNS server returns a non-zero error code, in which case the error code and error string are now set as the &quot;errcode&quot; and &quot;errstr&quot; fields in the Lua table returned. thanks Matthieu Tourne for requesting this.
 See ChangeLog1004001 for change log for OpenResty 1.4.1.x.</pre>
 </div>
-<div title="ChangeLog1004003" creator="YichunZhang" modifier="YichunZhang" created="201310292041" modified="201311210511" changecount="5">
+<div title="ChangeLog1004003" creator="YichunZhang" modifier="YichunZhang" created="201310292041" modified="201312150016" changecount="6">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Mainline Version 1.4.3.7 - 14 December 2013
+* upgraded LuaJIT to v2.1-20131211.
+** see changes here: https://github.com/agentzh/luajit2/commits/v2.1-agentzh
+* bundled LuaRestyCoreLibrary 0.0.2.
+** this library reimplements LuaNginxModule's Lua API with LuaJIT FFI. see https://github.com/agentzh/lua-resty-core for more details.
+* upgraded LuaNginxModule to 0.9.3.
+** feature: added a lot of pure C API (without using any Lua VM's C API) for ~FFI-based Lua API implementations like LuaRestyCoreLibrary.
+** feature: allow creating 0-delay timers upon worker process existing.
+** feature: added new API function [[ngx.worker.exiting()|https://github.com/chaoslawful/lua-nginx-module#ngxworkerexiting]] for testing if the current worker process has started exiting.
+** feature: [[ngx.re.find()|https://github.com/chaoslawful/lua-nginx-module#ngxrefind]] now accepts the optional 5th argument &quot;nth&quot; to control which submatch capture's indexes are returned. thanks Lance Li for the feature request.
+** feature: added new API for version numbers of both Nginx and LuaNginxModule itself: [[ngx.config.nginx_version|https://github.com/chaoslawful/lua-nginx-module#ngxconfignginx_version]] and [[ngx.config.ngx_lua_version|https://github.com/chaoslawful/lua-nginx-module#ngxconfigngx_lua_version]]. thanks smallfish for the patch.
+** feature: added support for loading LuaJIT 2.1 bytecode files directly in {{{*_by_lua_file}}} configuration directives.
+** bugfix: [[ngx.req.set_header()|https://github.com/chaoslawful/lua-nginx-module#ngxreqset_header]] did not completely override the existing request header with multiple values. thanks Aviram Cohen for the report.
+** bugfix: modifying request headers in a subrequest could lead to assertion failures and crashes. thanks leaf corcoran for the report.
+** bugfix: turning off [[lua_code_cache|https://github.com/chaoslawful/lua-nginx-module#lua_code_cache]] could lead to memory issues (segfaults and LuaJIT assertion failures) when Lua libraries using LuaJIT FFI were used. now we always create a clean separate Lua VM instance for every Nginx request served by us when the Lua code cache is disabled. thanks Ron Gomes for the report.
+** bugfix: the linker option {{{-E}}} is not support in Cygwin's linker; we should test {{{--export-all-symbols}}} at the same time. thanks Heero Zhang for the report.
+** bugfix: fixed the warnings from the Microsoft Visual C++ compiler. thanks Edwin Cleton for the report.
+** optimize: optimized the implementation of [[ngx.headers_sent|https://github.com/chaoslawful/lua-nginx-module#ngxheaders_sent]] a bit.
+** doc: added new section &quot;Statically Linking Pure Lua Modules&quot;: https://github.com/chaoslawful/lua-nginx-module#statically-linking-pure-lua-modules
+** doc: typo fixes from Zheng Ping.
+* upgraded HeadersMoreNginxModule to 0.24.
+** bugfix: [[more_set_input_headers|https://github.com/agentzh/headers-more-nginx-module#more_set_input_headers]] did not completely override the existing request header with multiple values. thanks Aviram Cohen for the report.
+* upgraded SetMiscNginxModule to 0.23.
+** feature: added new configuration directives [[set_formatted_gmt_time|https://github.com/agentzh/set-misc-nginx-module#set_formatted_gmt_time]] and [[set_formatted_local_time|https://github.com/agentzh/set-misc-nginx-module#set_formatted_local_time]]. thanks Trurl ~McByte for the patch.
+* upgraded MemcNginxModule to 0.14.
+** feature: added new configuration directive [[memc_ignore_client_abort|https://github.com/agentzh/memc-nginx-module#memc_ignore_client_abort]]. thanks Eldar Zaitov for the patch.
+* upgraded RdsJsonNginxModule to 0.13.
+** bugfix: fixed the warnings from the Microsoft Visual C++ compiler. thanks Edwin Cleton for the report.
+* upgraded EchoNginxModule to 0.50.
+** bugfix: fixed the warnings from the Microsoft Visual C++ compiler. thanks Edwin Cleton for the report.
+* upgraded ArrayVarNginxModule to 0.03.
+** bugfix: fixed the warnings from the Microsoft Visual C++ compiler. thanks Edwin Cleton for the report.
+* upgraded RedisNginxModule module to 0.3.7.
+** see changes here: http://mailman.nginx.org/pipermail/nginx/2013-December/041297.html
+* feature: applied the [[larger_max_error_str patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-larger_max_error_str.patch]] to the nginx core to allow error log messages up to 4096 bytes and to allow the C macro {{{NGX_MAX_ERROR_STR}}} to be overridden from the outside.
+* feature: added new configure option {{{--with-pcre-conf-opt=OPTIONS}}} to the nginx core to allow custom PCRE ./configure build options. thanks Lance Li for the original patch.
 ! Stable Version 1.4.3.6 - 20 November 2013
 * bugfix: applied the official patch [[patch.2013.space.txt|http://nginx.org/download/patch.2013.space.txt]] for the Nginx core to fix the security issue ~CVE-2013-4547.
 ! Stable Version 1.4.3.4 - 12 November 2013
@@ -2575,7 +2611,7 @@ TertiaryDark: #666
 Error: #f88
 </pre>
 </div>
-<div title="Components" creator="YichunZhang" modifier="YichunZhang" created="201106210424" modified="201309300659" changecount="26">
+<div title="Components" creator="YichunZhang" modifier="YichunZhang" created="201106210424" modified="201312150017" changecount="27">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 下面列表中的组件被用于构建 OpenResty。所有的组件可以被激活或禁止。
@@ -2600,6 +2636,7 @@ Error: #f88
 * [[LuaNginxModule]]
 * [[LuaRdsParserLibrary]]
 * [[LuaRedisParserLibrary]]
+* [[LuaRestyCoreLibrary]]
 * [[LuaRestyDNSLibrary]]
 * [[LuaRestyLockLibrary]]
 * [[LuaRestyMemcachedLibrary]]
@@ -2688,12 +2725,12 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201311210510" tags="Resources" changecount="174">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201312150015" tags="Resources" changecount="175">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 主线版
 主线版本包含了最新的问题修复和特性，而且其质量也是按生产级别来保证的。
-* [[ngx_openresty-1.4.3.3.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.3.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.3.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年11月6日
+* [[ngx_openresty-1.4.3.7.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.7.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.7.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年12月14日
 !! 稳定版
 稳定版是提供给非常保守的用户的。稳定版中经常会包含有最新的主线版已经修复了的问题。
 * [[ngx_openresty-1.4.3.6.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年11月20日
@@ -3118,6 +3155,15 @@ Documentation page: http://wiki.nginx.org/LuaRedisParser
 
 Project homepage: https://github.com/agentzh/lua-redis-parser
 </pre>
+</div>
+<div title="LuaRestyCoreLibrary" creator="YichunZhang" modifier="YichunZhang" created="201312150017" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+Reimplements the Lua API provided by LuaNginxModule with LuaJIT FFI.
+
+Project homepage: https://github.com/agentzh/lua-resty-core
+
+This library is enabled by default. You can specify the {{{--without-lua_resty_core}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.</pre>
 </div>
 <div title="LuaRestyDNSLibrary" creator="YichunZhang" modifier="YichunZhang" created="201211120214" changecount="1">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
