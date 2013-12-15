@@ -2602,8 +2602,10 @@ The following components are bundled in this release:
 ** feature: now we return all the answer records even when the DNS server returns a non-zero error code, in which case the error code and error string are now set as the &quot;errcode&quot; and &quot;errstr&quot; fields in the Lua table returned. thanks Matthieu Tourne for requesting this.
 See ChangeLog1004001 for change log for OpenResty 1.4.1.x.</pre>
 </div>
-<div title="ChangeLog1004003" creator="YichunZhang" modifier="YichunZhang" created="201310291917" modified="201312150004" changecount="121">
+<div title="ChangeLog1004003" creator="YichunZhang" modifier="YichunZhang" created="201310291917" modified="201312150249" changecount="123">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Mainline Version 1.4.3.9 - 14 December 2013
+* bugfix: the include path for LuaJIT C headers was still pointing to {{{luajit-2.0}}}, which should have been {{{luajit-2.1}}} instead. thanks Tor Hveem for the report.
 ! Mainline Version 1.4.3.7 - 14 December 2013
 * upgraded LuaJIT to v2.1-20131211.
 ** see changes here: https://github.com/agentzh/luajit2/commits/v2.1-agentzh
@@ -3018,14 +3020,14 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201312142245" tags="Resources" changecount="275">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201312150247" tags="Resources" changecount="276">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 You can download the latest development or stable release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Mainline releases
 Mainline releases contain the latest bug fixes and new features. Mainline releases are considered production-ready.
-* [[ngx_openresty-1.4.3.7.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.7.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.7.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 14 December 2013
+* [[ngx_openresty-1.4.3.9.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.9.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.9.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 14 December 2013
 !! Stable releases
 Stable releases are for really conservative users and they may contain known bugs that have already been fixed in the mainline versions.
 * [[ngx_openresty-1.4.3.6.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 20 November 2013
