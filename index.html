@@ -2755,10 +2755,10 @@ The following components are bundled in this release:
 * bugfix: backported Maxim Dounin's [[patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-gzip_buffered_bug.patch]] to fix an issue in the [[ngx_gzip module|http://nginx.org/en/docs/http/ngx_http_gzip_module.html]]: it did not clear {{{r-&gt;connection-&gt;buffered}}} when the pending data was already flushed out. this could hang LuaNginxModule's [[ngx.flush(true)|https://github.com/chaoslawful/lua-nginx-module#ngxflush]] call, for example.
 See ChangeLog1004002 for change log for OpenResty 1.4.2.x.</pre>
 </div>
-<div title="ChangeLog1005008" creator="YichunZhang" modifier="YichunZhang" created="201401102259" modified="201401110127" changecount="55">
+<div title="ChangeLog1005008" creator="YichunZhang" modifier="YichunZhang" created="201401102259" modified="201401112136" changecount="57">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Mainline Version 1.5.8.1 - 10 January 2014
-* change: now we default to LuaJIT instead of the standard Lua 5.1 interpreter. the {{{--with-luajit}}} option for {{{./configure}}} is now the default. To use the standard Lua 5.1 interpreter, specify the {{{--with-lua51}}} option explicitly.
+* change: now we default to LuaJIT instead of the standard Lua 5.1 interpreter. the {{{--with-luajit}}} option for {{{./configure}}} is now the default. To use the standard Lua 5.1 interpreter, specify the {{{--with-lua51}}} option explicitly. thanks smallfish for the suggestion.
 * bugfix: Nginx's built-in resolver did not accept fully qualified domain names (with a trailing dot).
 * optimize: shortened the {{{Server}}} response header string &quot;ngx_openresty&quot; to &quot;openresty&quot;.
 * upgraded the Nginx core to 1.5.8.
@@ -2799,7 +2799,7 @@ See ChangeLog1004002 for change log for OpenResty 1.4.2.x.</pre>
 * upgraded LuaRestyCoreLibrary to 0.0.3.
 ** feature: updated to comply with LuaNginxModule 0.9.4.
 ** bugfix: [[resty.core.regex|https://github.com/agentzh/lua-resty-core#restycoreregex]]: the [[ngx.re|https://github.com/chaoslawful/lua-nginx-module#ngxrematch]] API did not honour the [[lua_regex_cache_max_entries|https://github.com/chaoslawful/lua-nginx-module#lua_regex_cache_max_entries]] configuration directive.
-** optimize: [[ngx.re.gsub|https://github.com/chaoslawful/lua-nginx-module#ngxregsub]] used to use literal type string &quot;const char *&quot; in ffi.cast() which is expensive in interpreter mode. now we use the ctype object directly, which leads to 11% in interpreter mode.
+** optimize: [[ngx.re.gsub|https://github.com/chaoslawful/lua-nginx-module#ngxregsub]] used to use literal type string &quot;const char *&quot; in ffi.cast() which is expensive in interpreter mode. now we use the ctype object directly, which leads to 11% speedup in interpreter mode.
 * upgraded EchoNginxModule to 0.51.
 ** bugfix: for Nginx 1.2.6+ and 1.3.9+, the main request reference count might go out of sync when Nginx's request body reader returned status code 300+. thanks Hungpu DU for the report.
 ** bugfix: [[echo_request_body|https://github.com/agentzh/echo-nginx-module#echo_request_body]] truncated the response body prematurely when the request body was in memory (because the request reader sets &quot;last_buf&quot; in this case). thanks Hungpu DU for the original patch.
