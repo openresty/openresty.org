@@ -2972,6 +2972,8 @@ Most of the components are enabled by default, some are not.
 
 [[DrizzleNginxModule]], [[PostgresNginxModule]], and [[IconvNginxModule]] are not enabled by default. You need to specify the  {{{--with-http_drizzle_module}}}, {{{--with-http_postgres_module}}}, and {{{--with-http_iconv_module}}} options, respectively, to enable them while [[building OpenResty|Installation]].
 
+You will also need to specify the {{{--with-luajit}}} option in versions prior to 1.5.8.1 (at which point it became enabled by default).
+
 * [[LuaJIT]]
 * [[ArrayVarNginxModule]]
 * [[AuthRequestNginxModule]]
@@ -3514,7 +3516,7 @@ LuaJIT is a ~Just-In-Time Compiler for the Lua programming language.
 
 Homepage: http://luajit.org/luajit.html
 
-LuaJIT is enabled by default via the {{{--with-luajit}}} option while configuring OpenResty while building it. See [[Installation]] for details.
+LuaJIT is enabled by default in release 1.5.8.1 and greater, but use the {{{--with-luajit}}} option while configuring OpenResty for releases prior. See [[Installation]] for details.
 </pre>
 </div>
 <div title="LuaNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210826" modified="201310172335" changecount="20">
@@ -4297,19 +4299,19 @@ First of all, let's install ~LuaRocks:
 Download the latest ~LuaRocks tarball from [[http://www.luarocks.org/en/Download]]. As of this writing, the latest version is {{{2.1.2}}}, and we'll use this version throughout this sample.
 {{{
 wget http://luarocks.org/releases/luarocks-2.1.2.tar.gz
-tar -xzvf luarocks-2.0.12.tar.gz
-cd luarocks-2.0.12/
+tar -xzvf luarocks-2.1.2.tar.gz
+cd luarocks-2.1.2/
 ./configure --prefix=/usr/local/openresty/luajit \
     --with-lua=/usr/local/openresty/luajit/ \
     --lua-suffix=jit \
-    --with-lua-include=/usr/local/openresty/luajit/include/luajit-2.0
-make
+    --with-lua-include=/usr/local/openresty/luajit/include/luajit-2.1
+make build
 sudo make install
 }}}
 ! Install the Lua ~MD5 library with ~LuaRocks
 In this sample, we'll use the Lua ~MD5 library to serve as an example, so let's install it with ~LuaRocks:
 {{{
-sudo luarocks install md5
+sudo /usr/local/openresty/luajit/luarocks install md5
 }}}
 ! Configuring our ~OpenResty application
 Let's change the current directory to {{{/usr/local/openresty/nginx/}}}:
