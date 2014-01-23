@@ -4296,16 +4296,16 @@ We assume that you have installed OpenResty into the default location, i.e., {{{
 ! Install ~LuaRocks
 First of all, let's install ~LuaRocks:
 
-Download the latest ~LuaRocks tarball from [[http://www.luarocks.org/en/Download]]. As of this writing, the latest version is {{{2.1.2}}}, and we'll use this version throughout this sample.
+Download the ~LuaRocks tarball from [[http://www.luarocks.org/en/Download]]. As of this writing, the latest version is {{{2.1.2}}}, but we'll use {{{2.0.13}}} for compatibility throughout this sample.
 {{{
-wget http://luarocks.org/releases/luarocks-2.1.2.tar.gz
-tar -xzvf luarocks-2.1.2.tar.gz
-cd luarocks-2.1.2/
+wget http://luarocks.org/releases/luarocks-2.0.13.tar.gz
+tar -xzvf luarocks-2.0.13.tar.gz
+cd luarocks-2.0.13/
 ./configure --prefix=/usr/local/openresty/luajit \
-    --with-lua=/usr/local/openresty/luajit/ \
-    --lua-suffix=jit \
+    --with-lua=/usr/local/openresty/luajit \
+    --lua-suffix=jit-2.1.0-alpha \
     --with-lua-include=/usr/local/openresty/luajit/include/luajit-2.1
-make build
+make
 sudo make install
 }}}
 ! Install the Lua ~MD5 library with ~LuaRocks
