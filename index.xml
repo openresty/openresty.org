@@ -5,8 +5,8 @@
 <description>a fast web app server by extending nginx </description>
 <language>en</language>
 <copyright>Copyright 2014 YichunZhang</copyright>
-<pubDate>Tue, 04 Mar 2014 22:19:58 GMT</pubDate>
-<lastBuildDate>Tue, 04 Mar 2014 22:19:58 GMT</lastBuildDate>
+<pubDate>Tue, 04 Mar 2014 22:21:51 GMT</pubDate>
+<lastBuildDate>Tue, 04 Mar 2014 22:21:51 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
@@ -21,9 +21,9 @@ cd systemtap-2.4/
             --with-elfutils=../elfutils-0.158
 make -j8
 sudo make install
-&lt;/pre&gt;</description>
+&lt;/pre&gt;And then invoke stap like this:&lt;br&gt;$ /opt/stap/bin/stap -V&lt;br&gt;Systemtap translator/driver (version 2.4/0.158, non-git sources)&lt;br&gt;Copyright (C) 2005-2013 Red Hat, Inc. and others&lt;br&gt;This is free software; see the source for copying conditions.&lt;br&gt;enabled features: AVAHI LIBRPM &lt;a tiddlylink=&quot;LIBSQLITE3&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LIBSQLITE3&quot; href=&quot;null#LIBSQLITE3&quot; class=&quot;externalLink null&quot;&gt;LIBSQLITE3&lt;/a&gt; NSS &lt;a tiddlylink=&quot;BOOST_SHARED_PTR&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#BOOST_SHARED_PTR&quot; href=&quot;null#BOOST_SHARED_PTR&quot; class=&quot;externalLink null&quot;&gt;BOOST_SHARED_PTR&lt;/a&gt;&lt;br&gt;&lt;a tiddlylink=&quot;TR1_UNORDERED_MAP&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#TR1_UNORDERED_MAP&quot; href=&quot;null#TR1_UNORDERED_MAP&quot; class=&quot;externalLink null&quot;&gt;TR1_UNORDERED_MAP&lt;/a&gt; NLS &lt;a tiddlylink=&quot;LIBXML2&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LIBXML2&quot; href=&quot;null#LIBXML2&quot; class=&quot;externalLink null&quot;&gt;LIBXML2&lt;/a&gt;&lt;br&gt;}}&lt;br&gt;Or you can just add the &lt;code&gt;/opt/stap/bin&lt;/code&gt; path to your &lt;code&gt;PATH&lt;/code&gt; environment.</description>
 <link>null#BuildSystemtap</link>
-<pubDate>Tue, 04 Mar 2014 22:19:57 GMT</pubDate>
+<pubDate>Tue, 04 Mar 2014 22:21:51 GMT</pubDate>
 
 </item>
 <item>

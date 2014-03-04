@@ -600,7 +600,7 @@ Then, {{{ab -k -c10 -n10000 -t1 -r 'http://127.0.0.1:8080/'}}} will deliver benc
 Otherwise use an alternative lightweight HTTP load-testing tool [[weighttp|http://redmine.lighttpd.net/projects/weighttp/wiki]] and the invocation {{{weighttp -k -c10 -n10000 'http://127.0.0.1:8080/'}}} for benchmarking.
 </pre>
 </div>
-<div title="BuildSystemtap" creator="YichunZhang" modifier="YichunZhang" created="201403042218" modified="201403042219" changecount="5">
+<div title="BuildSystemtap" creator="YichunZhang" modifier="YichunZhang" created="201403042218" modified="201403042221" changecount="6">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 {{{
 sudo yum install gcc gcc-c++ -y
@@ -613,7 +613,17 @@ cd systemtap-2.4/
             --with-elfutils=../elfutils-0.158
 make -j8
 sudo make install
-}}}</pre>
+}}}
+And then invoke stap like this:
+{{{
+$ /opt/stap/bin/stap -V
+Systemtap translator/driver (version 2.4/0.158, non-git sources)
+Copyright (C) 2005-2013 Red Hat, Inc. and others
+This is free software; see the source for copying conditions.
+enabled features: AVAHI LIBRPM LIBSQLITE3 NSS BOOST_SHARED_PTR
+TR1_UNORDERED_MAP NLS LIBXML2
+}}
+Or you can just add the {{{/opt/stap/bin}}} path to your {{{PATH}}} environment.</pre>
 </div>
 <div title="ChangeLog1000004" creator="YichunZhang" modifier="YichunZhang" created="201107081222" modified="201109020756" changecount="47">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
