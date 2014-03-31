@@ -2544,6 +2544,64 @@ See ChangeLog1004002 for change log for OpenResty 1.4.2.x.</pre>
 ** feature: now the value specified in [[srcache_store_skip|https://github.com/agentzh/srcache-nginx-module#srcache_store_skip]] is evaluated and tested again right after the end of the response body data stream is seen. thanks Eldar Zaitov for the patch.
 See ChangeLog1004003 for change log for OpenResty 1.4.3.x.</pre>
 </div>
+<div title="ChangeLog1005011" creator="YichunZhang" modifier="YichunZhang" created="201403310512" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Version 1.5.11.1 - 30 March 2014
+* upgraded LuaJIT to v2.1-20140330.
+** feature: included Mike Pall's new &quot;trace stitching&quot; feature that can compile around most of the [[NYI items|http://wiki.luajit.org/NYI]]. thanks [[CloudFlare Inc.|http://www.cloudflare.com/]] for sponsoring the development. This helps compiling more Lua code. For example, it gives 10% ~ 40% speedup in simple test cases of LuaRestyMySQLLibrary out of the box.
+** bugfix: included all the new bug fixes from Mike Pall, most of which are very obscure bugs in the JIT compiler hidden for years.
+** relaxed the hard-coded heuristic limit further to 100 for loopunroll.
+** feature: applied John Marino's patch for compiling LuaJIT on ~DragonFlyBSD. thanks lhmwzy for proposing the patch.
+* upgraded the Nginx core to 1.5.11.
+** see the changes here: http://nginx.org/en/CHANGES
+* bugfix: applied the patch to the NGINX core for the latest SPDY security vulnerability (~CVE-2014-0133).
+* feature: added support for ~DragonFlyBSD to {{{./configure}}}. thanks lhmwzy for the patch.
+* bugfix: disabled the -Werror option for clang because it caused build failures at least in recent Mac OS X systems. thanks Hamish Forbes for the report.
+* feature: bundled new component LuaRestyUpstreamHealthcheckLibrary 0.01.
+** see the documentation for details: https://github.com/agentzh/lua-resty-upstream-healthcheck#readme
+* feature: bundled new component LuaUpstreamNginxModule 0.01.
+** see the documentation for details: https://github.com/agentzh/lua-upstream-nginx-module#readme
+* upgraded LuaNginxModule to 0.9.6.
+** feature: added new configuration directives, [[init_worker_by_lua|https://github.com/chaoslawful/lua-nginx-module/#init_worker_by_lua]] and [[init_worker_by_lua_file|https://github.com/chaoslawful/lua-nginx-module/#init_worker_by_lua_file]], to run Lua code upon every nginx worker process's startup.
+** feature: added new API function [[ngx.config.nginx_configure()|https://github.com/chaoslawful/lua-nginx-module/#ngxconfignginx_configure]] to return the NGINX {{{./configure}}} arguments string to the Lua land. thanks Tatsuhiko Kubo for the patch.
+** feature: added new API function [[ngx.resp.get_headers()|https://github.com/chaoslawful/lua-nginx-module/#ngxrespget_headers]] for fetching all the response headers. thanks Tatsuhiko Kubo for the patch.
+** feature: added new API function [[ngx.worker.pid()|https://github.com/chaoslawful/lua-nginx-module/#ngxworkerpid]] for retrieving the current nginx worker process's pid.
+** feature: explicitly check Lua langauge version mismatch; we only accept the Lua 5.1 language (for now).
+** bugfix: accessing a cosocket object from a request which does not create it could lead to segmentation faults. now we throw out a Lua error &quot;bad request&quot; properly in this case.
+** change: it is now the user's responsibility to clear the captures table for [[ngx.re.match()|https://github.com/chaoslawful/lua-nginx-module/#ngxrematch]].
+** bugfix: we should prefix our chunk names for from-string lua source (which also leads to nicer error messages). thanks Mike Pall for the catch.
+** bugfix: subrequests initiated by [[ngx.location.capture*|https://github.com/chaoslawful/lua-nginx-module/#ngxlocationcapture]] with the HEAD method did not result in responses without response bodies. thanks Daniel for the report.
+**  bugfix: segfault might happen in the FFI API for destroying compiled PCRE regexes, which affects libraries like LuaRestyCoreLibrary. thanks Dane Kneche.
+** bugfix: fixes for small string buffer arguments in the C API for ~FFI-based implementations of [[shdict:get()|https://github.com/chaoslawful/lua-nginx-module/#ngxshareddictget]].
+** bugfix: fixed the error message buffer overwrite in the C API for ~FFI-based [[ngx.re|https://github.com/chaoslawful/lua-nginx-module/#ngxrematch]] implementations.
+** bugfix: use of the public C API in other nginx C modules (extending LuaNginxModule) lead to compilation errors and warnings when the Microsoft C compiler is used. thanks Edwin Cleton for the report.
+** bugfix: segmentation faults might happen when multiple &quot;light threads&quot; in the same request manipuate a stream cosocket object in turn. thanks Aviram Cohen for the report.
+** bugfix: timers created by ngx.timer.at() might not be aborted prematurely upon nginx worker exit. thanks Hamish Forbes for the report.
+** bugfix: the return value sizes of the C functions {{{ngx_http_lua_init_by_inline}}} and {{{ngx_http_lua_init_by_file}}} were wrong.
+** optimize: coroutine status string look-up is now a bit more efficient by specifying the string lengths explicitly. thanks Tatsuhiko Kubo for the patch.
+** various code refactoring.
+* upgraded LuaRestyCoreLibrary to 0.0.5.
+** change: now it is the user's responsibility to clear the input result table.
+** feature: [[resty.core.regex|https://github.com/agentzh/lua-resty-core#restycoreregex]]: added new function {{{set_buf_grow_ratio}}} to control the buffer grow ratio (default 2.0).
+** bugfix: segmentation fault might happen due to assignments to [[ngx.header.HEADER|https://github.com/chaoslawful/lua-nginx-module/#ngxheaderheader]] because we did not anchor the memory buffer properly which might get collected prematurely.
+** bugfix: [[ngx.req.get_headers|https://github.com/chaoslawful/lua-nginx-module/#ngxreqget_headers]]: we need to anchor the string buffer being casted otherwise it might be accidentally garbage collected when we still hold a C pointer to it. this bug might lead to segmentation faults.
+** optimize: cache the match captures table for [[ngx.re.gsub()|https://github.com/chaoslawful/lua-nginx-module/#ngxregsub]] when a function-typed &quot;replace&quot; argument is specified. this gives a remarkable speedup.
+** optimize: [[resty.core.regex|https://github.com/agentzh/lua-resty-core#restycoreregex]]: forked the original shared code paths to multiple specialized versions, which helps the JIT compiler.
+** optimize: [[resty.core.regex|https://github.com/agentzh/lua-resty-core#restycoreregex]]: cache the parsing results for the regex option strings. thanks Mike Pall for the suggestion.
+* upgraded LuaRestyRedisLibrary to 0.20.
+** feature: added new redis 2.8.0 commands: {{{scan}}}, {{{sscan}}}, {{{hscan}}}, and {{{zscan}}}. thanks Dragonoid for the patch.
+** feature: [[the read_reply()|https://github.com/agentzh/lua-resty-redis#read_reply]] method can now be re-tried immediately after a &quot;timeout&quot; error is returned.
+** bugfix: the {{{unsubscribe}}}/{{{subscribe}}} commands could not be called after [[read_reply()|https://github.com/agentzh/lua-resty-redis#read_reply]] returned &quot;timeout&quot;. thanks doujiang for the patch.
+** bugfix: we incorrectly allowed reusing redis connections in the &quot;subscribed&quot; state. thanks doujiang for the patch.
+* upgraded LuaCjsonLibrary to 2.1.0.1.
+** rebased on lua-cjson 2.1.0: http://www.kyne.com.au/~mark/software/NEWS-lua-cjson.txt the most notable new feature is the {{{cjson.safe}}} module.
+** feature: applied Jiale Zhi's patch to add the new config function {{{encode_empty_table_as_object}}} so that we can encode empty Lua tables into empty JSON arrays.
+* upgraded SrcacheNginxModule to 0.26.
+** bugfix: HEAD requests might result in response bodies.
+* upgraded EchoNginxModule to 0.52.
+** bugfix: HEAD subrequests could still result in non-empty response bodies.
+See ChangeLog1005008 for change log for OpenResty 1.5.8.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -2635,8 +2693,9 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201210172306" modified="201401110428" changecount="8">
+<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201210172306" modified="201403310512" changecount="9">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Release 1.5.11.x|ChangeLog1005011]]
 * [[Release 1.5.8.x|ChangeLog1005008]]
 * [[Release 1.4.3.x|ChangeLog1004003]]
 * [[Release 1.4.2.x|ChangeLog1004002]]
@@ -2676,7 +2735,7 @@ TertiaryDark: #666
 Error: #f88
 </pre>
 </div>
-<div title="Components" creator="YichunZhang" modifier="YichunZhang" created="201106210424" modified="201312150017" changecount="27">
+<div title="Components" creator="YichunZhang" modifier="YichunZhang" created="201106210424" modified="201403310513" changecount="28">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 下面列表中的组件被用于构建 OpenResty。所有的组件可以被激活或禁止。
@@ -2709,7 +2768,9 @@ Error: #f88
 * [[LuaRestyRedisLibrary]]
 * [[LuaRestyStringLibrary]]
 * [[LuaRestyUploadLibrary]]
+* [[LuaRestyUpstreamHealthcheckLibrary]]
 * [[LuaRestyWebSocketLibrary]]
+* [[LuaUpstreamNginxModule]]
 * [[PostgresNginxModule]]
 * [[RdsCsvNginxModule]]
 * [[RdsJsonNginxModule]]
@@ -2790,17 +2851,15 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201401110426" tags="Resources" changecount="177">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201403310512" tags="Resources" changecount="178">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
-!! 主线版
-主线版本包含了最新的问题修复和特性，而且其质量也是按生产级别来保证的。
-* [[ngx_openresty-1.5.8.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005008]] - 2014年1月10日
-!! 稳定版
-稳定版是提供给非常保守的用户的。稳定版中经常会包含有最新的主线版已经修复了的问题。
-* [[ngx_openresty-1.4.3.6.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年11月20日
+!! 最新版
+* [[ngx_openresty-1.5.11.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005011]] - 2014年3月30日
 !! 历史遗留版
 有的时候我们可能会需要较老的版本：
+* [[ngx_openresty-1.5.8.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005008]] - 2014年1月10日
+* [[ngx_openresty-1.4.3.6.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年11月20日
 * [[ngx_openresty-1.4.3.4.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年11月12日
 * [[ngx_openresty-1.4.2.8.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 2013年9月22日
 * [[ngx_openresty-1.2.8.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 2013年6月10日
@@ -3298,6 +3357,16 @@ Project homepage: https://github.com/agentzh/lua-resty-upload
 This library is enabled by default. You can specify the {{{--without-lua_resty_upload}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
 </pre>
 </div>
+<div title="LuaRestyUpstreamHealthcheckLibrary" creator="YichunZhang" modifier="YichunZhang" created="201403310513" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+Health Checker for Nginx Upstream Servers in Pure Lua.
+
+Project homepage: https://github.com/agentzh/lua-resty-upstream-healthcheck
+
+This library is enabled by default. You can specify the {{{--without-lua_resty_upstream_healthcheck}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.
+</pre>
+</div>
 <div title="LuaRestyWebSocketLibrary" creator="YichunZhang" modifier="YichunZhang" created="201309300658" changecount="1">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
@@ -3306,6 +3375,15 @@ This Lua library implements both a nonblocking ~WebSocket server and a nonblocki
 Project homepage: https://github.com/agentzh/lua-resty-websocket
 
 This library is enabled by default. You can specify the {{{--without-lua_resty_websocket}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.</pre>
+</div>
+<div title="LuaUpstreamNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201403310514" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+This Nginx C module exposes a Lua API to LuaNginxModule for classic Nginx upstreams.
+
+Documentation: https://github.com/agentzh/lua-upstream-nginx-module#readme
+
+Project page: https://github.com/agentzh/lua-upstream-nginx-module</pre>
 </div>
 <div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201210172306" tags="admin" changecount="22">
 <pre>[[概览|OpenResty]]
