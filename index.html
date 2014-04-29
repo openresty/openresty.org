@@ -600,7 +600,7 @@ Then, {{{ab -k -c10 -n10000 -t1 -r 'http://127.0.0.1:8080/'}}} will deliver benc
 Otherwise use an alternative lightweight HTTP load-testing tool [[weighttp|http://redmine.lighttpd.net/projects/weighttp/wiki]] and the invocation {{{weighttp -k -c10 -n10000 'http://127.0.0.1:8080/'}}} for benchmarking.
 </pre>
 </div>
-<div title="BuildSystemtap" creator="YichunZhang" modifier="YichunZhang" created="201403042218" modified="201403042221" changecount="6">
+<div title="BuildSystemtap" creator="YichunZhang" modifier="YichunZhang" created="201403042218" modified="201404291919" changecount="7">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 {{{
 sudo yum install gcc gcc-c++ -y
@@ -622,7 +622,7 @@ Copyright (C) 2005-2013 Red Hat, Inc. and others
 This is free software; see the source for copying conditions.
 enabled features: AVAHI LIBRPM LIBSQLITE3 NSS BOOST_SHARED_PTR
 TR1_UNORDERED_MAP NLS LIBXML2
-}}
+}}}
 Or you can just add the {{{/opt/stap/bin}}} path to your {{{PATH}}} environment.</pre>
 </div>
 <div title="ChangeLog1000004" creator="YichunZhang" modifier="YichunZhang" created="201107081222" modified="201109020756" changecount="47">
@@ -3738,26 +3738,27 @@ Documentation: https://github.com/agentzh/lua-upstream-nginx-module#readme
 
 Project page: https://github.com/agentzh/lua-upstream-nginx-module</pre>
 </div>
-<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201310061811" tags="admin" changecount="40">
-<pre>[[Overview|OpenResty]]
-[[Components]]
-[[Getting started|GettingStarted]]
-[[Samples]]
+<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201404291911" tags="admin" changecount="43">
+<pre>[[About]]
+[[Overview|OpenResty]]
 [[Benchmark]]
-[[Presentations]]
-[[eBooks]]
-[[Resources]]
-[[Download]]
-[[Installation]]
-[[Upgrading]]
 [[Changes]]
-[[Debugging]]
-[[Quality Assurance|QualityAssurance]]
 [[Community]]
+[[Components]]
 [[Contact us|ContactUs]]
-[[About]]
-[[Getting Involved|GettingInvolved]]
+[[Debugging]]
 [[Donate Online|DonateOnline]]
+[[Download]]
+[[eBooks]]
+[[Getting Involved|GettingInvolved]]
+[[Getting Started|GettingStarted]]
+[[Installation]]
+[[Presentations]]
+[[Profiling]]
+[[Quality Assurance|QualityAssurance]]
+[[Resources]]
+[[Samples]]
+[[Upgrading]]
 [[中文维基|cn/index.html]]
 
 [img[feed-icon-14x14.png]] [[RSS feed|RSSFeed]]
@@ -3955,6 +3956,22 @@ View the (English) slides in your web browser: http://agentzh.org/misc/slides/ng
 
 Download the slides as PDF: http://agentzh.org/misc/slides/nginx-state-of-the-art.pdf
 </pre>
+</div>
+<div title="Profiling" creator="YichunZhang" modifier="YichunZhang" created="201404291914" modified="201404291918" changecount="7">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+Profiling is important for analyzing and optimize OpenResty applications' performance.
+
+We do provide various tools based on Systemtap for profiling live OpenResty applications both in production and development environments.
+
+The most useful tools are
+* C-land on-CPU Flame Graph tool: https://github.com/openresty/nginx-systemtap-toolkit#sample-bt
+* C-land off-CPU Flame Graph tool: https://github.com/openresty/nginx-systemtap-toolkit#sample-bt-off-cpu
+* Lua-land on-CPU Flame Graph tool: https://github.com/openresty/stapxx#lj-lua-stacks
+
+It is recommended to build Systemtap from latest release source, see [[BuildSystemtap]] for details.
+
+If you have problems in interpreting the resulting flame graphs or have troubles getting these tools running in your system, feel free to join our ~OpenResty [[Community]] and ask for help.</pre>
 </div>
 <div title="ProxyNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201209131828" modified="201209131828" changecount="3">
 <pre>This is a standard Nginx module for talking to remote HTTP or HTTPS servers: http://wiki.nginx.org/HttpProxyModule</pre>
