@@ -2602,6 +2602,47 @@ See ChangeLog1004003 for change log for OpenResty 1.4.3.x.</pre>
 ** bugfix: HEAD subrequests could still result in non-empty response bodies.
 See ChangeLog1005008 for change log for OpenResty 1.5.8.x.</pre>
 </div>
+<div title="ChangeLog1005012" creator="YichunZhang" modifier="YichunZhang" created="201404292122" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Version 1.5.12.1 - 29 April 2014
+* upgraded the Nginx core to 1.5.12.
+** see the changes here: http://nginx.org/en/CHANGES
+* upgraded LuaJIT to v2.1-20140423 (see https://github.com/openresty/luajit2/releases ).
+** bugfix: prevent adding side traces for stack checks. (Mike pall) this could cause internal assertion failure in the JIT compiler while replaying snapshots in very obscure cases: {{{lj_snap.c:497: lj_snap_replay: Assertion `ir-&gt;o == IR_CONV &amp;&amp; ir-&gt;op2 == ((IRT_NUM&lt;&lt;5)|IRT_INT)' failed.}}}
+** bugfix: fixed FOLD of string concatenations. (Mike Pall) this issue was reported by leafo and could lead to invalid string results in special cases while compiling string concatenations.
+** bugfix: FFI: fixed cdata equality comparison against strings and other Lua types. (Mike Pall)
+** bugfix: fixed top slot calculation for snapshots with continuations. (Mike Pall) this was a bug in snapshot generation, but it only surfaced with trace stitching. it could cause Lua stack overwrites in special cases.
+** bugfix: PPC: don't use mcrxr on PPE. (Mike Pall)
+** bugfix: prevent GC estimate miscalculation due to buffer growth. (Mike Pall)
+** bugfix: fixed the regression introduced by the previous fix for &quot;reuse of SCEV results in FORL&quot;. (Mike Pall) this could cause internal assertion failure in the JIT compiler: {{{lj_record.c:68: rec_check_ir: Assertion `op2 &gt;= nk' failed.}}}
+** bugfix: fixed alias analysis for {{{table.len}}} vs. {{{table.clear}}}. (Mike Pall) this could cause {{{table.len}}} to return incorrect values (nonzero values) after {{{table.clear}}} was performed.
+** bugfix: fixed the compatibility with ~DragonFlyBSD. thanks lhmwzy for the patch.
+** feature: allow non-scalar cdata to be compared for equality by address. (Mike Pall)
+* upgraded LuaUpstreamNginxModule to 0.02.
+** bugfix: upstream names did not support taking a port number. thanks magicleo for the report.
+* upgraded Redis2NginxModule to 0.11.
+** change: now we always ignore client aborts for collaborations with other modules like SrcacheNginxModule. thanks akamatgi for the report.
+* upgraded LuaNginxModule to 0.9.7.
+**  bugfix: when [[lua_code_cache|https://github.com/openresty/lua-nginx-module#lua_code_cache]] was off, [[cosocket:setkeepalive()|https://github.com/openresty/lua-nginx-module#tcpsocksetkeepalive]] might lead to segmentation faults. thanks Kelvin Peng for the report.
+** refactor: improved the error handling and logging in the Lua code loader and closure factory.
+** change: added stronger assertions to the stream-typed cosocket implementation.
+** optimize: we no longer call {{{ngx_pfree()}}} in our own {{{pcre_free}}} hook.
+** optimize: we no longer clear the pointer {{{ctx-&gt;user_co_ctx}}} in {{{ngx_http_lua_reset_ctx}}}.
+* upgraded EchoNginxModule to 0.53.
+** bugfix: use of empty arguments after the {{{-n}}} option of the [[echo|https://github.com/openresty/echo-nginx-module#echo]] directive (and its friends) might cause subsequent arguments to get discarded. thanks Lice Pan for the report and fix.
+* upgraded FormInputNginxModule to 0.08.
+** bugfix: segmentation fault might happen when {{{set_form_input_multi}}} was used while no proper {{{Content-Type}}} request header was given.
+* upgraded LuaRestyWebSocketLibrary to 0.03.
+** optimize: added a minor optimization in the [[recv_frame()|https://github.com/openresty/lua-resty-websocket#recv_frame]] method. thanks yurnerola for the catch.
+* upgraded LuaRestyCoreLibrary to 0.0.6.
+** optimize: [[ngx.re.sub|https://github.com/openresty/lua-nginx-module#ngxresub]]/[[ngx.re.gsub|https://github.com/openresty/lua-nginx-module#ngxregsub]]: now we avoid constructing new Lua strings for the regex cache keys, which gives 5% speedup for trivial use cases.
+** optimize: [[ngx.re.match|https://github.com/openresty/lua-nginx-module#ngxrematch]]/[[ngx.re.find|https://github.com/openresty/lua-nginx-module#ngxrefind]]: avoided constructing a new Lua string for the regex cache key by switching over to a cascaded 2-level hash table, which gives 22% speedup for simple use cases.
+* upgraded LuaRestyLockLibrary to 0.03.
+** bugfix: prevented using cdata directly as table keys.
+* upgraded LuaRestyStringLibrary to 0.09.
+** bugfix: avoided using the &quot;module&quot; builtin function to define lua modules. thanks lhmwzy for the original patch.
+</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -2851,13 +2892,14 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201403310512" tags="Resources" changecount="178">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201404292121" tags="Resources" changecount="179">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 最新版
-* [[ngx_openresty-1.5.11.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005011]] - 2014年3月30日
+* [[ngx_openresty-1.5.12.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005012]] - 2014年4月29日
 !! 历史遗留版
 有的时候我们可能会需要较老的版本：
+* [[ngx_openresty-1.5.11.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005011]] - 2014年3月30日
 * [[ngx_openresty-1.5.8.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005008]] - 2014年1月10日
 * [[ngx_openresty-1.4.3.6.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年11月20日
 * [[ngx_openresty-1.4.3.4.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 2013年11月12日
