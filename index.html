@@ -2899,7 +2899,7 @@ See ChangeLog1004003 for change log for OpenResty 1.4.3.x.</pre>
 ** bugfix: HEAD subrequests could still result in non-empty response bodies.
 See ChangeLog1005008 for change log for OpenResty 1.5.8.x.</pre>
 </div>
-<div title="ChangeLog1005012" creator="YichunZhang" modifier="YichunZhang" created="201404292037" modified="201404302353" changecount="33">
+<div title="ChangeLog1005012" creator="YichunZhang" modifier="YichunZhang" created="201404292037" modified="201406010553" changecount="40">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Version 1.5.12.1 - 29 April 2014
 * upgraded the Nginx core to 1.5.12.
@@ -2939,6 +2939,56 @@ See ChangeLog1005008 for change log for OpenResty 1.5.8.x.</pre>
 * upgraded LuaRestyStringLibrary to 0.09.
 ** bugfix: avoided using the &quot;module&quot; builtin function to define lua modules. thanks lhmwzy for the original patch.
 See ChangeLog1005011 for change log for OpenResty 1.5.11.x.</pre>
+</div>
+<div title="ChangeLog1007000" creator="YichunZhang" modifier="YichunZhang" created="201406010553" modified="201406072052" changecount="12">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Version 1.7.0.1 - 7 June 2014
+* upgraded the Nginx core to 1.7.0.
+** see the changes here: http://nginx.org/en/CHANGES
+* feature: bundled new Lua library, LuaRestyLrucacheLibrary, which is also enabled by default. see https://github.com/openresty/lua-resty-lrucache#readme for more details. thanks Shuxin Yang for the help.
+* upgraded LuaJIT to v2.1-20140607: https://github.com/openresty/luajit2/tags
+** imported Mike Pall's latest bug fixes and other changes:
+*** Fix frame traversal while searching for error function.
+*** Fix FOLD rule for STRREF of SNEW.
+*** FFI: Fix recording of indexing a struct pointer ctype object itself.
+*** FFI: Another fix for cdata equality comparisons.
+*** Fix FOLD rule for {{{string.sub(s, ...) == k}}}.
+*** x86: Fix code generation for unused result of {{{math.random()}}}.
+*** x64: Workaround for MSVC build issue.
+*** PPC: Fix red zone overflow in machine code generation.
+*** Fix compatibility issues with Illumos. Thanks to Theo Schlossnagle.
+*** Add PS Vita port. Thanks to Anton Stenmark.
+** disabled trace stitching by default for now since it may trigger random lua stack corruptions when using with ngx_lua.
+** feature: jit.dump: output Lua source location after every BC.
+** feature: added internal memory-buffer-based trace entry/exit/start-recording event logging, mainly for debugging bugs in the JIT compiler. it requires {{{-DLUA_USE_TRACE_LOGS}}} when building.
+** feature: save {{{g-&gt;jit_base}}} to {{{g-&gt;saved_jit_base}}} before {{{lj_err_throw}}} clears {{{g-&gt;jit_base}}} which makes it impossible to get Lua backtrace in such states.
+* upgraded LuaRestyCoreLibrary to 0.0.7.
+** feature: implemented [[ngx.req.set_header()|https://github.com/openresty/lua-nginx-module/#ngxreqset_header]] (partial: table-typed values not yet supported) and [[ngx.req.clear_header()|https://github.com/openresty/lua-nginx-module/#ngxreqclear_header]] with FFI in the [[resty.core.request|https://github.com/openresty/lua-resty-core#restycorerequest]] module.
+** feature: implemented [[shdict:flush_all()|https://github.com/openresty/lua-nginx-module/#ngxshareddictflush_all]] with FFI in the [[resty.core.shdict|https://github.com/openresty/lua-resty-core#restycoreshdict]].
+** feature: implemented [[ngx.req.set_method()|https://github.com/openresty/lua-nginx-module/#ngxreqset_method]] with FFI in [[resty.core.request|https://github.com/openresty/lua-resty-core#restycorerequest]].
+** feature: implemented [[ngx.req.get_method()|https://github.com/openresty/lua-nginx-module/#ngxreqget_method]] with FFI in [[resty.core.request|https://github.com/openresty/lua-resty-core#restycorerequest]].
+** feature: implemented [[ngx.time()|https://github.com/openresty/lua-nginx-module/#ngxtime]] with FFI in [[resty.core.time|https://github.com/openresty/lua-resty-core#restycoretime]].
+** feature: implemented [[ngx.req.start_time|https://github.com/openresty/lua-nginx-module/#ngxreqstart_time]] with FFI in [[rest.core.request|https://github.com/openresty/lua-resty-core#restycorerequest]].
+** feature: implemented [[ngx.now()|https://github.com/openresty/lua-nginx-module/#ngxnow]] with FFI in [[resty.core.time|https://github.com/openresty/lua-resty-core#restycoretime]].
+* upgraded LuaNginxModule to 0.9.8.
+** bugfix: the [[ngx.ctx|https://github.com/openresty/lua-nginx-module/#ngxctx]] table might be released prematurely when [[ngx.exit()|https://github.com/openresty/lua-nginx-module/#ngxexit]] was used to generate the response header. thanks Monkey Zhang for the report. now we always release [[ngx.ctx|https://github.com/openresty/lua-nginx-module/#ngxctx]] in our request pool cleanup handler.
+** bugfix: we did not call our coroutine cleanup handlers right after our coroutine completes (either successfully or unsuccessfully) otherwise segmentation fault might happen when the Lua VM throws out unexpected exceptions like &quot;attempt to yield across C-call boundary&quot;. thanks Lipin Dmitriy for the report.
+** bugfix: nginx does not guarentee the parent pointer of the rbtree root is meaningful, which could lead to inifinite loops when LuaNginxModule tried to abort pending timers prematurely (upon worker exit). thanks pengqi for the report.
+** bugfix: [[ngx.req.set_method()|https://github.com/openresty/lua-nginx-module/#ngxreqset_method]]: we incorrectly modified {{{r-&gt;method}}} when the method ID was wrong.
+** bugfix: [[rewrite_by_lua*|https://github.com/openresty/lua-nginx-module/#rewrite_by_lua]] and [[access_by_lua*|https://github.com/openresty/lua-nginx-module/#access_by_lua]] will now terminate the current request if the response header has already been sent (via calls like [[ngx.say|https://github.com/openresty/lua-nginx-module/#ngxsay]] and [[ngx.send_headers|https://github.com/openresty/lua-nginx-module/#ngxsend_headers]]) at that point. thanks yaronli and Sophos for the report.
+** bugfix: issues in the error handling for pure C API functions for shared dict. thanks Xiaochen Wang.
+** feature: now we save the original pattern string pointer value into our {{{ngx_http_lua_regex_t}}} C struct, to help runtime regex profiling and debugging.
+** feature: allow use of 3rd-party pcre bindings in [[init_by_lua*|https://github.com/openresty/lua-nginx-module/#init_by_lua]]. thanks ikokostya for the feature request.
+** feature: added pure C API functions to support the new ~FFI-based Lua API implemented in LuaRestyCoreLibrary.
+** feature: make use of the new shm API in nginx 1.5.13+ to suppress the &quot;no memory&quot; error logging when the shared dictionaries run out of memory.
+** feature: added C macro {{{NGX_LUA_ABORT_AT_PANIC}}} to allow generating a core dump when the Lua VM panics.
+* upgraded SrcacheNginxModule to 0.27.
+** bugfix: we used to skip all the output header and body filters run before our filters (which unfortunately bypassed the standard ngx_http_not_modified_filter_module, for example). thanks Lloyd Zhou for the report.
+** feature: added new config directive [[srcache_store_ranges|https://github.com/openresty/srcache-nginx-module#srcache_store_ranges]] for storing 206 Partial Content responses generated by the standard ngx_http_range_filter_module.
+* bugfix: updated the dtrace patch because systemtap 2.5 no longer accepts the {{{-xnolib}}} option in its dtrace utility.
+* removed our bundled version of {{{ngx_http_auth_request_module}}} because recent versions of the nginx core already have it. thanks ~LazyZhu for the report.
+* bugfix: applied our patch for the nginx core to fix the long standing memory fragmentation issue for blocks larger than the page size in the nginx slab allocator: http://mailman.nginx.org/pipermail/nginx-devel/2014-May/005316.html thanks Shuxin Yang for the help.
+See ChangeLog1005012 for change log for OpenResty 1.5.12.x.</pre>
 </div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
@@ -3031,8 +3081,9 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201404302352" changecount="14">
+<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201406010554" changecount="15">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Release 1.7.0.x|ChangeLog1007000]]
 * [[Release 1.5.12.x|ChangeLog1005012]]
 * [[Release 1.5.11.x|ChangeLog1005011]]
 * [[Release 1.5.8.x|ChangeLog1005008]]
@@ -3089,7 +3140,7 @@ Error: #f88
 * Unsuscribing: send emails to {{{openresty+unsubscribe@googlegroups.com}}}
 </pre>
 </div>
-<div title="Components" creator="YichunZhang" modifier="YichunZhang" created="201106210424" modified="201403302048" changecount="33">
+<div title="Components" creator="YichunZhang" modifier="YichunZhang" created="201106210424" modified="201406010556" changecount="34">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 Below lists all the components bundled in OpenResty. All of the components can be enabled or disabled on need.
@@ -3121,6 +3172,7 @@ Before the 1.5.8.1 release, the standard Lua 5.1 interpreter is enabled by defau
 * [[LuaRestyCoreLibrary]]
 * [[LuaRestyDNSLibrary]]
 * [[LuaRestyLockLibrary]]
+* [[LuaRestyLrucacheLibrary]]
 * [[LuaRestyMemcachedLibrary]]
 * [[LuaRestyMySQLLibrary]]
 * [[LuaRestyRedisLibrary]]
@@ -3213,14 +3265,15 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201404292035" tags="Resources" changecount="283">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201406071729" tags="Resources" changecount="286">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 You can download the latest release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Lastest release
-* [[ngx_openresty-1.5.12.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005012]] - 29 April 2014
+* [[ngx_openresty-1.7.0.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007000]] - 7 June 2014
 !! Legacy releases
 Sometimes, users may want to download old releases.
+* [[ngx_openresty-1.5.12.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005012]] - 29 April 2014
 * [[ngx_openresty-1.5.11.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005011]] - 30 March 2014
 * [[ngx_openresty-1.5.8.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005008]] - 10 January 2014
 * [[ngx_openresty-1.4.3.6.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 20 November 2013
@@ -3676,12 +3729,12 @@ Documentation page: https://github.com/agentzh/lua-redis-parser#readme
 Project homepage: https://github.com/agentzh/lua-redis-parser
 </pre>
 </div>
-<div title="LuaRestyCoreLibrary" creator="YichunZhang" modifier="YichunZhang" created="201312142259" changecount="1">
+<div title="LuaRestyCoreLibrary" creator="YichunZhang" modifier="YichunZhang" created="201312142259" modified="201406010555" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 Reimplements the Lua API provided by LuaNginxModule with LuaJIT FFI.
 
-Project homepage: https://github.com/agentzh/lua-resty-core
+Project homepage: https://github.com/openresty/lua-resty-core
 
 This library is enabled by default. You can specify the {{{--without-lua_resty_core}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.</pre>
 </div>
@@ -3702,6 +3755,15 @@ This Lua library implements a simple nonblocking mutex lock API based on LuaNgin
 Project homepage: https://github.com/agentzh/lua-resty-lock
 
 This library is enabled by default. You can specify the {{{--without-lua_resty_lock}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.</pre>
+</div>
+<div title="LuaRestyLrucacheLibrary" creator="YichunZhang" modifier="YichunZhang" created="201406010555" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+
+Implements a Lua-land LRU cache for OpenResty.
+
+Project homepage: https://github.com/openresty/lua-resty-lrucache
+
+This library is enabled by default. You can specify the {{{--without-lua_resty_lrucache}}} option to OpenResty's {{{./configure}}} script to explicitly disable it.</pre>
 </div>
 <div title="LuaRestyMemcachedLibrary" creator="YichunZhang" modifier="YichunZhang" created="201202290732" modified="201202290736" changecount="4">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
