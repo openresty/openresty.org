@@ -2990,6 +2990,67 @@ See ChangeLog1005011 for change log for OpenResty 1.5.11.x.</pre>
 * bugfix: applied our patch for the nginx core to fix the long standing memory fragmentation issue for blocks larger than the page size in the nginx slab allocator: http://mailman.nginx.org/pipermail/nginx-devel/2014-May/005316.html thanks Shuxin Yang for the help.
 See ChangeLog1005012 for change log for OpenResty 1.5.12.x.</pre>
 </div>
+<div title="ChangeLog1007002" creator="YichunZhang" modifier="YichunZhang" created="201407010508" modified="201407130319" changecount="41">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Version 1.7.2.1 - 12 July 2014
+* upgraded the Nginx core to 1.7.2.
+** see the changes here: http://nginx.org/en/CHANGES
+* upgraded LuaJIT to v2.1-20140707: https://github.com/openresty/luajit2/tags
+** imported Mike Pall's latest bug fixes and other changes:
+*** feature: compile debug.getmetatable(). Thanks to Karel Tuma.
+*** bugfix: Fix ABC elimination (for negative table indexes, for example).
+*** bugfix: FFI: Fix compilation of reference field access.
+*** bugfix: FFI: fixed frame traversal for backtraces with FFI callbacks.
+*** bugfix: x86: lj_math_random_step() clobbers XMM regs on OSX Clang.
+*** bugfix: fixed debug info for main chunk of stripped bytecode.
+* upgraded LuaRestyCoreLibrary to 0.0.8.
+** feature: [[resty.core.regex|https://github.com/openresty/lua-resty-core#restycoreregex]]: use {{{resty.lrucache}}} for the compiled regex cache for [[ngx.re.find|https://github.com/openresty/lua-nginx-module#ngxrefind]] and [[ngx.re.match|https://github.com/openresty/lua-nginx-module#ngxrematch]] in order to prevent pathalogical performance when the number of regexes has exceeded [[lua_regex_cache_max_entries|https://github.com/openresty/lua-nginx-module/#lua_regex_cache_max_entries]].
+** optimize: [[resty.core.regex|https://github.com/openresty/lua-resty-core#restycoreregex]]: removed one obsolete assertion that was for a LuaJIT bug (already fixed).
+* upgraded LuaRestyDNSLibrary to 0.12.
+** feature: added support for the SRV resource record type (see [[RFC 2782|http://www.ietf.org/rfc/rfc2782.txt]]). thanks Torbjörn Norinder for the patch.
+* upgraded LuaRestyUpstreamHealthcheckLibrary to 0.02.
+** bugfix: for bad status lines, we could throw out the &quot;bad argument #2 to 'sub'&quot; error, reported by George Bashi.
+** doc: avoided using the {{{\r\n}}} sequence in Lua long brackets because Lua would squeeze it to {{{\n}}}, unfortunately. thanks George Bashi for the report.
+** doc: made it clear that multiple {{{upstream {} }}} blocks' checkers can share a single shm zone. thanks Robert Paprocki for asking.
+** doc: now we need to turn off [[lua_socket_log_errors|https://github.com/openresty/lua-nginx-module/#lua_socket_log_errors]] explicitly in code examples.
+* upgraded LuaRestyLrucacheLibrary to 0.02.
+** feature: added an alternative implementation using ~FFI-based hash-table in the form of the new class {{{resty.lrucache.pureffi}}}, which is much faster than the default {{{resty.lrucache}}} class when there are a lot of key variations. thanks Shuxin Yang for the patch.
+* upgraded LuaNginxModule to 0.9.10.
+** feature: [[stream-typed cosockets|https://github.com/openresty/lua-nginx-module#ngxsockettcp]] are now full-duplex: a reader &quot;[[light thread|https://github.com/openresty/lua-nginx-module#ngxthreadspawn]]&quot; and a writer &quot;light thread&quot; can operate on the same cosocket simultaneously. thanks shun zhang and aviramc for the original patches.
+** feature: added new API function [[ngx.thread.kill()|https://github.com/openresty/lua-nginx-module/#ngxthreadkill]] for killing a user &quot;light thread&quot;. thanks aviramc for the original patch.
+** bugfix: the &quot;coroutine&quot; module table introduced by {{{require('coroutine')}}} was not working in our Lua context. thanks Paul K and ~Pierre-Yves Gérardy for the report.
+** bugfix: fixed the initial size of the ngx.worker table and the misleading comment due to a copy&amp;paste mistake. thanks Suraj Jaiswal for the report.
+** bugfix: the &quot;coctx cleanup&quot; handler might not be called before being overidden by other operations. this could happen when failing to yield in an error handler (for [[xpcall|http://www.lua.org/manual/5.1/manual.html#pdf-xpcall]]).
+** bugfix: fixed an incorrect error message. thanks doujiang for the patch.
+** bugfix: fixed a compilation error regression when using the Microsoft Visual C/C++ compiler. thanks itpp16 for the patch.
+** bugfix: we should use {{{c-&gt;buffered &amp; NGX_HTTP_LOWLEVEL_BUFFERED}}} instead of {{{c-&gt;buffered}}} for testing if the downstream connection is busy writing.
+** bugfix: we did not handle an out-of-memory case in [[ngx.req.set_body_data()|http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_data]].
+** bugfix: ngx_http_lua_chain_get_free_buf(): avoided returning zero-sized memory bufs.
+** bugfix: [[body_filter_by_lua*|https://github.com/openresty/lua-nginx-module#body_filter_by_lua]]: we might incorrectly pass zero-size bufs (in the form of &quot;special sync bufs&quot;) at the beginning of a chain, which could get stuck in the buffer of {{{ngx_http_writer_filter_module}}} (or in other words, being &quot;busy&quot;) while could still get recycled in the content handler (like [[content_by_lua|https://github.com/openresty/lua-nginx-module#content_by_lua]]), leading to buffer corruptions. thanks westhood for the report and patch.
+** bugfix: we did not clear all the fields in the {{{ngx_buf_t}}} C struct when recycling chain link buffers.
+** bugfix: the {{{*_by_lua_file}}} directives failed to load .lua files of exactly the size {{{n*LUAL_BUFFERSIZE}}} bytes with the error &quot;'end' expected (to close 'function' at line 1) near '&lt;eof&gt;'&quot;. thanks kworr for the report.
+** change: now we always iterate through all the user light threads to ensure all threads are de-anchored even when the &quot;uthreads&quot; counter gets out of sync. also added an assertion on the &quot;uthreads&quot; counter.
+** change: now we turn off our C-land assertions by default unless the user explicitly specifies the C compiler option {{{-DNGX_LUA_USE_ASSERT}}}.
+** change: throw out the &quot;no memory&quot; Lua error consistently (instead of &quot;out of memory&quot;) when failing to allocate on the nginx side.
+** change: we now still call {{{ngx_pfree()}}} in our own {{{pcre_free}}} hook.
+** doc: documented the {{{NGX_LUA_USE_ASSERT}}} and {{{NGX_LUA_ABORT_AT_PANIC}}} C macros.
+** doc: added performance notes to the sections for the [[ngx.var|https://github.com/openresty/lua-nginx-module#ngxvarvariable]] and [[ngx.ctx|https://github.com/openresty/lua-nginx-module#ngxctx]] API.
+** doc: documented the types of Lua values that can be passed to the [[ngx.timer|https://github.com/openresty/lua-nginx-module#ngxtimerat]] callback functions.
+* upgraded FormInputNginxModule to 0.09.
+** bugfix: fixed warnings from the Microsoft Visual C/C++ compiler. thanks itpp16 for the report.
+* upgraded EchoNginxModule to 0.54.
+** bugfix: the &quot;unknown option for echo_subrequest_async&quot; error was thrown when Nginx variables were used in both the &quot;method&quot; argument and URI argument of the [[echo_subrequest|https://github.com/openresty/echo-nginx-module#echo_subrequest]] directive (and etc). thanks Utkarsh Upadhyay for the report.
+** bugfix: fixed a misleading error message.
+* upgraded SrcacheNginxModule to 0.28.
+** feature: log an error message when [[srcache_store|http://wiki.nginx.org/HttpSRCacheModule#srcache_store]] subrequest has an error or returns a bad HTTP status code. thanks Yann Coleu for the report.
+** doc: typo fix from javasboy.
+* upgraded MemcNginxModule to 0.15.
+** bugfix: we did not log error messages for invalid values of {{{$memc_flags}}}, {{{$memc_exptime}}}, and {{{$memc_value}}}, leading to hard-to-debug HTTP 400 status errors. thanks Yann Coleu for the report.
+* bugfix: {{{./configure --without-lua_resty_dns}}} did not work as declared. thanks Vitaly for the report.
+* bugfix: use {{{cc}}} as the default C compiler for LuaJIT and Lua C libraries because modern ~FreeBSD 10 has no gcc by default and its clang is already featureful enough to compile everything. thanks Stefan Parvu for the suggestion.
+* change: {{{./configure --with-debug}}} now also passes the extra C compiler options {{{-DNGX_LUA_USE_ASSERT -DNGX_LUA_ABORT_AT_PANIC}}} to the LuaNginxModule build.
+See ChangeLog1007000 for change log for OpenResty 1.7.0.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -3081,8 +3142,9 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201406010554" changecount="15">
+<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201407010541" changecount="16">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Release 1.7.2.x|ChangeLog1007002]]
 * [[Release 1.7.0.x|ChangeLog1007000]]
 * [[Release 1.5.12.x|ChangeLog1005012]]
 * [[Release 1.5.11.x|ChangeLog1005011]]
@@ -3265,14 +3327,15 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201406071729" tags="Resources" changecount="286">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201407130301" tags="Resources" changecount="291">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 You can download the latest release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Lastest release
-* [[ngx_openresty-1.7.0.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007000]] - 7 June 2014
+* [[ngx_openresty-1.7.2.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007002]] - 12 July 2014
 !! Legacy releases
 Sometimes, users may want to download old releases.
+* [[ngx_openresty-1.7.0.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007000]] - 7 June 2014
 * [[ngx_openresty-1.5.12.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005012]] - 29 April 2014
 * [[ngx_openresty-1.5.11.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005011]] - 30 March 2014
 * [[ngx_openresty-1.5.8.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005008]] - 10 January 2014
