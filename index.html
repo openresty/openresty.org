@@ -2990,7 +2990,7 @@ See ChangeLog1005011 for change log for OpenResty 1.5.11.x.</pre>
 * bugfix: applied our patch for the nginx core to fix the long standing memory fragmentation issue for blocks larger than the page size in the nginx slab allocator: http://mailman.nginx.org/pipermail/nginx-devel/2014-May/005316.html thanks Shuxin Yang for the help.
 See ChangeLog1005012 for change log for OpenResty 1.5.12.x.</pre>
 </div>
-<div title="ChangeLog1007002" creator="YichunZhang" modifier="YichunZhang" created="201407010508" modified="201407130319" changecount="41">
+<div title="ChangeLog1007002" creator="YichunZhang" modifier="YichunZhang" created="201407010508" modified="201407130324" changecount="42">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Version 1.7.2.1 - 12 July 2014
 * upgraded the Nginx core to 1.7.2.
@@ -3638,7 +3638,7 @@ Use cases: http://forum.nginx.org/read.php?2,206658,207119
 Project page: https://github.com/calio/iconv-nginx-module
 </pre>
 </div>
-<div title="Installation" creator="YichunZhang" modifier="YichunZhang" created="201106210440" modified="201401251754" tags="doc install" changecount="59">
+<div title="Installation" creator="YichunZhang" modifier="YichunZhang" created="201106210440" modified="201407211945" tags="doc install" changecount="62">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 If you haven't downloaded the OpenResty source code tarball, please go to the [[Download]] page first.
 
@@ -3646,11 +3646,14 @@ Basically, building and installing OpenResty is as simple as
 {{{
 tar xzvf ngx_openresty-VERSION.tar.gz
 cd ngx_openresty-VERSION/
-./configure --with-luajit
+./configure
 make
 make install
 }}}
 where {{{VERSION}}} should be replaced by a concrete version number of OpenResty, like {{{0.8.54.6}}}.
+
+If your system environment is modern enough, then you almost always want to enable the PCRE JIT support and ~IPv6 support in your NGINX by passing the {{{--with-pcre-jit}}} and {{{--with-ipv6}}} options to the {{{./configure}}} script.
+
 If you have problems while building or want finer control over the building process, please read on.
 !Prerequisites
 You should have {{{perl 5.6.1+}}}, {{{libreadline}}}, {{{libpcre}}}, {{{libssl}}} installed into your system. For Linux, you should also ensure that {{{ldconfig}}} is in your PATH environment.
@@ -3705,14 +3708,15 @@ where {{{VERSION}}} should be replaced by real version numbers like {{{0.8.54.6}
 !!./configure
 Then enter the {{{ngx_openresty-VERSION/}}} directory, and type the following command to configure:
 {{{
-./configure --with-luajit
+./configure
 }}}
-By default, {{{--prefix=/usr/local/openresty}}} is assumed. The {{{--with-luajit}}} option is not required for OpenResty 1.5.8.1+ because it becomes the default since then. You should use LuaJIT wherever possible (for best performance). You should only disable LuaJIT 2 when your platform does not support LuaJIT.
+By default, {{{--prefix=/usr/local/openresty}}} is assumed. You should only disable LuaJIT 2 when your platform does not support LuaJIT.
 
 You can specify various options, as in
 {{{
 ./configure --prefix=/opt/openresty \
-            --with-luajit \
+            --with-pcre-jit \
+            --with-ipv6 \
             --without-http_redis2_module \
             --with-http_iconv_module \
             --with-http_postgres_module \
