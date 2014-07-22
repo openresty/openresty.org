@@ -600,17 +600,19 @@ Then, {{{ab -k -c10 -n10000 -t1 -r 'http://127.0.0.1:8080/'}}} will deliver benc
 Otherwise use an alternative lightweight HTTP load-testing tool [[weighttp|http://redmine.lighttpd.net/projects/weighttp/wiki]] and the invocation {{{weighttp -k -c10 -n10000 'http://127.0.0.1:8080/'}}} for benchmarking.
 </pre>
 </div>
-<div title="BuildSystemtap" creator="YichunZhang" modifier="YichunZhang" created="201403042218" modified="201404291919" changecount="7">
+<div title="BuildSystemtap" creator="YichunZhang" modifier="YichunZhang" created="201403042218" modified="201407221930" changecount="8">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 {{{
 sudo yum install gcc gcc-c++ -y
-wget https://fedorahosted.org/releases/e/l/elfutils/0.158/elfutils-0.158.tar.bz2
-tar -xvf elfutils-0.158.tar.bz2
-wget https://sourceware.org/systemtap/ftp/releases/systemtap-2.4.tar.gz
-cd systemtap-2.4/
+cd /tmp/
+wget https://fedorahosted.org/releases/e/l/elfutils/0.159/elfutils-0.159.tar.bz2
+tar -xvf elfutils-0.159.tar.bz2
+wget https://sourceware.org/systemtap/ftp/releases/systemtap-2.5.tar.gz
+tar -xvf systemtap-2.5.tar.gz
+cd systemtap-2.5/
 ./configure --prefix=/opt/stap --disable-docs \
             --disable-publican --disable-refdocs CFLAGS=&quot;-g -O2&quot; \
-            --with-elfutils=../elfutils-0.158
+            --with-elfutils=../elfutils-0.159
 make -j8
 sudo make install
 }}}
