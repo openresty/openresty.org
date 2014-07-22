@@ -5,8 +5,8 @@
 <description>a fast web app server by extending nginx </description>
 <language>en</language>
 <copyright>Copyright 2014 YichunZhang</copyright>
-<pubDate>Tue, 22 Jul 2014 19:30:38 GMT</pubDate>
-<lastBuildDate>Tue, 22 Jul 2014 19:30:38 GMT</lastBuildDate>
+<pubDate>Tue, 22 Jul 2014 20:30:27 GMT</pubDate>
+<lastBuildDate>Tue, 22 Jul 2014 20:30:27 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
@@ -24,14 +24,13 @@ cd systemtap-2.5/
 make -j8
 sudo make install
 &lt;/pre&gt;And then invoke stap like this:&lt;br&gt;&lt;pre&gt;$ /opt/stap/bin/stap -V
-Systemtap translator/driver (version 2.4/0.158, non-git sources)
-Copyright (C) 2005-2013 Red Hat, Inc. and others
+Systemtap translator/driver (version 2.5/0.158, non-git sources)
+Copyright (C) 2005-2014 Red Hat, Inc. and others
 This is free software; see the source for copying conditions.
-enabled features: AVAHI LIBRPM LIBSQLITE3 NSS BOOST_SHARED_PTR
-TR1_UNORDERED_MAP NLS LIBXML2
+enabled features: AVAHI LIBRPM LIBSQLITE3 NSS BOOST_SHARED_PTR TR1_UNORDERED_MAP NLS LIBXML2
 &lt;/pre&gt;Or you can just add the &lt;code&gt;/opt/stap/bin&lt;/code&gt; path to your &lt;code&gt;PATH&lt;/code&gt; environment.</description>
 <link>null#BuildSystemtap</link>
-<pubDate>Tue, 22 Jul 2014 19:30:38 GMT</pubDate>
+<pubDate>Tue, 22 Jul 2014 20:30:27 GMT</pubDate>
 
 </item>
 <item>
