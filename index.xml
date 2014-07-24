@@ -5,34 +5,10 @@
 <description>a fast web app server by extending nginx </description>
 <language>en</language>
 <copyright>Copyright 2014 YichunZhang</copyright>
-<pubDate>Tue, 22 Jul 2014 20:30:27 GMT</pubDate>
-<lastBuildDate>Tue, 22 Jul 2014 20:30:27 GMT</lastBuildDate>
+<pubDate>Thu, 24 Jul 2014 20:12:29 GMT</pubDate>
+<lastBuildDate>Thu, 24 Jul 2014 20:12:29 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
-<item>
-<title>BuildSystemtap</title>
-<description>&lt;a tiddler=&quot;BuildSystemtap&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;pre&gt;sudo yum install gcc gcc-c++ -y
-cd /tmp/
-wget https://fedorahosted.org/releases/e/l/elfutils/0.159/elfutils-0.159.tar.bz2
-tar -xvf elfutils-0.159.tar.bz2
-wget https://sourceware.org/systemtap/ftp/releases/systemtap-2.5.tar.gz
-tar -xvf systemtap-2.5.tar.gz
-cd systemtap-2.5/
-./configure --prefix=/opt/stap --disable-docs \
-            --disable-publican --disable-refdocs CFLAGS=&quot;-g -O2&quot; \
-            --with-elfutils=../elfutils-0.159
-make -j8
-sudo make install
-&lt;/pre&gt;And then invoke stap like this:&lt;br&gt;&lt;pre&gt;$ /opt/stap/bin/stap -V
-Systemtap translator/driver (version 2.5/0.158, non-git sources)
-Copyright (C) 2005-2014 Red Hat, Inc. and others
-This is free software; see the source for copying conditions.
-enabled features: AVAHI LIBRPM LIBSQLITE3 NSS BOOST_SHARED_PTR TR1_UNORDERED_MAP NLS LIBXML2
-&lt;/pre&gt;Or you can just add the &lt;code&gt;/opt/stap/bin&lt;/code&gt; path to your &lt;code&gt;PATH&lt;/code&gt; environment.</description>
-<link>null#BuildSystemtap</link>
-<pubDate>Tue, 22 Jul 2014 20:30:27 GMT</pubDate>
-
-</item>
 <item>
 <title>Installation</title>
 <description>&lt;a tiddler=&quot;Installation&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;If you haven't downloaded the &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; source code tarball, please go to the &lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;Download&lt;/a&gt; page first.&lt;br&gt;&lt;br&gt;Basically, building and installing &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; is as simple as&lt;br&gt;&lt;pre&gt;tar xzvf ngx_openresty-VERSION.tar.gz
@@ -57,14 +33,38 @@ make install
             --with-http_iconv_module \
             --with-http_postgres_module \
             -j2
-&lt;/pre&gt;All of the Nginx configure file options can be used here, including &lt;code&gt;--add-module=PATH&lt;/code&gt;. Try &lt;code&gt;./configure --help&lt;/code&gt; to see more options available.&lt;br&gt;&lt;br&gt;Errors in running the ./configure script can be found in the file &lt;code&gt;build/nginx-VERSION/objs/autoconf.err&lt;/code&gt; where &lt;code&gt;VERSION&lt;/code&gt; should be replaced by a concrete version number of &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;, like &lt;code&gt;0.8.54.6&lt;/code&gt;.&lt;br&gt;&lt;h3&gt;Notes for Solaris users&lt;/h3&gt;For Solaris, it's common to install libraries like OpenSSL to &lt;code&gt;/lib&lt;/code&gt;, so when it complaints about missing OpenSSL and you have indeed already installed it, specify the &lt;code&gt;--with-ld-opt='-L/lib'&lt;/code&gt; option.&lt;br&gt;&lt;h2&gt;make&lt;/h2&gt;Now you can compile everything up using the command&lt;br&gt;&lt;pre&gt;make
+&lt;/pre&gt;All of the standard Nginx configure file options can be used here, including &lt;code&gt;--add-module=PATH&lt;/code&gt; for adding your own 3rd-party Nginx C modules. Try &lt;code&gt;./configure --help&lt;/code&gt; to see more options available.&lt;br&gt;&lt;br&gt;Errors in running the ./configure script can be found in the file &lt;code&gt;build/nginx-VERSION/objs/autoconf.err&lt;/code&gt; where &lt;code&gt;VERSION&lt;/code&gt; should be replaced by a concrete version number of &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;, like &lt;code&gt;0.8.54.6&lt;/code&gt;.&lt;br&gt;&lt;h3&gt;Notes for Solaris users&lt;/h3&gt;For Solaris, it's common to install libraries like OpenSSL to &lt;code&gt;/lib&lt;/code&gt;, so when it complaints about missing OpenSSL and you have indeed already installed it, specify the &lt;code&gt;--with-ld-opt='-L/lib'&lt;/code&gt; option.&lt;br&gt;&lt;h2&gt;make&lt;/h2&gt;Now you can compile everything up using the command&lt;br&gt;&lt;pre&gt;make
 &lt;/pre&gt;If your machine has multiple cores and your &lt;code&gt;make&lt;/code&gt; supports the jobserver feature, you can compile things in parallel like this:&lt;br&gt;&lt;pre&gt;make -j2
 &lt;/pre&gt;assuming you have 2 CPU cores.&lt;br&gt;&lt;h2&gt;make install&lt;/h2&gt;If all the previous steps go without problems, you can install &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; into your system by typing the command&lt;br&gt;&lt;pre&gt;make install
 &lt;/pre&gt;On Linux, it often requires &lt;code&gt;sudo&lt;/code&gt; to gain root access.&lt;br&gt;</description>
 <category>doc</category>
 <category>install</category>
 <link>null#Installation</link>
-<pubDate>Mon, 21 Jul 2014 19:45:00 GMT</pubDate>
+<pubDate>Thu, 24 Jul 2014 20:12:29 GMT</pubDate>
+
+</item>
+<item>
+<title>BuildSystemtap</title>
+<description>&lt;a tiddler=&quot;BuildSystemtap&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;pre&gt;sudo yum install gcc gcc-c++ -y
+cd /tmp/
+wget https://fedorahosted.org/releases/e/l/elfutils/0.159/elfutils-0.159.tar.bz2
+tar -xvf elfutils-0.159.tar.bz2
+wget https://sourceware.org/systemtap/ftp/releases/systemtap-2.5.tar.gz
+tar -xvf systemtap-2.5.tar.gz
+cd systemtap-2.5/
+./configure --prefix=/opt/stap --disable-docs \
+            --disable-publican --disable-refdocs CFLAGS=&quot;-g -O2&quot; \
+            --with-elfutils=../elfutils-0.159
+make -j8
+sudo make install
+&lt;/pre&gt;And then invoke stap like this:&lt;br&gt;&lt;pre&gt;$ /opt/stap/bin/stap -V
+Systemtap translator/driver (version 2.5/0.158, non-git sources)
+Copyright (C) 2005-2014 Red Hat, Inc. and others
+This is free software; see the source for copying conditions.
+enabled features: AVAHI LIBRPM LIBSQLITE3 NSS BOOST_SHARED_PTR TR1_UNORDERED_MAP NLS LIBXML2
+&lt;/pre&gt;Or you can just add the &lt;code&gt;/opt/stap/bin&lt;/code&gt; path to your &lt;code&gt;PATH&lt;/code&gt; environment.</description>
+<link>null#BuildSystemtap</link>
+<pubDate>Tue, 22 Jul 2014 20:30:00 GMT</pubDate>
 
 </item>
 <item>
