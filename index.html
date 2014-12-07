@@ -3137,6 +3137,63 @@ See ChangeLog1007000 for change log for OpenResty 1.7.0.x.</pre>
 ** bugfix: the Makefile had a bug that overwrites the existing {{{cjson.so}}} file in place which could cause already running processes with this {{{.so}}} file loaded to crash. thanks ywsample for the report.
 See ChangeLog1007002 for change log for OpenResty 1.7.2.x.</pre>
 </div>
+<div title="ChangeLog1007007" creator="YichunZhang" modifier="YichunZhang" created="201411220519" modified="201412070136" changecount="25">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Version 1.7.7.1 - 6 December 2014
+* upgraded the Nginx core to 1.7.7.
+** see the changes here: http://nginx.org/en/CHANGES
+* bugfix: applied a patch to the nginx core to fix the memory invalid reads when exceeding the pre-configured limits in an {{{ngx_hash_t}}} hash table.
+* bugfix: applied a patch to the nginx core to fix a memory invalid read regression introduced in nginx 1.7.5+'s resolver.
+* ./configure: usage text: renamed {{{--with-luajit=PATH}}} to {{{--with-luajit=DIR}}}. thanks Dominic for the suggestion.
+* feature: ./configure: added the default prefix value to the usage text.
+* upgraded LuaJIT to v2.1-20141128:  https://github.com/openresty/luajit2/tags
+** imported Mike Pall's latest changes:
+*** feature: FFI: added {{{ffi.typeinfo()}}}. thanks to Peter Colberg.
+*** bugfix: fixed snapshot #0 handling for traces with a stack check on entry. this bug might lead to bad register overwrites (and eventually segmentation faults in GC upon trace exits, at least).
+*** bugfix: FFI: no meta fallback when indexing pointer to incomplete struct.
+*** bugfix: fixed fused constant loads under high register pressure.
+*** bugfix: fixed ~DragonFly build (unsupported). thanks to Robin Hahling, Alex Hornung, and Joris Giovannangeli.
+*** bugfix: FFI: fixed initialization of unions of subtypes. thanks to Peter Colberg.
+*** bugfix: FFI: Fix for cdata vs. non-cdata arithmetic and comparisons. thanks to Roman Tsisyk.
+*** optimize: eliminated hmask guard for forwarded HREFK.
+** debugging: added an (expensive) assertion to check GC objects in current stack upon trace exiting. thanks Mike Pall. only enabled when building with {{{-DLUA_USE_ASSERT}}}.
+* upgraded LuaNginxModule to 0.9.13.
+** optimize: reduced the pool size of a fake connection from the default pool size (16KB) to 128B, affecting [[init_worker_by_lua|https://github.com/openresty/lua-nginx-module#init_worker_by_lua]] and [[ngx.timer.at|https://github.com/openresty/lua-nginx-module#ngxtimerat]].
+** optimize: made fake requests share their connection pools, affecting [[init_worker_by_lua|https://github.com/openresty/lua-nginx-module#init_worker_by_lua]] and [[ngx.timer.at|https://github.com/openresty/lua-nginx-module#ngxtimerat]].
+** feature: the error logger used by ngx.timer.at handlers now outputs the &quot;client: xxx, server: xxx&quot; context info for the original (true) request creating the timer.
+** feature: added nginx configuration file names and line numbers to the rewrite/access/content/log_by_lua directives' Lua chunk names in order to simplify debugging.
+** feature: [[ngx.flush(true)|https://github.com/openresty/lua-nginx-module#ngxflush]] now returns the &quot;timeout&quot; and &quot;client aborted&quot; errors to the Lua land for the cases that writing to the client is timed out or the client closes the connection prematurely, respectively.
+** feature: [[ngx.flush(true)|https://github.com/openresty/lua-nginx-module#ngxflush]] can now wait on delayed events due to nginx's [[limit_rate|http://nginx.org/en/docs/http/ngx_http_core_module.html#limit_rate]] config directive or [[$limit_rate|http://nginx.org/en/docs/http/ngx_http_core_module.html#var_limit_rate]] variable settings. thanks Shafreeck Sea for the original patch.
+** bugfix: [[ngx.flush()|https://github.com/openresty/lua-nginx-module#ngxflush]], [[ngx.eof()|https://github.com/openresty/lua-nginx-module#ngxeof]], and some other things did not update busy/free chains after calling the output filters.
+** bugfix: ngx_gzip/ngx_gunzip module filters might cause [[ngx.flush(true)|https://github.com/openresty/lua-nginx-module#ngxflush]] to hang until timeout for nginx 1.7.7+ (and some other old versions of nginx). thanks Maxim Dounin for the help.
+** bugfix: [[ngx.get_phase()|https://github.com/openresty/lua-nginx-module#ngxget_phase]] did not work in the context of [[init_worker_by_lua*|https://github.com/openresty/lua-nginx-module#init_worker_by_lua]].
+** bugfix: use of [[ngx.flush(true)|https://github.com/openresty/lua-nginx-module#ngxflush]] with the [[limit_rate|http://nginx.org/en/docs/http/ngx_http_core_module.html#limit_rate]] config directive or the [[$limit_rate|http://nginx.org/en/docs/http/ngx_http_core_module.html#var_limit_rate]] variable may hang the request forever for large volumn of output data. thanks Shafreeck Sea for the report.
+** bugfix: compilation error when PCRE is disabled in the nginx build. thanks Ivan Cekov for the report.
+** bugfix: when syslog was enabled in the [[error_log|http://nginx.org/en/docs/ngx_core_module.html#error_log]] directive for nginx 1.7.1+, use of [[init_worker_by_lua|https://github.com/openresty/lua-nginx-module#init_worker_by_lua]] or [[ngx.timer.at()|https://github.com/openresty/lua-nginx-module#ngxtimerat]] would lead to segmentation faults. thanks shun.zhang for the report.
+** bugfix: fixed compilation error with nginx 1.7.5+ because nginx 1.7.5+ changes the API in the events subsystem. thanks Charles R. Portwood II and Mathieu Le Marec for the report.
+** bugfix: [[ngx.req.raw_header()|https://github.com/openresty/lua-nginx-module#ngxreqraw_header]]: buffer overflow and the &quot;buffer error&quot; exception might happen for massively pipelined downstream requests. thanks Dane Knecht for the report.
+** bugfix: [[ngx.req.raw_header()|https://github.com/openresty/lua-nginx-module#ngxreqraw_header]]: we might change nginx's internal buffer pointers, which might cause bad side-effects.
+** doc: added a new section, [[Cocockets Not Available Everywhere|https://github.com/openresty/lua-nginx-module#cocockets-not-available-everywhere]], under the [[Known Issues|https://github.com/openresty/lua-nginx-module#known-issues]] section.
+* upgraded LuaRestyDNSLibrary to 0.14.
+** feature: added support for the SPF record type specified by RFC 4408. thanks Tom Fitzhenry for the patch.
+* upgraded LuaRestyLrucacheLibrary to 0.03.
+** feature: the [[get()|https://github.com/openresty/lua-resty-lrucache#get]] method now also returns the stale value as the second returned value if available.
+* upgraded LuaRestyLockLibrary to 0.04.
+** bugfix: the shared dictionary would incorrectly get unref'd for multiple times when the [[lock()|https://github.com/openresty/lua-resty-lock#lock]] and/or [[unlock()|https://github.com/openresty/lua-resty-lock#unlock]] methods are called more than once. thanks Peng Wu for the report and Dejiang Zhu for the patch.
+* upgraded EchoNginxModule to 0.57.
+** bugfix: [[$echo_client_request_headers|https://github.com/openresty/echo-nginx-module#echo_client_request_headers]]: buffer overflow and the &quot;buffer error&quot; exception might happen for massively pipelined downstream requests.
+** bugfix: [[$echo_client_request_headers|https://github.com/openresty/echo-nginx-module#echo_client_request_headers]]: we might change nginx's internal buffer pointers, which might cause bad side-effects.
+* upgraded DrizzleNginxModule to 0.1.8.
+** bugfix: fixed compilation error with nginx 1.7.5+ because nginx 1.7.5+ changes the API in the events subsystem.
+* upgraded PostgresNginxModule to 1.0rc5.
+** bugfix: fixed compilation error with nginx 1.7.5+ because nginx 1.7.5+ changes the API in the events subsystem.
+* upgraded CoolkitNginxModule to 0.2rc2.
+** bugfix: compilation failed when PCRE was disabled in the nginx build.
+** feature: added the &quot;$location&quot; variable, by Piotr Sikora.
+* upgraded SetMiscNginxModule to 0.27.
+** bugfix: bugfix: fixed build failure when {{{--with-mail_ssl_module}}} is specified while {{{--with-http_ssl_module}}} is not. thanks Xiaochen Wang for the report.
+See ChangeLog1007004 for change log for OpenResty 1.7.4.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -3228,8 +3285,9 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201410100002" changecount="17">
+<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201412070159" changecount="18">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Release 1.7.7.x|ChangeLog1007007]]
 * [[Release 1.7.4.x|ChangeLog1007004]]
 * [[Release 1.7.2.x|ChangeLog1007002]]
 * [[Release 1.7.0.x|ChangeLog1007000]]
@@ -3414,14 +3472,15 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201410092352" tags="Resources" changecount="295">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201412070131" tags="Resources" changecount="299">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 You can download the latest release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Lastest release
-* [[ngx_openresty-1.7.4.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007004]] - 9 October 2014
+* [[ngx_openresty-1.7.7.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 6 December 2014
 !! Legacy releases
 Sometimes, users may want to download old releases.
+* [[ngx_openresty-1.7.4.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007004]] - 9 October 2014
 * [[ngx_openresty-1.7.2.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007002]] - 12 July 2014
 * [[ngx_openresty-1.7.0.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007000]] - 7 June 2014
 * [[ngx_openresty-1.5.12.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005012]] - 29 April 2014
