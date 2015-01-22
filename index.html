@@ -605,14 +605,14 @@ Otherwise use an alternative lightweight HTTP load-testing tool [[weighttp|http:
 {{{
 sudo yum install gcc gcc-c++ -y
 cd /tmp/
-wget https://fedorahosted.org/releases/e/l/elfutils/0.159/elfutils-0.159.tar.bz2
-tar -xvf elfutils-0.159.tar.bz2
-wget https://sourceware.org/systemtap/ftp/releases/systemtap-2.5.tar.gz
-tar -xvf systemtap-2.5.tar.gz
-cd systemtap-2.5/
+wget https://fedorahosted.org/releases/e/l/elfutils/0.161/elfutils-0.161.tar.bz2
+tar -xvf elfutils-0.161.tar.bz2
+wget https://sourceware.org/systemtap/ftp/releases/systemtap-2.6.tar.gz
+tar -xvf systemtap-2.6.tar.gz
+cd systemtap-2.6/
 ./configure --prefix=/opt/stap --disable-docs \
             --disable-publican --disable-refdocs CFLAGS=&quot;-g -O2&quot; \
-            --with-elfutils=../elfutils-0.159
+            --with-elfutils=../elfutils-0.161
 make -j8
 sudo make install
 }}}
