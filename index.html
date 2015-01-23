@@ -602,21 +602,45 @@ Otherwise use an alternative lightweight HTTP load-testing tool [[weighttp|http:
 </div>
 <div title="BuildSystemtap" creator="YichunZhang" modifier="YichunZhang" created="201403042218" modified="201407222030" changecount="9">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+Install the prerequisites on your distribution:
+
+Fedora:
 {{{
 sudo yum install gcc gcc-c++ -y
-cd /tmp/
-wget https://fedorahosted.org/releases/e/l/elfutils/0.159/elfutils-0.159.tar.bz2
-tar -xvf elfutils-0.159.tar.bz2
-wget https://sourceware.org/systemtap/ftp/releases/systemtap-2.5.tar.gz
-tar -xvf systemtap-2.5.tar.gz
-cd systemtap-2.5/
-./configure --prefix=/opt/stap --disable-docs \
-            --disable-publican --disable-refdocs CFLAGS=&quot;-g -O2&quot; \
-            --with-elfutils=../elfutils-0.159
-make -j8
-sudo make install
 }}}
+
+Ubuntu:
+{{{
+sudo apt-get install build-essentials zlib1g-dev elfutils libdw-dev gettext
+}}}
+
+Compile and install systemtap:
+{{{
+wget https://sourceware.org/systemtap/ftp/releases/systemtap-2.6.tar.gz
+tar -xvf systemtap-2.6.tar.gz
+cd systemtap-2.6/
+./configure --prefix=/opt/stap --disable-docs \
+            --disable-publican --disable-refdocs CFLAGS="-g -O2"
+            make -j8
+            sudo make install
+}}}
+
+If you'd like to build with vendored elfutils:
+{{{
+cd /tmp
+wget https://fedorahosted.org/releases/e/l/elfutils/0.161/elfutils-0.161.tar.bz2
+tar -xvf elfutils-0.161.tar.bz2
+}}}
+
+Pass to ./configure when building systemtap:
+{{{
+--with-elfutils=/tmp/elfutils-0.161
+}}}
+
+Generally it's recommended to use the elfutils that comes with your package manager. It's usually compiled with the necessary other libraries such as zlib to decompress headers.
+
 And then invoke stap like this:
+
 {{{
 $ /opt/stap/bin/stap -V
 Systemtap translator/driver (version 2.5/0.158, non-git sources)
@@ -624,7 +648,7 @@ Copyright (C) 2005-2014 Red Hat, Inc. and others
 This is free software; see the source for copying conditions.
 enabled features: AVAHI LIBRPM LIBSQLITE3 NSS BOOST_SHARED_PTR TR1_UNORDERED_MAP NLS LIBXML2
 }}}
-Or you can just add the {{{/opt/stap/bin}}} path to your {{{PATH}}} environment.</pre>
+Or you can just add the {{{/opt/stap/bin}}} path to your {{{PATH}}} environment.
 </div>
 <div title="ChangeLog1000004" creator="YichunZhang" modifier="YichunZhang" created="201107081222" modified="201109020756" changecount="47">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
