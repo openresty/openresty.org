@@ -5,14 +5,14 @@
 <description>a fast web app server by extending nginx </description>
 <language>en</language>
 <copyright>Copyright 2015 YichunZhang</copyright>
-<pubDate>Tue, 27 Jan 2015 06:19:18 GMT</pubDate>
-<lastBuildDate>Tue, 27 Jan 2015 06:19:18 GMT</lastBuildDate>
+<pubDate>Tue, 27 Jan 2015 06:32:00 GMT</pubDate>
+<lastBuildDate>Tue, 27 Jan 2015 06:32:00 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
 <title>BuildSystemtap</title>
 <description>&lt;a tiddler=&quot;BuildSystemtap&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;1. Install the prerequisites on your Linux distribution, for example:&lt;br&gt;&lt;ul&gt;&lt;li&gt; Fedora:&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;sudo yum install gcc gcc-c++ elfutils-devel
-&lt;/pre&gt;&lt;ul&gt;&lt;li&gt; Ubuntu:&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;sudo apt-get install build-essentials zlib1g-dev elfutils libdw-dev gettext
+&lt;/pre&gt;&lt;ul&gt;&lt;li&gt; Ubuntu:&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;sudo apt-get install build-essential zlib1g-dev elfutils libdw-dev gettext
 &lt;/pre&gt;2. Compile and install systemtap from source:&lt;br&gt;&lt;pre&gt;wget https://sourceware.org/systemtap/ftp/releases/systemtap-2.6.tar.gz
 tar -xvf systemtap-2.6.tar.gz
 cd systemtap-2.6/
@@ -31,7 +31,7 @@ This is free software; see the source for copying conditions.
 enabled features: AVAHI LIBRPM LIBSQLITE3 NSS BOOST_SHARED_PTR TR1_UNORDERED_MAP NLS LIBXML2
 &lt;/pre&gt;Or you can just add the &lt;code&gt;/opt/stap/bin&lt;/code&gt; path to your &lt;code&gt;PATH&lt;/code&gt; environment.&lt;br&gt;</description>
 <link>null#BuildSystemtap</link>
-<pubDate>Tue, 27 Jan 2015 06:19:18 GMT</pubDate>
+<pubDate>Tue, 27 Jan 2015 06:32:00 GMT</pubDate>
 
 </item>
 <item>

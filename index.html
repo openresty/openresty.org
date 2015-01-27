@@ -600,7 +600,7 @@ Then, {{{ab -k -c10 -n10000 -t1 -r 'http://127.0.0.1:8080/'}}} will deliver benc
 Otherwise use an alternative lightweight HTTP load-testing tool [[weighttp|http://redmine.lighttpd.net/projects/weighttp/wiki]] and the invocation {{{weighttp -k -c10 -n10000 'http://127.0.0.1:8080/'}}} for benchmarking.
 </pre>
 </div>
-<div title="BuildSystemtap" creator="YichunZhang" modifier="YichunZhang" created="201403042218" modified="201501270619" changecount="19">
+<div title="BuildSystemtap" creator="YichunZhang" modifier="YichunZhang" created="201403042218" modified="201501270632" changecount="20">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 1. Install the prerequisites on your Linux distribution, for example:
 * Fedora:
@@ -609,7 +609,7 @@ sudo yum install gcc gcc-c++ elfutils-devel
 }}}
 * Ubuntu:
 {{{
-sudo apt-get install build-essentials zlib1g-dev elfutils libdw-dev gettext
+sudo apt-get install build-essential zlib1g-dev elfutils libdw-dev gettext
 }}}
 2. Compile and install systemtap from source:
 {{{
