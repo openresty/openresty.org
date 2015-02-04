@@ -2839,8 +2839,56 @@ See ChangeLog1007000 for change log for OpenResty 1.7.0.x.</pre>
 ** bugfix: the Makefile had a bug that overwrites the existing {{{cjson.so}}} file in place which could cause already running processes with this {{{.so}}} file loaded to crash. thanks ywsample for the report.
 See ChangeLog1007002 for change log for OpenResty 1.7.2.x.</pre>
 </div>
-<div title="ChangeLog1007007" creator="YichunZhang" modifier="YichunZhang" created="201412070207" changecount="1">
+<div title="ChangeLog1007007" creator="YichunZhang" modifier="YichunZhang" created="201412070207" modified="201502042129" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Version 1.7.7.2 - 4 February 2015
+* bundled the &quot;resty&quot; command-line utility (version 0.01)  from the resty-cli project: https://github.com/openresty/resty-cli
+** bugfix: the resty utility could not start when the nginx was built with {{{./configure --conf-path=PATH}}} where {{{PATH}}} was not {{{conf/nginx.conf}}}. thanks Zhengyi Lai for the report.
+** feature: added support for user-supplied arguments which the user Lua scripts can access via the global Lua table &quot;arg&quot;, just as in the &quot;lua&quot; and &quot;luajit&quot; command-line utilities. thanks Guanlan Dai for the patch.
+** feature: added new command-line option {{{--nginx=PATH}}} to allow the user to explicitly specify the underlying nginx executable being invoked by this script. thanks Guanlan Dai for the patch.
+** feature: added support for multiple {{{-I}}} options to specify more than one user library search paths. thanks Guanlan Dai for the patch.
+** feature: print out resty's own version number when the -V option is specified.
+** feature: resty: added new options {{{--valgrind}}} and {{{--valgrind-opts=OPTS}}}.
+* upgraded SetMiscNginxModule to 0.28.
+** feature: added the [[set_base32_alphabet|https://github.com/openresty/set-misc-nginx-module#set_base32_alphabet]] config directive to allow the user to specify the alphabet used for base32 encoding/decoding. thanks Vladislav Manchev for the patch.
+** bugfix: [[set_quote_sql_str|https://github.com/openresty/set-misc-nginx-module#set_quote_sql_str]]: we incorrectly escaped 0x1a to {{{\z}}} instead of {{{\Z}}}.
+** change: the old [[set_misc_base32_padding|https://github.com/openresty/set-misc-nginx-module#set_misc_base32_padding]] directive is now deprecated; use [[set_base32_padding|https://github.com/openresty/set-misc-nginx-module#set_base32_padding]] instead.
+* upgraded LuaNginxModule to 0.9.14.
+** bugfix: [[ngx.re.gsub|https://github.com/openresty/lua-nginx-module#ngxregsub]]/[[ngx.re.sub|https://github.com/openresty/lua-nginx-module#ngxresub]] incorrectly swallowed the character right after a 0-width match that happens to be the last match. thanks Guanlan Dai for the patch.
+** bugfix: [[tcpsock:setkeepalive()|https://github.com/openresty/lua-nginx-module#tcpsocksetkeepalive]]: we did not check {{{NULL}}} connection pointers properly, which might lead to segmentation faults. thanks Yang Yue for the report.
+** bugfix: [[ngx.quote_str_str()|https://github.com/openresty/lua-nginx-module#ngxquote_sql_str]] incorrectly escaped &quot;\026&quot; to &quot;\z&quot; while &quot;\Z&quot; is expected. thanks laodouya for the original patch.
+** bugfix: [[ngx.timer.at|https://github.com/openresty/lua-nginx-module#ngxtimerat]]: fixed a small memory leak in case of running out of memory (which should be extremely rare though).
+** optimize: minor optimizations in timers.
+** feature: added the Lua global variable {{{__ngx_cycle}}} which is a lightuserdata holding the current {{{ngx_cycle_t}}} pointer, which may simplify some ~FFI-based Lua extensions.
+** doc: added a warning for the &quot;share_all_vars&quot; option for [[ngx.location.capture*|https://github.com/openresty/lua-nginx-module#ngxlocationcapture]].
+* upgraded LuaRestyCoreLibrary to 0.1.0.
+** bugfix: resty.core.regex: data corruptions might happen when recursively calling [[ngx.re.gsub|https://github.com/openresty/lua-nginx-module#ngxregsub]] via the user replacement function argument because of incorrect reusing a globally shared captures Lua table. thanks James Hurst for the report.
+** bugfix: [[ngx.re.gsub|https://github.com/openresty/lua-nginx-module#ngxregsub]]: garbage might get injected into gsub result when {{{ngx.*}}} API functions are called inside the user callback function for the replacement. thanks James Hurst for the report.
+** feature: resty.core.base: added the {{{FFI_BUSY}}} constant for {{{NGX_BUSY}}}.
+* upgraded LuaRestyLrucacheLibrary to 0.04.
+** bugfix: resty.lrucache.pureffi: set(): it did not update to the new value at all if the key had an existing value (either stale or not). thanks Shuxin Yang for the patch.
+* upgraded LuaRestyWebSocketLibrary to 0.05.
+** feature: [[resty.websocket.client|https://github.com/openresty/lua-resty-websocket#restywebsocketclient]]: added support for SSL/TLS connections (i.e., the {{{wss://}}} scheme). thanks Vladislav Manchev for the patch.
+** doc: mentioned the [[bitop|http://bitop.luajit.org/index.html]] library dependency when using the standard Lua 5.1 interpreter (this is not needed for LuaJIT because it is already built in). thanks Laurent Arnoud for the patch.
+* upgraded LuaJIT to v2.1-20150120:  https://github.com/openresty/luajit2/tags
+** imported Mike Pall's latest changes:
+*** bugfix: don't compile {{{IR_RETF}}} after {{{CALLT}}} to ff with side effects.
+*** bugfix: fix {{{BC_UCLO}}}/{{{BC_JMP}}} join optimization in Lua parser.
+*** bugfix: fix corner case in string to number conversion.
+*** bugfix: x86: fix argument checks for {{{ipairs()}}} iterator.
+*** bugfix: gracefully handle {{{lua_error()}}} for a suspended coroutine.
+*** x86/x64: Drop internal x87 math functions. Use libm functions.
+*** x86/x64: Call external symbols directly from interpreter code. (except for ELF/x86 PIC, where it's easier to use wrappers.)
+*** ARM: Minor interpreter optimization.
+*** x86: Minor interpreter optimization.
+*** PPC/e500: Drop support for this architecture.
+*** MIPS: Fix excess stack growth in interpreter.
+*** PPC: Fix excess stack growth in interpreter.
+*** ARM: Fix excess stack growth in interpreter.
+*** ARM: Fix write barrier check in {{{BC_USETS}}}.
+*** ~ARM64: Add build infrastructure and initial port of interpreter.
+*** ~OpenBSD/x86: Better executable memory allocation for W^X mode.
+* bugfix: the {{{ngx_http_redis}}} module failed to compile when the {{{ngx_gzip}}} module was disabled. thanks anod221 for the report.
 ! Version 1.7.7.1 - 6 December 2014
 * upgraded the Nginx core to 1.7.7.
 ** see the changes here: http://nginx.org/en/CHANGES
@@ -3151,13 +3199,14 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 任何数额都不胜感激！
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201412070206" tags="Resources" changecount="183">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201502042127" tags="Resources" changecount="184">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 最新版
-* [[ngx_openresty-1.7.7.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 2014年12月6日
+* [[ngx_openresty-1.7.7.2.tar.gz|http://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 2015年2月4日
 !! 历史遗留版
 有的时候我们可能会需要较老的版本：
+* [[ngx_openresty-1.7.7.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 2014年12月6日
 * [[ngx_openresty-1.7.4.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007004]] - 2014年10月9日
 * [[ngx_openresty-1.7.2.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007002]] - 2014年7月12日
 * [[ngx_openresty-1.7.0.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007000]] - 2014年6月7日
