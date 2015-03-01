@@ -3262,6 +3262,34 @@ See ChangeLog1007002 for change log for OpenResty 1.7.2.x.</pre>
 ** bugfix: bugfix: fixed build failure when {{{--with-mail_ssl_module}}} is specified while {{{--with-http_ssl_module}}} is not. thanks Xiaochen Wang for the report.
 See ChangeLog1007004 for change log for OpenResty 1.7.4.x.</pre>
 </div>
+<div title="ChangeLog1007010" creator="YichunZhang" modifier="YichunZhang" created="201502192250" modified="201503010746" changecount="19">
+<pre>! Version 1.7.10.1 - 28 February 2015
+* upgraded the Nginx core to 1.7.10.
+** see the changes here: http://nginx.org/en/CHANGES
+* bugfix: applied the upstream_filter_finalize patch to the nginx core to fix corrupted {{{$upstream_response_time}}} variable values when {{{filter_finalize}}} and [[error_page|http://nginx.org/r/error_page]] are both used. thanks Daniel Bento for the report and Maxim Dounin for the patch.
+* bugfix: ./configure: added {{{--without-http_upstream_least_conn_module}}} and {{{--without-http_upstream_keepalive_module}}} to the usage text (for {{{--help}}}) to reflect recent changes in the nginx core. thanks Seyhun Cavus for the report.
+* bugfix: ./configure: renamed the {{{--without-http_limit_zone_module}}} option to {{{--without-http_limit_conn_module}}} to reflect the change in recent nginx cores. thanks Seyhun Cavus for the report.
+* upgraded LuaJIT to v2.1-20150223: https://github.com/openresty/luajit2/tags
+** imported Mike Pall's latest changes:
+*** x86/x64: fix code generation for fused test/arith ops. thanks to Alexander Nasonov and AFL.
+*** fix string to number conversion. thanks to Lesley De Cruz.
+*** fix lexer error for chunks without tokens.
+*** ~LJ_FR2: fix bytecode generation for method lookups.
+*** FFI: Prevent DSE across {{{ffi.string()}}}.
+* upgraded LuaNginxModule to 0.9.15.
+** bugfix: the value of the Location response header set by [[ngx.redirect()|https://github.com/openresty/lua-nginx-module#ngxredirect]] or the [[ngx.header.HEADER|https://github.com/openresty/lua-nginx-module#ngxheaderheader]] API might get overwritten by nginx's header filter to the fully qualified form (with the scheme and host parts).
+** bugfix: [[lua_shared_dict|https://github.com/openresty/lua-nginx-module#lua_shared_dict]]: use of Lua numbers as the value in shared dict might lead to unaligned accesses which could lead to crashes on architectures requiring data alignment (like ~ARMv6). thanks Shuxin Yang for the fix and thanks Stefan Parvu and Brandon B for the report.
+** bugfix: using error codes ({{{ngx.ERROR}}} or &gt;=300) in [[ngx.exit()|https://github.com/openresty/lua-nginx-module#ngxexit]] in [[header_filter_by_lua*|https://github.com/openresty/lua-nginx-module#header_filter_by_lua]] might lead to Lua stack overflow.
+** feature: improved the debugging event logging for timers created by [[ngx.timer.at()|https://github.com/openresty/lua-nginx-module#ngxtimerat]].
+** optimize: fixed padding holes in our struct memory layouts for 64-bit systems to save a little memory.
+** optimize: [[header_filter_by_lua*|https://github.com/openresty/lua-nginx-module#header_filter_by_lua]]: removed a piece of useless code. thanks Zi Lin for the report.
+** doc: emphasized the capability of using nginx variables in the Lua file path in [[content_by_lua_file|https://github.com/openresty/lua-nginx-module#content_by_lua_file]]/[[rewrite_by_lua_file|https://github.com/openresty/lua-nginx-module#content_by_lua_file]]/[[access_by_lua_file|https://github.com/openresty/lua-nginx-module#access_by_lua]].
+* upgraded SrcacheNginxModule to 0.29.
+** bugfix: upon cache hits, we might let the nginx core's header filter module overwrite the {{{Location}}} response header's values like &quot;/foo/bar&quot; to the fully-qualified form (like &quot;http://test.com/foo/bar&quot;). thanks ~AlexClineBB for the report.
+* upgraded RestyCLI to 0.02.
+** bugfix: we did not explicitly specify the pid file path, which may conflict with the default pid path if the user compiles nginx with the {{{--pid-path=PATH}}} ./configure option. thanks fancyrabbit for the report.
+See ChangeLog1007007 for change log for OpenResty 1.7.7.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -3353,8 +3381,9 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201412070159" changecount="18">
+<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201502202042" changecount="19">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Release 1.7.10.x|ChangeLog1007010]]
 * [[Release 1.7.7.x|ChangeLog1007007]]
 * [[Release 1.7.4.x|ChangeLog1007004]]
 * [[Release 1.7.2.x|ChangeLog1007002]]
@@ -3540,14 +3569,15 @@ If you're in China, it's usually more convenient to send donation is to send mon
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201502042126" tags="Resources" changecount="302">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201503010207" tags="Resources" changecount="305">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 You can download the latest release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Lastest release
-* [[ngx_openresty-1.7.7.2.tar.gz|http://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 4 February 2015
+* [[ngx_openresty-1.7.10.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 28 February 2015
 !! Legacy releases
 Sometimes, users may want to download old releases.
+* [[ngx_openresty-1.7.7.2.tar.gz|http://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 4 February 2015
 * [[ngx_openresty-1.7.7.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 6 December 2014
 * [[ngx_openresty-1.7.4.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007004]] - 9 October 2014
 * [[ngx_openresty-1.7.2.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007002]] - 12 July 2014
@@ -4490,6 +4520,14 @@ When used in conjunction with [[LuaNginxModule]], it is recommended to use [[Lua
 * Implementing a simple server-push solution, by laowang
 : http://huoding.com/2012/09/28/174
 </pre>
+</div>
+<div title="RestyCLI" creator="YichunZhang" modifier="YichunZhang" created="201502192254" changecount="1">
+<pre>Resty-cli is a collection of command-line utilities for OpenResty.
+
+The most useful utility in the collection is the {{{resty}}} command-line utility which runs a headless nginx that listens on nothing.
+
+Git repository: https://github.com/openresty/resty-cli
+Documentation: https://github.com/openresty/resty-cli#readme</pre>
 </div>
 <div title="RoutingMySQLQueriesBasedOnURIArgs" creator="YichunZhang" modifier="YichunZhang" created="201111160406" modified="201111160422" changecount="9">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
