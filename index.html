@@ -4867,14 +4867,14 @@ First of all, let's install ~LuaRocks:
 
 Download the ~LuaRocks tarball from [[http://www.luarocks.org/en/Download]]. As of this writing, the latest version is {{{2.1.2}}}, but we'll use {{{2.0.13}}} for compatibility throughout this sample.
 {{{
-wget http://luarocks.org/releases/luarocks-2.0.13.tar.gz
-tar -xzvf luarocks-2.0.13.tar.gz
-cd luarocks-2.0.13/
+wget http://luarocks.org/releases/luarocks-2.1.2.tar.gz
+tar -xzvf luarocks-2.1.2.tar.gz
+cd luarocks-2.1.2/
 ./configure --prefix=/usr/local/openresty/luajit \
     --with-lua=/usr/local/openresty/luajit/ \
     --lua-suffix=jit-2.1.0-alpha \
     --with-lua-include=/usr/local/openresty/luajit/include/luajit-2.1
-make
+make build
 sudo make install
 }}}
 ! Install the Lua ~MD5 library with ~LuaRocks
