@@ -4867,14 +4867,14 @@ First of all, let's install ~LuaRocks:
 
 Download the ~LuaRocks tarball from [[http://www.luarocks.org/en/Download]]. As of this writing, the latest version is {{{2.1.2}}}, but we'll use {{{2.0.13}}} for compatibility throughout this sample.
 {{{
-wget http://luarocks.org/releases/luarocks-2.1.2.tar.gz
-tar -xzvf luarocks-2.1.2.tar.gz
-cd luarocks-2.1.2/
+wget http://luarocks.org/releases/luarocks-2.0.13.tar.gz
+tar -xzvf luarocks-2.0.13.tar.gz
+cd luarocks-2.0.13/
 ./configure --prefix=/usr/local/openresty/luajit \
     --with-lua=/usr/local/openresty/luajit/ \
     --lua-suffix=jit-2.1.0-alpha \
     --with-lua-include=/usr/local/openresty/luajit/include/luajit-2.1
-make build
+make
 sudo make install
 }}}
 ! Install the Lua ~MD5 library with ~LuaRocks
@@ -5016,7 +5016,7 @@ Project page: http://github.com/agentzh/xss-nginx-module</pre>
 
 Homepage: http://agentzh.org</pre>
 </div>
-<div title="eBooks" creator="YichunZhang" modifier="YichunZhang" created="201201051515" modified="201503192038" tags="Resources" changecount="29">
+<div title="eBooks" creator="YichunZhang" modifier="YichunZhang" created="201201051515" modified="201503192039" tags="Resources" changecount="30">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 ! eBook &quot;agentzh's Nginx Tutorials&quot; (version 2012.04.18)
@@ -5024,7 +5024,7 @@ Homepage: http://agentzh.org</pre>
 ** [[HTML Single-Page Format|http://openresty.org/download/agentzh-nginx-tutorials-enuk.html]] (Web browser users)
 ** [[MOBI Format|http://openresty.org/download/agentzh-nginx-tutorials-enuk.mobi]] (Kindle users)
 ** [[EPUB Format|http://openresty.org/download/agentzh-nginx-tutorials-enuk.epub]] (Sony, Apple and other users)
-** [[PDF Format|http://openresty.org/download/agentzh-nginx-tutorials-enuk.pdf]] (PC users)
+** [[PDF Format|http://openresty.org/download/agentzh-nginx-tutorials-enuk.pdf]] (Sony Digital Paper and PC users)
 * Chinese Edition
 ** [[HTML Single-Page Format|http://openresty.org/download/agentzh-nginx-tutorials-zhcn.html]] (Web browser users)
 ** [[MOBI Format|http://openresty.org/download/agentzh-nginx-tutorials-zhcn.mobi]] (Kindle users)
