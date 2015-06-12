@@ -3885,7 +3885,7 @@ Use cases: http://forum.nginx.org/read.php?2,206658,207119
 Project page: https://github.com/calio/iconv-nginx-module
 </pre>
 </div>
-<div title="Installation" creator="YichunZhang" modifier="YichunZhang" created="201106210440" modified="201407242012" tags="doc install" changecount="63">
+<div title="Installation" creator="YichunZhang" modifier="YichunZhang" created="201106210440" modified="201506121334" tags="doc install" changecount="68">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 If you haven't downloaded the OpenResty source code tarball, please go to the [[Download]] page first.
 
@@ -3907,12 +3907,13 @@ You should have {{{perl 5.6.1+}}}, {{{libreadline}}}, {{{libpcre}}}, {{{libssl}}
 !!Debian and Ubuntu users
 You're recommended to install the following packages using apt-get:
 {{{
-apt-get install libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make
+apt-get install libreadline-dev libncurses5-dev libpcre3-dev \
+    libssl-dev perl make build-essential
 }}}
 !!Fedora and ~RedHat users
 You're recommended to install the following packages using yum:
 {{{
-yum install readline-devel pcre-devel openssl-devel
+yum install readline-devel pcre-devel openssl-devel gcc
 }}}
 !!Mac OS X (Darwin) users
 You're recommended to install prerequisites PCRE using some package management tool, like [[Homebrew|http://mxcl.github.com/homebrew/]]:
@@ -4474,19 +4475,21 @@ When used in conjunction with [[LuaNginxModule]], it is recommended to use [[Lua
 <div title="ReleaseNote" creator="YichunZhang" modifier="YichunZhang" created="201111030906" modified="201203250711" changecount="38">
 <pre></pre>
 </div>
-<div title="Resources" creator="YichunZhang" modifier="YichunZhang" created="201110240551" modified="201501172045" tags="Resources" changecount="33">
+<div title="Resources" creator="YichunZhang" modifier="YourName" created="201110240551" modified="201506121328" tags="Resources" changecount="35">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! English Articles, by John ~Graham-Cumming.
+* Rearchitecting GitHub Pages, by Charlie Somerville
+: http://githubengineering.com/rearchitecting-github-pages/
 * ~CloudFlare's new WAF: compiling to Lua
 : https://blog.cloudflare.com/cloudflares-new-waf-compiling-to-lua/
 * Dynamic CDN, by Ankit Jain
 : http://engineering.wingify.com/posts/dynamic-cdn/
+* Scaling with Queues, by Rohit Yadav.
+: http://engineering.wingify.com/scaling-with-queues/
 * Nginx image processing server with OpenResty and Lua, by leafo.
 : http://leafo.net/posts/creating_an_image_server.html
 * ~WebSockets with OpenResty, by Aapo Talvensaari.
 : https://medium.com/p/1778601c9e05
-* Scaling with Queues, by Rohit Yadav.
-: http://engineering.wingify.com/scaling-with-queues/
 * Scaling ~TextRazor in the Cloud with Nginx and Lua, by Toby.
 : http://www.textrazor.com/blog/2013/03/scaling-textrazor-in-the-cloud-with-nginx-and-lua.html
 * Augmenting ~APIs with Nginx and Lua, by Raimon Grau
