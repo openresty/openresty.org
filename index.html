@@ -3262,7 +3262,7 @@ See ChangeLog1007002 for change log for OpenResty 1.7.2.x.</pre>
 ** bugfix: bugfix: fixed build failure when {{{--with-mail_ssl_module}}} is specified while {{{--with-http_ssl_module}}} is not. thanks Xiaochen Wang for the report.
 See ChangeLog1007004 for change log for OpenResty 1.7.4.x.</pre>
 </div>
-<div title="ChangeLog1007010" creator="YichunZhang" modifier="YichunZhang" created="201502192250" modified="201507030755" changecount="40">
+<div title="ChangeLog1007010" creator="YichunZhang" modifier="YichunZhang" created="201502192250" modified="201507031231" changecount="41">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Version 1.7.10.2 - 3 July 2015
 * bugfix: ./configure: fixed the {{{--without-http_rewrite_module}}} option by disabling NginxDevelKit automatically; also automatically disable the EncryptedSessionNginxModule when NginxDevelKit is disabled.
@@ -3274,15 +3274,15 @@ See ChangeLog1007004 for change log for OpenResty 1.7.4.x.</pre>
 ** doc: added the new section &quot;Test Suite&quot; as per Enrique Garcia's request.
 ** tests: fixed test failures on Mac OS X. thanks Enrique García for the report.
 * upgraded LuaNginxModule to 0.9.16.
-** feature: [[ngx.encode_base64()|https://github.com/openresty/lua-nginx-module#ngxencode_base64]]: added support for the &quot;no_padding&quot; boolean argument to disable padding when a true value is specified. thanks Shuxin Yang for the patch.
+** feature: [[ngx.encode_base64()|https://github.com/openresty/lua-nginx-module#ngxencode_base64]]: added support for the &quot;no_padding&quot; boolean argument to disable padding when a true value is specified. thanks Shuxin Yang for the patch. this feature can be used for streaming base64 computation.
 ** feature: fixed compilation failures with nginx 1.9.0. thanks Charles R. Portwood II for the original patch.
-** feature: removed the dead code for the old {{{NGX_THREADS}}} mode which breaks the new nginx (1.7.11+) with thread pool support. thanks Tatsuhiko Kubo for the patch.
+** feature: removed the dead code for the old {{{NGX_THREADS}}} mode which broke the new nginx (1.7.11+) with thread pool support. thanks Tatsuhiko Kubo for the patch.
 ** bugfix: use of {{{ngx_http_image_filter_module}}} might lead to request hang due to duplicate header filter invocations. thanks Antony Dovgal for the report.
 ** bugfix: we should never automatically set {{{Content-Type}}} on 304 responses. thanks Simon Eskildsen for the patch.
-** bugfix: raw downstream cosockets did not support full-deplexing. thanks aviramc for the bug report and the original patch.
+** bugfix: raw downstream cosockets did not support full-deplexing. thanks aviramc for the bug report and the original patch. this issue affected ~WebSockets too.
 ** bugfix: we did not always discard the request body if the user Lua handlers didn't, which might cause 400 error pages for keep-alive or pipelined requests. thanks Shuxin Yang for the original patch.
-** bugfix: [[ngx.resp.get_headers()|https://github.com/openresty/lua-nginx-module#ngxrespget_headers]]: some built-in headers were not accessible via lowercase. thanks Nick Muerdter for the patch.
-** bugfix: we might still pick up Lua/LuaJIT headers/libraries in the paths specified by nginx ./configure's {{{--with-cc-opt=OPTS}}} and {{{--with-ld-opt=OPTS}}} optons even when the ~LUAJIT_INC/~LUAJIT_LIB or ~LUA_INC/~LUA_LIB environments are explicitly specified.
+** bugfix: [[ngx.resp.get_headers()|https://github.com/openresty/lua-nginx-module#ngxrespget_headers]]: some built-in headers were not accessible via lower-case. thanks Nick Muerdter for the patch.
+** bugfix: we might still pick up Lua/LuaJIT headers/libraries in the paths specified by nginx ./configure's {{{--with-cc-opt=OPTS}}} and {{{--with-ld-opt=OPTS}}} optons even when the ~LUAJIT_INC/~LUAJIT_LIB or ~LUA_INC/~LUA_LIB environments were explicitly specified.
 ** bugfix: config: we might miss the linker option {{{-ldl}}} when we shouldn't. this might lead to build failures.
 ** bugfix: access nonexistent fields in the &quot;ngx&quot; table in [[init_by_lua*|https://github.com/openresty/lua-nginx-module#init_by_lua]] could lead to the exception &quot;no request object found&quot; because of the overreacting {{{__index}}} metamethod of the &quot;ngx&quot; table.
 ** bugfix: fixed compilation failures with very old versions of PCRE, like 4.5.
