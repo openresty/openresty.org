@@ -15,6 +15,7 @@ Table of Contents
     * [Can I use LuaJIT 2.0.x?](#can-i-use-luajit-20x)
     * [Why does OpenResty use LuaJIT 2.1 by default?](#why-does-openresty-use-luajit-21-by-default)
     * [Why can't I use duplicate configuration directives?](#why-cant-i-use-duplicate-configuration-directives)
+    * [Can I use custom loggers in Lua?](#can-i-use-custom-loggers-in-lua)
 * [Contributing to this FAQ](#contributing-to-this-faq)
 * [Author](#author)
 * [See Also](#see-also)
@@ -181,6 +182,28 @@ You can take a look at OpenResty's standard Lua libraries for real-world example
 Use of Lua's native module mechanism is also very efficient. Thanks to the built-in caching mechanism
 in Lua's built-in function `require()` (via the global `package.loaded` table anchored in the Lua registry, thus being shared
 by the whole Lua VM).
+
+[Back to TOC](#table-of-contents)
+
+Can I use custom loggers in Lua?
+--------------------------------
+
+Yes, sure. You have multiple options:
+
+1. Write a custom Lua logger library manipulating files with [LuaJIT FFI](http://luajit.org/ext_ffi.html) directly. You need to access the low level file I/O
+syscalls like `open`, `write`, and `close` without going through libc's buffered I/O layer. This is important because
+this can ensure atomicity when multiple (worker) processes are appending data to the same file (in the appending mode).
+You can share the resulting file descriptors (fd) returned from the `open` syscall on the NGINX worker process level
+by the [this technique](https://github.com/openresty/lua-nginx-module#data-sharing-within-an-nginx-worker).
+Maybe someday OpenResty will ship with a standard `lua-resty-logger-file` library; you are welcome to contribute
+such a library :)
+2. Avoid file I/O in the nginx server altogether by employing the [lua-resty-logger-socket](https://github.com/cloudflare/lua-resty-logger-socket) library.
+This library can send your log data to the remote endpoint (like a `syslog-ng` server) via sockets and 100% nonblocking
+I/O. CloudFLare has been using this library heavily across its global network.
+Unlike NGINX core's native syslog loggers, this one tries very hard to avoid data loss in erroneous conditions.
+
+Socket-based logging is generally recommended for performance reasons because file I/O may almost always block
+the NGINX event loop (or some OS threads if enabling the new NGINX thread pool support for file I/O, still adding extra overhead).
 
 [Back to TOC](#table-of-contents)
 
