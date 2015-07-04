@@ -3262,7 +3262,7 @@ See ChangeLog1007002 for change log for OpenResty 1.7.2.x.</pre>
 ** bugfix: bugfix: fixed build failure when {{{--with-mail_ssl_module}}} is specified while {{{--with-http_ssl_module}}} is not. thanks Xiaochen Wang for the report.
 See ChangeLog1007004 for change log for OpenResty 1.7.4.x.</pre>
 </div>
-<div title="ChangeLog1007010" creator="YichunZhang" modifier="YichunZhang" created="201502192250" modified="201507031231" changecount="41">
+<div title="ChangeLog1007010" creator="YichunZhang" modifier="YichunZhang" created="201502192250" modified="201507040427" changecount="42">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Version 1.7.10.2 - 3 July 2015
 * bugfix: ./configure: fixed the {{{--without-http_rewrite_module}}} option by disabling NginxDevelKit automatically; also automatically disable the EncryptedSessionNginxModule when NginxDevelKit is disabled.
@@ -3292,7 +3292,7 @@ See ChangeLog1007004 for change log for OpenResty 1.7.4.x.</pre>
 ** doc: added a note on possible uninitialized variables for short-circuited requests. thanks Simon Eskildsen for the patch.
 ** tests: fixed nondeterminism due to unordered Lua table iterations. thanks Markus Linnala for the patch.
 * upgraded HeadersMoreNginxModule to 0.26.
-** feature: fixed compilation failures with nginx 1.7.11+ configured with {{{--with-threads}}}.
+** feature: fixed compilation failures with nginx 1.7.11+ configured with {{{--with-threads}}} (this was the only change included in the new {{{v0.26}} release tag as compared to the old {{{v0.26}} release tag).
 ** optimize: removed the unused C function {{{ngx_http_headers_more_rm_header}}}. thanks Markus Linnala for the catch.
 ** doc: made it clear that [[more_set_headers|https://github.com/openresty/headers-more-nginx-module#more_set_headers]] always override existing headers with the same name.
 * upgraded SetMiscNginxModule to 0.29.
