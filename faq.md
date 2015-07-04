@@ -18,6 +18,7 @@ Table of Contents
     * [Can I use custom loggers in Lua?](#can-i-use-custom-loggers-in-lua)
     * [Why am I seeing the "lua tcp socket connect timed out" error?](#why-am-i-seeing-the-lua-tcp-socket-connect-timed-out-error)
     * [Why am I always getting 0 from `getreusedtimes()` or `get_reused_times()` calls?](#why-am-i-always-getting-0-from-getreusedtimes-or-get_reused_times-calls)
+    * [Can I set timeout threshold on subrequests?](#can-i-set-timeout-threshold-on-subrequests)
 * [Contributing to this FAQ](#contributing-to-this-faq)
 * [Author](#author)
 * [See Also](#see-also)
@@ -255,6 +256,35 @@ establish new connections instead of reusing existing ones.
 The solution is to always check the return values of the `setkeepalive()` or `set_keepalive()`
 calls and handle errors properly if any. When you get errors from `setkeepalive()` or `set_keepalive()` calls, then
 we can work on solving the problem (like avoid calling `setkeepalive()` or `set_keepalive()` at the wrong times).
+
+[Back to TOC](#table-of-contents)
+
+Can I set timeout threshold on subrequests?
+-------------------------------------------
+
+Yes, you can, but not directy via an option or parameter on the subrequest calls like
+[ngx.location.capture](https://github.com/openresty/lua-nginx-module#ngxlocationcapture) and
+[echo_subrequest](https://github.com/openresty/echo-nginx-module#echo_subrequest).
+Rather, you should specify the timeout configurations in the location *targeted* by your subrequest. For example,
+
+```nginx
+location = /api {
+    content_by_lua '
+        local res = ngx.locatin.capture("/sub")
+    ';
+}
+
+location = /sub {
+    internal;
+    proxy_connect_timeout 100ms;
+    proxy_read_timeout 100ms;
+    proxy_send_timeout 100ms;
+    proxy_pass http://backend;
+}
+```
+
+Here you specify all the timeout thresholds provided by the [ngx_proxy](http://nginx.org/en/docs/http/ngx_http_proxy_module.html)
+module in the (internal) location (`= /sub`) accessed by your subrequest.
 
 [Back to TOC](#table-of-contents)
 
