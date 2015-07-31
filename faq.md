@@ -19,6 +19,7 @@ Table of Contents
     * [Why am I seeing the "lua tcp socket connect timed out" error?](#why-am-i-seeing-the-lua-tcp-socket-connect-timed-out-error)
     * [Why am I always getting 0 from `getreusedtimes()` or `get_reused_times()` calls?](#why-am-i-always-getting-0-from-getreusedtimes-or-get_reused_times-calls)
     * [Can I set timeout threshold on subrequests?](#can-i-set-timeout-threshold-on-subrequests)
+    * [Can I access remote URLs via ngx.locaiton.capture or alike?](#can-i-access-remote-urls-via-ngxlocaitoncapture-or-alike)
 * [Contributing to this FAQ](#contributing-to-this-faq)
 * [Author](#author)
 * [See Also](#see-also)
@@ -285,6 +286,21 @@ location = /sub {
 
 Here you specify all the timeout thresholds provided by the [ngx_proxy](http://nginx.org/en/docs/http/ngx_http_proxy_module.html)
 module in the (internal) location (`= /sub`) accessed by your subrequest.
+
+[Back to TOC](#table-of-contents)
+
+Can I access remote URLs via ngx.locaiton.capture or alike?
+-----------------------------------------------------------
+
+Yes, but not directly. The subrequest API targets nginx's "locations". So you need a dedicated
+location (be it "internal" or not) and configure the standard
+[ngx_proxy](http://nginx.org/en/docs/http/ngx_http_proxy_module.html) module there.
+
+Alternatively, you may consider using one of the `lua-resty-http*` libraries contributed
+by the community. To name a few:
+
+* Brian Akins' [lua-resty-http-simple](https://github.com/bakins/lua-resty-http-simple)
+* James Hurst's [lua-resty-http](https://github.com/pintsized/lua-resty-http)
 
 [Back to TOC](#table-of-contents)
 
