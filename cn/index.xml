@@ -5,10 +5,17 @@
 <description>一个通过扩展 Nginx 实现的强大的 web 应用服务器</description>
 <language>en</language>
 <copyright>Copyright 2015 YichunZhang</copyright>
-<pubDate>Tue, 11 Aug 2015 10:27:10 GMT</pubDate>
-<lastBuildDate>Tue, 11 Aug 2015 10:27:10 GMT</lastBuildDate>
+<pubDate>Tue, 11 Aug 2015 13:51:10 GMT</pubDate>
+<lastBuildDate>Tue, 11 Aug 2015 13:51:10 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
+<item>
+<title>OpenResty</title>
+<description>&lt;a tiddler=&quot;OpenResty&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; （也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准的 &lt;a tiddlylink=&quot;Nginx&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Nginx&quot; href=&quot;null#Nginx&quot; class=&quot;externalLink null&quot;&gt;Nginx&lt;/a&gt; 核心，很多的常用的&lt;a target=&quot;_blank&quot; title=&quot;External link to http://wiki.nginx.org/3rdPartyModules&quot; href=&quot;http://wiki.nginx.org/3rdPartyModules&quot; class=&quot;externalLink&quot;&gt;第三方模块&lt;/a&gt;，以及它们的大多数依赖项。&lt;br&gt;&lt;br&gt;OpenResty 通过汇聚各种设计精良的 Nginx 模块,&lt;br&gt;从而将 Nginx 有效的变成一个强大的 Web 应用服务器,&lt;br&gt;这样, Web 开发人员可以使用 Lua 脚本语言调动 Nginx 支持的各种 C 以及 Lua 模块,&lt;br&gt;快速构造出足以胜任 10K+ 并发连接响应的超高性能 Web 应用系统.&lt;br&gt;&lt;br&gt;OpenResty 的目标是让你的Web服务直接跑在 Nginx 服务内部,&lt;br&gt;充分利用 Nginx 的非阻塞 I/O 模型,&lt;br&gt;不仅仅对 HTTP 客户端请求,甚至于对远程后端诸如&lt;br&gt;MySQL、PostgreSQL、Memcached 以及 Redis 等都进行一致的高性能响应.&lt;br&gt;&lt;br&gt;参考 &lt;a tiddlylink=&quot;Components&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Components&quot; href=&quot;null#Components&quot; class=&quot;externalLink null&quot;&gt;组件&lt;/a&gt; 可以知道 OpenResty 中包含了多少软件.&lt;br&gt;&lt;br&gt;参考 &lt;a tiddlylink=&quot;GettingStarted&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GettingStarted&quot; href=&quot;null#GettingStarted&quot; class=&quot;externalLink null&quot;&gt;上路&lt;/a&gt; 学习如何从最简单的 hello world 开始使用 OpenResty 开发 HTTP 业务，或前往  &lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;下载&lt;/a&gt; 直接获取 OpenResty 的源代码包开始体验.&lt;br&gt;</description>
+<link>null#OpenResty</link>
+<pubDate>Tue, 11 Aug 2015 13:51:10 GMT</pubDate>
+
+</item>
 <item>
 <title>DonateOnline</title>
 <description>&lt;a tiddler=&quot;DonateOnline&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;h1&gt; 通过 PayPal 捐助&lt;/h1&gt;如果您觉得 &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; 给力，想进行小额捐助，可以通过 PayPal 快捷完成.&lt;br&gt;&lt;ul&gt;&lt;li&gt; PayPal 成员可以直接使用 PayPal 帐号登录,并点击以下按钮完成对的&lt;code&gt;agentzh@gmail.com&lt;/code&gt; 支付。&lt;/li&gt;&lt;li&gt; 非PayPal 成员, 可以使用国际信用卡帐号来登入 PayPal. 同样的，点击下列的按钮，按照页面提示完成支付。&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;不论哪种方式，只要通过 PayPal 都能方便的捐助。&lt;br&gt;&lt;br&gt;&lt;span&gt;
@@ -26,7 +33,7 @@
 &lt;img src=&quot;../alipay-qrcode.png&quot; width=&quot;150&quot;&gt;
 &lt;/span&gt;&lt;br&gt;&lt;br&gt;任何数额都不胜感激！&lt;br&gt;</description>
 <link>null#DonateOnline</link>
-<pubDate>Tue, 11 Aug 2015 10:27:10 GMT</pubDate>
+<pubDate>Tue, 11 Aug 2015 10:27:00 GMT</pubDate>
 
 </item>
 <item>
@@ -35,7 +42,7 @@
 &lt;img src=&quot;../kugou-music.jpg&quot;&gt;
 &lt;/span&gt;&lt;br&gt;&lt;br&gt;</description>
 <link>null#Donors</link>
-<pubDate>Tue, 11 Aug 2015 10:20:48 GMT</pubDate>
+<pubDate>Tue, 11 Aug 2015 10:20:00 GMT</pubDate>
 
 </item>
 <item>
@@ -54,7 +61,7 @@
 &lt;/span&gt;&lt;br&gt;</description>
 <category>admin</category>
 <link>null#MainMenu</link>
-<pubDate>Tue, 11 Aug 2015 10:18:09 GMT</pubDate>
+<pubDate>Tue, 11 Aug 2015 10:18:00 GMT</pubDate>
 
 </item>
 <item>
@@ -168,13 +175,6 @@
 <description>&lt;a tiddler=&quot;LuaRestyCoreLibrary&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;Reimplements the Lua API provided by &lt;a tiddlylink=&quot;LuaNginxModule&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaNginxModule&quot; href=&quot;null#LuaNginxModule&quot; class=&quot;externalLink null&quot;&gt;LuaNginxModule&lt;/a&gt; with &lt;a tiddlylink=&quot;LuaJIT&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#LuaJIT&quot; href=&quot;null#LuaJIT&quot; class=&quot;externalLink null&quot;&gt;LuaJIT&lt;/a&gt; FFI.&lt;br&gt;&lt;br&gt;Project homepage: &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/agentzh/lua-resty-core&quot; href=&quot;https://github.com/agentzh/lua-resty-core&quot; class=&quot;externalLink&quot;&gt;https://github.com/agentzh/lua-resty-core&lt;/a&gt;&lt;br&gt;&lt;br&gt;This library is enabled by default. You can specify the &lt;code&gt;--without-lua_resty_core&lt;/code&gt; option to &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;'s &lt;code&gt;./configure&lt;/code&gt; script to explicitly disable it.</description>
 <link>null#LuaRestyCoreLibrary</link>
 <pubDate>Sun, 15 Dec 2013 00:17:00 GMT</pubDate>
-
-</item>
-<item>
-<title>CoolkitNginxModule</title>
-<description>&lt;a tiddler=&quot;CoolkitNginxModule&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;This module is collection of small and useful Nginx add-ons.&lt;br&gt;&lt;br&gt;Project homepage and documentation: &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/FRiCKLE/ngx_coolkit/&quot; href=&quot;https://github.com/FRiCKLE/ngx_coolkit/&quot; class=&quot;externalLink&quot;&gt;https://github.com/FRiCKLE/ngx_coolkit/&lt;/a&gt;&lt;br&gt;&lt;br&gt;This module is enabled by default and could be disabled by passing &lt;code&gt;--without-http_coolkit_module&lt;/code&gt; option to &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;'s &lt;code&gt;./configure&lt;/code&gt; script.&lt;br&gt;</description>
-<link>null#CoolkitNginxModule</link>
-<pubDate>Mon, 30 Sep 2013 07:00:00 GMT</pubDate>
 
 </item>
 </channel>
