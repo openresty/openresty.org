@@ -3294,7 +3294,7 @@ This module is enabled by default and could be disabled by passing {{{--without-
 <div title="DefaultTiddlers" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="DonateOnline" creator="ZoomQuiet" modifier="YichunZhang" created="201205291432" modified="201309262027" changecount="5">
+<div title="DonateOnline" creator="ZoomQuiet" modifier="YichunZhang" created="201205291432" modified="201508111015" changecount="8">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 ! 通过 ~PayPal 捐助
@@ -3318,16 +3318,31 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 &lt;/form&gt;
 &lt;/html&gt;
 
-! 通过 ~AliPay (支付宝) 捐助
+! 通过支付宝捐助
 
 如果身在中国大陆,
-通常,更加方便的捐助渠道是通过 [[AliPay|http://www.alipay.com/]] 支付给 {{{agentzh@yahoo.cn}}} , 或是简单的点击以下按钮:
+通常,更加方便的捐助渠道是通过 [[支付宝|http://www.alipay.com/]] 支付给 {{{yichun0511@gmail.com}}} , 或是简单的点击以下按钮:
 
 &lt;html&gt;
-&lt;a href=&quot;http://me.alipay.com/agentzh&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;../donate-with-alipay.png&quot;&gt;&lt;/a&gt;
+&lt;form name=&quot;atool_alipay_img_form&quot; style=&quot;padding-bottom: 0;border:none;&quot; method=&quot;post&quot; action=&quot;https://shenghuo.alipay.com/send/payment/fill.htm&quot; target=&quot;_blank&quot; accept-charset=&quot;GBK&quot; onsubmit=&quot;document.charset='gbk';&quot;&gt;&lt;input type=&quot;hidden&quot; value=&quot;yichun0511@gmail.com&quot; name=&quot;optEmail&quot;&gt;&lt;input type=&quot;hidden&quot; value=&quot;&quot; name=&quot;payAmount&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;title&quot; placeholder=&quot;付款说明&quot; value=&quot;给 OpenResty 捐款&quot;&gt;&lt;input type=&quot;image&quot; value=&quot;支付宝收款&quot; src=&quot;../donate-with-alipay.png&quot; name=&quot;pay&quot;&gt;&lt;/form&gt;
+&lt;/html&gt;
+
+或者您可以在手机“支付宝”应用中扫一扫下面这个二维码捐款：
+
+&lt;html&gt;
+&lt;img src=&quot;../alipay-qrcode.png&quot; width=&quot;150&quot;&gt;
 &lt;/html&gt;
 
 任何数额都不胜感激！
+</pre>
+</div>
+<div title="Donors" creator="YichunZhang" modifier="YichunZhang" created="201508111020" modified="201508111020" changecount="4">
+<pre>捐款超过 1000 美元或者 6200 人民币的公司和个人可以选择放置图标在这个页面上。如果你曾经捐款超过此数，可以主动联系我们。
+
+&lt;html&gt;
+&lt;img src=&quot;../kugou-music.jpg&quot;&gt;
+&lt;/html&gt;
+
 </pre>
 </div>
 <div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201507030901" tags="Resources" changecount="186">
@@ -3881,7 +3896,7 @@ Documentation: https://github.com/agentzh/lua-upstream-nginx-module#readme
 
 Project page: https://github.com/agentzh/lua-upstream-nginx-module</pre>
 </div>
-<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201210172306" tags="admin" changecount="22">
+<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201508111018" tags="admin" changecount="24">
 <pre>[[概览|OpenResty]]
 [[组件|Components]]
 [[新手上路|GettingStarted]]
@@ -3896,6 +3911,7 @@ Project page: https://github.com/agentzh/lua-upstream-nginx-module</pre>
 [[测试|QualityAssurance]]
 [[联系我们|ContactUs]]
 [[捐助|DonateOnline]]
+[[捐款者|Donors]]
 [[关于|About]]
 
 [img[feed-icon-14x14.png]] [[RSS 订阅|RSSFeed]]
@@ -3911,9 +3927,7 @@ Project page: https://github.com/agentzh/lua-upstream-nginx-module</pre>
 &lt;/form&gt;
 &lt;/html&gt;
 &lt;html&gt;
-&lt;a href=&quot;http://me.alipay.com/agentzh&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;donate-with-alipay.png&quot;&gt;&lt;/a&gt;
-
-&lt;a href=&quot;http://me.alipay.com/agentzh&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;../donate-with-alipay.png&quot;&gt;&lt;/a&gt;
+&lt;form name=&quot;atool_alipay_img_form&quot; style=&quot;padding-bottom: 0;border:none;&quot; method=&quot;post&quot; action=&quot;https://shenghuo.alipay.com/send/payment/fill.htm&quot; target=&quot;_blank&quot; accept-charset=&quot;GBK&quot; onsubmit=&quot;document.charset='gbk';&quot;&gt;&lt;input type=&quot;hidden&quot; value=&quot;yichun0511@gmail.com&quot; name=&quot;optEmail&quot;&gt;&lt;input type=&quot;hidden&quot; value=&quot;&quot; name=&quot;payAmount&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;title&quot; placeholder=&quot;付款说明&quot; value=&quot;给 OpenResty 捐款&quot;&gt;&lt;input type=&quot;image&quot; value=&quot;支付宝收款&quot; src=&quot;../donate-with-alipay.png&quot; name=&quot;pay&quot;&gt;&lt;/form&gt;
 &lt;/html&gt;
 </pre>
 </div>
