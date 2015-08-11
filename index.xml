@@ -5,17 +5,37 @@
 <description>a fast web app server by extending nginx </description>
 <language>en</language>
 <copyright>Copyright 2015 YichunZhang</copyright>
-<pubDate>Tue, 11 Aug 2015 10:11:23 GMT</pubDate>
-<lastBuildDate>Tue, 11 Aug 2015 10:11:23 GMT</lastBuildDate>
+<pubDate>Tue, 11 Aug 2015 10:24:29 GMT</pubDate>
+<lastBuildDate>Tue, 11 Aug 2015 10:24:29 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
 <title>Donors</title>
-<description>Donors donating more than 1000 USD are listed here to express our appreciation. If you have ever donated more than 1000 USD, please contact me and send me your company or personal logos.&lt;br&gt;&lt;br&gt;&lt;span&gt;
+<description>&lt;a tiddler=&quot;Donors&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;Donors donating more than 1000 USD are listed here to express our appreciation. If you have ever donated more than 1000 USD, please contact me and send me your company or personal logos.&lt;br&gt;&lt;br&gt;&lt;span&gt;
 &lt;img src=&quot;kugou-music.jpg&quot;&gt;
 &lt;/span&gt;</description>
 <link>null#Donors</link>
-<pubDate>Tue, 11 Aug 2015 10:11:23 GMT</pubDate>
+<pubDate>Tue, 11 Aug 2015 10:24:29 GMT</pubDate>
+
+</item>
+<item>
+<title>DonateOnline</title>
+<description>&lt;a tiddler=&quot;DonateOnline&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;h1&gt; Donate With PayPal&lt;/h1&gt;&lt;br&gt;If you'd like to make a one-time donation to &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;, you can use PayPal to make it fast and easy.&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt; PayPal members can donate directly from their PayPal accounts by logging in via the PayPal website and clicking &quot;send money&quot; to &lt;code&gt;agentzh@gmail.com&lt;/code&gt;, or just click the button below.&lt;/li&gt;&lt;li&gt; Non-PayPal members can still pay with a credit card without signing up for PayPal. Click the button below then follow the instructions at the bottom of the page for non-PayPal members.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;span&gt;
+&lt;form name=&quot;_xclick&quot; action=&quot;https://www.paypal.com/cgi-bin/webscr&quot; method=&quot;post&quot; target=&quot;_blank&quot;&gt;
+&lt;input name=&quot;cmd&quot; value=&quot;_xclick&quot; type=&quot;hidden&quot;&gt;
+&lt;input name=&quot;business&quot; value=&quot;agentzh@gmail.com&quot; type=&quot;hidden&quot;&gt;
+&lt;input name=&quot;item_name&quot; value=&quot;OpenResty Donation (in USD)&quot; type=&quot;hidden&quot;&gt;
+&lt;input name=&quot;currency_code&quot; value=&quot;USD&quot; type=&quot;hidden&quot;&gt;
+&lt;input name=&quot;amount&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;
+&lt;input src=&quot;donate_button_paypal_01.gif&quot; name=&quot;submit&quot; alt=&quot;Donate with PayPal&quot; border=&quot;0&quot; type=&quot;image&quot;&gt;
+&lt;/form&gt;
+&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;h1&gt; Donate with AliPay (支付宝)&lt;/h1&gt;&lt;br&gt;If you're in China, it's usually more convenient to send donation is to send money via the &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.alipay.com/&quot; href=&quot;http://www.alipay.com/&quot; class=&quot;externalLink&quot;&gt;AliPay&lt;/a&gt; to my account &lt;code&gt;yichun0511@gmail.com&lt;/code&gt; or just click the following button:&lt;br&gt;&lt;br&gt;&lt;span&gt;
+&lt;form name=&quot;atool_alipay_img_form&quot; style=&quot;padding-bottom: 0;border:none;&quot; method=&quot;post&quot; action=&quot;https://shenghuo.alipay.com/send/payment/fill.htm&quot; target=&quot;_blank&quot; accept-charset=&quot;GBK&quot; onsubmit=&quot;document.charset='gbk';&quot;&gt;&lt;input value=&quot;yichun0511@gmail.com&quot; name=&quot;optEmail&quot; type=&quot;hidden&quot;&gt;&lt;input value=&quot;&quot; name=&quot;payAmount&quot; type=&quot;hidden&quot;&gt;&lt;input name=&quot;title&quot; placeholder=&quot;付款说明&quot; value=&quot;给 OpenResty 捐款&quot; type=&quot;hidden&quot;&gt;&lt;input value=&quot;支付宝收款&quot; src=&quot;donate-with-alipay.png&quot; name=&quot;pay&quot; type=&quot;image&quot;&gt;&lt;/form&gt;
+&lt;/span&gt;&lt;br&gt;&lt;br&gt;Alternatively you can scan the following QR code in your Alipay cellphone app:&lt;br&gt;&lt;br&gt;&lt;span&gt;
+&lt;img src=&quot;alipay-qrcode.png&quot; width=&quot;150&quot;&gt;
+&lt;/span&gt;&lt;br&gt;&lt;br&gt;Any amount will be highly appreciated!&lt;br&gt;</description>
+<link>null#DonateOnline</link>
+<pubDate>Tue, 11 Aug 2015 10:24:23 GMT</pubDate>
 
 </item>
 <item>
@@ -35,26 +55,6 @@
 <category>admin</category>
 <link>null#MainMenu</link>
 <pubDate>Tue, 11 Aug 2015 10:07:31 GMT</pubDate>
-
-</item>
-<item>
-<title>DonateOnline</title>
-<description>&lt;a tiddler=&quot;DonateOnline&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;h1&gt; Donate With PayPal&lt;/h1&gt;&lt;br&gt;If you'd like to make a one-time donation to &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;, you can use PayPal to make it fast and easy.&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt; PayPal members can donate directly from their PayPal accounts by logging in via the PayPal website and clicking &quot;send money&quot; to &lt;code&gt;agentzh@gmail.com&lt;/code&gt;, or just click the button below.&lt;/li&gt;&lt;li&gt; Non-PayPal members can still pay with a credit card without signing up for PayPal. Click the button below then follow the instructions at the bottom of the page for non-PayPal members.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;span&gt;
-&lt;form name=&quot;_xclick&quot; action=&quot;https://www.paypal.com/cgi-bin/webscr&quot; method=&quot;post&quot; target=&quot;_blank&quot;&gt;
-&lt;input name=&quot;cmd&quot; value=&quot;_xclick&quot; type=&quot;hidden&quot;&gt;
-&lt;input name=&quot;business&quot; value=&quot;agentzh@gmail.com&quot; type=&quot;hidden&quot;&gt;
-&lt;input name=&quot;item_name&quot; value=&quot;OpenResty Donation (in USD)&quot; type=&quot;hidden&quot;&gt;
-&lt;input name=&quot;currency_code&quot; value=&quot;USD&quot; type=&quot;hidden&quot;&gt;
-&lt;input name=&quot;amount&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;
-&lt;input src=&quot;donate_button_paypal_01.gif&quot; name=&quot;submit&quot; alt=&quot;Donate with PayPal&quot; border=&quot;0&quot; type=&quot;image&quot;&gt;
-&lt;/form&gt;
-&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;h1&gt; Donate with AliPay (支付宝)&lt;/h1&gt;&lt;br&gt;If you're in China, it's usually more convenient to send donation is to send money via the &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.alipay.com/&quot; href=&quot;http://www.alipay.com/&quot; class=&quot;externalLink&quot;&gt;AliPay&lt;/a&gt; to my account &lt;code&gt;yichun0511@gmail.com&lt;/code&gt; or just click the following button:&lt;br&gt;&lt;br&gt;&lt;span&gt;
-&lt;form name=&quot;atool_alipay_img_form&quot; style=&quot;padding-bottom: 0;border:none;&quot; method=&quot;post&quot; action=&quot;https://shenghuo.alipay.com/send/payment/fill.htm&quot; target=&quot;_blank&quot; accept-charset=&quot;GBK&quot; onsubmit=&quot;document.charset='gbk';&quot;&gt;&lt;input value=&quot;yichun0511@gmail.com&quot; name=&quot;optEmail&quot; type=&quot;hidden&quot;&gt;&lt;input value=&quot;&quot; name=&quot;payAmount&quot; type=&quot;hidden&quot;&gt;&lt;input name=&quot;title&quot; placeholder=&quot;付款说明&quot; value=&quot;给 OpenResty 捐款&quot; type=&quot;hidden&quot;&gt;&lt;input value=&quot;支付宝收款&quot; src=&quot;donate-with-alipay.png&quot; name=&quot;pay&quot; type=&quot;image&quot;&gt;&lt;/form&gt;
-&lt;/span&gt;&lt;br&gt;&lt;br&gt;Alternatively you can scan the following QR code in your Alipay cellphone app:&lt;br&gt;&lt;br&gt;&lt;span&gt;
-&lt;img src=&quot;alipay-qrcode.png&quot; width=&quot;150&quot;&gt;
-&lt;/span&gt;&lt;br&gt;&lt;br&gt;Any amount will be highly appreciated!&lt;br&gt;</description>
-<link>null#DonateOnline</link>
-<pubDate>Tue, 11 Aug 2015 09:38:21 GMT</pubDate>
 
 </item>
 <item>

@@ -5,10 +5,30 @@
 <description>一个通过扩展 Nginx 实现的强大的 web 应用服务器</description>
 <language>en</language>
 <copyright>Copyright 2015 YichunZhang</copyright>
-<pubDate>Tue, 11 Aug 2015 10:20:48 GMT</pubDate>
-<lastBuildDate>Tue, 11 Aug 2015 10:20:48 GMT</lastBuildDate>
+<pubDate>Tue, 11 Aug 2015 10:27:10 GMT</pubDate>
+<lastBuildDate>Tue, 11 Aug 2015 10:27:10 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
+<item>
+<title>DonateOnline</title>
+<description>&lt;a tiddler=&quot;DonateOnline&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;h1&gt; 通过 PayPal 捐助&lt;/h1&gt;如果您觉得 &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; 给力，想进行小额捐助，可以通过 PayPal 快捷完成.&lt;br&gt;&lt;ul&gt;&lt;li&gt; PayPal 成员可以直接使用 PayPal 帐号登录,并点击以下按钮完成对的&lt;code&gt;agentzh@gmail.com&lt;/code&gt; 支付。&lt;/li&gt;&lt;li&gt; 非PayPal 成员, 可以使用国际信用卡帐号来登入 PayPal. 同样的，点击下列的按钮，按照页面提示完成支付。&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;不论哪种方式，只要通过 PayPal 都能方便的捐助。&lt;br&gt;&lt;br&gt;&lt;span&gt;
+&lt;form name=&quot;_xclick&quot; action=&quot;https://www.paypal.com/cgi-bin/webscr&quot; method=&quot;post&quot; target=&quot;_blank&quot;&gt;
+&lt;input name=&quot;cmd&quot; value=&quot;_xclick&quot; type=&quot;hidden&quot;&gt;
+&lt;input name=&quot;business&quot; value=&quot;agentzh@gmail.com&quot; type=&quot;hidden&quot;&gt;
+&lt;input name=&quot;item_name&quot; value=&quot;OpenResty Donation (in USD)&quot; type=&quot;hidden&quot;&gt;
+&lt;input name=&quot;currency_code&quot; value=&quot;USD&quot; type=&quot;hidden&quot;&gt;
+&lt;input name=&quot;amount&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;
+&lt;input src=&quot;../donate_button_paypal_01.gif&quot; name=&quot;submit&quot; alt=&quot;用 PayPal 捐助&quot; border=&quot;0&quot; type=&quot;image&quot;&gt;
+&lt;/form&gt;
+&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;h1&gt; 通过支付宝捐助&lt;/h1&gt;&lt;br&gt;如果您身处中国大陆，通常更加方便的捐助渠道是通过 &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.alipay.com/&quot; href=&quot;http://www.alipay.com/&quot; class=&quot;externalLink&quot;&gt;支付宝&lt;/a&gt; 支付给 &lt;code&gt;yichun0511@gmail.com&lt;/code&gt; , 或是简单地点击下面的按钮:&lt;br&gt;&lt;br&gt;&lt;span&gt;
+&lt;form name=&quot;atool_alipay_img_form&quot; style=&quot;padding-bottom: 0;border:none;&quot; method=&quot;post&quot; action=&quot;https://shenghuo.alipay.com/send/payment/fill.htm&quot; target=&quot;_blank&quot; accept-charset=&quot;GBK&quot; onsubmit=&quot;document.charset='gbk';&quot;&gt;&lt;input value=&quot;yichun0511@gmail.com&quot; name=&quot;optEmail&quot; type=&quot;hidden&quot;&gt;&lt;input value=&quot;&quot; name=&quot;payAmount&quot; type=&quot;hidden&quot;&gt;&lt;input name=&quot;title&quot; placeholder=&quot;付款说明&quot; value=&quot;给 OpenResty 捐款&quot; type=&quot;hidden&quot;&gt;&lt;input value=&quot;支付宝收款&quot; src=&quot;../donate-with-alipay.png&quot; name=&quot;pay&quot; type=&quot;image&quot;&gt;&lt;/form&gt;
+&lt;/span&gt;&lt;br&gt;&lt;br&gt;当然，您也可以在手机“支付宝”应用中扫一扫下面这个二维码捐款：&lt;br&gt;&lt;br&gt;&lt;span&gt;
+&lt;img src=&quot;../alipay-qrcode.png&quot; width=&quot;150&quot;&gt;
+&lt;/span&gt;&lt;br&gt;&lt;br&gt;任何数额都不胜感激！&lt;br&gt;</description>
+<link>null#DonateOnline</link>
+<pubDate>Tue, 11 Aug 2015 10:27:10 GMT</pubDate>
+
+</item>
 <item>
 <title>Donors</title>
 <description>捐款超过 1000 美元或者 6200 人民币的公司和个人可以选择放置图标在这个页面上。如果你曾经捐款超过此数，可以主动联系我们。&lt;br&gt;&lt;br&gt;&lt;span&gt;
@@ -35,26 +55,6 @@
 <category>admin</category>
 <link>null#MainMenu</link>
 <pubDate>Tue, 11 Aug 2015 10:18:09 GMT</pubDate>
-
-</item>
-<item>
-<title>DonateOnline</title>
-<description>&lt;a tiddler=&quot;DonateOnline&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;h1&gt; 通过 PayPal 捐助&lt;/h1&gt;&lt;br&gt;If you'd like to make a one-time donation to &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;, you can use PayPal to make it fast and easy.&lt;br&gt;如果感觉 &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; 给力,想进行小额捐助,可以通过 PayPal 快捷完成.&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt; PayPal 成员可以直接使用 PayPal 帐号登录,并点击以下按钮完成对的&lt;code&gt;agentzh@gmail.com&lt;/code&gt; &quot;支付&quot; .&lt;/li&gt;&lt;li&gt; 非PayPal 成员, 可以使用国际信用卡帐号来登入 PayPal. 两样的,点击下述按钮,跟随页面提示,完成 &quot;支付&quot; .&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;不论哪种方式,只要通过 PayPal 都能方便的捐助。&lt;br&gt;&lt;br&gt;&lt;span&gt;
-&lt;form name=&quot;_xclick&quot; action=&quot;https://www.paypal.com/cgi-bin/webscr&quot; method=&quot;post&quot; target=&quot;_blank&quot;&gt;
-&lt;input name=&quot;cmd&quot; value=&quot;_xclick&quot; type=&quot;hidden&quot;&gt;
-&lt;input name=&quot;business&quot; value=&quot;agentzh@gmail.com&quot; type=&quot;hidden&quot;&gt;
-&lt;input name=&quot;item_name&quot; value=&quot;OpenResty Donation (in USD)&quot; type=&quot;hidden&quot;&gt;
-&lt;input name=&quot;currency_code&quot; value=&quot;USD&quot; type=&quot;hidden&quot;&gt;
-&lt;input name=&quot;amount&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;
-&lt;input src=&quot;../donate_button_paypal_01.gif&quot; name=&quot;submit&quot; alt=&quot;用 PayPal 捐助&quot; border=&quot;0&quot; type=&quot;image&quot;&gt;
-&lt;/form&gt;
-&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;h1&gt; 通过支付宝捐助&lt;/h1&gt;&lt;br&gt;如果身在中国大陆,&lt;br&gt;通常,更加方便的捐助渠道是通过 &lt;a target=&quot;_blank&quot; title=&quot;External link to http://www.alipay.com/&quot; href=&quot;http://www.alipay.com/&quot; class=&quot;externalLink&quot;&gt;支付宝&lt;/a&gt; 支付给 &lt;code&gt;yichun0511@gmail.com&lt;/code&gt; , 或是简单的点击以下按钮:&lt;br&gt;&lt;br&gt;&lt;span&gt;
-&lt;form name=&quot;atool_alipay_img_form&quot; style=&quot;padding-bottom: 0;border:none;&quot; method=&quot;post&quot; action=&quot;https://shenghuo.alipay.com/send/payment/fill.htm&quot; target=&quot;_blank&quot; accept-charset=&quot;GBK&quot; onsubmit=&quot;document.charset='gbk';&quot;&gt;&lt;input value=&quot;yichun0511@gmail.com&quot; name=&quot;optEmail&quot; type=&quot;hidden&quot;&gt;&lt;input value=&quot;&quot; name=&quot;payAmount&quot; type=&quot;hidden&quot;&gt;&lt;input name=&quot;title&quot; placeholder=&quot;付款说明&quot; value=&quot;给 OpenResty 捐款&quot; type=&quot;hidden&quot;&gt;&lt;input value=&quot;支付宝收款&quot; src=&quot;../donate-with-alipay.png&quot; name=&quot;pay&quot; type=&quot;image&quot;&gt;&lt;/form&gt;
-&lt;/span&gt;&lt;br&gt;&lt;br&gt;或者您可以在手机“支付宝”应用中扫一扫下面这个二维码捐款：&lt;br&gt;&lt;br&gt;&lt;span&gt;
-&lt;img src=&quot;../alipay-qrcode.png&quot; width=&quot;150&quot;&gt;
-&lt;/span&gt;&lt;br&gt;&lt;br&gt;任何数额都不胜感激！&lt;br&gt;</description>
-<link>null#DonateOnline</link>
-<pubDate>Tue, 11 Aug 2015 10:15:50 GMT</pubDate>
 
 </item>
 <item>
