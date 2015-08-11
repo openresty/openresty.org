@@ -3392,6 +3392,17 @@ See ChangeLog1007004 for change log for OpenResty 1.7.4.x.</pre>
 ** bugfix: we did not explicitly specify the pid file path, which may conflict with the default pid path if the user compiles nginx with the {{{--pid-path=PATH}}} ./configure option. thanks fancyrabbit for the report.
 See ChangeLog1007007 for change log for OpenResty 1.7.7.x.</pre>
 </div>
+<div title="ChangeLog1009003" creator="YichunZhang" modifier="YichunZhang" created="201507310333" modified="201507310334" changecount="2">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Version 1.9.3.1 - 31 July 2015
+* upgraded the Nginx core to 1.9.3.
+** see the changes here: http://nginx.org/en/CHANGES
+* bugfix: {{{./configure --help}}}: fixed the usage text for the {{{--with-debug}}} option. thanks Kipras Mancevičius for the report.
+* bugfix: link failures with ~OpenSSL might happen on 64-bit Mac OS X when the {{{./configure}}} option {{{--with-openssl=PATH}}} was used and the ~OpenSSL source was recent enough. thanks grasses for the report.
+* upgraded PostgresNginxModule to 1.0rc7.
+** feature: fixed compilation errors with nginx 1.9.1+. thanks Vadim A. ~Misbakh-Soloviov for the original patch.
+See ChangeLog1007010 for change log for OpenResty 1.7.10.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -3483,8 +3494,9 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201502202042" changecount="19">
+<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201207081837" modified="201507310334" changecount="20">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Release 1.9.3.x|ChangeLog1009003]]
 * [[Release 1.7.10.x|ChangeLog1007010]]
 * [[Release 1.7.7.x|ChangeLog1007007]]
 * [[Release 1.7.4.x|ChangeLog1007004]]
@@ -3639,7 +3651,7 @@ These tools can not only debug functional problems, but also profile online serv
 <div title="DefaultTiddlers" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201106210600" tags="admin" changecount="3">
 <pre>[[OpenResty]] [[About]]</pre>
 </div>
-<div title="DonateOnline" creator="YichunZhang" modifier="YichunZhang" created="201201110732" modified="201309262026" changecount="35">
+<div title="DonateOnline" creator="YichunZhang" modifier="YichunZhang" created="201201110732" modified="201508110938" changecount="45">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
 ! Donate With ~PayPal
@@ -3662,23 +3674,30 @@ If you'd like to make a one-time donation to OpenResty, you can use ~PayPal to m
 
 ! Donate with ~AliPay (支付宝)
 
-If you're in China, it's usually more convenient to send donation is to send money via the [[AliPay|http://www.alipay.com/]] to my account {{{agentzh@yahoo.cn}}} or just click the following button:
+If you're in China, it's usually more convenient to send donation is to send money via the [[AliPay|http://www.alipay.com/]] to my account {{{yichun0511@gmail.com}}} or just click the following button:
 
 &lt;html&gt;
-&lt;a href=&quot;http://me.alipay.com/agentzh&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;donate-with-alipay.png&quot;&gt;&lt;/a&gt;
+&lt;form name=&quot;atool_alipay_img_form&quot; style=&quot;padding-bottom: 0;border:none;&quot; method=&quot;post&quot; action=&quot;https://shenghuo.alipay.com/send/payment/fill.htm&quot; target=&quot;_blank&quot; accept-charset=&quot;GBK&quot; onsubmit=&quot;document.charset='gbk';&quot;&gt;&lt;input type=&quot;hidden&quot; value=&quot;yichun0511@gmail.com&quot; name=&quot;optEmail&quot;&gt;&lt;input type=&quot;hidden&quot; value=&quot;&quot; name=&quot;payAmount&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;title&quot; placeholder=&quot;付款说明&quot; value=&quot;给 OpenResty 捐款&quot;&gt;&lt;input type=&quot;image&quot; value=&quot;支付宝收款&quot; src=&quot;donate-with-alipay.png&quot; name=&quot;pay&quot;&gt;&lt;/form&gt;
+&lt;/html&gt;
+
+Alternatively you can scan the following QR code in your Alipay cellphone app:
+
+&lt;html&gt;
+&lt;img src=&quot;alipay-qrcode.png&quot; width=&quot;150&quot;&gt;
 &lt;/html&gt;
 
 Any amount will be highly appreciated!
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201507030644" tags="Resources" changecount="310">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201507310328" tags="Resources" changecount="312">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 You can download the latest release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Lastest release
-* [[ngx_openresty-1.7.10.2.tar.gz|http://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz]] &amp;nbsp; 3.3MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 3 July 2015
+* [[ngx_openresty-1.9.3.1.tar.gz|http://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1009003]] - 31 July 2015
 !! Legacy releases
 Sometimes, users may want to download old releases.
+* [[ngx_openresty-1.7.10.2.tar.gz|http://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz]] &amp;nbsp; 3.3MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 3 July 2015
 * [[ngx_openresty-1.7.10.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 28 February 2015
 * [[ngx_openresty-1.7.7.2.tar.gz|http://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 4 February 2015
 * [[ngx_openresty-1.7.7.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 6 December 2014
@@ -4260,7 +4279,7 @@ Documentation: https://github.com/agentzh/lua-upstream-nginx-module#readme
 
 Project page: https://github.com/agentzh/lua-upstream-nginx-module</pre>
 </div>
-<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201404291911" tags="admin" changecount="43">
+<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201508110928" tags="admin" changecount="44">
 <pre>[[About]]
 [[Overview|OpenResty]]
 [[Benchmark]]
@@ -4296,7 +4315,7 @@ Project page: https://github.com/agentzh/lua-upstream-nginx-module</pre>
 &lt;/form&gt;
 &lt;/html&gt;
 &lt;html&gt;
-&lt;a href=&quot;http://me.alipay.com/agentzh&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;donate-with-alipay.png&quot;&gt;&lt;/a&gt;
+&lt;form name=&quot;atool_alipay_img_form&quot; style=&quot;padding-bottom: 0;border:none;&quot; method=&quot;post&quot; action=&quot;https://shenghuo.alipay.com/send/payment/fill.htm&quot; target=&quot;_blank&quot; accept-charset=&quot;GBK&quot; onsubmit=&quot;document.charset='gbk';&quot;&gt;&lt;input type=&quot;hidden&quot; value=&quot;yichun0511@gmail.com&quot; name=&quot;optEmail&quot;&gt;&lt;input type=&quot;hidden&quot; value=&quot;&quot; name=&quot;payAmount&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;title&quot; placeholder=&quot;付款说明&quot; value=&quot;给 OpenResty 捐款&quot;&gt;&lt;input type=&quot;image&quot; value=&quot;支付宝收款&quot; src=&quot;donate-with-alipay.png&quot; name=&quot;pay&quot;&gt;&lt;/form&gt;
 &lt;/html&gt;
 </pre>
 </div>
@@ -4577,12 +4596,16 @@ When used in conjunction with [[LuaNginxModule]], it is recommended to use [[Lua
 <div title="ReleaseNote" creator="YichunZhang" modifier="YichunZhang" created="201111030906" modified="201203250711" changecount="38">
 <pre></pre>
 </div>
-<div title="Resources" creator="YichunZhang" modifier="YourName" created="201110240551" modified="201506121328" tags="Resources" changecount="35">
+<div title="Resources" creator="YichunZhang" modifier="YichunZhang" created="201110240551" modified="201507310901" tags="Resources" changecount="40">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
-! English Articles, by John ~Graham-Cumming.
+
+! English Articles
+
+* Ceryx - A dynamic NGINX, by Antonis Kalipetis
+: https://www.sourcelair.com/blog/articles/75/ceryx-dynamic-nginx
 * Rearchitecting GitHub Pages, by Charlie Somerville
 : http://githubengineering.com/rearchitecting-github-pages/
-* ~CloudFlare's new WAF: compiling to Lua
+* ~CloudFlare's new WAF: compiling to Lua, by John ~Graham-Cumming.
 : https://blog.cloudflare.com/cloudflares-new-waf-compiling-to-lua/
 * Dynamic CDN, by Ankit Jain
 : http://engineering.wingify.com/posts/dynamic-cdn/
