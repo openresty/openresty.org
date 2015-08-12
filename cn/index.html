@@ -3074,6 +3074,17 @@ See ChangeLog1007004 for change log for OpenResty 1.7.4.x.</pre>
 ** bugfix: we did not explicitly specify the pid file path, which may conflict with the default pid path if the user compiles nginx with the {{{--pid-path=PATH}}} ./configure option. thanks fancyrabbit for the report.
 See ChangeLog1007007 for change log for OpenResty 1.7.7.x.</pre>
 </div>
+<div title="ChangeLog1009003" creator="YichunZhang" modifier="YichunZhang" created="201508121034" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Version 1.9.3.1 - 12 August 2015
+* upgraded the Nginx core to 1.9.3.
+** see the changes here: http://nginx.org/en/CHANGES
+* bugfix: {{{./configure --help}}}: fixed the usage text for the {{{--with-debug}}} option. thanks Kipras Mancevičius for the report.
+* bugfix: link failures with ~OpenSSL might happen on 64-bit Mac OS X when the {{{./configure}}} option {{{--with-openssl=PATH}}} was used and the ~OpenSSL source was recent enough. thanks grasses for the report.
+* upgraded PostgresNginxModule to 1.0rc7.
+** feature: fixed compilation errors with nginx 1.9.1+. thanks Vadim A. ~Misbakh-Soloviov for the original patch.
+See ChangeLog1007010 for change log for OpenResty 1.7.10.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -3165,8 +3176,9 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201210172306" modified="201503010748" changecount="15">
+<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201210172306" modified="201508121034" changecount="16">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Release 1.9.3.x|ChangeLog1009003]]
 * [[Release 1.7.10.x|ChangeLog1007010]]
 * [[Release 1.7.7.x|ChangeLog1007007]]
 * [[Release 1.7.4.x|ChangeLog1007004]]
@@ -3340,13 +3352,14 @@ This module is enabled by default and could be disabled by passing {{{--without-
 
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201507030901" tags="Resources" changecount="186">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201508121034" tags="Resources" changecount="187">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 最新版
-* [[ngx_openresty-1.7.10.2.tar.gz|https://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz]] &amp;nbsp; 3.3MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 2015年7月3日
+* [[ngx_openresty-1.9.3.1.tar.gz|https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1009003]] - 2015年8月12日
 !! 历史遗留版
 有的时候我们可能会需要较老的版本：
+* [[ngx_openresty-1.7.10.2.tar.gz|https://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz]] &amp;nbsp; 3.3MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 2015年
 * [[ngx_openresty-1.7.10.1.tar.gz|https://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 
 * [[ngx_openresty-1.7.7.2.tar.gz|https://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 2015年2月4日
 * [[ngx_openresty-1.7.7.1.tar.gz|https://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 2014年12月6日
