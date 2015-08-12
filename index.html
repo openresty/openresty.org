@@ -526,7 +526,7 @@ The bundled software components are copyrighted by the respective copyright hold
 
 This web site is a [[TiddlyWiki|http://www.tiddlywiki.com/]] page that is under the version control of a repository on GitHub:
 
-http://github.com/agentzh/openresty.org
+https://github.com/openresty/openresty.org
 
 Feel free to fork it or just [[contact us|ContactUs]] to obtain a git commit bit if you want to edit and improve this site.
 </pre>
@@ -536,7 +536,7 @@ Feel free to fork it or just [[contact us|ContactUs]] to obtain a git commit bit
 
 This [[Nginx]] module adds support for array variables to nginx config files.
 
-Project page: https://github.com/agentzh/array-var-nginx-module</pre>
+Project page: https://github.com/openresty/array-var-nginx-module</pre>
 </div>
 <div title="AuthRequestNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201106210821" modified="201106210825" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
@@ -681,7 +681,7 @@ The following components are bundled by this release:
 * use absoluate paths in Makefile to prevent {{{-jN}}} errors when using bsdmake on ~FreeBSD.
 ! Mainline Version 1.0.4.2rc10 - 7 August 2011
 * upgraded ngx_lua to v0.2.1rc4.
-** worked-around the &quot;stack overflow&quot; issue while using luarocks.loader and disabling {{{lua_code_cache}}}, as described as [[github issue #27|https://github.com/chaoslawful/lua-nginx-module/issues/27]]. thanks Patrick Crosby.
+** worked-around the &quot;stack overflow&quot; issue while using luarocks.loader and disabling {{{lua_code_cache}}}, as described as [[github issue #27|https://github.com/openresty/lua-nginx-module/issues/27]]. thanks Patrick Crosby.
 ! Mainline Version 1.0.4.2rc9 - 7 August 2011
 * now we use {{{gmake}}} if it is available in {{{PATH}}} during {{{./configure}}}; also added the {{{--with-make=PATH}}} option to allow the user to specify a custom {{{make}}} utility.
 ! Mainline Version 1.0.4.2rc8 - 6 August 2011
@@ -1091,7 +1091,7 @@ Components bundled in this release:
 ** bugfix: now we allow setting {{{ngx.var.VARIABLE}}} to {{{nil}}}.
 ! Mainline Version 1.0.8.17 - 22 October 2011
 * upgraded LuaNginxModule to 0.3.1rc19.
-** feature: now we apply the patch to the nginx core so as to allow main request body modifications: https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.8-allow_request_body_updating.patch
+** feature: now we apply the patch to the nginx core so as to allow main request body modifications: https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.8-allow_request_body_updating.patch
 ** feature: added new Lua API {{{ngx.req.set_body_file()}}}: http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_file
 ** feature: added new Lua API {{{ngx.req.set_body_data()}}}: http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_data
 ** bugfix: {{{lua_need_request_body}}} should not skip requests with methods other than {{{POST}}} and {{{PUT}}}. thanks Nginx User.
@@ -1206,7 +1206,7 @@ Components bundled in this release:
 * upgraded DrizzleNginxModule to 0.1.2rc4.
 ** bugfix: it might prematurly remove a write event when still busily connecting to the database from the event model.
 ! Mainline Version 1.0.9.7 - 10 November 2011
-* applied [[a patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.9-log_escape_non_ascii.patch]] to add new directives {{{log_escape_non_ascii}}} to prevent escaping non-ascii bytes in access log variable values. requested by [[@姜大炮|http://weibo.com/egis]]. It can be turned {{{on}}} and {{{off}}}, and default to {{{on}}} just as the standard Nginx version.
+* applied [[a patch|https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.9-log_escape_non_ascii.patch]] to add new directives {{{log_escape_non_ascii}}} to prevent escaping non-ascii bytes in access log variable values. requested by [[@姜大炮|http://weibo.com/egis]]. It can be turned {{{on}}} and {{{off}}}, and default to {{{on}}} just as the standard Nginx version.
 ! Mainline Version 1.0.9.5 - 9 November 2011
 * upgraded LuaNginxModule to 0.3.1rc28.
 ** bugfix: {{{Cache-Control}}} header modification might introduce empty value headers when using with the standard [[ngx_headers|http://wiki.nginx.org/HttpHeadersModule]] module.
@@ -1218,7 +1218,7 @@ Components bundled in this release:
 ** feature: [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] and [[ngx.exec|http://wiki.nginx.org/HttpLuaModule#ngx.exec]] now supports the same Lua args table format as in [[ngx.encode_args|http://wiki.nginx.org/HttpLuaModule#ngx.encode_args]]. thanks 郭颖 ([[0597虾|http://weibo.com/shrimp0597]]).
 * upgraded DrizzleNginxModule to 0.1.2rc3.
 ** bugfix: fixed issues with {{{poll}}}, {{{rtsig}}}, and {{{select}}} used by the Nginx event model by eliminating the {{{poll}}} syscall performed by {{{libdrizzle}}}. This also gives rise to a nice speedup (about 10% in simple cases).
-* bugfix: [[nginx-1.0.9-variable_header_ignore_no_hash.patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.9-variable_header_ignore_no_hash.patch]] might introduce a memory overflow issue in multi-header variables. thanks Markus Linnala.
+* bugfix: [[nginx-1.0.9-variable_header_ignore_no_hash.patch|https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.9-variable_header_ignore_no_hash.patch]] might introduce a memory overflow issue in multi-header variables. thanks Markus Linnala.
 ! Mainline Version 1.0.9.1 - 8 November 2011
 * upgraded the Nginx core to 1.0.9.
 * applied the [[epoll_check_stale_wev patch|http://mailman.nginx.org/pipermail/nginx-devel/2011-November/001408.html]] to the Nginx 1.0.9 core. thanks [[@晓旭XX|http://weibo.com/u/1878897190]].
@@ -1268,7 +1268,7 @@ Components bundled with this release:
 * xss-nginx-module-0.03rc8
 ! Mainline Version 1.0.10.47 - 29 January 2012
 * upgraded LuaNginxModule to 0.4.1rc4.
-** bugfix: {{{ngx_http_lua_header_filter_init}}} was called with an argument which actually accepts none. this could cause compilation errors at least with gcc 4.3.4 as reported in github [[issue #80|http://github.com/chaoslawful/lua-nginx-module/issues/80]]. thanks bigplum (Simon).
+** bugfix: {{{ngx_http_lua_header_filter_init}}} was called with an argument which actually accepts none. this could cause compilation errors at least with gcc 4.3.4 as reported in github [[issue #80|http://github.com/openresty/lua-nginx-module/issues/80]]. thanks bigplum (Simon).
 ! Mainline Version 1.0.10.45 - 19 January 2012
 * upgraded LuaNginxModule to 0.4.1rc3.
 ** bugfix: fixed all the warnings from the {{{clang}}} static analyzer.
@@ -1330,11 +1330,11 @@ Components bundled with this release:
 ** bugfix:  [[ngx.req.get_headers|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers]] now only parse up to 100 request headers by default. but one can specify the optional argument to this method to specify a custom maximum number of headers.
 ! Mainline Version 1.0.10.37 - 30 December 2011
 * upgraded LuaNginxModule to v0.3.1rc43.
-** bugfix: removing builtin headers via [[ngx.req.clear_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] and its equivalent in huge request headers with 20+ entries could result in data loss. thanks Chris Dumoulin for the patch in [[github issue #6|https://github.com/agentzh/headers-more-nginx-module/issues/6]].
+** bugfix: removing builtin headers via [[ngx.req.clear_header|http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header]] and its equivalent in huge request headers with 20+ entries could result in data loss. thanks Chris Dumoulin for the patch in [[github issue #6|https://github.com/openresty/headers-more-nginx-module/issues/6]].
 ** bugfix: could not compile with Nginx 1.1.12+ because Nginx 1.1.12 changed its regex API. now we call PCRE API directly and require at least PCRE 8.21 for the PCRE JIT support in our {{{ngx.re}}} API (since PCRE 8.20 had a bug in its JIT engine that it did not honor {{{pcre_malloc}}} and {{{pcre_free}}} at all).
 ! Mainline Version 1.0.10.35 - 30 December 2011
 * upgraded HeadersMoreNginxModule to v0.16rc7.
-** bugfix: removing builtin headers in huge request headers with 20+ entries could result in data loss. thanks Chris Dumoulin for the patch in [[github issue #6|https://github.com/agentzh/headers-more-nginx-module/issues/6]].
+** bugfix: removing builtin headers in huge request headers with 20+ entries could result in data loss. thanks Chris Dumoulin for the patch in [[github issue #6|https://github.com/openresty/headers-more-nginx-module/issues/6]].
 * bugfix: the {{{install}}} phony target did not depend on the {{{all}}} phony target in the Makefile generated by {{{./configure}}}. thanks [[姚伟斌|http://weibo.com/yaoweibin]] for reporting this issue.
 ! Mainline Version 1.0.10.33 - 29 December 2011
 * bugfix: the {{{./configure}}} script's  {{{--add-module}}} option did not accept relative path values. thanks [[姚伟斌|http://weibo.com/yaoweibin]] for the patch.
@@ -1399,16 +1399,16 @@ Components bundled with this release:
 * xss-nginx-module-0.03rc7
 ! Mainline Version 1.0.10.23 - 5 December 2011
 * upgraded RdsJsonNginxModule to v0.12rc7.
-** added more debug level error log outputs to ease debugging (as discussed in [[github issue #2|https://github.com/agentzh/rds-json-nginx-module/issues/2]]).
+** added more debug level error log outputs to ease debugging (as discussed in [[github issue #2|https://github.com/openresty/rds-json-nginx-module/issues/2]]).
 * upgraded XssNginxModule to v0.03rc7.
 ** now we use the {{{ngx_log_debugN}}} macros to emit debugging outputs instead of {{{info}}} level error logging because the latter is costly in production.
 * upgraded LuaNginxModule to 0.3.1rc38.
-** added constant {{{ngx.HTTP_GATEWAY_TIMEOUT}}} (504) per Fry-kun in [[github issue #73|https://github.com/chaoslawful/lua-nginx-module/issues/73]].
+** added constant {{{ngx.HTTP_GATEWAY_TIMEOUT}}} (504) per Fry-kun in [[github issue #73|https://github.com/openresty/lua-nginx-module/issues/73]].
 ! Mainline Version 1.0.10.21 - 30 November 2011
-* fixed a serious regression for Linux AIO in [[nginx-1.0.10-epoll_check_stale_wev.patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.10-epoll_check_stale_wev.patch]], thanks Maxim Dounin for the patch's patch.
+* fixed a serious regression for Linux AIO in [[nginx-1.0.10-epoll_check_stale_wev.patch|https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.10-epoll_check_stale_wev.patch]], thanks Maxim Dounin for the patch's patch.
 ! Mainline Version 1.0.10.19 - 29 November 2011
 * upgraded LuaNginxModule to 0.3.1rc37.
-** bugfix: use of the ngx.re API might lead to errors like {{{pcre_compile() failed: failed to get memory in ...}}} due to incorrect {{{pcre_malloc}}} and {{{pcre_free}}} handling. thanks Vittly for reporting this as [[github issue #72|https://github.com/chaoslawful/lua-nginx-module/issues/72]].
+** bugfix: use of the ngx.re API might lead to errors like {{{pcre_compile() failed: failed to get memory in ...}}} due to incorrect {{{pcre_malloc}}} and {{{pcre_free}}} handling. thanks Vittly for reporting this as [[github issue #72|https://github.com/openresty/lua-nginx-module/issues/72]].
 ** docs: massive documentation improvements. thanks Nginx User.
 ! Mainline Version 1.0.10.17 - 26 November 2011
 * upgraded LuaNginxModule to 0.3.1rc36.
@@ -1488,9 +1488,9 @@ Components bundled with this release:
 * xss-nginx-module-0.03rc9
 ! Mainline Version 1.0.11.27 - 22 March 2012
 * upgraded LuaNginxModule to 0.5.0rc21.
-** bugfix: made the sha1 library (or ~OpenSSL) an optional dependency, as suggested by runner-mei in [[github issue #94|https://github.com/chaoslawful/lua-nginx-module/issues/94]].
-** bugfix: we did not declare C variables at the beginning of the current code block in {{{ngx_http_lua_del_thread}}}, reported by runner-mei in [[github issue #93|https://github.com/chaoslawful/lua-nginx-module/issues/93]].
-** bugfix: incorrectly used {{{ngx_conf_log_error}}} by feeding {{{NGX_ERROR}}} as the first argument, as reported by runner-mei in [[github issue #92|https://github.com/chaoslawful/lua-nginx-module/issues/92]].
+** bugfix: made the sha1 library (or ~OpenSSL) an optional dependency, as suggested by runner-mei in [[github issue #94|https://github.com/openresty/lua-nginx-module/issues/94]].
+** bugfix: we did not declare C variables at the beginning of the current code block in {{{ngx_http_lua_del_thread}}}, reported by runner-mei in [[github issue #93|https://github.com/openresty/lua-nginx-module/issues/93]].
+** bugfix: incorrectly used {{{ngx_conf_log_error}}} by feeding {{{NGX_ERROR}}} as the first argument, as reported by runner-mei in [[github issue #92|https://github.com/openresty/lua-nginx-module/issues/92]].
 ** bugfix: spelling errors in Lua exception message text.
 * upgraded EchoNginxModule to 0.38rc2.
 ** bugfix: [[$echo_request_body|http://wiki.nginx.org/HttpEchoModule#.24echo_request_body]] variable was not able to work on arbitrary request body chains (i.e., more than 2 chain links), just like the standard [[$request_body|http://wiki.nginx.org/HttpCoreModule#.24request_body]] variable that only processes the first two chain links. now [[$echo_request_body|http://wiki.nginx.org/HttpEchoModule#.24echo_request_body]] no longer has this limitation.
@@ -1539,7 +1539,7 @@ Components bundled with this release:
 ** optimize: removed a redundant piece of code for subrequest {{{headers_in}}} fixes in {{{ngx_http_lua_adjust_subrequest}}}.
 ! Mainline Version 1.0.11.15 - 24 February 2012
 * now we enable the {{{-DLUAJIT_USE_VALGRIND -DLUA_USE_APICHECK -DLUA_USE_ASSERT}}} flags for LuaJIT when the {{{--with-debug}}} option is specified.
-* apply the [[max_subrequests patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.11-max_subrequests.patch]] to allow the {{{NGX_HTTP_MAX_SUBREQUESTS}}} macro to be overridden from the outside and adjusted the default value from 50 to 100 because 50 is a little too conservative.
+* apply the [[max_subrequests patch|https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.11-max_subrequests.patch]] to allow the {{{NGX_HTTP_MAX_SUBREQUESTS}}} macro to be overridden from the outside and adjusted the default value from 50 to 100 because 50 is a little too conservative.
 * upgraded XssNginxModule to 0.03rc9, RdsCsvNginxModule to 0.05rc1, and Redis2NginxModule to 0.08rc3, allowing enabling {{{DDEBUG=1}}} globally.
 * upgraded IconvNginxModule to 0.10rc7.
 ** bugfix: enabling {{{DDEBUG=1}}} globally lead to compilation errors.
@@ -1621,7 +1621,7 @@ See ChangeLog1000010 for change log for ngx_openresty 1.0.10.x.</pre>
 ** diagnosis: now we issue user-friendly error messages when the Nginx Lua ~APIs are used in the wrong configure directive contexts (e.g., using [[ngx.location.capture|http://wiki.nginx.org/HttpLuaModule#ngx.location.capture]] in [[set_by_lua|http://wiki.nginx.org/HttpLuaModule#set_by_lua]]).
 ** docs: fixed a typo: [[ngx.now|http://wiki.nginx.org/HttpLuaModule#ngx.now]] returns time of the resolution of milliseconds, rather than microseconds. thanks Wang Xi.
 ** docs: added a note for installation with Lua 5.1 on ubuntu 11.10. thanks Dan Sosedoff.
-* updated [[nginx-1.0.15-poll_del_event_at_exit.patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-poll_del_event_at_exit.patch]]. thanks Maxim Dounin.
+* updated [[nginx-1.0.15-poll_del_event_at_exit.patch|https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-poll_del_event_at_exit.patch]]. thanks Maxim Dounin.
 ! Stable Release 1.0.15.10 - 13 June 2012
 This release is essentially equivalent to the devel version 1.0.15.9 except excluding all the vim backup files *~ from the source code distribution. thanks Xiaoyu Chen.
 
@@ -1672,15 +1672,15 @@ Components bundled:
 ** docs: massive wording improvements from the Nginx Wiki site. thanks Dayo.
 * upgraded RdsJsonNginxModule to 0.12rc10.
 ** bugfix: refactored on-demand handler registration. the old approach rewrites to static (global) variables at config-time, which could have potential problems with nginx config reloading via the {{{HUP}}} signal.
-* bugfix: the (optional) [[no-pool patch|https://github.com/shrimp/no-pool-nginx/]] might leak memory. now we have updated the no-pool patch to the latest version that is a thorough rewrite.
-* bugfix: applied [[poll_del_event_at_exit patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-poll_del_event_at_exit.patch]] that fixed a segmentation fault in the nginx core when the poll event type is used: http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002328.html
-* bugfix: applied the [[resolver_debug_log patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-resolver_debug_log_overflow.patch]] that fixed reads of uninitialized memory in the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002281.html
+* bugfix: the (optional) [[no-pool patch|https://github.com/openresty/no-pool-nginx/]] might leak memory. now we have updated the no-pool patch to the latest version that is a thorough rewrite.
+* bugfix: applied [[poll_del_event_at_exit patch|https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-poll_del_event_at_exit.patch]] that fixed a segmentation fault in the nginx core when the poll event type is used: http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002328.html
+* bugfix: applied the [[resolver_debug_log patch|https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-resolver_debug_log_overflow.patch]] that fixed reads of uninitialized memory in the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002281.html
 ! Mainline Version 1.0.15.7 - 29 May 2012
-* bugfix: applied the [[add_core_vars_polluting_globals patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-add_core_vars_polluting_globals.patch]] to fix a bug in the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002231.html
-* bugfix: fixed the [[filter_finalize_hang patch|https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.15-filter_finalize_hang.patch]] for a regression in the image filters. thanks Maxim Dounin.
+* bugfix: applied the [[add_core_vars_polluting_globals patch|https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-add_core_vars_polluting_globals.patch]] to fix a bug in the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002231.html
+* bugfix: fixed the [[filter_finalize_hang patch|https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-filter_finalize_hang.patch]] for a regression in the image filters. thanks Maxim Dounin.
 * upgraded LuaNginxModule to 0.5.0rc29.
 ** bugfix: {{{cosocket:receive(0)}}} was not allowed and would throw an error saying {{{0}}} was a bad pattern. thanks huang kun for reporting this issue. This issue at least made LuaRestyRedisLibrary reject reading 0-size values.
-** bugfix: the [[set_by_lua|http://wiki.nginx.org/HttpLuaModule#set_by_lua]] directive did support nginx variable interpolation and there was no easy way to use the dollar sign characters in the literal Lua source. the [[set_by_lua_file|http://wiki.nginx.org/HttpLuaModule#set_by_lua_file]] directive still supports nginx variable interpolation in its lua file path argument. thanks Vittly for reporting this in [[github issue #111|https://github.com/chaoslawful/lua-nginx-module/issues/111]] and jinglong for the test in [[github pull #115|https://github.com/chaoslawful/lua-nginx-module/pull/115]].
+** bugfix: the [[set_by_lua|http://wiki.nginx.org/HttpLuaModule#set_by_lua]] directive did support nginx variable interpolation and there was no easy way to use the dollar sign characters in the literal Lua source. the [[set_by_lua_file|http://wiki.nginx.org/HttpLuaModule#set_by_lua_file]] directive still supports nginx variable interpolation in its lua file path argument. thanks Vittly for reporting this in [[github issue #111|https://github.com/openresty/lua-nginx-module/issues/111]] and jinglong for the test in [[github pull #115|https://github.com/openresty/lua-nginx-module/pull/115]].
 ** bugfix: fixed compilation errors when PCRE is missing. thanks Dirk Feytons for the patch.
 ** feature: added the {{{[lua]}}} prefix to the log messages produced by [[ngx.log()|http://wiki.nginx.org/HttpLuaModule#ngx.log]] and [[print()|http://wiki.nginx.org/HttpLuaModule#print]]. thanks Matthieu Tourne for the patches.
 ** feature: [[ngx.log()|http://wiki.nginx.org/HttpLuaModule#ngx.log]] and [[print()|http://wiki.nginx.org/HttpLuaModule#print]] now output more debugging info, i.e., the current lua source file name (if any), the current source line number, and the current calling Lua function name (if any), into the Nginx {{{error.log}}} file. An example message is {{{[error] 56651#0: *1 [lua] test.lua:6: bar():
@@ -1700,10 +1700,10 @@ hello}}}. thanks Matthieu Tourne for the patch.
 ** see changes here: http://luajit.org/changes.html
 * feature: added the {{{--with-luajit-xcflags=FLAGS}}} option to {{{./configure}}} to add more C compiler options to LuaJIT's build system.
 * upgraded LuaNginxModule to 0.5.0rc28.
-** bugfix: [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] did not honor the {{{Expect: 100-continue}}} request header and could hang. thanks Matthieu Tourne for the patch in [[pull request #107|https://github.com/chaoslawful/lua-nginx-module/pull/107]].
+** bugfix: [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] did not honor the {{{Expect: 100-continue}}} request header and could hang. thanks Matthieu Tourne for the patch in [[pull request #107|https://github.com/openresty/lua-nginx-module/pull/107]].
 ** bugfix: the [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] object (i.e., the downstream cosocket object) did not work with HTTP 1.1 pipelined requests at all.
 ** bugfix: the [[ngx.req.socket()|http://wiki.nginx.org/HttpLuaModule#ngx.req.socket]] object might lose the last part of the request body when receiving data. this regression had appeared in v0.5.0rc25. thanks Matthieu Tourne for reporting it.
-** feature: detailed backtraces (Lua callstack) will be automatically printed to {{{error.log}}} when the user Lua code is interrupted by Lua exceptions. thanks Matthieu Tourne for the patch in [[pull request #107|https://github.com/chaoslawful/lua-nginx-module/pull/107]].
+** feature: detailed backtraces (Lua callstack) will be automatically printed to {{{error.log}}} when the user Lua code is interrupted by Lua exceptions. thanks Matthieu Tourne for the patch in [[pull request #107|https://github.com/openresty/lua-nginx-module/pull/107]].
 ** optimize: removed dead code found by Simon Liu via scan-build.
 * upgraded RdsCsvNginxModule to 0.05rc2.
 ** bugfix: the output buffer size would get wrong when the {{{affected_rows}}} field is larger than a single-digit number. thanks Wendal Chen for reporting this by using clang.
@@ -1713,7 +1713,7 @@ hello}}}. thanks Matthieu Tourne for the patch.
 ! Mainline Version 1.0.15.3 - 13 May 2012
 * now we bundle Sergey A. Osokin's RedisNginxModule, 0.3.6, which is also enabled by default. thanks Zhu Feng for requesting this.
 * upgraded LuaNginxModule to 0.5.0rc27.
-** bugfix: nginx could crash on request finalization when running the cosocket cleanup handle due to the lack of check of the {{{ctx}}} pointer. thanks shaneeb for reporting this in [[github issue #110|https://github.com/chaoslawful/lua-nginx-module/issues/110]].
+** bugfix: nginx could crash on request finalization when running the cosocket cleanup handle due to the lack of check of the {{{ctx}}} pointer. thanks shaneeb for reporting this in [[github issue #110|https://github.com/openresty/lua-nginx-module/issues/110]].
 ** bugfix: [[ngx.req.get_body_data()|http://wiki.nginx.org/HttpLuaModule#ngx.req.get_body_data]] could not handle multi-buffer request bodies and discarded the body data after the first buffer.
 ** bugfix: [[ngx.ctx|http://wiki.nginx.org/HttpLuaModule#ngx.ctx]] was not accessible at all in {{{set_by_lua*}}}. thanks Pierre.
 ** bugfix: fixed typo &quot;on-array&quot;, which should be &quot;non-array&quot;, in an error message.
@@ -3702,37 +3702,37 @@ Donors donating more than 1000 USD are listed here to express our appreciation. 
 You can download the latest release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Lastest release
-* [[ngx_openresty-1.9.3.1.tar.gz|http://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1009003]] - 12 August 2015
+* [[ngx_openresty-1.9.3.1.tar.gz|https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1009003]] - 12 August 2015
 !! Legacy releases
 Sometimes, users may want to download old releases.
-* [[ngx_openresty-1.7.10.2.tar.gz|http://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz]] &amp;nbsp; 3.3MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 3 July 2015
-* [[ngx_openresty-1.7.10.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 28 February 2015
-* [[ngx_openresty-1.7.7.2.tar.gz|http://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 4 February 2015
-* [[ngx_openresty-1.7.7.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 6 December 2014
-* [[ngx_openresty-1.7.4.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007004]] - 9 October 2014
-* [[ngx_openresty-1.7.2.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007002]] - 12 July 2014
-* [[ngx_openresty-1.7.0.1.tar.gz|http://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007000]] - 7 June 2014
-* [[ngx_openresty-1.5.12.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005012]] - 29 April 2014
-* [[ngx_openresty-1.5.11.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005011]] - 30 March 2014
-* [[ngx_openresty-1.5.8.1.tar.gz|http://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005008]] - 10 January 2014
-* [[ngx_openresty-1.4.3.6.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 20 November 2013
-* [[ngx_openresty-1.4.3.4.tar.gz|http://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 12 November 2013
-* [[ngx_openresty-1.4.2.8.tar.gz|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 22 September 2013
-* [[ngx_openresty-1.2.8.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 10 June 2013
-* [[ngx_openresty-1.2.7.8.tar.gz|http://openresty.org/download/ngx_openresty-1.2.7.8.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.7.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 13 May 2013
-* [[ngx_openresty-1.2.7.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.7.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.7.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 17 April 2013
-* [[ngx_openresty-1.2.6.6.tar.gz|http://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002006]] - 17 February 2013
-* [[ngx_openresty-1.2.4.14.tar.gz|http://openresty.org/download/ngx_openresty-1.2.4.14.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.4.14.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002004]] - 23 December 2012
-* [[ngx_openresty-1.2.3.8.tar.gz|http://openresty.org/download/ngx_openresty-1.2.3.8.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.3.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002003]] - 8 October 2012
-* [[ngx_openresty-1.2.1.14.tar.gz|http://openresty.org/download/ngx_openresty-1.2.1.14.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.2.1.14.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002001]] - 14 August 2012
-* [[ngx_openresty-1.0.15.10.tar.gz|http://openresty.org/download/ngx_openresty-1.0.15.10.tar.gz]] &amp;nbsp; 2.7MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.0.15.10.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000015]] - 13 June 2012
-* [[ngx_openresty-1.0.11.28.tar.gz|http://openresty.org/download/ngx_openresty-1.0.11.28.tar.gz]] &amp;nbsp; 2.7MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.0.11.28.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000011]] - 25 March 2012
-* [[ngx_openresty-1.0.10.48.tar.gz|http://openresty.org/download/ngx_openresty-1.0.10.48.tar.gz]] &amp;nbsp; 2.6MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.0.10.48.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000010]] - 1 February 2012
-* [[ngx_openresty-1.0.10.44.tar.gz|http://openresty.org/download/ngx_openresty-1.0.10.44.tar.gz]] &amp;nbsp; 2.5MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.0.10.44.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000010]] - 16 January 2012
-* [[ngx_openresty-1.0.10.24.tar.gz|http://openresty.org/download/ngx_openresty-1.0.10.24.tar.gz]] &amp;nbsp; 2.5MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.0.10.24.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000010]] - 11 December 2011
-* [[ngx_openresty-1.0.9.10.tar.gz|http://openresty.org/download/ngx_openresty-1.0.9.10.tar.gz]] &amp;nbsp; 2.5MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.0.9.10.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000009]] - 16 November 2011
-* [[ngx_openresty-1.0.8.26.tar.gz|http://openresty.org/download/ngx_openresty-1.0.8.26.tar.gz]] &amp;nbsp; 2.5MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.0.8.26.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000008]] - 3 November 2011
-* [[ngx_openresty-1.0.6.22.tar.gz|http://openresty.org/download/ngx_openresty-1.0.6.22.tar.gz]] &amp;nbsp; 2.4MB &amp;nbsp; [[PGP|http://openresty.org/download/ngx_openresty-1.0.6.22.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000006]] - 7 October 2011
+* [[ngx_openresty-1.7.10.2.tar.gz|https://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz]] &amp;nbsp; 3.3MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 3 July 2015
+* [[ngx_openresty-1.7.10.1.tar.gz|https://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 28 February 2015
+* [[ngx_openresty-1.7.7.2.tar.gz|https://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 4 February 2015
+* [[ngx_openresty-1.7.7.1.tar.gz|https://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007007]] - 6 December 2014
+* [[ngx_openresty-1.7.4.1.tar.gz|https://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007004]] - 9 October 2014
+* [[ngx_openresty-1.7.2.1.tar.gz|https://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007002]] - 12 July 2014
+* [[ngx_openresty-1.7.0.1.tar.gz|https://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007000]] - 7 June 2014
+* [[ngx_openresty-1.5.12.1.tar.gz|https://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005012]] - 29 April 2014
+* [[ngx_openresty-1.5.11.1.tar.gz|https://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005011]] - 30 March 2014
+* [[ngx_openresty-1.5.8.1.tar.gz|https://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1005008]] - 10 January 2014
+* [[ngx_openresty-1.4.3.6.tar.gz|https://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 20 November 2013
+* [[ngx_openresty-1.4.3.4.tar.gz|https://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz]] &amp;nbsp; 3.1MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004003]] - 12 November 2013
+* [[ngx_openresty-1.4.2.8.tar.gz|https://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz]] &amp;nbsp; 3.0MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1004002]] - 22 September 2013
+* [[ngx_openresty-1.2.8.6.tar.gz|https://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002008]] - 10 June 2013
+* [[ngx_openresty-1.2.7.8.tar.gz|https://openresty.org/download/ngx_openresty-1.2.7.8.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.2.7.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 13 May 2013
+* [[ngx_openresty-1.2.7.6.tar.gz|https://openresty.org/download/ngx_openresty-1.2.7.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.2.7.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002007]] - 17 April 2013
+* [[ngx_openresty-1.2.6.6.tar.gz|https://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002006]] - 17 February 2013
+* [[ngx_openresty-1.2.4.14.tar.gz|https://openresty.org/download/ngx_openresty-1.2.4.14.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.2.4.14.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002004]] - 23 December 2012
+* [[ngx_openresty-1.2.3.8.tar.gz|https://openresty.org/download/ngx_openresty-1.2.3.8.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.2.3.8.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002003]] - 8 October 2012
+* [[ngx_openresty-1.2.1.14.tar.gz|https://openresty.org/download/ngx_openresty-1.2.1.14.tar.gz]] &amp;nbsp; 2.9MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.2.1.14.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1002001]] - 14 August 2012
+* [[ngx_openresty-1.0.15.10.tar.gz|https://openresty.org/download/ngx_openresty-1.0.15.10.tar.gz]] &amp;nbsp; 2.7MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.0.15.10.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000015]] - 13 June 2012
+* [[ngx_openresty-1.0.11.28.tar.gz|https://openresty.org/download/ngx_openresty-1.0.11.28.tar.gz]] &amp;nbsp; 2.7MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.0.11.28.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000011]] - 25 March 2012
+* [[ngx_openresty-1.0.10.48.tar.gz|https://openresty.org/download/ngx_openresty-1.0.10.48.tar.gz]] &amp;nbsp; 2.6MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.0.10.48.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000010]] - 1 February 2012
+* [[ngx_openresty-1.0.10.44.tar.gz|https://openresty.org/download/ngx_openresty-1.0.10.44.tar.gz]] &amp;nbsp; 2.5MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.0.10.44.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000010]] - 16 January 2012
+* [[ngx_openresty-1.0.10.24.tar.gz|https://openresty.org/download/ngx_openresty-1.0.10.24.tar.gz]] &amp;nbsp; 2.5MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.0.10.24.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000010]] - 11 December 2011
+* [[ngx_openresty-1.0.9.10.tar.gz|https://openresty.org/download/ngx_openresty-1.0.9.10.tar.gz]] &amp;nbsp; 2.5MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.0.9.10.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000009]] - 16 November 2011
+* [[ngx_openresty-1.0.8.26.tar.gz|https://openresty.org/download/ngx_openresty-1.0.8.26.tar.gz]] &amp;nbsp; 2.5MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.0.8.26.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000008]] - 3 November 2011
+* [[ngx_openresty-1.0.6.22.tar.gz|https://openresty.org/download/ngx_openresty-1.0.6.22.tar.gz]] &amp;nbsp; 2.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.0.6.22.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1000006]] - 7 October 2011
 
 See [[Installation]] for installation instructions.
 </pre>
@@ -3748,7 +3748,7 @@ The [[libdrizzle]] C library is no longer bundled by OpenResty. You need to down
 
 Latest drizzle7 release does not support building libdrizzle 1.0 separately and requires a lot of external dependencies like Boost and Protobuf which are painful to install. The last version supporting building libdrizzle 1.0 separately is {{{2011.07.21}}}. You can download it from here:
 
-http://openresty.org/download/drizzle7-2011.07.21.tar.gz
+https://openresty.org/download/drizzle7-2011.07.21.tar.gz
 
 When you get the drizzle7 2011.07.21 release tarball, you can install libdrizzle-1.0 like this:
 {{{
@@ -4547,7 +4547,7 @@ http://qa.openresty.org/</pre>
 <div title="RSSFeed" creator="YichunZhang" modifier="YichunZhang" created="201106210735" modified="201106210739" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
-This site's RSS  feed is available at http://openresty.org/index.xml [img[feed-icon-28x28.png]].</pre>
+This site's RSS  feed is available at https://openresty.org/index.xml [img[feed-icon-28x28.png]].</pre>
 </div>
 <div title="RdsCsvNginxModule" creator="YichunZhang" modifier="YichunZhang" created="201108310742" changecount="1">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
@@ -5158,15 +5158,15 @@ Homepage: http://agentzh.org</pre>
 
 ! eBook &quot;agentzh's Nginx Tutorials&quot; (version 2012.04.18)
 * English Edition
-** [[HTML Single-Page Format|http://openresty.org/download/agentzh-nginx-tutorials-enuk.html]] (Web browser users)
-** [[MOBI Format|http://openresty.org/download/agentzh-nginx-tutorials-enuk.mobi]] (Kindle users)
-** [[EPUB Format|http://openresty.org/download/agentzh-nginx-tutorials-enuk.epub]] (Sony, Apple and other users)
-** [[PDF Format|http://openresty.org/download/agentzh-nginx-tutorials-enuk.pdf]] (Sony Digital Paper and PC users)
+** [[HTML Single-Page Format|https://openresty.org/download/agentzh-nginx-tutorials-enuk.html]] (Web browser users)
+** [[MOBI Format|https://openresty.org/download/agentzh-nginx-tutorials-enuk.mobi]] (Kindle users)
+** [[EPUB Format|https://openresty.org/download/agentzh-nginx-tutorials-enuk.epub]] (Sony, Apple and other users)
+** [[PDF Format|https://openresty.org/download/agentzh-nginx-tutorials-enuk.pdf]] (Sony Digital Paper and PC users)
 * Chinese Edition
-** [[HTML Single-Page Format|http://openresty.org/download/agentzh-nginx-tutorials-zhcn.html]] (Web browser users)
-** [[MOBI Format|http://openresty.org/download/agentzh-nginx-tutorials-zhcn.mobi]] (Kindle users)
-** [[EPUB Format|http://openresty.org/download/agentzh-nginx-tutorials-zhcn.epub]] (Sony, Apple and other users)
-** [[PDF Format|http://openresty.org/download/agentzh-nginx-tutorials-zhcn.pdf]] (Sony Digital Paper and PC users)
+** [[HTML Single-Page Format|https://openresty.org/download/agentzh-nginx-tutorials-zhcn.html]] (Web browser users)
+** [[MOBI Format|https://openresty.org/download/agentzh-nginx-tutorials-zhcn.mobi]] (Kindle users)
+** [[EPUB Format|https://openresty.org/download/agentzh-nginx-tutorials-zhcn.epub]] (Sony, Apple and other users)
+** [[PDF Format|https://openresty.org/download/agentzh-nginx-tutorials-zhcn.pdf]] (Sony Digital Paper and PC users)
 * Git Repository
 ** https://github.com/agentzh/nginx-tutorials
 ! eBook &quot;~OpenResty Best Practices&quot;
