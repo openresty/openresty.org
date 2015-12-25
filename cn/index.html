@@ -45,7 +45,7 @@ DAMAGE.
 <!--}}}-->
 
 <!--PRE-HEAD-END-->
-<title> OpenResty - 一个通过扩展 Nginx 实现的强大的 web 应用服务器 </title>
+<title> OpenResty - 一个可伸缩的基于 NGINX 的 Web 平台 </title>
 <style id="styleArea" type="text/css">
 #saveTest {display:none;}
 #messageArea {display:none;}
@@ -3160,6 +3160,65 @@ See ChangeLog1007007 for change log for OpenResty 1.7.7.x.</pre>
 ** feature: fixed compilation errors with nginx 1.9.1+. thanks Vadim A. ~Misbakh-Soloviov for the original patch.
 See ChangeLog1007010 for change log for OpenResty 1.7.10.x.</pre>
 </div>
+<div title="ChangeLog1009007" creator="YichunZhang" modifier="YichunZhang" created="201512250528" changecount="1">
+<pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Version 1.9.7.1 - 25 December 2015
+* upgraded the Nginx core to 1.9.7.
+** see the changes here: http://nginx.org/en/CHANGES
+* {{{./configure}}}: now we automatically set the environment {{{MACOSX_DEPLOYMENT_TARGET}}} to the current Mac OS X version (unless the environment is already set) to ensure the LuaJIT build uses the current versions of the system libraries. thanks bsyk for the report.
+* win32: use Windows line breaks in the {{{resty}}} script file of the binary distribution.
+* win32: upgraded pcre to 8.38 and openssl to 1.0.2e.
+* win32: enabled ngx_http_realip_module, ngx_http_addition_module ngx_http_sub_module, and ngx_http_stub_status_module in the win32 binary package by default.
+* upgraded LuaNginxModule to 0.9.20.
+** feature: added new API functions [[ngx.worker.count()|https://github.com/openresty/lua-nginx-module#ngxworkercount]] and [[ngx.worker.id()|https://github.com/openresty/lua-nginx-module#ngxworkerid]] for returning the total count of nginx worker processes and the ordinal number (0, 1, 2, and etc) of the current worker. thanks ~YuanSheng Wang for the patch. also added pure C API for them.
+** feature: added new API functions [[ngx.timer.pending_count()|https://github.com/openresty/lua-nginx-module#ngxtimerpending_count]] and [[ngx.timer.running_count()|https://github.com/openresty/lua-nginx-module#ngxtimerrunning_count]]. thanks Simon Eskildsen for the patch.
+** feature: added new config directive [[access_by_lua_no_postpone|https://github.com/openresty/lua-nginx-module#access_by_lua_no_postpone]]. thanks Delta Yeh for the patch.
+** feature: added new constant {{{ngx.HTTP_TEMPORARY_REDIRECT}}} (307) and support for 307 in [[ngx.redirect()|https://github.com/openresty/lua-nginx-module#ngxredirect]]. thanks ~RocFang for the patch.
+** feature: added new API function [[ngx.req.is_internal()|https://github.com/openresty/lua-nginx-module#ngxreqis_internal]] for testing if the current request is an internal request. thanks Ruoshan Huang for the patch.
+** feature: added many more HTTP status constants as {{{ngx.HTTP_XXX}}}. thanks Vadim A. ~Misbakh-Soloviov for the patch.
+** bugfix: bogus {{{nginx.conf}}} parse failure &quot;Lua code block missing the &quot;}&quot; character&quot; might happen when there are many Lua code blocks inlined. thanks Andreas Lubbe for the report.
+** bugfix: bogus &quot;subrequests cycle&quot; errors might occur with nginx 1.9.5+ due to the recent changes in the nginx core.
+** bugfix: [[ngx.req.get_uri_args|https://github.com/openresty/lua-nginx-module#ngxreqget_uri_args]]/[[ngx.req.get_post_args|https://github.com/openresty/lua-nginx-module#ngxreqget_post_args]]: avoided allocating a zero-size buffer in the nginx memory pool since it might cause problems. thanks Chuanwen Chen for the report and patch.
+** bugfix: modifying the built-in header {{{X-Forwarded-For}}} via [[ngx.req.set_header()|https://github.com/openresty/lua-nginx-module#ngxreqset_header]] or [[ngx.req.clear_header()|https://github.com/openresty/lua-nginx-module#ngxreqclear_header]] might not take effect in some parts of the nginx core (like {{{$proxy_add_x_forwarded_for}}}). thanks aviramc for the patch.
+** bugfix: we lacked detailed context info in error messages due to use of disabled Lua API in [[body_filter_by_lua*|https://github.com/openresty/lua-nginx-module#body_filter_by_lua]]. thanks Dejiang Zhu for the patch.
+** bugfix: fixed a potential data alignment issue in the [[ngx.var|https://github.com/openresty/lua-nginx-module#ngxvarvariable]] setter API.
+** bugfix: we had data alignment issues in the [[subrequest API|https://github.com/openresty/lua-nginx-module#ngxlocationcapture]] which can explode on systems like ARM. thanks Stefan Parvu for providing the test environment.
+** bugfix: there was a data alignment issue in the [[tcpsock:setkeepalive()|https://github.com/openresty/lua-nginx-module#tcpsocksetkeepalive]] implementation which might lead to crashes on ARM systems. thanks Stefan Parvu for the report.
+** bugfix: fixed C compiler warnings &quot;comparison between signed and unsigned integer expressions&quot; on Windows.
+** optimize: avoided allocating in the nginx request memory pool in stream-typed cosockets' [[receive*()|https://github.com/openresty/lua-nginx-module#tcpsockreceive]] methods. thanks Lourival Vieira Neto for the patch.
+** optimize: reduced memory allocations in stream-typed cosockets. thanks Dejiang Zhu for the patch.
+*** avoided allocating the host name buffer when getting peers from the connection pool.
+*** recycled the stream cosockets' request cleanup records.
+** doc: documented the minimum size threshold in [[lua_shared_dict|https://github.com/openresty/lua-nginx-module#lua_shared_dict]]. thanks mlr3000 for the original patch.
+* upgraded LuaRestyCoreLibrary to 0.1.3.
+** Makefile: added support for relative paths in {{{LUA_LIB_DIR}}}.
+** minor code adjustments from Aapo Talvensaari.
+* upgraded HeadersMoreNginxModule to 0.29.
+** bugfix: changing the built-in header {{{X-Forwarded-For}}} via [[more_set_input_headers|https://github.com/openresty/headers-more-nginx-module#more_set_input_headers]] or [[more_clear_input_headers|https://github.com/openresty/headers-more-nginx-module#more_clear_input_headers]] might not take effect in some parts of the nginx core (like {{{$proxy_add_x_forwarded_for}}}).
+* upgraded LuaRestyRedisLibrary to 0.22.
+** tweaked Makefile to allow relative paths in {{{LUA_LIB_DIR}}} when {{{DESTDIR}}} is not specified.
+** optimize: moved string concatenation for the Redis request construction onto the C land (taking advantage of the feature that cosockets' [[send|https://github.com/openresty/lua-nginx-module#tcpsocksend]] method accepts a table of strings). thanks Dejiang Zhu for the patch.
+** optimize: minor optimizations from Aapo Talvensaari.
+* upgraded RestyCLI to 0.05.
+** bugfix: resty: nginx might report the error &quot;The system cannot find the file specified&quot; in {{{CreateFile()}}} on Windows XP. thanks cover_eye for the report.
+* upgraded LuaJIT to v2.1-20151219: https://github.com/openresty/luajit2/tags
+** Makefile: ensure we always install the symbolic link for the &quot;luajit&quot; file.
+** imported Mike Pall's latest changes:
+*** FFI: Fix SPLIT pass for CONV i64.u64.
+*** x64/~LJ_GC64: Fix stack growth in vararg function setup.
+*** ~DynASM/x86: Add rdpmc instruction.
+*** OSX: Switch to Clang as the default compiler.
+*** iOS: Disable os.execute() when building for iOS &gt;= 8.0.
+*** x86/x64: Disassemble AVX/~AVX2 instructions.
+*** ~DynASM/x86: Add AVX and ~AVX2 opcodes.
+*** ~DynASM/x86: Add ~AES-NI opcodes.
+*** ~DynASM/x86: Restrict shld/shrd to operands with same width.
+*** ~DynASM/x86: Fix some SSE instruction templates.
+*** Fix pairs() recording.
+*** FFI: Fix ipairs() recording.
+*** Drop marks from replayed instructions when sinking.
+See ChangeLog1009003 for change log for OpenResty 1.9.3.x.</pre>
+</div>
 <div title="ChangeLog8054" creator="YichunZhang" modifier="YichunZhang" created="201106210431" modified="201107081123" changecount="25">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 ! Stable Release 0.8.54.9 - 8 July 2011
@@ -3251,8 +3310,9 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 * Upgraded [[LuaNginxModule]] to 0.1.6rc9.
 </pre>
 </div>
-<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201210172306" modified="201508121034" changecount="16">
+<div title="Changes" creator="YichunZhang" modifier="YichunZhang" created="201210172306" modified="201512250527" changecount="17">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+* [[Release 1.9.7.x|ChangeLog1009007]]
 * [[Release 1.9.3.x|ChangeLog1009003]]
 * [[Release 1.7.10.x|ChangeLog1007010]]
 * [[Release 1.7.7.x|ChangeLog1007007]]
@@ -3428,13 +3488,14 @@ This module is enabled by default and could be disabled by passing {{{--without-
 
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201511231311" tags="Resources" changecount="189">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201512250530" tags="Resources" changecount="191">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 最新版
-* [[ngx_openresty-1.9.3.2.tar.gz|https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009003]] - 2015年11月23日
+* [[ngx_openresty-1.9.7.1.tar.gz|https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 2015年12月25日
 !! 历史遗留版
 有的时候我们可能会需要较老的版本：
+* [[ngx_openresty-1.9.3.2.tar.gz|https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009003]] - 2015年11月23日
 * [[ngx_openresty-1.9.3.1.tar.gz|https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1009003]] - 2015年8月12日
 * [[ngx_openresty-1.7.10.2.tar.gz|https://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz]] &amp;nbsp; 3.3MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 2015年
 * [[ngx_openresty-1.7.10.1.tar.gz|https://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz]] &amp;nbsp; 3.2MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 
@@ -3981,7 +4042,7 @@ Documentation: https://github.com/agentzh/lua-upstream-nginx-module#readme
 
 Project page: https://github.com/agentzh/lua-upstream-nginx-module</pre>
 </div>
-<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201508111018" tags="admin" changecount="24">
+<div title="MainMenu" creator="YichunZhang" modifier="YichunZhang" created="201106210357" modified="201512250532" tags="admin" changecount="25">
 <pre>[[概览|OpenResty]]
 [[组件|Components]]
 [[新手上路|GettingStarted]]
@@ -3995,6 +4056,7 @@ Project page: https://github.com/agentzh/lua-upstream-nginx-module</pre>
 [[变更历史|Changes]]
 [[测试|QualityAssurance]]
 [[联系我们|ContactUs]]
+[[用户问卷调查|https://openresty.org/survey/cn]]
 [[捐助|DonateOnline]]
 [[捐款者|Donors]]
 [[关于|About]]
@@ -4059,15 +4121,15 @@ The NDK is an Nginx module that is designed to extend the core functionality of 
 
 Project page: https://github.com/simpl/ngx_devel_kit</pre>
 </div>
-<div title="OpenResty" creator="YichunZhang" modifier="YichunZhang" created="201106210403" modified="201510180156" changecount="16">
+<div title="OpenResty" creator="YichunZhang" modifier="YichunZhang" created="201106210403" modified="201512250527" changecount="18">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 
-OpenResty （也称为 ngx_openresty）是一个全功能的 Web 应用服务器，它打包了标准的 [[Nginx]] 核心，很多高质量的[[第三方模块|Components]]，以及它们的大多数依赖项。
+OpenResty （也称为 ngx_openresty）是一个全功能的 Web 平台，它打包了标准的 [[Nginx]] 核心，很多高质量的 Lua 库，很多高质量的[[第三方模块|Components]]，以及它们的大多数依赖项。
 
 ~OpenResty 通过汇聚各种设计精良的 Nginx 模块,
 从而将 Nginx 有效的变成一个强大的 Web 应用服务器,
 这样, Web 开发人员可以使用 Lua 脚本语言调动 Nginx 支持的各种 C 以及 Lua 模块,
-快速构造出足以胜任 10K+ 并发连接响应的超高性能 Web 应用系统.
+快速构造出足以胜任 10K 以上并发连接响应的超高性能 Web 应用系统.
 
 ~OpenResty 的目标是让你的Web服务直接跑在 Nginx 服务内部,
 充分利用 Nginx 的非阻塞 I/O 模型,
@@ -4263,8 +4325,8 @@ Documentation: http://wiki.nginx.org/HttpSetMiscModule
 
 Project page: http://github.com/agentzh/set-misc-nginx-module</pre>
 </div>
-<div title="SiteSubtitle" creator="YichunZhang" modifier="YichunZhang" created="201106201138" modified="201111080413" tags="admin" changecount="3">
-<pre>一个通过扩展 Nginx 实现的强大的 web 应用服务器</pre>
+<div title="SiteSubtitle" creator="YichunZhang" modifier="YichunZhang" created="201106201138" modified="201512250526" tags="admin" changecount="5">
+<pre>一个可伸缩的基于 NGINX 的 Web 平台</pre>
 </div>
 <div title="SiteTitle" creator="YichunZhang" modifier="YichunZhang" created="201106201137" modified="201106210357" tags="admin" changecount="3">
 <pre>OpenResty</pre>
