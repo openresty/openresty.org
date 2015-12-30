@@ -5,15 +5,15 @@
 <description>一个可伸缩的基于 NGINX 的 Web 平台</description>
 <language>en</language>
 <copyright>Copyright 2015 YichunZhang</copyright>
-<pubDate>Wed, 30 Dec 2015 05:44:36 GMT</pubDate>
-<lastBuildDate>Wed, 30 Dec 2015 05:44:36 GMT</lastBuildDate>
+<pubDate>Wed, 30 Dec 2015 05:50:33 GMT</pubDate>
+<lastBuildDate>Wed, 30 Dec 2015 05:50:33 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
 <title>OpenResty</title>
-<description>&lt;a tiddler=&quot;OpenResty&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;OpenResty 是一个基于 Nginx 与 Lua 的高性能网络框架，其内部集成了大量精良的 Lua 库、第三方模块以及大多数的依赖项。用于方便地搭建能够处理超高并发、扩展性极高的网络应用。&lt;br&gt;&lt;br&gt;OpenResty 通过汇聚各种设计精良的 Nginx 模块（主要由 OpenResty 团队自主开发），从而将 Nginx 有效地变成一个强大的通用 Web 应用平台。这样，Web 开发人员和系统工程师可以使用 Lua 脚本语言调动 Nginx 支持的各种 C 以及 Lua 模块，快速构造出足以胜任 10K ~ 1000K 以上单机并发连接的高性能 Web 应用系统。&lt;br&gt;&lt;br&gt;OpenResty 的目标是让你的Web服务直接跑在 Nginx 服务内部，充分利用 Nginx 的非阻塞 I/O 模型，不仅仅对 HTTP 客户端请求,甚至于对远程后端诸如 MySQL、PostgreSQL、Memcached 以及 Redis 等都进行一致的高性能响应。&lt;br&gt;&lt;br&gt;参考 &lt;a tiddlylink=&quot;Components&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Components&quot; href=&quot;null#Components&quot; class=&quot;externalLink null&quot;&gt;组件&lt;/a&gt; 可以知道 OpenResty 中包含了多少软件。&lt;br&gt;&lt;br&gt;参考 &lt;a tiddlylink=&quot;GettingStarted&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GettingStarted&quot; href=&quot;null#GettingStarted&quot; class=&quot;externalLink null&quot;&gt;上路&lt;/a&gt; 学习如何从最简单的 hello world 开始使用 OpenResty 开发 HTTP 业务，或前往  &lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;下载&lt;/a&gt; 直接获取 OpenResty 的源代码包开始体验。</description>
+<description>&lt;a tiddler=&quot;OpenResty&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;&lt;br&gt;OpenResty 是一个基于 Nginx 与 Lua 的高性能网络框架，其内部集成了大量精良的 Lua 库、第三方模块以及大多数的依赖项。用于方便地搭建能够处理超高并发、扩展性极高的网络应用。&lt;br&gt;&lt;br&gt;OpenResty 通过汇聚各种设计精良的 Nginx 模块（主要由 OpenResty 团队自主开发），从而将 Nginx 有效地变成一个强大的通用 Web 应用平台。这样，Web 开发人员和系统工程师可以使用 Lua 脚本语言调动 Nginx 支持的各种 C 以及 Lua 模块，快速构造出足以胜任 10K 乃至 1000K 以上单机并发连接的高性能 Web 应用系统。&lt;br&gt;&lt;br&gt;OpenResty 的目标是让你的Web服务直接跑在 Nginx 服务内部，充分利用 Nginx 的非阻塞 I/O 模型，不仅仅对 HTTP 客户端请求,甚至于对远程后端诸如 MySQL、PostgreSQL、Memcached 以及 Redis 等都进行一致的高性能响应。&lt;br&gt;&lt;br&gt;参考 &lt;a tiddlylink=&quot;Components&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Components&quot; href=&quot;null#Components&quot; class=&quot;externalLink null&quot;&gt;组件&lt;/a&gt; 可以知道 OpenResty 中包含了多少软件。&lt;br&gt;&lt;br&gt;参考 &lt;a tiddlylink=&quot;GettingStarted&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#GettingStarted&quot; href=&quot;null#GettingStarted&quot; class=&quot;externalLink null&quot;&gt;上路&lt;/a&gt; 学习如何从最简单的 hello world 开始使用 OpenResty 开发 HTTP 业务，或前往  &lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;下载&lt;/a&gt; 直接获取 OpenResty 的源代码包开始体验。</description>
 <link>null#OpenResty</link>
-<pubDate>Wed, 30 Dec 2015 05:44:36 GMT</pubDate>
+<pubDate>Wed, 30 Dec 2015 05:50:33 GMT</pubDate>
 
 </item>
 <item>
