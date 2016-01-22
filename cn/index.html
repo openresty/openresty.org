@@ -3160,8 +3160,30 @@ See ChangeLog1007007 for change log for OpenResty 1.7.7.x.</pre>
 ** feature: fixed compilation errors with nginx 1.9.1+. thanks Vadim A. ~Misbakh-Soloviov for the original patch.
 See ChangeLog1007010 for change log for OpenResty 1.7.10.x.</pre>
 </div>
-<div title="ChangeLog1009007" creator="YichunZhang" modifier="YichunZhang" created="201512250528" changecount="1">
+<div title="ChangeLog1009007" creator="YichunZhang" modifier="YichunZhang" created="201512250528" modified="201601220405" changecount="2">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Version 1.9.7.2 - 21 January 2016
+* feature: applied the [[ssl_cert_cb_yield patch|http://mailman.nginx.org/pipermail/nginx-devel/2016-January/007748.html]] to the bundled version of the NGINX core to allow yielding in ~OpenSSL's [[SSL_CTX_set_cert_cb()|https://www.openssl.org/docs/manmaster/ssl/SSL_set_cert_cb.html]] callbacks (needed by LuaNginxModule's [[ssl_certificate_by_lua*|https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block]] directives, for example).
+* bugfix: the {{{./configure}}} options {{{--with-dtrace-probes}}} and {{{--with-stream}}} did not work together and led to compilation failures.
+* upgraded LuaNginxModule to 0.10.0.
+** feature: better SSL/TLS handshake control.
+*** implemented the [[ssl_certificate_by_lua_block|https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block]] and [[ssl_certifcate_by_lua_file|https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_file]] directives for controlling the NGINX downstream SSL handshake dynamically with Lua. thanks Piotr Sikora, Zi Lin, yejingx, and others for the help.
+*** added an optional {{{send_status_req}}} argument to stream-typed cosockets' [[sslhandshake()|https://github.com/openresty/lua-nginx-module#tcpsocksslhandshake]] method to send OCSP status request.
+** feature: implemented the [[balancer_by_lua_block|https://github.com/openresty/lua-nginx-module#balancer_by_lua_block]] and [[balancer_by_lua_file|https://github.com/openresty/lua-nginx-module#balancer_by_lua_file]] directives to allow NGINX load balancers written in Lua. thanks Shuxin Yang, Dejiang Zhu, Brandon Beveridge, and others for the help.
+** feature: added pure C API for the ngx.semaphore Lua module implemented in [[lua-resty-core|https://github.com/openresty/lua-resty-core#readme]]. this [[ngx.semaphore|https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md]] API provides efficient synchronization among &quot;light threads&quot; across request/context boundaries. thanks Weixie Cui and Dejiang Zhu from Kugou Inc. for contributing this feature. also thanks Kugou Inc. for supporting this work.
+** doc: made clear the [[ngx.ctx|https://github.com/openresty/lua-nginx-module#ngxctx]] scoping issues. thanks Robert Paprocki for asking.
+** doc: typo fix for the contexts of [[ngx.worker.id|https://github.com/openresty/lua-nginx-module#ngxworkerid]]. thanks ~RocFang for the patch.
+* upgraded LuaRestyCoreLibrary to 0.1.4.
+** feature: added new Lua modules [[ngx.ssl|https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#readme]] and [[ngx.ocsp|https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ocsp.md#readme]]. these two modules provide Lua API mostly useful in the context of LuaNginxModule's [[ssl_certificiate_by_lua*|https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block]]. thanks Piotr Sikora, Zi Lin, yejingx, Aapo Talvensaari, and others for the help.
+** feature: implemented the [[ngx.balancer|https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/balancer.md#readme]] Lua module to support dynamic nginx upstream balancers written in Lua. the [[ngx.balancer|https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/balancer.md#readme]] module is expected to be used in LuaNginxModule's [[balancer_by_lua*|https://github.com/openresty/lua-nginx-module#balancer_by_lua_block]] context. thanks Shuxin Yang, Aapo Talvensaari, and Guanlan Dai for the help.
+** feature: feature: added new Lua module, [[ngx.semaphore|https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md#readme]]. this [[ngx.semaphore|https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md#readme]] API provides efficient synchronization among &quot;light threads&quot; across request/context boundaries. thanks Weixie Cui and Dejiang Zhu from Kugou Inc. for contributing this feature. Also thanks Kugou Inc. for supporting this work.
+* upgraded LuaJIT to v2.1-20160108: https://github.com/openresty/luajit2/tags
+** imported Mike Pall's latest changes:
+*** FFI: properly unsink non-standard cdata allocations.
+*** ARM: added external frame unwinding. thanks to Nick Zavaritsky.
+*** MIPS soft-float support. contributed by Djordje Kovacevic and Stefan Pejic from ~RT-RK.com. sponsored by Cisco Systems, Inc.
+**** added soft-float support to interpreter.
+**** added soft-float FFI support.
 ! Version 1.9.7.1 - 25 December 2015
 * upgraded the Nginx core to 1.9.7.
 ** see the changes here: http://nginx.org/en/CHANGES
@@ -3488,13 +3510,14 @@ This module is enabled by default and could be disabled by passing {{{--without-
 
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201512250530" tags="Resources" changecount="191">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201601220405" tags="Resources" changecount="192">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 最新版
-* [[ngx_openresty-1.9.7.1.tar.gz|https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 2015年12月25日
+* [[ngx_openresty-1.9.7.2.tar.gz|https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 2016年1月21日
 !! 历史遗留版
 有的时候我们可能会需要较老的版本：
+* [[ngx_openresty-1.9.7.1.tar.gz|https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 2015年12月25日
 * [[ngx_openresty-1.9.3.2.tar.gz|https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009003]] - 2015年11月23日
 * [[ngx_openresty-1.9.3.1.tar.gz|https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1009003]] - 2015年8月12日
 * [[ngx_openresty-1.7.10.2.tar.gz|https://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz]] &amp;nbsp; 3.3MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1007010]] - 2015年
@@ -3783,7 +3806,7 @@ Use cases: http://forum.nginx.org/read.php?2,206658,207119
 Project page: https://github.com/calio/iconv-nginx-module
 </pre>
 </div>
-<div title="Installation" creator="YichunZhang" modifier="YourName" created="201106210440" modified="201112121504" changecount="51">
+<div title="Installation" creator="YichunZhang" modifier="YichunZhang" created="201106210440" modified="201601220425" changecount="52">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 如果您还没有下载 OpenResty 的源码包l, 请到 [[Download]] 页下载。
 
@@ -3802,19 +3825,30 @@ make install
 !!Debian 和 Ubuntu 用户
 推荐您使用 apt-get安装以下的开发库:
 {{{
-apt-get install libreadline-dev libpcre3-dev libssl-dev perl
+apt-get install libreadline-dev libncurses5-dev libpcre3-dev \
+    libssl-dev perl make build-essential
 }}}
 !!Fedora 和 ~RedHat 用户
 推荐您使用yum安装以下的开发库:
 {{{
-yum install readline-devel pcre-devel openssl-devel
+yum install readline-devel pcre-devel openssl-devel gcc
 }}}
 !!Mac OS X (Darwin) 用户
 推荐您使用一些软件管理工具先安装PCRE, 比如说 [[Homebrew|http://mxcl.github.com/homebrew/]]:
 {{{
-brew install pcre
+brew update
+brew install pcre openssl
 }}}
-当然了，您也可以直接通过代码安装 PCRE  :)
+当然了，您也可以直接通过代码安装 PCRE 和 ~OpenSSL.
+
+安装好 PCRE 和 ~OpenSSL 之后，可以使用下面的命令进行安装：
+{{{
+$ ./configure \
+   --with-cc-opt=&quot;-I/usr/local/opt/openssl/include/ -I/usr/local/opt/pcre/include/&quot; \
+   --with-ld-opt=&quot;-L/usr/local/opt/openssl/lib/ -L/usr/local/opt/pcre/lib/&quot; \
+   -j8
+}}}
+假设 hombrew 把库都安装到 {{{/usr/local/opt/}}} 目录下面。
 !!~FreeBSD 用户
 您需要安装以下的工具:
 * devel/gmake
