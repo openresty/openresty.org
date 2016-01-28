@@ -5,13 +5,13 @@
 <description>Scalable Web Platform based on NGINX</description>
 <language>en</language>
 <copyright>Copyright 2016 YichunZhang</copyright>
-<pubDate>Fri, 22 Jan 2016 04:24:31 GMT</pubDate>
-<lastBuildDate>Fri, 22 Jan 2016 04:24:31 GMT</lastBuildDate>
+<pubDate>Thu, 28 Jan 2016 19:41:14 GMT</pubDate>
+<lastBuildDate>Thu, 28 Jan 2016 19:41:14 GMT</lastBuildDate>
 <docs>http://blogs.law.harvard.edu/tech/rss</docs>
 <generator>TiddlyWiki 2.6.2</generator>
 <item>
 <title>Installation</title>
-<description>&lt;a tiddler=&quot;Installation&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;If you haven't downloaded the &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; source code tarball, please go to the &lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;Download&lt;/a&gt; page first.&lt;br&gt;&lt;br&gt;Basically, building and installing &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; is as simple as&lt;br&gt;&lt;pre&gt;tar xvf ngx_openresty-VERSION.tar.gz
+<description>&lt;a tiddler=&quot;Installation&quot; commandname=&quot;permalink&quot; class=&quot;button command_permalink&quot; title=&quot;Permalink for this tiddler&quot; href=&quot;javascript:;&quot;&gt;permalink&lt;/a&gt;&lt;br&gt;If you haven't downloaded the &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; source code tarball, please go to the &lt;a tiddlylink=&quot;Download&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#Download&quot; href=&quot;null#Download&quot; class=&quot;externalLink null&quot;&gt;Download&lt;/a&gt; page first.&lt;br&gt;&lt;br&gt;(If you are on Windows, then you should check out &lt;a target=&quot;_blank&quot; title=&quot;External link to https://github.com/openresty/openresty/blob/master/doc/README-win32.md#readme&quot; href=&quot;https://github.com/openresty/openresty/blob/master/doc/README-win32.md#readme&quot; class=&quot;externalLink&quot;&gt;this documentation&lt;/a&gt; instead.)&lt;br&gt;&lt;br&gt;Basically, building and installing &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; is as simple as&lt;br&gt;&lt;pre&gt;tar xvf ngx_openresty-VERSION.tar.gz
 cd ngx_openresty-VERSION/
 ./configure
 make
@@ -38,11 +38,26 @@ brew install pcre openssl
 &lt;/pre&gt;All of the standard Nginx configure file options can be used here, including &lt;code&gt;--add-module=PATH&lt;/code&gt; for adding your own 3rd-party Nginx C modules. Try &lt;code&gt;./configure --help&lt;/code&gt; to see more options available.&lt;br&gt;&lt;br&gt;Errors in running the ./configure script can be found in the file &lt;code&gt;build/nginx-VERSION/objs/autoconf.err&lt;/code&gt; where &lt;code&gt;VERSION&lt;/code&gt; should be replaced by a concrete version number of &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt;, like &lt;code&gt;0.8.54.6&lt;/code&gt;.&lt;br&gt;&lt;h3&gt;Notes for Solaris users&lt;/h3&gt;For Solaris, it's common to install libraries like OpenSSL to &lt;code&gt;/lib&lt;/code&gt;, so when it complaints about missing OpenSSL and you have indeed already installed it, specify the &lt;code&gt;--with-ld-opt='-L/lib'&lt;/code&gt; option.&lt;br&gt;&lt;h2&gt;make&lt;/h2&gt;Now you can compile everything up using the command&lt;br&gt;&lt;pre&gt;make
 &lt;/pre&gt;If your machine has multiple cores and your &lt;code&gt;make&lt;/code&gt; supports the jobserver feature, you can compile things in parallel like this:&lt;br&gt;&lt;pre&gt;make -j2
 &lt;/pre&gt;assuming you have 2 CPU cores.&lt;br&gt;&lt;h2&gt;make install&lt;/h2&gt;If all the previous steps go without problems, you can install &lt;a tiddlylink=&quot;OpenResty&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenResty&quot; href=&quot;null#OpenResty&quot; class=&quot;externalLink null&quot;&gt;OpenResty&lt;/a&gt; into your system by typing the command&lt;br&gt;&lt;pre&gt;make install
-&lt;/pre&gt;On Linux, it often requires &lt;code&gt;sudo&lt;/code&gt; to gain root access.&lt;br&gt;</description>
+&lt;/pre&gt;On Linux, it often requires &lt;code&gt;sudo&lt;/code&gt; to gain root access.&lt;br&gt;&lt;br&gt;If you prefer building the &lt;a tiddlylink=&quot;OpenSSL&quot; refresh=&quot;link&quot; target=&quot;_blank&quot; title=&quot;External link to null#OpenSSL&quot; href=&quot;null#OpenSSL&quot; class=&quot;externalLink null&quot;&gt;OpenSSL&lt;/a&gt; and PCRE dependencies from their source tarballs, then you could follow the commands below (you may want to change the version number accordingly):&lt;br&gt;&lt;br&gt;&lt;pre&gt;wget https://www.openssl.org/source/openssl-1.0.2f.tar.gz
+tar -zvxf openssl-1.0.2f.tar.gz
+
+wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz
+tar -xvf pcre-8.38.tar.gz
+
+wget https://openresty.org/download/openresty-1.9.7.3rc1.tar.gz
+tar -zxvf openresty-1.9.7.3rc1.tar.gz
+cd openresty-1.9.7.3rc1/
+
+# assuming your have 4 spare logical CPU cores
+./configure --with-openssl=../openssl-1.0.2f \
+                 --with-pcre=../pcre-8.38 -j4
+make -j4
+sudo make install
+&lt;/pre&gt;</description>
 <category>doc</category>
 <category>install</category>
 <link>null#Installation</link>
-<pubDate>Fri, 22 Jan 2016 04:24:31 GMT</pubDate>
+<pubDate>Thu, 28 Jan 2016 19:41:14 GMT</pubDate>
 
 </item>
 <item>

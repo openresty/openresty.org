@@ -4178,9 +4178,11 @@ Use cases: http://forum.nginx.org/read.php?2,206658,207119
 Project page: https://github.com/calio/iconv-nginx-module
 </pre>
 </div>
-<div title="Installation" creator="YichunZhang" modifier="YichunZhang" created="201106210440" modified="201601220424" tags="doc install" changecount="76">
+<div title="Installation" creator="YichunZhang" modifier="YichunZhang" created="201106210440" modified="201601281941" tags="doc install" changecount="82">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 If you haven't downloaded the OpenResty source code tarball, please go to the [[Download]] page first.
+
+(If you are on Windows, then you should check out [[this documentation|https://github.com/openresty/openresty/blob/master/doc/README-win32.md#readme]] instead.)
 
 Basically, building and installing OpenResty is as simple as
 {{{
@@ -4285,6 +4287,26 @@ If all the previous steps go without problems, you can install OpenResty into yo
 make install
 }}}
 On Linux, it often requires {{{sudo}}} to gain root access.
+
+If you prefer building the OpenSSL and PCRE dependencies from their source tarballs, then you could follow the commands below (you may want to change the version number accordingly):
+
+{{{
+wget https://www.openssl.org/source/openssl-1.0.2f.tar.gz
+tar -zvxf openssl-1.0.2f.tar.gz
+
+wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz
+tar -xvf pcre-8.38.tar.gz
+
+wget https://openresty.org/download/openresty-1.9.7.3rc1.tar.gz
+tar -zxvf openresty-1.9.7.3rc1.tar.gz
+cd openresty-1.9.7.3rc1/
+
+# assuming your have 4 spare logical CPU cores
+./configure --with-openssl=../openssl-1.0.2f \
+                 --with-pcre=../pcre-8.38 -j4
+make -j4
+sudo make install
+}}}
 </pre>
 </div>
 <div title="LuaCjsonLibrary" creator="YichunZhang" modifier="YichunZhang" created="201108110208" modified="201202290727" changecount="2">
