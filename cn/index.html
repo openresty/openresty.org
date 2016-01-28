@@ -3160,8 +3160,11 @@ See ChangeLog1007007 for change log for OpenResty 1.7.7.x.</pre>
 ** feature: fixed compilation errors with nginx 1.9.1+. thanks Vadim A. ~Misbakh-Soloviov for the original patch.
 See ChangeLog1007010 for change log for OpenResty 1.7.10.x.</pre>
 </div>
-<div title="ChangeLog1009007" creator="YichunZhang" modifier="YichunZhang" created="201512250528" modified="201601220405" changecount="2">
+<div title="ChangeLog1009007" creator="YichunZhang" modifier="YichunZhang" created="201512250528" modified="201601282034" changecount="3">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Version 1.9.7.3 - 28 January 2016
+* bugfix: backported the security fixes in NGINX core's DNS resolver for ~CVE-2016-0742, ~CVE-2016-0746, and ~CVE-2016-0747. See  http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html for more details.
+* change: renamed the source distribution name from {{{ngx_openresty}}} to just {{{openresty}}}.
 ! Version 1.9.7.2 - 21 January 2016
 * feature: applied the [[ssl_cert_cb_yield patch|http://mailman.nginx.org/pipermail/nginx-devel/2016-January/007748.html]] to the bundled version of the NGINX core to allow yielding in ~OpenSSL's [[SSL_CTX_set_cert_cb()|https://www.openssl.org/docs/manmaster/ssl/SSL_set_cert_cb.html]] callbacks (needed by LuaNginxModule's [[ssl_certificate_by_lua*|https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block]] directives, for example).
 * bugfix: the {{{./configure}}} options {{{--with-dtrace-probes}}} and {{{--with-stream}}} did not work together and led to compilation failures.
@@ -3510,13 +3513,14 @@ This module is enabled by default and could be disabled by passing {{{--without-
 
 </pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201601220405" tags="Resources" changecount="192">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201601282034" tags="Resources" changecount="193">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 !发布
 !! 最新版
-* [[ngx_openresty-1.9.7.2.tar.gz|https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 2016年1月21日
+* [[openresty-1.9.7.3.tar.gz|https://openresty.org/download/openresty-1.9.7.3.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/openresty-1.9.7.3.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/openresty-1.9.7.3-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/openresty-1.9.7.3-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 2016年1月28日
 !! 历史遗留版
 有的时候我们可能会需要较老的版本：
+* [[ngx_openresty-1.9.7.2.tar.gz|https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 2016年1月21日
 * [[ngx_openresty-1.9.7.1.tar.gz|https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 2015年12月25日
 * [[ngx_openresty-1.9.3.2.tar.gz|https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009003]] - 2015年11月23日
 * [[ngx_openresty-1.9.3.1.tar.gz|https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1009003]] - 2015年8月12日

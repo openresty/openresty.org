@@ -3478,8 +3478,11 @@ See ChangeLog1007007 for change log for OpenResty 1.7.7.x.</pre>
 ** feature: fixed compilation errors with nginx 1.9.1+. thanks Vadim A. ~Misbakh-Soloviov for the original patch.
 See ChangeLog1007010 for change log for OpenResty 1.7.10.x.</pre>
 </div>
-<div title="ChangeLog1009007" creator="YichunZhang" modifier="YichunZhang" created="201512200018" modified="201601220253" changecount="35">
+<div title="ChangeLog1009007" creator="YichunZhang" modifier="YichunZhang" created="201512200018" modified="201601282034" changecount="39">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Version 1.9.7.3 - 28 January 2016
+* bugfix: backported the security fixes in NGINX core's DNS resolver for ~CVE-2016-0742, ~CVE-2016-0746, and ~CVE-2016-0747. See  http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html for more details.
+* change: renamed the source distribution name from {{{ngx_openresty}}} to just {{{openresty}}}.
 ! Version 1.9.7.2 - 21 January 2016
 * feature: applied the [[ssl_cert_cb_yield patch|http://mailman.nginx.org/pipermail/nginx-devel/2016-January/007748.html]] to the bundled version of the NGINX core to allow yielding in ~OpenSSL's [[SSL_CTX_set_cert_cb()|https://www.openssl.org/docs/manmaster/ssl/SSL_set_cert_cb.html]] callbacks (needed by LuaNginxModule's [[ssl_certificate_by_lua*|https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block]] directives, for example).
 * bugfix: the {{{./configure}}} options {{{--with-dtrace-probes}}} and {{{--with-stream}}} did not work together and led to compilation failures.
@@ -3858,14 +3861,15 @@ Donors donating more than 1000 USD are listed here to express our appreciation. 
 &lt;img src=&quot;kugou-music.jpg&quot;&gt;
 &lt;/html&gt;</pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201601220254" tags="Resources" changecount="327">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201601282026" tags="Resources" changecount="329">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 You can download the latest release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Lastest release
-* [[ngx_openresty-1.9.7.2.tar.gz|https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 21 January 2016
+* [[openresty-1.9.7.3.tar.gz|https://openresty.org/download/openresty-1.9.7.3.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/openresty-1.9.7.3.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/openresty-1.9.7.3-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/openresty-1.9.7.3-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 28 January 2016
 !! Legacy releases
 Sometimes, users may want to download old releases.
+* [[ngx_openresty-1.9.7.2.tar.gz|https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 21 January 2016
 * [[ngx_openresty-1.9.7.1.tar.gz|https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 25 December 2015
 * [[ngx_openresty-1.9.3.2.tar.gz|https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009003]] - 23 November 2015
 * [[ngx_openresty-1.9.3.1.tar.gz|https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz.asc]] &amp;nbsp; [[Changes|ChangeLog1009003]] - 12 August 2015
@@ -4178,7 +4182,7 @@ Use cases: http://forum.nginx.org/read.php?2,206658,207119
 Project page: https://github.com/calio/iconv-nginx-module
 </pre>
 </div>
-<div title="Installation" creator="YichunZhang" modifier="YichunZhang" created="201106210440" modified="201601281941" tags="doc install" changecount="82">
+<div title="Installation" creator="YichunZhang" modifier="YichunZhang" created="201106210440" modified="201601282044" tags="doc install" changecount="84">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 If you haven't downloaded the OpenResty source code tarball, please go to the [[Download]] page first.
 
@@ -4288,7 +4292,7 @@ make install
 }}}
 On Linux, it often requires {{{sudo}}} to gain root access.
 
-If you prefer building the OpenSSL and PCRE dependencies from their source tarballs, then you could follow the commands below (you may want to change the version number accordingly):
+If you prefer building the ~OpenSSL and PCRE dependencies from their source tarballs, then you could follow the commands below (you may want to change the version number accordingly):
 
 {{{
 wget https://www.openssl.org/source/openssl-1.0.2f.tar.gz
@@ -4297,9 +4301,9 @@ tar -zvxf openssl-1.0.2f.tar.gz
 wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz
 tar -xvf pcre-8.38.tar.gz
 
-wget https://openresty.org/download/openresty-1.9.7.3rc1.tar.gz
-tar -zxvf openresty-1.9.7.3rc1.tar.gz
-cd openresty-1.9.7.3rc1/
+wget https://openresty.org/download/openresty-1.9.7.3.tar.gz
+tar -zxvf openresty-1.9.7.3.tar.gz
+cd openresty-1.9.7.3/
 
 # assuming your have 4 spare logical CPU cores
 ./configure --with-openssl=../openssl-1.0.2f \
