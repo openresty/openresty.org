@@ -221,7 +221,7 @@ Same as the devel version 1.0.10.23.
     * bugfix: now we use `signed char` explicitly instead of the vague `char` type which could be unsigned by default in certain systems like PowerPC. thanks Dmitry E. Oboukhov.
 * upgraded [Memc Nginx Module](memc-nginx-module/) to 0.13rc2.
     * bugfix: now we use `signed char` explicitly instead of the vague `char` type which could be unsigned by default in certain systems like PowerPC. thanks Dmitry E. Oboukhov.
-* upgraded [Redis2 Nginx Module](redis2-nginx-module/) to 0.08rc2.
+* upgraded [Redis2 Nginx Module](redis-2-nginx-module/) to 0.08rc2.
     * bugfix: when `char` defaults to `unsigned char`, the Ragel-based Redis response parser could not accept non-ascci bytes. thanks Dmitry E. Oboukhov.
 
 #  Mainline Version 1.0.10.7 - 23 November 2011
@@ -242,4 +242,4 @@ Same as the devel version 1.0.10.23.
 #  Mainline Version 1.0.10.1 - 16 November 2011
 * upgraded the [Nginx](nginx/) core to 1.0.10.
 
-See [ChangeLog1000009](change-log1000009/) for change log for ngx_openresty 1.0.9.x.
+See [ChangeLog1000009](change-log-1000009/) for change log for ngx_openresty 1.0.9.x.

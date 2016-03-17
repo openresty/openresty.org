@@ -131,4 +131,4 @@ The following components are bundled by this release:
 #  Mainline Version 1.0.6.0rc1 - 4 September 2011
 * based on ngx_openresty 1.0.5.1, but with nginx core upgraded to nginx 1.0.6.
 
-See [ChangeLog1000005](change-log1000005/) for change log for ngx_openresty 1.0.5.x.
+See [ChangeLog1000005](change-log-1000005/) for change log for ngx_openresty 1.0.5.x.

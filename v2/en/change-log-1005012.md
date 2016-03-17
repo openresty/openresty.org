@@ -24,7 +24,7 @@
     * feature: allow non-scalar cdata to be compared for equality by address. (Mike Pall)
 * upgraded [Lua Upstream Nginx Module](lua-upstream-nginx-module/) to 0.02.
     * bugfix: upstream names did not support taking a port number. thanks magicleo for the report.
-* upgraded [Redis2 Nginx Module](redis2-nginx-module/) to 0.11.
+* upgraded [Redis2 Nginx Module](redis-2-nginx-module/) to 0.11.
     * change: now we always ignore client aborts for collaborations with other modules like [Srcache Nginx Module](srcache-nginx-module/). thanks akamatgi for the report.
 * upgraded [Lua Nginx Module](lua-nginx-module/) to 0.9.7.
     *  bugfix: when [lua_code_cache](https://github.com/openresty/lua-nginx-module#lua_code_cache) was off, [cosocket:setkeepalive()](https://github.com/openresty/lua-nginx-module#tcpsocksetkeepalive) might lead to segmentation faults. thanks Kelvin Peng for the report.
@@ -45,4 +45,4 @@
     * bugfix: prevented using cdata directly as table keys.
 * upgraded [Lua Resty String Library](lua-resty-string-library/) to 0.09.
     * bugfix: avoided using the "module" builtin function to define lua modules. thanks lhmwzy for the original patch.
-See [Change Log1005011](change-log1005011/) for change log for [OpenResty](openresty/) 1.5.11.x.
+See [Change Log1005011](change-log-1005011/) for change log for [OpenResty](openresty/) 1.5.11.x.

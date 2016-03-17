@@ -65,4 +65,4 @@
 * bugfix: `./configure --without-lua_resty_dns` did not work as declared. thanks Vitaly for the report.
 * bugfix: use `cc` as the default C compiler for [LuaJIT](luajit/) and Lua C libraries because modern FreeBSD 10 has no gcc by default and its clang is already featureful enough to compile everything. thanks Stefan Parvu for the suggestion.
 * change: `./configure --with-debug` now also passes the extra C compiler options `-DNGX_LUA_USE_ASSERT -DNGX_LUA_ABORT_AT_PANIC` to the [Lua Nginx Module](lua-nginx-module/) build.
-See [Change Log1007000](change-log1007000/) for change log for [OpenResty](openresty/) 1.7.0.x.
+See [Change Log1007000](change-log-1007000/) for change log for [OpenResty](openresty/) 1.7.0.x.

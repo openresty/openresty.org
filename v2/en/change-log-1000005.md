@@ -170,4 +170,4 @@ The following components are bundled by this release:
 #  Mainline Version 1.0.5.0rc1 - 9 August 2011
 * based on ngx_openresty 1.0.4.2, but with nginx core upgraded to nginx 1.0.5.
 
-See [ChangeLog1000004](change-log1000004/) for change log for ngx_openresty 1.0.4.x.
+See [ChangeLog1000004](change-log-1000004/) for change log for ngx_openresty 1.0.4.x.

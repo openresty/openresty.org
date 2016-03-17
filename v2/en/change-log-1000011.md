@@ -83,7 +83,7 @@ Same as the devel release 1.0.11.27.
     * docs: documented the max concurrent subrequest count limitation and max error log line size limit.
 
 #  Mainline Version 1.0.11.19 - 1 March 2012
-* upgraded [Redis2 Nginx Module](redis2-nginx-module/) to 0.08rc4.
+* upgraded [Redis2 Nginx Module](redis-2-nginx-module/) to 0.08rc4.
     * bugfix: redis "nil multi bulk replies" did not parse at all. thanks 郭颖 for reporting this issue.
 * upgraded [Lua Redis Parser Library](lua-redis-parser-library/) to 0.09rc7.
     * bugfix: redis "nil multi bulk replies" did not parse at all. thanks 郭颖 for reporting this issue.
@@ -104,7 +104,7 @@ Same as the devel release 1.0.11.27.
 #  Mainline Version 1.0.11.15 - 24 February 2012
 * now we enable the `-DLUAJIT_USE_VALGRIND -DLUA_USE_APICHECK -DLUA_USE_ASSERT` flags for [LuaJIT](luajit/) when the `--with-debug` option is specified.
 * apply the [max_subrequests patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.11-max_subrequests.patch) to allow the `NGX_HTTP_MAX_SUBREQUESTS` macro to be overridden from the outside and adjusted the default value from 50 to 100 because 50 is a little too conservative.
-* upgraded [Xss Nginx Module](xss-nginx-module/) to 0.03rc9, [Rds Csv Nginx Module](rds-csv-nginx-module/) to 0.05rc1, and [Redis2 Nginx Module](redis2-nginx-module/) to 0.08rc3, allowing enabling `DDEBUG=1` globally.
+* upgraded [Xss Nginx Module](xss-nginx-module/) to 0.03rc9, [Rds Csv Nginx Module](rds-csv-nginx-module/) to 0.05rc1, and [Redis2 Nginx Module](redis-2-nginx-module/) to 0.08rc3, allowing enabling `DDEBUG=1` globally.
 * upgraded [Iconv Nginx Module](iconv-nginx-module/) to 0.10rc7.
     * bugfix: enabling `DDEBUG=1` globally lead to compilation errors.
     * bugfix: could not work with HTTP 1.0 requests.
@@ -167,4 +167,4 @@ Same as the devel release 1.0.11.27.
     * bugfix: Fix compatibility with PostgreSQL 9.x.
     * bugfix: Fix compatibility with nginx-1.1.4+.
 
-See [Change Log1000010](change-log1000010/) for change log for ngx_openresty 1.0.10.x.
+See [Change Log1000010](change-log-1000010/) for change log for ngx_openresty 1.0.10.x.

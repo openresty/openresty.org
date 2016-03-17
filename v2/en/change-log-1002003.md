@@ -104,7 +104,7 @@ The following components are bundled:
     * bugfix: [srcache_fetch](http://wiki.nginx.org/HttpSRCacheModule#srcache_fetch) would use truncated responses from [Memc Nginx Module](memc-nginx-module/) or other upstream modules. this usually happened when the upstream read timer was expired or the upstream prematurely closed the connection. this fix also requires the [nonbuffered-upsteram-truncation patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-nonbuffered-upstream-truncation.patch) to cancel a limitation in the [Nginx](nginx/) core. thanks Bryan Alger for reporting the issue.
     * bugfix: the main request response was not discarded by [srcache_store](http://wiki.nginx.org/HttpSRCacheModule#srcache_store) when there was an error in the last minute (like a read-timeout error or premature connection close happens when `ngx_http_upstream` reads the upstream response body). this fix also requires the [nonbuffered-upstream-truncation patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-nonbuffered-upstream-truncation.patch) for the [Nginx](nginx/) core to cancel a limitation in `ngx_http_upstream`.
     * bugfix: the main request might prematurely terminate if the [srcache_store](http://wiki.nginx.org/HttpSRCacheModule#srcache_store) subrequest was finalized with error codes.
-* upgraded [Redis2 Nginx Module](redis2-nginx-module/) to 0.09.
+* upgraded [Redis2 Nginx Module](redis-2-nginx-module/) to 0.09.
     * bugfix: directives [redis2_query](http://wiki.nginx.org/HttpRedis2Module#redis2_query), [redis2_literal_raw_query](http://wiki.nginx.org/HttpRedis2Module#redis2_literal_raw_query), and [redis2_raw_queries](http://wiki.nginx.org/HttpRedis2Module#redis2_raw_queries) could not be inherited automatically by the `location if` blocks, resulting in the "no redis2 query specified or the query is empty" error. thanks Tomasz Prus for the patch.
 * feature: updated the [dtrace patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-dtrace.patch) to add new static probe `create-pool-done`.
 * feature: updated the [dtrace patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-dtrace.patch) to include new tapset functions `ngx_indent`, `ngx_http_subreq_depth`, and `ngx_http_req_parent`.
@@ -138,4 +138,4 @@ The following components are bundled:
 * added more dtrace static probes to the [Nginx](nginx/) core: `timer-add`, `timer-del`, and `timer-expire`.
 * added more [systemtap](http://sourceware.org/systemtap/) tapset functions: `ngx_chain_next`, `ngx_chain_writer_ctx_out`, `ngx_chain_dump`, and `ngx_iovec_dump`.
 
-See [Change Log1002001](change-log1002001/) for change log for [OpenResty](openresty/) 1.2.1.x.
+See [Change Log1002001](change-log-1002001/) for change log for [OpenResty](openresty/) 1.2.1.x.

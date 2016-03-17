@@ -153,4 +153,4 @@
         * Fix pairs() recording.
         * FFI: Fix ipairs() recording.
         * Drop marks from replayed instructions when sinking.
-See [Change Log1009003](change-log1009003/) for change log for [OpenResty](openresty/) 1.9.3.x.
+See [Change Log1009003](change-log-1009003/) for change log for [OpenResty](openresty/) 1.9.3.x.

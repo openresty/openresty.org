@@ -89,4 +89,4 @@
     * feature: added new boolean-value options "ssl" and "ssl_verify" to the [connect()](https://github.com/openresty/lua-resty-mysql#connect) method connecting to MySQL via SSL.
 * upgraded [Lua Cjson Library](lua-cjson-library/) to 2.1.0.2.
     * bugfix: the Makefile had a bug that overwrites the existing `cjson.so` file in place which could cause already running processes with this `.so` file loaded to crash. thanks ywsample for the report.
-See [Change Log1007002](change-log1007002/) for change log for [OpenResty](openresty/) 1.7.2.x.
+See [Change Log1007002](change-log-1007002/) for change log for [OpenResty](openresty/) 1.7.2.x.

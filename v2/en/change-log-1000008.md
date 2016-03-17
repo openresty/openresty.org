@@ -136,7 +136,7 @@
 * upgraded [Rds Csv Nginx Module](rds-csv-nginx-module/) to 0.04.
     * bugfix: fixed compatibility issues with nginx 1.1.4+.
     * optimization: now we only register our filters when `rds_csv` is actually used in `nginx.conf`.
-* upgraded [Redis2 Nginx Module](redis2-nginx-module/) to 0.08rc1.
+* upgraded [Redis2 Nginx Module](redis-2-nginx-module/) to 0.08rc1.
     * bugfix: fixed compatibility with nginx 1.1.4+.
 * upgraded [Drizzle Nginx Module](drizzle-nginx-module/) to 0.1.2rc2.
     * bugfix: fixed compatibility with nginx 1.1.4+
@@ -147,4 +147,4 @@
 * applied the patch for the variable-header-ignore-no-hash issue. see http://forum.nginx.org/read.php?29,216062 for details.
 * based on [OpenResty](openresty/) 1.0.6.22 and upgraded the [Nginx](nginx/) core to 1.0.8.
 
-See [ChangeLog1000006](change-log1000006/) for change log for ngx_openresty 1.0.6.x.
+See [ChangeLog1000006](change-log-1000006/) for change log for ngx_openresty 1.0.6.x.

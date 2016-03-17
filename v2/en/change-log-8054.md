@@ -107,7 +107,7 @@ upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx
 #  Release 0.8.54.6
 * Upgraded [DrizzleNginxModule](drizzle-nginx-module/) to 0.0.15rc10.
 * Upgraded [LuaNginxModule](lua-nginx-module/) to 0.1.6rc12.
-* Upgraded [Redis2NginxModule](redis2-nginx-module/) to 0.07rc2.
+* Upgraded [Redis2NginxModule](redis-2-nginx-module/) to 0.07rc2.
 
 #  Release 0.8.54.5
 * Upgraded [EchoNginxModule](echo-nginx-module/) to 0.36rc3.

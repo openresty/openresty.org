@@ -110,4 +110,4 @@
     * feature: added the "$location" variable, by Piotr Sikora.
 * upgraded [Set Misc Nginx Module](set-misc-nginx-module/) to 0.27.
     * bugfix: bugfix: fixed build failure when `--with-mail_ssl_module` is specified while `--with-http_ssl_module` is not. thanks Xiaochen Wang for the report.
-See [Change Log1007004](change-log1007004/) for change log for [OpenResty](openresty/) 1.7.4.x.
+See [Change Log1007004](change-log-1007004/) for change log for [OpenResty](openresty/) 1.7.4.x.

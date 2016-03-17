@@ -49,7 +49,7 @@ Before the 1.5.8.1 release, the standard Lua 5.1 interpreter is enabled by defau
 * [RdsCsvNginxModule](rds-csv-nginx-module/)
 * [RdsJsonNginxModule](rds-json-nginx-module/)
 * [RedisNginxModule](redis-nginx-module/)
-* [Redis2NginxModule](redis2-nginx-module/)
+* [Redis2NginxModule](redis-2-nginx-module/)
 * [RestyCLI](resty-cli/)
 * [SetMiscNginxModule](set-misc-nginx-module/)
 * [SrcacheNginxModule](srcache-nginx-module/)

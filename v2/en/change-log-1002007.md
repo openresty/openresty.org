@@ -101,7 +101,7 @@ The following components are bundled:
 * upgraded [Echo Nginx Module](echo-nginx-module/) to 0.44.
     * bugfix: [$echo_client_request_headers](http://wiki.nginx.org/HttpEchoModule#.24echo_client_request_headers) was evaluated to only the last part of the request header when "large header buffers" were used.
     * change: preserve the trailing `CR LF` at the end of the whole HTTP protocol header returned by [$echo_client_request_headers](http://wiki.nginx.org/HttpEchoModule#.24echo_client_request_headers).
-* upgraded [Redis2 Nginx Module](redis2-nginx-module/) to 0.10.
+* upgraded [Redis2 Nginx Module](redis-2-nginx-module/) to 0.10.
     * feature: allow use of the request body data in [Nginx](nginx/) variables for main requests by always reading the request body automatically; we used to always discard the request body just like the standard ngx_memcached module. thanks Ristona Hua for sharing this usage.
     * docs: updated the docs for the limitations on Redis pub/sub. thanks LazyZhu for pointing out the potential confusions.
     * docs: now we recommend [Lua Resty Redis Library](lua-resty-redis-library/) instead when being used with [Lua Nginx Module](lua-nginx-module/).
@@ -120,4 +120,4 @@ The following components are bundled:
 * upgraded [Lua Nginx Module](lua-nginx-module/) to 0.7.16.
     * optimize: removed the unsed `size` field and related computatins from the script engine for the `ngx.re` API.
     * optimize: saved a little memory in the script engine for the `ngx.re` API.
-See [Change Log1002006](change-log1002006/) for change log for [OpenResty](openresty/) 1.2.6.x.
+See [Change Log1002006](change-log-1002006/) for change log for [OpenResty](openresty/) 1.2.6.x.

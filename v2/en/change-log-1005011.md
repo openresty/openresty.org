@@ -62,4 +62,4 @@
     * bugfix: HEAD requests might result in response bodies.
 * upgraded [Echo Nginx Module](echo-nginx-module/) to 0.52.
     * bugfix: HEAD subrequests could still result in non-empty response bodies.
-See [Change Log1005008](change-log1005008/) for change log for [OpenResty](openresty/) 1.5.8.x.
+See [Change Log1005008](change-log-1005008/) for change log for [OpenResty](openresty/) 1.5.8.x.

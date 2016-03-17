@@ -65,4 +65,4 @@
     * bugfix: fixed the warnings from the Microsoft C compiler. thanks Edwin Cleton for the report.
 * upgraded [Srcache Nginx Module](srcache-nginx-module/) to 0.25.
     * feature: now the value specified in [srcache_store_skip](https://github.com/agentzh/srcache-nginx-module#srcache_store_skip) is evaluated and tested again right after the end of the response body data stream is seen. thanks Eldar Zaitov for the patch.
-See [Change Log1004003](change-log1004003/) for change log for [OpenResty](openresty/) 1.4.3.x.
+See [Change Log1004003](change-log-1004003/) for change log for [OpenResty](openresty/) 1.4.3.x.

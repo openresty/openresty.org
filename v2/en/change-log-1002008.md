@@ -91,4 +91,4 @@ The following components are bundled:
     * bugfix: fixed places where we should return `NGX_ERROR` instead of `NGX_HTTP_INTERNAL_SERVER_ERROR`.
 * feature: always enable debuginfo in the bundled [LuaJIT](luajit/) 2.0.1 build and Lua 5.1.5 build to support [Nginx Systemtap Toolkit](https://github.com/agentzh/nginx-systemtap-toolkit).
 * bugfix: no longer pass `-O0` to gcc when the `--with-debug` configure option is specified because gcc often generates bogus DWARF info when optimization is turned off.
-See [Change Log1002007](change-log1002007/) for change log for [OpenResty](openresty/) 1.2.7.x.
+See [Change Log1002007](change-log-1002007/) for change log for [OpenResty](openresty/) 1.2.7.x.

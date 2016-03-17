@@ -149,4 +149,4 @@ The following components are bundled:
     * docs: massive wording improvements from Dayo.
 * now we add [Srcache Nginx Module](srcache-nginx-module/) before both [Lua Nginx Module](lua-nginx-module/) and [Headers More Nginx Module](headers-more-nginx-module/) so that the former's output filter runs //after// those of the latter.
 
-See [Change Log1002003](change-log1002003/) for change log for [OpenResty](openresty/) 1.2.3.x.
+See [Change Log1002003](change-log-1002003/) for change log for [OpenResty](openresty/) 1.2.3.x.

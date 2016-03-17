@@ -181,4 +181,4 @@ hello
     * fixed a typo in error messages.
     * skipped parsing those column fields that we do not use (yet). this makes things noticeably faster.
 
-See [Change Log1000011](change-log1000011/) for change log for ngx_openresty 1.0.11.x.
+See [Change Log1000011](change-log-1000011/) for change log for ngx_openresty 1.0.11.x.

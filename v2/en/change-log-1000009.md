@@ -74,4 +74,4 @@
     * bugfix: fixed a serious memory leak reported by bearnard.
 * upgraded [Xss Nginx Module](xss-nginx-module/) to 0.03rc5.
     * bugfix: the callback argument value parser did not accept JavaScript identifier names started with underscores. thanks Sam Mulube.
-See [ChangeLog1000008](change-log1000008/) for change log for ngx_openresty 1.0.8.x.
+See [ChangeLog1000008](change-log-1000008/) for change log for ngx_openresty 1.0.8.x.

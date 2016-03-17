@@ -68,7 +68,7 @@
 * upgraded [Memc Nginx Module](memc-nginx-module/) to 0.16.
     * feature: fixed compilation failures with nginx 1.7.11+ configured with `--with-threads`.
     * bugfix: fixed clang warnings on "unused variables" in the Ragel generated source.
-* upgraded [Redis2 Nginx Module](redis2-nginx-module/) to 0.12.
+* upgraded [Redis2 Nginx Module](redis-2-nginx-module/) to 0.12.
     * feature: fixed compilation failures with nginx 1.7.11+ configured with `--with-threads`.
     * bugfix: fixed clang warnings on "unused variables" in the Ragel generated source.
     * bugfix: always set the response status code in case of bad statuses like 504. thanks Kaito Sys for the report.
@@ -135,4 +135,4 @@
     * bugfix: upon cache hits, we might let the nginx core's header filter module overwrite the `Location` response header's values like "/foo/bar" to the fully-qualified form (like "http://test.com/foo/bar"). thanks AlexClineBB for the report.
 * upgraded [Resty CLI](resty-cli/) to 0.02.
     * bugfix: we did not explicitly specify the pid file path, which may conflict with the default pid path if the user compiles nginx with the `--pid-path=PATH` ./configure option. thanks fancyrabbit for the report.
-See [Change Log1007007](change-log1007007/) for change log for [OpenResty](openresty/) 1.7.7.x.
+See [Change Log1007007](change-log-1007007/) for change log for [OpenResty](openresty/) 1.7.7.x.
