@@ -3478,8 +3478,70 @@ See ChangeLog1007007 for change log for OpenResty 1.7.7.x.</pre>
 ** feature: fixed compilation errors with nginx 1.9.1+. thanks Vadim A. ~Misbakh-Soloviov for the original patch.
 See ChangeLog1007010 for change log for OpenResty 1.7.10.x.</pre>
 </div>
-<div title="ChangeLog1009007" creator="YichunZhang" modifier="YichunZhang" created="201512200018" modified="201601282034" changecount="39">
+<div title="ChangeLog1009007" creator="YichunZhang" modifier="YichunZhang" created="201512200018" modified="201603170031" changecount="40">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
+! Version 1.9.7.4 - 16 March 2016
+* bugfix: {{{./configure}}}: use of relative paths like &quot;./nginx&quot; in {{{--prefix=PATH}}} led to compilation errors. thanks Tao Huang for the report.
+* upgraded LuaNginxModule to 0.10.2.
+** feature: the C implementation for set SSL private keys now  supports non-RSA private keys as well. thanks Alessandro Ghedini for the patch.
+** feature: [[ngx.log()|https://github.com/openresty/lua-nginx-module#ngxlog]] and [[print()|https://github.com/openresty/lua-nginx-module#print]] now accept Lua tables with the {{{__tostring}}} metamethod.
+** feature: added new API, [[ngx.config.subsystem|https://github.com/openresty/lua-nginx-module#ngxconfigsubsystem]], which always takes the Lua string value &quot;http&quot; in this module.
+** feature: added new API function [[ngx.socket.stream()|https://github.com/openresty/lua-nginx-module#ngxsocketstream]] which is an alias to [[ngx.socket.tcp()|https://github.com/openresty/lua-nginx-module#ngxsockettcp]].
+** feature: added HTTP 2.0 support to [[ngx.req.http_version()|https://github.com/openresty/lua-nginx-module#ngxreqhttp_version]].
+** feature: this module can now be built as a &quot;dynamic module&quot; with NGINX 1.9.11+ via the {{{--add-dynamic-module=PATH}}} option of {{{./configure}}}.
+** bugfix: [[balancer_by_lua*|https://github.com/openresty/lua-nginx-module#balancer_by_lua_block]] did not respect &quot;lua_code_cache off&quot;. thanks XI WANG for the report and Dejiang Zhu for the patch.
+** bugfix: hot loop might happen when [[balancer_by_lua*|https://github.com/openresty/lua-nginx-module#balancer_by_lua_block]] was used with the [[keepalive|http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive]] directive. thanks ~GhostZch for the report.
+** bugfix: [[balancer_by_lua*|https://github.com/openresty/lua-nginx-module#balancer_by_lua_block]] might crash the nginx worker when SSL (https) is used for upstream connections. thanks Alistair Wooldrige for the report.
+** bugfix: [[stream-typed cosockets|https://github.com/openresty/lua-nginx-module#ngxsockettcp]]: we did not set the &quot;error&quot; field of the {{{ngx_connection_t}}} object which MIGHT lead to socket leaks.
+** bugfix: avoided a potential memory issue when the request handler is aborted prematurely (via [[ngx.exit|https://github.com/openresty/lua-nginx-module#ngxexit]], for example) while a light thread is still waiting on [[ngx.flush(true)|https://github.com/openresty/lua-nginx-module#ngxflush]].
+** bugfix: we might not respond to client abort events when [[lua_check_client_abort|https://github.com/openresty/lua-nginx-module#lua_check_client_abort]] is on.
+** bugfix: fixed the compiler warning &quot;unused variable&quot; when compiling with nginx cores older than 1.7.5 (exclusive). thanks Marc Neudert for the patch.
+** bugfix: fixed compilation errors with ~LibreSSL by disabling [[ssl_certificiate_by_lua*|https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block]] and some [[ngx.ssl|https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md]] API functions that are not supported by ~LibreSSL. thanks George Liu and Bret for the reports.
+** bugfix: fixed compilation errors with nginx 1.9.11+. thanks Charles R. Portwood II and Tomas Kvasnicka for the reports.
+** bugfix: fixed compatibility issues with other nginx modules loaded as &quot;dynamic modules&quot; in NGINX 1.9.11+.
+** bugfix: SSL: set error message on {{{i2d_X509()}}} failure as well. thanks Alessandro Ghedini for the patch.
+** bugfix: SSL: remove leading white space from error messages. thanks Alessandro Ghedini for the patch.
+** optimize: use {{{lua_pushliteral()}}} for string literals. thanks Tatsuhiko Kubo for the patch.
+** change: unmatched submatch captures are now set to {{{false}}} instead of {{{nil}}} in the captures table (named captures are not affected). thanks Julien Desgats for the patch.
+** change: [[ngx.req.get_post_args|https://github.com/openresty/lua-nginx-module#ngxreqget_post_args]]: returns error message instead of raising an exception when request body is in temp file. thanks yejingx for the patch.
+** change: [[ngx.shared.DICT|https://github.com/openresty/lua-nginx-module#ngxshareddict]]: throws a Lua error when the {{{exptime}}} argument is invalid.
+** doc: documented that [[ngx.req.get_body_data()|https://github.com/openresty/lua-nginx-module#ngxreqget_body_data]] is available in the context of [[log_by_lua*|https://github.com/openresty/lua-nginx-module#log_by_lua]]. thanks ~YuanSheng Wang for the patch.
+** doc: added [[balancer_by_lua*|https://github.com/openresty/lua-nginx-module#balancer_by_lua_block]] and [[ssl_certificate_by_lua*|https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block]] to the context of some Lua API functions. thanks Dejiang Zhu for the patch.
+** doc: fixed the documentation of [[log_by_lua*|https://github.com/openresty/lua-nginx-module#log_by_lua]] which actually runs after nginx's access log handler.
+** doc: updated the documentation for [[ngx.req.discard_body()|https://github.com/openresty/lua-nginx-module#ngxreqdiscard_body]] to reflect recent changes. now ignoring request bodies indeed trigger discarding the body upon request finalization.
+** doc: updated the docs of [[ngx.get_phase()|https://github.com/openresty/lua-nginx-module#ngxget_phase]] for new Lua execution contexts. thanks Thibault Charbonnier for the patches.
+** doc: typo fix in sample configurations from othree.
+** doc: typo fix in sample configurations from Adam Malone.
+** doc: typo fix from Prayag Verma.
+** doc: typo fix from leemingtian.
+* upgraded LuaRestyCoreLibrary to 0.1.5.
+** optimize: [[ngx.ssl|https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md]]: removed unnecessary request checks from the [[priv_key_pem_to_der|https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#priv_key_pem_to_der]] and [[cert_pem_to_der|https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#cert_pem_to_der]] functions to allow them to be used in more contexts. thanks Tom Thorogood for the patch.
+** bugfix: [[resty.core.regex|https://github.com/openresty/lua-resty-core#restycoreregex]]: non-string values passed as string arguments might throw out Lua errors. thanks Robert Paprocki for the patch.
+** change: [[resty.core.shdict|https://github.com/openresty/lua-resty-core#restycoreshdict]]: throws out a Lua error when the exptime arg is invalid.
+** change: [[resty.core.regex|https://github.com/openresty/lua-resty-core#restycoreregex]]: unmatched submatch captures are set to {{{false}}} instead of {{{nil}}} in captures table. thanks Julien Desgats for the patch.
+** doc: typo fix from thefosk.
+** doc: typo fix from Anton Ovchinnikov.
+* upgraded LuaUpstreamNginxModule to 0.05.
+** feature: expose peer connection count as the &quot;conns&quot; Lua table field. thanks Justin Li for the patch.
+** feature: this module can now be built as a &quot;dynamic module&quot; with NGINX 1.9.11+ via the {{{--add-dynamic-module=PATH}}} option of {{{./configure}}}. thanks Hiroaki Nakamura for the original patch.
+** doc: fixes from Justin Li.
+* upgraded LuaRestyUpstreamHealthcheckLibrary to 0.04.
+** feature: added ~IPv6 address support in upstream peer names. thanks szelcsanyi for the patch.
+** feature: [[status_page()|https://github.com/openresty/lua-resty-upstream-healthcheck#status_page]]: now we mark those upstream blocks without any (live) health checkers so as to avoid potential confusions when the checker light threads were aborted due to some fatal errors.
+** refactor: various coding refactoring to improve code readability. thanks Thijs Schreijer and Dejiang Zhu for the patches.
+** optimize: minor Lua code improvements from Aapo Talvensaari.
+** doc: link fixes from Thijs Schreijer.
+** doc: fixed escaping issues in the configuration samples in the Synopsis section by migrating to the &quot;*_by_lua_block {}&quot; directives. thanks whatacold for the report.
+* upgraded LuaRestyDNSLibrary to 0.15.
+** feature: added reverse DNS utilities: [[reverse_query|https://github.com/openresty/lua-resty-dns#reverse_query]], [[arpa_str|https://github.com/openresty/lua-resty-dns#arpa_str]], and [[expand_ipv6_addr|https://github.com/openresty/lua-resty-dns#expand_ipv6_addr]]. thanks bjoe2k4 for the patch.
+* upgraded RestyCLI to 0.06.
+** feature: resty: added new options {{{--http-include=PATH}}} and {{{--main-include=PATH}}} to include user files in the auto-generated {{{nginx.conf}}} file. thanks Nils Nordman for the patch.
+* upgraded SetMiscNginxModule to 0.30.
+** feature: this module can now be compiled as a dynamic module with NGINX 1.9.11+ via the {{{--with-dynamic-module=PATH}}} option of {{{./configure}}}.
+** bugfix: fixed errors and warnings with C compilers without variadic macro support.
+* upgraded ArrayVarNginxModule to 0.05.
+** feature: this module can now be compiled as a dynamic module with NGINX 1.9.11+ via the {{{--with-dynamic-module=PATH}}} option of {{{./configure}}}.
+** bugfix: fixed errors and warnings with C compilers without variadic macro support.
 ! Version 1.9.7.3 - 28 January 2016
 * bugfix: backported the security fixes in NGINX core's DNS resolver for ~CVE-2016-0742, ~CVE-2016-0746, and ~CVE-2016-0747. See  http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html for more details.
 * change: renamed the source distribution name from {{{ngx_openresty}}} to just {{{openresty}}}.
@@ -3861,14 +3923,15 @@ Donors donating more than 1000 USD are listed here to express our appreciation. 
 &lt;img src=&quot;kugou-music.jpg&quot;&gt;
 &lt;/html&gt;</pre>
 </div>
-<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201601282026" tags="Resources" changecount="329">
+<div title="Download" creator="YichunZhang" modifier="YichunZhang" created="201106210425" modified="201603170223" tags="Resources" changecount="331">
 <pre>&lt;&lt;toolbar permalink&gt;&gt;
 You can download the latest release tarball below. After that, you can follow the instructions on the [[Installation]] page to build and install it.
 !Releases
 !! Lastest release
-* [[openresty-1.9.7.3.tar.gz|https://openresty.org/download/openresty-1.9.7.3.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/openresty-1.9.7.3.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/openresty-1.9.7.3-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/openresty-1.9.7.3-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 28 January 2016
+* [[openresty-1.9.7.4.tar.gz|https://openresty.org/download/openresty-1.9.7.4.tar.gz]] &amp;nbsp; 3.5MB &amp;nbsp; [[PGP|https://openresty.org/download/openresty-1.9.7.4.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/openresty-1.9.7.4-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/openresty-1.9.7.4-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 16 March 2016
 !! Legacy releases
 Sometimes, users may want to download old releases.
+* [[openresty-1.9.7.3.tar.gz|https://openresty.org/download/openresty-1.9.7.3.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/openresty-1.9.7.3.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/openresty-1.9.7.3-win32.zip]] &amp;nbsp; 
 * [[ngx_openresty-1.9.7.2.tar.gz|https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 21 January 2016
 * [[ngx_openresty-1.9.7.1.tar.gz|https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009007]] - 25 December 2015
 * [[ngx_openresty-1.9.3.2.tar.gz|https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz]] &amp;nbsp; 3.4MB &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz.asc]] &amp;nbsp; ([[Win32|https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip]] &amp;nbsp; [[PGP|https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip.asc]]) &amp;nbsp; [[Changes|ChangeLog1009003]] - 23 November 2015
