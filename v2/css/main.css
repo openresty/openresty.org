@@ -51,8 +51,8 @@ header[role="header"] form input[type=search]:focus, header[role="header"] form 
 /*=====================================================================================
   INTRO
 =======================================================================================*/
-#intro { background: #446d44 url(../images/bg-grid.png) top left; width: 100%; height: 260px; color: #f9fcf9; }
-#intro .text { width: 80%; height: 100%; min-width: 982px; margin: 0 auto; padding-right: 300px; box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; background: url(../images/media-server.png) bottom right no-repeat; padding-top: 50px; }
+#intro { background: #446d44 url(../images/bg-grid.png) top left; width: 100%; height: 180px; color: #f9fcf9; }
+#intro .text { width: 80%; height: 100%; min-width: 982px; margin: 0 auto; padding-right: 300px; box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; background: url(../images/media-server.png) top right no-repeat; padding-top: 35px; }
 #intro .text p { line-height: 28px; font-size: 20px; margin-bottom: 32px; }
 #intro .text p:last-child { margin-bottom: 0; }
 #intro .text p small { font-size: 16px; }
@@ -89,6 +89,7 @@ header[role="header"] form input[type=search]:focus, header[role="header"] form 
 .sidebar.sleft ul.buttons li a { -webkit-border-radius: 3px; -moz-border-radius: 3px; -o-border-radius: 3px; -khtml-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; padding-left: 46px; color: #fff; display: block; line-height: 18px; padding: 10px 10px 10px 46px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
 .sidebar.sleft ul.buttons li a.rss { background: #fd9f13 url(../images/ico-rss.png) 12px 50% no-repeat; }
 .sidebar.sleft ul.buttons li a.paypal { background: #006492 url(../images/ico-paypal.png) 12px 50% no-repeat; }
+.sidebar.sleft ul.buttons li .paypal { background: #006492 url(../images/ico-paypal.png) 12px 50% no-repeat; }
 .sidebar.sright { overflow: hidden; text-shadow: 0 1px 1px #fff; }
 .sidebar.sright .options { background: #f9fcf9; width: 100%; height: 88px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
 .sidebar.sright .options .first:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; font-size: 0; }
@@ -110,8 +111,8 @@ header[role="header"] form input[type=search]:focus, header[role="header"] form 
 .sidebar.sright .tabs .panes .pane > ul > li ul { padding-left: 10px; font-size: 14px; }
 .sidebar.sright .tabs .panes .pane > ul > li ul li { line-height: 24px; text-transform: none; }
 .sidebar.sright .tabs .panes .pane > ul > li ul li a { text-decoration: none; font-weight: bold; }
-.body p { margin-top: 20px; margin-bottom: 20px; }
-.body ul { padding-left: 2em; margin-top: 0.6em; margin-bottom: 0.6em; list-style: circle; }
-.body { margin: 2em; width: 70%; }
+.body p { margin-top: 20px; margin-bottom: 20px; margin-right: 4em; }
+.body ul { text-align: left; width: 80%; margin-left: 2em; margin-top: 0.6em; margin-bottom: 0.6em; list-style: circle; }
+.body { margin: 2em; width: 100%; }
 .body h1 { font-size: 150%; padding-top: 1em; padding-bottom: 0.1em;}
 .body h2 { font-size: 120%; padding-top: 1em; padding-bottom: 0.1em;}

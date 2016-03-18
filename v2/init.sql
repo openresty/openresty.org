@@ -1,6 +1,6 @@
 -- create user openresty with password 'speedtheweb';
--- grant all privileges on database openresty_org to openresty;
 -- create database openresty_org;
+-- grant all privileges on database openresty_org to openresty;
 
 drop table if exists posts cascade;
 

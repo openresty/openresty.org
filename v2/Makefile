@@ -2,6 +2,7 @@ nginx = nginx
 md2html = pandoc --from markdown_github --to html
 html_files := $(patsubst %.md,html/%.html,$(wildcard en/*.md cn/*.md))
 templates_lua = lua/openresty_org/view.lua
+tt2_files := $(wildcard templates/*.tt2)
 
 .DELETE_ON_ERRORS: $(templates_lua)
 
@@ -11,7 +12,7 @@ all: templates
 .PHONE: templates
 templates: $(templates_lua)
 
-$(templates_lua): templates/*.tt2
+$(templates_lua): $(tt2_files)
 	lemplate --compile $^ > $@
 
 .PHONE: run
@@ -32,11 +33,8 @@ html/%.html: %.md
 	mkdir -p html/en
 	$(md2html) $< --output $@
 
-.PHONE: data
-data: $(html_files)
-
 .PHONE: extract
-extract: data
+extract:
 	./extract.pl ../index.html en
 
 .PHONE: gendata

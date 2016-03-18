@@ -77,7 +77,7 @@ end
 function _M.get_home(id)
     local res = query_db("select title, html_body from posts where id = " .. id)
 
-    print("JSON: ", cjson.encode(res))
+    -- print("JSON: ", cjson.encode(res))
     if #res == 0 then
         ngx.log(ngx.ERR, "no home found")
         return ''
@@ -88,7 +88,7 @@ end
 function _M.get_post(id)
     local res = query_db("select title, modifier, modifier_link, created::date, modified::date, html_body from posts where id = " .. id)
 
-    print("JSON: ", cjson.encode(res))
+    -- print("JSON: ", cjson.encode(res))
     if #res == 0 then
         ngx.log(ngx.ERR, "no home found")
         return ''

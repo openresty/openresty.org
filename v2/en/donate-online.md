@@ -28,7 +28,7 @@ If you'd like to make a one-time small donation to [OpenResty](openresty.html), 
 <input type="hidden" name="item_name" value="OpenResty Donation (in USD)">
 <input type="hidden" name="currency_code" value="USD">
 <input type="hidden" name="amount" value="">
-<input type="image" src="/images/donate_button_paypal_01.gif" border="0" name="submit" alt="Donate with PayPal">
+<input type="image" src="/images/donate_paypal.gif" border="0" name="submit" alt="Donate with PayPal">
 </form>
 </html>
 

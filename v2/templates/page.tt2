@@ -33,11 +33,12 @@
 
 		<div class="sidebar sright">
 			<div class="options">
+                                <!--
 				<ul class="first">
 					<li><a href="#" class="close-all">close all</a></li>
 					<li><a href="#" class="permaview">permaview</a></li>
 					<li><a href="#" class="more-options">options</a></li>
-				</ul><!-- / first -->
+                                </ul> --> <!-- / first -->
 			</div><!-- options -->
 
 			<div class="tabs">
