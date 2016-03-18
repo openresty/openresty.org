@@ -28,4 +28,4 @@
 * [Samples](samples.html)
 * [User Survey](https://openresty.org/survey/)
 * [About](about.html)
-* [中文维基](cn/)
+* [中文站](/cn/)

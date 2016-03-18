@@ -42,7 +42,7 @@ gendata: html
 	./gen-data.pl en
 
 .PHONE: initdb
-initdb:
+initdb: gendata
 	psql -Uopenresty openresty_org -f init.sql
 
 .PHONE: html
