@@ -71,7 +71,7 @@
     * doc: fixed a wrong statement regarding `require()` in the "Lua Variable Scope" section. thanks Hungpu DU for the report.
     * doc: more clarification in the docs for the "res.truncated" flag returned by [ngx.location.capture()](https://github.com/openresty/lua-nginx-module#ngxlocationcapture). thanks Jon Keys for asking.
     * doc: added missing method name "get_keys" under "ngx.shared.DICT" and also fixed the method order. thanks George Bashi for the patch.
-    * doc: markdown: fixed the "Back to TOC" links for the sections ("[Nginx](nginx.html) API for Lua" and "Directives") with inlined TOC. thanks Pierre-Yves Gérardy and Simon Eskildsen for the reports.
+    * doc: markdown: fixed the "Back to TOC" links for the sections ("Nginx API for Lua" and "Directives") with inlined TOC. thanks Pierre-Yves Gérardy and Simon Eskildsen for the reports.
     * doc: improved the wording in the "Lua Coroutine Yielding/Resuming" section. thanks Hungpu DU for the report.
     * doc: improved the wording of the documentation for [ngx.req.clear_header()](https://github.com/openresty/lua-nginx-module#ngxreqclear_header) to prevent ambiguity. thanks Christophe-Marie Duquesne for the report.
 * upgraded [Lua Resty Core Library](lua-resty-core-library.html) to 0.0.9.

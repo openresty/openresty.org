@@ -15,19 +15,7 @@
 </head>
 <body>
 
-	
-	<header role="header">
-		<p class="site-name left">
-			<a href="./">OpenResty</a>
-			<small>A fast web app server by extending NGINX and LuaJIT</small>
-		</p><!-- / site-name -->
-
-		<form action="#" class="right">
-			<fieldset>
-				<input type="search" name="search" id="search" placeholder="Search OpenResty.org">
-			</fieldset>
-		</form>
-	</header>
+[% PROCESS 'header.tt2' %]
 
 	<div id="wrapper">
 		<div class="sidebar sleft">
@@ -35,10 +23,8 @@
 [% main_menu %]
 			</nav><!-- / nav -->
 
-			<ul class="buttons">
-				<li><a href="#" class="btn rss">RSS Feed</a></li>
-				<li><a href="#" class="btn paypal">Donate with PayPal</a></li>
-			</ul>
+[% PROCESS 'main-menu-buttons.tt2' %]
+
 		</div><!-- / sidebar left -->
 		
 		<section id="main">

@@ -1,0 +1,12 @@
+<header role="header">
+        <p class="site-name left">
+                <a href=".">OpenResty</a>
+                <small>Scalable Web Platform by Extending NGINX with Lua</small>
+        </p><!-- / site-name -->
+
+        <form action="#" class="right">
+                <fieldset>
+                        <input type="search" name="search" id="search" placeholder="Search OpenResty.org">
+                </fieldset>
+        </form>
+</header>

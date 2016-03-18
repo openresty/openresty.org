@@ -25,26 +25,20 @@ If you'd like to make a one-time small donation to [OpenResty](openresty.html), 
 <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 <input type="hidden" name="cmd" value="_xclick">
 <input type="hidden" name="business" value="agentzh@gmail.com">
-<input type="hidden" name="item_name" value="[OpenResty](openresty.html) Donation (in USD)">
+<input type="hidden" name="item_name" value="OpenResty Donation (in USD)">
 <input type="hidden" name="currency_code" value="USD">
 <input type="hidden" name="amount" value="">
-<input type="image" src="donate_button_paypal_01.gif" border="0" name="submit" alt="Donate with PayPal">
+<input type="image" src="/images/donate_button_paypal_01.gif" border="0" name="submit" alt="Donate with PayPal">
 </form>
 </html>
 
 
 #  Donate with AliPay (支付宝)
 
-If you're in China, it's usually more convenient to send donation is to send money via the [AliPay](http://www.alipay.com/) to my account `yichun0511@gmail.com` or just click the following button:
+If you're in China, it's usually more convenient to send donation is to send money via the [AliPay](http://www.alipay.com/) to my account `yichun0511@gmail.com` or just scan the following QR code in your AliPay cellphone app:
 
 <html>
-<form name="atool_alipay_img_form" style="padding-bottom: 0;border:none;" method="post" action="https://shenghuo.alipay.com/send/payment/fill.htm" target="_blank" accept-charset="GBK" onsubmit="document.charset='gbk';"><input type="hidden" value="yichun0511@gmail.com" name="optEmail"><input type="hidden" value="" name="payAmount"><input type="hidden" name="title" placeholder="付款说明" value="给 [OpenResty](openresty.html) 捐款"><input type="image" value="支付宝收款" src="donate-with-alipay.png" name="pay"></form>
+<img src="/images/alipay-qrcode.png" width="150">
 </html>
 
-Alternatively you can scan the following QR code in your Alipay cellphone app:
-
-<html>
-<img src="alipay-qrcode.png" width="150">
-</html>
-
-Any amount will be highly appreciated!
+Any amounts will be highly appreciated!

@@ -1,0 +1,14 @@
+<ul class="buttons">
+    <li><a href="#" class="btn rss">RSS Feed</a></li>
+    <li>
+        <!-- <a href="#" class="btn paypal">Donate with PayPal</a> -->
+        <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="agentzh@gmail.com">
+        <input type="hidden" name="item_name" value="[OpenResty](openresty/) Donation (in USD)">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="amount" value="">
+        <input type="image" src="/images/donate_button_paypal_01.gif" border="0" name="submit" alt="Donate with PayPal">
+        </form>
+    </li>
+</ul>

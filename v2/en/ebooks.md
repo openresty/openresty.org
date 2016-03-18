@@ -9,7 +9,7 @@
 --->
 
 
-#  eBook "agentzh's [Nginx](nginx.html) Tutorials" (version 2012.04.18)
+#  eBook "agentzh's Nginx Tutorials" (version 2012.04.18)
 * English Edition
     * [HTML Single-Page Format](https://openresty.org/download/agentzh-nginx-tutorials-enuk.html) (Web browser users)
     * [MOBI Format](https://openresty.org/download/agentzh-nginx-tutorials-enuk.mobi) (Kindle users)

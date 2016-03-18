@@ -28,23 +28,11 @@
 </head>
 <body>
 
-	
-	<header role="header">
-		<p class="site-name left">
-			<a href="#">Open<span>Resty</span></a>
-			<small>Fast web platform by extending NGINX with Lua</small>
-		</p><!-- / site-name -->
-
-		<form action="#" class="right">
-			<fieldset>
-				<input type="search" name="search" id="search" placeholder="Search OpenResty.org">
-			</fieldset>
-		</form>
-	</header>
+[% PROCESS 'header.tt2' %]
 
 	<section id="intro">
 		<div class="text">
-			<p>OpenResty is a high performance web platform based on NGINX and LuaJIT.</p>
+			<p>OpenResty is a dynamic web platform based on NGINX and LuaJIT.</p>
 			<p><small>It’s open-source stuff so you can contribute:</small> <a href="https://github.com/openresty/" class="github">Contribute on GitHub &raquo;</a></p>
 		</div><!-- / text -->
 	</section><!-- / intro -->
@@ -55,14 +43,12 @@
 [% main_menu %]
 			</nav><!-- / nav -->
 
-			<ul class="buttons">
-                                <!-- <li><a href="#" class="btn rss">RSS Feed</a></li> -->
-				<li><a href="#" class="btn paypal">Donate with PayPal</a></li>
-			</ul>
+[% PROCESS 'main-menu-buttons.tt2' %]
+
 		</div><!-- / sidebar left -->
 		
 		<section id="main">
-[% PROCESS post.tt2 %]
+[% PROCESS 'post.tt2' %]
 		</section><!-- / main -->
 
 		<div class="sidebar sright">

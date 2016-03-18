@@ -280,11 +280,14 @@ _EOC_
 
             $out .= "[$tag]($link)";
 
+        } elsif ($s =~ / \G ("[^~\[\n]*?") /gxcms) {
+            $out .= $1;
+
         } elsif ($s =~ /\G ^ (!+) /gcxcms) {
             my $prefix = '#' x length($1);
             $out .= "\n$prefix ";
 
-        } elsif ($s =~ m#\G ([^\[\{!~<A-Z*:/h]+) #gcxms) {
+        } elsif ($s =~ m#\G ([^\[\{!~<A-Z*:/h"]+) #gcxms) {
             $out .= $1;
 
         } elsif ($s =~ /\G (.) /gcxms) {
@@ -293,7 +296,13 @@ _EOC_
             last;
         }
     }
-    $out;
+
+    $out =~ s{src="donate-with-alipay\.png"}{src="/images/donate-with-alipay\.png"}g;
+    $out =~ s{src="donate_button_paypal_01\.gif"}{src="/images/donate_button_paypal_01\.gif"}g;
+    $out =~ s{src="alipay-qrcode\.png"}{src="/images/alipay-qrcode.png"}g;
+    $out =~ s{src="kugou-music\.jpg"}{src="/images/kugou-music.jpg"}g;
+
+    return $out;
 }
 
 sub fmt_wiki_word {
