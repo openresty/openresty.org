@@ -19,7 +19,7 @@
 	<header role="header">
 		<p class="site-name left">
 			<a href="./">OpenResty</a>
-			<small>A fast web app server by extending nginx</small>
+			<small>A fast web app server by extending NGINX and LuaJIT</small>
 		</p><!-- / site-name -->
 
 		<form action="#" class="right">

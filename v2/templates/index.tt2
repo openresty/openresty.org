@@ -20,7 +20,7 @@
             var file = permlinks[key];
             if (file) {
                 window.location.hash = "";
-                window.location = url + file;
+                window.location = window.location.pathname + file + ".html";
             }
         })();
         </script>
