@@ -86,7 +86,9 @@ function _M.get_home(id)
 end
 
 function _M.get_post(id)
-    local res = query_db("select title, modifier, modifier_link, created::date, modified::date, html_body from posts where id = " .. id)
+    local res = query_db("select title, modifier, modifier_link, to_char(created, 'dd Mon yyyy') as created, "
+                         .. "to_char(modified, 'dd Mon yyyy') as modified, html_body from posts "
+                         .. "where id = " .. id)
 
     -- print("JSON: ", cjson.encode(res))
     if #res == 0 then
@@ -97,7 +99,7 @@ function _M.get_post(id)
 end
 
 function _M.get_post_list()
-    local res = query_db("select permlink, id from posts;")
+    local res = query_db("select permlink, id from posts")
     if #res == 0 then
         ngx.log(ngx.ERR, "no posts found")
         return ngx.exit(500)
@@ -108,6 +110,11 @@ function _M.get_post_list()
         posts[row.permlink] = row.id
     end
     return posts
+end
+
+function _M.get_timeline()
+    local res = query_db("select title, permlink, to_char(modified, 'dd Mon yyyy') as day from posts order by modified desc limit 20");
+    return res
 end
 
 return _M

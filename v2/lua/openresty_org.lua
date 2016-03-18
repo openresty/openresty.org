@@ -25,6 +25,7 @@ function _M.go()
 
     if uri == "/en/" then
         local home = model.get_home(posts.openresty)
+        local timeline = model.get_timeline()
         -- print("home data: ", cjson.encode(home))
         -- print(cjson.encode(home_html))
 
@@ -33,7 +34,7 @@ function _M.go()
                                     skip_meta = true,
                                     title = home.title,
                                     body = home.html_body,
-
+                                    timeline = timeline,
                                   })
         ngx.print(html)
         return
@@ -58,6 +59,7 @@ function _M.go()
     end
 
     local rec = model.get_post(id)
+    local timeline = model.get_timeline()
 
     local html = view.process("page.tt2",
                               { main_menu = main_menu,
@@ -67,6 +69,7 @@ function _M.go()
                                 created = rec.created,
                                 title = rec.title,
                                 body = rec.html_body,
+                                timeline = timeline,
                                })
 
     ngx.print(html)

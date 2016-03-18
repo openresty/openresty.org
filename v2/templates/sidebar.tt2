@@ -1,0 +1,44 @@
+<div class="sidebar sright">
+        <div class="options">
+                <!--
+                <ul class="first">
+                        <li><a href="#" class="close-all">close all</a></li>
+                        <li><a href="#" class="permaview">permaview</a></li>
+                        <li><a href="#" class="more-options">options</a></li>
+                </ul> --><!-- / first -->
+        </div><!-- options -->
+
+        <div class="tabs">
+                <ul class="navigation">
+                        <!--
+                        <li><a href="#" class="current">Timeline</a></li>
+                        <li><a href="#">All</a></li>
+                        <li><a href="#">Tags</a></li>
+                        <li><a href="#">More</a></li>
+                        -->
+                        <li><span>Timeline</span></li>
+                </ul><!-- / navigation -->
+                <div class="panes">
+                        <div class="pane" id="timeline">
+                                <ul>
+                                [%- prev_day = '' %]
+                                [%- FOREACH row IN timeline %]
+                                    [%- IF row.day != prev_day %]
+                                        [%- IF prev_day != '' %]
+                                            </ul>
+                                    </li>
+                                        [%- END %]
+                                        [%- prev_day = row.day %]
+                                    <li>
+                                            <h3>[% row.day %]</h3>
+                                            <ul>
+                                    [%- END %]
+                                                <li><a href="[% row.permlink %].html">[% row.title %]</a></li>
+                                [%- END %]
+                                            </ul>
+                                    </li>
+                                </ul>
+                        </div><!-- / pane -->
+                </div><!-- / panes -->
+        </div><!-- / tabs -->
+</div><!-- / sidebar right -->

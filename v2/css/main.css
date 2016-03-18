@@ -104,6 +104,7 @@ header[role="header"] form input[type=search]:focus, header[role="header"] form 
 .sidebar.sright .tabs .navigation:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; font-size: 0; }
 .sidebar.sright .tabs .navigation li { float: left; }
 .sidebar.sright .tabs .navigation li a { float: left; padding: 0 20px; font-size: 13px; font-weight: bold; text-decoration: none; line-height: 50px; box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; height: 50px; }
+.sidebar.sright .tabs .navigation li span { color: #3e423e; float: left; padding: 0 20px; font-size: 13px; font-weight: bold; text-decoration: none; line-height: 50px; box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; height: 50px; }
 .sidebar.sright .tabs .navigation li a.current { border-bottom: 4px solid #4d8d89; color: #3e423e; }
 .sidebar.sright .tabs .panes .pane { padding: 0 20px; }
 .sidebar.sright .tabs .panes .pane > ul { font-size: 12px; margin-bottom: 20px; }

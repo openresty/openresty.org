@@ -4,9 +4,9 @@
                 [%- IF NOT skip_meta %]
                 <small>
                     [% IF modifier_link %]<a href="[% modifier_link %].html">[% END %]
-                    [% modifier %]
+                    [% modifier | html %]
                     [% IF modifier_link %]</a>[% END %],
-                    [% modified %] (created [% created %])</small>
+                    [% modified | html %] (created [% created | html %])</small>
                 [%- END %]
                 <div class="options">
                         <!--

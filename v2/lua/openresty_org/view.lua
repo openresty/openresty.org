@@ -168,7 +168,10 @@ i = i + 1 output[i] = context.process(context, 'main-menu-buttons.tt2')
 i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n		\n		<section id="main">\n'
 -- line 51 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'post.tt2')
-i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n		<div class="sidebar sright">\n			<div class="options">\n                                <!--\n				<ul class="first">\n					<li><a href="#" class="close-all">close all</a></li>\n					<li><a href="#" class="permaview">permaview</a></li>\n					<li><a href="#" class="more-options">options</a></li>\n                                </ul> --><!-- / first -->\n			</div><!-- options -->\n\n			<div class="tabs">\n				<ul class="navigation">\n					<li><a href="#" class="current">Timeline</a></li>\n					<li><a href="#">All</a></li>\n					<li><a href="#">Tags</a></li>\n					<li><a href="#">More</a></li>\n				</ul><!-- / navigation -->\n				<div class="panes">\n					<div class="pane" id="timeline">\n						<ul>\n							<li>\n								<h3>15 April 2014</h3>\n								<ul>\n									<li><a href="#">OpenResty</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>30 March 2014</h3>\n								<ul>\n									<li><a href="#">Download</a></li>\n									<li><a href="#">ChangeLog1005011</a></li>\n									<li><a href="#">LuaUpstreamNginxModule</a></li>\n									<li><a href="#">LuaRestyUpstreamHealthcheckLibrary</a></li>\n									<li><a href="#">Components</a></li>\n								</ul>\n\n							</li>\n							<li>\n								<h3>25 March 2014</h3>\n								<ul>\n									<li><a href="#">Changes</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>4 March 2014</h3>\n								<ul>\n									<li><a href="#">BuildSystemtap</a></li>\n									<li><a href="#">DynamicRoutingBasedOnRedis</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>28 February 2014</h3>\n								<ul>\n									<li><a href="#">Presentations</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>25 January 2014</h3>\n								<ul>\n									<li><a href="#">UsingLuaRocks</a></li>\n									<li><a href="#">LuaJIT</a></li>\n									<li><a href="#">Installation</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>11 January 2014</h3>\n								<ul>\n									<li><a href="#">ChangeLog1005008</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>14 December 2013</h3>\n								<ul>\n									<li><a href="#">ChangeLog1004003</a></li>\n									<li><a href="#">LuaRestyCoreLibrary</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>17 October 2013</h3>\n								<ul>\n									<li><a href="#">SrcacheNginxModule</a></li>\n									<li><a href="#">SetMiscNginxModule</a></li>\n									<li><a href="#">Redis2NginxModule</a></li>\n									<li><a href="#">LuaRedisParserLibrary</a></li>\n									<li><a href="#">LuaNginxModule</a></li>\n									<li><a href="#">HeadersMoreNginxModule</a></li>\n									<li><a href="#">MemcNginxModule</a></li>\n									<li><a href="#">EchoNginxModule</a></li>\n									<li><a href="#">DrizzleNginxModule</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>6 October 2013</h3>\n								<ul>\n									<li><a href="#">Debugging</a></li>\n									<li><a href="#">MainMenu</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>30 September 2013</h3>\n								<ul>\n									<li><a href="#">ChangeLog1004002</a></li>\n									<li><a href="#">CoolkitNginxModule</a></li>\n								</ul>\n							</li>\n						</ul>\n					</div><!-- / pane -->\n				</div><!-- / panes -->\n			</div><!-- / tabs -->\n		</div><!-- / sidebar right -->\n	</div><!-- / wrapper -->\n</body>\n</html>\n'
+i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n'
+-- line 54 "index.tt2"
+i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
+i = i + 1 output[i] = '\n\n	</div><!-- / wrapper -->\n</body>\n</html>\n'
 
     return output
 end
@@ -208,7 +211,10 @@ i = i + 1 output[i] = context.process(context, 'main-menu-buttons.tt2')
 i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n		\n		<section id="main">\n'
 -- line 31 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'post.tt2')
-i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n		<div class="sidebar sright">\n			<div class="options">\n                                <!--\n				<ul class="first">\n					<li><a href="#" class="close-all">close all</a></li>\n					<li><a href="#" class="permaview">permaview</a></li>\n					<li><a href="#" class="more-options">options</a></li>\n                                </ul> --> <!-- / first -->\n			</div><!-- options -->\n\n			<div class="tabs">\n				<ul class="navigation">\n					<li><a href="#" class="current">Timeline</a></li>\n					<li><a href="#">All</a></li>\n					<li><a href="#">Tags</a></li>\n					<li><a href="#">More</a></li>\n				</ul><!-- / navigation -->\n				<div class="panes">\n					<div class="pane" id="timeline">\n						<ul>\n							<li>\n								<h3>15 April 2014</h3>\n								<ul>\n									<li><a href="#">OpenResty</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>30 March 2014</h3>\n								<ul>\n									<li><a href="#">Download</a></li>\n									<li><a href="#">ChangeLog1005011</a></li>\n									<li><a href="#">LuaUpstreamNginxModule</a></li>\n									<li><a href="#">LuaRestyUpstreamHealthcheckLibrary</a></li>\n									<li><a href="#">Components</a></li>\n								</ul>\n\n							</li>\n							<li>\n								<h3>25 March 2014</h3>\n								<ul>\n									<li><a href="#">Changes</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>4 March 2014</h3>\n								<ul>\n									<li><a href="#">BuildSystemtap</a></li>\n									<li><a href="#">DynamicRoutingBasedOnRedis</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>28 February 2014</h3>\n								<ul>\n									<li><a href="#">Presentations</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>25 January 2014</h3>\n								<ul>\n									<li><a href="#">UsingLuaRocks</a></li>\n									<li><a href="#">LuaJIT</a></li>\n									<li><a href="#">Installation</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>11 January 2014</h3>\n								<ul>\n									<li><a href="#">ChangeLog1005008</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>14 December 2013</h3>\n								<ul>\n									<li><a href="#">ChangeLog1004003</a></li>\n									<li><a href="#">LuaRestyCoreLibrary</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>17 October 2013</h3>\n								<ul>\n									<li><a href="#">SrcacheNginxModule</a></li>\n									<li><a href="#">SetMiscNginxModule</a></li>\n									<li><a href="#">Redis2NginxModule</a></li>\n									<li><a href="#">LuaRedisParserLibrary</a></li>\n									<li><a href="#">LuaNginxModule</a></li>\n									<li><a href="#">HeadersMoreNginxModule</a></li>\n									<li><a href="#">MemcNginxModule</a></li>\n									<li><a href="#">EchoNginxModule</a></li>\n									<li><a href="#">DrizzleNginxModule</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>6 October 2013</h3>\n								<ul>\n									<li><a href="#">Debugging</a></li>\n									<li><a href="#">MainMenu</a></li>\n								</ul>\n							</li>\n							<li>\n								<h3>30 September 2013</h3>\n								<ul>\n									<li><a href="#">ChangeLog1004002</a></li>\n									<li><a href="#">CoolkitNginxModule</a></li>\n								</ul>\n							</li>\n						</ul>\n					</div><!-- / pane -->\n				</div><!-- / panes -->\n			</div><!-- / tabs -->\n		</div><!-- / sidebar right -->\n	</div><!-- / wrapper -->\n	\n	\n\n</body>\n</html>\n  \n'
+i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n'
+-- line 34 "page.tt2"
+i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
+i = i + 1 output[i] = '\n	</div><!-- / wrapper -->\n\n</body>\n</html>\n'
 
     return output
 end
@@ -251,7 +257,19 @@ end
 
 i = i + 1 output[i] = '\n                    '
 -- line 7 "post.tt2"
+
+-- FILTER
+local value
+do
+    local output = {}
+    local i = 0
+
 i = i + 1 output[i] = stash_get(stash, 'modifier')
+
+    value = context.filter(output, 'html', {})
+end
+i = i + 1 output[i] = value
+
 i = i + 1 output[i] = '\n                    '
 -- line 8 "post.tt2"
 if tt2_true(stash_get(stash, 'modifier_link')) then
@@ -260,10 +278,34 @@ end
 
 i = i + 1 output[i] = ',\n                    '
 -- line 9 "post.tt2"
+
+-- FILTER
+local value
+do
+    local output = {}
+    local i = 0
+
 i = i + 1 output[i] = stash_get(stash, 'modified')
+
+    value = context.filter(output, 'html', {})
+end
+i = i + 1 output[i] = value
+
 i = i + 1 output[i] = ' (created '
 -- line 9 "post.tt2"
+
+-- FILTER
+local value
+do
+    local output = {}
+    local i = 0
+
 i = i + 1 output[i] = stash_get(stash, 'created')
+
+    value = context.filter(output, 'html', {})
+end
+i = i + 1 output[i] = value
+
 i = i + 1 output[i] = ')</small>'
 end
 
@@ -271,6 +313,78 @@ i = i + 1 output[i] = '\n                <div class="options">\n                
 -- line 35 "post.tt2"
 i = i + 1 output[i] = stash_get(stash, 'body')
 i = i + 1 output[i] = '\n        </div><!-- / body -->\n</div><!-- / item -->\n'
+
+    return output
+end
+
+-- sidebar.tt2
+template_map['sidebar.tt2'] = function (context)
+    if not context then
+        return error("Lemplate function called without context\n")
+    end
+    local stash = context.stash
+    local output = {}
+    local i = 0
+
+i = i + 1 output[i] = '<div class="sidebar sright">\n        <div class="options">\n                <!--\n                <ul class="first">\n                        <li><a href="#" class="close-all">close all</a></li>\n                        <li><a href="#" class="permaview">permaview</a></li>\n                        <li><a href="#" class="more-options">options</a></li>\n                </ul> --><!-- / first -->\n        </div><!-- options -->\n\n        <div class="tabs">\n                <ul class="navigation">\n                        <!--\n                        <li><a href="#" class="current">Timeline</a></li>\n                        <li><a href="#">All</a></li>\n                        <li><a href="#">Tags</a></li>\n                        <li><a href="#">More</a></li>\n                        -->\n                        <li><span>Timeline</span></li>\n                </ul><!-- / navigation -->\n                <div class="panes">\n                        <div class="pane" id="timeline">\n                                <ul>'
+-- line 24 "sidebar.tt2"
+stash_set(stash, 'prev_day', '');
+-- line 37 "sidebar.tt2"
+
+-- FOREACH
+do
+    local list = stash_get(stash, 'timeline')
+    local iterator
+    if list.list then
+        iterator = list
+        list = list.list
+    end
+    local oldloop = stash_get(stash, 'loop')
+    local count
+    if not iterator then
+        count = table_maxn(list)
+        iterator = { count = 1, max = count - 1, index = 0, size = count, first = true, last = false, prev = "" }
+    else
+        count = iterator.size
+    end
+    stash.loop = iterator
+    for idx, value in ipairs(list) do
+        if idx == count then
+            iterator.last = true
+        end
+        iterator.index = idx - 1
+        iterator.count = idx
+        iterator.next = list[idx + 1]
+        stash['row'] = value
+-- line 35 "sidebar.tt2"
+if tt2_true(stash_get(stash, {'row', 0, 'day', 0}) ~= stash_get(stash, 'prev_day')) then
+-- line 30 "sidebar.tt2"
+if tt2_true(stash_get(stash, 'prev_day') ~= '') then
+i = i + 1 output[i] = '\n                                            </ul>\n                                    </li>'
+end
+
+-- line 31 "sidebar.tt2"
+stash_set(stash, 'prev_day', stash_get(stash, {'row', 0, 'day', 0}));
+i = i + 1 output[i] = '\n                                    <li>\n                                            <h3>'
+-- line 33 "sidebar.tt2"
+i = i + 1 output[i] = stash_get(stash, {'row', 0, 'day', 0})
+i = i + 1 output[i] = '</h3>\n                                            <ul>'
+end
+
+i = i + 1 output[i] = '\n                                                <li><a href="'
+-- line 36 "sidebar.tt2"
+i = i + 1 output[i] = stash_get(stash, {'row', 0, 'permlink', 0})
+i = i + 1 output[i] = '.html">'
+-- line 36 "sidebar.tt2"
+i = i + 1 output[i] = stash_get(stash, {'row', 0, 'title', 0})
+i = i + 1 output[i] = '</a></li>'
+        iterator.first = false
+        iterator.prev = value
+    end
+    stash_set(stash, 'loop', oldloop)
+end
+
+i = i + 1 output[i] = '\n                                            </ul>\n                                    </li>\n                                </ul>\n                        </div><!-- / pane -->\n                </div><!-- / panes -->\n        </div><!-- / tabs -->\n</div><!-- / sidebar right -->\n'
 
     return output
 end
