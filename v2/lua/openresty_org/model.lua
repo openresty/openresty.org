@@ -120,9 +120,10 @@ function _M.get_timeline()
 end
 
 function _M.get_search_results(query)
+    -- print("search query: ", query)
     local quoted_query = quote_sql_str(query)
     local res = query_db("select title, "
-                         .. "ts_headline(txt_body, q, 'MaxFragments=2') as body, "
+                         .. "ts_headline(txt_body, q, 'MaxFragments=1') as body, "
                          .. "permlink from (select q, title, txt_body, "
                          .. "ts_rank_cd(textsearch_index_col, q) as rank, "
                          .. "permlink from posts, plainto_tsquery("

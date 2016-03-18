@@ -13,6 +13,7 @@ local tonumber = tonumber
 local resp_header = ngx.header
 local ngx_var = ngx.var
 local format = string.format
+local unescape_uri = ngx.unescape_uri
 
 local MAX_SEARCH_QUERY_LEN = 128
 
@@ -21,11 +22,12 @@ local function gen_cache_control_headers(ts)
     resp_header["Cache-Control"] = "public,max-age=300"
 end
 
-local function search_error(main_menu, timeline, title, msg)
+local function search_error(main_menu, timeline, query, title, msg)
     local html = view.process("page.tt2",
                               { main_menu = main_menu,
                                 skip_meta = true,
                                 title = title,
+                                search_query = query,
                                 body = msg,
                                 timeline = timeline,
                               })
@@ -82,9 +84,9 @@ function _M.run()
         local main_menu = model.get_main_menu()
         local timeline = model.get_timeline()
 
-        local query = ngx_var.arg_query
+        local query = unescape_uri(ngx_var.arg_query)
         if not query or #query == 0 then
-            return search_error(main_menu, timeline,
+            return search_error(main_menu, timeline, query,
                                 "Bad search query",
                                 "<p>No query providied.</p>")
         end
@@ -93,13 +95,13 @@ function _M.run()
             local title = "Bad search query"
             local msg = format("<p>Query too long (more than %d bytes).</p>",
                                MAX_SEARCH_QUERY_LEN)
-            return search_error(main_menu, timeline, title, msg)
+            return search_error(main_menu, timeline, query, title, msg)
         end
 
         local res = model.get_search_results(query)
 
         if #res == 0 then
-            return search_error(main_menu, timeline, "No search results found",
+            return search_error(main_menu, timeline, query, "No search results found",
                                 "<p>Please adjust your search query and try again.</p>")
         end
 
@@ -111,6 +113,7 @@ function _M.run()
                                   { main_menu = main_menu,
                                     skip_meta = true,
                                     title = "Search result",
+                                    search_query = query,
                                     body = concat(result_html),
                                     timeline = timeline,
                                   })

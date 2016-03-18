@@ -142,7 +142,30 @@ template_map['header.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '<header role="header">\n        <p class="site-name left">\n                <a href=".">OpenResty</a>\n                <small>Scalable Web Platform by Extending NGINX with Lua</small>\n        </p><!-- / site-name -->\n\n        <form action="search.html" class="right">\n                <fieldset>\n                        <input type="search" name="query" id="search" placeholder="Search OpenResty.org" required>\n                </fieldset>\n        </form>\n</header>\n'
+i = i + 1 output[i] = '<header role="header">\n        <p class="site-name left">\n                <a href=".">OpenResty</a>\n                <small>Scalable Web Platform by Extending NGINX with Lua</small>\n        </p><!-- / site-name -->\n\n        <form action="search.html" class="right">\n                <fieldset>\n                        <input type="search" name="query" id="search"'
+-- line 13 "header.tt2"
+if tt2_true(stash_get(stash, 'search_query')) then
+i = i + 1 output[i] = '\n                               value="'
+-- line 11 "header.tt2"
+
+-- FILTER
+local value
+do
+    local output = {}
+    local i = 0
+
+i = i + 1 output[i] = stash_get(stash, 'search_query')
+
+    value = context.filter(output, 'html', {})
+end
+i = i + 1 output[i] = value
+
+i = i + 1 output[i] = '"'
+else
+
+end
+
+i = i + 1 output[i] = '\n                               placeholder="Search OpenResty.org" required>\n                </fieldset>\n        </form>\n</header>\n'
 
     return output
 end
