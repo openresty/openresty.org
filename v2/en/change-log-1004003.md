@@ -150,7 +150,7 @@ The following components are bundled in this release:
 * upgraded [Lua Resty Upload Library](lua-resty-upload-library.html) to 0.09.
     * bugfix: removed use of the [module()](http://www.lua.org/manual/5.1/manual.html#pdf-module) function to prevent bad side-effects.
     * optimize: Removed use of lua tables and [table.concat()](http://www.lua.org/manual/5.1/manual.html#pdf-table.concat) for simple one-line Lua string concatenations.
-* upgraded [Lua Resty My SQLLibrary](lua-resty-mysql-library.html) to 0.14.
+* upgraded [Lua Resty MySQL Library](lua-resty-mysql-library.html) to 0.14.
     * bugfix: avoided using Lua 5.1's [module()](http://www.lua.org/manual/5.1/manual.html#pdf-module) function for defining our Lua modules because it has bad side effects.
     * optimize: added an optional new argument "nrows" to the [query()](https://github.com/agentzh/lua-resty-mysql#query) and [read_result()](https://github.com/agentzh/lua-resty-mysql#read_result) methods, which can speed up things a bit.
     * optimize: use [LuaJIT](luajit.html) v2.1's new [table.new()](http://repo.or.cz/w/luajit-2.0.git/commit/c8cfca055) API to optimize Lua table allocations. when table.new is missing, just fall back to the good old "{}" constructor. this gives 12% overall speed-up for a typical result set with 500 rows when [LuaJIT](luajit.html) 2.1 is used.

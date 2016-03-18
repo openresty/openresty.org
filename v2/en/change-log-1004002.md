@@ -124,6 +124,6 @@ The following components are bundled in this release:
 #  Mainline Version 1.4.2.1 - 11 August 2013
 * upgraded the [Nginx](nginx.html) core to 1.4.2.
     * see http://nginx.org/en/CHANGES-1.4 for changes.
-* upgraded [Lua Resty DNSLibrary](lua-resty-dns-library.html) to 0.10.
+* upgraded [Lua Resty DNS Library](lua-resty-dns-library.html) to 0.10.
     * feature: now we return all the answer records even when the DNS server returns a non-zero error code, in which case the error code and error string are now set as the "errcode" and "errstr" fields in the Lua table returned. thanks Matthieu Tourne for requesting this.
 See [Change Log1004001](change-log-1004001.html) for change log for [OpenResty](openresty.html) 1.4.1.x.

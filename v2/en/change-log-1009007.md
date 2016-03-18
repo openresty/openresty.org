@@ -61,7 +61,7 @@
     * optimize: minor Lua code improvements from Aapo Talvensaari.
     * doc: link fixes from Thijs Schreijer.
     * doc: fixed escaping issues in the configuration samples in the Synopsis section by migrating to the "*_by_lua_block {}" directives. thanks whatacold for the report.
-* upgraded [Lua Resty DNSLibrary](lua-resty-dns-library.html) to 0.15.
+* upgraded [Lua Resty DNS Library](lua-resty-dns-library.html) to 0.15.
     * feature: added reverse DNS utilities: [reverse_query](https://github.com/openresty/lua-resty-dns#reverse_query), [arpa_str](https://github.com/openresty/lua-resty-dns#arpa_str), and [expand_ipv6_addr](https://github.com/openresty/lua-resty-dns#expand_ipv6_addr). thanks bjoe2k4 for the patch.
 * upgraded [Resty CLI](resty-cli.html) to 0.06.
     * feature: resty: added new options `--http-include=PATH` and `--main-include=PATH` to include user files in the auto-generated `nginx.conf` file. thanks Nils Nordman for the patch.

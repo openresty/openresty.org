@@ -100,11 +100,13 @@ sub gen_uri_name {
     for ($fname) {
         s/MySQL/-mysql/g;
         s/LuaJIT/-luajit/g;
-        s/eBook/-ebook/g;
+        s/eBook(s?)/-ebook$1/g;
         s/GitHub/-github/g;
         s/OpenResty/-openresty/g;
         s/FastCGI/-fastcgi/g;
         s/DNS/-dns/g;
+        s/URI/-uri/g;
+        s/URL/-url/g;
         s/SystemTap/-systemtap/g;
         s/LuaRocks/-luarocks/g;
 
@@ -312,11 +314,11 @@ sub fmt_wiki_word {
 
     my $out;
     while (1) {
-        if ($s =~ /\G (MySQL|DNS|GitHub|eBook|SystemTap|OpenResty|LuaJIT|JSON|FastCGI|LuaRocks) /gcxms) {
-            $out .= $1;
+        if ($s =~ /\G (MySQL|DNS|URI|URL|GitHub|eBooks?|SystemTap|OpenResty|LuaJIT|JSON|FastCGI|LuaRocks) /gcxms) {
+            $out .= "$1 ";
 
-        } elsif ($s =~ / \G ([^A-Z]+)([A-Z]) /gcxms) {
-            $out .= "$1 $2";
+        } elsif ($s =~ / \G ([^A-Z]+)(?=[A-Z]) /gcxms) {
+            $out .= "$1 ";
 
         } elsif ($s =~ / \G (\W+) /gcxms) {
             $out .= $1;
@@ -332,5 +334,8 @@ sub fmt_wiki_word {
     if (!defined $out) {
         die "$s bad";
     }
+
+    $out =~ s/ {2,}/ /g;
+    $out =~ s/^\s+|\s+$//g;
     $out;
 }

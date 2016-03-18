@@ -90,7 +90,7 @@ Same as the devel release 1.0.11.27.
     * bugfix: redis "nil multi bulk replies" did not parse at all. thanks 郭颖 for reporting this issue.
 
 #  Mainline Version 1.0.11.17 - 29 February 2012
-* feature: bundle [Lua Resty My SQLLibrary](lua-resty-mysql-library.html) 0.06, which is enabled by default.
+* feature: bundle [Lua Resty MySQL Library](lua-resty-mysql-library.html) 0.06, which is enabled by default.
 * feature: bundle [Lua Resty Redis Library](lua-resty-redis-library.html) 0.06, which is enabled by default.
 * feature: bundle [Lua Resty Memcached Library](lua-resty-memcached-library.html) 0.06, which is enabled by default.
 * feature: bundle [Lua Resty Upload Library](lua-resty-upload-library.html) 0.02, which is enabled by default.

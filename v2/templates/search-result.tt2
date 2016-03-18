@@ -1,0 +1,8 @@
+<div class="search-result">
+[% FOREACH hit IN hits %]
+<h2><a href="[% hit.permlink %]">[% hit.title %]</a></h2>
+<div class="r">
+[% hit.body %]
+</div>
+[% END %]
+</div>

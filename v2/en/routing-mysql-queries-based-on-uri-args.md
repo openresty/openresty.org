@@ -1,5 +1,5 @@
 <!---
-    @title         Routing My SQLQueries Based On URIArgs
+    @title         Routing MySQL Queries Based On URI Args
     @creator       Yichun Zhang
     @created       2011-11-16 04:06 GMT
     @modifier      Yichun Zhang

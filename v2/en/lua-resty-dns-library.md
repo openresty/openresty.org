@@ -1,5 +1,5 @@
 <!---
-    @title         Lua Resty DNSLibrary
+    @title         Lua Resty DNS Library
     @creator       Yichun Zhang
     @created       2012-08-06 06:54 GMT
     @modifier      Yichun Zhang

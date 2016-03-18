@@ -2,6 +2,7 @@ local _M = {}
 
 local pgmoon = require "pgmoon"
 local cjson = require "cjson"
+local quote_sql_str = ndk.set_var.set_quote_pgsql_str
 
 local db_spec = {
     host = "127.0.0.1",
@@ -115,6 +116,19 @@ end
 
 function _M.get_timeline()
     local res = query_db("select title, permlink, to_char(modified, 'dd Mon yyyy') as day from posts order by modified desc limit 20");
+    return res
+end
+
+function _M.get_search_results(query)
+    local quoted_query = quote_sql_str(query)
+    local res = query_db("select title, "
+                         .. "ts_headline(txt_body, q, 'MaxFragments=2') as body, "
+                         .. "permlink from (select q, title, txt_body, "
+                         .. "ts_rank_cd(textsearch_index_col, q) as rank, "
+                         .. "permlink from posts, plainto_tsquery("
+                         .. quoted_query .. ") q "
+                         .. "where textsearch_index_col @@ q "
+                         .. "order by rank desc limit 10) as foo")
     return res
 end
 

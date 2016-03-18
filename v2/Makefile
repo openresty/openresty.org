@@ -1,6 +1,8 @@
 nginx = nginx
 md2html = pandoc --from markdown_github --to html
+md2text = pandoc --from markdown_github --to plain
 html_files := $(patsubst %.md,html/%.html,$(wildcard en/*.md cn/*.md))
+txt_files := $(patsubst %.md,text/%.txt,$(wildcard en/*.md cn/*.md))
 templates_lua = lua/openresty_org/view.lua
 tt2_files := $(wildcard templates/*.tt2)
 
@@ -26,24 +28,31 @@ reload: logs/nginx.pid all
 
 .PHONE: clean
 clean:
-	rm -f $(html_files) $(txt_files)
-	rm -rf html
+	rm -rf html text
+
+.PHONE: html
+html: $(html_files)
 
 html/%.html: %.md
 	mkdir -p html/en
 	$(md2html) $< --output $@
+
+.PHONE: text
+text: $(txt_files)
+
+text/%.txt: %.md
+	mkdir -p text/en
+	$(md2text) $< --output $@
 
 .PHONE: extract
 extract:
 	./extract.pl ../index.html en
 
 .PHONE: gendata
-gendata: html
+gendata: html text
 	./gen-data.pl en
 
 .PHONE: initdb
 initdb: gendata
 	psql -Uopenresty openresty_org -f init.sql
 
-.PHONE: html
-html: $(html_files)

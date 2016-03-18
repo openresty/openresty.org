@@ -11,7 +11,7 @@
 
 #  Version 1.5.11.1 - 30 March 2014
 * upgraded [LuaJIT](luajit.html) to v2.1-20140330.
-    * feature: included Mike Pall's new "trace stitching" feature that can compile around most of the [NYI items](http://wiki.luajit.org/NYI). thanks [CloudFlare Inc.](http://www.cloudflare.com/) for sponsoring the development. This helps compiling more Lua code. For example, it gives 10% ~ 40% speedup in simple test cases of [Lua Resty My SQLLibrary](lua-resty-mysql-library.html) out of the box.
+    * feature: included Mike Pall's new "trace stitching" feature that can compile around most of the [NYI items](http://wiki.luajit.org/NYI). thanks [CloudFlare Inc.](http://www.cloudflare.com/) for sponsoring the development. This helps compiling more Lua code. For example, it gives 10% ~ 40% speedup in simple test cases of [Lua Resty MySQL Library](lua-resty-mysql-library.html) out of the box.
     * bugfix: included all the new bug fixes from Mike Pall, most of which are very obscure bugs in the JIT compiler hidden for years.
     * relaxed the hard-coded heuristic limit further to 100 for loopunroll.
     * feature: applied John Marino's patch for compiling [LuaJIT](luajit.html) on DragonFlyBSD. thanks lhmwzy for proposing the patch.

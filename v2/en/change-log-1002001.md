@@ -57,13 +57,13 @@
 * upgraded [Echo Nginx Module](echo-nginx-module.html) to 0.41.
     * bugfix: we incorrectly returned the `500` error code in our nginx output body filters.
     * bugfix: segmentation faults might happen when the system is out of memory: we forgot to check the returned pointer from `ngx_calloc_buf` in our nginx output body filter.
-* upgraded [Lua Resty DNSLibrary](lua-resty-dns-library.html) to 0.05.
+* upgraded [Lua Resty DNS Library](lua-resty-dns-library.html) to 0.05.
     * feature: now we use 4096 as the receive buffer size instead of the value 512 that is suggested by RFC 1035. this could avoid data truncation when the DNS server supports datagram sizes larger than 512 bytes.
     * feature: now we pick a random nameserver from the nameservers list at the first time.
     * docs: fixed a mistake in the sample code and tuned it to be more illustrative. thanks Sandesh Kotwal for reporting.
 
 #  Mainline Version 1.2.1.11 - 5 August 2012
-* bundled [Lua Resty DNSLibrary](lua-resty-dns-library.html) 0.04 and enabled it by default: https://github.com/agentzh/lua-resty-dns it is a nonblocking DNS (Domain Name System) resolver library based on [Lua Nginx Module](lua-nginx-module.html)'s cosocket API.
+* bundled [Lua Resty DNS Library](lua-resty-dns-library.html) 0.04 and enabled it by default: https://github.com/agentzh/lua-resty-dns it is a nonblocking DNS (Domain Name System) resolver library based on [Lua Nginx Module](lua-nginx-module.html)'s cosocket API.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.12.
     * bugfix: the [UDP cosocket object](http://wiki.nginx.org/HttpLuaModule#ngx.socket.udp) could no longer be used after an read or write error happened.
     * bugfix: [ngx.exit(status)](http://wiki.nginx.org/HttpLuaModule#ngx.exit) always resulted in `200 OK` response status when status > 200 and status < 300. thanks [Nginx](nginx.html) User for reporting this issue.
@@ -74,7 +74,7 @@
     * minor code cleanup in the built-in connection pool.
 
 #  Mainline Version 1.2.1.9 - 30 July 2012
-* upgraded [Lua Resty My SQLLibrary](lua-resty-mysql-library.html) to 0.10.
+* upgraded [Lua Resty MySQL Library](lua-resty-mysql-library.html) to 0.10.
     * bugfix: the MySQL `bigint` fields might overflow when converting to lua numbers. now we no longer convert such fields into Lua numbers and instead, just treat them as Lua strings. thanks Lance Li for reporting this issue.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.11.
     * feature: added new Lua API [ngx.req.init_body](http://wiki.nginx.org/HttpLuaModule#ngx.req.init_body), [ngx.req.append_body](http://wiki.nginx.org/HttpLuaModule#ngx.req.append_body), and [ngx.req.finish_body](http://wiki.nginx.org/HttpLuaModule#ngx.req.finish_body). thanks Matthieu Tourne for the patches. These new functions can be used with the existing "downstream cosocket API" (provided by [ngx.req.socket](http://wiki.nginx.org/HttpLuaModule#ngx.req.socket)) to implement efficient [Nginx](nginx.html) "input filters" in pure Lua.
@@ -115,7 +115,7 @@
     * bugfix: gcc might issue the "unused variable" warning when PCRE was disabled. thanks Dirk Feytons for the patch.
 * upgraded [Lua Resty Redis Library](lua-resty-redis-library.html) to 0.11.
     * feature: added the `array_to_hash` method. thanks Brian Akins for the patch in [github #8](https://github.com/agentzh/lua-resty-redis/pull/8).
-* upgraded [Lua Resty My SQLLibrary](lua-resty-mysql-library.html) to 0.09.
+* upgraded [Lua Resty MySQL Library](lua-resty-mysql-library.html) to 0.09.
     * feature: added the `compact_arrays` option to the `connect()` method to make the driver return arrays of arrays instead of the (default) arrays of hashes. thanks Lance Li for requesting this feature.
     * feature: added new method `set_compact_arrays` to change the current `compact_arrays` option value used by the current object for subsequent queries. thanks Lance Li for suggesting it.
     * feature: added the `pool` option to the `connect()` method.

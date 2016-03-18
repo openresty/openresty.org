@@ -1,5 +1,5 @@
 <ul class="buttons">
-    <li><a href="#" class="btn rss">RSS Feed</a></li>
+    <!-- <li><a href="#" class="btn rss">RSS Feed</a></li> -->
     <li>
         <!-- <a href="#" class="btn paypal">Donate with PayPal</a> -->
         <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">

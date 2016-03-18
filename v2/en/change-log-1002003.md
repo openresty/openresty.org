@@ -85,7 +85,7 @@ The following components are bundled:
     * docs: documented the trick for doing background asynchronous jobs by using [ngx.eof()](http://wiki.nginx.org/HttpLuaModule#ngx.eof) + `keepalive_timeout 0`. thanks Lance Li for the suggestion.
 * upgraded [Lua Redis Parser Library](lua-redis-parser-library.html) to 0.10.
     * bugfix: Lua stack overflow would happen when too many Redis arguments were passed into the [build_query](http://wiki.nginx.org/LuaRedisParser#build_query) method. thanks Guo Yin for reporting this issue.
-* upgraded [Lua Resty DNSLibrary](lua-resty-dns-library.html) to 0.08.
+* upgraded [Lua Resty DNS Library](lua-resty-dns-library.html) to 0.08.
     * feature: added new method [tcp_query](https://github.com/agentzh/lua-resty-dns#tcp_query) to enforce pure TCP transportation for the DNS queries.
     * feature: added support for TCP retries when the UDP reply gets truncated.
     * feature: added support for `PTR` queries and records.
@@ -124,7 +124,7 @@ The following components are bundled:
     * bugfix: [tcpsock:send()](http://wiki.nginx.org/HttpLuaModule#tcpsock:send) might send garbage if it was not the first call: we did not properly initialize the chain writer ctx for every `send()` call. thanks Zhu Dejiang for reporting this issue.
     * bugfix: the `ngx_http_lua_probe.h` header file was not listed in the `NGX_ADDON_DEPS` list in the `config` file.
     * optimize: removed unnecessary code that was for the old coroutine abortion mechanism based on Lua exceptions. we no longer need that at all because we have switched to using coroutine yield to abort the current coroutine for `ngx.exec`, `ngx.exit`, `ngx.redirect`, and `ngx.req.set_uri(uri, true)`.
-* upgraded [Lua Resty DNSLibrary](lua-resty-dns-library.html) to 0.06.
+* upgraded [Lua Resty DNS Library](lua-resty-dns-library.html) to 0.06.
     * feature: added support for MX type resource records.
     * feature: unrecognized types of resource records will return their raw resource data (RDATA) as the `rdata` Lua table field.
 * upgraded [Lua Resty Redis Library](lua-resty-redis-library.html) to 0.13.

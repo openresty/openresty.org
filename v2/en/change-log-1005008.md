@@ -18,7 +18,7 @@
 * upgraded [LuaJIT](luajit.html) to v2.1-20140109.
     * bugfix: fixed ABC (Array Bounds Check) elimination. (Mike Pall)
     * bugfix: fixed MinGW build. (Mike Pall)
-    * bugfix: x86: fixed stack slot counting for IR_CALLA (affects table.new). (Mike Pall) this could lead to random table field missing issues in [Lua Resty My SQLLibrary](lua-resty-mysql-library.html) on i386. thanks lhmwzy for the report.
+    * bugfix: x86: fixed stack slot counting for IR_CALLA (affects table.new). (Mike Pall) this could lead to random table field missing issues in [Lua Resty MySQL Library](lua-resty-mysql-library.html) on i386. thanks lhmwzy for the report.
     * bugfix: fixed compilation of `string.byte(s, nil, n)`. (Mike Pall)
     * bugfix: MIPS: Cosmetic fix for interpreter. (Mike Pall)
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.9.4.
@@ -44,7 +44,7 @@
     * bugfix: the Redis connection might enter a bad state when read timeout happens because [Lua Nginx Module](lua-nginx-module.html)'s cosocket reading calls no longer automatically close the connection in this case.
 * upgraded [Lua Resty Lock Library](lua-resty-lock-library.html) to 0.02.
     * bugfix: the [lock()](https://github.com/agentzh/lua-resty-lock#lock) method accepted nil keys silently.
-* upgraded [Lua Resty DNSLibrary](lua-resty-dns-library.html) to 0.11.
+* upgraded [Lua Resty DNS Library](lua-resty-dns-library.html) to 0.11.
     * bugfix: avoided use of the module() built-in to define the Lua module.
     * bugfix: we did not reject bad domain names with a leading dot. thanks Dane Knecht for the report.
     * bugfix: error handling fixes in the [query](https://github.com/agentzh/lua-resty-dns#query) and [tcp_query](https://github.com/agentzh/lua-resty-dns#tcp_query) methods.

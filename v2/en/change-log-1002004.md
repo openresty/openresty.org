@@ -56,7 +56,7 @@ The following components are bundled:
 #  Mainline Version 1.2.4.13 - 11 December 2012
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.7.8.
     * bugfix: [ngx.req.set_body_file()](http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_file) might lead to memory issues because it directly used the storage of Lua strings allocated by the Lua GC (we should have allocated a new memory block on the [Nginx](nginx.html) side and copy the string data over).
-* upgraded [Lua Resty My SQLLibrary](lua-resty-mysql-library.html) to 0.12.
+* upgraded [Lua Resty MySQL Library](lua-resty-mysql-library.html) to 0.12.
     * feature: convert the MySQL `newdecimal` typed fields to Lua numbers by default as requested by shedar.
     * optimize: marked the internal Lua function `_recv_packet` as a `local` function.
 
@@ -101,7 +101,7 @@ The following components are bundled:
     * feature: [ngx.exit](http://wiki.nginx.org/HttpLuaModule#ngx.exit)(N) can now abort pending subrequests when `N = 408` (request time out) or `N = 499` (client closed request) or `N = -1` (error).
     * bugfix: The TCP/stream cosocket's [connect()](http://wiki.nginx.org/HttpLuaModule#tcpsock:connect) method could not detect errors like "connection refused" when kqueue was used (on FreeBSD or Mac OS X, for example). thanks smallfish for reporting this issue.
     * bugfix: reading operations on [ngx.req.socket()](http://wiki.nginx.org/HttpLuaModule#ngx.req.socket) did not return any errors when the request body got truncated; now we return the "client aborted" error.
-* upgraded [Lua Resty DNSLibrary](lua-resty-dns-library.html) to 0.09.
+* upgraded [Lua Resty DNS Library](lua-resty-dns-library.html) to 0.09.
     * refactor: avoided using `package.seeall` in Lua module definitions, which improves performance and also prevents subtle bad side-effects.
     * bugfix: a debugging output might be sent to stdout unexpectedly in some code path.
 * upgraded [Lua Resty Memcached Library](lua-resty-memcached-library.html) to 0.10.
@@ -110,7 +110,7 @@ The following components are bundled:
 * upgraded [Lua Resty Redis Library](lua-resty-redis-library.html) to 0.15.
     * refactor: avoided using `package.seeall` in Lua module definitions, which improves performance and also prevents subtle bad side-effects.
     * optimize: avoided using `ipairs()` which is slower than plain `for i=1,N` loops.
-* upgraded [Lua Resty My SQLLibrary](lua-resty-mysql-library.html) to 0.11.
+* upgraded [Lua Resty MySQL Library](lua-resty-mysql-library.html) to 0.11.
     * refactor: avoided using `package.seeall` in Lua module definitions, which improves performance and also prevents subtle bad side-effects.
     * feature: now the [new()](https://github.com/agentzh/lua-resty-mysql#new) method will return a string describing the error as the second return value in case of failures.
 * upgraded [Lua Resty Upload Library](lua-resty-upload-library.html) to 0.04.
@@ -128,7 +128,7 @@ The following components are bundled:
 
 #  Mainline Version 1.2.4.3 - 17 October 2012
 * upgraded [LuaJIT](luajit.html) to 2.0.0 beta11.
-    * made [Lua Resty Redis Library](lua-resty-redis-library.html) 27% faster, [Lua Resty Memcached Library](lua-resty-memcached-library.html) 22% faster, and [Lua Resty My SQLLibrary](lua-resty-mysql-library.html) 15% faster, all for simple test cases loaded by ab, tested on Linux x86_64.
+    * made [Lua Resty Redis Library](lua-resty-redis-library.html) 27% faster, [Lua Resty Memcached Library](lua-resty-memcached-library.html) 22% faster, and [Lua Resty MySQL Library](lua-resty-mysql-library.html) 15% faster, all for simple test cases loaded by ab, tested on Linux x86_64.
     * all Lua APIs involved with I/O in [Lua Nginx Module](lua-nginx-module.html) are faster in general.
     * complete change log: http://luajit.org/changes.html
 * upgraded [Lua Resty Memcached Library](lua-resty-memcached-library.html) to 0.09.

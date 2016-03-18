@@ -1,5 +1,5 @@
 <!---
-    @title         Using Lua Rocks
+    @title         Using LuaRocks
     @creator       Yichun Zhang
     @created       2011-08-07 02:32 GMT
     @modifier      Yichun Zhang

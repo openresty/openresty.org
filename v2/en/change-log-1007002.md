@@ -23,7 +23,7 @@
 * upgraded [Lua Resty Core Library](lua-resty-core-library.html) to 0.0.8.
     * feature: [resty.core.regex](https://github.com/openresty/lua-resty-core#restycoreregex): use `resty.lrucache` for the compiled regex cache for [ngx.re.find](https://github.com/openresty/lua-nginx-module#ngxrefind) and [ngx.re.match](https://github.com/openresty/lua-nginx-module#ngxrematch) in order to prevent pathalogical performance when the number of regexes has exceeded [lua_regex_cache_max_entries](https://github.com/openresty/lua-nginx-module/#lua_regex_cache_max_entries).
     * optimize: [resty.core.regex](https://github.com/openresty/lua-resty-core#restycoreregex): removed one obsolete assertion that was for a [LuaJIT](luajit.html) bug (already fixed).
-* upgraded [Lua Resty DNSLibrary](lua-resty-dns-library.html) to 0.12.
+* upgraded [Lua Resty DNS Library](lua-resty-dns-library.html) to 0.12.
     * feature: added support for the SRV resource record type (see [RFC 2782](http://www.ietf.org/rfc/rfc2782.txt)). thanks Torbjörn Norinder for the patch.
 * upgraded [Lua Resty Upstream Healthcheck Library](lua-resty-upstream-healthcheck-library.html) to 0.02.
     * bugfix: for bad status lines, we could throw out the "bad argument #2 to 'sub'" error, reported by George Bashi.

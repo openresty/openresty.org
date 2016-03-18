@@ -1,5 +1,5 @@
 <!---
-    @title         FastCGINginx Module
+    @title         FastCGI Nginx Module
     @creator       Yichun Zhang
     @created       2012-09-13 18:29 GMT
     @modifier      Yichun Zhang

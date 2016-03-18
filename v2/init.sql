@@ -9,6 +9,7 @@ create table posts (
     permlink varchar(128) unique not null,
     title text not null,
     html_body text not null,
+    txt_body text not null,
     creator varchar(32) not null,
     created timestamp with time zone not null,
     modifier varchar(32) not null,
@@ -18,7 +19,7 @@ create table posts (
     textsearch_index_col tsvector
 );
 
-\copy posts (title, permlink, html_body, creator, created, modifier, modifier_link, modified, changes) from 'posts.tsv'
+\copy posts (title, permlink, html_body, txt_body, creator, created, modifier, modifier_link, modified, changes) from 'posts.tsv'
 
 drop function if exists posts_trigger() cascade;
 
@@ -26,7 +27,7 @@ create function posts_trigger() returns trigger as $$
 begin
       new.textsearch_index_col :=
          setweight(to_tsvector('pg_catalog.english', coalesce(new.title,'')), 'A')
-         || setweight(to_tsvector('pg_catalog.english', coalesce(new.html_body,'')), 'D');
+         || setweight(to_tsvector('pg_catalog.english', coalesce(new.txt_body,'')), 'D');
       return new;
 end
 $$ language plpgsql;

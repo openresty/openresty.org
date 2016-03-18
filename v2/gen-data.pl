@@ -54,6 +54,23 @@ sub parse_file {
     #warn Dumper(\%attr);
     $attr{html_body} = $html;
     $attr{permlink} = $name;
+
+    {
+        my $txtfile = "text/$lang/$name.txt";
+        if (!-f $txtfile) {
+            die "$txtfile not found (maybe you should run \"make text\" first?).\n";
+        }
+
+        open my $in, $txtfile
+            or die "cannot open $txtfile for reading: $!\n";
+        my $txt = do { local $/; <$in> };
+        close $in;
+
+        $txt =~ s/\s+/ /gs;
+        $txt =~ s/\A\s+|\s+\z//gs;
+        $attr{txt_body} = $txt;
+    }
+
     return \%attr;
 }
 
@@ -64,10 +81,13 @@ sub dump_rows {
         or die "cannot open $file for writing: $!\n";
 
     for my $r (@$rows) {
+        #warn $r->{txt_body};
+
         my $created = quote_value($r->{created});
         print $out quote_value($r->{title}), "\t",
               quote_value($r->{permlink}), "\t",
               quote_value($r->{html_body}), "\t",
+              quote_value($r->{txt_body}), "\t",
               quote_value($r->{creator}), "\t",
               $created, "\t",
               quote_value($r->{modifier}), "\t",

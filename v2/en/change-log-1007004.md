@@ -84,9 +84,9 @@
     * bugfix: [resty.websocket.client](https://github.com/openresty/lua-resty-websocket#restywebsocketclient): connection pooling was broken due to duplicate websocket handshakes. thanks woo for the patch.
     * bugfix: fixed the `Sec-WebSocket-Protocol` header when the secondary protocols are specified. thanks woo for the report.
     * doc: typo fixes from Laurent Arnoud.
-* upgraded [Lua Resty DNSLibrary](lua-resty-dns-library.html) to 0.13.
+* upgraded [Lua Resty DNS Library](lua-resty-dns-library.html) to 0.13.
     * bugfix: we did not parse the character-strings in the "TXT" record data. thanks Kevin Ingersoll for the report.
-* upgraded [Lua Resty My SQLLibrary](lua-resty-mysql-library.html) to 0.15.
+* upgraded [Lua Resty MySQL Library](lua-resty-mysql-library.html) to 0.15.
     * feature: added new boolean-value options "ssl" and "ssl_verify" to the [connect()](https://github.com/openresty/lua-resty-mysql#connect) method connecting to MySQL via SSL.
 * upgraded [Lua Cjson Library](lua-cjson-library.html) to 2.1.0.2.
     * bugfix: the Makefile had a bug that overwrites the existing `cjson.so` file in place which could cause already running processes with this `.so` file loaded to crash. thanks ywsample for the report.

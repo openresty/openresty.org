@@ -170,7 +170,7 @@ hello
     * feature: added publich C functions `ngx_http_lua_add_package_preload`, `ngx_http_lua_get_global_state`, and `ngx_http_lua_get_request` to help other [Nginx](nginx.html) C modules expose new functionalities to [Lua Nginx Module](lua-nginx-module.html). thanks Brian Akins for suggesting them in [github pull request #101](https://github.com/chaoslawful/lua-nginx-module/pull/101).
     * feature: made `ngx_http_lua_api.h` visible to other [Nginx](nginx.html) modules by adding `src/api/` to the `CORE_INCS` config variable value in the config file. thanks Brian Akins for suggesting this in [github pull request #105](https://github.com/chaoslawful/lua-nginx-module/pull/105).
     * feature: add the `gdbinit` script to ease Lua user code debugging (Wang Xiaozhe).
-    * optimize: various optimizations in cosocket's timeout handling. this gives about 2.5+% performance boost in some benchmarks using [Lua Resty Redis Library](lua-resty-redis-library.html) and [Lua Resty My SQLLibrary](lua-resty-mysql-library.html).
+    * optimize: various optimizations in cosocket's timeout handling. this gives about 2.5+% performance boost in some benchmarks using [Lua Resty Redis Library](lua-resty-redis-library.html) and [Lua Resty MySQL Library](lua-resty-mysql-library.html).
 * upgraded [Rds Json Nginx Module](rds-json-nginx-module.html) to v0.12rc8.
     * bugfix: Microsoft C compilers complained about missing declarations of the type `int8_t`. now we explicitly include `stdint.h`. thanks runner-mei for reporting this issue in [github issue #3](https://github.com/agentzh/rds-json-nginx-module/issues/3).
 * upgraded [Set Misc Nginx Module](set-misc-nginx-module.html) to 0.22rc7.
@@ -178,7 +178,7 @@ hello
     * feature: added new config directive [set_rotate](http://wiki.nginx.org/HttpSetMiscModule#set_rotate).
 * upgraded [Drizzle Nginx Module](drizzle-nginx-module.html) to 0.1.2rc7.
     * bugfix: reading data on a reused MySQL connection (coming from the connection pool) could hang due to the inactive read event when `poll` event API is used in nginx.
-* upgraded [Lua Resty My SQLLibrary](lua-resty-mysql-library.html) to 0.07.
+* upgraded [Lua Resty MySQL Library](lua-resty-mysql-library.html) to 0.07.
     * fixed a typo in error messages.
     * skipped parsing those column fields that we do not use (yet). this makes things noticeably faster.
 

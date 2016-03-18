@@ -142,7 +142,7 @@ template_map['header.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '<header role="header">\n        <p class="site-name left">\n                <a href=".">OpenResty</a>\n                <small>Scalable Web Platform by Extending NGINX with Lua</small>\n        </p><!-- / site-name -->\n\n        <form action="search.html" class="right">\n                <fieldset>\n                        <input type="search" name="query" id="search" placeholder="Search OpenResty.org">\n                </fieldset>\n        </form>\n</header>\n'
+i = i + 1 output[i] = '<header role="header">\n        <p class="site-name left">\n                <a href=".">OpenResty</a>\n                <small>Scalable Web Platform by Extending NGINX with Lua</small>\n        </p><!-- / site-name -->\n\n        <form action="search.html" class="right">\n                <fieldset>\n                        <input type="search" name="query" id="search" placeholder="Search OpenResty.org" required>\n                </fieldset>\n        </form>\n</header>\n'
 
     return output
 end
@@ -185,7 +185,7 @@ template_map['main-menu-buttons.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '<ul class="buttons">\n    <li><a href="#" class="btn rss">RSS Feed</a></li>\n    <li>\n        <!-- <a href="#" class="btn paypal">Donate with PayPal</a> -->\n        <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">\n        <input type="hidden" name="cmd" value="_xclick">\n        <input type="hidden" name="business" value="agentzh@gmail.com">\n        <input type="hidden" name="item_name" value="OpenResty Donation (in USD)">\n        <input type="hidden" name="currency_code" value="USD">\n        <input type="hidden" name="amount" value="">\n        <input type="image" src="/images/donate_paypal.gif" border="0" name="submit" alt="Donate with PayPal">\n        </form>\n    </li>\n</ul>\n'
+i = i + 1 output[i] = '<ul class="buttons">\n    <!-- <li><a href="#" class="btn rss">RSS Feed</a></li> -->\n    <li>\n        <!-- <a href="#" class="btn paypal">Donate with PayPal</a> -->\n        <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">\n        <input type="hidden" name="cmd" value="_xclick">\n        <input type="hidden" name="business" value="agentzh@gmail.com">\n        <input type="hidden" name="item_name" value="OpenResty Donation (in USD)">\n        <input type="hidden" name="currency_code" value="USD">\n        <input type="hidden" name="amount" value="">\n        <input type="image" src="/images/donate_paypal.gif" border="0" name="submit" alt="Donate with PayPal">\n        </form>\n    </li>\n</ul>\n'
 
     return output
 end
@@ -313,6 +313,64 @@ i = i + 1 output[i] = '\n                <div class="options">\n                
 -- line 35 "post.tt2"
 i = i + 1 output[i] = stash_get(stash, 'body')
 i = i + 1 output[i] = '\n        </div><!-- / body -->\n</div><!-- / item -->\n'
+
+    return output
+end
+
+-- search-result.tt2
+template_map['search-result.tt2'] = function (context)
+    if not context then
+        return error("Lemplate function called without context\n")
+    end
+    local stash = context.stash
+    local output = {}
+    local i = 0
+
+i = i + 1 output[i] = '<div class="search-result">\n'
+-- line 7 "search-result.tt2"
+
+-- FOREACH
+do
+    local list = stash_get(stash, 'hits')
+    local iterator
+    if list.list then
+        iterator = list
+        list = list.list
+    end
+    local oldloop = stash_get(stash, 'loop')
+    local count
+    if not iterator then
+        count = table_maxn(list)
+        iterator = { count = 1, max = count - 1, index = 0, size = count, first = true, last = false, prev = "" }
+    else
+        count = iterator.size
+    end
+    stash.loop = iterator
+    for idx, value in ipairs(list) do
+        if idx == count then
+            iterator.last = true
+        end
+        iterator.index = idx - 1
+        iterator.count = idx
+        iterator.next = list[idx + 1]
+        stash['hit'] = value
+i = i + 1 output[i] = '\n<h2><a href="'
+-- line 3 "search-result.tt2"
+i = i + 1 output[i] = stash_get(stash, {'hit', 0, 'permlink', 0})
+i = i + 1 output[i] = '">'
+-- line 3 "search-result.tt2"
+i = i + 1 output[i] = stash_get(stash, {'hit', 0, 'title', 0})
+i = i + 1 output[i] = '</a></h2>\n<div class="r">\n'
+-- line 5 "search-result.tt2"
+i = i + 1 output[i] = stash_get(stash, {'hit', 0, 'body', 0})
+i = i + 1 output[i] = '\n</div>\n'
+        iterator.first = false
+        iterator.prev = value
+    end
+    stash_set(stash, 'loop', oldloop)
+end
+
+i = i + 1 output[i] = '\n</div>\n'
 
     return output
 end

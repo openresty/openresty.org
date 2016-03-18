@@ -93,7 +93,7 @@
     * bugfix: [ngx.req.raw_header()](https://github.com/openresty/lua-nginx-module#ngxreqraw_header): buffer overflow and the "buffer error" exception might happen for massively pipelined downstream requests. thanks Dane Knecht for the report.
     * bugfix: [ngx.req.raw_header()](https://github.com/openresty/lua-nginx-module#ngxreqraw_header): we might change nginx's internal buffer pointers, which might cause bad side-effects.
     * doc: added a new section, [Cocockets Not Available Everywhere](https://github.com/openresty/lua-nginx-module#cocockets-not-available-everywhere), under the [Known Issues](https://github.com/openresty/lua-nginx-module#known-issues) section.
-* upgraded [Lua Resty DNSLibrary](lua-resty-dns-library.html) to 0.14.
+* upgraded [Lua Resty DNS Library](lua-resty-dns-library.html) to 0.14.
     * feature: added support for the SPF record type specified by RFC 4408. thanks Tom Fitzhenry for the patch.
 * upgraded [Lua Resty Lrucache Library](lua-resty-lrucache-library.html) to 0.03.
     * feature: the [get()](https://github.com/openresty/lua-resty-lrucache#get) method now also returns the stale value as the second returned value if available.
