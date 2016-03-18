@@ -2,7 +2,8 @@
     @title         Xss Nginx Module
     @creator       Yichun Zhang
     @created       2011-06-21 09:05 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2011-06-21 09:07 GMT
     @changes       2
 --->

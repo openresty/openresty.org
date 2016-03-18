@@ -2,7 +2,8 @@
     @title         Change Log1000004
     @creator       Yichun Zhang
     @created       2011-07-08 12:22 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2011-09-02 07:56 GMT
     @changes       47
 --->
@@ -35,7 +36,7 @@ The following components are bundled by this release:
 * xss-nginx-module-0.03rc3
 
 #  Mainline Version 1.0.4.2rc13 - 8 August 2011
-* now we bundle a Perl 5 script to serve as the `install` script for [LuaJIT](luajit/) 2.0 on Solaris. now [OpenResty](openresty/) builds successfully on Solaris 11 with [LuaJIT](luajit/) enabled!
+* now we bundle a Perl 5 script to serve as the `install` script for [LuaJIT](luajit.html) 2.0 on Solaris. now [OpenResty](openresty.html) builds successfully on Solaris 11 with [LuaJIT](luajit.html) enabled!
 
 #  Mainline Version 1.0.4.2rc12 - 8 August 2011
 * bundled `gcc`'s `unwind-generic.h` for BSD because `unwind.h` is missing at least on FreeBSD.
@@ -51,7 +52,7 @@ The following components are bundled by this release:
 * now we use `gmake` if it is available in `PATH` during `./configure`; also added the `--with-make=PATH` option to allow the user to specify a custom `make` utility.
 
 #  Mainline Version 1.0.4.2rc8 - 6 August 2011
-* fixed a regression that we should use the `CC` variable instead of `HOST_CC` while passing the `--with-cc` option to the [LuaJIT](luajit/) 2.0 build system. thanks @姜大炮 for reporting this issue.
+* fixed a regression that we should use the `CC` variable instead of `HOST_CC` while passing the `--with-cc` option to the [LuaJIT](luajit.html) 2.0 build system. thanks @姜大炮 for reporting this issue.
 
 #  Mainline Version 1.0.4.2rc7 - 5 August 2011
 *  upgraded ngx_lua to v0.2.1rc3.
@@ -108,14 +109,14 @@ The following components are bundled by this release:
 
 #  Mainline Version 1.0.4.1rc5 - 26 July 2011
 * upgraded ngx_iconv to 0.10rc3, ngx_form_input to 0.07rc5, ngx_array_var to 0.03rc1, and ngx_set_misc to 0.22rc1.
-* now `--with-debug` option also enables the `gcc -g` compilation option for [LuaJIT](luajit/).
-* disabled target stripping in [LuaJIT](luajit/).
+* now `--with-debug` option also enables the `gcc -g` compilation option for [LuaJIT](luajit.html).
+* disabled target stripping in [LuaJIT](luajit.html).
 
 #  Mainline Version 1.0.4.1rc4 - 25 July 2011
-* applied the official hotfix #1 patch for [LuaJIT](luajit/) 2.0.0 beta8.
+* applied the official hotfix #1 patch for [LuaJIT](luajit.html) 2.0.0 beta8.
 
 #  Mainline Version 1.0.4.1rc3 - 23 July 2011
-* now the `--with-cc` option of `./configure` also controls the C compiler used by Lua and [LuaJIT](luajit/). thanks @姜大炮 for reporting the issue.
+* now the `--with-cc` option of `./configure` also controls the C compiler used by Lua and [LuaJIT](luajit.html). thanks @姜大炮 for reporting the issue.
 
 #  Mainline Version 1.0.4.1rc2 - 23 July 2011
 * upgraded ngx_lua to v0.2.1rc2 and ngx_redis2 to v0.07.
@@ -164,4 +165,4 @@ The following components are bundled by this release:
 #  Mainline Version 1.0.4.0rc1 - 8 July 2011
 * based on ngx_openresty 0.8.54.9, but with nginx core upgraded to nginx 1.0.4.
 
-See [ChangeLog8054](change-log-8054/) for change log for ngx_openresty 0.8.54.x.
+See [ChangeLog8054](change-log-8054.html) for change log for ngx_openresty 0.8.54.x.

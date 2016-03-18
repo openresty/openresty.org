@@ -1,0 +1,88 @@
+/*=====================================================================================
+  Less Libs
+=======================================================================================*/
+@fontstack: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+@basic: #3e423e;
+@green: #599059;
+@accent: #8a948a;
+@link: #4d8d89;
+@accent2: #effc67;
+@bg: #f9fcf9;
+@bg2: #edf4ed;
+
+.br (@radius: 3px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -o-border-radius: @radius;
+  -khtml-border-radius: @radius;
+  -ms-border-radius: @radius;
+  border-radius: @radius;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.box (@type: border-box) {
+  box-sizing: @type;
+  -ms-box-sizing: @type;
+  -moz-box-sizing: @type;
+  -webkit-box-sizing: @type;
+}
+.vg(@startColor: #555, @endColor: #333) {
+  background: @startColor;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(@startColor), to(@endColor));
+  background: -webkit-linear-gradient(@startColor, @endColor);
+  background: -moz-linear-gradient(@startColor, @endColor);
+  background: -ms-linear-gradient(@startColor, @endColor);
+  background: -o-linear-gradient(@startColor, @endColor);
+  background: linear-gradient(@startColor, @endColor);
+}
+.bs (@value) {
+  box-shadow: @value;
+  -moz-box-shadow: @value;
+  -webkit-box-shadow: @value;
+}
+.x(@w, @h) {
+  width: @w;
+  height: @h;
+}
+.x(@x) {
+  .x(@x, @x);
+}
+.opacity (@opacity: 0.5) {
+  -webkit-opacity: @opacity;
+  -moz-opacity: @opacity;
+  opacity: @opacity;
+  @msopacity: @opacity*100;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=@msopacity);
+}
+.cl () { content: '.'; display: block; height: 0; clear: both; visibility: hidden; font-size: 0; }
+
+
+/*=====================================================================================
+  Reset
+=======================================================================================*/
+a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, date, tr, ul, var, video { margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; }
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
+a, ins, del { text-decoration: none; }
+blockquote, q { quotes:none; }
+ul, ol { list-style: none; }
+table { border-spacing: 0; border-collapse: collapse; }
+caption, th { text-align: left; }
+blockquote:before, blockquote:after, q:after, q:before { content: ''; }
+/*=====================================================================================
+  Basic Styles
+=======================================================================================*/
+html { height: 100%; }
+body { background: @bg; color: @basic; font-family: @fontstack; font-size: 16px; -webkit-font-smoothing: antialiased; padding-top: 88px;}
+hr { display: none; }
+b, strong { font-weight: bold; }
+em { font-style: italic; }
+del { text-decoration: line-through; }
+address, cite, dfn { font-style: normal; }
+abbr, acronym { border-bottom: 1px dotted #999; cursor: help; }
+img { vertical-align: middle; }
+a, a:visited { color: @link; text-decoration: underline; }
+a:active { color: @link; outline: 0; text-decoration: underline; }
+a:hover { color: darken(@link, 15%); }
+input { font-family: @fontstack; }

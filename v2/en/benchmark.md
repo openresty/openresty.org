@@ -2,7 +2,8 @@
     @title         Benchmark
     @creator       Yichun Zhang
     @created       2011-06-21 05:50 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2012-04-19 02:12 GMT
     @changes       14
 --->
@@ -11,7 +12,7 @@
 # HelloWorld
 Testing the performance of a HelloWorld server does not mean many things but it does tell us where the ceiling is.
 
-The HelloWorld server based on [OpenResty](openresty/) is described in the [GettingStarted](getting-started/) document.
+The HelloWorld server based on [OpenResty](openresty.html) is described in the [GettingStarted](getting-started.html) document.
 
 Below is the result using the command `http_load -p 10 -s 5 http://localhost:8080/` on my ThinkPad T400 laptop with ngx_openresty 1.0.10.1:
 

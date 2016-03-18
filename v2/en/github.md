@@ -2,7 +2,8 @@
     @title         GitHub
     @creator       Yichun Zhang
     @created       2011-06-21 04:20 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2011-06-21 04:20 GMT
     @changes       2
 --->

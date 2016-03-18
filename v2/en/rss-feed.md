@@ -2,7 +2,8 @@
     @title         RSSFeed
     @creator       Yichun Zhang
     @created       2011-06-21 07:35 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2011-06-21 07:39 GMT
     @changes       3
 --->

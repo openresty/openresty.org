@@ -2,13 +2,14 @@
     @title         eBooks
     @creator       Yichun Zhang
     @created       2012-01-05 15:15 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2015-07-08 11:46 GMT
     @changes       33
 --->
 
 
-#  eBook "agentzh's [Nginx](nginx/) Tutorials" (version 2012.04.18)
+#  eBook "agentzh's [Nginx](nginx.html) Tutorials" (version 2012.04.18)
 * English Edition
     * [HTML Single-Page Format](https://openresty.org/download/agentzh-nginx-tutorials-enuk.html) (Web browser users)
     * [MOBI Format](https://openresty.org/download/agentzh-nginx-tutorials-enuk.mobi) (Kindle users)

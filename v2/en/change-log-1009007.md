@@ -2,7 +2,8 @@
     @title         Change Log1009007
     @creator       Yichun Zhang
     @created       2015-12-20 00:18 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2016-03-17 00:31 GMT
     @changes       40
 --->
@@ -10,7 +11,7 @@
 
 #  Version 1.9.7.4 - 16 March 2016
 * bugfix: `./configure`: use of relative paths like "./nginx" in `--prefix=PATH` led to compilation errors. thanks Tao Huang for the report.
-* upgraded [Lua Nginx Module](lua-nginx-module/) to 0.10.2.
+* upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.10.2.
     * feature: the C implementation for set SSL private keys now  supports non-RSA private keys as well. thanks Alessandro Ghedini for the patch.
     * feature: [ngx.log()](https://github.com/openresty/lua-nginx-module#ngxlog) and [print()](https://github.com/openresty/lua-nginx-module#print) now accept Lua tables with the `__tostring` metamethod.
     * feature: added new API, [ngx.config.subsystem](https://github.com/openresty/lua-nginx-module#ngxconfigsubsystem), which always takes the Lua string value "http" in this module.
@@ -42,32 +43,32 @@
     * doc: typo fix in sample configurations from Adam Malone.
     * doc: typo fix from Prayag Verma.
     * doc: typo fix from leemingtian.
-* upgraded [Lua Resty Core Library](lua-resty-core-library/) to 0.1.5.
+* upgraded [Lua Resty Core Library](lua-resty-core-library.html) to 0.1.5.
     * optimize: [ngx.ssl](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md): removed unnecessary request checks from the [priv_key_pem_to_der](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#priv_key_pem_to_der) and [cert_pem_to_der](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#cert_pem_to_der) functions to allow them to be used in more contexts. thanks Tom Thorogood for the patch.
     * bugfix: [resty.core.regex](https://github.com/openresty/lua-resty-core#restycoreregex): non-string values passed as string arguments might throw out Lua errors. thanks Robert Paprocki for the patch.
     * change: [resty.core.shdict](https://github.com/openresty/lua-resty-core#restycoreshdict): throws out a Lua error when the exptime arg is invalid.
     * change: [resty.core.regex](https://github.com/openresty/lua-resty-core#restycoreregex): unmatched submatch captures are set to `false` instead of `nil` in captures table. thanks Julien Desgats for the patch.
     * doc: typo fix from thefosk.
     * doc: typo fix from Anton Ovchinnikov.
-* upgraded [Lua Upstream Nginx Module](lua-upstream-nginx-module/) to 0.05.
+* upgraded [Lua Upstream Nginx Module](lua-upstream-nginx-module.html) to 0.05.
     * feature: expose peer connection count as the "conns" Lua table field. thanks Justin Li for the patch.
     * feature: this module can now be built as a "dynamic module" with NGINX 1.9.11+ via the `--add-dynamic-module=PATH` option of `./configure`. thanks Hiroaki Nakamura for the original patch.
     * doc: fixes from Justin Li.
-* upgraded [Lua Resty Upstream Healthcheck Library](lua-resty-upstream-healthcheck-library/) to 0.04.
+* upgraded [Lua Resty Upstream Healthcheck Library](lua-resty-upstream-healthcheck-library.html) to 0.04.
     * feature: added IPv6 address support in upstream peer names. thanks szelcsanyi for the patch.
     * feature: [status_page()](https://github.com/openresty/lua-resty-upstream-healthcheck#status_page): now we mark those upstream blocks without any (live) health checkers so as to avoid potential confusions when the checker light threads were aborted due to some fatal errors.
     * refactor: various coding refactoring to improve code readability. thanks Thijs Schreijer and Dejiang Zhu for the patches.
     * optimize: minor Lua code improvements from Aapo Talvensaari.
     * doc: link fixes from Thijs Schreijer.
     * doc: fixed escaping issues in the configuration samples in the Synopsis section by migrating to the "*_by_lua_block {}" directives. thanks whatacold for the report.
-* upgraded [Lua Resty DNSLibrary](lua-resty-dns-library/) to 0.15.
+* upgraded [Lua Resty DNSLibrary](lua-resty-dns-library.html) to 0.15.
     * feature: added reverse DNS utilities: [reverse_query](https://github.com/openresty/lua-resty-dns#reverse_query), [arpa_str](https://github.com/openresty/lua-resty-dns#arpa_str), and [expand_ipv6_addr](https://github.com/openresty/lua-resty-dns#expand_ipv6_addr). thanks bjoe2k4 for the patch.
-* upgraded [Resty CLI](resty-cli/) to 0.06.
+* upgraded [Resty CLI](resty-cli.html) to 0.06.
     * feature: resty: added new options `--http-include=PATH` and `--main-include=PATH` to include user files in the auto-generated `nginx.conf` file. thanks Nils Nordman for the patch.
-* upgraded [Set Misc Nginx Module](set-misc-nginx-module/) to 0.30.
+* upgraded [Set Misc Nginx Module](set-misc-nginx-module.html) to 0.30.
     * feature: this module can now be compiled as a dynamic module with NGINX 1.9.11+ via the `--with-dynamic-module=PATH` option of `./configure`.
     * bugfix: fixed errors and warnings with C compilers without variadic macro support.
-* upgraded [Array Var Nginx Module](array-var-nginx-module/) to 0.05.
+* upgraded [Array Var Nginx Module](array-var-nginx-module.html) to 0.05.
     * feature: this module can now be compiled as a dynamic module with NGINX 1.9.11+ via the `--with-dynamic-module=PATH` option of `./configure`.
     * bugfix: fixed errors and warnings with C compilers without variadic macro support.
 
@@ -76,9 +77,9 @@
 * change: renamed the source distribution name from `ngx_openresty` to just `openresty`.
 
 #  Version 1.9.7.2 - 21 January 2016
-* feature: applied the [ssl_cert_cb_yield patch](http://mailman.nginx.org/pipermail/nginx-devel/2016-January/007748.html) to the bundled version of the NGINX core to allow yielding in OpenSSL's [SSL_CTX_set_cert_cb()](https://www.openssl.org/docs/manmaster/ssl/SSL_set_cert_cb.html) callbacks (needed by [Lua Nginx Module](lua-nginx-module/)'s [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block) directives, for example).
+* feature: applied the [ssl_cert_cb_yield patch](http://mailman.nginx.org/pipermail/nginx-devel/2016-January/007748.html) to the bundled version of the NGINX core to allow yielding in OpenSSL's [SSL_CTX_set_cert_cb()](https://www.openssl.org/docs/manmaster/ssl/SSL_set_cert_cb.html) callbacks (needed by [Lua Nginx Module](lua-nginx-module.html)'s [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block) directives, for example).
 * bugfix: the `./configure` options `--with-dtrace-probes` and `--with-stream` did not work together and led to compilation failures.
-* upgraded [Lua Nginx Module](lua-nginx-module/) to 0.10.0.
+* upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.10.0.
     * feature: better SSL/TLS handshake control.
         * implemented the [ssl_certificate_by_lua_block](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block) and [ssl_certifcate_by_lua_file](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_file) directives for controlling the NGINX downstream SSL handshake dynamically with Lua. thanks Piotr Sikora, Zi Lin, yejingx, and others for the help.
         * added an optional `send_status_req` argument to stream-typed cosockets' [sslhandshake()](https://github.com/openresty/lua-nginx-module#tcpsocksslhandshake) method to send OCSP status request.
@@ -86,11 +87,11 @@
     * feature: added pure C API for the ngx.semaphore Lua module implemented in [lua-resty-core](https://github.com/openresty/lua-resty-core#readme). this [ngx.semaphore](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md) API provides efficient synchronization among "light threads" across request/context boundaries. thanks Weixie Cui and Dejiang Zhu from Kugou Inc. for contributing this feature. also thanks Kugou Inc. for supporting this work.
     * doc: made clear the [ngx.ctx](https://github.com/openresty/lua-nginx-module#ngxctx) scoping issues. thanks Robert Paprocki for asking.
     * doc: typo fix for the contexts of [ngx.worker.id](https://github.com/openresty/lua-nginx-module#ngxworkerid). thanks RocFang for the patch.
-* upgraded [Lua Resty Core Library](lua-resty-core-library/) to 0.1.4.
-    * feature: added new Lua modules [ngx.ssl](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#readme) and [ngx.ocsp](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ocsp.md#readme). these two modules provide Lua API mostly useful in the context of [Lua Nginx Module](lua-nginx-module/)'s [ssl_certificiate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block). thanks Piotr Sikora, Zi Lin, yejingx, Aapo Talvensaari, and others for the help.
-    * feature: implemented the [ngx.balancer](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/balancer.md#readme) Lua module to support dynamic nginx upstream balancers written in Lua. the [ngx.balancer](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/balancer.md#readme) module is expected to be used in [Lua Nginx Module](lua-nginx-module/)'s [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block) context. thanks Shuxin Yang, Aapo Talvensaari, and Guanlan Dai for the help.
+* upgraded [Lua Resty Core Library](lua-resty-core-library.html) to 0.1.4.
+    * feature: added new Lua modules [ngx.ssl](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#readme) and [ngx.ocsp](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ocsp.md#readme). these two modules provide Lua API mostly useful in the context of [Lua Nginx Module](lua-nginx-module.html)'s [ssl_certificiate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block). thanks Piotr Sikora, Zi Lin, yejingx, Aapo Talvensaari, and others for the help.
+    * feature: implemented the [ngx.balancer](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/balancer.md#readme) Lua module to support dynamic nginx upstream balancers written in Lua. the [ngx.balancer](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/balancer.md#readme) module is expected to be used in [Lua Nginx Module](lua-nginx-module.html)'s [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block) context. thanks Shuxin Yang, Aapo Talvensaari, and Guanlan Dai for the help.
     * feature: feature: added new Lua module, [ngx.semaphore](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md#readme). this [ngx.semaphore](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md#readme) API provides efficient synchronization among "light threads" across request/context boundaries. thanks Weixie Cui and Dejiang Zhu from Kugou Inc. for contributing this feature. Also thanks Kugou Inc. for supporting this work.
-* upgraded [LuaJIT](luajit/) to v2.1-20160108: https://github.com/openresty/luajit2/tags
+* upgraded [LuaJIT](luajit.html) to v2.1-20160108: https://github.com/openresty/luajit2/tags
     * imported Mike Pall's latest changes:
         * FFI: properly unsink non-standard cdata allocations.
         * ARM: added external frame unwinding. thanks to Nick Zavaritsky.
@@ -99,13 +100,13 @@
             * added soft-float FFI support.
 
 #  Version 1.9.7.1 - 25 December 2015
-* upgraded the [Nginx](nginx/) core to 1.9.7.
+* upgraded the [Nginx](nginx.html) core to 1.9.7.
     * see the changes here: http://nginx.org/en/CHANGES
-* `./configure`: now we automatically set the environment `MACOSX_DEPLOYMENT_TARGET` to the current Mac OS X version (unless the environment is already set) to ensure the [LuaJIT](luajit/) build uses the current versions of the system libraries. thanks bsyk for the report.
+* `./configure`: now we automatically set the environment `MACOSX_DEPLOYMENT_TARGET` to the current Mac OS X version (unless the environment is already set) to ensure the [LuaJIT](luajit.html) build uses the current versions of the system libraries. thanks bsyk for the report.
 * win32: use Windows line breaks in the `resty` script file of the binary distribution.
 * win32: upgraded pcre to 8.38 and openssl to 1.0.2e.
 * win32: enabled ngx_http_realip_module, ngx_http_addition_module ngx_http_sub_module, and ngx_http_stub_status_module in the win32 binary package by default.
-* upgraded [Lua Nginx Module](lua-nginx-module/) to 0.9.20.
+* upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.9.20.
     * feature: added new API functions [ngx.worker.count()](https://github.com/openresty/lua-nginx-module#ngxworkercount) and [ngx.worker.id()](https://github.com/openresty/lua-nginx-module#ngxworkerid) for returning the total count of nginx worker processes and the ordinal number (0, 1, 2, and etc) of the current worker. thanks YuanSheng Wang for the patch. also added pure C API for them.
     * feature: added new API functions [ngx.timer.pending_count()](https://github.com/openresty/lua-nginx-module#ngxtimerpending_count) and [ngx.timer.running_count()](https://github.com/openresty/lua-nginx-module#ngxtimerrunning_count). thanks Simon Eskildsen for the patch.
     * feature: added new config directive [access_by_lua_no_postpone](https://github.com/openresty/lua-nginx-module#access_by_lua_no_postpone). thanks Delta Yeh for the patch.
@@ -126,18 +127,18 @@
         * avoided allocating the host name buffer when getting peers from the connection pool.
         * recycled the stream cosockets' request cleanup records.
     * doc: documented the minimum size threshold in [lua_shared_dict](https://github.com/openresty/lua-nginx-module#lua_shared_dict). thanks mlr3000 for the original patch.
-* upgraded [Lua Resty Core Library](lua-resty-core-library/) to 0.1.3.
+* upgraded [Lua Resty Core Library](lua-resty-core-library.html) to 0.1.3.
     * Makefile: added support for relative paths in `LUA_LIB_DIR`.
     * minor code adjustments from Aapo Talvensaari.
-* upgraded [Headers More Nginx Module](headers-more-nginx-module/) to 0.29.
+* upgraded [Headers More Nginx Module](headers-more-nginx-module.html) to 0.29.
     * bugfix: changing the built-in header `X-Forwarded-For` via [more_set_input_headers](https://github.com/openresty/headers-more-nginx-module#more_set_input_headers) or [more_clear_input_headers](https://github.com/openresty/headers-more-nginx-module#more_clear_input_headers) might not take effect in some parts of the nginx core (like `$proxy_add_x_forwarded_for`).
-* upgraded [Lua Resty Redis Library](lua-resty-redis-library/) to 0.22.
+* upgraded [Lua Resty Redis Library](lua-resty-redis-library.html) to 0.22.
     * tweaked Makefile to allow relative paths in `LUA_LIB_DIR` when `DESTDIR` is not specified.
     * optimize: moved string concatenation for the Redis request construction onto the C land (taking advantage of the feature that cosockets' [send](https://github.com/openresty/lua-nginx-module#tcpsocksend) method accepts a table of strings). thanks Dejiang Zhu for the patch.
     * optimize: minor optimizations from Aapo Talvensaari.
-* upgraded [Resty CLI](resty-cli/) to 0.05.
+* upgraded [Resty CLI](resty-cli.html) to 0.05.
     * bugfix: resty: nginx might report the error "The system cannot find the file specified" in `CreateFile()` on Windows XP. thanks cover_eye for the report.
-* upgraded [LuaJIT](luajit/) to v2.1-20151219: https://github.com/openresty/luajit2/tags
+* upgraded [LuaJIT](luajit.html) to v2.1-20151219: https://github.com/openresty/luajit2/tags
     * Makefile: ensure we always install the symbolic link for the "luajit" file.
     * imported Mike Pall's latest changes:
         * FFI: Fix SPLIT pass for CONV i64.u64.
@@ -153,4 +154,4 @@
         * Fix pairs() recording.
         * FFI: Fix ipairs() recording.
         * Drop marks from replayed instructions when sinking.
-See [Change Log1009003](change-log-1009003/) for change log for [OpenResty](openresty/) 1.9.3.x.
+See [Change Log1009003](change-log-1009003.html) for change log for [OpenResty](openresty.html) 1.9.3.x.

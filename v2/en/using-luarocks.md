@@ -2,22 +2,23 @@
     @title         Using Lua Rocks
     @creator       Yichun Zhang
     @created       2011-08-07 02:32 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2014-01-25 17:59 GMT
     @changes       36
 --->
 
-This sample demonstrates usage of [LuaRocks](http://www.luarocks.org/) with [OpenResty](openresty/). It's been tested on Linux and Mac OS X, with the standard Lua interpreter or with [LuaJIT](luajit/).
+This sample demonstrates usage of [LuaRocks](http://www.luarocks.org/) with [OpenResty](openresty.html). It's been tested on Linux and Mac OS X, with the standard Lua interpreter or with [LuaJIT](luajit.html).
 
 LuaRocks is a deployment and management system for Lua modules. LuaRocks allows one to install Lua modules as self-contained packages called "rocks", which also contain version dependency  information.
 
-We assume that you have installed [OpenResty](openresty/) into the default location, i.e., `/usr/local/openresty`. You can adjust the paths in this sample according to the actual installation prefix of your [OpenResty](openresty/) installation. If you haven't installed OpenResty yet, check out the [Download](download/) and [Installation](installation/) pages.
+We assume that you have installed [OpenResty](openresty.html) into the default location, i.e., `/usr/local/openresty`. You can adjust the paths in this sample according to the actual installation prefix of your [OpenResty](openresty.html) installation. If you haven't installed OpenResty yet, check out the [Download](download.html) and [Installation](installation.html) pages.
 
 
 #  Install LuaRocks
 First of all, let's install LuaRocks:
 
-[Download](download/) the LuaRocks tarball from [http://www.luarocks.org/en/Download](http://www.luarocks.org/en/-download/). As of this writing, the latest version is `2.1.2`, but we'll use `2.0.13` for compatibility throughout this sample.
+[Download](download.html) the LuaRocks tarball from [http://www.luarocks.org/en/Download](http://www.luarocks.org/en/-download.html). As of this writing, the latest version is `2.1.2`, but we'll use `2.0.13` for compatibility throughout this sample.
 
 ```
 wget http://luarocks.org/releases/luarocks-2.0.13.tar.gz
@@ -108,15 +109,15 @@ end
 ```
 
 
-#  Start the [Nginx](nginx/) server
-Now we start the [Nginx](nginx/) server with our app:
+#  Start the [Nginx](nginx.html) server
+Now we start the [Nginx](nginx.html) server with our app:
 
 ```
 ulimit -n1024   # increase the maximal fd count limit per process
 ./sbin/nginx
 ```
 
-If you have already started the [Nginx](nginx/) server, then stop it before starting it:
+If you have already started the [Nginx](nginx.html) server, then stop it before starting it:
 
 ```
 ./sbin/nginx -s stop
@@ -144,7 +145,7 @@ then at the second run:
 85e73df5c41378f830c031b81e4453d2
 ```
 
-The output changed because [Lua Nginx Module](lua-nginx-module/) by default caches already loaded Lua modules and those outputing code run at Lua module loading time will no longer be run.
+The output changed because [Lua Nginx Module](lua-nginx-module.html) by default caches already loaded Lua modules and those outputing code run at Lua module loading time will no longer be run.
 
 Now let's do some benchmark:
 
@@ -178,10 +179,10 @@ Transfer rate:          3007.41 [Kbytes/sec] received
 Note that the throughput is achieved by a single nginx worker process. While doing such benchmark on your own, just be careful about error log level settings in your nginx.conf and not to run out of dynamic port range on your local machine, or it'll be significantly slow after a short of period of time.
 
 #  Known issues
-Pior to [OpenResty](openresty/) 1.0.4.2rc10, it's known that turning `lua_code_cache` on will cause LuaRocks atop [Lua Nginx Module](lua-nginx-module/) to throw out the following exception in `error.log`:
+Pior to [OpenResty](openresty.html) 1.0.4.2rc10, it's known that turning `lua_code_cache` on will cause LuaRocks atop [Lua Nginx Module](lua-nginx-module.html) to throw out the following exception in `error.log`:
 
 ```
 lua handler aborted: runtime error: stack overflow
 ```
 
-If you're using any version of [OpenResty](openresty/) before 1.0.4.2rc10, please consider upgrading.
+If you're using any version of [OpenResty](openresty.html) before 1.0.4.2rc10, please consider upgrading.

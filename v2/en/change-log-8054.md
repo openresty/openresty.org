@@ -2,7 +2,8 @@
     @title         Change Log8054
     @creator       Yichun Zhang
     @created       2011-06-21 04:31 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2011-07-08 11:23 GMT
     @changes       25
 --->
@@ -96,19 +97,19 @@ The following components are bundled by this release:
 upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx_srcache to 0.12rc5, ngx_redis2 to 0.07rc3.
 
 #  Mainline Version 0.8.54.7rc3 - 27 June 2011
-* upgraded [LuaJIT](luajit/) to 2.0.0beta8, ngx_lua to 0.1.6rc15, and ngx_echo to 0.36rc4.
+* upgraded [LuaJIT](luajit.html) to 2.0.0beta8, ngx_lua to 0.1.6rc15, and ngx_echo to 0.36rc4.
 
 #  Mainline Version 0.8.54.7rc2
-* Upgraded [LuaNginxModule](lua-nginx-module/) to v0.1.6rc14 and [HeadersMoreNginxModule](headers-more-nginx-module/) to v0.15rc3.
+* Upgraded [LuaNginxModule](lua-nginx-module.html) to v0.1.6rc14 and [HeadersMoreNginxModule](headers-more-nginx-module.html) to v0.15rc3.
 
 #  Mainline Version 0.8.54.7rc1
-* Upgraded [HeadersMoreNginxModule](headers-more-nginx-module/) to v0.15rc2 and [LuaNginxModule](lua-nginx-module/) to v0.1.6rc13.
+* Upgraded [HeadersMoreNginxModule](headers-more-nginx-module.html) to v0.15rc2 and [LuaNginxModule](lua-nginx-module.html) to v0.1.6rc13.
 
 #  Release 0.8.54.6
-* Upgraded [DrizzleNginxModule](drizzle-nginx-module/) to 0.0.15rc10.
-* Upgraded [LuaNginxModule](lua-nginx-module/) to 0.1.6rc12.
-* Upgraded [Redis2NginxModule](redis-2-nginx-module/) to 0.07rc2.
+* Upgraded [DrizzleNginxModule](drizzle-nginx-module.html) to 0.0.15rc10.
+* Upgraded [LuaNginxModule](lua-nginx-module.html) to 0.1.6rc12.
+* Upgraded [Redis2NginxModule](redis-2-nginx-module.html) to 0.07rc2.
 
 #  Release 0.8.54.5
-* Upgraded [EchoNginxModule](echo-nginx-module/) to 0.36rc3.
-* Upgraded [LuaNginxModule](lua-nginx-module/) to 0.1.6rc9.
+* Upgraded [EchoNginxModule](echo-nginx-module.html) to 0.36rc3.
+* Upgraded [LuaNginxModule](lua-nginx-module.html) to 0.1.6rc9.

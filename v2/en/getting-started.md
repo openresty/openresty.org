@@ -2,12 +2,13 @@
     @title         Getting Started
     @creator       Yichun Zhang
     @created       2011-06-20 11:39 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2013-08-24 19:42 GMT
     @changes       30
 --->
 
-First of all, please go to the [Download](download/) page to get the source code tarball of [OpenResty](openresty/), and see the [Installation](installation/) page for how to build and install it into your system.
+First of all, please go to the [Download](download.html) page to get the source code tarball of [OpenResty](openresty.html), and see the [Installation](installation.html) page for how to build and install it into your system.
 
 
 # HelloWorld
@@ -45,10 +46,10 @@ http {
 }
 ```
 
-If you're familiar with [Nginx](nginx/) configuration, it should look very familiar to you. [OpenResty](openresty/) is just an enhanced version of [Nginx](nginx/) by means of addon modules anyway. You can take advantage of all the existing goodies in the [Nginx](nginx/) world.
+If you're familiar with [Nginx](nginx.html) configuration, it should look very familiar to you. [OpenResty](openresty.html) is just an enhanced version of [Nginx](nginx.html) by means of addon modules anyway. You can take advantage of all the existing goodies in the [Nginx](nginx.html) world.
 
-## Start the [Nginx](nginx/) server
-Assuming you have installed [OpenResty](openresty/) into `/usr/local/openresty` (this is the default), we make our `nginx` executable of our [OpenResty](openresty/) installation available in our `PATH` environment:
+## Start the [Nginx](nginx.html) server
+Assuming you have installed [OpenResty](openresty.html) into `/usr/local/openresty` (this is the default), we make our `nginx` executable of our [OpenResty](openresty.html) installation available in our `PATH` environment:
 
 ```
 PATH=/usr/local/openresty/nginx/sbin:$PATH
@@ -79,9 +80,9 @@ If everything is okay, we should get the output
 You can surely point your favorite web browser to the location `http://localhost:8080/`.
 
 ## Test performance
-See [Benchmark](benchmark/) for details.
+See [Benchmark](benchmark.html) for details.
 
 
 # Where to go from here
 
-View the documentation of each component at the [Components](components/) page and find [Nginx](nginx/) related stuffs on the [Nginx Wiki site](http://wiki.nginx.org/).
+View the documentation of each component at the [Components](components.html) page and find [Nginx](nginx.html) related stuffs on the [Nginx Wiki site](http://wiki.nginx.org/).

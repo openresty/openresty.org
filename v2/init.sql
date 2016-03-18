@@ -6,17 +6,19 @@ drop table if exists posts cascade;
 
 create table posts (
     id serial primary key,
+    permlink varchar(128) unique not null,
     title text not null,
     html_body text not null,
     creator varchar(32) not null,
     created timestamp with time zone not null,
     modifier varchar(32) not null,
+    modifier_link varchar(128),
     modified timestamp with time zone not null,
     changes int not null,
     textsearch_index_col tsvector
 );
 
-\copy posts (title, html_body, creator, created, modifier, modified, changes) from 'posts.tsv'
+\copy posts (title, permlink, html_body, creator, created, modifier, modifier_link, modified, changes) from 'posts.tsv'
 
 drop function if exists posts_trigger() cascade;
 

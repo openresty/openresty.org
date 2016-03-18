@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>OpenResty</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
+	<!--
+	If you ever wanted to use LESS instead of CSS...
+	<link rel="stylesheet" type="text/less" href="/css/main.less">
+	<script src="/js/less.js"></script>
+	-->
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+        <script src="/js/jquery.min.js"></script>
+        <script>
+        (function () {
+            var permlinks = {About:'about',ArrayVarNginxModule:'array-var-nginx-module',AuthRequestNginxModule:'auth-request-nginx-module',Benchmark:'benchmark',BuildSystemtap:'build-systemtap',ChangeLog1000004:'change-log-1000004',ChangeLog1000005:'change-log-1000005',ChangeLog1000006:'change-log-1000006',ChangeLog1000008:'change-log-1000008',ChangeLog1000009:'change-log-1000009',ChangeLog1000010:'change-log-1000010',ChangeLog1000011:'change-log-1000011',ChangeLog1000015:'change-log-1000015',ChangeLog1002001:'change-log-1002001',ChangeLog1002003:'change-log-1002003',ChangeLog1002004:'change-log-1002004',ChangeLog1002006:'change-log-1002006',ChangeLog1002007:'change-log-1002007',ChangeLog1002008:'change-log-1002008',ChangeLog1004001:'change-log-1004001',ChangeLog1004002:'change-log-1004002',ChangeLog1004003:'change-log-1004003',ChangeLog1005008:'change-log-1005008',ChangeLog1005011:'change-log-1005011',ChangeLog1005012:'change-log-1005012',ChangeLog1007000:'change-log-1007000',ChangeLog1007002:'change-log-1007002',ChangeLog1007004:'change-log-1007004',ChangeLog1007007:'change-log-1007007',ChangeLog1007010:'change-log-1007010',ChangeLog1009003:'change-log-1009003',ChangeLog1009007:'change-log-1009007',ChangeLog8054:'change-log-8054',Changes:'changes',Community:'community',Components:'components',ContactUs:'contact-us',CoolkitNginxModule:'coolkit-nginx-module',Debugging:'debugging',DonateOnline:'donate-online',Donors:'donors',Download:'download',DrizzleNginxModule:'drizzle-nginx-module',DynamicRoutingBasedOnRedis:'dynamic-routing-based-on-redis',EchoNginxModule:'echo-nginx-module',EncryptedSessionNginxModule:'encrypted-session-nginx-module',FastCGINginxModule:'fastcgi-nginx-module',FormInputNginxModule:'form-input-nginx-module',GettingInvolved:'getting-involved',GettingStarted:'getting-started',GitHub:'github',HeadersMoreNginxModule:'headers-more-nginx-module',IconvNginxModule:'iconv-nginx-module',Installation:'installation',LuaCjsonLibrary:'lua-cjson-library',LuaJIT:'luajit',LuaNginxModule:'lua-nginx-module',LuaRdsParserLibrary:'lua-rds-parser-library',LuaRedisParserLibrary:'lua-redis-parser-library',LuaRestyCoreLibrary:'lua-resty-core-library',LuaRestyDNSLibrary:'lua-resty-dns-library',LuaRestyLockLibrary:'lua-resty-lock-library',LuaRestyLrucacheLibrary:'lua-resty-lrucache-library',LuaRestyMemcachedLibrary:'lua-resty-memcached-library',LuaRestyMySQLLibrary:'lua-resty-mysql-library',LuaRestyRedisLibrary:'lua-resty-redis-library',LuaRestyStringLibrary:'lua-resty-string-library',LuaRestyUploadLibrary:'lua-resty-upload-library',LuaRestyUpstreamHealthcheckLibrary:'lua-resty-upstream-healthcheck-library',LuaRestyWebSocketLibrary:'lua-resty-web-socket-library',LuaUpstreamNginxModule:'lua-upstream-nginx-module',MainMenu:'main-menu',MemcNginxModule:'memc-nginx-module',Nginx:'nginx',NginxDevelKit:'nginx-devel-kit',OpenResty:'openresty',PostgresNginxModule:'postgres-nginx-module',Presentations:'presentations',Profiling:'profiling',ProxyNginxModule:'proxy-nginx-module',QualityAssurance:'quality-assurance',RSSFeed:'rss-feed',RdsCsvNginxModule:'rds-csv-nginx-module',RdsJsonNginxModule:'rds-json-nginx-module',Redis2NginxModule:'redis-2-nginx-module',RedisNginxModule:'redis-nginx-module',ReleaseNote:'release-note',Resources:'resources',RestyCLI:'resty-cli',RoutingMySQLQueriesBasedOnURIArgs:'routing-mysql-queries-based-on-uri-args',Samples:'samples',SetMiscNginxModule:'set-misc-nginx-module',SrcacheNginxModule:'srcache-nginx-module',StandardLuaInterpreter:'standard-lua-interpreter',Upgrading:'upgrading',UpstreamKeepaliveNginxModule:'upstream-keepalive-nginx-module',UsingLuaRocks:'using-luarocks',XssNginxModule:'xss-nginx-module',YichunZhang:'yichun-zhang',eBooks:'ebooks',libdrizzle:'libdrizzle'};
+            var hash = window.location.hash;
+            var key = hash.substring(1, hash.length);
+            //alert(key)
+            var file = permlinks[key];
+            if (file) {
+                window.location.hash = "";
+                window.location = url + file;
+            }
+        })();
+        </script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+
+	
+	<header role="header">
+		<p class="site-name left">
+			<a href="#">Open<span>Resty</span></a>
+			<small>Fast web platform by extending NGINX with Lua</small>
+		</p><!-- / site-name -->
+
+		<form action="#" class="right">
+			<fieldset>
+				<input type="search" name="search" id="search" placeholder="Search OpenResty.org">
+			</fieldset>
+		</form>
+	</header>
+
+	<section id="intro">
+		<div class="text">
+			<p>OpenResty is a high performance web platform based on NGINX and LuaJIT.</p>
+			<p><small>It’s open-source stuff so you can contribute:</small> <a href="https://github.com/openresty/" class="github">Contribute on GitHub &raquo;</a></p>
+		</div><!-- / text -->
+	</section><!-- / intro -->
+
+	<div id="wrapper">
+		<div class="sidebar sleft">
+			<nav id="nav">
+[% main_menu %]
+			</nav><!-- / nav -->
+
+			<ul class="buttons">
+                                <!-- <li><a href="#" class="btn rss">RSS Feed</a></li> -->
+				<li><a href="#" class="btn paypal">Donate with PayPal</a></li>
+			</ul>
+		</div><!-- / sidebar left -->
+		
+		<section id="main">
+[% PROCESS post.tt2 %]
+		</section><!-- / main -->
+
+		<div class="sidebar sright">
+			<div class="options">
+                                <!--
+				<ul class="first">
+					<li><a href="#" class="close-all">close all</a></li>
+					<li><a href="#" class="permaview">permaview</a></li>
+					<li><a href="#" class="more-options">options</a></li>
+                                </ul> --><!-- / first -->
+			</div><!-- options -->
+
+			<div class="tabs">
+				<ul class="navigation">
+					<li><a href="#" class="current">Timeline</a></li>
+					<li><a href="#">All</a></li>
+					<li><a href="#">Tags</a></li>
+					<li><a href="#">More</a></li>
+				</ul><!-- / navigation -->
+				<div class="panes">
+					<div class="pane" id="timeline">
+						<ul>
+							<li>
+								<h3>15 April 2014</h3>
+								<ul>
+									<li><a href="#">OpenResty</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>30 March 2014</h3>
+								<ul>
+									<li><a href="#">Download</a></li>
+									<li><a href="#">ChangeLog1005011</a></li>
+									<li><a href="#">LuaUpstreamNginxModule</a></li>
+									<li><a href="#">LuaRestyUpstreamHealthcheckLibrary</a></li>
+									<li><a href="#">Components</a></li>
+								</ul>
+
+							</li>
+							<li>
+								<h3>25 March 2014</h3>
+								<ul>
+									<li><a href="#">Changes</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>4 March 2014</h3>
+								<ul>
+									<li><a href="#">BuildSystemtap</a></li>
+									<li><a href="#">DynamicRoutingBasedOnRedis</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>28 February 2014</h3>
+								<ul>
+									<li><a href="#">Presentations</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>25 January 2014</h3>
+								<ul>
+									<li><a href="#">UsingLuaRocks</a></li>
+									<li><a href="#">LuaJIT</a></li>
+									<li><a href="#">Installation</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>11 January 2014</h3>
+								<ul>
+									<li><a href="#">ChangeLog1005008</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>14 December 2013</h3>
+								<ul>
+									<li><a href="#">ChangeLog1004003</a></li>
+									<li><a href="#">LuaRestyCoreLibrary</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>17 October 2013</h3>
+								<ul>
+									<li><a href="#">SrcacheNginxModule</a></li>
+									<li><a href="#">SetMiscNginxModule</a></li>
+									<li><a href="#">Redis2NginxModule</a></li>
+									<li><a href="#">LuaRedisParserLibrary</a></li>
+									<li><a href="#">LuaNginxModule</a></li>
+									<li><a href="#">HeadersMoreNginxModule</a></li>
+									<li><a href="#">MemcNginxModule</a></li>
+									<li><a href="#">EchoNginxModule</a></li>
+									<li><a href="#">DrizzleNginxModule</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>6 October 2013</h3>
+								<ul>
+									<li><a href="#">Debugging</a></li>
+									<li><a href="#">MainMenu</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>30 September 2013</h3>
+								<ul>
+									<li><a href="#">ChangeLog1004002</a></li>
+									<li><a href="#">CoolkitNginxModule</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div><!-- / pane -->
+				</div><!-- / panes -->
+			</div><!-- / tabs -->
+		</div><!-- / sidebar right -->
+	</div><!-- / wrapper -->
+</body>
+</html>

@@ -2,7 +2,8 @@
     @title         Auth Request Nginx Module
     @creator       Yichun Zhang
     @created       2011-06-21 08:21 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2011-06-21 08:25 GMT
     @changes       2
 --->

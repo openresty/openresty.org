@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>OpenResty</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
+	<!--
+	If you ever wanted to use LESS instead of CSS...
+	<link rel="stylesheet" type="text/less" href="/css/main.less">
+	<script src="/js/less.js"></script>
+	-->
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/main.js"></script>
+</head>
+<body>
+
+	
+	<header role="header">
+		<p class="site-name left">
+			<a href="./">OpenResty</a>
+			<small>A fast web app server by extending nginx</small>
+		</p><!-- / site-name -->
+
+		<form action="#" class="right">
+			<fieldset>
+				<input type="search" name="search" id="search" placeholder="Search OpenResty.org">
+			</fieldset>
+		</form>
+	</header>
+
+	<div id="wrapper">
+		<div class="sidebar sleft">
+			<nav id="nav">
+[% main_menu %]
+			</nav><!-- / nav -->
+
+			<ul class="buttons">
+				<li><a href="#" class="btn rss">RSS Feed</a></li>
+				<li><a href="#" class="btn paypal">Donate with PayPal</a></li>
+			</ul>
+		</div><!-- / sidebar left -->
+		
+		<section id="main">
+[% PROCESS post.tt2 %]
+		</section><!-- / main -->
+
+		<div class="sidebar sright">
+			<div class="options">
+				<ul class="first">
+					<li><a href="#" class="close-all">close all</a></li>
+					<li><a href="#" class="permaview">permaview</a></li>
+					<li><a href="#" class="more-options">options</a></li>
+				</ul><!-- / first -->
+			</div><!-- options -->
+
+			<div class="tabs">
+				<ul class="navigation">
+					<li><a href="#" class="current">Timeline</a></li>
+					<li><a href="#">All</a></li>
+					<li><a href="#">Tags</a></li>
+					<li><a href="#">More</a></li>
+				</ul><!-- / navigation -->
+				<div class="panes">
+					<div class="pane" id="timeline">
+						<ul>
+							<li>
+								<h3>15 April 2014</h3>
+								<ul>
+									<li><a href="#">OpenResty</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>30 March 2014</h3>
+								<ul>
+									<li><a href="#">Download</a></li>
+									<li><a href="#">ChangeLog1005011</a></li>
+									<li><a href="#">LuaUpstreamNginxModule</a></li>
+									<li><a href="#">LuaRestyUpstreamHealthcheckLibrary</a></li>
+									<li><a href="#">Components</a></li>
+								</ul>
+
+							</li>
+							<li>
+								<h3>25 March 2014</h3>
+								<ul>
+									<li><a href="#">Changes</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>4 March 2014</h3>
+								<ul>
+									<li><a href="#">BuildSystemtap</a></li>
+									<li><a href="#">DynamicRoutingBasedOnRedis</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>28 February 2014</h3>
+								<ul>
+									<li><a href="#">Presentations</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>25 January 2014</h3>
+								<ul>
+									<li><a href="#">UsingLuaRocks</a></li>
+									<li><a href="#">LuaJIT</a></li>
+									<li><a href="#">Installation</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>11 January 2014</h3>
+								<ul>
+									<li><a href="#">ChangeLog1005008</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>14 December 2013</h3>
+								<ul>
+									<li><a href="#">ChangeLog1004003</a></li>
+									<li><a href="#">LuaRestyCoreLibrary</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>17 October 2013</h3>
+								<ul>
+									<li><a href="#">SrcacheNginxModule</a></li>
+									<li><a href="#">SetMiscNginxModule</a></li>
+									<li><a href="#">Redis2NginxModule</a></li>
+									<li><a href="#">LuaRedisParserLibrary</a></li>
+									<li><a href="#">LuaNginxModule</a></li>
+									<li><a href="#">HeadersMoreNginxModule</a></li>
+									<li><a href="#">MemcNginxModule</a></li>
+									<li><a href="#">EchoNginxModule</a></li>
+									<li><a href="#">DrizzleNginxModule</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>6 October 2013</h3>
+								<ul>
+									<li><a href="#">Debugging</a></li>
+									<li><a href="#">MainMenu</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>30 September 2013</h3>
+								<ul>
+									<li><a href="#">ChangeLog1004002</a></li>
+									<li><a href="#">CoolkitNginxModule</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div><!-- / pane -->
+				</div><!-- / panes -->
+			</div><!-- / tabs -->
+		</div><!-- / sidebar right -->
+	</div><!-- / wrapper -->
+	
+	
+
+</body>
+</html>
+  

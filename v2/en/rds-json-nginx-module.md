@@ -2,7 +2,8 @@
     @title         Rds Json Nginx Module
     @creator       Yichun Zhang
     @created       2011-06-21 08:39 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2011-06-21 08:40 GMT
     @changes       2
 --->

@@ -2,14 +2,15 @@
     @title         Dynamic Routing Based On Redis
     @creator       Yichun Zhang
     @created       2011-07-27 04:02 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2014-03-04 22:19 GMT
     @changes       17
 --->
 
 This sample demonstrates how to use Redis to route incoming requests to different HTTP backends based on the requests' `User-Agent` header.
 
-This demo uses the components [Lua Nginx Module](lua-nginx-module/) and [Lua Resty Redis Library](lua-resty-redis-library/) enabled by default in [OpenResty](openresty/).
+This demo uses the components [Lua Nginx Module](lua-nginx-module.html) and [Lua Resty Redis Library](lua-resty-redis-library.html) enabled by default in [OpenResty](openresty.html).
 
 Here's the complete code listing for our `nginx.conf`:
 
@@ -96,7 +97,7 @@ $ curl --user-agent foo localhost:8080
    <nginx.org home page goes here>
 ```
 
-To further tune the performance, one could enable the connection pool for the redis connections, as documented in [Lua Resty Redis Library](lua-resty-redis-library/)'s README.
+To further tune the performance, one could enable the connection pool for the redis connections, as documented in [Lua Resty Redis Library](lua-resty-redis-library.html)'s README.
 
 Before you benchmarking your interface defined here, please ensure that you've raised the error log level to `warn` or `notice` in your `nginx.conf` file, as in
 

@@ -2,7 +2,8 @@
     @title         Headers More Nginx Module
     @creator       Yichun Zhang
     @created       2011-06-21 08:59 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2013-10-17 23:34 GMT
     @changes       5
 --->

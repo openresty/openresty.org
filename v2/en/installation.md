@@ -2,16 +2,17 @@
     @title         Installation
     @creator       Yichun Zhang
     @created       2011-06-21 04:40 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2016-01-28 20:44 GMT
     @changes       84
 --->
 
-If you haven't downloaded the [OpenResty](openresty/) source code tarball, please go to the [Download](download/) page first.
+If you haven't downloaded the [OpenResty](openresty.html) source code tarball, please go to the [Download](download.html) page first.
 
 (If you are on Windows, then you should check out [this documentation](https://github.com/openresty/openresty/blob/master/doc/README-win32.md#readme) instead.)
 
-Basically, building and installing [OpenResty](openresty/) is as simple as
+Basically, building and installing [OpenResty](openresty.html) is as simple as
 
 ```
 tar xvf ngx_openresty-VERSION.tar.gz
@@ -21,7 +22,7 @@ make
 make install
 ```
 
-where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty/), like `0.8.54.6`.
+where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html), like `0.8.54.6`.
 
 If your system environment is modern enough, then you almost always want to enable the PCRE JIT support and IPv6 support in your NGINX by passing the `--with-pcre-jit` and `--with-ipv6` options to the `./configure` script.
 
@@ -90,8 +91,8 @@ pfexec pkg install gcc-3 SUNWlibm
 
 # Build OpenResty
 
-## [Download](download/)
-download the latest ngx_openresty tarball can be fetched from the [Download](download/) page and unpack it like this:
+## [Download](download.html)
+download the latest ngx_openresty tarball can be fetched from the [Download](download.html) page and unpack it like this:
 
 ```
 tar xzvf ngx_openresty-VERSION.tar.gz
@@ -106,7 +107,7 @@ Then enter the `ngx_openresty-VERSION/` directory, and type the following comman
 ./configure
 ```
 
-By default, `--prefix=/usr/local/openresty` is assumed. You should only disable [LuaJIT](luajit/) 2 when your platform does not support [LuaJIT](luajit/).
+By default, `--prefix=/usr/local/openresty` is assumed. You should only disable [LuaJIT](luajit.html) 2 when your platform does not support [LuaJIT](luajit.html).
 
 You can specify various options, as in
 
@@ -120,9 +121,9 @@ You can specify various options, as in
             -j2
 ```
 
-All of the standard [Nginx](nginx/) configure file options can be used here, including `--add-module=PATH` for adding your own 3rd-party [Nginx](nginx/) C modules. Try `./configure --help` to see more options available.
+All of the standard [Nginx](nginx.html) configure file options can be used here, including `--add-module=PATH` for adding your own 3rd-party [Nginx](nginx.html) C modules. Try `./configure --help` to see more options available.
 
-Errors in running the ./configure script can be found in the file `build/nginx-VERSION/objs/autoconf.err` where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty/), like `0.8.54.6`.
+Errors in running the ./configure script can be found in the file `build/nginx-VERSION/objs/autoconf.err` where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html), like `0.8.54.6`.
 
 ### Notes for Solaris users
 For Solaris, it's common to install libraries like OpenSSL to `/lib`, so when it complaints about missing OpenSSL and you have indeed already installed it, specify the `--with-ld-opt='-L/lib'` option.
@@ -143,7 +144,7 @@ make -j2
 assuming you have 2 CPU cores.
 
 ## make install
-If all the previous steps go without problems, you can install [OpenResty](openresty/) into your system by typing the command
+If all the previous steps go without problems, you can install [OpenResty](openresty.html) into your system by typing the command
 
 ```
 make install

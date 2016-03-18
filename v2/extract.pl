@@ -64,18 +64,34 @@ while (<$in>) {
 close $in;
 
 @records = grep { $_->{title}
-                  && (!$_->{tags} || $_->{tags} ne 'admin' || $_->{title} eq 'MainMenu')
+                  && (!$_->{tags} || $_->{tags} ne 'admin')
                   && $_->{title} !~ /StyleSheet|ColorPalette|Markup(?:Post|Pre)/
               } @records;
 
 #warn Dumper(\@records);
+my %permlinks;
 for my $r (@records) {
     my $title = $r->{title};
     my $fname = gen_uri_name($title);
     #warn $fname;
     #say $title;
+    $permlinks{$title} = $fname;
     write_file("$lang/$fname.md", $r);
 }
+
+{
+    my @kv;
+    for my $tag (sort keys %permlinks) {
+        push @kv, "$tag:'$permlinks{$tag}'";
+    }
+
+    my $outfile = "old-permlinks.js";
+    open my $out, ">$outfile"
+        or die "cannot open $outfile for writing: $!\n";
+    print $out "var permlinks = {" . join(",", @kv) . "};\n";
+    close $out;
+}
+
 say "Found ", scalar(@records), " records.";
 
 sub gen_uri_name {
@@ -137,7 +153,18 @@ sub write_file {
     $creator = fmt_wiki_word($creator);
 
     my $created = parse_ts($r->{created}) or die "no created found for $title";
+
     my $modifier = $r->{modifier} or die "no modifier found for $title";
+
+    my $modifier_link = '';
+    #warn "modifier $modifier";
+    if ($wikiwords{$modifier}) {
+        #warn "HIT";
+        $modifier_link = gen_uri_name($modifier);
+    }
+
+    $modifier = fmt_wiki_word($modifier);
+
     my $modified = parse_ts($r->{modified}) // '';
     my $body = $r->{body} or die "no body found for $title";
 
@@ -149,6 +176,7 @@ sub write_file {
     \@creator       $creator
     \@created       $created
     \@modifier      $modifier
+    \@modifier_link $modifier_link
     \@modified      $modified
     \@changes       $changes
 --->
@@ -184,6 +212,8 @@ sub wiki2md {
 
     my $out = '';
     while (1) {
+        my $seen_list_item;
+
         if ($s =~ /\G \{{3} (.*?) \}{3} /gxcms) {
             my $data = $1;
             if ($data =~ /\n/) {
@@ -209,7 +239,7 @@ _EOC_
             my $word = $1;
             if ($wikiwords{$word}) {
                 my $label = fmt_wiki_word($word);
-                my $link = gen_uri_name($word) . "/";
+                my $link = gen_uri_name($word) . ".html";
                 $out .= "[$label]($link)";
             } else {
                 $out .= $word;
@@ -218,7 +248,7 @@ _EOC_
         } elsif ($s =~ / \G \[\[ ([^\]]*) \| ([^\]]*) \]\] /gxcms) {
             my ($tag, $link) = ($1, $2);
             if ($link =~ /^[A-Z]\w+$/) {
-                $link = gen_uri_name($link) . "/";
+                $link = gen_uri_name($link) . ".html";
             }
 
             $out .= "[$tag]($link)";
@@ -234,10 +264,19 @@ _EOC_
                 $out .= $1;
             }
 
+        } elsif ($s =~ m/ \G ^ : /gxcms) {
+            $out .= "\n    ";
+
+        } elsif ($s =~ m{ \G // ([^\n]*?) // }gxcms) {
+            $out .= "*$1*";
+
+        } elsif ($s =~ m{ \G (https? :// \S+) }gxcms) {
+            $out .= $1;
+
         } elsif ($s =~ / \G \[\[ ( [^\]\|]* ) \]\] /gxcms) {
             my $tag = $1;
 
-            my $link = gen_uri_name($tag) . "/";
+            my $link = gen_uri_name($tag) . ".html";
 
             $out .= "[$tag]($link)";
 
@@ -245,7 +284,7 @@ _EOC_
             my $prefix = '#' x length($1);
             $out .= "\n$prefix ";
 
-        } elsif ($s =~ /\G ([^\[\{!~<A-Z*]+) /gcxms) {
+        } elsif ($s =~ m#\G ([^\[\{!~<A-Z*:/h]+) #gcxms) {
             $out .= $1;
 
         } elsif ($s =~ /\G (.) /gcxms) {

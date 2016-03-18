@@ -2,14 +2,15 @@
     @title         Routing My SQLQueries Based On URIArgs
     @creator       Yichun Zhang
     @created       2011-11-16 04:06 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2011-11-16 04:22 GMT
     @changes       9
 --->
 
-This sample demonstrates how to route incoming requests to different MySQL queries based on different combinations of URI query arguments, preserving streaming output capabilities provided by [Drizzle Nginx Module](drizzle-nginx-module/) and [Rds Json Nginx Module](rds-json-nginx-module/).
+This sample demonstrates how to route incoming requests to different MySQL queries based on different combinations of URI query arguments, preserving streaming output capabilities provided by [Drizzle Nginx Module](drizzle-nginx-module.html) and [Rds Json Nginx Module](rds-json-nginx-module.html).
 
-This demo uses the modules [Drizzle Nginx Module](drizzle-nginx-module/), [Lua Nginx Module](lua-nginx-module/), [Rds Json Nginx Module](rds-json-nginx-module/), and [Set Misc Nginx Module](set-misc-nginx-module/) bundled by [OpenResty](openresty/).
+This demo uses the modules [Drizzle Nginx Module](drizzle-nginx-module.html), [Lua Nginx Module](lua-nginx-module.html), [Rds Json Nginx Module](rds-json-nginx-module.html), and [Set Misc Nginx Module](set-misc-nginx-module.html) bundled by [OpenResty](openresty.html).
 
 Here's the complete code listing for our `nginx.conf`:
 
@@ -65,7 +66,7 @@ http {
 ```
 
 
-And then we start our [Nginx](nginx/) server with this configure file and test with our `/cats` service like this:
+And then we start our [Nginx](nginx.html) server with this configure file and test with our `/cats` service like this:
 
 ```
 $ curl 'localhost:8080/cats'

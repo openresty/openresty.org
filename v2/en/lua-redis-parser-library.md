@@ -2,7 +2,8 @@
     @title         Lua Redis Parser Library
     @creator       Yichun Zhang
     @created       2011-08-11 02:10 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2013-10-17 23:35 GMT
     @changes       4
 --->

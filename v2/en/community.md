@@ -2,7 +2,8 @@
     @title         Community
     @creator       Yichun Zhang
     @created       2012-08-04 23:04 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2012-08-23 17:49 GMT
     @changes       6
 --->

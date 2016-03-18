@@ -1,0 +1,37 @@
+<div class="item">
+        <header>
+                <h2>[% title | html %]</h2>
+                [%- IF NOT skip_meta %]
+                <small>
+                    [% IF modifier_link %]<a href="[% modifier_link %].html">[% END %]
+                    [% modifier %]
+                    [% IF modifier_link %]</a>[% END %],
+                    [% modified %] (created [% created %])</small>
+                [%- END %]
+                <div class="options">
+                        <!--
+                        <a href="#" class="trigger">Show Options</a>
+                        <ul class="first-level">
+                                <li><a href="#">close</a></li>
+                                <li><a href="#">close others</a></li>
+                                <li><a href="#">view</a></li>
+                                <li><a href="#">fields</a></li>
+                                <li><a href="#">syncing</a></li>
+                                <li><a href="#">permalink</a></li>
+                                <li><a href="#">references</a></li>
+                                <li>
+                                        <a href="#">jump</a>
+                                        <ul class="second-level">
+                                                <li><a href="#">Benchmark</a></li>
+                                                <li><a href="#">Presentations</a></li>
+                                                <li><a href="#">eBooks</a></li>
+                                        </ul>
+                                </li>
+                        </ul>
+                        -->
+                </div><!-- / options -->
+        </header>
+        <div class="body">
+[% body %]
+        </div><!-- / body -->
+</div><!-- / item -->

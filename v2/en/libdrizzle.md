@@ -2,7 +2,8 @@
     @title         libdrizzle
     @creator       Yichun Zhang
     @created       2011-06-21 08:42 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2011-07-01 04:50 GMT
     @changes       2
 --->

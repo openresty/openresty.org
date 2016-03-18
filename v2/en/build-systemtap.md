@@ -2,7 +2,8 @@
     @title         Build Systemtap
     @creator       Yichun Zhang
     @created       2014-03-04 22:18 GMT
-    @modifier      YichunZhang
+    @modifier      Yichun Zhang
+    @modifier_link yichun-zhang
     @modified      2015-01-27 06:32 GMT
     @changes       20
 --->

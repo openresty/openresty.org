@@ -22,7 +22,7 @@ while (my $entity = readdir $dir) {
     my $fname = "$dirname/$entity";
     if (-f $fname && $entity =~ /(.+)\.html$/) {
         my $name = $1;
-        next if $name eq 'main-menu';
+        #next if $name eq 'main-menu';
         #warn $name;
         my $rec = parse_file($name, $fname);
         push @rows, $rec;
@@ -53,6 +53,7 @@ sub parse_file {
     #use Data::Dumper;
     #warn Dumper(\%attr);
     $attr{html_body} = $html;
+    $attr{permlink} = $name;
     return \%attr;
 }
 
@@ -65,10 +66,12 @@ sub dump_rows {
     for my $r (@$rows) {
         my $created = quote_value($r->{created});
         print $out quote_value($r->{title}), "\t",
+              quote_value($r->{permlink}), "\t",
               quote_value($r->{html_body}), "\t",
               quote_value($r->{creator}), "\t",
               $created, "\t",
               quote_value($r->{modifier}), "\t",
+              $r->{modifier_link} // "\\N", "\t",
               quote_value($r->{modified}) || $created, "\t",
               quote_value($r->{changes} // 0),
               "\n";
