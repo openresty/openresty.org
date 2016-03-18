@@ -142,7 +142,7 @@ template_map['header.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '<header role="header">\n        <p class="site-name left">\n                <a href=".">OpenResty</a>\n                <small>Scalable Web Platform by Extending NGINX with Lua</small>\n        </p><!-- / site-name -->\n\n        <form action="#" class="right">\n                <fieldset>\n                        <input type="search" name="search" id="search" placeholder="Search OpenResty.org">\n                </fieldset>\n        </form>\n</header>\n'
+i = i + 1 output[i] = '<header role="header">\n        <p class="site-name left">\n                <a href=".">OpenResty</a>\n                <small>Scalable Web Platform by Extending NGINX with Lua</small>\n        </p><!-- / site-name -->\n\n        <form action="search.html" class="right">\n                <fieldset>\n                        <input type="search" name="query" id="search" placeholder="Search OpenResty.org">\n                </fieldset>\n        </form>\n</header>\n'
 
     return output
 end

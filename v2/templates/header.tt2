@@ -4,9 +4,9 @@
                 <small>Scalable Web Platform by Extending NGINX with Lua</small>
         </p><!-- / site-name -->
 
-        <form action="#" class="right">
+        <form action="search.html" class="right">
                 <fieldset>
-                        <input type="search" name="search" id="search" placeholder="Search OpenResty.org">
+                        <input type="search" name="query" id="search" placeholder="Search OpenResty.org">
                 </fieldset>
         </form>
 </header>

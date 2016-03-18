@@ -57,7 +57,7 @@ function _M.run()
 
     local tag = sub(uri, fr, to)
 
-    print("tag: ", tag, ", fr: ", fr, ", to: ", to)
+    -- print("tag: ", tag, ", fr: ", fr, ", to: ", to)
 
     if tag == "openresty" then
         return ngx.redirect("/en/", 301)
