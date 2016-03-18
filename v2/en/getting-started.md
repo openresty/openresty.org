@@ -4,7 +4,7 @@
     @created       2011-06-20 11:39 GMT
     @modifier      YichunZhang
     @modified      2013-08-24 19:42 GMT
-    @changecount   30
+    @changes       30
 --->
 
 First of all, please go to the [Download](download/) page to get the source code tarball of [OpenResty](openresty/), and see the [Installation](installation/) page for how to build and install it into your system.

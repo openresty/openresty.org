@@ -4,7 +4,7 @@
     @created       2014-04-29 19:14 GMT
     @modifier      YichunZhang
     @modified      2014-04-29 19:18 GMT
-    @changecount   7
+    @changes       7
 --->
 
 [Profiling](profiling/) is important for analyzing and optimize [OpenResty](openresty/) applications' performance.

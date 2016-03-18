@@ -4,7 +4,7 @@
     @created       2011-06-21 08:28 GMT
     @modifier      YichunZhang
     @modified      2011-06-22 07:36 GMT
-    @changecount   3
+    @changes       3
 --->
 
 ngx_postgres is an upstream module that allows [Nginx](nginx/) to communicate directly with PostgreSQL database.

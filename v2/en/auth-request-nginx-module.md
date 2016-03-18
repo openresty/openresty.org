@@ -4,7 +4,7 @@
     @created       2011-06-21 08:21 GMT
     @modifier      YichunZhang
     @modified      2011-06-21 08:25 GMT
-    @changecount   2
+    @changes       2
 --->
 
 Introduction: http://www.ruby-forum.com/topic/205063

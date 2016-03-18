@@ -4,7 +4,7 @@
     @created       2011-06-21 04:25 GMT
     @modifier      YichunZhang
     @modified      2016-03-17 02:33 GMT
-    @changecount   332
+    @changes       332
 --->
 
 You can download the latest release tarball below. After that, you can follow the instructions on the [Installation](installation/) page to build and install it.

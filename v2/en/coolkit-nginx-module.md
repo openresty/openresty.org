@@ -4,7 +4,7 @@
     @created       2012-02-13 12:59 GMT
     @modifier      YichunZhang
     @modified      2013-09-30 07:00 GMT
-    @changecount   3
+    @changes       3
 --->
 
 This module is collection of small and useful [Nginx](nginx/) add-ons.

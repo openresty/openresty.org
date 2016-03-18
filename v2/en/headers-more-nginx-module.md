@@ -4,7 +4,7 @@
     @created       2011-06-21 08:59 GMT
     @modifier      YichunZhang
     @modified      2013-10-17 23:34 GMT
-    @changecount   5
+    @changes       5
 --->
 
 This module allows you to add, set, or clear any response or request headers that you specify.

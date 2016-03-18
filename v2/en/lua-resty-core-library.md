@@ -4,7 +4,7 @@
     @created       2013-12-14 22:59 GMT
     @modifier      YichunZhang
     @modified      2014-06-01 05:55 GMT
-    @changecount   2
+    @changes       2
 --->
 
 Reimplements the Lua API provided by [Lua Nginx Module](lua-nginx-module/) with [LuaJIT](luajit/) FFI.

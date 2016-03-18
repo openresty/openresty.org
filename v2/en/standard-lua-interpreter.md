@@ -4,7 +4,7 @@
     @created       2011-06-21 08:31 GMT
     @modifier      YichunZhang
     @modified      2011-06-21 08:39 GMT
-    @changecount   2
+    @changes       2
 --->
 
 The standard Lua interpreter is enabled by default. If [LuaJIT](luajit/) is enabled, this interpreter will be disabled automatically.

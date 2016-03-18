@@ -4,7 +4,7 @@
     @created       2011-06-21 04:24 GMT
     @modifier      YichunZhang
     @modified      2015-11-23 13:15 GMT
-    @changecount   35
+    @changes       35
 --->
 
 Below lists all the components bundled in [OpenResty](openresty/). All of the components can be enabled or disabled on need.

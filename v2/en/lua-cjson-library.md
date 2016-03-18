@@ -4,7 +4,7 @@
     @created       2011-08-11 02:08 GMT
     @modifier      YichunZhang
     @modified      2012-02-29 07:27 GMT
-    @changecount   2
+    @changes       2
 --->
 
 Lua CJSON is a Lua C module that provides fast JSON parsing and encoding support for Lua.

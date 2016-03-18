@@ -4,7 +4,7 @@
     @created       2011-11-16 04:06 GMT
     @modifier      YichunZhang
     @modified      2011-11-16 04:22 GMT
-    @changecount   9
+    @changes       9
 --->
 
 This sample demonstrates how to route incoming requests to different MySQL queries based on different combinations of URI query arguments, preserving streaming output capabilities provided by [Drizzle Nginx Module](drizzle-nginx-module/) and [Rds Json Nginx Module](rds-json-nginx-module/).

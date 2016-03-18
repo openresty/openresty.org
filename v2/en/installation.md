@@ -4,7 +4,7 @@
     @created       2011-06-21 04:40 GMT
     @modifier      YichunZhang
     @modified      2016-01-28 20:44 GMT
-    @changecount   84
+    @changes       84
 --->
 
 If you haven't downloaded the [OpenResty](openresty/) source code tarball, please go to the [Download](download/) page first.

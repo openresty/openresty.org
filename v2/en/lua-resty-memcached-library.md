@@ -4,7 +4,7 @@
     @created       2012-02-29 07:32 GMT
     @modifier      YichunZhang
     @modified      2012-02-29 07:36 GMT
-    @changecount   4
+    @changes       4
 --->
 
 Lua [Memcached](http://memcached.org/) client driver for [Lua Nginx Module](lua-nginx-module/) based on the cosocket API.

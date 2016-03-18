@@ -4,7 +4,7 @@
     @created       2011-09-04 08:16 GMT
     @modifier      YichunZhang
     @modified      2011-10-07 04:57 GMT
-    @changecount   24
+    @changes       24
 --->
 
 

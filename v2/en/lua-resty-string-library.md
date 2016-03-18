@@ -4,7 +4,7 @@
     @created       2012-02-29 07:38 GMT
     @modifier      YichunZhang
     @modified      
-    @changecount   1
+    @changes       1
 --->
 
 A Lua library that provides string utilities and common hash functions for [Lua Nginx Module](lua-nginx-module/).

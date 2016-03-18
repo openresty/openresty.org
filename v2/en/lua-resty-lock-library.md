@@ -4,7 +4,7 @@
     @created       2013-09-30 06:22 GMT
     @modifier      YichunZhang
     @modified      2013-09-30 06:24 GMT
-    @changecount   2
+    @changes       2
 --->
 
 This Lua library implements a simple nonblocking mutex lock API based on [Lua Nginx Module](lua-nginx-module/)'s shared memory dictionaries. Mostly useful for eliminating "dog-pile effects".

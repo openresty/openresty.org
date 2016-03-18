@@ -4,7 +4,7 @@
     @created       2011-06-21 09:04 GMT
     @modifier      YichunZhang
     @modified      2011-06-22 07:36 GMT
-    @changecount   5
+    @changes       5
 --->
 
 This is an [Nginx](nginx/) module that uses libiconv to convert characters of different encoding. It brings the `set_iconv` and `iconv_filter` commands to [Nginx](nginx/).

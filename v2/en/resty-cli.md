@@ -4,7 +4,7 @@
     @created       2015-02-19 22:54 GMT
     @modifier      YichunZhang
     @modified      
-    @changecount   1
+    @changes       1
 --->
 
 Resty-cli is a collection of command-line utilities for [OpenResty](openresty/).

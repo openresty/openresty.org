@@ -4,7 +4,7 @@
     @created       2013-10-06 18:12 GMT
     @modifier      YichunZhang
     @modified      2013-10-06 18:24 GMT
-    @changecount   10
+    @changes       10
 --->
 
 You should always check out [Nginx](nginx/)'s error log file (specified by the `error_log` directive in `nginx.conf`) for any errors or warnings.

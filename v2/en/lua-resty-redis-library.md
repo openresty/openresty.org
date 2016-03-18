@@ -4,7 +4,7 @@
     @created       2012-02-29 07:35 GMT
     @modifier      YichunZhang
     @modified      2012-08-06 06:55 GMT
-    @changecount   4
+    @changes       4
 --->
 
 Lua [Redis](http://redis.io/) client driver for [Lua Nginx Module](lua-nginx-module/) based on the cosocket API.

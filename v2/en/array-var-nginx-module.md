@@ -4,7 +4,7 @@
     @created       2011-06-21 08:19 GMT
     @modifier      YichunZhang
     @modified      2011-06-21 08:24 GMT
-    @changecount   3
+    @changes       3
 --->
 
 This [Nginx](nginx/) module adds support for array variables to nginx config files.

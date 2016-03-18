@@ -4,7 +4,7 @@
     @created       2013-08-26 23:21 GMT
     @modifier      YichunZhang
     @modified      2013-08-26 23:24 GMT
-    @changecount   3
+    @changes       3
 --->
 
 You can upgrade [OpenResty](openresty/) to a newer release in the exactly same way as upgrading [Nginx](nginx/).

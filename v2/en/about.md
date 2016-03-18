@@ -4,7 +4,7 @@
     @created       2011-06-21 04:07 GMT
     @modifier      YichunZhang
     @modified      2013-07-19 00:24 GMT
-    @changecount   21
+    @changes       21
 --->
 
 This bundle is mainly maintained by Yichun Zhang ([agentzh](http://agentzh.org)). It was originally sponsored by [Taobao.com](http://www.taobao.com) before the year 2011 and it has been mainly supported by [CloudFlare](http://www.cloudflare.com) since then.

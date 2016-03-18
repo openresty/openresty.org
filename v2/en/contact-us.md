@@ -4,7 +4,7 @@
     @created       2011-06-21 04:14 GMT
     @modifier      YichunZhang
     @modified      2015-12-29 22:35 GMT
-    @changecount   23
+    @changes       23
 --->
 
 You can join the English or Chinese mailing lists shown on the page [OpenResty Community](community/). This is usually the preferred communication channel.

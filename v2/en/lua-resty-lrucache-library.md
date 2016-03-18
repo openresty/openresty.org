@@ -4,7 +4,7 @@
     @created       2014-06-01 05:55 GMT
     @modifier      YichunZhang
     @modified      
-    @changecount   1
+    @changes       1
 --->
 
 Implements a Lua-land LRU cache for [OpenResty](openresty/).

@@ -4,7 +4,7 @@
     @created       2011-06-21 08:16 GMT
     @modifier      YichunZhang
     @modified      2014-01-25 17:56 GMT
-    @changecount   7
+    @changes       7
 --->
 
 [LuaJIT](luajit/) is a Just-In-Time Compiler for the Lua programming language. 

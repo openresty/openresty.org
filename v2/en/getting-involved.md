@@ -4,7 +4,7 @@
     @created       2013-08-03 04:25 GMT
     @modifier      YichunZhang
     @modified      2013-08-03 04:42 GMT
-    @changecount   7
+    @changes       7
 --->
 
 The [OpenResty](openresty/) project has a loose organization. Most of the components are self-contained open-source projects and are developed separately. They all have their own code repositories, their own test suites, or even their own maintainers. The maintainer of the [OpenResty](openresty/) bundle, [agentzh](yichun-zhang/), is also maintaining most of the components included.

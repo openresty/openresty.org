@@ -4,7 +4,7 @@
     @created       2011-06-21 08:22 GMT
     @modifier      YichunZhang
     @modified      2013-10-17 23:33 GMT
-    @changecount   23
+    @changes       23
 --->
 
 This is an nginx upstream module that talks to MySQL and/or Drizzle database servers by [libdrizzle](libdrizzle/).

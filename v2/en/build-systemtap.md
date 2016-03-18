@@ -4,7 +4,7 @@
     @created       2014-03-04 22:18 GMT
     @modifier      YichunZhang
     @modified      2015-01-27 06:32 GMT
-    @changecount   20
+    @changes       20
 --->
 
 1. Install the prerequisites on your Linux distribution, for example:

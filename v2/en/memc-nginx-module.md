@@ -4,7 +4,7 @@
     @created       2011-06-21 08:30 GMT
     @modifier      YichunZhang
     @modified      2013-10-17 23:34 GMT
-    @changecount   5
+    @changes       5
 --->
 
 This module extends the standard memcached module  to support almost the whole memcached ascii protocol.

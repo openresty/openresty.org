@@ -4,7 +4,7 @@
     @created       2014-03-30 20:47 GMT
     @modifier      YichunZhang
     @modified      2014-03-30 20:48 GMT
-    @changecount   2
+    @changes       2
 --->
 
 Health Checker for [Nginx](nginx/) Upstream Servers in Pure Lua.

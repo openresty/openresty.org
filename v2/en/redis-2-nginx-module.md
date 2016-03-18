@@ -4,7 +4,7 @@
     @created       2011-06-21 08:47 GMT
     @modifier      YichunZhang
     @modified      2013-10-17 23:36 GMT
-    @changecount   12
+    @changes       12
 --->
 
 This is an [Nginx](nginx/) upstream module that makes nginx talk to a redis 2.x server in a non-blocking way. The full Redis 2.0 unified protocol has been implemented including the redis pipelining support.

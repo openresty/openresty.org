@@ -4,7 +4,7 @@
     @created       2011-06-21 08:34 GMT
     @modifier      YichunZhang
     @modified      2011-06-21 08:39 GMT
-    @changecount   3
+    @changes       3
 --->
 
 This module provides encryption and decryption support for [Nginx](nginx/) variables based on AES-256 with Mac.

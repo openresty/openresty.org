@@ -4,7 +4,7 @@
     @created       2012-08-06 06:54 GMT
     @modifier      YichunZhang
     @modified      2012-08-06 06:55 GMT
-    @changecount   2
+    @changes       2
 --->
 
 Nonblocking DNS (Domain Name System) resolver for [Lua Nginx Module](lua-nginx-module/) based on the cosocket API.

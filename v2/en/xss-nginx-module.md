@@ -4,7 +4,7 @@
     @created       2011-06-21 09:05 GMT
     @modifier      YichunZhang
     @modified      2011-06-21 09:07 GMT
-    @changecount   2
+    @changes       2
 --->
 
 This module adds cross-site AJAX support to nginx. Currently only cross-site GET is supported.

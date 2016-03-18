@@ -4,7 +4,7 @@
     @created       2012-02-29 07:33 GMT
     @modifier      YichunZhang
     @modified      2012-02-29 07:35 GMT
-    @changecount   3
+    @changes       3
 --->
 
 Lua [MySQL](http://en.wikipedia.org/wiki/MySQL) client driver for [Lua Nginx Module](lua-nginx-module/) based on the cosocket API.

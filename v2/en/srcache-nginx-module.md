@@ -4,7 +4,7 @@
     @created       2011-06-21 09:07 GMT
     @modifier      YichunZhang
     @modified      2013-10-17 23:36 GMT
-    @changecount   6
+    @changes       6
 --->
 
 This module provides a transparent caching layer for arbitrary nginx locations (like those use an upstream or even serve static disk files).

@@ -4,7 +4,7 @@
     @created       2011-06-21 09:08 GMT
     @modifier      YichunZhang
     @modified      2013-09-26 18:00 GMT
-    @changecount   8
+    @changes       8
 --->
 
 //This module is now part of the official [Nginx](nginx/) core.//

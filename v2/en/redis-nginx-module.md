@@ -4,7 +4,7 @@
     @created       2012-05-13 04:16 GMT
     @modifier      YichunZhang
     @modified      2012-09-13 17:55 GMT
-    @changecount   8
+    @changes       8
 --->
 
 This is an [Nginx](nginx/) upstream module that makes nginx talk to a redis 2.x server in a non-blocking way. It has a similar interface with the standard [ngx_memcached module](http://wiki.nginx.org/HttpMemcachedModule), but only Redis `GET` and `SELECT` commands are supported.

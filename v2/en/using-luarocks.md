@@ -4,7 +4,7 @@
     @created       2011-08-07 02:32 GMT
     @modifier      YichunZhang
     @modified      2014-01-25 17:59 GMT
-    @changecount   36
+    @changes       36
 --->
 
 This sample demonstrates usage of [LuaRocks](http://www.luarocks.org/) with [OpenResty](openresty/). It's been tested on Linux and Mac OS X, with the standard Lua interpreter or with [LuaJIT](luajit/).

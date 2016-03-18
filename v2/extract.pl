@@ -87,8 +87,10 @@ sub gen_uri_name {
         s/eBook/-ebook/g;
         s/GitHub/-github/g;
         s/OpenResty/-openresty/g;
+        s/FastCGI/-fastcgi/g;
         s/DNS/-dns/g;
         s/SystemTap/-systemtap/g;
+        s/LuaRocks/-luarocks/g;
 
         s/([A-Z])([^A-Z]+)/'-' . lc($1) . $2/ge;
         s/([A-Z]+)/'-' . lc($1) . '-'/eg;
@@ -129,7 +131,7 @@ sub write_file {
 
     $title = fmt_wiki_word($title);
 
-    my $changecount = $r->{changecount} // 0;
+    my $changes = $r->{changecount} // 0;
     my $creator = $r->{creator} or die "no creator found for $title";
 
     $creator = fmt_wiki_word($creator);
@@ -148,7 +150,7 @@ sub write_file {
     \@created       $created
     \@modifier      $modifier
     \@modified      $modified
-    \@changecount   $changecount
+    \@changes       $changes
 --->
 
 $body
@@ -262,7 +264,7 @@ sub fmt_wiki_word {
 
     my $out;
     while (1) {
-        if ($s =~ /\G (MySQL|DNS|GitHub|eBook|SystemTap|OpenResty|LuaJIT|JSON) /gcxms) {
+        if ($s =~ /\G (MySQL|DNS|GitHub|eBook|SystemTap|OpenResty|LuaJIT|JSON|FastCGI|LuaRocks) /gcxms) {
             $out .= $1;
 
         } elsif ($s =~ / \G ([^A-Z]+)([A-Z]) /gcxms) {
