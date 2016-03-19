@@ -31,14 +31,14 @@ while (my $entity = readdir $dir) {
 
 close $dir;
 
-my $outfile = "posts.tsv";
+my $outfile = "posts-$lang.tsv";
 my $n = dump_rows(\@rows, $outfile);
 print "$n rows dumped to $outfile.\n";
 
 sub parse_file {
     my ($name, $file) = @_;
 
-    open my $in, $file
+    open my $in, "<:encoding(UTF-8)", $file
         or die "cannot open $file for reading: $!\n";
     my $html = do { local $/; <$in> };
     close $in;
@@ -61,7 +61,7 @@ sub parse_file {
             die "$txtfile not found (maybe you should run \"make text\" first?).\n";
         }
 
-        open my $in, $txtfile
+        open my $in, "<:encoding(UTF-8)", $txtfile
             or die "cannot open $txtfile for reading: $!\n";
         my $txt = do { local $/; <$in> };
         close $in;
@@ -77,7 +77,7 @@ sub parse_file {
 sub dump_rows {
     my ($rows, $file) = @_;
 
-    open my $out, ">$file"
+    open my $out, ">:encoding(UTF-8)", $file
         or die "cannot open $file for writing: $!\n";
 
     for my $r (@$rows) {

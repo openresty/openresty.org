@@ -6,6 +6,7 @@ local cjson = require "cjson"
 
 local concat = table.concat
 local re_find = ngx.re.find
+local re_match = ngx.re.match
 local sub = string.sub
 local byte = string.byte
 local http_time = ngx.http_time
@@ -14,6 +15,7 @@ local resp_header = ngx.header
 local ngx_var = ngx.var
 local format = string.format
 local unescape_uri = ngx.unescape_uri
+local match_table = {}
 
 local MAX_SEARCH_QUERY_LEN = 128
 
@@ -40,17 +42,31 @@ function _M.run()
         return ngx.redirect("/en/", 302)
     end
 
-    if uri == "/en" then
-        return ngx.redirect("/en/", 301)
+    if (re_find(uri, [[ ^ / (?: [a-z]{2} ) $ ]], 'jox')) then
+        return ngx.redirect(uri .. "/", 301)
     end
 
-    local posts = model.get_post_list()
+    local m, err = re_match(uri, [[ ^ / ( [a-z]{2} ) / (?: ([-\w]*) \.html )? $ ]], 'jox', nil, match_table)
+    if not m then
+        return ngx.exit(404)
+    end
 
-    if uri == "/en/" then
-        local main_menu = model.get_main_menu()
-        local timeline = model.get_timeline()
+    local lang = m[1]
+    print("lang: ", lang)
 
-        local home = model.get_home(posts.openresty)
+    if lang ~= "cn" and lang ~= "en" then
+        return ngx.exit(404)
+    end
+
+    local tag = m[2]
+
+    local posts = model.get_post_list(lang)
+
+    if not tag then
+        local main_menu = model.get_main_menu(lang)
+        local timeline = model.get_timeline(lang)
+
+        local home = model.get_home(lang, posts.openresty)
         -- print("home data: ", cjson.encode(home))
         -- print(cjson.encode(home_html))
 
@@ -67,22 +83,15 @@ function _M.run()
         return
     end
 
-    local fr, to, err = re_find(uri, [[^/en/([-\w]+)\.html$]], "jo", nil, 1)
-    if not fr then
-        return ngx.exit(404)
-    end
-
-    local tag = sub(uri, fr, to)
-
     -- print("tag: ", tag, ", fr: ", fr, ", to: ", to)
 
     if tag == "openresty" then
-        return ngx.redirect("/en/", 301)
+        return ngx.redirect("/" .. lang .. "/", 301)
     end
 
     if tag == "search" then
-        local main_menu = model.get_main_menu()
-        local timeline = model.get_timeline()
+        local main_menu = model.get_main_menu(lang)
+        local timeline = model.get_timeline(lang)
 
         local query = unescape_uri(ngx_var.arg_query)
         if not query or #query == 0 then
@@ -98,7 +107,7 @@ function _M.run()
             return search_error(main_menu, timeline, query, title, msg)
         end
 
-        local res = model.get_search_results(query)
+        local res = model.get_search_results(lang, query)
 
         if #res == 0 then
             return search_error(main_menu, timeline, query, "No search results found",
@@ -126,10 +135,10 @@ function _M.run()
         return ngx.exit(404)
     end
 
-    local main_menu = model.get_main_menu()
-    local timeline = model.get_timeline()
+    local main_menu = model.get_main_menu(lang)
+    local timeline = model.get_timeline(lang)
 
-    local rec = model.get_post(id)
+    local rec = model.get_post(lang, id)
 
     gen_cache_control_headers(rec.last_modified)
 

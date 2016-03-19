@@ -15,6 +15,8 @@ local db_spec = {
 local function query_db(query)
     local pg = pgmoon.new(db_spec)
 
+    print("sql query: ", query)
+
     local ok, err
 
     for i = 1, 3 do
@@ -64,8 +66,8 @@ local function query_db(query)
     return res
 end
 
-function _M.get_main_menu()
-    local res = query_db("select html_body from posts where title = 'Main Menu';")
+function _M.get_main_menu(lang)
+    local res = query_db("select html_body from posts_" .. lang .. " where permlink = 'main-menu';")
 
     -- print("JSON: ", cjson.encode(res))
     if #res == 0 then
@@ -75,8 +77,10 @@ function _M.get_main_menu()
     return res[1].html_body
 end
 
-function _M.get_home(id)
-    local res = query_db("select title, html_body, extract(epoch from modified) as last_modified from posts where id = " .. id)
+function _M.get_home(lang, id)
+    local res = query_db("select title, html_body, "
+                         .. "extract(epoch from modified) as last_modified "
+                         .. "from posts_" .. lang .. " where id = " .. id)
 
     -- print("JSON: ", cjson.encode(res))
     if #res == 0 then
@@ -86,11 +90,11 @@ function _M.get_home(id)
     return res[1]
 end
 
-function _M.get_post(id)
+function _M.get_post(lang, id)
     local res = query_db("select title, modifier, modifier_link, to_char(created, 'dd Mon yyyy') as created, "
                          .. "to_char(modified, 'dd Mon yyyy') as modified, "
-                         .. "extract(epoch from modified) as last_modified, html_body from posts "
-                         .. "where id = " .. id)
+                         .. "extract(epoch from modified) as last_modified, html_body from posts_" .. lang
+                         .. " where id = " .. id)
 
     -- print("JSON: ", cjson.encode(res))
     if #res == 0 then
@@ -100,8 +104,8 @@ function _M.get_post(id)
     return res[1]
 end
 
-function _M.get_post_list()
-    local res = query_db("select permlink, id from posts")
+function _M.get_post_list(lang)
+    local res = query_db("select permlink, id from posts_" .. lang)
     if #res == 0 then
         ngx.log(ngx.ERR, "no posts found")
         return ngx.exit(500)
@@ -114,20 +118,20 @@ function _M.get_post_list()
     return posts
 end
 
-function _M.get_timeline()
+function _M.get_timeline(lang)
     local res = query_db("select title, permlink, to_char(modified, 'dd Mon yyyy') as day "
-                         .. "from posts order by modified desc limit 17");
+                         .. "from posts_" .. lang .. " order by modified desc limit 17");
     return res
 end
 
-function _M.get_search_results(query)
+function _M.get_search_results(lang, query)
     -- print("search query: ", query)
     local quoted_query = quote_sql_str(query)
     local res = query_db("select title, "
                          .. "ts_headline(txt_body, q, 'MaxFragments=1') as body, "
                          .. "permlink from (select q, title, txt_body, "
                          .. "ts_rank_cd(textsearch_index_col, q) as rank, "
-                         .. "permlink from posts, plainto_tsquery("
+                         .. "permlink from posts_" .. lang .. ", plainto_tsquery("
                          .. quoted_query .. ") q "
                          .. "where textsearch_index_col @@ q "
                          .. "order by rank desc limit 10) as foo")

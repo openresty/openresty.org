@@ -34,29 +34,30 @@ clean:
 html: $(html_files)
 
 html/%.html: %.md
-	mkdir -p html/en
+	mkdir -p html/en html/cn
 	$(md2html) $< --output $@
 
 .PHONE: text
 text: $(txt_files)
 
 text/%.txt: %.md
-	mkdir -p text/en
+	mkdir -p text/en text/cn
 	$(md2text) $< --output $@
 
 .PHONE: extract
 extract:
 	./extract.pl ../index.html en
-	#./extract.pl ../cn/index.html cn
+	./extract.pl ../cn/index.html cn
 
 .PHONE: gendata
 gendata: html text
 	./gen-data.pl en
+	./gen-data.pl cn
 
-posts.tsv:
+posts-en.tsv posts-cn.tsv:
 	$(MAKE) gendata
 
 .PHONE: initdb
-initdb: posts.tsv
+initdb: posts-en.tsv posts-cn.tsv
 	psql -Uopenresty openresty_org -f init.sql
 
