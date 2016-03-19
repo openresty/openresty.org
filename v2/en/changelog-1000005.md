@@ -1,5 +1,5 @@
 <!---
-    @title         ChangeLog 1000005
+    @title         ChangeLog 1.0.5
     @creator       Yichun Zhang
     @created       2011-08-09 07:17 GMT
     @modifier      Yichun Zhang

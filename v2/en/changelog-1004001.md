@@ -1,5 +1,5 @@
 <!---
-    @title         ChangeLog 1004001
+    @title         ChangeLog 1.4.1
     @creator       Yichun Zhang
     @created       2013-07-18 20:07 GMT
     @modifier      Yichun Zhang
@@ -58,4 +58,4 @@
     * docs: mentioned my [Nginx Systemtap Toolkit](https://github.com/agentzh/nginx-systemtap-toolkit) which is very useful for online debugging on Linux.
 * upgraded [Headers More Nginx Module](headers-more-nginx-module.html) to 0.21.
     * bugfix: segmentation fault might happen in [Nginx](nginx.html) 1.4.x when using the [more_set_input_headers](http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers) directive on the Cookie request headers because recent versions of [Nginx](nginx.html) no longer always initialize `r->headers_in.cookies`.
-See [ChangeLog 1002008](changelog-1002008.html) for change log for [OpenResty](openresty.html) 1.2.8.x.
+See [ChangeLog 1.2.8](changelog-1002008.html) for change log for [OpenResty](openresty.html) 1.2.8.x.

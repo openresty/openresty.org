@@ -1,5 +1,5 @@
 <!---
-    @title         ChangeLog 1004003
+    @title         ChangeLog 1.4.3
     @creator       Yichun Zhang
     @created       2013-10-29 19:17 GMT
     @modifier      Yichun Zhang
@@ -163,4 +163,4 @@ The following components are bundled in this release:
 * bugfix: applied the [gzip_flush_bug patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-gzip_flush_bug.patch) to the [Nginx](nginx.html) core to fix request hang caused by the [ngx_gzip](http://nginx.org/en/docs/http/ngx_http_gzip_module.html) and [ngx_gunzip](http://nginx.org/en/docs/http/ngx_http_gzip_module.html) modules when using [ngx.flush(true)](https://github.com/chaoslawful/lua-nginx-module#ngxflush), for example. Thanks Maxim Dounin for the review.
 * bugfix: applied the [cache_lock_hang_in_subreq patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-cache_lock_hang_in_subreq.patch) to the [Nginx](nginx.html) core to fix the request hang when using [proxy_cache_lock](http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_lock) in subrequests and the cache lock timeout happens.
 * bugfix: backported Maxim Dounin's [patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-gzip_buffered_bug.patch) to fix an issue in the [ngx_gzip module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html): it did not clear `r->connection->buffered` when the pending data was already flushed out. this could hang [Lua Nginx Module](lua-nginx-module.html)'s [ngx.flush(true)](https://github.com/chaoslawful/lua-nginx-module#ngxflush) call, for example.
-See [ChangeLog 1004002](changelog-1004002.html) for change log for [OpenResty](openresty.html) 1.4.2.x.
+See [ChangeLog 1.4.2](changelog-1004002.html) for change log for [OpenResty](openresty.html) 1.4.2.x.

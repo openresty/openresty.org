@@ -1,5 +1,5 @@
 <!---
-    @title         ChangeLog 1007010
+    @title         ChangeLog 1.7.10
     @creator       Yichun Zhang
     @created       2015-02-19 22:50 GMT
     @modifier      Yichun Zhang
@@ -136,4 +136,4 @@
     * bugfix: upon cache hits, we might let the nginx core's header filter module overwrite the `Location` response header's values like "/foo/bar" to the fully-qualified form (like "http://test.com/foo/bar"). thanks AlexClineBB for the report.
 * upgraded [Resty CLI](resty-cli.html) to 0.02.
     * bugfix: we did not explicitly specify the pid file path, which may conflict with the default pid path if the user compiles nginx with the `--pid-path=PATH` ./configure option. thanks fancyrabbit for the report.
-See [ChangeLog 1007007](changelog-1007007.html) for change log for [OpenResty](openresty.html) 1.7.7.x.
+See [ChangeLog 1.7.7](changelog-1007007.html) for change log for [OpenResty](openresty.html) 1.7.7.x.

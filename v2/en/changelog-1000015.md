@@ -1,5 +1,5 @@
 <!---
-    @title         ChangeLog 1000015
+    @title         ChangeLog 1.0.15
     @creator       Yichun Zhang
     @created       2012-04-29 02:56 GMT
     @modifier      Yichun Zhang
@@ -182,4 +182,4 @@ hello
     * fixed a typo in error messages.
     * skipped parsing those column fields that we do not use (yet). this makes things noticeably faster.
 
-See [ChangeLog 1000011](changelog-1000011.html) for change log for ngx_openresty 1.0.11.x.
+See [ChangeLog 1.0.11](changelog-1000011.html) for change log for ngx_openresty 1.0.11.x.

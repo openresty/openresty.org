@@ -1,5 +1,5 @@
 <!---
-    @title         ChangeLog 1005012
+    @title         ChangeLog 1.5.12
     @creator       Yichun Zhang
     @created       2014-04-29 20:37 GMT
     @modifier      Yichun Zhang
@@ -46,4 +46,4 @@
     * bugfix: prevented using cdata directly as table keys.
 * upgraded [Lua Resty String Library](lua-resty-string-library.html) to 0.09.
     * bugfix: avoided using the "module" builtin function to define lua modules. thanks lhmwzy for the original patch.
-See [ChangeLog 1005011](changelog-1005011.html) for change log for [OpenResty](openresty.html) 1.5.11.x.
+See [ChangeLog 1.5.11](changelog-1005011.html) for change log for [OpenResty](openresty.html) 1.5.11.x.

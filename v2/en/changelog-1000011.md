@@ -1,5 +1,5 @@
 <!---
-    @title         ChangeLog 1000011
+    @title         ChangeLog 1.0.11
     @creator       Yichun Zhang
     @created       2012-02-02 04:53 GMT
     @modifier      Yichun Zhang
@@ -168,4 +168,4 @@ Same as the devel release 1.0.11.27.
     * bugfix: Fix compatibility with PostgreSQL 9.x.
     * bugfix: Fix compatibility with nginx-1.1.4+.
 
-See [ChangeLog 1000010](changelog-1000010.html) for change log for ngx_openresty 1.0.10.x.
+See [ChangeLog 1.0.10](changelog-1000010.html) for change log for ngx_openresty 1.0.10.x.

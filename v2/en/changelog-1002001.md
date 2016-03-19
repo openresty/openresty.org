@@ -1,5 +1,5 @@
 <!---
-    @title         ChangeLog 1002001
+    @title         ChangeLog 1.2.1
     @creator       Yichun Zhang
     @created       2012-06-22 15:03 GMT
     @modifier      Yichun Zhang
@@ -164,4 +164,4 @@
 * upgraded the (optional) no-pool patch to the latest version, `642ae25`.
     * bugfix: we should postpone freeing the `elts` storage for `ngx_array_t` to `ngx_array_destroy` when resizing the array because at least the `ngx_rewrite` module stores external references to the array elements.
 
-See [ChangeLog 1000015](changelog-1000015.html) for change log for ngx_openresty 1.0.15.x.
+See [ChangeLog 1.0.15](changelog-1000015.html) for change log for ngx_openresty 1.0.15.x.

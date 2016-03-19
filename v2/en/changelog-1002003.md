@@ -1,5 +1,5 @@
 <!---
-    @title         ChangeLog 1002003
+    @title         ChangeLog 1.2.3
     @creator       Yichun Zhang
     @created       2012-08-22 19:16 GMT
     @modifier      Yichun Zhang
@@ -139,4 +139,4 @@ The following components are bundled:
 * added more dtrace static probes to the [Nginx](nginx.html) core: `timer-add`, `timer-del`, and `timer-expire`.
 * added more [systemtap](http://sourceware.org/systemtap/) tapset functions: `ngx_chain_next`, `ngx_chain_writer_ctx_out`, `ngx_chain_dump`, and `ngx_iovec_dump`.
 
-See [ChangeLog 1002001](changelog-1002001.html) for change log for [OpenResty](openresty.html) 1.2.1.x.
+See [ChangeLog 1.2.1](changelog-1002001.html) for change log for [OpenResty](openresty.html) 1.2.1.x.

@@ -318,6 +318,11 @@ sub fmt_wiki_word {
         if ($s =~ /\G (MySQL|DNS|URI|URL|GitHub|eBooks?|SystemTap|OpenResty|LuaJIT|JSON|FastCGI|LuaRocks|ChangeLog) /gcxms) {
             $out .= "$1 ";
 
+        } elsif ($s =~ / \G (?<=\D) ([01]) (\d{3}) (\d{3}) \b /gcxms) {
+            my $ver = sprintf("%d.%d.%d", $1, $2, $3);
+            #warn $ver;
+            $out .= "$ver ";
+
         } elsif ($s =~ / \G ([^A-Z]+)(?=[A-Z]) /gcxms) {
             $out .= "$1 ";
 

@@ -1,5 +1,5 @@
 <!---
-    @title         ChangeLog 1005008
+    @title         ChangeLog 1.5.8
     @creator       Yichun Zhang
     @created       2014-01-10 22:59 GMT
     @modifier      Yichun Zhang
@@ -66,4 +66,4 @@
     * bugfix: fixed the warnings from the Microsoft C compiler. thanks Edwin Cleton for the report.
 * upgraded [Srcache Nginx Module](srcache-nginx-module.html) to 0.25.
     * feature: now the value specified in [srcache_store_skip](https://github.com/agentzh/srcache-nginx-module#srcache_store_skip) is evaluated and tested again right after the end of the response body data stream is seen. thanks Eldar Zaitov for the patch.
-See [ChangeLog 1004003](changelog-1004003.html) for change log for [OpenResty](openresty.html) 1.4.3.x.
+See [ChangeLog 1.4.3](changelog-1004003.html) for change log for [OpenResty](openresty.html) 1.4.3.x.

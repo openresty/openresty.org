@@ -1,5 +1,5 @@
 <!---
-    @title         ChangeLog 1007007
+    @title         ChangeLog 1.7.7
     @creator       Yichun Zhang
     @created       2014-11-22 05:19 GMT
     @modifier      Yichun Zhang
@@ -111,4 +111,4 @@
     * feature: added the "$location" variable, by Piotr Sikora.
 * upgraded [Set Misc Nginx Module](set-misc-nginx-module.html) to 0.27.
     * bugfix: bugfix: fixed build failure when `--with-mail_ssl_module` is specified while `--with-http_ssl_module` is not. thanks Xiaochen Wang for the report.
-See [ChangeLog 1007004](changelog-1007004.html) for change log for [OpenResty](openresty.html) 1.7.4.x.
+See [ChangeLog 1.7.4](changelog-1007004.html) for change log for [OpenResty](openresty.html) 1.7.4.x.

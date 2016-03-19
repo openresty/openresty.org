@@ -1,5 +1,5 @@
 <!---
-    @title         ChangeLog 1002004
+    @title         ChangeLog 1.2.4
     @creator       Yichun Zhang
     @created       2012-10-14 19:13 GMT
     @modifier      Yichun Zhang
@@ -150,4 +150,4 @@ The following components are bundled:
     * docs: massive wording improvements from Dayo.
 * now we add [Srcache Nginx Module](srcache-nginx-module.html) before both [Lua Nginx Module](lua-nginx-module.html) and [Headers More Nginx Module](headers-more-nginx-module.html) so that the former's output filter runs *after* those of the latter.
 
-See [ChangeLog 1002003](changelog-1002003.html) for change log for [OpenResty](openresty.html) 1.2.3.x.
+See [ChangeLog 1.2.3](changelog-1002003.html) for change log for [OpenResty](openresty.html) 1.2.3.x.
