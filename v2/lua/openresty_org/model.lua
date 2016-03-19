@@ -115,7 +115,8 @@ function _M.get_post_list()
 end
 
 function _M.get_timeline()
-    local res = query_db("select title, permlink, to_char(modified, 'dd Mon yyyy') as day from posts order by modified desc limit 20");
+    local res = query_db("select title, permlink, to_char(modified, 'dd Mon yyyy') as day "
+                         .. "from posts order by modified desc limit 17");
     return res
 end
 

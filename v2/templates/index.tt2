@@ -54,5 +54,8 @@
 [% PROCESS 'sidebar.tt2' %]
 
 	</div><!-- / wrapper -->
+
+[% PROCESS 'footer.tt2' %]
+
 </body>
 </html>

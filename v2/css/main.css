@@ -118,3 +118,19 @@ header[role="header"] form input[type=search]:focus, header[role="header"] form 
 .body h1 { font-size: 150%; padding-top: 1em; padding-bottom: 0.1em;}
 .body h2 { font-size: 120%; padding-top: 1em; padding-bottom: 0.1em;}
 .search-result div.r { margin-bottom: 1em; }
+
+div.footer {
+    font-size: 90%;
+    color: #888;
+    text-align: center;
+}
+
+div.content-footer {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+hr.footer-sep {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}

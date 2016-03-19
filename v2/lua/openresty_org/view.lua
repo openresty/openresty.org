@@ -133,6 +133,20 @@ function _M.process(file, params)
     end
     return f(context)
 end
+-- footer.tt2
+template_map['footer.tt2'] = function (context)
+    if not context then
+        return error("Lemplate function called without context\n")
+    end
+    local stash = context.stash
+    local output = {}
+    local i = 0
+
+i = i + 1 output[i] = '<div class="content-footer">\n<hr class="footer-sep"/>\n<div class="footer">\n  <p>Copyright © 2016 Yichun Zhang (agentzh)</p>\n  <p>100% Powered by OpenResty and PostgreSQL\n     (<a href="https://github.com/openresty/openresty.org/tree/master/v2/">view the source code of this site</a>)</p>\n</div>\n</div>\n'
+
+    return output
+end
+
 -- header.tt2
 template_map['header.tt2'] = function (context)
     if not context then
@@ -194,7 +208,10 @@ i = i + 1 output[i] = context.process(context, 'post.tt2')
 i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n'
 -- line 54 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
-i = i + 1 output[i] = '\n\n	</div><!-- / wrapper -->\n</body>\n</html>\n'
+i = i + 1 output[i] = '\n\n	</div><!-- / wrapper -->\n\n'
+-- line 58 "index.tt2"
+i = i + 1 output[i] = context.process(context, 'footer.tt2')
+i = i + 1 output[i] = '\n\n</body>\n</html>\n'
 
     return output
 end
@@ -237,7 +254,10 @@ i = i + 1 output[i] = context.process(context, 'post.tt2')
 i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n'
 -- line 34 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
-i = i + 1 output[i] = '\n	</div><!-- / wrapper -->\n\n</body>\n</html>\n'
+i = i + 1 output[i] = '\n	</div><!-- / wrapper -->\n\n'
+-- line 37 "page.tt2"
+i = i + 1 output[i] = context.process(context, 'footer.tt2')
+i = i + 1 output[i] = '\n\n</body>\n</html>\n'
 
     return output
 end
