@@ -112,7 +112,7 @@ function _M.run()
         local html = view.process("page.tt2",
                                   { main_menu = main_menu,
                                     skip_meta = true,
-                                    title = "Search result",
+                                    title = "Search Result",
                                     search_query = query,
                                     body = concat(result_html),
                                     timeline = timeline,

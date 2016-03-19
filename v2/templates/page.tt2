@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>OpenResty</title>
+	<title>OpenResty - [% title %]</title>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
 	<!--
 	If you ever wanted to use LESS instead of CSS...
