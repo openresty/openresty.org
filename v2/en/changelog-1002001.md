@@ -16,6 +16,7 @@ OS X (i.e., when the `--with-dtrace-probes` configure option is specified).
 on non-Linux systems.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.14.
     * bugfix: the dtrace provider file did not compile on FreeBSD, Solaris, and Mac OS X.
+
 [Components](components.html) bundled:
 * LuaJIT-2.0.0-beta10
 * array-var-nginx-module-0.03rc1

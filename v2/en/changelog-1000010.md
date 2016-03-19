@@ -11,6 +11,7 @@
 
 #  Stable Release 1.0.10.48 - 1 February 2012
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.4.1.
+
 [Components](components.html) bundled with this release:
 * LuaJIT-2.0.0-beta9
 * array-var-nginx-module-0.03rc1
@@ -60,6 +61,7 @@
 * upgraded [Headers More Nginx Module](headers-more-nginx-module.html) to 0.16.
 * bugfix: fixed compatibility of the packaging scripts on Darwin and *BSD. thanks
 nightsailer and Piotr Sikora.
+
 [Components](components.html) bundled with this release:
 * LuaJIT-2.0.0-beta9
 * array-var-nginx-module-0.03rc1

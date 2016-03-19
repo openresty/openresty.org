@@ -14,6 +14,7 @@
 not enabled. thanks [@lhmwzy](http://weibo.com/lhmwzy).
 * upgraded the official [hotfix patch #4](http://www.lua.org/ftp/patch-lua-5.1.4-4) for
 the standard Lua 5.1.4 interpreter.
+
 [Components](components.html) bundled in this release:
 * LuaJIT-2.0.0-beta8
 * array-var-nginx-module-0.03rc1
