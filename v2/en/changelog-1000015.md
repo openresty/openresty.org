@@ -29,10 +29,13 @@
     * diagnosis: now we issue user-friendly error messages when the [Nginx](nginx.html) Lua APIs are used in the wrong configure directive contexts (e.g., using [ngx.location.capture](http://wiki.nginx.org/HttpLuaModule#ngx.location.capture) in [set_by_lua](http://wiki.nginx.org/HttpLuaModule#set_by_lua)).
     * docs: fixed a typo: [ngx.now](http://wiki.nginx.org/HttpLuaModule#ngx.now) returns time of the resolution of milliseconds, rather than microseconds. thanks Wang Xi.
     * docs: added a note for installation with Lua 5.1 on ubuntu 11.10. thanks Dan Sosedoff.
-* updated [nginx-1.0.15-poll_del_event_at_exit.patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-poll_del_event_at_exit.patch). thanks Maxim Dounin.
+* updated [nginx-1.0.15-poll_del_event_at_exit.patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-poll_del_event_at_exit.patch).
+thanks Maxim Dounin.
 
 #  Stable Release 1.0.15.10 - 13 June 2012
-This release is essentially equivalent to the devel version 1.0.15.9 except excluding all the vim backup files *~ from the source code distribution. thanks Xiaoyu Chen.
+This release is essentially equivalent to the devel version 1.0.15.9 except
+excluding all the vim backup files *~ from the source code distribution. thanks
+Xiaoyu Chen.
 
 [Components](components.html) bundled:
 * LuaJIT-2.0.0-beta10
@@ -82,13 +85,20 @@ This release is essentially equivalent to the devel version 1.0.15.9 except excl
     * docs: massive wording improvements from the [Nginx](nginx.html) Wiki site. thanks Dayo.
 * upgraded [Rds Json Nginx Module](rds-json-nginx-module.html) to 0.12rc10.
     * bugfix: refactored on-demand handler registration. the old approach rewrites to static (global) variables at config-time, which could have potential problems with nginx config reloading via the `HUP` signal.
-* bugfix: the (optional) [no-pool patch](https://github.com/openresty/no-pool-nginx/) might leak memory. now we have updated the no-pool patch to the latest version that is a thorough rewrite.
-* bugfix: applied [poll_del_event_at_exit patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-poll_del_event_at_exit.patch) that fixed a segmentation fault in the nginx core when the poll event type is used: http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002328.html
-* bugfix: applied the [resolver_debug_log patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-resolver_debug_log_overflow.patch) that fixed reads of uninitialized memory in the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002281.html
+* bugfix: the (optional) [no-pool patch](https://github.com/openresty/no-pool-nginx/) might
+leak memory. now we have updated the no-pool patch to the latest version that
+is a thorough rewrite.
+* bugfix: applied [poll_del_event_at_exit patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-poll_del_event_at_exit.patch) that
+fixed a segmentation fault in the nginx core when the poll event type is used:
+http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002328.html
+* bugfix: applied the [resolver_debug_log patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-resolver_debug_log_overflow.patch) that
+fixed reads of uninitialized memory in the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002281.html
 
 #  Mainline Version 1.0.15.7 - 29 May 2012
-* bugfix: applied the [add_core_vars_polluting_globals patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-add_core_vars_polluting_globals.patch) to fix a bug in the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002231.html
-* bugfix: fixed the [filter_finalize_hang patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-filter_finalize_hang.patch) for a regression in the image filters. thanks Maxim Dounin.
+* bugfix: applied the [add_core_vars_polluting_globals patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-add_core_vars_polluting_globals.patch) to
+fix a bug in the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002231.html
+* bugfix: fixed the [filter_finalize_hang patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.15-filter_finalize_hang.patch) for
+a regression in the image filters. thanks Maxim Dounin.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc29.
     * bugfix: `cosocket:receive(0)` was not allowed and would throw an error saying `0` was a bad pattern. thanks huang kun for reporting this issue. This issue at least made [Lua Resty Redis Library](lua-resty-redis-library.html) reject reading 0-size values.
     * bugfix: the [set_by_lua](http://wiki.nginx.org/HttpLuaModule#set_by_lua) directive did support nginx variable interpolation and there was no easy way to use the dollar sign characters in the literal Lua source. the [set_by_lua_file](http://wiki.nginx.org/HttpLuaModule#set_by_lua_file) directive still supports nginx variable interpolation in its lua file path argument. thanks Vittly for reporting this in [github issue #111](https://github.com/openresty/lua-nginx-module/issues/111) and jinglong for the test in [github pull #115](https://github.com/openresty/lua-nginx-module/pull/115).
@@ -114,7 +124,8 @@ hello
 #  Mainline Version 1.0.15.5 - 16 May 2012
 * upgraded [LuaJIT](luajit.html) to 2.0.0beta10.
     * see changes here: http://luajit.org/changes.html
-* feature: added the `--with-luajit-xcflags=FLAGS` option to `./configure` to add more C compiler options to [LuaJIT](luajit.html)'s build system.
+* feature: added the `--with-luajit-xcflags=FLAGS` option to `./configure` to
+add more C compiler options to [LuaJIT](luajit.html)'s build system.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc28.
     * bugfix: [ngx.req.socket()](http://wiki.nginx.org/HttpLuaModule#ngx.req.socket) did not honor the `Expect: 100-continue` request header and could hang. thanks Matthieu Tourne for the patch in [pull request #107](https://github.com/openresty/lua-nginx-module/pull/107).
     * bugfix: the [ngx.req.socket()](http://wiki.nginx.org/HttpLuaModule#ngx.req.socket) object (i.e., the downstream cosocket object) did not work with HTTP 1.1 pipelined requests at all.
@@ -128,7 +139,8 @@ hello
     * feature: added new Lua module `resty.aes` that exposes the AES submodule of OpenSSL via [LuaJIT](luajit.html) FFI. thanks Chase Colman for the patch.
 
 #  Mainline Version 1.0.15.3 - 13 May 2012
-* now we bundle Sergey A. Osokin's [Redis Nginx Module](redis-nginx-module.html), 0.3.6, which is also enabled by default. thanks Zhu Feng for requesting this.
+* now we bundle Sergey A. Osokin's [Redis Nginx Module](redis-nginx-module.html), 0.3.6,
+which is also enabled by default. thanks Zhu Feng for requesting this.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc27.
     * bugfix: nginx could crash on request finalization when running the cosocket cleanup handle due to the lack of check of the `ctx` pointer. thanks shaneeb for reporting this in [github issue #110](https://github.com/openresty/lua-nginx-module/issues/110).
     * bugfix: [ngx.req.get_body_data()](http://wiki.nginx.org/HttpLuaModule#ngx.req.get_body_data) could not handle multi-buffer request bodies and discarded the body data after the first buffer.
@@ -152,12 +164,14 @@ hello
     * feature: now the methods for the Memcached storage commands now accept Lua tables as the `value` argument. thanks Brian Akins for the patch.
 * upgraded [Lua Resty Upload Library](lua-resty-upload-library.html) to 0.03.
     * feature: now the raw headers for each part are also returned, as suggested by zou2062 in [github issue #1](https://github.com/agentzh/lua-resty-upload/issues/1).
-* applied the patch for a bug in `ngx_http_named_location` to the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002166.html
+* applied the patch for a bug in `ngx_http_named_location` to the nginx core:
+http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002166.html
 * applied the patch for a bug in the filter finalizer to the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002190.html
 
 #  Mainline Version 1.0.15.1 - 29 April 2012
 * upgraded the [Nginx](nginx.html) core to 1.0.15.
-* bugfix: now we also add `<openresty_prefix>/lualib/?/init.lua` to the default `package.path` search list. thanks bigplum for reporting this issue.
+* bugfix: now we also add `<openresty_prefix>/lualib/?/init.lua` to the default
+`package.path` search list. thanks bigplum for reporting this issue.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc25.
     * bugfix: cosocket connections from the connection pool might lead to segfaults if it is not used immediately. thanks xukaifu for reporting this as [github issue #108](https://github.com/chaoslawful/lua-nginx-module/issues/108).
     * bugfix: debug logging in the cosocket receive line method could lead to invalid memory reads under extreme network conditions. this issue was caught by [mockeagain](https://github.com/agentzh/mockeagain) in reading mode.

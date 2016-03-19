@@ -17,9 +17,12 @@
     * feature: applied John Marino's patch for compiling [LuaJIT](luajit.html) on DragonFlyBSD. thanks lhmwzy for proposing the patch.
 * upgraded the [Nginx](nginx.html) core to 1.5.11.
     * see the changes here: http://nginx.org/en/CHANGES
-* bugfix: applied the patch to the NGINX core for the latest SPDY security vulnerability (CVE-2014-0133).
-* feature: added support for DragonFlyBSD to `./configure`. thanks lhmwzy for the patch.
-* bugfix: disabled the -Werror option for clang because it caused build failures at least in recent Mac OS X systems. thanks Hamish Forbes for the report.
+* bugfix: applied the patch to the NGINX core for the latest SPDY security vulnerability
+(CVE-2014-0133).
+* feature: added support for DragonFlyBSD to `./configure`. thanks lhmwzy for
+the patch.
+* bugfix: disabled the -Werror option for clang because it caused build failures
+at least in recent Mac OS X systems. thanks Hamish Forbes for the report.
 * feature: bundled new component [Lua Resty Upstream Healthcheck Library](lua-resty-upstream-healthcheck-library.html) 0.01.
     * see the documentation for details: https://github.com/agentzh/lua-resty-upstream-healthcheck#readme
 * feature: bundled new component [Lua Upstream Nginx Module](lua-upstream-nginx-module.html) 0.01.

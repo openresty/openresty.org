@@ -8,9 +8,12 @@
     @changes       17
 --->
 
-This sample demonstrates how to use Redis to route incoming requests to different HTTP backends based on the requests' `User-Agent` header.
+This sample demonstrates how to use Redis to route incoming requests to different
+HTTP backends based on the requests' `User-Agent` header.
 
-This demo uses the components [Lua Nginx Module](lua-nginx-module.html) and [Lua Resty Redis Library](lua-resty-redis-library.html) enabled by default in [OpenResty](openresty.html).
+This demo uses the components [Lua Nginx Module](lua-nginx-module.html) and
+[Lua Resty Redis Library](lua-resty-redis-library.html) enabled by default in
+[OpenResty](openresty.html).
 
 Here's the complete code listing for our `nginx.conf`:
 
@@ -97,12 +100,17 @@ $ curl --user-agent foo localhost:8080
    <nginx.org home page goes here>
 ```
 
-To further tune the performance, one could enable the connection pool for the redis connections, as documented in [Lua Resty Redis Library](lua-resty-redis-library.html)'s README.
+To further tune the performance, one could enable the connection pool for the
+redis connections, as documented in [Lua Resty Redis Library](lua-resty-redis-library.html)'s
+README.
 
-Before you benchmarking your interface defined here, please ensure that you've raised the error log level to `warn` or `notice` in your `nginx.conf` file, as in
+Before you benchmarking your interface defined here, please ensure that you've
+raised the error log level to `warn` or `notice` in your `nginx.conf` file,
+as in
 
 ```
 error_log logs/error.log warn;
 ```
 
-because flushing error log is a very expensive operation and can hurt performance a lot.
+because flushing error log is a very expensive operation and can hurt performance
+a lot.

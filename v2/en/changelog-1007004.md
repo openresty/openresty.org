@@ -12,11 +12,19 @@
 #  Version 1.7.4.1 - 9 October 2014
 * upgraded the [Nginx](nginx.html) core to 1.7.4.
     * see the changes here: http://nginx.org/en/CHANGES
-* feature: added a new command-line utility, `resty`, to run Lua code or Lua files (for [OpenResty](openresty.html)) directly from the command-line. it is installed into the "<prefix>/bin" directory. prodded by Vitaly Kosenko. This tool is currently experimental.
-* bugfix: `./configure`: we might misuse the homebrew version of [LuaJIT](luajit.html) on Mac OS X when the user specified the `--with-ld-opt="-L/usr/local/lib"` option. thanks Aapo Talvensaari for the report.
-* bugfix: `util/install`: remove the target file before overwriting to prevent running processes (if any) from crashing.
-* bugfix: `./configure`: call "sh" explicitly for nginx's `./configure` script to prevent potential file permission issues.
-* optimize: now we use the C compiler option `-O2` for everything by default (we used to use `-O1` which is too conservative).
+* feature: added a new command-line utility, `resty`, to run Lua code or Lua
+files (for [OpenResty](openresty.html)) directly from the command-line. it is
+installed into the "<prefix>/bin" directory. prodded by Vitaly Kosenko. This
+tool is currently experimental.
+* bugfix: `./configure`: we might misuse the homebrew version of [LuaJIT](luajit.html) on
+Mac OS X when the user specified the `--with-ld-opt="-L/usr/local/lib"` option.
+thanks Aapo Talvensaari for the report.
+* bugfix: `util/install`: remove the target file before overwriting to prevent
+running processes (if any) from crashing.
+* bugfix: `./configure`: call "sh" explicitly for nginx's `./configure` script
+to prevent potential file permission issues.
+* optimize: now we use the C compiler option `-O2` for everything by default
+(we used to use `-O1` which is too conservative).
 * upgraded [Postgres Nginx Module](postgres-nginx-module.html) to 1.0rc4.
     * bugfix: segmentation fault might happen in `ngx_destroy_pool` when debug logging was enabled in the nginx build. thanks buddy-ekb for the report.
 * upgraded [Echo Nginx Module](echo-nginx-module.html) to 0.56.

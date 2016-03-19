@@ -8,7 +8,9 @@
     @changes       3
 --->
 
-[Donors](donors.html) donating more than 1000 USD are listed here to express our appreciation. If you have ever donated more than 1000 USD, please contact me and send me your company or personal logos.
+[Donors](donors.html) donating more than 1000 USD are listed here to express
+our appreciation. If you have ever donated more than 1000 USD, please contact
+me and send me your company or personal logos.
 
 <html>
 <img src="/images/kugou-music.jpg">

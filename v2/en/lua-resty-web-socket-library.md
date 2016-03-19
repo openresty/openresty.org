@@ -8,8 +8,11 @@
     @changes       3
 --->
 
-This Lua library implements both a nonblocking WebSocket server and a nonblocking WebSocket client based on [Lua Nginx Module](lua-nginx-module.html)'s cosocket API.
+This Lua library implements both a nonblocking WebSocket server and a nonblocking
+WebSocket client based on [Lua Nginx Module](lua-nginx-module.html)'s cosocket
+API.
 
 Project homepage: https://github.com/agentzh/lua-resty-websocket
 
-This library is enabled by default. You can specify the `--without-lua_resty_websocket` option to [OpenResty](openresty.html)'s `./configure` script to explicitly disable it.
+This library is enabled by default. You can specify the `--without-lua_resty_websocket` option
+to [OpenResty](openresty.html)'s `./configure` script to explicitly disable it.

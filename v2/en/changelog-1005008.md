@@ -10,9 +10,14 @@
 
 
 #  Mainline Version 1.5.8.1 - 10 January 2014
-* change: now we default to [LuaJIT](luajit.html) instead of the standard Lua 5.1 interpreter. the `--with-luajit` option for `./configure` is now the default. To use the standard Lua 5.1 interpreter, specify the `--with-lua51` option explicitly. thanks smallfish for the suggestion.
-* bugfix: [Nginx](nginx.html)'s built-in resolver did not accept fully qualified domain names (with a trailing dot).
-* optimize: shortened the `Server` response header string "ngx_openresty" to "openresty".
+* change: now we default to [LuaJIT](luajit.html) instead of the standard Lua 5.1
+interpreter. the `--with-luajit` option for `./configure` is now the default.
+To use the standard Lua 5.1 interpreter, specify the `--with-lua51` option explicitly.
+thanks smallfish for the suggestion.
+* bugfix: [Nginx](nginx.html)'s built-in resolver did not accept fully qualified
+domain names (with a trailing dot).
+* optimize: shortened the `Server` response header string "ngx_openresty" to
+"openresty".
 * upgraded the [Nginx](nginx.html) core to 1.5.8.
     * see the changes here: http://nginx.org/en/CHANGES
 * upgraded [LuaJIT](luajit.html) to v2.1-20140109.

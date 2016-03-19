@@ -305,6 +305,89 @@ _EOC_
     $out =~ s{src="alipay-qrcode\.png"}{src="/images/alipay-qrcode.png"}g;
     $out =~ s{src="kugou-music\.jpg"}{src="/images/kugou-music.jpg"}g;
 
+    $out = reformat_md($out);
+
+    return $out;
+}
+
+sub reformat_md {
+    my $s = shift;
+
+    open my $in, "<", \$s or die $!;
+
+    my $out = '';
+    my ($in_code);
+    while (<$in>) {
+        if (/^```\w*\s*$/) {
+            $in_code = !$in_code;
+            $out .= $_;
+            next;
+        }
+
+        if ($in_code) {
+            $out .= $_;
+            next;
+        }
+
+        if (/^[\s>]/) {
+            # TODO: process list items
+            $out .= $_;
+            next;
+        }
+
+        while (1) {
+            my $done;
+            while (1) {
+                if (/ \G (?: !? \[ [^\]]* \] \( [^\)]* \)
+                               | \[ [^\]]* \] \[ [^\]]* \]
+                               | \[ [^\]]* \]
+                               | ` [^`]* `
+                               | ~~ .*? ~~
+                               | __ .*? __
+                               | _ .*? _
+                               | \*\* .*? \*\*
+                               | \* .*? \*
+                               )
+                          /xmsgc)
+                {
+                    # do nothing
+
+                } elsif (/ \G [^\[\]`~_*\s]+ (\s+) (?![-+>#=\d*\@]) /xmsgc) {
+                    my $pos = pos;
+                    if ($pos > 75) {
+                        #warn "split!";
+                        my $len = length $1;
+                        $out .= substr $_, 0, $pos - $len;
+                        $out .= "\n";
+                        $_ = substr $_, pos;
+                        if (length $_ < 80) {
+                            $out .= $_;
+                            $done = 1;
+                            last;
+                        }
+                    }
+
+                } elsif (/ \G [^\[\]`~_*\s]+ /xmsgc) {
+                    # do nothing
+
+                } elsif (/ \G . /xmsgc) {
+                    # do nothing
+
+                } else {
+                    $out .= $_;
+                    $done = 1;
+                    last;
+                }
+            }
+
+            if ($done) {
+                last;
+            }
+        }
+    }
+
+    close $in;
+
     return $out;
 }
 

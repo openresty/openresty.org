@@ -39,9 +39,13 @@
 #  Mainline Version 1.4.1.1 - 18 July 2013
 * upgraded the [Nginx](nginx.html) core to 1.4.1.
     * see http://nginx.org/en/CHANGES-1.4 for changes.
-* bugfix: ./configure: use of spaces in the `--with-cc` option values resulted in errors.
-* bugfix: applied the [unix_socket_accept_over_read patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.1-unix_socket_accept_over_read.patch) to fix a buffer over-read issue in  the [Nginx](nginx.html) core when [Nginx](nginx.html) is configured to listen on a unix domain socket.
-* bugfix: applied the [gcc-maybe-uninitialized-warning patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.1-gcc-maybe-uninitialized-warning.patch) to the [Nginx](nginx.html) core to fix a gcc warning with gcc 4.7.3/4.7.2.
+* bugfix: ./configure: use of spaces in the `--with-cc` option values resulted
+in errors.
+* bugfix: applied the [unix_socket_accept_over_read patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.1-unix_socket_accept_over_read.patch) to
+fix a buffer over-read issue in  the [Nginx](nginx.html) core when [Nginx](nginx.html) is
+configured to listen on a unix domain socket.
+* bugfix: applied the [gcc-maybe-uninitialized-warning patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.1-gcc-maybe-uninitialized-warning.patch) to
+the [Nginx](nginx.html) core to fix a gcc warning with gcc 4.7.3/4.7.2.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.8.5.
     * change: made [ngx.say](http://wiki.nginx.org/HttpLuaModule#ngx.say)/[ngx.print](http://wiki.nginx.org/HttpLuaModule#ngx.print)/[ngx.eof](http://wiki.nginx.org/HttpLuaModule#ngx.eof)/[ngx.flush](http://wiki.nginx.org/HttpLuaModule#ngx.flush)/[ngx.send_headers](http://wiki.nginx.org/HttpLuaModule#ngx.send_headers) return `nil` and a string describing the error in case of most of the common errors (instead of throwing out an exception), and return 1 for success.
     * feature: added new directive [lua_regex_match_limit](http://wiki.nginx.org/HttpLuaModule#lua_regex_match_limit) for setting PCRE's "match_limit" protection for regex execution.

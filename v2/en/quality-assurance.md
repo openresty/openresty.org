@@ -8,6 +8,8 @@
     @changes       3
 --->
 
-We run extensive regression testing for all our components (as well as other 3rd-party [Nginx](nginx.html) modules) on an Amazon EC2 cluster. The latest test report can always be viewed here:
+We run extensive regression testing for all our components (as well as other 3rd-party
+[Nginx](nginx.html) modules) on an Amazon EC2 cluster. The latest test report
+can always be viewed here:
 
 http://qa.openresty.org/

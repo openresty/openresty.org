@@ -8,17 +8,27 @@
     @changes       36
 --->
 
-This sample demonstrates usage of [LuaRocks](http://www.luarocks.org/) with [OpenResty](openresty.html). It's been tested on Linux and Mac OS X, with the standard Lua interpreter or with [LuaJIT](luajit.html).
+This sample demonstrates usage of [LuaRocks](http://www.luarocks.org/) with
+[OpenResty](openresty.html). It's been tested on Linux and Mac OS X, with the
+standard Lua interpreter or with [LuaJIT](luajit.html).
 
-LuaRocks is a deployment and management system for Lua modules. LuaRocks allows one to install Lua modules as self-contained packages called "rocks", which also contain version dependency  information.
+LuaRocks is a deployment and management system for Lua modules. LuaRocks allows
+one to install Lua modules as self-contained packages called "rocks", which
+also contain version dependency  information.
 
-We assume that you have installed [OpenResty](openresty.html) into the default location, i.e., `/usr/local/openresty`. You can adjust the paths in this sample according to the actual installation prefix of your [OpenResty](openresty.html) installation. If you haven't installed OpenResty yet, check out the [Download](download.html) and [Installation](installation.html) pages.
+We assume that you have installed [OpenResty](openresty.html) into the default
+location, i.e., `/usr/local/openresty`. You can adjust the paths in this sample
+according to the actual installation prefix of your [OpenResty](openresty.html) installation.
+If you haven't installed OpenResty yet, check out the [Download](download.html) and
+[Installation](installation.html) pages.
 
 
 #  Install LuaRocks
 First of all, let's install LuaRocks:
 
-[Download](download.html) the LuaRocks tarball from [http://www.luarocks.org/en/Download](http://www.luarocks.org/en/-download.html). As of this writing, the latest version is `2.1.2`, but we'll use `2.0.13` for compatibility throughout this sample.
+[Download](download.html) the LuaRocks tarball from [http://www.luarocks.org/en/Download](http://www.luarocks.org/en/-download.html).
+As of this writing, the latest version is `2.1.2`, but we'll use `2.0.13` for
+compatibility throughout this sample.
 
 ```
 wget http://luarocks.org/releases/luarocks-2.0.13.tar.gz
@@ -34,7 +44,8 @@ sudo make install
 
 
 #  Install the Lua MD5 library with LuaRocks
-In this sample, we'll use the Lua MD5 library to serve as an example, so let's install it with LuaRocks:
+In this sample, we'll use the Lua MD5 library to serve as an example, so let's
+install it with LuaRocks:
 
 ```
 sudo /usr/local/openresty/luajit/luarocks install md5
@@ -48,7 +59,8 @@ Let's change the current directory to `/usr/local/openresty/nginx/`:
 cd /usr/local/openresty/nginx/
 ```
 
-Next, edit the `conf/nginx.conf` file to the following contents with your favorite text editor (like vim or emacs):
+Next, edit the `conf/nginx.conf` file to the following contents with your favorite
+text editor (like vim or emacs):
 
 ```
 worker_processes  1;   # we could enlarge this setting on a multi-core machine
@@ -117,7 +129,8 @@ ulimit -n1024   # increase the maximal fd count limit per process
 ./sbin/nginx
 ```
 
-If you have already started the [Nginx](nginx.html) server, then stop it before starting it:
+If you have already started the [Nginx](nginx.html) server, then stop it before
+starting it:
 
 ```
 ./sbin/nginx -s stop
@@ -125,7 +138,8 @@ If you have already started the [Nginx](nginx.html) server, then stop it before 
 
 
 #  Test our app
-Now we can test our app via the `curl` utility or any HTTP compliant clients like a web browser:
+Now we can test our app via the `curl` utility or any HTTP compliant clients
+like a web browser:
 
 ```
 curl http://localhost/luarocks
@@ -145,7 +159,9 @@ then at the second run:
 85e73df5c41378f830c031b81e4453d2
 ```
 
-The output changed because [Lua Nginx Module](lua-nginx-module.html) by default caches already loaded Lua modules and those outputing code run at Lua module loading time will no longer be run.
+The output changed because [Lua Nginx Module](lua-nginx-module.html) by default
+caches already loaded Lua modules and those outputing code run at Lua module
+loading time will no longer be run.
 
 Now let's do some benchmark:
 
@@ -176,13 +192,19 @@ Time per request:       0.061 [ms] (mean, across all concurrent requests)
 Transfer rate:          3007.41 [Kbytes/sec] received
 ```
 
-Note that the throughput is achieved by a single nginx worker process. While doing such benchmark on your own, just be careful about error log level settings in your nginx.conf and not to run out of dynamic port range on your local machine, or it'll be significantly slow after a short of period of time.
+Note that the throughput is achieved by a single nginx worker process. While
+doing such benchmark on your own, just be careful about error log level settings
+in your nginx.conf and not to run out of dynamic port range on your local machine,
+or it'll be significantly slow after a short of period of time.
 
 #  Known issues
-Pior to [OpenResty](openresty.html) 1.0.4.2rc10, it's known that turning `lua_code_cache` on will cause LuaRocks atop [Lua Nginx Module](lua-nginx-module.html) to throw out the following exception in `error.log`:
+Pior to [OpenResty](openresty.html) 1.0.4.2rc10, it's known that turning `lua_code_cache` on
+will cause LuaRocks atop [Lua Nginx Module](lua-nginx-module.html) to throw
+out the following exception in `error.log`:
 
 ```
 lua handler aborted: runtime error: stack overflow
 ```
 
-If you're using any version of [OpenResty](openresty.html) before 1.0.4.2rc10, please consider upgrading.
+If you're using any version of [OpenResty](openresty.html) before 1.0.4.2rc10,
+please consider upgrading.

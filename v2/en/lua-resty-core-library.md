@@ -8,8 +8,10 @@
     @changes       2
 --->
 
-Reimplements the Lua API provided by [Lua Nginx Module](lua-nginx-module.html) with [LuaJIT](luajit.html) FFI.
+Reimplements the Lua API provided by [Lua Nginx Module](lua-nginx-module.html) with
+[LuaJIT](luajit.html) FFI.
 
 Project homepage: https://github.com/openresty/lua-resty-core
 
-This library is enabled by default. You can specify the `--without-lua_resty_core` option to [OpenResty](openresty.html)'s `./configure` script to explicitly disable it.
+This library is enabled by default. You can specify the `--without-lua_resty_core` option
+to [OpenResty](openresty.html)'s `./configure` script to explicitly disable it.

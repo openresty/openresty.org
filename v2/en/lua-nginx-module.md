@@ -8,7 +8,9 @@
     @changes       20
 --->
 
-This module embeds the Lua interpreter or [LuaJIT](luajit.html) 2.0 into the nginx core and integrates the powerful Lua threads (aka Lua coroutines) into the [Nginx](nginx.html) event model by means of cosockets and [Nginx](nginx.html) subrequests.
+This module embeds the Lua interpreter or [LuaJIT](luajit.html) 2.0 into the
+nginx core and integrates the powerful Lua threads (aka Lua coroutines) into
+the [Nginx](nginx.html) event model by means of cosockets and [Nginx](nginx.html) subrequests.
 
 Documentation: https://github.com/chaoslawful/lua-nginx-module#readme
 

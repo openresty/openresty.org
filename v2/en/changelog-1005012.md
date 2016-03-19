@@ -12,7 +12,8 @@
 #  Version 1.5.12.1 - 29 April 2014
 * upgraded the [Nginx](nginx.html) core to 1.5.12.
     * see the changes here: http://nginx.org/en/CHANGES
-* upgraded [LuaJIT](luajit.html) to v2.1-20140423 (see https://github.com/openresty/luajit2/releases ).
+* upgraded [LuaJIT](luajit.html) to v2.1-20140423 (see https://github.com/openresty/luajit2/releases
+).
     * bugfix: prevent adding side traces for stack checks. (Mike pall) this could cause internal assertion failure in the JIT compiler while replaying snapshots in very obscure cases: `lj_snap.c:497: lj_snap_replay: Assertion `ir->o == IR_CONV && ir->op2 == ((IRT_NUM<<5)|IRT_INT)' failed.`
     * bugfix: fixed FOLD of string concatenations. (Mike Pall) this issue was reported by leafo and could lead to invalid string results in special cases while compiling string concatenations.
     * bugfix: FFI: fixed cdata equality comparison against strings and other Lua types. (Mike Pall)

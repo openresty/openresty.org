@@ -107,11 +107,20 @@ The following components are bundled:
     * bugfix: the main request might prematurely terminate if the [srcache_store](http://wiki.nginx.org/HttpSRCacheModule#srcache_store) subrequest was finalized with error codes.
 * upgraded [Redis2 Nginx Module](redis-2-nginx-module.html) to 0.09.
     * bugfix: directives [redis2_query](http://wiki.nginx.org/HttpRedis2Module#redis2_query), [redis2_literal_raw_query](http://wiki.nginx.org/HttpRedis2Module#redis2_literal_raw_query), and [redis2_raw_queries](http://wiki.nginx.org/HttpRedis2Module#redis2_raw_queries) could not be inherited automatically by the `location if` blocks, resulting in the "no redis2 query specified or the query is empty" error. thanks Tomasz Prus for the patch.
-* feature: updated the [dtrace patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-dtrace.patch) to add new static probe `create-pool-done`.
-* feature: updated the [dtrace patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-dtrace.patch) to include new tapset functions `ngx_indent`, `ngx_http_subreq_depth`, and `ngx_http_req_parent`.
-* bugfix: added the [nonbuffered-upstream-truncation patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-nonbuffered-upstream-truncation.patch) for the [Nginx](nginx.html) core to make `ngx_http_upstream` provide a way in the context of a subrequest to signal the parent of errors when upstream data truncation happens. thanks Bryan Alger for reporting this issue. (This is a temporary solution and I'll work on a new patch as per Maxim Dounin's suggestions.)
-* bugfix: applied the [channel-uninit-params patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-channel-uninit-params.patch) for the [Nginx](nginx.html) core to fix Valgrind/Memcheck warnings about unitialized bytes in the parameters of `sendmsg`.
-* feature: updated the [allow_request_body_updating patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-allow_request_body_updating.patch) to define the `HAVE_ALLOW_REQUEST_BODY_UPDATING_PATCH` macro.
+* feature: updated the [dtrace patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-dtrace.patch) to
+add new static probe `create-pool-done`.
+* feature: updated the [dtrace patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-dtrace.patch) to
+include new tapset functions `ngx_indent`, `ngx_http_subreq_depth`, and `ngx_http_req_parent`.
+* bugfix: added the [nonbuffered-upstream-truncation patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-nonbuffered-upstream-truncation.patch) for
+the [Nginx](nginx.html) core to make `ngx_http_upstream` provide a way in the
+context of a subrequest to signal the parent of errors when upstream data truncation
+happens. thanks Bryan Alger for reporting this issue. (This is a temporary solution
+and I'll work on a new patch as per Maxim Dounin's suggestions.)
+* bugfix: applied the [channel-uninit-params patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-channel-uninit-params.patch) for
+the [Nginx](nginx.html) core to fix Valgrind/Memcheck warnings about unitialized
+bytes in the parameters of `sendmsg`.
+* feature: updated the [allow_request_body_updating patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.3-allow_request_body_updating.patch) to
+define the `HAVE_ALLOW_REQUEST_BODY_UPDATING_PATCH` macro.
 
 #  Mainline Version 1.2.3.1 - 22 August 2012
 * upgraded the [Nginx](nginx.html) core to 1.2.3.
@@ -136,7 +145,9 @@ The following components are bundled:
 * upgraded [Postgres Nginx Module](postgres-nginx-module.html) to 1.0rc2.
     * bugfix: the `open socket #N left in connection` alerts would appear in the nginx error log file when the PostgreSQL connection pool was used and the worker process was shutting down.
     * bugfix: removed the useless http-cache related code from `ngx_postgres_upstream_finalize_request` to suppress clang warnings.
-* added more dtrace static probes to the [Nginx](nginx.html) core: `timer-add`, `timer-del`, and `timer-expire`.
-* added more [systemtap](http://sourceware.org/systemtap/) tapset functions: `ngx_chain_next`, `ngx_chain_writer_ctx_out`, `ngx_chain_dump`, and `ngx_iovec_dump`.
+* added more dtrace static probes to the [Nginx](nginx.html) core: `timer-add`,
+`timer-del`, and `timer-expire`.
+* added more [systemtap](http://sourceware.org/systemtap/) tapset functions:
+`ngx_chain_next`, `ngx_chain_writer_ctx_out`, `ngx_chain_dump`, and `ngx_iovec_dump`.
 
 See [ChangeLog 1.2.1](changelog-1002001.html) for change log for [OpenResty](openresty.html) 1.2.1.x.

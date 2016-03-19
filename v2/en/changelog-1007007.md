@@ -10,7 +10,8 @@
 
 
 #  Version 1.7.7.2 - 4 February 2015
-* bundled the "resty" command-line utility (version 0.01)  from the resty-cli project: https://github.com/openresty/resty-cli
+* bundled the "resty" command-line utility (version 0.01)  from the resty-cli
+project: https://github.com/openresty/resty-cli
     * bugfix: the resty utility could not start when the nginx was built with `./configure --conf-path=PATH` where `PATH` was not `conf/nginx.conf`. thanks Zhengyi Lai for the report.
     * feature: added support for user-supplied arguments which the user Lua scripts can access via the global Lua table "arg", just as in the "lua" and "luajit" command-line utilities. thanks Guanlan Dai for the patch.
     * feature: added new command-line option `--nginx=PATH` to allow the user to explicitly specify the underlying nginx executable being invoked by this script. thanks Guanlan Dai for the patch.
@@ -56,14 +57,18 @@
         * ARM: Fix write barrier check in `BC_USETS`.
         * ARM64: Add build infrastructure and initial port of interpreter.
         * OpenBSD/x86: Better executable memory allocation for W^X mode.
-* bugfix: the `ngx_http_redis` module failed to compile when the `ngx_gzip` module was disabled. thanks anod221 for the report.
+* bugfix: the `ngx_http_redis` module failed to compile when the `ngx_gzip` module
+was disabled. thanks anod221 for the report.
 
 #  Version 1.7.7.1 - 6 December 2014
 * upgraded the [Nginx](nginx.html) core to 1.7.7.
     * see the changes here: http://nginx.org/en/CHANGES
-* bugfix: applied a patch to the nginx core to fix the memory invalid reads when exceeding the pre-configured limits in an `ngx_hash_t` hash table.
-* bugfix: applied a patch to the nginx core to fix a memory invalid read regression introduced in nginx 1.7.5+'s resolver.
-* ./configure: usage text: renamed `--with-luajit=PATH` to `--with-luajit=DIR`. thanks Dominic for the suggestion.
+* bugfix: applied a patch to the nginx core to fix the memory invalid reads
+when exceeding the pre-configured limits in an `ngx_hash_t` hash table.
+* bugfix: applied a patch to the nginx core to fix a memory invalid read regression
+introduced in nginx 1.7.5+'s resolver.
+* ./configure: usage text: renamed `--with-luajit=PATH` to `--with-luajit=DIR`.
+thanks Dominic for the suggestion.
 * feature: ./configure: added the default prefix value to the usage text.
 * upgraded [LuaJIT](luajit.html) to v2.1-20141128:  https://github.com/openresty/luajit2/tags
     * imported Mike Pall's latest changes:

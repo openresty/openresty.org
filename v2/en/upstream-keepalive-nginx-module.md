@@ -10,7 +10,8 @@
 
 *This module is now part of the official Nginx core.*
 
-This is a keepalive balancer module for nginx that implements cache for backend connections.
+This is a keepalive balancer module for nginx that implements cache for backend
+connections.
 
 Documentation: http://wiki.nginx.org/HttpUpstreamKeepaliveModule
 

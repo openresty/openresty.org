@@ -8,9 +8,13 @@
     @changes       6
 --->
 
-This module provides a transparent caching layer for arbitrary nginx locations (like those use an upstream or even serve static disk files).
+This module provides a transparent caching layer for arbitrary nginx locations
+(like those use an upstream or even serve static disk files).
 
-Usually, the [Memc Nginx Module](memc-nginx-module.html) is used together with this module to provide a concrete caching storage backend. But technically, any modules that provide a REST interface can be used as the fetching and storage subrequests used by this module.
+Usually, the [Memc Nginx Module](memc-nginx-module.html) is used together with
+this module to provide a concrete caching storage backend. But technically,
+any modules that provide a REST interface can be used as the fetching and storage
+subrequests used by this module.
 
 Documentation page: https://github.com/agentzh/srcache-nginx-module#readme
 

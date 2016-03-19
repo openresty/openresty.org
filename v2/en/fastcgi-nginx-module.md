@@ -8,4 +8,5 @@
     @changes       1
 --->
 
-This is a standard [Nginx](nginx.html) module for talking to the remote FastCGI servers: http://wiki.nginx.org/HttpFastcgiModule
+This is a standard [Nginx](nginx.html) module for talking to the remote FastCGI
+servers: http://wiki.nginx.org/HttpFastcgiModule

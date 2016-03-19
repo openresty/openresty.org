@@ -10,7 +10,8 @@
 
 
 #  Version 1.9.3.2 - 23 November 2015
-* feature: added support for compiling on Windows using the MinGW gcc toolchain to the build system. See the document for more details: https://github.com/openresty/ngx_openresty/blob/master/doc/README-win32.md
+* feature: added support for compiling on Windows using the MinGW gcc toolchain
+to the build system. See the document for more details: https://github.com/openresty/ngx_openresty/blob/master/doc/README-win32.md
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.9.19.
     * feature: implemented `*_by_lua_block {} ` directives for all the existing `*_by_lua` directives so that we no longer have to escape special characters while inlining Lua source inside the `nginx.conf` file.
     * feature: now we support [LuaJIT](luajit.html) 2 on Windows (in the form of `lua51.dll`).
@@ -88,8 +89,11 @@
 #  Version 1.9.3.1 - 12 August 2015
 * upgraded the [Nginx](nginx.html) core to 1.9.3.
     * see the changes here: http://nginx.org/en/CHANGES
-* bugfix: `./configure --help`: fixed the usage text for the `--with-debug` option. thanks Kipras Mancevičius for the report.
-* bugfix: link failures with OpenSSL might happen on 64-bit Mac OS X when the `./configure` option `--with-openssl=PATH` was used and the OpenSSL source was recent enough. thanks grasses for the report.
+* bugfix: `./configure --help`: fixed the usage text for the `--with-debug` option.
+thanks Kipras Mancevičius for the report.
+* bugfix: link failures with OpenSSL might happen on 64-bit Mac OS X when the
+`./configure` option `--with-openssl=PATH` was used and the OpenSSL source was
+recent enough. thanks grasses for the report.
 * upgraded [Postgres Nginx Module](postgres-nginx-module.html) to 1.0rc7.
     * feature: fixed compilation errors with nginx 1.9.1+. thanks Vadim A. Misbakh-Soloviov for the original patch.
 See [ChangeLog 1.7.10](changelog-1007010.html) for change log for [OpenResty](openresty.html) 1.7.10.x.

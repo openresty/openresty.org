@@ -8,9 +8,14 @@
     @changes       9
 --->
 
-This sample demonstrates how to route incoming requests to different MySQL queries based on different combinations of URI query arguments, preserving streaming output capabilities provided by [Drizzle Nginx Module](drizzle-nginx-module.html) and [Rds Json Nginx Module](rds-json-nginx-module.html).
+This sample demonstrates how to route incoming requests to different MySQL queries
+based on different combinations of URI query arguments, preserving streaming
+output capabilities provided by [Drizzle Nginx Module](drizzle-nginx-module.html) and
+[Rds Json Nginx Module](rds-json-nginx-module.html).
 
-This demo uses the modules [Drizzle Nginx Module](drizzle-nginx-module.html), [Lua Nginx Module](lua-nginx-module.html), [Rds Json Nginx Module](rds-json-nginx-module.html), and [Set Misc Nginx Module](set-misc-nginx-module.html) bundled by [OpenResty](openresty.html).
+This demo uses the modules [Drizzle Nginx Module](drizzle-nginx-module.html),
+[Lua Nginx Module](lua-nginx-module.html), [Rds Json Nginx Module](rds-json-nginx-module.html),
+and [Set Misc Nginx Module](set-misc-nginx-module.html) bundled by [OpenResty](openresty.html).
 
 Here's the complete code listing for our `nginx.conf`:
 
@@ -66,7 +71,8 @@ http {
 ```
 
 
-And then we start our [Nginx](nginx.html) server with this configure file and test with our `/cats` service like this:
+And then we start our [Nginx](nginx.html) server with this configure file and
+test with our `/cats` service like this:
 
 ```
 $ curl 'localhost:8080/cats'
@@ -79,4 +85,5 @@ $ curl 'localhost:8080/cats?id=2'
 [{"id":2,"name":null}]
 ```
 
-The actual output rows may vary depending on the actual contents in your `cats` table anyway.
+The actual output rows may vary depending on the actual contents in your `cats` table
+anyway.

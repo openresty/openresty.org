@@ -8,7 +8,8 @@
     @changes       1
 --->
 
-This [Nginx](nginx.html) C module exposes a Lua API to [Lua Nginx Module](lua-nginx-module.html) for classic [Nginx](nginx.html) upstreams.
+This [Nginx](nginx.html) C module exposes a Lua API to [Lua Nginx Module](lua-nginx-module.html) for
+classic [Nginx](nginx.html) upstreams.
 
 Documentation: https://github.com/agentzh/lua-upstream-nginx-module#readme
 

@@ -8,13 +8,16 @@
     @changes       30
 --->
 
-First of all, please go to the [Download](download.html) page to get the source code tarball of [OpenResty](openresty.html), and see the [Installation](installation.html) page for how to build and install it into your system.
+First of all, please go to the [Download](download.html) page to get the source
+code tarball of [OpenResty](openresty.html), and see the [Installation](installation.html) page
+for how to build and install it into your system.
 
 
 # HelloWorld
 
 ## Prepare directory layout
-We first create a separate directory for our experiments. You can use an arbitrary directory. Here for simplicity, we just use `~/work`:
+We first create a separate directory for our experiments. You can use an arbitrary
+directory. Here for simplicity, we just use `~/work`:
 
 ```
 mkdir ~/work
@@ -22,10 +25,12 @@ cd ~/work
 mkdir logs/ conf/
 ```
 
-Note that we've also created the `logs/` directory for logging files and `conf/` for our config files.
+Note that we've also created the `logs/` directory for logging files and `conf/` for
+our config files.
 
 ## Prepare the nginx.conf config file
-Create a simple plain text file named `conf/nginx.conf` with the following contents in it:
+Create a simple plain text file named `conf/nginx.conf` with the following contents
+in it:
 
 ```
 worker_processes  1;
@@ -46,10 +51,15 @@ http {
 }
 ```
 
-If you're familiar with [Nginx](nginx.html) configuration, it should look very familiar to you. [OpenResty](openresty.html) is just an enhanced version of [Nginx](nginx.html) by means of addon modules anyway. You can take advantage of all the existing goodies in the [Nginx](nginx.html) world.
+If you're familiar with [Nginx](nginx.html) configuration, it should look very
+familiar to you. [OpenResty](openresty.html) is just an enhanced version of
+[Nginx](nginx.html) by means of addon modules anyway. You can take advantage
+of all the existing goodies in the [Nginx](nginx.html) world.
 
 ## Start the [Nginx](nginx.html) server
-Assuming you have installed [OpenResty](openresty.html) into `/usr/local/openresty` (this is the default), we make our `nginx` executable of our [OpenResty](openresty.html) installation available in our `PATH` environment:
+Assuming you have installed [OpenResty](openresty.html) into `/usr/local/openresty` (this
+is the default), we make our `nginx` executable of our [OpenResty](openresty.html) installation
+available in our `PATH` environment:
 
 ```
 PATH=/usr/local/openresty/nginx/sbin:$PATH
@@ -62,7 +72,8 @@ Then we start the nginx server with our config file this way:
 nginx -p `pwd`/ -c conf/nginx.conf
 ```
 
-Error messages will go to the stderr device or the default error log files `logs/error.log` in the current working directory.
+Error messages will go to the stderr device or the default error log files `logs/error.log` in
+the current working directory.
 
 ## Access our HelloWorld web service
 We can use curl to access our new web service that says HelloWorld:
@@ -85,4 +96,5 @@ See [Benchmark](benchmark.html) for details.
 
 # Where to go from here
 
-View the documentation of each component at the [Components](components.html) page and find [Nginx](nginx.html) related stuffs on the [Nginx Wiki site](http://wiki.nginx.org/).
+View the documentation of each component at the [Components](components.html) page
+and find [Nginx](nginx.html) related stuffs on the [Nginx Wiki site](http://wiki.nginx.org/).

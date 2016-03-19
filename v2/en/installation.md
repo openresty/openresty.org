@@ -8,11 +8,13 @@
     @changes       84
 --->
 
-If you haven't downloaded the [OpenResty](openresty.html) source code tarball, please go to the [Download](download.html) page first.
+If you haven't downloaded the [OpenResty](openresty.html) source code tarball,
+please go to the [Download](download.html) page first.
 
 (If you are on Windows, then you should check out [this documentation](https://github.com/openresty/openresty/blob/master/doc/README-win32.md#readme) instead.)
 
-Basically, building and installing [OpenResty](openresty.html) is as simple as
+Basically, building and installing [OpenResty](openresty.html) is as simple
+as
 
 ```
 tar xvf ngx_openresty-VERSION.tar.gz
@@ -22,14 +24,20 @@ make
 make install
 ```
 
-where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html), like `0.8.54.6`.
+where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html),
+like `0.8.54.6`.
 
-If your system environment is modern enough, then you almost always want to enable the PCRE JIT support and IPv6 support in your NGINX by passing the `--with-pcre-jit` and `--with-ipv6` options to the `./configure` script.
+If your system environment is modern enough, then you almost always want to
+enable the PCRE JIT support and IPv6 support in your NGINX by passing the `--with-pcre-jit` and
+`--with-ipv6` options to the `./configure` script.
 
-If you have problems while building or want finer control over the building process, please read on.
+If you have problems while building or want finer control over the building
+process, please read on.
 
 # Prerequisites
-You should have `perl 5.6.1+`, `libreadline`, `libpcre`, `libssl` installed into your system. For Linux, you should also ensure that `ldconfig` is in your PATH environment.
+You should have `perl 5.6.1+`, `libreadline`, `libpcre`, `libssl` installed
+into your system. For Linux, you should also ensure that `ldconfig` is in your
+PATH environment.
 
 ## Debian and Ubuntu users
 You're recommended to install the following packages using apt-get:
@@ -49,16 +57,19 @@ yum install readline-devel pcre-devel openssl-devel gcc
 
 
 ## Mac OS X (Darwin) users
-You're recommended to install prerequisites PCRE and OpenSSL using some package management tool, like [Homebrew](http://mxcl.github.com/homebrew/):
+You're recommended to install prerequisites PCRE and OpenSSL using some package
+management tool, like [Homebrew](http://mxcl.github.com/homebrew/):
 
 ```
 brew update
 brew install pcre openssl
 ```
 
-Alternatively you can install PCRE and/or OpenSSL from source all by yourself :)
+Alternatively you can install PCRE and/or OpenSSL from source all by yourself
+:)
 
-After installing PCRE and OpenSSL, you may need to specify the paths for their headers and libraries to your C compiler and linker, for example,
+After installing PCRE and OpenSSL, you may need to specify the paths for their
+headers and libraries to your C compiler and linker, for example,
 
 ```
 $ ./configure \
@@ -67,7 +78,8 @@ $ ./configure \
    -j8
 ```
 
-assuming that your PCRE and OpenSSL are installed under the prefix `/usr/local/opt/` which is the default for homebrew.
+assuming that your PCRE and OpenSSL are installed under the prefix `/usr/local/opt/` which
+is the default for homebrew.
 
 See also [Issue #3](https://github.com/agentzh/ngx_openresty/issues/3).
 
@@ -92,7 +104,8 @@ pfexec pkg install gcc-3 SUNWlibm
 # Build OpenResty
 
 ## [Download](download.html)
-download the latest ngx_openresty tarball can be fetched from the [Download](download.html) page and unpack it like this:
+download the latest ngx_openresty tarball can be fetched from the [Download](download.html) page
+and unpack it like this:
 
 ```
 tar xzvf ngx_openresty-VERSION.tar.gz
@@ -101,13 +114,15 @@ tar xzvf ngx_openresty-VERSION.tar.gz
 where `VERSION` should be replaced by real version numbers like `0.8.54.6`.
 
 ## ./configure
-Then enter the `ngx_openresty-VERSION/` directory, and type the following command to configure:
+Then enter the `ngx_openresty-VERSION/` directory, and type the following command
+to configure:
 
 ```
 ./configure
 ```
 
-By default, `--prefix=/usr/local/openresty` is assumed. You should only disable [LuaJIT](luajit.html) 2 when your platform does not support [LuaJIT](luajit.html).
+By default, `--prefix=/usr/local/openresty` is assumed. You should only disable
+[LuaJIT](luajit.html) 2 when your platform does not support [LuaJIT](luajit.html).
 
 You can specify various options, as in
 
@@ -121,12 +136,18 @@ You can specify various options, as in
             -j2
 ```
 
-All of the standard [Nginx](nginx.html) configure file options can be used here, including `--add-module=PATH` for adding your own 3rd-party [Nginx](nginx.html) C modules. Try `./configure --help` to see more options available.
+All of the standard [Nginx](nginx.html) configure file options can be used here,
+including `--add-module=PATH` for adding your own 3rd-party [Nginx](nginx.html) C
+modules. Try `./configure --help` to see more options available.
 
-Errors in running the ./configure script can be found in the file `build/nginx-VERSION/objs/autoconf.err` where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html), like `0.8.54.6`.
+Errors in running the ./configure script can be found in the file `build/nginx-VERSION/objs/autoconf.err` where
+`VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html),
+like `0.8.54.6`.
 
 ### Notes for Solaris users
-For Solaris, it's common to install libraries like OpenSSL to `/lib`, so when it complaints about missing OpenSSL and you have indeed already installed it, specify the `--with-ld-opt='-L/lib'` option.
+For Solaris, it's common to install libraries like OpenSSL to `/lib`, so when
+it complaints about missing OpenSSL and you have indeed already installed it,
+specify the `--with-ld-opt='-L/lib'` option.
 
 ## make
 Now you can compile everything up using the command
@@ -135,7 +156,8 @@ Now you can compile everything up using the command
 make
 ```
 
-If your machine has multiple cores and your `make` supports the jobserver feature, you can compile things in parallel like this:
+If your machine has multiple cores and your `make` supports the jobserver feature,
+you can compile things in parallel like this:
 
 ```
 make -j2
@@ -144,7 +166,8 @@ make -j2
 assuming you have 2 CPU cores.
 
 ## make install
-If all the previous steps go without problems, you can install [OpenResty](openresty.html) into your system by typing the command
+If all the previous steps go without problems, you can install [OpenResty](openresty.html) into
+your system by typing the command
 
 ```
 make install
@@ -152,7 +175,9 @@ make install
 
 On Linux, it often requires `sudo` to gain root access.
 
-If you prefer building the OpenSSL and PCRE dependencies from their source tarballs, then you could follow the commands below (you may want to change the version number accordingly):
+If you prefer building the OpenSSL and PCRE dependencies from their source tarballs,
+then you could follow the commands below (you may want to change the version
+number accordingly):
 
 
 ```

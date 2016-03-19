@@ -10,7 +10,8 @@
 
 
 #  Version 1.9.7.4 - 16 March 2016
-* bugfix: `./configure`: use of relative paths like "./nginx" in `--prefix=PATH` led to compilation errors. thanks Tao Huang for the report.
+* bugfix: `./configure`: use of relative paths like "./nginx" in `--prefix=PATH` led
+to compilation errors. thanks Tao Huang for the report.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.10.2.
     * feature: the C implementation for set SSL private keys now  supports non-RSA private keys as well. thanks Alessandro Ghedini for the patch.
     * feature: [ngx.log()](https://github.com/openresty/lua-nginx-module#ngxlog) and [print()](https://github.com/openresty/lua-nginx-module#print) now accept Lua tables with the `__tostring` metamethod.
@@ -73,12 +74,17 @@
     * bugfix: fixed errors and warnings with C compilers without variadic macro support.
 
 #  Version 1.9.7.3 - 28 January 2016
-* bugfix: backported the security fixes in NGINX core's DNS resolver for CVE-2016-0742, CVE-2016-0746, and CVE-2016-0747. See  http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html for more details.
-* change: renamed the source distribution name from `ngx_openresty` to just `openresty`.
+* bugfix: backported the security fixes in NGINX core's DNS resolver for CVE-2016-0742,
+CVE-2016-0746, and CVE-2016-0747. See  http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html
+for more details.
+* change: renamed the source distribution name from `ngx_openresty` to just
+`openresty`.
 
 #  Version 1.9.7.2 - 21 January 2016
-* feature: applied the [ssl_cert_cb_yield patch](http://mailman.nginx.org/pipermail/nginx-devel/2016-January/007748.html) to the bundled version of the NGINX core to allow yielding in OpenSSL's [SSL_CTX_set_cert_cb()](https://www.openssl.org/docs/manmaster/ssl/SSL_set_cert_cb.html) callbacks (needed by [Lua Nginx Module](lua-nginx-module.html)'s [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block) directives, for example).
-* bugfix: the `./configure` options `--with-dtrace-probes` and `--with-stream` did not work together and led to compilation failures.
+* feature: applied the [ssl_cert_cb_yield patch](http://mailman.nginx.org/pipermail/nginx-devel/2016-January/007748.html) to the bundled version of the NGINX core to allow yielding in OpenSSL's [SSL_CTX_set_cert_cb()](https://www.openssl.org/docs/manmaster/ssl/SSL_set_cert_cb.html) callbacks (needed by [Lua Nginx Module](lua-nginx-module.html)'s [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block)
+directives, for example).
+* bugfix: the `./configure` options `--with-dtrace-probes` and `--with-stream` did
+not work together and led to compilation failures.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.10.0.
     * feature: better SSL/TLS handshake control.
         * implemented the [ssl_certificate_by_lua_block](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block) and [ssl_certifcate_by_lua_file](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_file) directives for controlling the NGINX downstream SSL handshake dynamically with Lua. thanks Piotr Sikora, Zi Lin, yejingx, and others for the help.
@@ -102,10 +108,14 @@
 #  Version 1.9.7.1 - 25 December 2015
 * upgraded the [Nginx](nginx.html) core to 1.9.7.
     * see the changes here: http://nginx.org/en/CHANGES
-* `./configure`: now we automatically set the environment `MACOSX_DEPLOYMENT_TARGET` to the current Mac OS X version (unless the environment is already set) to ensure the [LuaJIT](luajit.html) build uses the current versions of the system libraries. thanks bsyk for the report.
+* `./configure`: now we automatically set the environment `MACOSX_DEPLOYMENT_TARGET` to
+the current Mac OS X version (unless the environment is already set) to ensure
+the [LuaJIT](luajit.html) build uses the current versions of the system libraries.
+thanks bsyk for the report.
 * win32: use Windows line breaks in the `resty` script file of the binary distribution.
 * win32: upgraded pcre to 8.38 and openssl to 1.0.2e.
-* win32: enabled ngx_http_realip_module, ngx_http_addition_module ngx_http_sub_module, and ngx_http_stub_status_module in the win32 binary package by default.
+* win32: enabled ngx_http_realip_module, ngx_http_addition_module ngx_http_sub_module, and ngx_http_stub_status_module
+in the win32 binary package by default.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.9.20.
     * feature: added new API functions [ngx.worker.count()](https://github.com/openresty/lua-nginx-module#ngxworkercount) and [ngx.worker.id()](https://github.com/openresty/lua-nginx-module#ngxworkerid) for returning the total count of nginx worker processes and the ordinal number (0, 1, 2, and etc) of the current worker. thanks YuanSheng Wang for the patch. also added pure C API for them.
     * feature: added new API functions [ngx.timer.pending_count()](https://github.com/openresty/lua-nginx-module#ngxtimerpending_count) and [ngx.timer.running_count()](https://github.com/openresty/lua-nginx-module#ngxtimerrunning_count). thanks Simon Eskildsen for the patch.

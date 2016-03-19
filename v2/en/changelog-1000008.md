@@ -10,8 +10,10 @@
 
 
 #  Stable Release 1.0.8.26 - 3 November 2011
-* now we require `gmake` (`Gnu make`) for `*BSD` systems even if [LuaJIT](luajit.html) is not enabled. thanks [@lhmwzy](http://weibo.com/lhmwzy).
-* upgraded the official [hotfix patch #4](http://www.lua.org/ftp/patch-lua-5.1.4-4) for the standard Lua 5.1.4 interpreter.
+* now we require `gmake` (`Gnu make`) for `*BSD` systems even if [LuaJIT](luajit.html) is
+not enabled. thanks [@lhmwzy](http://weibo.com/lhmwzy).
+* upgraded the official [hotfix patch #4](http://www.lua.org/ftp/patch-lua-5.1.4-4) for
+the standard Lua 5.1.4 interpreter.
 [Components](components.html) bundled in this release:
 * LuaJIT-2.0.0-beta8
 * array-var-nginx-module-0.03rc1
@@ -99,7 +101,8 @@
 * upgraded [Echo Nginx Module](echo-nginx-module.html) to 0.37rc6.
     * bugfix: now we explicitly clear all the modules' contexts before dump to named location with `echo_exec`.
     * bugfix: bugfix: `echo_exec` may hang when running after `echo_sleep` (or other I/O interruption calls): we should have called `ngx_http_finalize_request` on `NGX_DONE` to decrement `r->main->count` anyway.
-* applied the patch to the [Nginx](nginx.html) core that always clears all modules' contexts in `ngx_http_named_location`.
+* applied the patch to the [Nginx](nginx.html) core that always clears all modules'
+contexts in `ngx_http_named_location`.
 
 #  Mainline Version 1.0.8.3 - 13 October 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.3.1rc10.
@@ -145,7 +148,9 @@
     * bugfix: fixed compatibility with nginx 1.1.4+.
 * upgraded [Set Misc Nginx Module](set-misc-nginx-module.html) to v0.22rc3.
     * minor code cleanup.
-* applied the patch for the variable-header-ignore-no-hash issue. see http://forum.nginx.org/read.php?29,216062 for details.
-* based on [OpenResty](openresty.html) 1.0.6.22 and upgraded the [Nginx](nginx.html) core to 1.0.8.
+* applied the patch for the variable-header-ignore-no-hash issue. see http://forum.nginx.org/read.php?29,216062
+for details.
+* based on [OpenResty](openresty.html) 1.0.6.22 and upgraded the [Nginx](nginx.html) core
+to 1.0.8.
 
 See [ChangeLog1000006](changelog-1000006.html) for change log for ngx_openresty 1.0.6.x.

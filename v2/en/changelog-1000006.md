@@ -40,7 +40,9 @@ The following components are bundled by this release:
 * xss-nginx-module-0.03rc3
 
 #  Mainline Version 1.0.6.21 - 23 September 2011
-* added new option `-jN` (e.g., `-j8`, `-j10`, and etc.) to [OpenResty](openresty.html)'s `./configure` script to allow parallel build of the dependencies like [LuaJIT](luajit.html); thanks @Lance.
+* added new option `-jN` (e.g., `-j8`, `-j10`, and etc.) to [OpenResty](openresty.html)'s
+`./configure` script to allow parallel build of the dependencies like [LuaJIT](luajit.html);
+thanks @Lance.
 
 #  Mainline Version 1.0.6.19 - 23 September 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.3.1rc8.
@@ -100,7 +102,8 @@ The following components are bundled by this release:
 * upgraded [Lua Cjson Library](lua-cjson-library.html) to v1.0.3.
 
 #  Mainline Version 1.0.6.7 - 18 September 2011
-* added new options `--with-luajit=PATH` and `--with-lua51=PATH` to the `./configure` script. thanks NginxUser.
+* added new options `--with-luajit=PATH` and `--with-lua51=PATH` to the `./configure` script.
+thanks NginxUser.
 * upgraded [Drizzle Nginx Module](drizzle-nginx-module.html) to v0.1.1.
 
 #  Mainline Version 1.0.6.5 - 15 September 2011
@@ -117,8 +120,10 @@ The following components are bundled by this release:
     * fixed a bug in `echo_after_body`: when network is not perfect, data truncation might occur. we should have taken into account `NGX_AGAIN` returned by the downstream output filters. thanks Sparsh Gupta.
 * upgraded [Headers More Nginx Module](headers-more-nginx-module.html) to v0.16rc2.
     * fixed a bug when setting a multi-value response header to a single value: the single value will be repeated on each old value.
-* applied the patch from Maxim Dounin to fix a bug in the standard ngx_gzip module when dealing with empty flush buffers: http://mailman.nginx.org/pipermail/nginx-devel/2011-February/000730.html
-* updated the no-pool-patch to eliminate the `-Wset-but-not-used` warnings issued by gcc 4.6.0.
+* applied the patch from Maxim Dounin to fix a bug in the standard ngx_gzip
+module when dealing with empty flush buffers: http://mailman.nginx.org/pipermail/nginx-devel/2011-February/000730.html
+* updated the no-pool-patch to eliminate the `-Wset-but-not-used` warnings issued
+by gcc 4.6.0.
 
 #  Mainline Version 1.0.6.1 - 8 September 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.3.1rc1.

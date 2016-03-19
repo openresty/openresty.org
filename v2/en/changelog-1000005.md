@@ -10,7 +10,8 @@
 
 
 #  Stable Release 1.0.5.1 - 4 September 2011
-This release is almost the same as 1.0.5.1rc14, but upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.3.0.
+This release is almost the same as 1.0.5.1rc14, but upgraded [Lua Nginx Module](lua-nginx-module.html) to
+v0.3.0.
 
 The following components are bundled by this release:
 * LuaJIT-2.0.0-beta8
@@ -52,9 +53,11 @@ The following components are bundled by this release:
     * fixed issues with HTTP HEAD requests.
 
 #  Mainline Version 1.0.5.1rc12 - 31 August 2011
-* now we bundle [Lua Rds Parser Library](lua-rds-parser-library.html) and enable it by default.
+* now we bundle [Lua Rds Parser Library](lua-rds-parser-library.html) and enable
+it by default.
 * added the `--without-lua_rds_parser` option to disable the [Lua Rds Parser Library](lua-rds-parser-library.html) bundled.
-* now we bundle [Rds Csv Nginx Module](rds-csv-nginx-module.html) and enable it by default.
+* now we bundle [Rds Csv Nginx Module](rds-csv-nginx-module.html) and enable
+it by default.
 * added the `--without-http_rds_csv_module` option to disable [Rds Csv Nginx Module](rds-csv-nginx-module.html).
 
 #  Mainline Version 1.0.5.1rc11 - 30 August 2011
@@ -160,13 +163,18 @@ The following components are bundled by this release:
     * now we allow Lua boolean and `nil` values in arguments to `ngx.say()`, `ngx.print()`, `ngx.log()` and `print()`.
 
 #  Mainline Version 1.0.5.0rc3 - 11 August 2011
-* now we bundle the [Lua Redis Parser Library](lua-redis-parser-library.html) with us and it is enabled by default. tested on Linux i386, Linux x86_64, Mac OS X, FreeBSD 8.2 i386, and Solaris 11.
+* now we bundle the [Lua Redis Parser Library](lua-redis-parser-library.html) with
+us and it is enabled by default. tested on Linux i386, Linux x86_64, Mac OS
+X, FreeBSD 8.2 i386, and Solaris 11.
 * added the new option `--without-lua_redis_parser` to the `./configure` script.
 
 #  Mainline Version 1.0.5.0rc2 - 10 August 2011
-* now we bundle the [Lua Cjson Library](lua-cjson-library.html) with us and it is enabled by default. tested on Linux i386, Linux x86_64, Mac OS X, FreeBSD 8.2 i386, and Solaris 11.
+* now we bundle the [Lua Cjson Library](lua-cjson-library.html) with us and
+it is enabled by default. tested on Linux i386, Linux x86_64, Mac OS X, FreeBSD 8.2
+i386, and Solaris 11.
 * added the new option `--without-lua_cjson` to the `./configure` script.
-* added `<prefix>/lualib` to the default `path` and `cpath` settings of the ngx_lua's Lua VM.
+* added `<prefix>/lualib` to the default `path` and `cpath` settings of the
+ngx_lua's Lua VM.
 
 #  Mainline Version 1.0.5.0rc1 - 9 August 2011
 * based on ngx_openresty 1.0.4.2, but with nginx core upgraded to nginx 1.0.5.

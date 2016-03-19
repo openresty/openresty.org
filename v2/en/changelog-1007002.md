@@ -63,7 +63,12 @@
     * doc: typo fix from javasboy.
 * upgraded [Memc Nginx Module](memc-nginx-module.html) to 0.15.
     * bugfix: we did not log error messages for invalid values of `$memc_flags`, `$memc_exptime`, and `$memc_value`, leading to hard-to-debug HTTP 400 status errors. thanks Yann Coleu for the report.
-* bugfix: `./configure --without-lua_resty_dns` did not work as declared. thanks Vitaly for the report.
-* bugfix: use `cc` as the default C compiler for [LuaJIT](luajit.html) and Lua C libraries because modern FreeBSD 10 has no gcc by default and its clang is already featureful enough to compile everything. thanks Stefan Parvu for the suggestion.
-* change: `./configure --with-debug` now also passes the extra C compiler options `-DNGX_LUA_USE_ASSERT -DNGX_LUA_ABORT_AT_PANIC` to the [Lua Nginx Module](lua-nginx-module.html) build.
+* bugfix: `./configure --without-lua_resty_dns` did not work as declared. thanks
+Vitaly for the report.
+* bugfix: use `cc` as the default C compiler for [LuaJIT](luajit.html) and Lua
+C libraries because modern FreeBSD 10 has no gcc by default and its clang is
+already featureful enough to compile everything. thanks Stefan Parvu for the
+suggestion.
+* change: `./configure --with-debug` now also passes the extra C compiler options
+`-DNGX_LUA_USE_ASSERT -DNGX_LUA_ABORT_AT_PANIC` to the [Lua Nginx Module](lua-nginx-module.html) build.
 See [ChangeLog 1.7.0](changelog-1007000.html) for change log for [OpenResty](openresty.html) 1.7.0.x.

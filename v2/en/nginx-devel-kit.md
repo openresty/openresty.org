@@ -8,6 +8,8 @@
     @changes       2
 --->
 
-The NDK is an [Nginx](nginx.html) module that is designed to extend the core functionality of the    excellent [Nginx](nginx.html) webserver in a way that can be used as a basis of other [Nginx](nginx.html) modules.
+The NDK is an [Nginx](nginx.html) module that is designed to extend the core
+functionality of the    excellent [Nginx](nginx.html) webserver in a way that
+can be used as a basis of other [Nginx](nginx.html) modules.
 
 Project page: https://github.com/simpl/ngx_devel_kit

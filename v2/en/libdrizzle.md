@@ -8,6 +8,7 @@
     @changes       2
 --->
 
-This is the the client and protocol library for the Drizzle project. This library is now distributed with the Drizzle server release.
+This is the the client and protocol library for the Drizzle project. This library
+is now distributed with the Drizzle server release.
 
 Project page: https://launchpad.net/drizzle

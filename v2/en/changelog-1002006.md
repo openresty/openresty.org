@@ -85,8 +85,11 @@ The following components are bundled:
     * bugfix: the `ndk_string` submodule failed to compile with gcc 4.6. thanks Jon Kolb for the patch.
     * bugfix: the `ndk_set_var` example did not use the new way in its `config` file. thanks Amos Wenger for the patch.
     * docs: fixes in README to reflect recent changes. thanks Amos Wenger for the patch.
-* applied Ruslan Ermilov's [resolver_wev_handler_segfault_with_poll patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.6-resolver_wev_handler_segfault_with_poll.patch) to the [Nginx](nginx.html) core bundled. see [the related nginx-devel thread](http://mailman.nginx.org/pipermail/nginx-devel/2013-January/003275.html) for details.
-* excluded the [allow_request_body_updating patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.5-allow_request_body_updating.patch) from the [Nginx](nginx.html) core bundled.
+* applied Ruslan Ermilov's [resolver_wev_handler_segfault_with_poll patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.6-resolver_wev_handler_segfault_with_poll.patch) to
+the [Nginx](nginx.html) core bundled. see [the related nginx-devel thread](http://mailman.nginx.org/pipermail/nginx-devel/2013-January/003275.html) for
+details.
+* excluded the [allow_request_body_updating patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.5-allow_request_body_updating.patch) from
+the [Nginx](nginx.html) core bundled.
 
 #  Mainline Version 1.2.6.1 - 4 January 2013
 * upgraded the [Nginx](nginx.html) core to 1.2.6.
@@ -103,6 +106,8 @@ The following components are bundled:
     * optimize: use the pure lower-case form of the key `content-type` to index the headers table returned by [ngx.req.get_headers()](http://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers) so as to avoid the overhead of calling the `__index` metamethod.
 * upgraded [Srcache Nginx Module](srcache-nginx-module.html) to 0.17.
     * bugfix: [srcache_store](http://wiki.nginx.org/HttpSRCacheModule#srcache_store) would emit the misleading error message "srcache_store: skipped because response body truncated: N > 0" for HEAD requests (because a HEAD request's response never carries a body); now it just skips such responses silently. thanks Yang Jin for reporting this issue.
-* bugfix: when relative paths were used in `--with-zlib=DIR`, `--with-libatomic=DIR`, `--with-md5=DIR`, and `--with-sha1=DIR`, the build system of [Nginx](nginx.html) could not find `DIR` at all. thanks LazyZhu for reporting this issue.
+* bugfix: when relative paths were used in `--with-zlib=DIR`, `--with-libatomic=DIR`,
+`--with-md5=DIR`, and `--with-sha1=DIR`, the build system of [Nginx](nginx.html) could
+not find `DIR` at all. thanks LazyZhu for reporting this issue.
 
 See [ChangeLog 1.2.4](changelog-1002004.html) for change log for [OpenResty](openresty.html) 1.2.4.x.

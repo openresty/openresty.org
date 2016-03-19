@@ -10,9 +10,15 @@
 
 
 #  Version 1.7.10.2 - 3 July 2015
-* bugfix: ./configure: fixed the `--without-http_rewrite_module` option by disabling [Nginx Devel Kit](nginx-devel-kit.html) automatically; also automatically disable the [Encrypted Session Nginx Module](encrypted-session-nginx-module.html) when [Nginx Devel Kit](nginx-devel-kit.html) is disabled.
-* bugfix: ./configure: removed hacks to work around an old bug in [Lua Nginx Module](lua-nginx-module.html)'s build system (just recently fixed in [Lua Nginx Module](lua-nginx-module.html)).
-* bugfix: [LuaJIT](luajit.html) compilation might fail when old gcc 4 compilers are used (like gcc 4.1.0). this regression had appeared in [OpenResty](openresty.html) 1.7.7.2. thanks aseiot for the report.
+* bugfix: ./configure: fixed the `--without-http_rewrite_module` option by disabling
+[Nginx Devel Kit](nginx-devel-kit.html) automatically; also automatically disable
+the [Encrypted Session Nginx Module](encrypted-session-nginx-module.html) when
+[Nginx Devel Kit](nginx-devel-kit.html) is disabled.
+* bugfix: ./configure: removed hacks to work around an old bug in [Lua Nginx Module](lua-nginx-module.html)'s
+build system (just recently fixed in [Lua Nginx Module](lua-nginx-module.html)).
+* bugfix: [LuaJIT](luajit.html) compilation might fail when old gcc 4 compilers
+are used (like gcc 4.1.0). this regression had appeared in [OpenResty](openresty.html) 1.7.7.2.
+thanks aseiot for the report.
 * upgraded [Resty CLI](resty-cli.html) to 0.03.
     * bugfix: resty: command-line options did not pass to the user Lua script unless `--` was intentionally specified. now standalone Lua scripts with a shebang line work out of the box (if [LuaJIT](luajit.html) is used, which is the default). thanks neomantra for the report.
     * bugfix: resty: now sends `error_log` to `stderr` instead of the system-specific path `/dev/stderr`. thanks Evan Wies for the patch.
@@ -114,9 +120,16 @@
 #  Version 1.7.10.1 - 28 February 2015
 * upgraded the [Nginx](nginx.html) core to 1.7.10.
     * see the changes here: http://nginx.org/en/CHANGES
-* bugfix: applied the upstream_filter_finalize patch to the nginx core to fix corrupted `$upstream_response_time` variable values when `filter_finalize` and [error_page](http://nginx.org/r/error_page) are both used. thanks Daniel Bento for the report and Maxim Dounin for the patch.
-* bugfix: ./configure: added `--without-http_upstream_least_conn_module` and `--without-http_upstream_keepalive_module` to the usage text (for `--help`) to reflect recent changes in the nginx core. thanks Seyhun Cavus for the report.
-* bugfix: ./configure: renamed the `--without-http_limit_zone_module` option to `--without-http_limit_conn_module` to reflect the change in recent nginx cores. thanks Seyhun Cavus for the report.
+* bugfix: applied the upstream_filter_finalize patch to the nginx core to fix
+corrupted `$upstream_response_time` variable values when `filter_finalize` and
+[error_page](http://nginx.org/r/error_page) are both used. thanks Daniel Bento
+for the report and Maxim Dounin for the patch.
+* bugfix: ./configure: added `--without-http_upstream_least_conn_module` and
+`--without-http_upstream_keepalive_module` to the usage text (for `--help`)
+to reflect recent changes in the nginx core. thanks Seyhun Cavus for the report.
+* bugfix: ./configure: renamed the `--without-http_limit_zone_module` option
+to `--without-http_limit_conn_module` to reflect the change in recent nginx
+cores. thanks Seyhun Cavus for the report.
 * upgraded [LuaJIT](luajit.html) to v2.1-20150223: https://github.com/openresty/luajit2/tags
     * imported Mike Pall's latest changes:
         * x86/x64: fix code generation for fused test/arith ops. thanks to Alexander Nasonov and AFL.

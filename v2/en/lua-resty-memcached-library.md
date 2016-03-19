@@ -8,8 +8,10 @@
     @changes       4
 --->
 
-Lua [Memcached](http://memcached.org/) client driver for [Lua Nginx Module](lua-nginx-module.html) based on the cosocket API.
+Lua [Memcached](http://memcached.org/) client driver for [Lua Nginx Module](lua-nginx-module.html) based
+on the cosocket API.
 
 Project homepage: https://github.com/agentzh/lua-resty-memcached
 
-This library is enabled by default. You can specify the `--without-lua_resty_memcached` option to [OpenResty](openresty.html)'s `./configure` script to explicitly disable it.
+This library is enabled by default. You can specify the `--without-lua_resty_memcached` option
+to [OpenResty](openresty.html)'s `./configure` script to explicitly disable it.

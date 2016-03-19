@@ -8,6 +8,7 @@
     @changes       3
 --->
 
-This [Nginx](nginx.html) module adds support for array variables to nginx config files.
+This [Nginx](nginx.html) module adds support for array variables to nginx config
+files.
 
 Project page: https://github.com/openresty/array-var-nginx-module

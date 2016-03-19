@@ -10,7 +10,8 @@
 
 Here goes a list of slides that I used in my talks regarding [OpenResty](openresty.html).
 
-These slides are powered by the [slides.htm](https://github.com/kindy61/slides.htm) slide-making engine based on AJAX.
+These slides are powered by the [slides.htm](https://github.com/kindy61/slides.htm) slide-making
+engine based on AJAX.
 
 ''*Note: Please use the arrow keys or pageup/pagedown keys on your keyboard to switch slides.*''
 
@@ -41,7 +42,8 @@ View slides in your web browser: http://agentzh.org/misc/slides/openresty-con-20
 #  Year 2014
 
 ##  The Latest and Greatest from ngx_lua: New Features & Tools
-This talk was given at [NGINX Conference](http://nginx.com/nginxconf/) 2014 on 21 October 2014.
+This talk was given at [NGINX Conference](http://nginx.com/nginxconf/) 2014
+on 21 October 2014.
 
 Talk summary: https://nginx.busyconf.com/activities/53d854c1c9e255cf2d00007b
 
@@ -53,7 +55,8 @@ View slides in your web browser: http://agentzh.org/misc/slides/nginx-conf-2014/
 
 
 ##  NGINX, Lua, and beyond
-This talk was given at NGINX Inc's [NGINX User Summit 2014](https://www.eventbrite.com/e/nginx-user-summit-and-training-tickets-10393173261) on 25 February 2014.
+This talk was given at NGINX Inc's [NGINX User Summit 2014](https://www.eventbrite.com/e/nginx-user-summit-and-training-tickets-10393173261) on 25
+February 2014.
 
 View slides in your web browser: http://agentzh.org/misc/slides/nginx-user-summit-2014/
 
@@ -71,7 +74,8 @@ View slides in your web browser: http://agentzh.org/misc/slides/beer-meeting-201
 
 
 ##  sregex: matching Perl 5 regexes on data streams
-This talk was given at [YAPC::NA 2013](http://www.yapcna.org/yn2013/) in Austin, TX, USA.
+This talk was given at [YAPC::NA 2013](http://www.yapcna.org/yn2013/) in Austin,
+TX, USA.
 
 Talk summary: http://www.yapcna.org/yn2013/talk/4762
 
@@ -81,7 +85,8 @@ View slides in your web browser: http://agentzh.org/misc/slides/yapc-na-2013-sre
 
 
 ##  Flame Graphs for online performance profiling
-This talk was given at [YAPC::NA 2013](http://www.yapcna.org/yn2013/) in Austin, TX, USA.
+This talk was given at [YAPC::NA 2013](http://www.yapcna.org/yn2013/) in Austin,
+TX, USA.
 
 Talk summary: http://www.yapcna.org/yn2013/talk/4579
 
@@ -101,7 +106,8 @@ View slides in your web browser: http://agentzh.org/misc/slides/off-cpu-flame-gr
 #  Year 2012
 
 ##  ngx_openresty: an [Nginx](nginx.html) ecosystem glued by Lua
-This talk was given at [Tech-Club Technical Salon](http://event.weibo.com/351359) held in the Xiamen city.
+This talk was given at [Tech-Club Technical Salon](http://event.weibo.com/351359) held
+in the Xiamen city.
 
 View slides in your web browser: http://agentzh.org/misc/slides/ngx-openresty-ecosystem/
 
@@ -109,7 +115,8 @@ View slides in your web browser: http://agentzh.org/misc/slides/ngx-openresty-ec
 
 
 ##  Scripting libdrizzle with Lua inside [Nginx](nginx.html)
-This presentation was given at [Percona Live MySQL Conference 2012](http://www.percona.com/live/mysql-conference-2012/sessions/scripting-mysql-lua-and-libdrizzle-inside-nginx) held in Santa Clara, CA, USA.
+This presentation was given at [Percona Live MySQL Conference 2012](http://www.percona.com/live/mysql-conference-2012/sessions/scripting-mysql-lua-and-libdrizzle-inside-nginx) held
+in Santa Clara, CA, USA.
 
 View slides in your web browser: http://agentzh.org/misc/slides/libdrizzle-lua-nginx/#2
 
@@ -132,13 +139,15 @@ View slides in your web browser: http://agentzh.org/misc/slides/perl-lz-apps/
 #  Year 2010
 
 ##  Introduction to nginx.conf scripting
-This talk was given at the [Beijing Perl Workshop](http://conference.perlchina.org) 2010 April meeting and the [Beijing OpenParty 2010 June event](http://www.beijing-open-party.org/event/2).
+This talk was given at the [Beijing Perl Workshop](http://conference.perlchina.org) 2010
+April meeting and the [Beijing OpenParty 2010 June event](http://www.beijing-open-party.org/event/2).
 
 View slides in your web browser: http://agentzh.org/misc/slides/nginx-conf-scripting/
 
 [Download](download.html) the slides as PDF: http://agentzh.org/misc/slides/nginx-conf-scripting.pdf
 
-Please note that ngx_eval module is no longer recommended because we're in more favor of ngx_lua nowadays.
+Please note that ngx_eval module is no longer recommended because we're in more favor of ngx_lua
+nowadays.
 
 
 ##  Recent developments in nginx.conf scripting

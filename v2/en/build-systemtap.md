@@ -49,7 +49,9 @@ Pass the following option to `./configure` when building systemtap (above):
 --with-elfutils=/tmp/elfutils-0.161
 ```
 
-Generally it's recommended to use the elfutils that comes with your package manager if it is up to date, because it's usually compiled with the necessary other libraries such as zlib to decompress headers.
+Generally it's recommended to use the elfutils that comes with your package
+manager if it is up to date, because it's usually compiled with the necessary
+other libraries such as zlib to decompress headers.
 
 And then invoke stap like this:
 

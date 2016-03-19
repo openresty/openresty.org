@@ -8,8 +8,10 @@
     @changes       2
 --->
 
-Nonblocking DNS (Domain Name System) resolver for [Lua Nginx Module](lua-nginx-module.html) based on the cosocket API.
+Nonblocking DNS (Domain Name System) resolver for [Lua Nginx Module](lua-nginx-module.html) based
+on the cosocket API.
 
 Project homepage: https://github.com/agentzh/lua-resty-dns
 
-This library is enabled by default. You can specify the `--without-lua_resty_dns` option to [OpenResty](openresty.html)'s `./configure` script to explicitly disable it.
+This library is enabled by default. You can specify the `--without-lua_resty_dns` option
+to [OpenResty](openresty.html)'s `./configure` script to explicitly disable it.

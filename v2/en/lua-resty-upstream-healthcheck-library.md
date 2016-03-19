@@ -12,4 +12,5 @@ Health Checker for [Nginx](nginx.html) Upstream Servers in Pure Lua.
 
 Project homepage: https://github.com/agentzh/lua-resty-upstream-healthcheck
 
-This library is enabled by default. You can specify the `--without-lua_resty_upstream_healthcheck` option to [OpenResty](openresty.html)'s `./configure` script to explicitly disable it.
+This library is enabled by default. You can specify the `--without-lua_resty_upstream_healthcheck` option
+to [OpenResty](openresty.html)'s `./configure` script to explicitly disable it.

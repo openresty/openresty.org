@@ -8,4 +8,5 @@
     @changes       3
 --->
 
-This is a standard [Nginx](nginx.html) module for talking to remote HTTP or HTTPS servers: http://wiki.nginx.org/HttpProxyModule
+This is a standard [Nginx](nginx.html) module for talking to remote HTTP or
+HTTPS servers: http://wiki.nginx.org/HttpProxyModule

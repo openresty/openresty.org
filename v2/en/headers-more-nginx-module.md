@@ -8,9 +8,12 @@
     @changes       5
 --->
 
-This module allows you to add, set, or clear any response or request headers that you specify.
+This module allows you to add, set, or clear any response or request headers
+that you specify.
 
-This is an enhanced version of the standard headers module because it provides more utilities like resetting or clearing "builtin headers" like Content-Type, Content-Length, and Server. 
+This is an enhanced version of the standard headers module because it provides
+more utilities like resetting or clearing "builtin headers" like Content-Type,
+Content-Length, and Server. 
 
 Documentation: https://github.com/agentzh/headers-more-nginx-module#readme
 Project page: http://github.com/agentzh/headers-more-nginx-module

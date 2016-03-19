@@ -60,12 +60,17 @@ The following components are bundled:
     * testing: added custom test scaffold t::TestNginxLua which subclasses [Test::Nginx::Socket](http://search.cpan.org/perldoc?Test%3A%3ANginx%3A%3ASocket). it supports the environment `TEST_NGINX_INIT_BY_LUA` which can be used to add more custom Lua code to the value of the [init_by_lua](http://wiki.nginx.org/HttpLuaModule#init_by_lua) directive in the [Nginx](nginx.html) configuration.
 * upgraded [Srcache Nginx Module](srcache-nginx-module.html) to 0.21.
     * bugfix: responses with a status code smaller than all the status codes specified in the [srcache_store_statuses](http://wiki.nginx.org/HttpSRCacheModule#srcache_store_statuses) directive were not skipped as expected. thanks Lanshun Zhou for the patch.
-* feature: applied the [invalid_referer_hash patch](https://raw.github.com/agentzh/ngx_openresty/master/patches/nginx-1.2.8-invalid_referer_hash.patch) to the [Nginx](nginx.html) core to make the `$invalid_referer` variable accessible in embedded dynamic languages like Perl and Lua. thanks Fry-kun for requesting this.
-* updated the [dtrace patch](https://raw.github.com/agentzh/ngx_openresty/master/patches/nginx-1.2.8-dtrace.patch) for the [Nginx](nginx.html) core.
+* feature: applied the [invalid_referer_hash patch](https://raw.github.com/agentzh/ngx_openresty/master/patches/nginx-1.2.8-invalid_referer_hash.patch) to
+the [Nginx](nginx.html) core to make the `$invalid_referer` variable accessible
+in embedded dynamic languages like Perl and Lua. thanks Fry-kun for requesting
+this.
+* updated the [dtrace patch](https://raw.github.com/agentzh/ngx_openresty/master/patches/nginx-1.2.8-dtrace.patch) for
+the [Nginx](nginx.html) core.
     * print out more info about the [Nginx](nginx.html) in-file bufs in the tapset function `ngx_chain_dump`.
 
 #  Mainline Version 1.2.8.3 - 13 May 2013
-* applied the official patch for the nginx core to address the recent nginx security vulnerability CVE-2013-2070.
+* applied the official patch for the nginx core to address the recent nginx
+security vulnerability CVE-2013-2070.
 
 #  Mainline Version 1.2.8.1 - 26 April 2013
 * upgraded the [Nginx](nginx.html) core to 1.2.8.
@@ -90,6 +95,9 @@ The following components are bundled:
     * bugfix: modifying the `Connection` request header via [more_set_input_headers](http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers) or [more_clear_input_headers](http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers) did not update the special internal field in the [Nginx](nginx.html) core, `r->headers_in.connection_type`.
     * bugfix: modifying the `User-Agent` request header via [more_set_input_headers](http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers) or [more_clear_input_headers](http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers) did not update those special internal flags in the [Nginx](nginx.html) core, like `r->headers_in.msie6` and `r->headers_in.opera`.
     * bugfix: fixed places where we should return `NGX_ERROR` instead of `NGX_HTTP_INTERNAL_SERVER_ERROR`.
-* feature: always enable debuginfo in the bundled [LuaJIT](luajit.html) 2.0.1 build and Lua 5.1.5 build to support [Nginx Systemtap Toolkit](https://github.com/agentzh/nginx-systemtap-toolkit).
-* bugfix: no longer pass `-O0` to gcc when the `--with-debug` configure option is specified because gcc often generates bogus DWARF info when optimization is turned off.
+* feature: always enable debuginfo in the bundled [LuaJIT](luajit.html) 2.0.1
+build and Lua 5.1.5 build to support [Nginx Systemtap Toolkit](https://github.com/agentzh/nginx-systemtap-toolkit).
+* bugfix: no longer pass `-O0` to gcc when the `--with-debug` configure option
+is specified because gcc often generates bogus DWARF info when optimization
+is turned off.
 See [ChangeLog 1.2.7](changelog-1002007.html) for change log for [OpenResty](openresty.html) 1.2.7.x.

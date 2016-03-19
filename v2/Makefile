@@ -1,6 +1,6 @@
 nginx = nginx
-md2html = pandoc --from markdown_github --to html
-md2text = pandoc --from markdown_github --to plain
+md2html = pandoc --from markdown_github-hard_line_breaks --to html
+md2text = pandoc --from markdown_github-hard_line_breaks --to plain
 html_files := $(patsubst %.md,html/%.html,$(wildcard en/*.md cn/*.md))
 txt_files := $(patsubst %.md,text/%.txt,$(wildcard en/*.md cn/*.md))
 templates_lua = lua/openresty_org/view.lua
@@ -47,6 +47,7 @@ text/%.txt: %.md
 .PHONE: extract
 extract:
 	./extract.pl ../index.html en
+	#./extract.pl ../cn/index.html cn
 
 .PHONE: gendata
 gendata: html text

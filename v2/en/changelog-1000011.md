@@ -53,10 +53,14 @@ Same as the devel release 1.0.11.27.
     * bugfix: spelling errors in Lua exception message text.
 * upgraded [Echo Nginx Module](echo-nginx-module.html) to 0.38rc2.
     * bugfix: [$echo_request_body](http://wiki.nginx.org/HttpEchoModule#.24echo_request_body) variable was not able to work on arbitrary request body chains (i.e., more than 2 chain links), just like the standard [$request_body](http://wiki.nginx.org/HttpCoreModule#.24request_body) variable that only processes the first two chain links. now [$echo_request_body](http://wiki.nginx.org/HttpEchoModule#.24echo_request_body) no longer has this limitation.
-* applied the upstream_pipelining patch to the nginx core, as discussed here: http://mailman.nginx.org/pipermail/nginx-devel/2012-March/002040.html this patch is required at least for the pipelined requests support in nginx upstream modules.
+* applied the upstream_pipelining patch to the nginx core, as discussed here:
+http://mailman.nginx.org/pipermail/nginx-devel/2012-March/002040.html this patch
+is required at least for the pipelined requests support in nginx upstream modules.
 
 #  Mainline Version 1.0.11.25 - 16 March 2012
-* applied the null-character-fixes patch from the mainstream. The bug did result in a disclosure of previously freed memory if upstream server returned specially crafted response, potentially exposing sensitive information.
+* applied the null-character-fixes patch from the mainstream. The bug did result
+in a disclosure of previously freed memory if upstream server returned specially
+crafted response, potentially exposing sensitive information.
 * upgraded [Srcache Nginx Module](srcache-nginx-module.html) to 0.13rc6.
     * bugfix: fixed a typo in an error message text for response truncation check in [srcache_store](http://wiki.nginx.org/HttpSRCacheModule#srcache_store).
 
@@ -90,22 +94,35 @@ Same as the devel release 1.0.11.27.
     * bugfix: redis "nil multi bulk replies" did not parse at all. thanks 郭颖 for reporting this issue.
 
 #  Mainline Version 1.0.11.17 - 29 February 2012
-* feature: bundle [Lua Resty MySQL Library](lua-resty-mysql-library.html) 0.06, which is enabled by default.
-* feature: bundle [Lua Resty Redis Library](lua-resty-redis-library.html) 0.06, which is enabled by default.
-* feature: bundle [Lua Resty Memcached Library](lua-resty-memcached-library.html) 0.06, which is enabled by default.
-* feature: bundle [Lua Resty Upload Library](lua-resty-upload-library.html) 0.02, which is enabled by default.
-* feature: bundle [Lua Resty String Library](lua-resty-string-library.html) 0.04, which is enabled by default.
-* bugfix: no longer enable `-DLUAJIT_USE_VALGRIND` for [LuaJIT](luajit.html) when `--with-debug` option is specified.
-* bugfix: applied the official [hotfix #1 patch](http://luajit.org/download/beta9_hotfix1.patch) for [LuaJIT](luajit.html) 2.0.0 beta9.
-* feature: raised the default `NGX_HTTP_MAX_SUBREQUESTS` to 200, in sync with the official repository.
+* feature: bundle [Lua Resty MySQL Library](lua-resty-mysql-library.html) 0.06,
+which is enabled by default.
+* feature: bundle [Lua Resty Redis Library](lua-resty-redis-library.html) 0.06,
+which is enabled by default.
+* feature: bundle [Lua Resty Memcached Library](lua-resty-memcached-library.html) 0.06,
+which is enabled by default.
+* feature: bundle [Lua Resty Upload Library](lua-resty-upload-library.html) 0.02,
+which is enabled by default.
+* feature: bundle [Lua Resty String Library](lua-resty-string-library.html) 0.04,
+which is enabled by default.
+* bugfix: no longer enable `-DLUAJIT_USE_VALGRIND` for [LuaJIT](luajit.html) when
+`--with-debug` option is specified.
+* bugfix: applied the official [hotfix #1 patch](http://luajit.org/download/beta9_hotfix1.patch) for
+[LuaJIT](luajit.html) 2.0.0 beta9.
+* feature: raised the default `NGX_HTTP_MAX_SUBREQUESTS` to 200, in sync with
+the official repository.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc16.
     * bugfix: the shared dict storage might leak memory in the store: `ngx_http_lua_shdict_lookup` incorrectly assumed that nodes with identical keys are linked together, which might not be true after tree re-balancing. thanks the patch from Lanshun Zhou.
     * optimize: removed a redundant piece of code for subrequest `headers_in` fixes in `ngx_http_lua_adjust_subrequest`.
 
 #  Mainline Version 1.0.11.15 - 24 February 2012
-* now we enable the `-DLUAJIT_USE_VALGRIND -DLUA_USE_APICHECK -DLUA_USE_ASSERT` flags for [LuaJIT](luajit.html) when the `--with-debug` option is specified.
-* apply the [max_subrequests patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.11-max_subrequests.patch) to allow the `NGX_HTTP_MAX_SUBREQUESTS` macro to be overridden from the outside and adjusted the default value from 50 to 100 because 50 is a little too conservative.
-* upgraded [Xss Nginx Module](xss-nginx-module.html) to 0.03rc9, [Rds Csv Nginx Module](rds-csv-nginx-module.html) to 0.05rc1, and [Redis2 Nginx Module](redis-2-nginx-module.html) to 0.08rc3, allowing enabling `DDEBUG=1` globally.
+* now we enable the `-DLUAJIT_USE_VALGRIND -DLUA_USE_APICHECK -DLUA_USE_ASSERT` flags
+for [LuaJIT](luajit.html) when the `--with-debug` option is specified.
+* apply the [max_subrequests patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.11-max_subrequests.patch) to
+allow the `NGX_HTTP_MAX_SUBREQUESTS` macro to be overridden from the outside
+and adjusted the default value from 50 to 100 because 50 is a little too conservative.
+* upgraded [Xss Nginx Module](xss-nginx-module.html) to 0.03rc9, [Rds Csv Nginx Module](rds-csv-nginx-module.html) to 0.05rc1,
+and [Redis2 Nginx Module](redis-2-nginx-module.html) to 0.08rc3, allowing enabling
+`DDEBUG=1` globally.
 * upgraded [Iconv Nginx Module](iconv-nginx-module.html) to 0.10rc7.
     * bugfix: enabling `DDEBUG=1` globally lead to compilation errors.
     * bugfix: could not work with HTTP 1.0 requests.
@@ -137,7 +154,8 @@ Same as the devel release 1.0.11.27.
     * feature: added the [ngx.sha1_bin](http://wiki.nginx.org/HttpLuaModule#ngx.sha1_bin) method which returns the binary form of the `SHA-1` digest.
     * bugfix: we incorrectly allowed `ngx.null` in the string table argument to [cosocket:send()](http://wiki.nginx.org/HttpLuaModule#tcpsock:send) method.
     * feature: allow use of ngx.null in [ngx.log()](http://wiki.nginx.org/HttpLuaModule#ngx.log) and [print()](http://wiki.nginx.org/HttpLuaModule#print) arguments.
-* added Piotr Sikora's [Coolkit Nginx Module](coolkit-nginx-module.html) 0.2rc1 to the bundle, which is also enabled by default.
+* added Piotr Sikora's [Coolkit Nginx Module](coolkit-nginx-module.html) 0.2rc1
+to the bundle, which is also enabled by default.
 
 #  Mainline Version 1.0.11.7 - 7 February 2012
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc5.

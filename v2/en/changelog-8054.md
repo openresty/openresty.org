@@ -42,7 +42,8 @@ The following components are bundled by this release:
 * applied the subrequest loop fix patch from Maxim Dounin.
 
 #  Mainline Version 0.8.54.9rc4 - 6 July 2011
-* upgraded ngx_rds_json to v0.11, ngx_headers_more to v0.15, and ngx_drizzle to v0.1.0.
+* upgraded ngx_rds_json to v0.11, ngx_headers_more to v0.15, and ngx_drizzle
+to v0.1.0.
 
 #  Mainline Version 0.8.54.9rc3 - 5 July 2011
 * upgraded ngx_drizzle to 0.0.15rc14 and ngx_lua to 0.2.0.
@@ -80,30 +81,38 @@ The following components are bundled by this release:
 * xss-nginx-module-0.03rc3
 
 #  Mainline Version 0.8.54.8rc2 - 1 July 2011
-* upgraded ngx_echo to 0.36rc6, ngx_lua to 0.1.6rc17, ngx_srcache to 0.12rc6, and ngx_redis2 to 0.07rc4.
+* upgraded ngx_echo to 0.36rc6, ngx_lua to 0.1.6rc17, ngx_srcache to 0.12rc6, and ngx_redis2
+to 0.07rc4.
 
 #  Mainline Version 0.8.54.8rc1 - 28 June 2011
-* we no longer bundle libdrizzle because [libdrizzle 1.0](https://launchpad.net/libdrizzle) is distributed with the drizzle server and hard to separate.
+* we no longer bundle libdrizzle because [libdrizzle 1.0](https://launchpad.net/libdrizzle) is
+distributed with the drizzle server and hard to separate.
 * now ngx_drizzle is disabled by default. you need to enable it via the `--with-http_drizzle_module` option.
-* added `--with-libdrizzle` option to specify the (lib)drizzle installation prefix.
+* added `--with-libdrizzle` option to specify the (lib)drizzle installation
+prefix.
 
 #  Stable Release 0.8.54.7 - 27 June 2011
 * identical to 0.8.54.7rc5.
 
 #  Mainline Version 0.8.54.7rc5 - 27 June 2011
-* we should preserve timestamps when copying bundle/ to build/ in ./configure script. this should fix luajit build on some systems.
+* we should preserve timestamps when copying bundle/ to build/ in ./configure
+script. this should fix luajit build on some systems.
 
 #  Mainline Version 0.8.54.7rc4 - 27 June 2011
-upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx_srcache to 0.12rc5, ngx_redis2 to 0.07rc3.
+upgraded ngx_xss to 0.03rc3, ngx_drizzle to 0.0.15rc11, ngx_memc to 0.12rc2, ngx_srcache
+to 0.12rc5, ngx_redis2 to 0.07rc3.
 
 #  Mainline Version 0.8.54.7rc3 - 27 June 2011
-* upgraded [LuaJIT](luajit.html) to 2.0.0beta8, ngx_lua to 0.1.6rc15, and ngx_echo to 0.36rc4.
+* upgraded [LuaJIT](luajit.html) to 2.0.0beta8, ngx_lua to 0.1.6rc15, and ngx_echo
+to 0.36rc4.
 
 #  Mainline Version 0.8.54.7rc2
-* Upgraded [LuaNginxModule](lua-nginx-module.html) to v0.1.6rc14 and [HeadersMoreNginxModule](headers-more-nginx-module.html) to v0.15rc3.
+* Upgraded [LuaNginxModule](lua-nginx-module.html) to v0.1.6rc14 and [HeadersMoreNginxModule](headers-more-nginx-module.html) to
+v0.15rc3.
 
 #  Mainline Version 0.8.54.7rc1
-* Upgraded [HeadersMoreNginxModule](headers-more-nginx-module.html) to v0.15rc2 and [LuaNginxModule](lua-nginx-module.html) to v0.1.6rc13.
+* Upgraded [HeadersMoreNginxModule](headers-more-nginx-module.html) to v0.15rc2
+and [LuaNginxModule](lua-nginx-module.html) to v0.1.6rc13.
 
 #  Release 0.8.54.6
 * Upgraded [DrizzleNginxModule](drizzle-nginx-module.html) to 0.0.15rc10.

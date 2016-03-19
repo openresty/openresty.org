@@ -86,7 +86,8 @@ The following components are bundled in this release:
     * refactor: removed our own `ctx->headers_sent` field because we should use [Nginx](nginx.html) core's `r->header_sent` instead.
 * upgraded [Echo Nginx Module](echo-nginx-module.html) to 0.48.
     * refactor: removed our own `ctx->headers_sent` field because we should use [Nginx](nginx.html) core's `r->header_sent` instead.
-* bugfix: `./configure` now always removes existing Makefile before trying to generate a new one.
+* bugfix: `./configure` now always removes existing Makefile before trying to
+generate a new one.
 
 #  Mainline Version 1.4.2.5 - 8 September 2013
 * upgraded [Set Misc Nginx Module](set-misc-nginx-module.html) to 0.22.
@@ -119,7 +120,9 @@ The following components are bundled in this release:
     * bugfix: fixed compatibility issues with the new upstream C API in [Nginx](nginx.html) 1.5.3+. thanks Markus Linnala for the patch.
     * bugfix: use of C global variables at configuration time could cause issues when HUP reload failed in the middle.
     * docs: now we recommend [Lua Resty Memcached Library](lua-resty-memcached-library.html) instead when being used with [Lua Nginx Module](lua-nginx-module.html).
-* applied the [unix_socket_accept_over_read patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.2-unix_socket_accept_over_read.patch) the [Nginx](nginx.html) core to fix a memory over-read issue when [Nginx](nginx.html) was accepting a unix domain socket.
+* applied the [unix_socket_accept_over_read patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.2-unix_socket_accept_over_read.patch) the
+[Nginx](nginx.html) core to fix a memory over-read issue when [Nginx](nginx.html) was
+accepting a unix domain socket.
 
 #  Mainline Version 1.4.2.1 - 11 August 2013
 * upgraded the [Nginx](nginx.html) core to 1.4.2.

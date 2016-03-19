@@ -8,9 +8,12 @@
     @changes       9
 --->
 
-This module adds various `set_xxx` directives added to [Nginx](nginx.html)'s [rewrite module](http://wiki.nginx.org/NginxHttpRewriteModule) (MD5/SHA1, SQL/JSON quoting, and many more).
+This module adds various `set_xxx` directives added to [Nginx](nginx.html)'s
+[rewrite module](http://wiki.nginx.org/NginxHttpRewriteModule) (MD5/SHA1, SQL/JSON
+quoting, and many more).
 
-Every directive provided by this module can be mixed freely with other nginx rewrite module's
+Every directive provided by this module can be mixed freely with other nginx
+rewrite module's
   directives, like `if` and `set`.
 
 Documentation: https://github.com/agentzh/set-misc-nginx-module#readme

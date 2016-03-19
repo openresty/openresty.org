@@ -73,9 +73,14 @@ The following components are bundled:
     * bugfix: [ngx.exit(N)](http://wiki.nginx.org/HttpLuaModule#ngx.exit) incorrectly threw out Lua exceptions when `N` was 408, 499, or 444 and the response header was already sent. thanks Kindy Lin for reporting this issue.
     * bugfix: when the user callback function registered by [ngx.on_abort()](http://wiki.nginx.org/HttpLuaModule#ngx.on_abort) discarded the client abort event, the request would be aborted by force when the next client abort event happened.
     * bugfix: an English typo in the error message for [init_by_lua*](http://wiki.nginx.org/HttpLuaModule#init_by_lua).
-* applied [slab_alloc_no_memory_as_info.patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.4-slab_alloc_no_memory_as_info.patch) to lower the log level of the error message "ngx_slab_alloc() failed: no memory" from "crit" to "info".
-* bugfix: the [upstream_pipelining patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.4-upstream_pipelining.patch) introduced a regression that when `upstream_next` is in action, [Nginx](nginx.html) might hang. thanks Kindy Lin for reporting this issue.
-* bugfix: include the latest changes in the [LuaJIT](luajit.html) 2.0 git repository (up to git commit 2ad9834d).
+* applied [slab_alloc_no_memory_as_info.patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.4-slab_alloc_no_memory_as_info.patch) to
+lower the log level of the error message "ngx_slab_alloc() failed: no memory"
+from "crit" to "info".
+* bugfix: the [upstream_pipelining patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.4-upstream_pipelining.patch) introduced
+a regression that when `upstream_next` is in action, [Nginx](nginx.html) might
+hang. thanks Kindy Lin for reporting this issue.
+* bugfix: include the latest changes in the [LuaJIT](luajit.html) 2.0 git repository
+(up to git commit 2ad9834d).
 
 #  Mainline Version 1.2.4.9 - 20 November 2012
 * upgraded [LuaJIT](luajit.html) to 2.0.0 final.
@@ -91,7 +96,8 @@ The following components are bundled:
 * upgraded [Lua Resty String Library](lua-resty-string-library.html) to 0.08.
     * bugfix: the `new()` method in the `resty.aes` module might use a random key when the `method` option is omitted in the `hash` table argument. thanks wsser for the patch.
     * feature: we now return a second string describing the error when either `iv` or `key` is bad.
-* bugfix: `./configure --with-pcre=PATH` did not accept relative paths as `PATH`. thanks smallfish for reporting this issue.
+* bugfix: `./configure --with-pcre=PATH` did not accept relative paths as `PATH`.
+thanks smallfish for reporting this issue.
 
 #  Mainline Version 1.2.4.7 - 11 November 2012
 * upgraded [LuaJIT](luajit.html) to 2.0.0rc3.
@@ -118,10 +124,13 @@ The following components are bundled:
 * upgraded [Lua Resty String Library](lua-resty-string-library.html) to 0.07.
     * refactor: avoided using `package.seeall` in Lua module definitions, which improves performance and also prevents subtle bad side-effects.
     * docs: typo-fixes in the code samples from Bearnard Hibbins.
-* bugfix: nginx upstream modules could not detect the "connection refused" error in time if kqueue was used; now we apply the [upstream_test_connect_kqueue patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.4-upstream_test_connect_kqueue.patch) for the [Nginx](nginx.html) core.
+* bugfix: nginx upstream modules could not detect the "connection refused" error
+in time if kqueue was used; now we apply the [upstream_test_connect_kqueue patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.4-upstream_test_connect_kqueue.patch) for
+the [Nginx](nginx.html) core.
 
 #  Mainline Version 1.2.4.5 - 30 October 2012
-* applied the official [hotfix #1 patch](http://luajit.org/download/beta11_hotfix1.patch) to [LuaJIT](luajit.html) 2.0.0 beta11.
+* applied the official [hotfix #1 patch](http://luajit.org/download/beta11_hotfix1.patch) to
+[LuaJIT](luajit.html) 2.0.0 beta11.
     * see details here: http://www.freelists.org/post/luajit/Hotfix1-for-LuaJIT200beta11
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.7.3.
     * feature: added the [get_keys](http://wiki.nginx.org/HttpLuaModule#ngx.shared.DICT.get_keys) method for the shared memory dictionaries for fetching all the (or the specified number of) keys (default to 1024 keys). thanks Brian Akins for the patch.
@@ -148,6 +157,7 @@ The following components are bundled:
     * docs: added a warning for [ngx.var.VARIABLE](http://wiki.nginx.org/HttpLuaModule#ngx.var.VARIABLE) that memory is allocated in the per-request memory pool. thanks lilydjwg.
     * docs: made it clear why `return` is recommended to be used with [ngx.exit()](http://wiki.nginx.org/HttpLuaModule#ngx.exit). thanks Antoine.
     * docs: massive wording improvements from Dayo.
-* now we add [Srcache Nginx Module](srcache-nginx-module.html) before both [Lua Nginx Module](lua-nginx-module.html) and [Headers More Nginx Module](headers-more-nginx-module.html) so that the former's output filter runs *after* those of the latter.
+* now we add [Srcache Nginx Module](srcache-nginx-module.html) before both [Lua Nginx Module](lua-nginx-module.html) and [Headers More Nginx Module](headers-more-nginx-module.html) so that the former's output filter runs *after* those
+of the latter.
 
 See [ChangeLog 1.2.3](changelog-1002003.html) for change log for [OpenResty](openresty.html) 1.2.3.x.

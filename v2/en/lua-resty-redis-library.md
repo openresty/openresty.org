@@ -8,8 +8,10 @@
     @changes       4
 --->
 
-Lua [Redis](http://redis.io/) client driver for [Lua Nginx Module](lua-nginx-module.html) based on the cosocket API.
+Lua [Redis](http://redis.io/) client driver for [Lua Nginx Module](lua-nginx-module.html) based
+on the cosocket API.
 
 Project homepage: https://github.com/agentzh/lua-resty-redis
 
-This library is enabled by default. You can specify the `--without-lua_resty_redis` option to [OpenResty](openresty.html)'s `./configure` script to explicitly disable it.
+This library is enabled by default. You can specify the `--without-lua_resty_redis` option
+to [OpenResty](openresty.html)'s `./configure` script to explicitly disable it.

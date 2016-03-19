@@ -8,4 +8,5 @@
     @changes       2
 --->
 
-GitHub is social coding network based on git, a very popular version control system. See its homepage: http://github.com.
+GitHub is social coding network based on git, a very popular version control
+system. See its homepage: http://github.com.

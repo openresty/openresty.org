@@ -10,7 +10,9 @@
 
 
 #  Mainline Version 1.4.3.9 - 14 December 2013
-* bugfix: the include path for [LuaJIT](luajit.html) C headers was still pointing to `luajit-2.0`, which should have been `luajit-2.1` instead. thanks Tor Hveem for the report.
+* bugfix: the include path for [LuaJIT](luajit.html) C headers was still pointing
+to `luajit-2.0`, which should have been `luajit-2.1` instead. thanks Tor Hveem
+for the report.
 
 #  Mainline Version 1.4.3.7 - 14 December 2013
 * upgraded [LuaJIT](luajit.html) to v2.1-20131211.
@@ -46,11 +48,16 @@
     * bugfix: fixed the warnings from the Microsoft Visual C++ compiler. thanks Edwin Cleton for the report.
 * upgraded [Redis Nginx Module](redis-nginx-module.html) module to 0.3.7.
     * see changes here: http://mailman.nginx.org/pipermail/nginx/2013-December/041297.html
-* feature: applied the [larger_max_error_str patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-larger_max_error_str.patch) to the nginx core to allow error log messages up to 4096 bytes and to allow the C macro `NGX_MAX_ERROR_STR` to be overridden from the outside.
-* feature: added new configure option `--with-pcre-conf-opt=OPTIONS` to the nginx core to allow custom PCRE ./configure build options. thanks Lance Li for the original patch.
+* feature: applied the [larger_max_error_str patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-larger_max_error_str.patch) to
+the nginx core to allow error log messages up to 4096 bytes and to allow the
+C macro `NGX_MAX_ERROR_STR` to be overridden from the outside.
+* feature: added new configure option `--with-pcre-conf-opt=OPTIONS` to the
+nginx core to allow custom PCRE ./configure build options. thanks Lance Li for
+the original patch.
 
 #  Stable Version 1.4.3.6 - 20 November 2013
-* bugfix: applied the official patch [patch.2013.space.txt](http://nginx.org/download/patch.2013.space.txt) for the [Nginx](nginx.html) core to fix the security issue CVE-2013-4547.
+* bugfix: applied the official patch [patch.2013.space.txt](http://nginx.org/download/patch.2013.space.txt) for
+the [Nginx](nginx.html) core to fix the security issue CVE-2013-4547.
 
 #  Stable Version 1.4.3.4 - 12 November 2013
 This release is essentially the same as the last mainline release, 1.4.3.3.
@@ -101,7 +108,9 @@ The following components are bundled in this release:
     * bugfix: localizing the [coroutine.*](https://github.com/chaoslawful/lua-nginx-module#coroutinecreate) API functions in [init_by_lua*](https://github.com/chaoslawful/lua-nginx-module#init_by_lua) for future use in contexts like [content_by_lua*](https://github.com/chaoslawful/lua-nginx-module#content_by_lua) might hang the request. thanks James Hurst for the report.
 * upgraded [Srcache Nginx Module](srcache-nginx-module.html) to 0.24.
     * bugfix: fixed compilation errors with [Nginx](nginx.html) older than 0.9.2.
-* bugfix: applied the [cache_manager_exit patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-cache_manager_exit.patch) to the [Nginx](nginx.html) core to fix an issue when the cache manager process is shutting down.
+* bugfix: applied the [cache_manager_exit patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-cache_manager_exit.patch) to
+the [Nginx](nginx.html) core to fix an issue when the cache manager process
+is shutting down.
 
 #  Mainline Version 1.4.3.1 - 29 October 2013
 * upgraded the [Nginx](nginx.html) core to 1.4.3.
@@ -159,8 +168,20 @@ The following components are bundled in this release:
     * optimize: no longer use Lua tables and [table.concat()](http://www.lua.org/manual/5.1/manual.html#pdf-table.concat) to construct simple query strings.
 * upgraded [Lua Resty Web Socket Library](lua-resty-web-socket-library.html) to 0.02.
     * optimize: use [LuaJIT](luajit.html) 2.1's [table.new()](http://repo.or.cz/w/luajit-2.0.git/commit/c8cfca055) to preallocate space for Lua tables, eliminating the overhead of Lua table rehash.
-* feature: applied the [proxy_host_port_vars patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-proxy_host_port_vars.patch) to the [Nginx](nginx.html) core to make `$proxy_host` and `$proxy_port` accessible for dynamic languages like Lua and Perl.
-* bugfix: applied the [gzip_flush_bug patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-gzip_flush_bug.patch) to the [Nginx](nginx.html) core to fix request hang caused by the [ngx_gzip](http://nginx.org/en/docs/http/ngx_http_gzip_module.html) and [ngx_gunzip](http://nginx.org/en/docs/http/ngx_http_gzip_module.html) modules when using [ngx.flush(true)](https://github.com/chaoslawful/lua-nginx-module#ngxflush), for example. Thanks Maxim Dounin for the review.
-* bugfix: applied the [cache_lock_hang_in_subreq patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-cache_lock_hang_in_subreq.patch) to the [Nginx](nginx.html) core to fix the request hang when using [proxy_cache_lock](http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_lock) in subrequests and the cache lock timeout happens.
-* bugfix: backported Maxim Dounin's [patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-gzip_buffered_bug.patch) to fix an issue in the [ngx_gzip module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html): it did not clear `r->connection->buffered` when the pending data was already flushed out. this could hang [Lua Nginx Module](lua-nginx-module.html)'s [ngx.flush(true)](https://github.com/chaoslawful/lua-nginx-module#ngxflush) call, for example.
+* feature: applied the [proxy_host_port_vars patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-proxy_host_port_vars.patch) to
+the [Nginx](nginx.html) core to make `$proxy_host` and `$proxy_port` accessible
+for dynamic languages like Lua and Perl.
+* bugfix: applied the [gzip_flush_bug patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-gzip_flush_bug.patch) to
+the [Nginx](nginx.html) core to fix request hang caused by the [ngx_gzip](http://nginx.org/en/docs/http/ngx_http_gzip_module.html) and
+[ngx_gunzip](http://nginx.org/en/docs/http/ngx_http_gzip_module.html) modules
+when using [ngx.flush(true)](https://github.com/chaoslawful/lua-nginx-module#ngxflush),
+for example. Thanks Maxim Dounin for the review.
+* bugfix: applied the [cache_lock_hang_in_subreq patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-cache_lock_hang_in_subreq.patch) to
+the [Nginx](nginx.html) core to fix the request hang when using [proxy_cache_lock](http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_lock) in
+subrequests and the cache lock timeout happens.
+* bugfix: backported Maxim Dounin's [patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.4.3-gzip_buffered_bug.patch) to
+fix an issue in the [ngx_gzip module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html):
+it did not clear `r->connection->buffered` when the pending data was already
+flushed out. this could hang [Lua Nginx Module](lua-nginx-module.html)'s [ngx.flush(true)](https://github.com/chaoslawful/lua-nginx-module#ngxflush) call,
+for example.
 See [ChangeLog 1.4.2](changelog-1004002.html) for change log for [OpenResty](openresty.html) 1.4.2.x.

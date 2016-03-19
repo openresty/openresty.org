@@ -10,8 +10,10 @@
 
 
 #  Stable Release 1.2.1.14 - 14 August 2012
-* bugfix: the dtrace static probes did not build on FreeBSD, Solaris, and Mac OS X (i.e., when the `--with-dtrace-probes` configure option is specified).
-* bugfix: the systemtap tapset files and the `stap-nginx` script were even installed on non-Linux systems.
+* bugfix: the dtrace static probes did not build on FreeBSD, Solaris, and Mac
+OS X (i.e., when the `--with-dtrace-probes` configure option is specified).
+* bugfix: the systemtap tapset files and the `stap-nginx` script were even installed
+on non-Linux systems.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.14.
     * bugfix: the dtrace provider file did not compile on FreeBSD, Solaris, and Mac OS X.
 [Components](components.html) bundled:
@@ -63,7 +65,10 @@
     * docs: fixed a mistake in the sample code and tuned it to be more illustrative. thanks Sandesh Kotwal for reporting.
 
 #  Mainline Version 1.2.1.11 - 5 August 2012
-* bundled [Lua Resty DNS Library](lua-resty-dns-library.html) 0.04 and enabled it by default: https://github.com/agentzh/lua-resty-dns it is a nonblocking DNS (Domain Name System) resolver library based on [Lua Nginx Module](lua-nginx-module.html)'s cosocket API.
+* bundled [Lua Resty DNS Library](lua-resty-dns-library.html) 0.04 and enabled
+it by default: https://github.com/agentzh/lua-resty-dns it is a nonblocking
+DNS (Domain Name System) resolver library based on [Lua Nginx Module](lua-nginx-module.html)'s
+cosocket API.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.12.
     * bugfix: the [UDP cosocket object](http://wiki.nginx.org/HttpLuaModule#ngx.socket.udp) could no longer be used after an read or write error happened.
     * bugfix: [ngx.exit(status)](http://wiki.nginx.org/HttpLuaModule#ngx.exit) always resulted in `200 OK` response status when status > 200 and status < 300. thanks [Nginx](nginx.html) User for reporting this issue.
@@ -85,7 +90,10 @@
     * bugfix: 3rd-party nginx C modules that use the public C API function, `ngx_http_lua_add_package_preload`, could result in segmentation faults at nginx server startup due to uninitialized Lua VM pointer. thanks Ray Bejjani for reporting this.
     * bugfix: Proper error messages were not always thrown when the iterator returned by [ngx.re.gmatch](http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch) was (incorrectly) used in the context of another nginx request.
     * bugfix: fixed several Clang compilation warnings.
-* feature: applied the [dtrace patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.1-dtrace.patch) to the nginx core that adds dtrace static probing support for both the [Nginx](nginx.html) core and 3rd-party modules to the [Nginx](nginx.html) build system. this support can be enabled by `./configure --with-dtrace-probes`.
+* feature: applied the [dtrace patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.1-dtrace.patch) to
+the nginx core that adds dtrace static probing support for both the [Nginx](nginx.html) core
+and 3rd-party modules to the [Nginx](nginx.html) build system. this support
+can be enabled by `./configure --with-dtrace-probes`.
 * feature: added new dtrace static probes to the [Nginx](nginx.html) core
     * added 8 kinds of static probes to the subrequest mechanism: `nginx:::http-subrequest-cycle`, `nginx:::http-subrequest-start`, `nginx:::http-subrequest-finalize-writing`, `nginx:::http-subrequest-finalize-nonactive`, `nginx:::http-subrequest-wake-parent`, `nginx:::http-subrequest-done`, `nginx:::http-subrequest-post-start`, and `nginx:::http-subrequest-post-done`.
     * added 2 kinds of static probes to the standard request body reader: `nginx:::http-read-body-abort` and `nginx:::http-read-body-done`.
@@ -146,7 +154,9 @@
     * feature: added new directive [echo_status](http://wiki.nginx.org/HttpEchoModule#echo_status) which can be used to specify a different default response status code other than 200. thanks Maxime Corbeau for requesting this.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.3.
     * bugfix: [ngx.say](http://wiki.nginx.org/HttpLuaModule#ngx.say) and [ngx.print](http://wiki.nginx.org/HttpLuaModule#ngx.print) might cause nginx to crash when table-typed arguments were given. thanks sztanpet for reporting this in [github issue #54](https://github.com/chaoslawful/lua-nginx-module/issues/54#issuecomment-6527745).
-* applied [location_if_inherits_proxy.patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.1-location_if_inherits_proxy.patch) to the nginx core. see http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002374.html for details.
+* applied [location_if_inherits_proxy.patch](https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.2.1-location_if_inherits_proxy.patch) to
+the nginx core. see http://mailman.nginx.org/pipermail/nginx-devel/2012-June/002374.html
+for details.
 
 #  Mainline Version 1.2.1.1 - 22 June 2012
 * upgraded the [Nginx](nginx.html) core to 1.2.1.

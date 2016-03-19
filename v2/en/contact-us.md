@@ -8,10 +8,12 @@
     @changes       23
 --->
 
-You can join the English or Chinese mailing lists shown on the page [OpenResty Community](community.html). This is usually the preferred communication channel.
+You can join the English or Chinese mailing lists shown on the page [OpenResty Community](community.html).
+This is usually the preferred communication channel.
 
 If you need private communication, please contact us by emails via `info@openresty.org`.
 
-Reporting bugs are encouraged to file tickets for the ngx_openresty project on [GitHub](github.html):
+Reporting bugs are encouraged to file tickets for the ngx_openresty project
+on [GitHub](github.html):
 
 https://github.com/openresty/ngx_openresty/issues

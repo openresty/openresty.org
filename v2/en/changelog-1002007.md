@@ -10,7 +10,8 @@
 
 
 #  Stable Release 1.2.7.8 - 13 May 2013
-* applied the official patch for the nginx core to address the recent nginx security vulnerability CVE-2013-2070.
+* applied the official patch for the nginx core to address the recent nginx
+security vulnerability CVE-2013-2070.
 
 #  Stable Release 1.2.7.6 - 17 April 2013
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.7.21.
@@ -76,11 +77,13 @@ The following components are bundled:
     * docs: various typo fixes from Tor Hveem and doledoletree.
 * upgraded [Lua Resty Memcached Library](lua-resty-memcached-library.html) to 0.11.
     * feature: added new method "touch" for the new Memcached command "touch". thanks merlin for the patch.
-* updated the [upstream_truncation patch](https://raw.github.com/agentzh/ngx_openresty/master/patches/nginx-1.2.7-upstream_truncation.patch) for the [Nginx](nginx.html) core.
+* updated the [upstream_truncation patch](https://raw.github.com/agentzh/ngx_openresty/master/patches/nginx-1.2.7-upstream_truncation.patch) for
+the [Nginx](nginx.html) core.
     * bugfix: chunked upstream response bodies were treated as 502. thanks Andy Yuan for the report.
     * bugfix: request response status was changed to 502 after response header was sent in case of data truncation.
     * bugfix: the "last buf" (i.e., bufs with "last_buf" or "last_in_chain" set) should not be sent downstream in case of upstream data truncation.
-* updated the [dtrace patch](https://raw.github.com/agentzh/ngx_openresty/master/patches/nginx-1.2.7-dtrace.patch) for the [Nginx](nginx.html) core.
+* updated the [dtrace patch](https://raw.github.com/agentzh/ngx_openresty/master/patches/nginx-1.2.7-dtrace.patch) for
+the [Nginx](nginx.html) core.
     * feature: made the stap function `ngx_chain_dump()` print out info about the "last_buf" and "last_in_chain" flags in bufs and removed the old "<eof>" notation in the output.
 
 #  Mainline Version 1.2.7.3 - 24 March 2013
@@ -109,9 +112,14 @@ The following components are bundled:
 * upgraded [Lua Resty Upload Library](lua-resty-upload-library.html) to 0.08.
     * bugfix: when multiple `Content-Type` request headers were given, a Lua exception would be thrown; now we just pick up the first one.
     * docs: better error handling in the code sample. thanks wgm.china for the report.
-* feature: applied [the variables_in_redis_pass patch](https://raw.github.com/agentzh/ngx_openresty/master/patches/ngx_http_redis-0.3.6-variables_in_redis_pass.patch) to [Redis Nginx Module](redis-nginx-module.html) 0.3.6 to allow use of [Nginx](nginx.html) variables in the [redis_pass](http://wiki.nginx.org/HttpRedisModule#redis_pass) directive. thanks Diptamay Sanyal for requesting this feature.
-* bugfix: applied Lanshun Zhou's [run_posted_requests_in_resolver patch](https://raw.github.com/agentzh/ngx_openresty/master/patches/nginx-1.2.7-run_posted_requests_in_resolver.patch) to the [Nginx](nginx.html) core: http://mailman.nginx.org/pipermail/nginx-devel/2013-March/003476.html
-* bugfix:  applied the official [hotfix #1 patch](http://luajit.org/download/v2.0.1_hotfix1.patch) for the bundled [LuaJIT](luajit.html) 2.0.1.
+* feature: applied [the variables_in_redis_pass patch](https://raw.github.com/agentzh/ngx_openresty/master/patches/ngx_http_redis-0.3.6-variables_in_redis_pass.patch) to
+[Redis Nginx Module](redis-nginx-module.html) 0.3.6 to allow use of [Nginx](nginx.html) variables
+in the [redis_pass](http://wiki.nginx.org/HttpRedisModule#redis_pass) directive.
+thanks Diptamay Sanyal for requesting this feature.
+* bugfix: applied Lanshun Zhou's [run_posted_requests_in_resolver patch](https://raw.github.com/agentzh/ngx_openresty/master/patches/nginx-1.2.7-run_posted_requests_in_resolver.patch) to
+the [Nginx](nginx.html) core: http://mailman.nginx.org/pipermail/nginx-devel/2013-March/003476.html
+* bugfix:  applied the official [hotfix #1 patch](http://luajit.org/download/v2.0.1_hotfix1.patch) for
+the bundled [LuaJIT](luajit.html) 2.0.1.
 
 #  Mainline Version 1.2.7.1 - 22 February 2013
 * upgraded the [Nginx](nginx.html) core to 1.2.7.

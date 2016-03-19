@@ -29,7 +29,8 @@
 * Scaling with Queues, by Rohit Yadav.
 
      http://engineering.wingify.com/scaling-with-queues/
-* [Nginx](nginx.html) image processing server with [OpenResty](openresty.html) and Lua, by leafo.
+* [Nginx](nginx.html) image processing server with [OpenResty](openresty.html) and
+Lua, by leafo.
 
      http://leafo.net/posts/creating_an_image_server.html
 * WebSockets with [OpenResty](openresty.html), by Aapo Talvensaari.
@@ -44,13 +45,15 @@
 * Pushing [Nginx](nginx.html) to its limit with Lua, by Matthieu Tourne
 
      http://blog.cloudflare.com/pushing-nginx-to-its-limit-with-lua
-* Yak Shaving: Adding OAuth Support to [Nginx](nginx.html) via Lua, by Jose Diaz-Gonzalez
+* Yak Shaving: Adding OAuth Support to [Nginx](nginx.html) via Lua, by Jose
+Diaz-Gonzalez
 
      http://seatgeek.com/blog/dev/oauth-support-for-nginx-with-lua
 * My beautiful dark twisted reverse-proxy LRU cache, by Mike Ferrier
 
      http://mikeferrier.com/2011/05/14/my-beautiful-dark-twisted-reverse-proxy-LRU-cache/
-* Day 41 - Setting up ngx_openresty (WAS: testing Test::[Nginx](nginx.html)) , by Antoine Bonavita
+* Day 41 - Setting up ngx_openresty (WAS: testing Test::[Nginx](nginx.html))
+, by Antoine Bonavita
 
      http://www.nginx-discovery.com/2011/03/day-41-setting-up-ngxopenresty-was.html
 
@@ -61,10 +64,12 @@
 * [Nginx](nginx.html) 3rd-Party Module Experiments Journal, by smallfish
 
      http://chenxiaoyu.org/2011/10/30/nginx-modules.html
-* Recommending [OpenResty](openresty.html) - An [Nginx](nginx.html) Version with Fully Capable Addons, by Wendal Chen
+* Recommending [OpenResty](openresty.html) - An [Nginx](nginx.html) Version
+with Fully Capable Addons, by Wendal Chen
 
      http://wendal.net/338.html
-* Constructing Efficient and Transparent Caching Mechanism with [Memc Nginx Module](memc-nginx-module.html) and [Srcache Nginx Module](srcache-nginx-module.html), by Zhang Yang
+* Constructing Efficient and Transparent Caching Mechanism with [Memc Nginx Module](memc-nginx-module.html) and
+[Srcache Nginx Module](srcache-nginx-module.html), by Zhang Yang
 
      http://www.codinglabs.org/html/nginx-memc-and-srcache.html
 * The [Nginx](nginx.html) Session Module, by smallfish
