@@ -142,7 +142,7 @@ template_map['footer.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '<div class="content-footer">\n<hr class="footer-sep"/>\n<div class="footer">\n  <p>Copyright © 2016 Yichun Zhang (agentzh)</p>\n  <p>100% Powered by OpenResty and PostgreSQL\n     (<a href="https://github.com/openresty/openresty.org/tree/master/v2/">view the source code of this site</a>)</p>\n</div>\n</div>\n'
+i = i + 1 output[i] = '<div class="content-footer">\n<hr class="footer-sep"/>\n<div class="footer">\n  <p>Copyright © 2016 Yichun Zhang (agentzh)</p>\n  <p>100% Powered by OpenResty and PostgreSQL\n     (<a href="https://github.com/openresty/openresty.org/tree/master/v2/">view the source code of this site</a>)</p>\n</div>\n</div>\n\n<!-- Google analytics -->\n<script type="text/javascript">\n\n  var _gaq = _gaq || [];\n  _gaq.push([\'_setAccount\', \'UA-24724965-1\']);\n  //_gaq.push([\'_setDomainName\', \'openresty.org\']);\n  _gaq.push([\'_trackPageview\']);\n\n  var ga_f = function() {\n    var ga = document.createElement(\'script\'); ga.type = \'text/javascript\'; ga.async = true;\n    ga.src = (\'https:\' == document.location.protocol ? \'https://ssl\' : \'http://www\') + \'.google-analytics.com/ga.js\';\n    var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(ga, s);\n  };\n  setTimeout(ga_f, 0);\n\n</script>\n'
 
     return output
 end
