@@ -1,5 +1,5 @@
 <!---
-    @title         Change Log1007000
+    @title         ChangeLog 1007000
     @creator       Yichun Zhang
     @created       2014-06-01 05:53 GMT
     @modifier      Yichun Zhang
@@ -55,4 +55,4 @@
 * bugfix: updated the dtrace patch because systemtap 2.5 no longer accepts the `-xnolib` option in its dtrace utility.
 * removed our bundled version of `ngx_http_auth_request_module` because recent versions of the nginx core already have it. thanks LazyZhu for the report.
 * bugfix: applied our patch for the nginx core to fix the long standing memory fragmentation issue for blocks larger than the page size in the nginx slab allocator: http://mailman.nginx.org/pipermail/nginx-devel/2014-May/005316.html thanks Shuxin Yang for the help.
-See [Change Log1005012](change-log-1005012.html) for change log for [OpenResty](openresty.html) 1.5.12.x.
+See [ChangeLog 1005012](changelog-1005012.html) for change log for [OpenResty](openresty.html) 1.5.12.x.

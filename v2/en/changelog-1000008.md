@@ -1,5 +1,5 @@
 <!---
-    @title         Change Log1000008
+    @title         ChangeLog 1000008
     @creator       Yichun Zhang
     @created       2011-10-10 08:46 GMT
     @modifier      Yichun Zhang
@@ -148,4 +148,4 @@
 * applied the patch for the variable-header-ignore-no-hash issue. see http://forum.nginx.org/read.php?29,216062 for details.
 * based on [OpenResty](openresty.html) 1.0.6.22 and upgraded the [Nginx](nginx.html) core to 1.0.8.
 
-See [ChangeLog1000006](change-log-1000006.html) for change log for ngx_openresty 1.0.6.x.
+See [ChangeLog1000006](changelog-1000006.html) for change log for ngx_openresty 1.0.6.x.

@@ -1,5 +1,5 @@
 <!---
-    @title         Change Log1000010
+    @title         ChangeLog 1000010
     @creator       Yichun Zhang
     @created       2011-11-16 07:21 GMT
     @modifier      Yichun Zhang
@@ -243,4 +243,4 @@ Same as the devel version 1.0.10.23.
 #  Mainline Version 1.0.10.1 - 16 November 2011
 * upgraded the [Nginx](nginx.html) core to 1.0.10.
 
-See [ChangeLog1000009](change-log-1000009.html) for change log for ngx_openresty 1.0.9.x.
+See [ChangeLog1000009](changelog-1000009.html) for change log for ngx_openresty 1.0.9.x.

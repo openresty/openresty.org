@@ -1,5 +1,5 @@
 <!---
-    @title         Change Log1000009
+    @title         ChangeLog 1000009
     @creator       Yichun Zhang
     @created       2011-11-08 01:01 GMT
     @modifier      Yichun Zhang
@@ -75,4 +75,4 @@
     * bugfix: fixed a serious memory leak reported by bearnard.
 * upgraded [Xss Nginx Module](xss-nginx-module.html) to 0.03rc5.
     * bugfix: the callback argument value parser did not accept JavaScript identifier names started with underscores. thanks Sam Mulube.
-See [ChangeLog1000008](change-log-1000008.html) for change log for ngx_openresty 1.0.8.x.
+See [ChangeLog1000008](changelog-1000008.html) for change log for ngx_openresty 1.0.8.x.

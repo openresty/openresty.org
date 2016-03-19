@@ -1,5 +1,5 @@
 <!---
-    @title         Change Log1000005
+    @title         ChangeLog 1000005
     @creator       Yichun Zhang
     @created       2011-08-09 07:17 GMT
     @modifier      Yichun Zhang
@@ -171,4 +171,4 @@ The following components are bundled by this release:
 #  Mainline Version 1.0.5.0rc1 - 9 August 2011
 * based on ngx_openresty 1.0.4.2, but with nginx core upgraded to nginx 1.0.5.
 
-See [ChangeLog1000004](change-log-1000004.html) for change log for ngx_openresty 1.0.4.x.
+See [ChangeLog1000004](changelog-1000004.html) for change log for ngx_openresty 1.0.4.x.

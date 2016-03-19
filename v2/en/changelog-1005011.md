@@ -1,5 +1,5 @@
 <!---
-    @title         Change Log1005011
+    @title         ChangeLog 1005011
     @creator       Yichun Zhang
     @created       2014-03-25 22:05 GMT
     @modifier      Yichun Zhang
@@ -63,4 +63,4 @@
     * bugfix: HEAD requests might result in response bodies.
 * upgraded [Echo Nginx Module](echo-nginx-module.html) to 0.52.
     * bugfix: HEAD subrequests could still result in non-empty response bodies.
-See [Change Log1005008](change-log-1005008.html) for change log for [OpenResty](openresty.html) 1.5.8.x.
+See [ChangeLog 1005008](changelog-1005008.html) for change log for [OpenResty](openresty.html) 1.5.8.x.

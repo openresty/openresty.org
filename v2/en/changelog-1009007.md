@@ -1,5 +1,5 @@
 <!---
-    @title         Change Log1009007
+    @title         ChangeLog 1009007
     @creator       Yichun Zhang
     @created       2015-12-20 00:18 GMT
     @modifier      Yichun Zhang
@@ -154,4 +154,4 @@
         * Fix pairs() recording.
         * FFI: Fix ipairs() recording.
         * Drop marks from replayed instructions when sinking.
-See [Change Log1009003](change-log-1009003.html) for change log for [OpenResty](openresty.html) 1.9.3.x.
+See [ChangeLog 1009003](changelog-1009003.html) for change log for [OpenResty](openresty.html) 1.9.3.x.

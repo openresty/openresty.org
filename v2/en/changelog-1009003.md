@@ -1,5 +1,5 @@
 <!---
-    @title         Change Log1009003
+    @title         ChangeLog 1009003
     @creator       Yichun Zhang
     @created       2015-07-31 03:33 GMT
     @modifier      Yichun Zhang
@@ -92,4 +92,4 @@
 * bugfix: link failures with OpenSSL might happen on 64-bit Mac OS X when the `./configure` option `--with-openssl=PATH` was used and the OpenSSL source was recent enough. thanks grasses for the report.
 * upgraded [Postgres Nginx Module](postgres-nginx-module.html) to 1.0rc7.
     * feature: fixed compilation errors with nginx 1.9.1+. thanks Vadim A. Misbakh-Soloviov for the original patch.
-See [Change Log1007010](change-log-1007010.html) for change log for [OpenResty](openresty.html) 1.7.10.x.
+See [ChangeLog 1007010](changelog-1007010.html) for change log for [OpenResty](openresty.html) 1.7.10.x.

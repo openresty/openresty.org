@@ -1,5 +1,5 @@
 <!---
-    @title         Change Log1002006
+    @title         ChangeLog 1002006
     @creator       Yichun Zhang
     @created       2013-01-05 07:04 GMT
     @modifier      Yichun Zhang
@@ -105,4 +105,4 @@ The following components are bundled:
     * bugfix: [srcache_store](http://wiki.nginx.org/HttpSRCacheModule#srcache_store) would emit the misleading error message "srcache_store: skipped because response body truncated: N > 0" for HEAD requests (because a HEAD request's response never carries a body); now it just skips such responses silently. thanks Yang Jin for reporting this issue.
 * bugfix: when relative paths were used in `--with-zlib=DIR`, `--with-libatomic=DIR`, `--with-md5=DIR`, and `--with-sha1=DIR`, the build system of [Nginx](nginx.html) could not find `DIR` at all. thanks LazyZhu for reporting this issue.
 
-See [Change Log1002004](change-log-1002004.html) for change log for [OpenResty](openresty.html) 1.2.4.x.
+See [ChangeLog 1002004](changelog-1002004.html) for change log for [OpenResty](openresty.html) 1.2.4.x.

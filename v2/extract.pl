@@ -100,6 +100,7 @@ sub gen_uri_name {
     for ($fname) {
         s/MySQL/-mysql/g;
         s/LuaJIT/-luajit/g;
+        s/ChangeLog/-changelog-/g;
         s/eBook(s?)/-ebook$1/g;
         s/GitHub/-github/g;
         s/OpenResty/-openresty/g;
@@ -314,7 +315,7 @@ sub fmt_wiki_word {
 
     my $out;
     while (1) {
-        if ($s =~ /\G (MySQL|DNS|URI|URL|GitHub|eBooks?|SystemTap|OpenResty|LuaJIT|JSON|FastCGI|LuaRocks) /gcxms) {
+        if ($s =~ /\G (MySQL|DNS|URI|URL|GitHub|eBooks?|SystemTap|OpenResty|LuaJIT|JSON|FastCGI|LuaRocks|ChangeLog) /gcxms) {
             $out .= "$1 ";
 
         } elsif ($s =~ / \G ([^A-Z]+)(?=[A-Z]) /gcxms) {

@@ -1,5 +1,5 @@
 <!---
-    @title         Change Log1004002
+    @title         ChangeLog 1004002
     @creator       Yichun Zhang
     @created       2013-08-12 04:13 GMT
     @modifier      Yichun Zhang
@@ -126,4 +126,4 @@ The following components are bundled in this release:
     * see http://nginx.org/en/CHANGES-1.4 for changes.
 * upgraded [Lua Resty DNS Library](lua-resty-dns-library.html) to 0.10.
     * feature: now we return all the answer records even when the DNS server returns a non-zero error code, in which case the error code and error string are now set as the "errcode" and "errstr" fields in the Lua table returned. thanks Matthieu Tourne for requesting this.
-See [Change Log1004001](change-log-1004001.html) for change log for [OpenResty](openresty.html) 1.4.1.x.
+See [ChangeLog 1004001](changelog-1004001.html) for change log for [OpenResty](openresty.html) 1.4.1.x.

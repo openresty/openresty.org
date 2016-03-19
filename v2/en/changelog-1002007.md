@@ -1,5 +1,5 @@
 <!---
-    @title         Change Log1002007
+    @title         ChangeLog 1002007
     @creator       Yichun Zhang
     @created       2013-02-23 06:51 GMT
     @modifier      Yichun Zhang
@@ -121,4 +121,4 @@ The following components are bundled:
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.7.16.
     * optimize: removed the unsed `size` field and related computatins from the script engine for the `ngx.re` API.
     * optimize: saved a little memory in the script engine for the `ngx.re` API.
-See [Change Log1002006](change-log-1002006.html) for change log for [OpenResty](openresty.html) 1.2.6.x.
+See [ChangeLog 1002006](changelog-1002006.html) for change log for [OpenResty](openresty.html) 1.2.6.x.
