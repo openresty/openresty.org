@@ -52,7 +52,10 @@ extract:
 gendata: html text
 	./gen-data.pl en
 
+posts.tsv:
+	$(MAKE) gendata
+
 .PHONE: initdb
-initdb: gendata
+initdb: posts.tsv
 	psql -Uopenresty openresty_org -f init.sql
 
