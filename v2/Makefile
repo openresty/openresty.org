@@ -46,13 +46,13 @@ text/%.txt: %.md
 
 .PHONE: extract
 extract:
-	./extract.pl ../index.html en
-	./extract.pl ../cn/index.html cn
+	./util/extract.pl ../index.html en
+	./util/extract.pl ../cn/index.html cn
 
 .PHONE: gendata
 gendata: html text
-	./gen-data.pl en
-	./gen-data.pl cn
+	./util/gen-data.pl en
+	./util/gen-data.pl cn
 
 posts-en.tsv posts-cn.tsv:
 	$(MAKE) gendata
