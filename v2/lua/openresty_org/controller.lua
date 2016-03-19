@@ -46,7 +46,7 @@ function _M.run()
         return ngx.redirect(uri .. "/", 301)
     end
 
-    local m, err = re_match(uri, [[ ^ / ( [a-z]{2} ) / (?: ([-\w]*) \.html )? $ ]], 'jox', nil, match_table)
+    local m, err = re_match(uri, [[ ^ / ( [a-z]{2} ) / (?: ([-\w]+) \.html )? $ ]], 'jox', nil, match_table)
     if not m then
         return ngx.exit(404)
     end
