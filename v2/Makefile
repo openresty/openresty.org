@@ -68,12 +68,17 @@ extract:
 .PHONE: gendata
 gendata: $(tsv_files)
 
-$(tsv_files): html text $(gendata_pl)
+$(tsv_files): $(html_files) $(txt_files) $(gendata_pl)
 	$(gendata_pl) en
 	$(gendata_pl) cn
 
 .PHONE: initdb
 initdb: $(tsv_files)
+	psql -Uopenresty openresty_org -f init.sql
+
+.PHONE: deploy
+deploy:
+	ls $(tsv_files)
 	psql -Uopenresty openresty_org -f init.sql
 
 .PHONE: msginit
