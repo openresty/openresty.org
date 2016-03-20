@@ -17,7 +17,7 @@ Table of Contents
 Description
 ===========
 
-This repository holds the source code and configurations for the official OpenResty site (https://openresty.org/).
+This repository holds the source code and configurations for the [official OpenResty site](https://openresty.org/).
 
 This site is a dynamic web application built entirely upon the OpenResty stack, backed by the [PostgreSQL](http://www.postgresql.org/)
 database management system.
