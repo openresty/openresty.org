@@ -63,12 +63,82 @@ sub parse_file {
 
         open my $in, "<:encoding(UTF-8)", $txtfile
             or die "cannot open $txtfile for reading: $!\n";
+
         my $txt = do { local $/; <$in> };
+
         close $in;
 
         $txt =~ s/\s+/ /gs;
         $txt =~ s/\A\s+|\s+\z//gs;
         $attr{txt_body} = $txt;
+    }
+
+    my (%missing_keys);
+    for my $key (qw/ creator created modifier modified changes /) {
+        if (!$attr{$key}) {
+            warn "$lang/$name: key \@$key not found. parsing git meta...\n";
+            $missing_keys{$key} = 1;
+        }
+    }
+
+    if (%missing_keys) {
+        my $cmd = "git log -- $lang/$name.md";
+
+        open my $in, "$cmd|"
+            or die "cannot open pipe to command $cmd: $!\n";
+
+        my ($changes, $modifier, $creator, $modified, $created);
+        while (<$in>) {
+            if (/^commit /) {
+                $changes++;
+                next;
+            }
+            if (/ ^ Author: \s* ( [^<]* ) /x) {
+                if (!defined $modifier) {
+                    $modifier = $1;
+                    $modifier =~ s/^\s+|\s+$//g;
+                }
+
+                $creator = $1;
+                next;
+            }
+            if (/ ^ Date: \s* (.*) /x) {
+                if (!defined $modified) {
+                    $modified = $1;
+                    $modified =~ s/^\s+|\s+$//g;
+                }
+
+                $created = $1;
+            }
+        }
+
+        close $in;
+
+        if (defined $creator) {
+            $creator =~ s/^\s+|\s+$//g;
+            if ($missing_keys{creator}) {
+                $attr{creator} = $creator;
+            }
+        }
+
+        if (defined $created) {
+            $created =~ s/^\s+|\s+$//g;
+            if ($missing_keys{created}) {
+                $attr{created} = $created;
+            }
+        }
+
+        if ($missing_keys{modified}) {
+            $attr{modified} = $modified;
+        }
+
+        if ($missing_keys{modifier}) {
+            $attr{modifier} = $modifier;
+        }
+
+        if ($missing_keys{changes}) {
+            $attr{changes} = $changes;
+        }
     }
 
     return \%attr;
@@ -83,17 +153,17 @@ sub dump_rows {
     for my $r (@$rows) {
         #warn $r->{txt_body};
 
-        my $created = quote_value($r->{created});
-        print $out quote_value($r->{title}), "\t",
-              quote_value($r->{permlink}), "\t",
-              quote_value($r->{html_body}), "\t",
-              quote_value($r->{txt_body}), "\t",
-              quote_value($r->{creator}), "\t",
+        my $created = quote_value($r, 'created');
+        print $out quote_value($r, 'title'), "\t",
+              quote_value($r, 'permlink'), "\t",
+              quote_value($r, 'html_body'), "\t",
+              quote_value($r, 'txt_body'), "\t",
+              quote_value($r, 'creator'), "\t",
               $created, "\t",
-              quote_value($r->{modifier}), "\t",
+              quote_value($r, 'modifier'), "\t",
               $r->{modifier_link} // "\\N", "\t",
-              quote_value($r->{modified}) || $created, "\t",
-              quote_value($r->{changes} // 0),
+              quote_value($r, 'modified') || $created, "\t",
+              quote_value($r, 'changes'),
               "\n";
     }
 
@@ -103,10 +173,11 @@ sub dump_rows {
 }
 
 sub quote_value {
-    my ($s) = @_;
+    my ($r, $k) = @_;
 
-    if (!defined $s) {
-        die "value not defined.\n";
+    my $s = $r->{$k};
+    if (!$s) {
+        die "html/$lang/$r->{permlink}.html: meta data \"\@$k\" not defined.\n";
     }
 
     $s =~ s/\\/\\\\/g;
