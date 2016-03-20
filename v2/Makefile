@@ -1,30 +1,36 @@
 nginx = nginx
+
 md2html = pandoc --from markdown_github-hard_line_breaks --to html
 md2text = pandoc --from markdown_github-hard_line_breaks --to plain
+
 html_files := $(patsubst %.md,html/%.html,$(wildcard en/*.md cn/*.md))
 txt_files := $(patsubst %.md,text/%.txt,$(wildcard en/*.md cn/*.md))
-lua_files := $(sort $(wildcard lua/*.lua lua/openresty_org/*.lua))
-tt2_files := $(sort $(wildcard templates/*.tt2))
+
+i18n_lua = lua/openresty_org/i18n.lua
 templates_lua = lua/openresty_org/templates.lua
+
+lua_files := $(sort $(filter-out $(i18n_lua) $(templates_lua),$(wildcard lua/*.lua lua/openresty_org/*.lua)))
+tt2_files := $(sort $(wildcard templates/*.tt2))
 tt2_files := $(wildcard templates/*.tt2)
+
 extract_pl = ./util/extract.pl
 gendata_pl = ./util/gen-data.pl
 msginit_pl = ./util/msginit.pl
 msgfmt_pl = ./util/msgfmt.pl
+
 po_files = po/cn.po
 tsv_files = posts-en.tsv posts-cn.tsv
-i18n_lua = lua/openresty_org/i18n.lua
 
 .DELETE_ON_ERRORS: $(templates_lua)
 
 .PHONE: all
-all: templates
+all: templates msgfmt
 
 .PHONE: templates
 templates: $(templates_lua)
 
 $(templates_lua): $(tt2_files)
-	PATH=$$HOME/git/lemplate:$$PATH lemplate --compile $^ > $@
+	lemplate --compile $^ > $@
 
 .PHONE: run
 run:
