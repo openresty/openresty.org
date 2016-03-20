@@ -62,9 +62,11 @@ and then just run
 make
 ```
 
-The `.po` files under `po/` would be automatically updated according to the latest Lua source and TT2 template files
-with this command as well. If you make any edits to the `.po` files, then remember to re-run the `make` command to
-make your changes take effect (by updating the `openresty_org.i18n` Lua module file from the `.po` files).
+The `.po` files under `po/` are for I18N (we need to support both the English and Chinese versions of this site, at least).
+These files are similar to the `.po` files used by the classic [GNU gettext](https://www.gnu.org/software/gettext/) toolchain,
+but we do not use `GNU gettext` at all.  Our `.po` files would be automatically updated according to the latest Lua source
+and TT2 template files with this command as well. If you make any edits to the `.po` files, then remember to re-run the
+`make` command to make your changes take effect (by updating the `openresty_org.i18n` Lua module file from the `.po` files).
 
 Credit
 ======
