@@ -73,6 +73,11 @@ sub parse_file {
         $attr{txt_body} = $txt;
     }
 
+    if ($attr{modifier} && !$attr{modified} && $attr{created}) {
+        # for data extracted from tiddlywiki
+        $attr{modified} = $attr{created};
+    }
+
     my (%missing_keys);
     for my $key (qw/ creator created modifier modified changes /) {
         if (!$attr{$key}) {
@@ -162,7 +167,7 @@ sub dump_rows {
               $created, "\t",
               quote_value($r, 'modifier'), "\t",
               $r->{modifier_link} // "\\N", "\t",
-              quote_value($r, 'modified') || $created, "\t",
+              quote_value($r, 'modified'), "\t",
               quote_value($r, 'changes'),
               "\n";
     }
