@@ -451,7 +451,7 @@ do
 i = i + 1 output[i] = '\n<h2><a href="'
 -- line 3 "search-result.tt2"
 i = i + 1 output[i] = stash_get(stash, {'hit', 0, 'permlink', 0})
-i = i + 1 output[i] = '">'
+i = i + 1 output[i] = '.html">'
 -- line 3 "search-result.tt2"
 i = i + 1 output[i] = stash_get(stash, {'hit', 0, 'title', 0})
 i = i + 1 output[i] = '</a></h2>\n<div class="r">\n'
