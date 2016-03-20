@@ -20,6 +20,7 @@
 * [Donate Online](donate-online.html)
 * [Donors](donors.html)
 * [eBooks](ebooks.html)
+* [FAQ](faq.html)
 * [Getting Involved](getting-involved.html)
 * [Presentations](presentations.html)
 * [Profiling](profiling.html)
