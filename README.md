@@ -72,6 +72,8 @@ Credit
 ======
 
 * Thanks [Mashape.com](https://www.mashape.com) for contributing the page templates for the v2 version of this site.
+* Thanks leaf corcoran for contributing the [pgmoon library](https://github.com/leafo/pgmoon) for communicating
+with PostgreSQL via cosockets.
 
 [Back to TOC](#table-of-contents)
 
