@@ -30,7 +30,7 @@ How should I report a problem?
 ------------------------------
 
 Whenever you run into a problem, you are encouraged to report to the openresty-en (English) mailing list or the openresty (Chinese)
-mailing list (depending on your language). See the [Community](http://openresty.org/#Community) page
+mailing list (depending on your language). See the [Community](community.html) page
 for more details. But please don't cross-post.
 
 You are highly recommended to provide as much details as possible while reporting a problem, for example,
@@ -210,7 +210,7 @@ and can easily exhaust a single CPU core).
 parameter to tune in the `redis.conf` configuration file); the backlog setting determins the length limit
 of your `accept()` queue on your backend server.
 3. Check whether your nginx server is too busy doing CPU intensive work or blocking syscalls
-(like disk I/O syscalls) by using the flame graph tools: <https://openresty.org/#Profiling>,
+(like disk I/O syscalls) by using the [flame graph tools](profiling.html),
 4. Increase the timeout threshold in your Lua code if it makes sense,
 5. Automatically retry `connect()` in your Lua code for one or two more time with an optional delay
 when your `connect()` call fails.
