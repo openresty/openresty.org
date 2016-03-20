@@ -16,8 +16,8 @@
 
 打包的各个软件组件版权属于各自的版权持有者。
 
-本网站是一个 [TiddlyWiki](http://www.tiddlywiki.com/) 页面，其源代码被管理在
-[GitHub](github.html) 上:
+本网站是一个全动态的 Web 应用，完全基于 OpenResty 平台和 PostgreSQL 数据库构建。其实现开源在
+下面这个 [GitHub](github.html) 仓库中:
 
 https://github.com/openresty/openresty.org
 

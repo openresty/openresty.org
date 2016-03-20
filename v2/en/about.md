@@ -21,10 +21,11 @@ The bundled software components are copyrighted by the respective copyright
 holders.  Basically only components with BSD style licenses are included. If
 you find exceptions, please let me know.
 
-This web site is a [TiddlyWiki](http://www.tiddlywiki.com/) page that is under
-the version control of a repository on [GitHub](github.html):
+This web site is a dynamic web application built completely upon the OpenResty
+platform and the PostgreSQL database. The whole application is
+opensourced on [GitHub](github.html):
 
-https://github.com/openresty/openresty.org
+https://github.com/openresty/openresty.org/
 
 Feel free to fork it or just [contact us](contact-us.html) to obtain a git commit
 bit if you want to edit and improve this site.
