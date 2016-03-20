@@ -16,7 +16,7 @@
                         <li><a href="#">Tags</a></li>
                         <li><a href="#">More</a></li>
                         -->
-                        <li><span>Timeline</span></li>
+                        <li><span>[% c.l("Timeline") %]</span></li>
                 </ul><!-- / navigation -->
                 <div class="panes">
                         <div class="pane" id="timeline">

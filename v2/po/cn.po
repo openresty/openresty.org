@@ -1,0 +1,74 @@
+#. TRANSLATORS: Please leave %s, %d, and etc as is, because it is needed by the program.
+#. Thank you for contributing to this project.
+
+#: lua/openresty_org/controller.lua:110
+msgid  "Bad search query"
+msgstr "非法的搜索查询"
+
+#: lua/openresty_org/controller.lua:111
+msgid  "No query provided."
+msgstr "没有提供任何搜索词。"
+
+#: lua/openresty_org/controller.lua:116
+msgid  "Query too long (more than %d bytes)."
+msgstr "查词太长了（已经超出 %d 字节）。"
+
+#: lua/openresty_org/controller.lua:125
+msgid  "No search results found"
+msgstr "没有找到任何匹配的记录"
+
+#: lua/openresty_org/controller.lua:126
+msgid  "Please adjust your search query and try again."
+msgstr "请调整您的搜索查询并重试。"
+
+#: lua/openresty_org/controller.lua:136
+msgid  "Search Result"
+msgstr "搜索结果"
+
+#: templates/footer.tt2:4
+msgid  "Copyright © 2016 Yichun Zhang (agentzh)"
+msgstr "版权所有 © 2016 章亦春（agentzh）"
+
+#: templates/footer.tt2:5
+msgid  "100% Powered by OpenResty and PostgreSQL"
+msgstr "100% 由 OpenResty 和 PostgreSQL 驱动"
+
+#: templates/footer.tt2:6
+msgid  "("
+msgstr "（"
+
+#: templates/footer.tt2:7
+msgid  "view the source code of this site"
+msgstr "查看本站的源代码"
+
+#: templates/footer.tt2:7
+msgid  ")"
+msgstr "）"
+
+#: templates/header.tt2:4
+msgid  "Scalable Web Platform by Extending NGINX with Lua"
+msgstr "通过扩展 NGINX 和 Lua 实现的可伸缩的 Web 平台"
+
+#: templates/header.tt2:13
+msgid  "Search OpenResty.org"
+msgstr "搜索 OpenResty.org 中文站"
+
+#: templates/index.tt2:5
+msgid  "OpenResty - Official Site"
+msgstr "OpenResty - 中文官方站"
+
+#: templates/index.tt2:25
+msgid  "OpenResty is a dynamic web platform based on NGINX and LuaJIT."
+msgstr "OpenResty 是一个基于 NGINX 和 LuaJIT 的 Web 平台。"
+
+#: templates/index.tt2:26
+msgid  "It’s open-source stuff so you can contribute:"
+msgstr "这是一个开源项目，所以你也可以来贡献："
+
+#: templates/index.tt2:27
+msgid  "Contribute on GitHub"
+msgstr "在 GitHub 上贡献你的力量"
+
+#: templates/sidebar.tt2:19
+msgid  "Timeline"
+msgstr "最近更新"

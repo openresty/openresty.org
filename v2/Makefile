@@ -3,8 +3,17 @@ md2html = pandoc --from markdown_github-hard_line_breaks --to html
 md2text = pandoc --from markdown_github-hard_line_breaks --to plain
 html_files := $(patsubst %.md,html/%.html,$(wildcard en/*.md cn/*.md))
 txt_files := $(patsubst %.md,text/%.txt,$(wildcard en/*.md cn/*.md))
-templates_lua = lua/openresty_org/view.lua
+lua_files := $(sort $(wildcard lua/*.lua lua/openresty_org/*.lua))
+tt2_files := $(sort $(wildcard templates/*.tt2))
+templates_lua = lua/openresty_org/templates.lua
 tt2_files := $(wildcard templates/*.tt2)
+extract_pl = ./util/extract.pl
+gendata_pl = ./util/gen-data.pl
+msginit_pl = ./util/msginit.pl
+msgfmt_pl = ./util/msgfmt.pl
+po_files = po/cn.po
+tsv_files = posts-en.tsv posts-cn.tsv
+i18n_lua = lua/openresty_org/i18n.lua
 
 .DELETE_ON_ERRORS: $(templates_lua)
 
@@ -15,7 +24,7 @@ all: templates
 templates: $(templates_lua)
 
 $(templates_lua): $(tt2_files)
-	lemplate --compile $^ > $@
+	PATH=$$HOME/git/lemplate:$$PATH lemplate --compile $^ > $@
 
 .PHONE: run
 run:
@@ -28,7 +37,8 @@ reload: logs/nginx.pid all
 
 .PHONE: clean
 clean:
-	rm -rf html text
+	rm -rf html text *.tsv
+	rm -f $(templates_lua)
 
 .PHONE: html
 html: $(html_files)
@@ -46,18 +56,28 @@ text/%.txt: %.md
 
 .PHONE: extract
 extract:
-	./util/extract.pl ../index.html en
-	./util/extract.pl ../cn/index.html cn
+	$(extract_pl) ../index.html en
+	$(extract_pl) ../cn/index.html cn
 
 .PHONE: gendata
-gendata: html text
-	./util/gen-data.pl en
-	./util/gen-data.pl cn
+gendata: $(tsv_files)
 
-posts-en.tsv posts-cn.tsv:
-	$(MAKE) gendata
+$(tsv_files): html text $(gendata_pl)
+	$(gendata_pl) en
+	$(gendata_pl) cn
 
 .PHONE: initdb
-initdb: posts-en.tsv posts-cn.tsv
+initdb: $(tsv_files)
 	psql -Uopenresty openresty_org -f init.sql
 
+.PHONE: msginit
+msginit: $(po_files)
+
+$(po_files): $(lua_files) $(tt2_files) $(msginit_pl)
+	$(msginit_pl) --outdir po --locale cn $(lua_files) $(tt2_files)
+
+.PHONE: msgfmt
+msgfmt: $(i18n_lua)
+
+$(i18n_lua): $(po_files) $(msgfmt_pl)
+	$(msgfmt_pl) -o $(i18n_lua) $(po_files)

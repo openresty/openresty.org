@@ -1,9 +1,10 @@
 <div class="content-footer">
 <hr class="footer-sep"/>
 <div class="footer">
-  <p>Copyright © 2016 Yichun Zhang (agentzh)</p>
-  <p>100% Powered by OpenResty and PostgreSQL
-     (<a href="https://github.com/openresty/openresty.org/tree/master/v2/">view the source code of this site</a>)</p>
+  <p>[% c.l("Copyright © 2016 Yichun Zhang (agentzh)") %]</p>
+  <p>[% c.l("100% Powered by OpenResty and PostgreSQL") %]
+     [% c.l("(") %]<a href="https://github.com/openresty/openresty.org/tree/master/v2/">
+     [% c.l("view the source code of this site") %]</a>[% c.l(")") %]</p>
 </div>
 </div>
 
