@@ -14,7 +14,7 @@
         <script>
 [% PROCESS 'old-permlink-js.tt2' %]
         </script>
-	<script src="js/main.js"></script>
+	<script src="/js/main.js"></script>
 </head>
 <body>
 

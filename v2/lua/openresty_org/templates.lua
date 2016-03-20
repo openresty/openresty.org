@@ -218,7 +218,7 @@ i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty - Official Sit
 i = i + 1 output[i] = '</title>\n	<link href=\'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300\' rel=\'stylesheet\' type=\'text/css\'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel="stylesheet" type="text/less" href="/css/main.less">\n	<script src="/js/less.js"></script>\n	-->\n	<link rel="stylesheet" type="text/css" href="/css/main.css">\n        <script src="/js/jquery.min.js"></script>\n        <script>\n'
 -- line 15 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'old-permlink-js.tt2')
-i = i + 1 output[i] = '\n        </script>\n	<script src="js/main.js"></script>\n</head>\n<body>\n\n'
+i = i + 1 output[i] = '\n        </script>\n	<script src="/js/main.js"></script>\n</head>\n<body>\n\n'
 -- line 21 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'header.tt2')
 i = i + 1 output[i] = '\n\n	<section id="intro">\n		<div class="text">\n			<p>'
