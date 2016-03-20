@@ -1,5 +1,8 @@
 local _M = {}
 
+-- TODO: we need to employ some kind of data caching here to avoid hitting
+-- the database all the times.
+
 local pgmoon = require "pgmoon"
 local cjson = require "cjson"
 local quote_sql_str = ndk.set_var.set_quote_pgsql_str
