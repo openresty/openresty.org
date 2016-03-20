@@ -1,5 +1,5 @@
 <!---
-    @title         OpenResty Frequently Asked Questions
+    @title         Frequently Asked Questions
     @creator       Yichun Zhang
     @created       Sat Jun 13 16:59:32 2015 +0800
     @modifier      Yichun Zhang
