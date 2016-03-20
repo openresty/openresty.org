@@ -60,10 +60,12 @@ text/%.txt: %.md
 	mkdir -p text/en text/cn
 	$(md2text) $< --output $@
 
+# WARNING: this target will override existing .md files
+# so any manual edits would get lost!
 .PHONE: extract
 extract:
-	$(extract_pl) ../index.html en
-	$(extract_pl) ../cn/index.html cn
+	$(extract_pl) ../v1/index.html en
+	$(extract_pl) ../v1/cn/index.html cn
 
 .PHONE: gendata
 gendata: $(tsv_files)
