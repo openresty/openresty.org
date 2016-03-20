@@ -274,13 +274,3 @@ This FAQ document is hosted on GitHub and periodically updated to the openresty.
 https://github.com/openresty/openresty.org
 
 You can edit the `faq.md` file in the repository above and create pull requests so that I can incorporate your patches.
-
-Author
-======
-
-Yichun Zhang (agentzh)
-
-See Also
-========
-
-* [openresty.org](http://openresty.org)
