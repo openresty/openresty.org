@@ -9,6 +9,7 @@ Table of Contents
 * [Name](#name)
 * [Description](#description)
 * [Building](#building)
+* [Credit](#credit)
 * [Author](#author)
 * [Copyright and License](#copyright-and-license)
 
@@ -62,6 +63,13 @@ make
 The `.po` files under `po/` would be automatically updated according to the latest Lua source and TT2 template files
 with this command as well. If you make any edits to the `.po` files, then remember to re-run the `make` command to
 make your changes take effect (by updating the `openresty_org.i18n` Lua module file from the `.po` files).
+
+Credit
+======
+
+* Thanks [Mashape.com](https://www.mashape.com) for contributing the page templates for the v2 version of this site.
+
+[Back to TOC](#table-of-contents)
 
 Author
 ======
