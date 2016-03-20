@@ -87,7 +87,7 @@ local function stash_get(stash, k)
                 key = key + 1
             end
             if type(v) ~= "table" then
-                return nil
+                return ''
             end
             v = v[key]
         end
@@ -97,7 +97,7 @@ local function stash_get(stash, k)
     if type(v) == "function" then
         return v()
     end
-    return v
+    return v or ''
 end
 
 local function stash_set(stash, k, v, default)
