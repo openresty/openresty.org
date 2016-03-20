@@ -26,6 +26,14 @@ leveraging [Nginx](nginx.html)'s event model to do non-blocking I/O not only
 with the HTTP clients, but also with remote backends like MySQL, PostgreSQL,
 Memcached, and Redis.
 
+Real-world applications of OpenResty range from dynamic web portals and web
+gateways, web application firewalls, web service platforms for mobile
+apps/advertisement/distributed storage/data analytics,
+to full-fledged dynamic web applications and web sites. The hardware used to
+run OpenResty also ranges from very big metals to embedded devices with very
+limited resources. It is not uncommon for our production users to serve billions
+of requests daily for millions of active users with just a handful of machines.
+
 OpenResty is *not* an [Nginx](nginx.html) fork. It is just a software bundle.
 Most of the patches applied to the [Nginx](nginx.html) core in OpenResty have
 already been submitted to the official [Nginx](nginx.html) team and most of
