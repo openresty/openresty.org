@@ -1,7 +1,7 @@
 Name
 ====
 
-openresty.org - Code for the official site of OpenResty
+OpenResty.org - Code and data for the official site of OpenResty
 
 Table of Contents
 =================
