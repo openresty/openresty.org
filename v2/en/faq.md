@@ -26,8 +26,6 @@ How often does OpenResty make a new release?
 
 We are trying to make a new release of OpenResty every one or two months. It may sometimes take longer because this project is mainly based on volunteers.
 
-[Back to TOC](#table-of-contents)
-
 How should I report a problem?
 ------------------------------
 
@@ -55,8 +53,6 @@ the ngx\_lua component is
 https://github.com/openresty/lua-nginx-module/issues. The GitHub issues pages for OpenResty's components
 are all considered English-only. Never use other languages like Chinese there. It is still fine, however, to just send a mail to one of the mailing lists mentioned above; but again, please do not cross-post.
 
-[Back to TOC](#table-of-contents)
-
 Why can't I use Lua 5.2 or later?
 ---------------------------------
 
@@ -74,14 +70,10 @@ as all the existing lua-resty-\* libraries written in the Lua 5.1 language.
 We believe it is better to stick with one Lua language in ngx\_lua. Chasing the Lua language's version
 number has not many practical technical merits (if there were some political ones).
 
-[Back to TOC](#table-of-contents)
-
 Can I use LuaJIT 2.0.x?
 -----------------------
 
 Yes sure. LuaJIT 2.0.x is always supported in OpenResty though LuaJIT 2.1+ is highly recommended.
-
-[Back to TOC](#table-of-contents)
 
 Why does OpenResty use LuaJIT 2.1 by default?
 ---------------------------------------------
@@ -101,8 +93,6 @@ long). The 2.0.3 release is such a proof.
 
 We highly recommend LuaJIT 2.1 because we really need speed in OpenResty though you always have the freedom
 to use LuaJIT 2.0.x or even the standard Lua 5.1 interpreter in OpenResty instead.
-
-[Back to TOC](#table-of-contents)
 
 Why can't I use duplicate configuration directives?
 ---------------------------------------------------
@@ -171,8 +161,6 @@ Use of Lua's native module mechanism is also very efficient. Thanks to the built
 in Lua's built-in function `require()` (via the global `package.loaded` table anchored in the Lua registry, thus being shared
 by the whole Lua VM).
 
-[Back to TOC](#table-of-contents)
-
 Can I use custom loggers in Lua?
 --------------------------------
 
@@ -192,8 +180,6 @@ Unlike NGINX core's native syslog loggers, this one tries very hard to avoid dat
 
 Socket-based logging is generally recommended for performance reasons because file I/O may almost always block
 the NGINX event loop (or some OS threads if enabling the new NGINX thread pool support for file I/O, still adding extra overhead).
-
-[Back to TOC](#table-of-contents)
 
 Why am I seeing the "lua tcp socket connect timed out" error?
 -------------------------------------------------------------
@@ -229,8 +215,6 @@ of your `accept()` queue on your backend server.
 5. Automatically retry `connect()` in your Lua code for one or two more time with an optional delay
 when your `connect()` call fails.
 
-[Back to TOC](#table-of-contents)
-
 Why am I always getting 0 from `getreusedtimes()` or `get_reused_times()` calls?
 --------------------------------------------------------------------------------
 
@@ -241,8 +225,6 @@ establish new connections instead of reusing existing ones.
 The solution is to always check the return values of the `setkeepalive()` or `set_keepalive()`
 calls and handle errors properly if any. When you get errors from `setkeepalive()` or `set_keepalive()` calls, then
 we can work on solving the problem (like avoid calling `setkeepalive()` or `set_keepalive()` at the wrong times).
-
-[Back to TOC](#table-of-contents)
 
 Can I set timeout threshold on subrequests?
 -------------------------------------------
@@ -271,8 +253,6 @@ location = /sub {
 Here you specify all the timeout thresholds provided by the [ngx_proxy](http://nginx.org/en/docs/http/ngx_http_proxy_module.html)
 module in the (internal) location (`= /sub`) accessed by your subrequest.
 
-[Back to TOC](#table-of-contents)
-
 Can I access remote URLs via ngx.locaiton.capture or alike?
 -----------------------------------------------------------
 
@@ -286,8 +266,6 @@ by the community. To name a few:
 * Brian Akins' [lua-resty-http-simple](https://github.com/bakins/lua-resty-http-simple)
 * James Hurst's [lua-resty-http](https://github.com/pintsized/lua-resty-http)
 
-[Back to TOC](#table-of-contents)
-
 Contributing to this FAQ
 =========================
 
@@ -297,19 +275,12 @@ https://github.com/openresty/openresty.org
 
 You can edit the `faq.md` file in the repository above and create pull requests so that I can incorporate your patches.
 
-[Back to TOC](#table-of-contents)
-
 Author
 ======
 
 Yichun Zhang (agentzh)
 
-[Back to TOC](#table-of-contents)
-
 See Also
 ========
 
 * [openresty.org](http://openresty.org)
-
-[Back to TOC](#table-of-contents)
-
