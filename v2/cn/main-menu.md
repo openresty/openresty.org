@@ -14,7 +14,7 @@
 * [样例](samples.html)
 * [性能评测](benchmark.html)
 * [幻灯片](presentations.html)
-* [电子图书](eBooks)
+* [电子图书](ebooks.html)
 * [资源](resources.html)
 * [下载](download.html)
 * [安装](installation.html)
