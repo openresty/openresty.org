@@ -12,22 +12,24 @@ Table of Contents
 * [Credit](#credit)
 * [Author](#author)
 * [Copyright and License](#copyright-and-license)
+* [See Also](#see-also)
 
 Description
 ===========
 
 This repository holds the source code and configurations for the official OpenResty site (https://openresty.org/).
 
-This site is a dynamic web application built entirely upon the OpenResty stack, backed by the PostgreSQL database management system.
+This site is a dynamic web application built entirely upon the OpenResty stack, backed by the [PostgreSQL](http://www.postgresql.org/)
+database management system.
 
 The latest generation of this site is under the `v2/` directory of this repository.
 
 Building
 ========
 
-You need to install both OpenResty and PostgreSQL 9.x, obviously.
+You need to install both OpenResty and [PostgreSQL](http://www.postgresql.org/) 9.x, obviously.
 
-You need to install `pandoc` to your system. On Mac OS X, for example, it's as simple as
+You need to install [pandoc](http://pandoc.org/) to your system. On Mac OS X, for example, it's as simple as
 
 ```bash
 brew install pandoc
@@ -48,7 +50,7 @@ make reload   # for reloading the test nginx server
 ```
 
 If you want to re-generate the `openresty_org.templates` Lua module from the TT2 template files under `templates/`, then
-you need to install the Lemplate CPAN module like this:
+you need to install the [Lemplate](https://metacpan.org/pod/Lemplate) CPAN module like this:
 
 ```bash
 sudo cpan Lemplate
@@ -94,6 +96,13 @@ Redistribution and use in source and binary forms, with or without modification,
 * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+[Back to TOC](#table-of-contents)
+
+See Also
+========
+
+* The [OpenResty Survey](https://github.com/agentzh/openresty-survey) web application.
 
 [Back to TOC](#table-of-contents)
 
