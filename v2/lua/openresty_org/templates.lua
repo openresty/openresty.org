@@ -151,7 +151,7 @@ i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { '100% Powered by OpenRest
 i = i + 1 output[i] = '\n     '
 -- line 6 "footer.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { '(' }})
-i = i + 1 output[i] = '<a href="https://github.com/openresty/openresty.org/tree/master/v2/">\n     '
+i = i + 1 output[i] = '<a href="https://github.com/openresty/openresty.org/">\n     '
 -- line 7 "footer.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'view the source code of this site' }})
 i = i + 1 output[i] = '</a>'
