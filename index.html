@@ -4180,6 +4180,7 @@ http {
     server {
         listen 8080;
         location / {
+            access_log logs/access.log;
             default_type text/html;
             content_by_lua '
                 ngx.say(&quot;&lt;p&gt;hello, world&lt;/p&gt;&quot;)
@@ -4199,6 +4200,9 @@ Then we start the nginx server with our config file this way:
 {{{
 nginx -p `pwd`/ -c conf/nginx.conf
 }}}
+<p>
+<strong>Tip: to start successfully, nginx must have permission to write to /var/log/nginx. This is because during startup, nginx writes to the system logs before it reads the alternate configuration files. Therefore, you must either allow your user write permission to /var/log/nginx, or run as root and add a 'user' directive to the nginx config file to change to an alternate user after it starts</strong>
+</p>
 Error messages will go to the stderr device or the default error log files {{{logs/error.log}}} in the current working directory.
 !!Access our ~HelloWorld web service
 We can use curl to access our new web service that says ~HelloWorld:
