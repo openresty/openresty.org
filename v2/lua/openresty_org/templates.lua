@@ -215,7 +215,7 @@ template_map['index.tt2'] = function (context)
 i = i + 1 output[i] = '<!DOCTYPE html>\n<html lang="en">\n<head>\n	<meta charset="utf-8">\n	<title>'
 -- line 5 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty - Official Site' }})
-i = i + 1 output[i] = '</title>\n	<link href=\'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300\' rel=\'stylesheet\' type=\'text/css\'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel="stylesheet" type="text/less" href="/css/main.less">\n	<script src="/js/less.js"></script>\n	-->\n	<link rel="stylesheet" type="text/css" href="/css/main.css">\n        <script>\n'
+i = i + 1 output[i] = '</title>\n	<link href=\'https://openresty.org/css/fonts.css\' rel=\'stylesheet\' type=\'text/css\'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel="stylesheet" type="text/less" href="/css/main.less">\n	<script src="/js/less.js"></script>\n	-->\n	<link rel="stylesheet" type="text/css" href="/css/main.css">\n        <script>\n'
 -- line 14 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'old-permlink-js.tt2')
 i = i + 1 output[i] = '\n        </script>\n</head>\n<body>\n\n'
@@ -290,7 +290,7 @@ template_map['page.tt2'] = function (context)
 i = i + 1 output[i] = '<!DOCTYPE html>\n<html lang="en">\n<head>\n	<meta charset="utf-8">\n	<title>OpenResty - '
 -- line 5 "page.tt2"
 i = i + 1 output[i] = stash_get(stash, 'title')
-i = i + 1 output[i] = '</title>\n	<link href=\'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300\' rel=\'stylesheet\' type=\'text/css\'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel="stylesheet" type="text/less" href="/css/main.less">\n	<script src="/js/less.js"></script>\n	-->\n	<link rel="stylesheet" type="text/css" href="/css/main.css">\n</head>\n<body>\n\n'
+i = i + 1 output[i] = '</title>\n	<link href=\'https://openresty.org/css/fonts.css\' rel=\'stylesheet\' type=\'text/css\'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel="stylesheet" type="text/less" href="/css/main.less">\n	<script src="/js/less.js"></script>\n	-->\n	<link rel="stylesheet" type="text/css" href="/css/main.css">\n</head>\n<body>\n\n'
 -- line 16 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'header.tt2')
 i = i + 1 output[i] = '\n\n	<div id="wrapper">\n		<div class="sidebar sleft">\n			<nav id="nav">\n'
