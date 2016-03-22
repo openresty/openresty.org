@@ -10,11 +10,9 @@
 	<script src="/js/less.js"></script>
 	-->
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
-        <script src="/js/jquery.min.js"></script>
         <script>
 [% PROCESS 'old-permlink-js.tt2' %]
         </script>
-	<script src="/js/main.js"></script>
 </head>
 <body>
 

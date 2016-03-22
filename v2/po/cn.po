@@ -57,15 +57,15 @@ msgstr "搜索 OpenResty.org 中文站"
 msgid  "OpenResty - Official Site"
 msgstr "OpenResty - 中文官方站"
 
-#: templates/index.tt2:25
+#: templates/index.tt2:23
 msgid  "OpenResty is a dynamic web platform based on NGINX and LuaJIT."
 msgstr "OpenResty 是一个基于 NGINX 和 LuaJIT 的 Web 平台。"
 
-#: templates/index.tt2:26
+#: templates/index.tt2:24
 msgid  "It’s open-source stuff so you can contribute:"
 msgstr "这是一个开源项目，所以你也可以来贡献："
 
-#: templates/index.tt2:27
+#: templates/index.tt2:25
 msgid  "Contribute on GitHub"
 msgstr "在 GitHub 上贡献你的力量"
 
