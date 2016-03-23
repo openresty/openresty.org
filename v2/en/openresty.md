@@ -28,7 +28,7 @@ Memcached, and Redis.
 
 Real-world applications of OpenResty range from dynamic web portals and web
 gateways, web application firewalls, web service platforms for mobile
-apps/advertisement/distributed storage/data analytics,
+apps/advertising/distributed storage/data analytics,
 to full-fledged dynamic web applications and web sites. The hardware used to
 run OpenResty also ranges from very big metals to embedded devices with very
 limited resources. It is not uncommon for our production users to serve billions
