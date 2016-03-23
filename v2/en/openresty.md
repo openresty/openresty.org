@@ -2,10 +2,6 @@
     @title         OpenResty
     @creator       Yichun Zhang
     @created       2011-06-21 04:03 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2015-12-30 20:21 GMT
-    @changes       34
 --->
 
 OpenResty is a full-fledged web platform by integrating the standard [Nginx](nginx.html) core,
