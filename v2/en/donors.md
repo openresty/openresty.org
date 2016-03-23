@@ -8,7 +8,7 @@
 our appreciation. If you have ever donated more than 1000 USD, please contact
 me and send me your company or personal logos.
 
-![Kugou Music](/images/kugou-music2.jpg)
+![Kugou Music](/images/kugou-music.jpg)
 
-![Mashape](/images/mashape-logo2.png)
+![Mashape](/images/mashape-logo.png)
 
