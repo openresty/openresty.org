@@ -2,10 +2,6 @@
     @title         OpenResty
     @creator       Yichun Zhang
     @created       2011-06-21 04:03 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2015-12-30 20:21 GMT
-    @changes       34
 --->
 
 OpenResty is a full-fledged web platform by integrating the standard [Nginx](nginx.html) core,
@@ -28,7 +24,7 @@ Memcached, and Redis.
 
 Real-world applications of OpenResty range from dynamic web portals and web
 gateways, web application firewalls, web service platforms for mobile
-apps/advertisement/distributed storage/data analytics,
+apps/advertising/distributed storage/data analytics,
 to full-fledged dynamic web applications and web sites. The hardware used to
 run OpenResty also ranges from very big metals to embedded devices with very
 limited resources. It is not uncommon for our production users to serve billions
