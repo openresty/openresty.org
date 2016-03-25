@@ -2,10 +2,6 @@
     @title         Installation
     @creator       Yichun Zhang
     @created       2011-06-21 04:40 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2016-01-28 20:44 GMT
-    @changes       84
 --->
 
 If you haven't downloaded the [OpenResty](openresty.html) source code tarball,
@@ -30,6 +26,18 @@ like `0.8.54.6`.
 If your system environment is modern enough, then you almost always want to
 enable the PCRE JIT support and IPv6 support in your NGINX by passing the `--with-pcre-jit` and
 `--with-ipv6` options to the `./configure` script.
+
+By default, OpenResty is installed into the prefix `/usr/local/openresty/`.
+
+Finally, you need to add the command-line utilities provided by OpenResty to your
+`PATH` environment, as in
+
+```
+export PATH=/usr/local/openresty/bin:/usr/local/openresty/nginx/sbin:$PATH
+```
+
+if you are using bash. Better add this line to your shell's startup script, like `~/.bashrc`
+or `~/.bash_profile`.
 
 If you have problems while building or want finer control over the building
 process, please read on.
