@@ -9,6 +9,7 @@ Table of Contents
 * [Name](#name)
 * [Description](#description)
 * [Building](#building)
+* [TODO](#todo)
 * [Credit](#credit)
 * [Author](#author)
 * [Copyright and License](#copyright-and-license)
@@ -39,6 +40,7 @@ You'll also need `perl` installed in your system for building the web site (not 
 
 ```bash
 cd v2/
+
 make gendata  # generate data files from .md files
 
 # create the test database "openresty_org" and the test account "openresty" in your local PostgreSQL server.
@@ -48,6 +50,15 @@ make initdb   # create the database and load the data files
 make run      # starting the test nginx server listened on localhost:8080
 make reload   # for reloading the test nginx server
 ```
+
+If your machine has more than one spare CPU cores, then you can specify the `-jN` option of `make` to build the HTML
+docs in parallel, as in
+
+```bash
+make gendata -j8
+```
+
+This command will run the build in 8 parallel jobs, thus utilizing 8 CPU cores at most.
 
 If you want to re-generate the `openresty_org.templates` Lua module from the TT2 template files under `templates/`, then
 you need to install the [Lemplate](https://metacpan.org/pod/Lemplate) CPAN module like this:
@@ -67,6 +78,21 @@ These files are similar to the `.po` files used by the classic [GNU gettext](htt
 but we do not use `GNU gettext` at all.  Our `.po` files would be automatically updated according to the latest Lua source
 and TT2 template files with this command as well. If you make any edits to the `.po` files, then remember to re-run the
 `make` command to make your changes take effect (by updating the `openresty_org.i18n` Lua module file from the `.po` files).
+
+TODO
+====
+
+* Add responsive design to the web page templates for mobile devices with small screens.
+* Add a in-memory caching layer to the openresty_org web app via [lua-resty-lrucache](https://github.com/openresty/lua-resty-lrucache)
+and/or [lua_shared_dict](https://github.com/openresty/lua-nginx-module#lua_shared_dict).
+* Translate more English `.md` documents into Chinese.
+* Add a pager to the search result page in the `openresty_org` web app.
+* Add an RSS feed endpoint in the `openresty_org` web app.
+* Add another tab page to the right-hand side-bar of the web pages featuring the top N hot pages.
+* Add an OpenResty logo to the web page header.
+* Remove the dependency on `pandoc` by migrating to a standalone Perl script.
+
+[Back to TOC](#table-of-contents)
 
 Credit
 ======
