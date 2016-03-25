@@ -11,7 +11,6 @@ templates_lua = lua/openresty_org/templates.lua
 
 lua_files := $(sort $(filter-out $(i18n_lua) $(templates_lua),$(wildcard lua/*.lua lua/openresty_org/*.lua)))
 tt2_files := $(sort $(wildcard templates/*.tt2))
-tt2_files := $(wildcard templates/*.tt2)
 
 extract_pl = ./util/extract.pl
 gendata_pl = ./util/gen-data.pl
