@@ -44,7 +44,7 @@ sub parse_file {
     close $in;
 
     my %attr;
-    if ($html =~ s/ \A <!--- \s* (.*?) ^ ---> (?: \n | $ ) //sxm) {
+    if ($html =~ s/ \A <!--- \s* (.*?) ---> (?: \n | $ ) //xsm) {
         my $meta = $1;
         %attr = map { if (/\@(\S+)\s+(.*)/) { ($1, $2) } else { () } }
                         split /\n/, $meta;
@@ -52,7 +52,7 @@ sub parse_file {
     } else {
 
         if ($html =~ s{ \A \s* <p> \s* \&lt; !--- (.*?)
-                        --- \&gt; \s* </p> (?: \n | $ ) }{}gxs)
+                        --- \&gt; \s* </p> (?: \n | $ ) }{}xsm)
         {
             my $meta = $1;
             $meta =~ s/^\s+|\s+$//g;
