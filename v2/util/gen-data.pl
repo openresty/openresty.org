@@ -56,6 +56,11 @@ sub parse_file {
         {
             my $meta = $1;
             $meta =~ s/^\s+|\s+$//g;
+            $meta =~ s/\&quot;/"/g;
+            $meta =~ s/\&lt;/</g;
+            $meta =~ s/\&gt;/>/g;
+            $meta =~ s/\&amp;/&/g;
+            $meta =~ s/\&nbsp;/ /g;
 
             %attr = map { if (/\@(\S+)\s+(.*)/) { ($1, $2) } else { () } }
                         split / \s+ (?= \@\w+ )/x, $meta;
