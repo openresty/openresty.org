@@ -43,13 +43,28 @@ sub parse_file {
     my $html = do { local $/; <$in> };
     close $in;
 
-    if ($html !~ s/\A<!---\n(.*?)^--->$//sm) {
-        die "bad HTML content in file $file";
+    my %attr;
+    if ($html =~ s/ \A <!--- \s* (.*?) ^ ---> (?: \n | $ ) //sxm) {
+        my $meta = $1;
+        %attr = map { if (/\@(\S+)\s+(.*)/) { ($1, $2) } else { () } }
+                        split /\n/, $meta;
+
+    } else {
+
+        if ($html =~ s{ \A \s* <p> \s* \&lt; !--- (.*?)
+                        --- \&gt; \s* </p> (?: \n | $ ) }{}gxs)
+        {
+            my $meta = $1;
+            $meta =~ s/^\s+|\s+$//g;
+
+            %attr = map { if (/\@(\S+)\s+(.*)/) { ($1, $2) } else { () } }
+                        split / \s+ (?= \@\w+ )/x, $meta;
+
+        } else {
+            die "bad HTML content in file $file";
+        }
     }
 
-    my $meta = $1;
-    my %attr = map { if (/\@(\S+)\s+(.*)/) { ($1, $2) } else { () }  }
-                    split /\n/, $meta;
     #use Data::Dumper;
     #warn Dumper(\%attr);
     $attr{html_body} = $html;
