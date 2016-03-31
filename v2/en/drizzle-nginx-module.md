@@ -59,9 +59,9 @@ cd /path/to/ngx_openresty-VERSION/
 ```
 
 
-Documentation page: https://github.com/chaoslawful/drizzle-nginx-module#readme
+Documentation page: https://github.com/openresty/drizzle-nginx-module#readme
 
-Project page: https://github.com/chaoslawful/drizzle-nginx-module
+Project page: https://github.com/openresty/drizzle-nginx-module
 
 When used in conjunction with [LuaNginxModule](lua-nginx-module.html), it is
 recommended to use [LuaRestyMySQLLibrary](lua-resty-mysql-library.html) instead
