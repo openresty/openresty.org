@@ -27,4 +27,4 @@ nginx worker process is handling 10K requests at the same time.
 
 Documentation: http://wiki.nginx.org/HttpLuaModule
 
-Project page: http://github.com/chaoslawful/lua-nginx-module
+Project page: http://github.com/openresty/lua-nginx-module
