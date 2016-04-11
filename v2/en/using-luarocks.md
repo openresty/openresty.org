@@ -4,7 +4,7 @@
     @created       2011-08-07 02:32 GMT
     @modifier      Yichun Zhang
     @modifier_link yichun-zhang
-    @modified      2014-01-25 17:59 GMT
+    @modified      2016-04-11 14:34 UTC
     @changes       36
 --->
 
@@ -26,8 +26,8 @@ If you haven't installed OpenResty yet, check out the [Download](download.html) 
 #  Install LuaRocks
 First of all, let's install LuaRocks:
 
-[Download](download.html) the LuaRocks tarball from [http://www.luarocks.org/en/Download](http://www.luarocks.org/en/-download.html).
-As of this writing, the latest version is `2.1.2`, but we'll use `2.0.13` for
+Download the LuaRocks tarball from [https://luarocks.org/releases](https://luarocks.org/releases).
+As of this writing, the latest version is `2.3.0`, but we'll use `2.0.13` for
 compatibility throughout this sample.
 
 ```
