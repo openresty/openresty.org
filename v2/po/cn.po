@@ -1,27 +1,27 @@
 #. TRANSLATORS: Please leave %s, %d, and etc as is, because it is needed by the program.
 #. Thank you for contributing to this project.
 
-#: lua/openresty_org/controller.lua:110
+#: lua/openresty_org/controller.lua:111
 msgid  "Bad search query"
 msgstr "非法的搜索查询"
 
-#: lua/openresty_org/controller.lua:111
+#: lua/openresty_org/controller.lua:112
 msgid  "No query provided."
 msgstr "没有提供任何搜索词。"
 
-#: lua/openresty_org/controller.lua:116
+#: lua/openresty_org/controller.lua:117
 msgid  "Query too long (more than %d bytes)."
 msgstr "查词太长了（已经超出 %d 字节）。"
 
-#: lua/openresty_org/controller.lua:125
+#: lua/openresty_org/controller.lua:126
 msgid  "No search results found"
 msgstr "没有找到任何匹配的记录"
 
-#: lua/openresty_org/controller.lua:126
+#: lua/openresty_org/controller.lua:127
 msgid  "Please adjust your search query and try again."
 msgstr "请调整您的搜索查询并重试。"
 
-#: lua/openresty_org/controller.lua:136
+#: lua/openresty_org/controller.lua:137
 msgid  "Search Result"
 msgstr "搜索结果"
 
