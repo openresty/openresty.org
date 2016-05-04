@@ -23,7 +23,7 @@ Please check out the [Components](components.html) page for more details about
 each component project.
 
 For example, one of the core components, [Lua Nginx Module](lua-nginx-module.html),
-has its official code repository hosted on [GitHub](github.html) as well: https://github.com/chaoslawful/lua-nginx-module
+has its official code repository hosted on [GitHub](github.html) as well: https://github.com/openresty/lua-nginx-module
 
 Another core component, the [Nginx](nginx.html) core, is developed by the [Nginx company](http://nginx.com).
 And the opensource development of the [Nginx](nginx.html) core usually happens
