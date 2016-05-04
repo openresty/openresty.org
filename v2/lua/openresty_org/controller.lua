@@ -27,7 +27,7 @@ local MAX_SEARCH_QUERY_LEN = 128
 
 local function gen_cache_control_headers(ts)
     resp_header["Last-Modified"] = http_time(tonumber(ts))
-    resp_header["Cache-Control"] = "public,max-age=300"
+    resp_header["Cache-Control"] = "max-age=28800"
 end
 
 local function search_error(i18n, main_menu, timeline, query, title, msg)
@@ -46,6 +46,7 @@ end
 function _M.run()
     local uri = ngx_var.uri
     if uri == "/" then
+        resp_header["Cache-Control"] = "max-age=604800"
         return ngx.redirect("/en/", 302)
     end
 
