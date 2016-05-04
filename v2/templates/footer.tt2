@@ -5,7 +5,7 @@
   <p>[% c.l("100% Powered by OpenResty and PostgreSQL") %]
      [% c.l("(") %]<a href="https://github.com/openresty/openresty.org/">
      [% c.l("view the source code of this site") %]</a>[% c.l(")") %]</p>
-  <p/>
+  <br/>
   <p>京ICP备16021991号</p>
 </div>
 </div>
