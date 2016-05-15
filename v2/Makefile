@@ -3,8 +3,9 @@ nginx = nginx
 md2html = pandoc --from markdown_github-hard_line_breaks --to html
 md2text = pandoc --from markdown_github-hard_line_breaks --to plain
 
-html_files := $(patsubst %.md,html/%.html,$(wildcard en/*.md cn/*.md))
-txt_files := $(patsubst %.md,text/%.txt,$(wildcard en/*.md cn/*.md))
+md_files := $(wildcard en/*.md cn/*.md) $(patsubst %.md.tt2,%.md,$(wildcard en/*.md.tt2))
+html_files := $(patsubst %.md,html/%.html,$(md_files))
+txt_files := $(patsubst %.md,text/%.txt,$(md_files))
 
 i18n_lua = lua/openresty_org/i18n.lua
 templates_lua = lua/openresty_org/templates.lua
@@ -19,8 +20,9 @@ msgfmt_pl = ./util/msgfmt.pl
 
 po_files = po/cn.po
 tsv_files = posts-en.tsv posts-cn.tsv
+tpage = tpage
 
-.DELETE_ON_ERRORS: $(templates_lua)
+.DELETE_ON_ERRORS: $(templates_lua) $(patsubst %.md.tt2,%.md,$(wildcard en/*.md.tt2))
 
 .PHONE: all
 all: templates msgfmt
@@ -58,6 +60,9 @@ text: $(txt_files)
 text/%.txt: %.md
 	mkdir -p text/en text/cn
 	$(md2text) $< --output $@
+
+%.md: %.md.tt2
+	$(tpage) $< > $@
 
 # WARNING: this target will override existing .md files
 # so any manual edits would get lost!

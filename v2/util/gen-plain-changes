@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+perl -ne 'exit if /^See \[ChangeLog \d/;
+          if (/^\#\s*Version \d/) {
+              exit if ++$c > 1;
+              warn $_;
+              next;
+          }
+          print;
+          ' $1 > /tmp/changes.txt || exit 1
+exec md2pod.pl /tmp/changes.txt | pod2text -u -i 1 -w 69 --nourls -
