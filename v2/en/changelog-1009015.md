@@ -74,6 +74,10 @@ while constructing memcached requests, which can lead to fewer Lua string creati
     * bugfix: `gets()` did not return server error responses. thanks Lorenz Bauer for the report.
     * bugfix: `get()`: simplified the error messages so that the caller can check the error more easily.
     * feature: `set_timeout()` now returns the result of the operation. thanks Guanlan Dai for the report.
+* upgraded [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql#readme) to 0.16.
+    * bugfix: `close()`: we did not send the `COM_QUIT` packet to the MySQL server. thanks Andreas Fischer for the report.
+    * bugfix: fixed the Lua exception "attempt to concatenate field 'state' (a nil value)". thanks heyuanlong for the report.
+    * doc: typo fixes from Boris Nagaev.
 * upgraded [resty-cli](https://github.com/openresty/resty-cli#readme) to 0.08.
     * feature: `resty`: multiple `-e` options, along with the file argument, are supported.
     * feature: added new command-line utility, restydoc, for viewing OpenResty/Nginx documentation on the terminal (inspired by Perl's `perldoc` utility) via `groff` (used by `man` as well).

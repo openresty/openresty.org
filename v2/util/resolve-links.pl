@@ -49,6 +49,7 @@ while (<$in>) {
                             | flush
                             | print
                             | say
+                            | status
                             )
                   | tcpsock:sslhandshake
                   | lua_ssl_verify_depth
@@ -78,7 +79,7 @@ while (<$in>) {
             "$pre\[$txt](https://github.com/openresty/lua-resty-core/blob/master/lib/$file.md#readme)$post"
             !egx;
 
-    $c += s! (\s) (resty-cli|lua-cjson|lua-resty-(?:core|memcached|redis|dns|lock|lrucache|websocket)) ( [\s,.:?] ) !$1\[$2](https://github.com/openresty/$2#readme)$3!gxs;
+    $c += s! (\s) (resty-cli|lua-cjson|lua-resty-(?:core|memcached|mysql|redis|dns|lock|lrucache|websocket)) ( [\s,.:?] ) !$1\[$2](https://github.com/openresty/$2#readme)$3!gxs;
     $c += s! (\s) (error_page|client_body_buffer_size) ( [\s,.:?] ) !$1\[$2](http://nginx.org/r/$2)$3!gxs;
 
     $c += s! (\s) (table\.concat) ( (?:\(\))? ) ( [\s,.:?] ) !$1\[$2$3](http://www.lua.org/manual/5.1/manual.html#pdf-$2)$4!gxs;
