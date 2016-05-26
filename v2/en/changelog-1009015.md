@@ -4,13 +4,14 @@
     @created       2015-12-20 00:18 GMT
 --->
 
-#  Version 1.9.15.1 - 17 May 2016
+#  Version 1.9.15.1 - 25 May 2016
 
 * upgraded the [Nginx](nginx.html) core to 1.9.15.
     * see the changes here: http://nginx.org/en/CHANGES
 * feature: added restydoc documentation indexes for the official [nginx](nginx.html) core and most of the official openresty components.
+* win32: now we use the latest MinGW gcc 4.9.3 to build the official Windows binaries.
 * upgraded [ngx_lua](https://github.com/openresty/ -nginx-module#readme) to 0.10.5.
-    * bugfix: use of [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block) in the `http {}` scope might lead to process crashes. thanks Andreas Lubbe for the report.
+    * bugfix: use of [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block) in the `http {}` scope could lead to process crashes. thanks Andreas Lubbe for the report.
     * bugfix: [ngx.print("")](https://github.com/openresty/lua-nginx-module#ngxprint) did not trigger response header sending.
     * feature: linux x64: now we try limiting the growth of the data segment of the [nginx](nginx.html)
 processes to preserve as much lowest address space for LuaJIT as possible. thanks Shuxin Yang for the help.

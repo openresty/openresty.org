@@ -2,10 +2,6 @@
     @title         Download
     @creator       Yichun Zhang
     @created       2011-06-21 04:25 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2016-03-17 02:33 GMT
-    @changes       332
 --->
 
 You can download the latest release tarball below. After that, you can follow
@@ -20,7 +16,7 @@ install it.
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)) &nbsp;
-[Changes](changelog-1009015.html) - 17 May 2016
+[Changes](changelog-1009015.html) - 25 May 2016
 
 ##  Legacy releases
 Sometimes, users may want to download old releases.
