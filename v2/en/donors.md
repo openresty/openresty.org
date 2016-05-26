@@ -4,7 +4,13 @@
     @created       2015-08-11 10:11 GMT
 --->
 
-[Donors](donors.html) donating more than 1000 USD are listed here to express
+Donors donating more than 2000 USD are listed here to express
+our appreciation. If you have ever donated more than 2000 USD, please contact
+me and send me your company or personal logos.
+
+[![Volka](/images/logo-volka.png)](https://volka.social)
+
+Donors donating more than 1000 USD are listed here to express
 our appreciation. If you have ever donated more than 1000 USD, please contact
 me and send me your company or personal logos.
 
