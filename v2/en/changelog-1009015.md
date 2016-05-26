@@ -4,13 +4,14 @@
     @created       2015-12-20 00:18 GMT
 --->
 
-
 #  Version 1.9.15.1 - 17 May 2016
 
 * upgraded the [Nginx](nginx.html) core to 1.9.15.
     * see the changes here: http://nginx.org/en/CHANGES
 * feature: added restydoc documentation indexes for the official [nginx](nginx.html) core and most of the official openresty components.
-* upgraded [ngx_lua](https://github.com/openresty/ -nginx-module#readme) to 0.10.4.
+* upgraded [ngx_lua](https://github.com/openresty/ -nginx-module#readme) to 0.10.5.
+    * bugfix: use of [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block) in the `http {}` scope might lead to process crashes. thanks Andreas Lubbe for the report.
+    * bugfix: [ngx.print("")](https://github.com/openresty/lua-nginx-module#ngxprint) did not trigger response header sending.
     * feature: linux x64: now we try limiting the growth of the data segment of the [nginx](nginx.html)
 processes to preserve as much lowest address space for LuaJIT as possible. thanks Shuxin Yang for the help.
     * bugfix: [init_worker_by_lua*](https://github.com/openresty/lua-nginx-module#init_worker_by_lua) did not
@@ -59,9 +60,13 @@ this could happen when [lua_check_client_abort](https://github.com/openresty/lua
 argument of `wait()` in more detail.
     * doc: typo fixes from Alessandro Ghedini.
     * doc: formatting fixes from ms2008.
-* upgraded [lua-resty-redis](https://github.com/openresty/lua-resty-redis#readme) to 0.23.
+* upgraded [lua-resty-redis](https://github.com/openresty/lua-resty-redis#readme) to 0.24.
+    * bugfix: added a `tostring()` call to avoid the "attempt to concatenate local 'prefix' (a nil value)" error in Lua function `_read_reply()`.
     * optimize: we now alway call `tostring()` upon args in Redis query methods.
     * optimize: reduced Lua string concatenations in redis query composition.
+* upgraded [lua-resty-dns](https://github.com/openresty/lua-resty-dns#readme) to 0.16.
+    * bugfix: when the `AD` and `CD` bits are set in the DNS responses as per RFC 2065, they would erroneously be treated as a part
+of the error code (`RCODE`). thanks Celebi Lui for the report and patch.
 * upgraded [lua-resty-memcached](https://github.com/openresty/lua-resty-memcached#readme) to 0.14.
     * optimize: reduced [table.concat()](http://www.lua.org/manual/5.1/manual.html#pdf-table.concat) calls
 while constructing memcached requests, which can lead to fewer Lua string creation operations.
@@ -69,12 +74,14 @@ while constructing memcached requests, which can lead to fewer Lua string creati
     * bugfix: `gets()` did not return server error responses. thanks Lorenz Bauer for the report.
     * bugfix: `get()`: simplified the error messages so that the caller can check the error more easily.
     * feature: `set_timeout()` now returns the result of the operation. thanks Guanlan Dai for the report.
-* upgraded resty-cli to 0.07rc3.
-    * added new command-line utility, restydoc, for viewing OpenResty/Nginx documentation on the terminal (inspired by Perl's `perldoc` utility) via `groff` (used by `man` as well).
-    * added new command-line utility, md2pod.pl, for converting GitHub-flavored Markdown source to Perl's POD format.
-    * added new command-line utility, restydoc-index, for generating the documentation indexes by scanning Markdown and POD document
+* upgraded [resty-cli](https://github.com/openresty/resty-cli#readme) to 0.08.
+    * feature: `resty`: multiple `-e` options, along with the file argument, are supported.
+    * feature: added new command-line utility, restydoc, for viewing OpenResty/Nginx documentation on the terminal (inspired by Perl's `perldoc` utility) via `groff` (used by `man` as well).
+    * feature: added new command-line utility, md2pod.pl, for converting GitHub-flavored Markdown source to Perl's POD format.
+    * feature: added new command-line utility, restydoc-index, for generating the documentation indexes by scanning Markdown and POD document
 files in user-specified directories, which can be used by the restydoc tool.
-    * added new command-line utility, nginx-xml2pod, for converting NGINX's official XML-formatted documentation to Perl's POD format.
+    * feature: added new command-line utility, nginx-xml2pod, for converting NGINX's official XML-formatted documentation to Perl's POD format.
+    * bugfix: `resty`: the `--valgrind` command-line option was broken.
 * upgraded [lua-cjson](https://github.com/openresty/lua-cjson#readme) to 2.1.0.4.
     * feature: added the `cjson.as_array` metamethod to enforce empty array encoding. thanks Thibault Charbonnier for the patch.
     * bugfix: fixed the 16 decimal number encoding assertion. thanks Thibault Charbonnier for the patch.

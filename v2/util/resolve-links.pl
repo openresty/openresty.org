@@ -44,13 +44,17 @@ while (<$in>) {
                             | req\.(?:append|init|finish)_body
                             | re\.(?:g?match|g?sub|find)
                             | worker\.(?:p?id|count)
+                            | send_headers
                             | status
+                            | flush
+                            | print
+                            | say
                             )
                   | tcpsock:sslhandshake
                   | lua_ssl_verify_depth
                   | lua_ssl_trusted_certificate
                   | lua_check_client_abort
-                   ) ( (?:\(\))? ) ( [\s,.:?] ) !
+                   ) ( (?: \( [^)]* \) )? ) ( [\s,.:?] ) !
             my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
             my $anchor = gen_anchor($txt);
             "$pre\[$txt$parens](https://github.com/openresty/lua-nginx-module#$anchor)$post"
@@ -74,7 +78,7 @@ while (<$in>) {
             "$pre\[$txt](https://github.com/openresty/lua-resty-core/blob/master/lib/$file.md#readme)$post"
             !egx;
 
-    $c += s! (\s) (lua-cjson|lua-resty-(?:core|memcached|redis)) ( [\s,.:?] ) !$1\[$2](https://github.com/openresty/$2#readme)$3!gxs;
+    $c += s! (\s) (resty-cli|lua-cjson|lua-resty-(?:core|memcached|redis|dns|lock|lrucache|websocket)) ( [\s,.:?] ) !$1\[$2](https://github.com/openresty/$2#readme)$3!gxs;
     $c += s! (\s) (error_page|client_body_buffer_size) ( [\s,.:?] ) !$1\[$2](http://nginx.org/r/$2)$3!gxs;
 
     $c += s! (\s) (table\.concat) ( (?:\(\))? ) ( [\s,.:?] ) !$1\[$2$3](http://www.lua.org/manual/5.1/manual.html#pdf-$2)$4!gxs;
