@@ -79,7 +79,7 @@ while constructing memcached requests, which can lead to fewer Lua string creati
     * bugfix: `close()`: we did not send the `COM_QUIT` packet to the MySQL server. thanks Andreas Fischer for the report.
     * bugfix: fixed the Lua exception "attempt to concatenate field 'state' (a nil value)". thanks heyuanlong for the report.
     * doc: typo fixes from Boris Nagaev.
-* upgraded [resty-cli](https://github.com/openresty/resty-cli#readme) to 0.08.
+* upgraded [resty-cli](https://github.com/openresty/resty-cli#readme) to 0.09.
     * feature: `resty`: multiple `-e` options, along with the file argument, are supported.
     * feature: added new command-line utility, restydoc, for viewing OpenResty/Nginx documentation on the terminal (inspired by Perl's `perldoc` utility) via `groff` (used by `man` as well).
     * feature: added new command-line utility, md2pod.pl, for converting GitHub-flavored Markdown source to Perl's POD format.
