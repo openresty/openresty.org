@@ -16,7 +16,7 @@ install it.
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)) &nbsp;
-[Changes](changelog-1009015.html) - 25 May 2016
+[Changes](changelog-1009015.html) - 31 May 2016
 
 ##  Legacy releases
 Sometimes, users may want to download old releases.
