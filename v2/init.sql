@@ -2,8 +2,6 @@
 -- create database openresty_org;
 -- grant all privileges on database openresty_org to openresty;
 
--- drop table if exists posts cascade;
-
 drop table if exists posts_en cascade;
 
 create table posts_en (

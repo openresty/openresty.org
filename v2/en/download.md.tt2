@@ -20,6 +20,11 @@ install it.
 
 ##  Legacy releases
 Sometimes, users may want to download old releases.
+* [openresty-1.9.7.5.tar.gz](https://openresty.org/download/openresty-1.9.7.5.tar.gz) &nbsp; 3.5MB
+&nbsp; [PGP](https://openresty.org/download/openresty-1.9.7.5.tar.gz.asc) &nbsp;
+([Win32](https://openresty.org/download/openresty-1.9.7.5-win32.zip) &nbsp;
+[PGP](https://openresty.org/download/openresty-1.9.7.5-win32.zip.asc)) &nbsp;
+[Changes](changelog-1009007.html) - 31 May 2016
 * [openresty-1.9.7.4.tar.gz](https://openresty.org/download/openresty-1.9.7.4.tar.gz) &nbsp; 3.5MB
 &nbsp; [PGP](https://openresty.org/download/openresty-1.9.7.4.tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/openresty-1.9.7.4-win32.zip) &nbsp;
