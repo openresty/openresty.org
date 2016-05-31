@@ -2,12 +2,10 @@
     @title         ChangeLog 1.9.7
     @creator       Yichun Zhang
     @created       2015-12-25 05:28 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2016-03-17 00:34 GMT
-    @changes       4
 --->
 
+#  Version 1.9.7.5 - 31 May 2016
+* bugfix: applied the patch for nginx security advisory (CVE-2016-4450).
 
 #  Version 1.9.7.4 - 16 March 2016
 * bugfix: `./configure`: use of relative paths like "./nginx" in `--prefix=PATH` led
