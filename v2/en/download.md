@@ -2,10 +2,6 @@
     @title         Download
     @creator       Yichun Zhang
     @created       2011-06-21 04:25 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2016-03-17 02:33 GMT
-    @changes       332
 --->
 
 You can download the latest release tarball below. After that, you can follow
@@ -15,14 +11,19 @@ install it.
 # Releases
 
 ##  Lastest release
+* [openresty-1.9.7.5.tar.gz](https://openresty.org/download/openresty-1.9.7.5.tar.gz) &nbsp; 3.5MB
+&nbsp; [PGP](https://openresty.org/download/openresty-1.9.7.5.tar.gz.asc) &nbsp;
+([Win32](https://openresty.org/download/openresty-1.9.7.5-win32.zip) &nbsp;
+[PGP](https://openresty.org/download/openresty-1.9.7.5-win32.zip.asc)) &nbsp;
+[Changes](changelog-1009007.html) - 31 May 2016
+
+##  Legacy releases
+Sometimes, users may want to download old releases.
 * [openresty-1.9.7.4.tar.gz](https://openresty.org/download/openresty-1.9.7.4.tar.gz) &nbsp; 3.5MB
 &nbsp; [PGP](https://openresty.org/download/openresty-1.9.7.4.tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/openresty-1.9.7.4-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/openresty-1.9.7.4-win32.zip.asc)) &nbsp;
 [Changes](changelog-1009007.html) - 16 March 2016
-
-##  Legacy releases
-Sometimes, users may want to download old releases.
 * [openresty-1.9.7.3.tar.gz](https://openresty.org/download/openresty-1.9.7.3.tar.gz) &nbsp; 3.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-1.9.7.3.tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/openresty-1.9.7.3-win32.zip) &nbsp;
