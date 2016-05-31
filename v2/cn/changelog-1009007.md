@@ -6,6 +6,7 @@
 
 #  Version 1.9.7.5 - 31 May 2016
 * bugfix: applied the patch for nginx security advisory (CVE-2016-4450).
+* win32: now we use the latest MinGW gcc 4.9.3 to build the official Windows binaries.
 
 #  Version 1.9.7.4 - 16 March 2016
 * bugfix: `./configure`: use of relative paths like "./nginx" in `--prefix=PATH` led
