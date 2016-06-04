@@ -3,7 +3,7 @@ nginx = nginx
 md2html = pandoc --from markdown_github-hard_line_breaks --to html
 md2text = pandoc --from markdown_github-hard_line_breaks --to plain
 
-md_files := $(wildcard en/*.md cn/*.md) $(patsubst %.md.tt2,%.md,$(wildcard en/*.md.tt2))
+md_files := $(wildcard en/*.md cn/*.md) $(patsubst %.md.tt2,%.md,$(wildcard en/*.md.tt2 cn/*.md.tt2))
 html_files := $(patsubst %.md,html/%.html,$(md_files))
 txt_files := $(patsubst %.md,text/%.txt,$(md_files))
 
