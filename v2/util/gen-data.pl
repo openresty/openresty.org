@@ -109,6 +109,10 @@ sub parse_file {
     if (%missing_keys) {
         my $cmd = "git log -- $lang/$name.md";
 
+        if (-f "$lang/$name.md.tt2") {
+            $cmd .= ".tt2";
+        }
+
         open my $in, "$cmd|"
             or die "cannot open pipe to command $cmd: $!\n";
 
