@@ -4,7 +4,7 @@
     @created       2015-12-20 00:18 GMT
 --->
 
-#  Version 1.9.15.1 - 31 May 2016
+#  Version 1.9.15.1 - 3 June 2016
 
 * upgraded the [Nginx](nginx.html) core to 1.9.15.
     * see the changes here: http://nginx.org/en/CHANGES
