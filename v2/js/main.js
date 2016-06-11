@@ -2,6 +2,8 @@ var UI = {
 
 	init: function() {
 		this.navigation();
+
+		this.fixHeaderHeight();
 	},
 
 	navigation: function() {
@@ -13,7 +15,19 @@ var UI = {
 			$('#bar .right').addClass('open');
 			$(this).hide();
 		});
-	}
+	},
+
+    fixHeaderHeight: function() {
+        function update(ev) {
+            $(document.body).css(
+                'paddingTop',
+                Math.max($('header[role="header"]').outerHeight(), 88)
+            );
+        }
+
+        $(window).on('resize', update);
+        setTimeout(update, 0);
+    }
 }
 
 $(document).ready(function() {
