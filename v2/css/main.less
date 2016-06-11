@@ -7,32 +7,111 @@
 /*=====================================================================================
   Layout
 =======================================================================================*/
-header[role="header"] { .x(100%, 88px); .box; padding: 0 30px;
-	&:after { .cl; }
+header[role="header"] {
+    .box;
+    min-height: 88px;
+    padding: 0 30px;
+    width: 100%;
+
+	.scl();
 }
+
 #intro {}
-#wrapper { display: table;
-	.sidebar { background: @bg2; .box; display: table-cell; vertical-align: top;
-		&.sleft { width: 220px; padding-left: 30px; padding-right: 15px; .bs(inset -1px 0 2px rgba(0,0,0,0.2)); }
-		&.sright { width: 330px; .bs(inset 1px 0 2px rgba(0,0,0,0.2));  }
+#wrapper {
+    display: flex;
+    align-items: stretch;
+
+	.sidebar {
+        background: @bg2;
+        .box();
+
+        @media (min-width: @screen-md) {
+            flex: none;
+        }
+
+		&.sleft {
+            width: 220px; padding-left: 30px; padding-right: 15px;
+            .bs(inset -1px 0 2px rgba(0,0,0,0.2));
+        }
+		&.sright {
+            width: 330px;
+            .bs(inset 1px 0 2px rgba(0,0,0,0.2));
+        }
 	}
-	#main { min-width: 432px; width: ~'calc(100% - 220px - 330px)'; padding: 30px 0; display: table-cell; }
+
+	#main {
+        padding: 30px 0;
+        flex: auto;
+    }
+
+    @media (max-width: (@screen-xs - 1)) { /* very small screen */
+        flex-direction: column;
+
+        #main {
+            order: 1;
+        }
+        .sidebar {
+            order: 2;
+
+            &.sleft,
+            &.sright {
+                width: auto;
+            }
+        }
+    }
+
+    @media (min-width: @screen-xs) and (max-width: (@screen-md - 1)) { /* tablets */
+        flex-wrap: wrap;
+
+        #main {
+            order: 1;
+        }
+        .sidebar {
+            order: 2;
+            flex: auto;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
 }
 
 
 /*=====================================================================================
   HEADER
 =======================================================================================*/
-header[role="header"] { .vg(@green, darken(@green, 5%)); .bs(~'inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1)'); text-shadow: 0 1px 1px rgba(0,0,0,0.3); position: fixed; top: 0; left: 0; z-index: 5;
-	.site-name { text-transform: uppercase; line-height: 1; margin-top: 20px;
+header[role="header"] {
+    .vg(@green, darken(@green, 5%));
+    .bs(~'inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1)');
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    top: 0; left: 0; z-index: 5;
+    position: absolute;
+
+    @media (min-height: 600px) {
+        position: fixed;
+    }
+
+	.site-name {
+        /* text-transform: uppercase; */
+        margin-top: 20px;
 		a { font-size: 34px; font-weight: bold; color: @bg; text-decoration: none; 
 			span { color: @accent2; font-weight: 300; }
  		}
  		small { display: block; font-size: 13px; color: @bg; }
 	}
 
-	form { padding-top: 25px;
-		input[type=search] { .x(300px, 36px); border: 1px solid darken(@green, 15%); .br(18px;); font-size: 12px; padding: 0 10px 0 40px; background: rgba(255,255,255,0.9) url(../images/ico-search.png) 15px 50% no-repeat; 
+	form {
+        padding-top: 25px;
+        padding-bottom: 10px;
+        text-align: right;
+
+		input[type=search] {
+            .x(300px, 36px);
+            border: 1px solid darken(@green, 15%); .br(18px;); font-size: 12px; padding: 0 10px 0 40px; background: rgba(255,255,255,0.9) url(../images/ico-search.png) 15px 50% no-repeat; 
+
+            @media (max-width: (@screen-xs - 1)) { /* very small screen */
+                max-width: 80%;
+            }
+
 		  .bs(0 1px 1px rgba(255,255,255,0.3));
 		  -webkit-appearance: none; -moz-appearance: none; appearance: none;
 		  &:focus, &:active { background-color: #fff; outline: none; }
@@ -41,10 +120,21 @@ header[role="header"] { .vg(@green, darken(@green, 5%)); .bs(~'inset 0 1px 0 rgb
 }
 
 /*=====================================================================================
+  FOOTER
+=======================================================================================*/
+.content-footer {
+	.scl();
+}
+
+
+/*=====================================================================================
   INTRO
 =======================================================================================*/
-#intro { background: darken(@green, 11%) url(../images/bg-grid.png) top left; .x(100%, 260px); color: @bg;
-	.text { .x(80%, 100%); min-width: 982px; margin: 0 auto; padding-right: 300px; .box; background: url(../images/media-server.png) bottom right no-repeat; padding-top: 50px;
+#intro {
+    background: darken(@green, 11%) url(../images/bg-grid.png) top left;
+    .x(100%, 180px);
+    color: @bg;
+	.text { .x(80%, 100%); min-width: 982px; margin: 0 auto; padding-right: 300px; .box; background: url(../images/media-server.png) bottom right no-repeat; padding-top: 35px;
 	 	p { line-height: 28px; font-size: 20px; margin-bottom: 32px; 
 	 		&:last-child { margin-bottom: 0; }
 			small { font-size: 16px; }
@@ -59,8 +149,19 @@ header[role="header"] { .vg(@green, darken(@green, 5%)); .bs(~'inset 0 1px 0 rgb
   MAIN
 =======================================================================================*/
 #main {
-	.item { padding: 0 40px 40px 40px; border-bottom: 1px solid rgba(0,0,0,0.1); margin-bottom: 40px; 
-		header { margin-bottom: 20px; position: relative; 
+	.item {
+        border-bottom: 1px solid rgba(0,0,0,0.1); margin-bottom: 40px; 
+        padding: 0 40px 40px 40px;
+
+        @media (max-width: (@screen-xs - 1)) { /* very small screen */
+            padding: 0 15px 15px 15px;
+        }
+        @media (min-width: @screen-xs) and (max-width: (@screen-md - 1)) { /* tablets */
+            padding: 0 25px 25px 25px;
+        }
+
+		header {
+            margin-bottom: 20px; position: relative;
 			h2 { font-size: 36px; font-weight: 300; color: #000; }
 			small { font-size: 13px; color: #8a948a; 
 				a { font-weight: bold; text-decoration: none; }
@@ -86,14 +187,41 @@ header[role="header"] { .vg(@green, darken(@green, 5%)); .bs(~'inset 0 1px 0 rgb
 				
 			}
 		}
-		.body { line-height: 26px; }
+
+		.body {
+            line-height: 26px;
+            margin: 1em;
+
+            @media (max-width: (@screen-xs - 1)) { /* very small screen */
+                margin: 0;
+            }
+            @media (min-width: @screen-xs) and (max-width: (@screen-md - 1)) { /* tablets */
+                margin: .5em;
+            }
+
+            pre {
+                max-width: 100%;
+                overflow-x: auto;
+                position: relative;
+            }
+
+            p { margin-top: 20px; margin-bottom: 20px; margin-right: 4em; }
+            ul { text-align: left; width: 80%; margin-left: 2em; margin-top: 0.6em; margin-bottom: 0.6em; list-style: circle; }
+
+            h1 { font-size: 150%; padding-top: 1em; padding-bottom: 0.1em;}
+            h2 { font-size: 120%; padding-top: 1em; padding-bottom: 0.1em;}
+
+        }
+
 	}
 }
 
 /*=====================================================================================
   SIDEBARS
 =======================================================================================*/
-.sidebar { min-height: 100%; height: 100%;
+.sidebar {
+    min-height: 100%;
+
 	&.sleft { text-shadow: 0 1px 1px #fff; padding-top: 20px;
 		ul { line-height: 40px; font-size: 16px; font-weight: bold; margin-bottom: 20px;
 			li {
@@ -103,8 +231,9 @@ header[role="header"] { .vg(@green, darken(@green, 5%)); .bs(~'inset 0 1px 0 rgb
 				li { margin-bottom: 10px; 
 					a { .br; padding-left: 46px; color: #fff; display: block; line-height: 18px; padding: 10px 10px 10px 46px; text-shadow: 0 1px 1px rgba(0,0,0,0.3);
 						&.rss { background: #fd9f13 url(../images/ico-rss.png) 12px 50% no-repeat; }
-						&.paypal { background: #006492 url(../images/ico-paypal.png) 12px 50% no-repeat; }
 					}
+
+                    .paypal { background: #006492 url(../images/ico-paypal.png) 12px 50% no-repeat; }
 				}
 			}
 		}
@@ -131,6 +260,8 @@ header[role="header"] { .vg(@green, darken(@green, 5%)); .bs(~'inset 0 1px 0 rgb
 					a { float: left; padding: 0 20px; font-size: 13px; font-weight: bold; text-decoration: none; line-height: 50px; .box; height: 50px;
 						&.current { border-bottom: 4px solid @link; color: @basic; }
 					}
+
+                    span { color: #3e423e; float: left; padding: 0 20px; font-size: 13px; font-weight: bold; text-decoration: none; line-height: 50px; box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; height: 50px; }
 				}
 			}
 			.panes {
@@ -148,47 +279,22 @@ header[role="header"] { .vg(@green, darken(@green, 5%)); .bs(~'inset 0 1px 0 rgb
 			}
 		}
 	}
-
 }
 
+.search-result div.r { margin-bottom: 1em; margin-right: 2em; }
 
+div.footer {
+    font-size: 90%;
+    color: #888;
+    text-align: center;
+}
 
+div.content-footer {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+hr.footer-sep {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
