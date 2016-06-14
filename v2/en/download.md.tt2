@@ -8,6 +8,9 @@ You can download the latest release tarball below. After that, you can follow
 the instructions on the [Installation](installation.html) page to build and
 install it.
 
+All the releases are signed by the public PGP key
+[A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) of Yichun Zhang.
+
 # Releases
 
 ##  Lastest release
