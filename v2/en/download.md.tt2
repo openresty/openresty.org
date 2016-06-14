@@ -21,6 +21,8 @@ All the releases are signed by the public PGP key
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)) &nbsp;
 [Changes](changelog-1009015.html) - 3 June 2016
 
+All the releases are signed by the public key '[A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066)'.
+
 ##  Legacy releases
 Sometimes, users may want to download old releases.
 * [openresty-1.9.7.5.tar.gz](https://openresty.org/download/openresty-1.9.7.5.tar.gz) &nbsp; 3.5MB
