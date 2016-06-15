@@ -1,6 +1,8 @@
 Name
 ====
 
+[![Join the chat at https://gitter.im/openresty/openresty.org](https://badges.gitter.im/openresty/openresty.org.svg)](https://gitter.im/openresty/openresty.org?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 OpenResty.org - Code and data for the official site of OpenResty
 
 Table of Contents
