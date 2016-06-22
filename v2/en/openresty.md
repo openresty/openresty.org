@@ -4,7 +4,7 @@
     @created       2011-06-21 04:03 GMT
 --->
 
-OpenResty is a full-fledged web platform by integrating the standard [Nginx](nginx.html) core,
+OpenResty &trade; is a full-fledged web platform by integrating the standard [Nginx](nginx.html) core,
 [LuaJIT](luajit.html), many carefully written Lua libraries, lots of high quality
 [3rd-party Nginx modules](components.html), and most of their external dependencies.
 It is designed to help developers easily build scalable web applications, web
