@@ -15,6 +15,14 @@
 @media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
 @media (min-width: @screen-lg-min) { ... }
 */
+.left {
+  float: left;
+  display: inline;
+}
+.right {
+  float: right;
+  display: inline;
+}
 /*=====================================================================================
   Reset
 =======================================================================================*/
@@ -149,7 +157,6 @@ body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
-  padding-top: 88px;
 }
 hr {
   display: none;
@@ -192,14 +199,6 @@ a:hover {
 }
 input {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-.left {
-  float: left;
-  display: inline;
-}
-.right {
-  float: right;
-  display: inline;
 }
 /*=====================================================================================
   Layout
@@ -302,15 +301,7 @@ header[role="header"] {
   -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1);
   -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1);
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-  top: 0;
-  left: 0;
   z-index: 5;
-  position: absolute;
-}
-@media (min-height: 600px) {
-  header[role="header"] {
-    position: fixed;
-  }
 }
 header[role="header"] .site-name {
   /* text-transform: uppercase; */
@@ -389,22 +380,24 @@ header[role="header"] form input[type=search]:active {
 =======================================================================================*/
 #intro {
   background: #446d44 url(../images/bg-grid.png) top left;
-  width: 100%;
-  height: 180px;
+  min-height: 150px;
   color: #f9fcf9;
 }
 #intro .text {
   width: 80%;
-  height: 100%;
-  min-width: 982px;
   margin: 0 auto;
-  padding-right: 300px;
   box-sizing: border-box;
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  background: url(../images/media-server.png) bottom right no-repeat;
   padding-top: 35px;
+  padding-bottom: 35px;
+}
+@media (min-width: 768px) {
+  #intro .text {
+    padding-right: 300px;
+    background: url(../images/media-server.png) bottom right no-repeat;
+  }
 }
 #intro .text p {
   line-height: 28px;

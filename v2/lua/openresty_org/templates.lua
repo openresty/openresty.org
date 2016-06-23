@@ -215,35 +215,35 @@ template_map['index.tt2'] = function (context)
 i = i + 1 output[i] = '<!DOCTYPE html>\n<html lang="en">\n<head>\n	<meta charset="utf-8">\n	<title>'
 -- line 5 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty - Official Site' }})
-i = i + 1 output[i] = '</title>\n	<link href=\'https://openresty.org/css/fonts.css\' rel=\'stylesheet\' type=\'text/css\'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel="stylesheet" type="text/less" href="/css/main.less">\n	<script src="/js/less.js"></script>\n	-->\n	<link rel="stylesheet" type="text/css" href="/css/main.css">\n        <script>\n'
--- line 14 "index.tt2"
+i = i + 1 output[i] = '</title>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">\n	<link href=\'https://openresty.org/css/fonts.css\' rel=\'stylesheet\' type=\'text/css\'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel="stylesheet" type="text/less" href="/css/main.less">\n	<script src="/js/less.js"></script>\n	-->\n	<link rel="stylesheet" type="text/css" href="/css/main.css">\n        <script>\n'
+-- line 15 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'old-permlink-js.tt2')
 i = i + 1 output[i] = '\n        </script>\n</head>\n<body>\n\n'
--- line 19 "index.tt2"
+-- line 20 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'header.tt2')
 i = i + 1 output[i] = '\n\n	<section id="intro">\n		<div class="text">\n			<p>'
--- line 23 "index.tt2"
+-- line 24 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty is a dynamic web platform based on NGINX and LuaJIT.' }})
 i = i + 1 output[i] = '</p>\n			<p><small>'
--- line 24 "index.tt2"
+-- line 25 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'It’s open-source stuff so you can contribute:' }})
 i = i + 1 output[i] = '</small>\n                           <a href="https://github.com/openresty/" class="github">'
--- line 25 "index.tt2"
+-- line 26 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Contribute on GitHub' }})
 i = i + 1 output[i] = ' &raquo;</a></p>\n		</div><!-- / text -->\n	</section><!-- / intro -->\n\n	<div id="wrapper">\n		<div class="sidebar sleft">\n			<nav id="nav">\n'
--- line 32 "index.tt2"
+-- line 33 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, 'main_menu')
 i = i + 1 output[i] = '\n			</nav><!-- / nav -->\n\n'
--- line 35 "index.tt2"
+-- line 36 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'main-menu-buttons.tt2')
 i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n		\n		<section id="main">\n'
--- line 40 "index.tt2"
+-- line 41 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'post.tt2')
 i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n'
--- line 43 "index.tt2"
+-- line 44 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
 i = i + 1 output[i] = '\n\n	</div><!-- / wrapper -->\n\n'
--- line 47 "index.tt2"
+-- line 48 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'footer.tt2')
 i = i + 1 output[i] = '\n\n</body>\n</html>\n'
 
@@ -290,23 +290,23 @@ template_map['page.tt2'] = function (context)
 i = i + 1 output[i] = '<!DOCTYPE html>\n<html lang="en">\n<head>\n	<meta charset="utf-8">\n	<title>OpenResty - '
 -- line 5 "page.tt2"
 i = i + 1 output[i] = stash_get(stash, 'title')
-i = i + 1 output[i] = '</title>\n	<link href=\'https://openresty.org/css/fonts.css\' rel=\'stylesheet\' type=\'text/css\'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel="stylesheet" type="text/less" href="/css/main.less">\n	<script src="/js/less.js"></script>\n	-->\n	<link rel="stylesheet" type="text/css" href="/css/main.css">\n</head>\n<body>\n\n'
--- line 16 "page.tt2"
+i = i + 1 output[i] = '</title>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">\n	<link href=\'https://openresty.org/css/fonts.css\' rel=\'stylesheet\' type=\'text/css\'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel="stylesheet" type="text/less" href="/css/main.less">\n	<script src="/js/less.js"></script>\n	-->\n	<link rel="stylesheet" type="text/css" href="/css/main.css">\n</head>\n<body>\n\n'
+-- line 17 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'header.tt2')
 i = i + 1 output[i] = '\n\n	<div id="wrapper">\n		<div class="sidebar sleft">\n			<nav id="nav">\n'
--- line 21 "page.tt2"
+-- line 22 "page.tt2"
 i = i + 1 output[i] = stash_get(stash, 'main_menu')
 i = i + 1 output[i] = '\n			</nav><!-- / nav -->\n\n'
--- line 24 "page.tt2"
+-- line 25 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'main-menu-buttons.tt2')
 i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n		\n		<section id="main">\n'
--- line 29 "page.tt2"
+-- line 30 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'post.tt2')
 i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n'
--- line 32 "page.tt2"
+-- line 33 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
 i = i + 1 output[i] = '\n	</div><!-- / wrapper -->\n\n'
--- line 35 "page.tt2"
+-- line 36 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'footer.tt2')
 i = i + 1 output[i] = '\n\n</body>\n</html>\n'
 
