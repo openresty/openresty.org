@@ -132,9 +132,21 @@ header[role="header"] {
 =======================================================================================*/
 #intro {
     background: darken(@green, 11%) url(../images/bg-grid.png) top left;
-    .x(100%, 180px);
+    min-height: 180px;
     color: @bg;
-	.text { .x(80%, 100%); min-width: 982px; margin: 0 auto; padding-right: 300px; .box; background: url(../images/media-server.png) bottom right no-repeat; padding-top: 35px;
+
+	.text {
+        width: 80%;
+        margin: 0 auto;
+        .box;
+        padding-top: 35px;
+        padding-bottom: 15px;
+
+        @media (min-width: @screen-sm) {
+            padding-right: 300px;
+            background: url(../images/media-server.png) bottom right no-repeat;
+        }
+
 	 	p { line-height: 28px; font-size: 20px; margin-bottom: 32px;
 	 		&:last-child { margin-bottom: 0; }
 			small { font-size: 16px; }

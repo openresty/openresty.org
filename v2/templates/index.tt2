@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>[% c.l("OpenResty - Official Site") %]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
 	<link href='https://openresty.org/css/fonts.css' rel='stylesheet' type='text/css'>
 	<!--
 	If you ever wanted to use LESS instead of CSS...
