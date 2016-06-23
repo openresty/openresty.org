@@ -605,7 +605,7 @@ header[role="header"] form input[type=search]:active {
 #main .item .body p {
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-right: 4em;
+  margin-right: 10px;
 }
 #main .item .body ul {
   text-align: left;
