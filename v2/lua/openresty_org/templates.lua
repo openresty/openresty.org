@@ -259,7 +259,7 @@ template_map['main-menu-buttons.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '<ul class="buttons">\n    <!-- <li><a href="#" class="btn rss">RSS Feed</a></li> -->\n    <li>\n        <!-- <a href="#" class="btn paypal">Donate with PayPal</a> -->\n        <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">\n        <input type="hidden" name="cmd" value="_xclick">\n        <input type="hidden" name="business" value="agentzh@gmail.com">\n        <input type="hidden" name="item_name" value="OpenResty Donation (in USD)">\n        <input type="hidden" name="currency_code" value="USD">\n        <input type="hidden" name="amount" value="">\n        <input type="image" src="/images/donate_paypal.gif" border="0" name="submit" alt="Donate with PayPal">\n        </form>\n    </li>\n</ul>\n'
+i = i + 1 output[i] = '<ul class="buttons">\n    <!-- <li><a href="#" class="btn rss">RSS Feed</a></li> -->\n    <li>\n        <!-- <a href="#" class="btn paypal">Donate with PayPal</a> -->\n        <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">\n        <input type="hidden" name="cmd" value="_xclick">\n        <input type="hidden" name="business" value="agentzh@gmail.com">\n        <input type="hidden" name="item_name" value="OpenResty Donation (in USD)">\n        <input type="hidden" name="currency_code" value="USD">\n        <input type="hidden" name="amount" value="">\n        <input type="image" src="/images/donate_paypal.gif" name="submit" alt="Donate with PayPal">\n        </form>\n    </li>\n</ul>\n'
 
     return output
 end
