@@ -5,6 +5,35 @@
 
 
 /*=====================================================================================
+  Reset
+=======================================================================================*/
+a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, date, tr, ul, var, video { margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; }
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
+a, ins, del { text-decoration: none; }
+blockquote, q { quotes:none; }
+ul, ol { list-style: none; }
+table { border-spacing: 0; border-collapse: collapse; }
+caption, th { text-align: left; }
+blockquote:before, blockquote:after, q:after, q:before { content: ''; }
+/*=====================================================================================
+  Basic Styles
+=======================================================================================*/
+html { height: 100%; }
+body { background: @bg; color: @basic; font-family: @fontstack; font-size: 16px; -webkit-font-smoothing: antialiased; }
+hr { display: none; }
+b, strong { font-weight: bold; }
+em { font-style: italic; }
+del { text-decoration: line-through; }
+address, cite, dfn { font-style: normal; }
+abbr, acronym { border-bottom: 1px dotted #999; cursor: help; }
+img { vertical-align: middle; }
+a, a:visited { color: @link; text-decoration: underline; }
+a:active { color: @link; outline: 0; text-decoration: underline; }
+a:hover { color: darken(@link, 15%); }
+input { font-family: @fontstack; }
+
+
+/*=====================================================================================
   Layout
 =======================================================================================*/
 header[role="header"] {
@@ -83,12 +112,7 @@ header[role="header"] {
     .vg(@green, darken(@green, 5%));
     .bs(~'inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1)');
     text-shadow: 0 1px 1px rgba(0,0,0,0.3);
-    top: 0; left: 0; z-index: 5;
-    position: absolute;
-
-    @media (min-height: 600px) {
-        position: fixed;
-    }
+    z-index: 5;
 
 	.site-name {
         /* text-transform: uppercase; */
@@ -132,7 +156,7 @@ header[role="header"] {
 =======================================================================================*/
 #intro {
     background: darken(@green, 11%) url(../images/bg-grid.png) top left;
-    min-height: 180px;
+    min-height: 150px;
     color: @bg;
 
 	.text {
@@ -140,7 +164,7 @@ header[role="header"] {
         margin: 0 auto;
         .box;
         padding-top: 35px;
-        padding-bottom: 15px;
+        padding-bottom: 35px;
 
         @media (min-width: @screen-sm) {
             padding-right: 300px;
