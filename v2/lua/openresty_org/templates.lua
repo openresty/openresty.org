@@ -171,7 +171,7 @@ template_map['header.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '<header>\n        <p class="site-name left">\n                <a href=".">OpenResty <span class="trade">&trade;</span></a>\n                <small>'
+i = i + 1 output[i] = '<header role="header">\n        <p class="site-name left">\n                <a href=".">OpenResty <span class="trade">&trade;</span></a>\n                <small>'
 -- line 4 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Scalable Web Platform by Extending NGINX with Lua' }})
 i = i + 1 output[i] = '</small>\n        </p><!-- / site-name -->\n\n        <form action="search.html" class="right">\n                <fieldset>\n                        <input type="search" name="query" id="search"'

@@ -1,4 +1,4 @@
-<header>
+<header role="header">
         <p class="site-name left">
                 <a href=".">OpenResty <span class="trade">&trade;</span></a>
                 <small>[% c.l("Scalable Web Platform by Extending NGINX with Lua") %]</small>
