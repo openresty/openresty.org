@@ -34,7 +34,7 @@ the page for non-PayPal members.
 <input type="hidden" name="item_name" value="OpenResty Donation (in USD)">
 <input type="hidden" name="currency_code" value="USD">
 <input type="hidden" name="amount" value="">
-<input type="image" src="/images/donate_paypal.gif" border="0" name="submit"
+<input type="image" src="/images/donate_paypal.gif" name="submit"
 alt="Donate with PayPal">
 </form>
 </html>
