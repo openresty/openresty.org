@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
 	<title>OpenResty - [% title %]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
-	<link href='https://openresty.org/css/fonts.css' rel='stylesheet' type='text/css'>
+    <link href='https://openresty.org/css/fonts.css?v=CACHETAG' rel='stylesheet' type='text/css'>
 	<!--
 	If you ever wanted to use LESS instead of CSS...
 	<link rel="stylesheet" type="text/less" href="/css/main.less">
 	<script src="/js/less.js"></script>
 	-->
-	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css?v=CACHETAG">
 </head>
 <body>
 

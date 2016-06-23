@@ -17,6 +17,7 @@ extract_pl = ./util/extract.pl
 gendata_pl = ./util/gen-data.pl
 msginit_pl = ./util/msginit.pl
 msgfmt_pl = ./util/msgfmt.pl
+updatecachetag_pl = ./util/update-cachetag.pl
 
 po_files = po/cn.po
 tsv_files = posts-en.tsv posts-cn.tsv
@@ -31,7 +32,7 @@ all: templates msgfmt
 templates: $(templates_lua)
 
 $(templates_lua): $(tt2_files)
-	lemplate --compile $^ > $@
+	lemplate --compile $^ | $(updatecachetag_pl) > $@
 
 .PHONE: run
 run:
