@@ -2,10 +2,6 @@
     @title         OpenResty
     @creator       Yichun Zhang
     @created       2011-06-21 04:03 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2015-12-30 20:16 GMT
-    @changes       25
 --->
 
 OpenResty &trade; 是一个基于 [Nginx](nginx.html) 与 Lua 的高性能 Web 平台，其内部集成了大量精良的

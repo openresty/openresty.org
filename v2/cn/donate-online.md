@@ -2,10 +2,6 @@
     @title         Donate Online
     @creator       Zoom Quiet
     @created       2012-05-29 14:32 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2015-08-11 10:27 GMT
-    @changes       16
 --->
 
 
@@ -24,7 +20,7 @@ PayPal 快捷完成.
 <input type="hidden" name="item_name" value="OpenResty Donation (in USD)">
 <input type="hidden" name="currency_code" value="USD">
 <input type="hidden" name="amount" value="">
-<input type="image" src="/images/donate_paypal.gif" border="0" name="submit"
+<input type="image" src="/images/donate_paypal.gif" name="submit"
 alt="用 PayPal 捐助">
 </form>
 </html>
