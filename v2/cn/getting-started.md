@@ -97,4 +97,4 @@ See [Benchmark](benchmark.html) for details.
 # Where to go from here
 
 View the documentation of each component at the [Components](components.html) page
-and find [Nginx](nginx.html) related stuffs on the [Nginx Wiki site](http://wiki.nginx.org/).
+and find [Nginx](nginx.html) related stuff on the [Nginx Wiki site](http://wiki.nginx.org/).
