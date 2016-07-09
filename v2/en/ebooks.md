@@ -4,7 +4,7 @@
     @created       2012-01-05 15:15 GMT
 --->
 
-#  eBook "Programming OpenResty"
+# Programming OpenResty
 
 Written by Yichun Zhang.
 
@@ -14,7 +14,8 @@ Written by Yichun Zhang.
     * [EPUB Format](https://www.gitbook.com/download/epub/book/openresty/programming-openresty)
     * [Mobi Format](https://www.gitbook.com/download/mobi/book/openresty/programming-openresty)
 
-#  eBook "agentzh's Nginx Tutorials" (version 2012.04.18)
+# agentzh's Nginx Tutorials
+
 * English Edition
     * [HTML Single-Page Format](https://openresty.org/download/agentzh-nginx-tutorials-enuk.html) (Web browser users)
     * [MOBI Format](https://openresty.org/download/agentzh-nginx-tutorials-enuk.mobi) (Kindle users)
@@ -28,6 +29,7 @@ Written by Yichun Zhang.
 * Git Repository
     * https://github.com/agentzh/nginx-tutorials
 
-#  eBook "OpenResty Best Practices"
+# OpenResty Best Practices
+
 * Chinese Edition
     * [Git Book](https://www.gitbook.com/book/moonbingbing/openresty-best-practices/details)
