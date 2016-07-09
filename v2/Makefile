@@ -42,6 +42,10 @@ reload: logs/nginx.pid all
 	$(nginx) -p $$PWD -c conf/nginx.conf -t
 	kill -HUP `cat $<`
 
+stop: logs/nginx.pid
+	$(nginx) -p $$PWD -c conf/nginx.conf -t
+	kill -QUIT `cat $<`
+
 .PHONE: clean
 clean:
 	rm -rf html text *.tsv
