@@ -2,12 +2,17 @@
     @title         eBooks
     @creator       Yichun Zhang
     @created       2012-01-05 15:15 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2015-07-08 11:46 GMT
-    @changes       33
 --->
 
+#  eBook "Programming OpenResty"
+
+Written by Yichun Zhang.
+
+* English Edition
+    * [HTML Format](https://openresty.gitbooks.io/programming-openresty/content/) (Web browser users)
+    * [PDF Format](https://www.gitbook.com/download/pdf/book/openresty/programming-openresty)
+    * [EPUB Format](https://www.gitbook.com/download/epub/book/openresty/programming-openresty)
+    * [Mobi Format](https://www.gitbook.com/download/mobi/book/openresty/programming-openresty)
 
 #  eBook "agentzh's Nginx Tutorials" (version 2012.04.18)
 * English Edition
