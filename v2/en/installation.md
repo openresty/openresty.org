@@ -4,6 +4,9 @@
     @created       2011-06-21 04:40 GMT
 --->
 
+OpenResty provides [official pre-built packages](linux-packages.html) for some of the common
+Linux distributions. Ensure you have checked them out first.
+
 If you haven't downloaded the [OpenResty](openresty.html) source code tarball,
 please go to the [Download](download.html) page first.
 
