@@ -39,7 +39,7 @@ to draft up a init script for each of your OpenResty application yourself, howev
 This package enables the dtrace static probes in the NGINX core and some NGINX C modules (like `ngx_http_lua_module`),
 which can be consumed by dynamic tracing tools like SystemTap.
 
-We use our own builds of OpenSSL (through the `openresty-openssl` package), PCRE, and zlib to ensure these
+We use our own builds of OpenSSL (through the `openresty-openssl` package), PCRE, zlib, and LuaJIT to ensure these
 critical components are up to date and well formed.
 
 # openresty-resty
