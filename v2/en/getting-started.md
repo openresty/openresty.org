@@ -2,16 +2,17 @@
     @title         Getting Started
     @creator       Yichun Zhang
     @created       2011-06-20 11:39 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2013-08-24 19:42 GMT
-    @changes       30
 --->
 
-First of all, please go to the [Download](download.html) page to get the source
+First of all, you need to install OpenResty to your system.
+
+If you are in Linux, please check out OpenResty's official [pre-built packages](linux-packages.html) if your
+Linux distribution is currently supported. If you use the official pre-built package, please
+replace the `nginx` command in this document below with the `openresty` command.
+
+Failing that, you can go to the [Download](download.html) page to get the source
 code tarball of [OpenResty](openresty.html), and see the [Installation](installation.html) page
 for how to build and install it into your system.
-
 
 # HelloWorld
 
