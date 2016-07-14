@@ -2,7 +2,7 @@
     @title         Linux Packages
 --->
 
-OpenResty provides official pre-built packages for the following Linux distributions and versions:
+OpenResty provides official pre-built packages for the following Linux distributions and versions.
 
 * RHEL/CentOS
 
@@ -25,7 +25,7 @@ OpenResty provides official pre-built packages for the following Linux distribut
 # RHEL/CentOS
 
 You can add the `openresty` repository to your RHEL or CentOS system so as to easily install
-our packages and receive updates automatically in the future. To add the repository, just
+our packages and receive updates in the future (via the `yum update` command). To add the repository, just
 create the file named `/etc/yum.repos.d/OpenResty.repo` with the following content:
 
 ```ini
@@ -63,7 +63,7 @@ sudo dnf copr enable openresty/openresty
 ```
 
 Then you can easily install packages from the `openresty-openresty` repository and receive updates
-automatically in the future. For example, to install the `openresty` package, we can just run the
+in the future (through the `dnf update` command). For example, to install the `openresty` package, we can just run the
 following command:
 
 ```bash

@@ -2,7 +2,7 @@
     @title         RPM Packages
 --->
 
-The OpenResty official Yum repositories provide the following RPM packages:
+The OpenResty official Yum repositories provide the following RPM packages.
 
 # openresty
 
@@ -69,8 +69,6 @@ restydoc ngx_lua
 
 restydoc -s content_by_lua
 
-restydoc -s table.concat
-
 restydoc -s proxy_pass
 ```
 
@@ -89,6 +87,10 @@ differences:
 2. It enables the NGINX debugging log capability.
 3. It uses the `openresty-openssl-debug` package instead of `openresty-openssl` for the OpenSSL library.
 4. It enables API checks and assertions in the LuaJIT build.
+5. It enables the assertions in the `ngx_http_lua` module.
+6. It makes the `ngx_http_lua` module abort the current nginx worker process immediately upon LuaJIT allocation
+failures in its GC-managed memory (the default behavior is logging an error message and gracefully quit
+the current worker process).
 
 You should never use this package in production. This package is for development only.
 
@@ -102,6 +104,10 @@ done in the `openresty-debug` package:
 1. It disables the memory pools used in the NGINX by applying the "[no-pool](https://github.com/openresty/no-pool-nginx)" patch.
 2. It enforces LuaJIT to use the system allocator instead of its own.
 3. It enables the internal Valgrind co-operations in the LuaJIT build.
+
+See the following tutorials on more details on Valgrind-based testing in the context of OpenResty:
+
+https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.html#_valgrind_mode
 
 # openresty-openssl
 
