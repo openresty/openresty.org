@@ -6,17 +6,21 @@ OpenResty provides official pre-built packages for the following Linux distribut
 
 * RHEL/CentOS
 
+```
     Version         Supported Architectures
     5.x             x86_64, i386
     6.x             x86_64, i386
     7.x             x86_64
+```
 
 * Fedora
 
+```
     Version         Supported Architectures
     22              x86_64, i386
     23              x86_64, i386
     24              x86_64, i386
+```
 
 # RHEL/CentOS
 
