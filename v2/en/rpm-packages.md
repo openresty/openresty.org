@@ -83,17 +83,17 @@ correctly.
 This is the normal debug build of OpenResty. As compared to the `openresty` package, it has the following
 differences:
 
-1. It disables C compiler optimizations in the build.
-2. It enables the NGINX debugging log capability.
-3. It uses the `openresty-openssl-debug` package instead of `openresty-openssl` for the OpenSSL library.
-4. It enables API checks and assertions in the LuaJIT build.
-5. It enables the assertions in the `ngx_http_lua` module.
-6. It makes the `ngx_http_lua` module abort the current nginx worker process immediately upon LuaJIT allocation
+* It disables C compiler optimizations in the build.
+* It enables the NGINX debugging log capability.
+* It uses the `openresty-openssl-debug` package instead of `openresty-openssl` for the OpenSSL library.
+* It enables API checks and assertions in the LuaJIT build.
+* It enables the assertions in the `ngx_http_lua` module.
+* It makes the `ngx_http_lua` module abort the current nginx worker process immediately upon LuaJIT allocation
 failures in its GC-managed memory (the default behavior is logging an error message and gracefully quit
 the current worker process).
-7. The default server prefix of its NGINX is `/usr/local/openresty-debug/`.
-8. The entry point visible to your `PATH` environment is `openresty-debug` instead of `openresty`.
-9. It does not come with a init script.
+* The default server prefix of its NGINX is `/usr/local/openresty-debug/`.
+* The entry point visible to your `PATH` environment is `openresty-debug` instead of `openresty`.
+* It does not come with a init script.
 
 You should never use this package in production. This package is for development only.
 
@@ -104,11 +104,11 @@ to check various kinds of memory issues, like memory leaks and memory invalid ac
 possibilities of catching memory bugs via Valgrind, this build does the following in addition to those
 done in the `openresty-debug` package:
 
-1. It disables the memory pools used in the NGINX by applying the "[no-pool](https://github.com/openresty/no-pool-nginx)" patch.
-2. It enforces LuaJIT to use the system allocator instead of its own.
-3. It enables the internal Valgrind co-operations in the LuaJIT build.
-4. The default server prefix of its NGINX is `/usr/local/openresty-valgrind/`.
-5. The entry point visible to your `PATH` environment is `openresty-valgrind` instead of `openresty-debug`.
+* It disables the memory pools used in the NGINX by applying the "[no-pool](https://github.com/openresty/no-pool-nginx)" patch.
+* It enforces LuaJIT to use the system allocator instead of its own.
+* It enables the internal Valgrind co-operations in the LuaJIT build.
+* The default server prefix of its NGINX is `/usr/local/openresty-valgrind/`.
+* The entry point visible to your `PATH` environment is `openresty-valgrind` instead of `openresty-debug`.
 
 See the following tutorials on more details on Valgrind-based testing in the context of OpenResty:
 
@@ -123,10 +123,10 @@ to save some overhead.
 
 This is the debug build of OpenSSL library. As compared to `openresty-openssl`, it has the following changes:
 
-1. It disables any C compiler optimizations.
-2. It relies on the libefence library of the standard `ElectricFence` package to do extra checks.
-3. It is Valgrind clean and free of any Valgrind false positives.
-4. Assembly code is disabled so we always have perfect C-land backtraces and etc.
+* It disables any C compiler optimizations.
+* It relies on the libefence library of the standard `ElectricFence` package to do extra checks.
+* It is Valgrind clean and free of any Valgrind false positives.
+* Assembly code is disabled so we always have perfect C-land backtraces and etc.
 
 # perl-Test-Nginx
 
