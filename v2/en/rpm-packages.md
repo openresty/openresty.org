@@ -85,6 +85,8 @@ differences:
 
 * It disables C compiler optimizations in the build.
 * It enables the NGINX debugging log capability.
+* It enables the poll module in NGINX in addition to the default epoll module so that
+the [mockeagain](https://github.com/openresty/mockeagain) testing tool can be used.
 * It uses the `openresty-openssl-debug` package instead of `openresty-openssl` for the OpenSSL library.
 * It enables API checks and assertions in the LuaJIT build.
 * It enables the assertions in the `ngx_http_lua` module.
@@ -134,6 +136,9 @@ This is our [Test::Nginx](https://github.com/openresty/test-nginx) test framewor
 introduction to this test scaffold:
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/
+
+We do not provide this package for RHEL 5.x and CentOS 5.x since these sytems are too old to have enough
+Perl CPAN module dependencies in their standard yum repositories (like `perl-Test-Base` and `perl-Test-LongString`).
 
 # Debuginfo Packages
 
