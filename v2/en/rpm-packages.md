@@ -91,6 +91,9 @@ differences:
 6. It makes the `ngx_http_lua` module abort the current nginx worker process immediately upon LuaJIT allocation
 failures in its GC-managed memory (the default behavior is logging an error message and gracefully quit
 the current worker process).
+7. The default server prefix of its NGINX is `/usr/local/openresty-debug/`.
+8. The entry point visible to your `PATH` environment is `openresty-debug` instead of `openresty`.
+9. It does not come with a init script.
 
 You should never use this package in production. This package is for development only.
 
@@ -104,6 +107,8 @@ done in the `openresty-debug` package:
 1. It disables the memory pools used in the NGINX by applying the "[no-pool](https://github.com/openresty/no-pool-nginx)" patch.
 2. It enforces LuaJIT to use the system allocator instead of its own.
 3. It enables the internal Valgrind co-operations in the LuaJIT build.
+4. The default server prefix of its NGINX is `/usr/local/openresty-valgrind/`.
+5. The entry point visible to your `PATH` environment is `openresty-valgrind` instead of `openresty-debug`.
 
 See the following tutorials on more details on Valgrind-based testing in the context of OpenResty:
 
