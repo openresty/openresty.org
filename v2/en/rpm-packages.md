@@ -130,6 +130,15 @@ This is the debug build of OpenSSL library. As compared to `openresty-openssl`, 
 * It is Valgrind clean and free of any Valgrind false positives.
 * Assembly code is disabled so we always have perfect C-land backtraces and etc.
 
+# perl-Lemplate
+
+This package provides the command-line utility, [lemplate](https://metacpan.org/pod/Lemplate),
+that can compile template files in perl's TT2 templating language syntax to standalone
+Lua modules for OpenResty.
+
+The OpenResty official site, openresty.org, [uses](https://github.com/openresty/openresty.org)
+Lemplate as the HTML page template compiler, for example.
+
 # perl-Test-Nginx
 
 This is our [Test::Nginx](https://github.com/openresty/test-nginx) test framework. Read the following book chapter on a complete
