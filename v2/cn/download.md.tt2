@@ -4,6 +4,11 @@
     @created       2011-06-21 04:25 GMT
 --->
 
+对于一些常见的 Linux 发行版本，OpenResty 提供 [官方预编译包](linux-packages.html)。确保你首先用这种方式来安装。
+
+你可以下载下面最新的版本。然后按照 [安装](installation.html)页面的说明来 build 和安装。
+
+所有的版本都已经使用 Yichun Zhang 的 PGP 公钥 [A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) 签名。
 
 # 发布
 
