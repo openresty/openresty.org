@@ -7,7 +7,7 @@
 OpenResty provides [official pre-built packages](linux-packages.html) for some of the
 common Linux distributions. Ensure you have checked them out first.
 
-You can download the latest release tarball below. After that, you can follow
+You can download the source release tarballs below. After that, you can follow
 the instructions on the [Installation](installation.html) page to build and
 install it.
 
