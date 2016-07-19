@@ -77,5 +77,4 @@ sudo dnf repo-pkgs openresty-openresty list available
 
 # 更多精彩，未完待续
 
-我们正在尽力为你带来更多 Linux 发行版本的包资源库，比如 Ubuntu,
-Debian 和 Amazon Linux. 敬请期待!
+我们正在尽力为你带来更多 Linux 发行版本的包资源库，比如 Ubuntu, Debian 和 Amazon Linux. 敬请期待!

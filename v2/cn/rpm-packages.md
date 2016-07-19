@@ -24,39 +24,31 @@ sudo /sbin/service openresty start
 sudo openresty -p /opt/my-fancy-app/
 ```
 
-Then you have sub-directories like `conf/`, `html/` and `logs/` under the `/opt/my-fancy-app/` directory.
-This way, we can avoid polluting the OpenResty installation trees under `/usr/local/openresty/` and allow
-multiple different OpenResty applications sharing the same OpenResty server installation. You will need
-to draft up a init script for each of your OpenResty application yourself, however. You can use the default
-`/etc/init.d/openresty` init script as a template.
+然后在 `/opt/my-fancy-app/` 目录下会有一些 `conf/`, `html/` 和 `logs/` 这样的子目录。
+用这种方法，我们可以避免污染 `/usr/local/openresty/` 下的 OpenResty 安装目录树，并且允许多个不同的 OpenResty 应用共享同一个 OpenResty 服务程序。但是你需要为每一个自己的 OpenResty 应用写一份启动脚本。你可以使用默认的 `/etc/init.d/openresty` 启动脚本作为参考模板。
 
-This package enables the dtrace static probes in the NGINX core and some NGINX C modules (like `ngx_http_lua_module`),
-which can be consumed by dynamic tracing tools like SystemTap.
+这个包在 NGINX 内核和一些 NGINX C 模块(比如 `ngx_http_lua_module`)中开启了 dtrace 静态探针，这样 SystemTap 之类的动跟踪工具就可以来使用。
 
-We use our own builds of OpenSSL (through the `openresty-openssl` package), PCRE, zlib, and LuaJIT to ensure these
-critical components are up to date and well formed.
+我们使用了我们自己版本的 OpenSSL（通过 `openresty-openssl` 包）,PCRE, zlib 和 LuaJIT，来保证这些关键组件是最新的并且在一起工作正常。
 
 # openresty-resty
 
-This package contains the `resty` command-line utility, which is visible to your `PATH` environment (as
-`/usr/bin/resty`. To try it out, just type
+这个包里面有 `resty` 命令行程序，它可以在你的 `PATH` 环境变量（做为 `/usr/bin/resty`）中看到。你可以这样尝试用下
 
 ```console
 $ resty -e 'ngx.say("hello")'
 hello
 ```
 
-This package depends on the standard `perl` package and our `openresty` package to work properly.
+这个包依赖标准 `perl` 包以及我们的 `openresty` 包才能正常工作。
 
-See the [resty-cli](https://github.com/openresty/resty-cli) project for more details.
+你可以从 [resty-cli](https://github.com/openresty/resty-cli) 这个项目得到更多细节。
 
 # openresty-doc
 
-This package contains the OpenResty documentation tool chain and documentation data. The most useful tool
-is the `restydoc` command-line utility, which should be visible to your `PATH` environment by default (as
-`/usr/bin/restydoc`.
+这个包包含 OpenResty 文档工具链和文档数据。最有用的工具是 `restydoc` 命令行程序，默认应该能在你的 `PATH` 环境变量（做为 `/usr/bin/restydoc`）里面看到。
 
-To try it out:
+这样尝试:
 
 ```bash
 restydoc ngx_lua
@@ -66,80 +58,70 @@ restydoc -s content_by_lua
 restydoc -s proxy_pass
 ```
 
-See the output of the `restydoc -h` command for more details on its usage.
+可以从 `restydoc -h` 命令的输出中看到更多使用的细节。
 
-For the best result, please ensure your terminal is using the UTF-8 character encoding and both of your `perl`
-and `groff` installations are modern enough. Otherwise those non-ASCII characters may not be displayed
-correctly.
+为了达到最佳结果，请确保你的 terminal 使用的是 UTF-8 字符编码，并且安装的 `perl` 和 `groff` 是比较新的版本。否则那些非 ASCII 的字符可能显示不正常。
 
 # openresty-debug
 
-This is the normal debug build of OpenResty. As compared to the `openresty` package, it has the following
-differences:
+这个是 OpenResty 的正常调试版本。和 `openresty` 包比起来，它有以下不同：
 
-* It disables C compiler optimizations in the build.
-* It enables the NGINX debugging log capability.
-* It uses the `openresty-openssl-debug` package instead of `openresty-openssl` for the OpenSSL library.
-* It enables API checks and assertions in the LuaJIT build.
-* It enables the assertions in the `ngx_http_lua` module.
-* It makes the `ngx_http_lua` module abort the current nginx worker process immediately upon LuaJIT allocation
-failures in its GC-managed memory (the default behavior is logging an error message and gracefully quit
-the current worker process).
-* The default server prefix of its NGINX is `/usr/local/openresty-debug/`.
-* The entry point visible to your `PATH` environment is `openresty-debug` instead of `openresty`.
-* It does not come with a init script.
+* 这个版本禁止了 C 编译器的各种优化。
+* 它打开了 NGINX 调试日志功能。
+* 对于 OpenSSL 库，它使用 `openresty-openssl-debug` 包替代了 `openresty-openssl`。
+* 它在 LuaJIT 版本中打开了 API 检查和断言。
+* 在 `ngx_http_lua` 模块中打开了断言。
+* 它让 `ngx_http_lua` 模块在 LuaJIT 自己的垃圾回收管理内存分配失败时，立即退出当前的 nginx 工作进程（默认行为是记录错误信息并优雅退出当前工作进程）。
+* NGINX 默认的服务前缀是 `/usr/local/openresty-debug/`。
+* 你在 `PATH` 环境变量里面看到的入口点是 `openresty-debug` 而不是 `openresty`。
+* 它没有带启动脚本。
 
-You should never use this package in production. This package is for development only.
+你永远都不应该在生产环境上使用这个包。这个包是仅供开发使用。
 
 # openresty-valgrind
 
-This is a special debug version of OpenResty targeting the Valgrind tool chain. Valgrind is a powerful tool
-to check various kinds of memory issues, like memory leaks and memory invalid accesses. To maximize the
-possibilities of catching memory bugs via Valgrind, this build does the following in addition to those
-done in the `openresty-debug` package:
+这是 OpenResty 的一个特别调试版本，为了配合 Valgrind 工具链。Valgrind 是一个检测各种内存问题的强大工具，比如内存泄露和内存非法访问。为了用 Valgrind 最大限度的捕获到内存 bug，这个版本在 `openresty-debug` 基础上增加了如下操作：
 
-* It disables the memory pools used in the NGINX by applying the "[no-pool](https://github.com/openresty/no-pool-nginx)" patch.
-* It enforces LuaJIT to use the system allocator instead of its own.
-* It enables the internal Valgrind co-operations in the LuaJIT build.
-* The default server prefix of its NGINX is `/usr/local/openresty-valgrind/`.
-* The entry point visible to your `PATH` environment is `openresty-valgrind` instead of `openresty-debug`.
+* 它打上了 "[no-pool](https://github.com/openresty/no-pool-nginx)" 的补丁，禁止 NGINX 中内存池的使用。
+* 它强制 LuaJIT 使用系统分配内存而不是 LuaJIT 自己分配。
+* 在 LuaJIT 版本中打开内部 Valgrind 协作。
+* NGINX 默认的服务前缀是 `/usr/local/openresty-valgrind/`。
+* 你在 `PATH` 环境变量里面看到的入口点是 `openresty-valgrind` 而不是 `openresty-debug`。
 
-See the following tutorials on more details on Valgrind-based testing in the context of OpenResty:
+想了解更多在 OpenResty 中基于 Valgrind 的测试细节，可以看下面的教程:
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.html#_valgrind_mode
 
 # openresty-openssl
 
-This is our own build of the OpenSSL library. In particular, we have disabled the threads support in the build
-to save some overhead.
+这是我们自己维护的 OpenSSL 库。特别的，我们为了节省一些开销，在这个版本中已经禁用了对线程的支持。
 
 # openresty-openssl-debug
 
-This is the debug build of OpenSSL library. As compared to `openresty-openssl`, it has the following changes:
+这是 OpenSSL 库的调试版本。和 `openresty-openssl` 相比，有这些不同：
 
-* It disables any C compiler optimizations.
-* It relies on the libefence library of the standard `ElectricFence` package to do extra checks.
-* It is Valgrind clean and free of any Valgrind false positives.
-* Assembly code is disabled so we always have perfect C-land backtraces and etc.
+* 禁止了所有 C 编译器优化。
+* 它依赖标准 `ElectricFence` 包的 libefence 库来做些额外的检查。
+* 它没有 Valgrind 错误也没有任何 Valgrind 误报。
+* 汇编代码被禁止，所以我们总是有完美的基于 C 的回溯以及类似的。
 
 # perl-Test-Nginx
 
-This is our [Test::Nginx](https://github.com/openresty/test-nginx) test framework. Read the following book chapter on a complete
-introduction to this test scaffold:
+这是我们的测试框架 [Test::Nginx](https://github.com/openresty/test-nginx)。从下面章节中可以看到对这个测试框架的一个完整介绍:
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/
 
 # Debuginfo Packages
 
-We provide debuginfo packages for those containing binary components like the `openresty` and `openresty-openssl` packages. Their
-debuginfo packages just have the `-debuginfo` suffix in their package names, just like other standard RPM packages.
+我们为那些包含二进制组件的包，比如 `openresty` 和 `openresty-openssl` 提供 debuginfo 包。
+debuginfo 包和其他的标准的 RPM 包一样，只是加了 `-debuginfo` 的后缀。
 
 # Source
 
-The source files used to build these packages can be found in the `openresty-packaging` GitHub repository:
+build 这些包的源文件都放在 `openresty-packaging` GitHub 仓库中:
 
 https://github.com/openresty/openresty-packaging/tree/master/rpm/
 
-# See Also
+# 更多
 
-See the [Linux Packages](linux-packages.html) page for more details on our official OpenResty package repositories.
+查看 [Linux Packages](linux-packages.html) 页面获取更多关于我们官方 OpenResty 包仓库的信息。
