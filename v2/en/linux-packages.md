@@ -58,7 +58,7 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on the
 You can enable the `openresty` repository on your Fedora system like this:
 
 ```
-sudo dnf install yum-plugin-copr
+sudo dnf install 'dnf-command(copr)'
 sudo dnf copr enable openresty/openresty
 ```
 
