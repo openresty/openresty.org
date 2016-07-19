@@ -29,7 +29,7 @@ sudo openresty -p /opt/my-fancy-app/
 
 这个包在 NGINX 内核和一些 NGINX C 模块(比如 `ngx_http_lua_module`)中开启了 dtrace 静态探针，这样 SystemTap 之类的动跟踪工具就可以来使用。
 
-我们使用了我们自己版本的 OpenSSL（通过 `openresty-openssl` 包）,PCRE, zlib 和 LuaJIT，来保证这些关键组件是最新的并且在一起工作正常。
+我们使用了我们自己的 OpenSSL（通过 `openresty-openssl` 包）,PCRE, zlib 和 LuaJIT 版本，来保证这些关键组件是最新的并且在一起工作正常。
 
 # openresty-resty
 

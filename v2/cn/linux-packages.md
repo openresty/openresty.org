@@ -60,7 +60,7 @@ sudo dnf install yum-plugin-copr
 sudo dnf copr enable openresty/openresty
 ```
 
-然后你就可以方便的从 `openresty-openresty` 资源库中安装和以后更新包(通过 `dnf update` 命令)。 比比如我们可以运行下面的命令来安装 `openresty`:
+然后你就可以方便的从 `openresty-openresty` 资源库中安装和以后更新包(通过 `dnf update` 命令)。 比如我们可以运行下面的命令来安装 `openresty`:
 
 ```bash
 sudo dnf install openresty
