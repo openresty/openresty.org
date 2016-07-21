@@ -1,5 +1,5 @@
 <!---
-    @title         RPM Packages
+    @title         RPM 包
 --->
 
 OpenResty 官方 Yum 资源库提供下面的 PRM 包。
@@ -68,6 +68,7 @@ restydoc -s proxy_pass
 
 * 这个版本禁止了 C 编译器的各种优化。
 * 它打开了 NGINX 调试日志功能。
+* 除了 NGINX 中默认的 epoll 模块，它额外开启了 poll 模块，以便能用上 [mockeagain](https://github.com/openresty/mockeagain) 这个测试工具。
 * 对于 OpenSSL 库，它使用 `openresty-openssl-debug` 包替代了 `openresty-openssl`。
 * 它在 LuaJIT 版本中打开了 API 检查和断言。
 * 在 `ngx_http_lua` 模块中打开了断言。
@@ -105,11 +106,19 @@ https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.h
 * 它没有 Valgrind 错误也没有任何 Valgrind 误报。
 * 汇编代码被禁止，所以我们总是有完美的基于 C 的回溯以及类似的。
 
+# perl-Lemplate
+
+这个包提供了 [lemplate](https://metacpan.org/pod/Lemplate) 这个命令行程序，它可以把使用 perl TT2 模板语言语法的模板文件编译成 OpenResty 的独立 Lua 模块。
+
+比如 OpenResty 的官方网站 [openresty.org](https://github.com/openresty/openresty.org) 就使用 Lemplate 作为 HTML 页面的模板编译器。
+
 # perl-Test-Nginx
 
 这是我们的测试框架 [Test::Nginx](https://github.com/openresty/test-nginx)。从下面章节中可以看到对这个测试框架的一个完整介绍:
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/
+
+对于 RHEL 5.x 和 CentOS 5.x 系统，我们不提供这个包。因为这些系统太古老，在它们标准的 yum 仓库中缺少 Perl CPAN 模块的依赖 (比如 `perl-Test-Base` 和 `perl-Test-LongString`)。
 
 # Debuginfo Packages
 

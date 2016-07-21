@@ -1,5 +1,5 @@
 <!---
-    @title         Linux Packages
+    @title         Linux 包
 --->
 
 对于下列 Linux 发行系统和版本，OpenResty 提供官方预编译包。
@@ -56,7 +56,7 @@ sudo yum install openresty
 在 Fedora 系统中你可以这样来启用 `openresty` 资源库:
 
 ```
-sudo dnf install yum-plugin-copr
+sudo dnf install 'dnf-command(copr)'
 sudo dnf copr enable openresty/openresty
 ```
 
