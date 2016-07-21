@@ -136,8 +136,7 @@ This package provides the command-line utility, [lemplate](https://metacpan.org/
 that can compile template files in perl's TT2 templating language syntax to standalone
 Lua modules for OpenResty.
 
-The OpenResty official site, openresty.org, [uses](https://github.com/openresty/openresty.org)
-Lemplate as the HTML page template compiler, for example.
+The OpenResty official site, [openresty.org](https://github.com/openresty/openresty.org), uses Lemplate as the HTML page template compiler, for example.
 
 # perl-Test-Nginx
 
