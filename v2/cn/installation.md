@@ -1,5 +1,5 @@
 <!---
-    @title         安装 OpenResty
+    @title         安装
     @creator       Yichun Zhang
     @created       2011-06-21 04:40 GMT
     @modifier      Yichun Zhang
