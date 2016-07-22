@@ -2,12 +2,12 @@
     @title         Linux 包
 --->
 
-对于下列 Linux 发行系统和版本，OpenResty 提供官方预编译包。
+对于下列 Linux 发行版的种类和版本号，OpenResty 提供官方的预编译包。
 
 * RHEL/CentOS
 
 ```
-    Version         Supported Architectures
+    版本号          支持的体系结构
     5.x             x86_64, i386
     6.x             x86_64, i386
     7.x             x86_64
@@ -16,7 +16,7 @@
 * Fedora
 
 ```
-    Version         Supported Architectures
+    版本号          支持的体系结构
     22              x86_64, i386
     23              x86_64, i386
     24              x86_64, i386
@@ -78,3 +78,7 @@ sudo dnf repo-pkgs openresty-openresty list available
 # 更多精彩，未完待续
 
 我们正在尽力为你带来更多 Linux 发行版本的包资源库，比如 Ubuntu, Debian 和 Amazon Linux. 敬请期待!
+
+# 非 Linux 系统的安装包
+
+目前 OpenResty 也提供针对 Windows 系统的二进制安装包，可以从[下载页面](download.html)获取。

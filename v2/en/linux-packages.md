@@ -82,3 +82,7 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on the
 
 We are still working hard on bringing package repositories for more Linux distributions like Ubuntu,
 Debian, and Amazon Linux. Stay tuned!
+
+# Packages for Non-Linux systems
+
+We also provide pre-built binary packages for the Windows operating system. You can obtain it from the [Download](download.html) page.
