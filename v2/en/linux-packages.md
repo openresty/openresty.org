@@ -72,6 +72,8 @@ enabled_metadata=1
 
 You need to replace `RELEASE` in the file content above with your RHEL system's major version number, like `5`, `6`, or `7`.
 
+See the [OpenResty RPM Packages](rpm-packages.html) page for more details on these packages.
+
 # Fedora
 
 You can enable the `openresty` repository on your Fedora system like this:

@@ -69,6 +69,8 @@ enabled_metadata=1
 你需要将上面内容中的 `RELEASE` 替换为你的 RHEL 系统实际的大版本号，比如 `5`
 、`6` 或者 `7`。
 
+在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
+
 # Fedora
 
 在 Fedora 系统中你可以这样来启用 `openresty` 资源库:
