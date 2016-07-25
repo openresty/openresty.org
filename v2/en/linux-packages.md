@@ -22,9 +22,9 @@ OpenResty provides official pre-built packages for the following Linux distribut
     24              x86_64, i386
 ```
 
-# RHEL/CentOS
+# CentOS
 
-You can add the `openresty` repository to your RHEL or CentOS system so as to easily install
+You can add the `openresty` repository to your CentOS system so as to easily install
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
 create the file named `/etc/yum.repos.d/OpenResty.repo` with the following content:
 
@@ -52,6 +52,25 @@ sudo yum install openresty
 ```
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on these packages.
+
+# RHEL
+
+You can add the `openresty` repository to your RHEL system so as to easily install
+our packages and receive updates in the future (via the `yum update` command). To add the repository, just
+create the file named `/etc/yum.repos.d/OpenResty.repo` with the following content:
+
+```ini
+[openresty]
+name=Official OpenResty Repository
+baseurl=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-RELEASE_VERSION-$basearch/
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/pubkey.gpg
+enabled=1
+enabled_metadata=1
+```
+
+You need to replace `RELEASE_VERSION` in the file content above with your RHEL system's major version number, like `5`, `6`, or `7`.
 
 # Fedora
 
