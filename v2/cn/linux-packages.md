@@ -22,9 +22,9 @@
     24              x86_64, i386
 ```
 
-# RHEL/CentOS
+# CentOS
 
-你可以在你的 RHEL 或者 CentOS 系统中添加 `openresty` 资源库，这样就可以方便的安装我们的包，以后也可以更新（通过 `yum update` 命令）。添加资源库，你只用创建一个名为 `/etc/yum.repos.d/OpenResty.repo` 的文件，内容如下:
+你可以在你的 CentOS 系统中添加 `openresty` 资源库，这样就可以方便的安装我们的包，以后也可以更新（通过 `yum update` 命令）。添加资源库，你只用创建一个名为 `/etc/yum.repos.d/OpenResty.repo` 的文件，内容如下:
 
 ```ini
 [openresty]
@@ -50,6 +50,24 @@ sudo yum install openresty
 ```
 
 在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
+
+# RHEL
+
+你可以在你的 RHEL 系统中添加 `openresty` 资源库，这样就可以方便的安装我们的包，以后也可以更新（通过 `yum update` 命令）。添加资源库，你只用创建一个名为 `/etc/yum.repos.d/OpenResty.repo` 的文件，内容如下:
+
+```ini
+[openresty]
+name=Official OpenResty Repository
+baseurl=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-RELEASE_VERSION-$basearch/
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/pubkey.gpg
+enabled=1
+enabled_metadata=1
+```
+
+你需要将上面内容中的 `RELEASE_VERSION` 替换为你的 RHEL 系统实际的大版本号，比如 `5`
+、`6` 或者 `7`。
 
 # Fedora
 
