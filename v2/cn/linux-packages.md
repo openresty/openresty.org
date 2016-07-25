@@ -58,7 +58,7 @@ sudo yum install openresty
 ```ini
 [openresty]
 name=Official OpenResty Repository
-baseurl=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-RELEASE_VERSION-$basearch/
+baseurl=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-RELEASE-$basearch/
 skip_if_unavailable=True
 gpgcheck=1
 gpgkey=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/pubkey.gpg
@@ -66,7 +66,7 @@ enabled=1
 enabled_metadata=1
 ```
 
-你需要将上面内容中的 `RELEASE_VERSION` 替换为你的 RHEL 系统实际的大版本号，比如 `5`
+你需要将上面内容中的 `RELEASE` 替换为你的 RHEL 系统实际的大版本号，比如 `5`
 、`6` 或者 `7`。
 
 # Fedora

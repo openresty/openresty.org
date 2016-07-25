@@ -62,7 +62,7 @@ create the file named `/etc/yum.repos.d/OpenResty.repo` with the following conte
 ```ini
 [openresty]
 name=Official OpenResty Repository
-baseurl=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-RELEASE_VERSION-$basearch/
+baseurl=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-RELEASE-$basearch/
 skip_if_unavailable=True
 gpgcheck=1
 gpgkey=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/pubkey.gpg
@@ -70,7 +70,7 @@ enabled=1
 enabled_metadata=1
 ```
 
-You need to replace `RELEASE_VERSION` in the file content above with your RHEL system's major version number, like `5`, `6`, or `7`.
+You need to replace `RELEASE` in the file content above with your RHEL system's major version number, like `5`, `6`, or `7`.
 
 # Fedora
 
