@@ -1,5 +1,9 @@
 <header role="header">
         <p class="site-name left">
+                <img src="/images/logo.png" width="64">
+        </p>
+
+        <p class="site-name left">
                 <a href=".">OpenResty <span class="trade">&trade;</span></a>
                 <small>[% c.l("Scalable Web Platform by Extending NGINX with Lua") %]</small>
         </p><!-- / site-name -->
