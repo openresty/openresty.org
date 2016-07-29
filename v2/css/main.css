@@ -328,8 +328,7 @@ header[role="header"] form {
   text-align: right;
 }
 header[role="header"] .site-name img{
-  /* text-transform: uppercase; */
-  margin-top: -10px;
+  margin-top: -6px;
   margin-left: -20px;
   margin-right: 10px;
 }
