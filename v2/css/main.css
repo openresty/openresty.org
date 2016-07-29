@@ -327,6 +327,12 @@ header[role="header"] form {
   padding-bottom: 10px;
   text-align: right;
 }
+header[role="header"] .site-name img{
+  /* text-transform: uppercase; */
+  margin-top: -10px;
+  margin-left: -20px;
+  margin-right: 10px;
+}
 header[role="header"] form input[type=search] {
   width: 300px;
   height: 36px;
