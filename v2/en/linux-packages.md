@@ -103,7 +103,7 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on the
 
 We welcome community contrinbutions of packaging sources targeting more Linux distributions like Ubuntu and
 Debian. Please ensure the resulting packages resemble our existing [RPM Packages](rpm-packages.html)
-wherever possible.
+wherever possible. Thank you very much!
 
 # Packages for Non-Linux systems
 
