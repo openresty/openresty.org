@@ -1,14 +1,14 @@
 <!---
     @title         UPYUN的ngx_lua最佳技术实践
-    @creator       Guanri Qin
+    @creator       覃冠日,李张勇
     @created       2016-07-30 17:24 GMT
-    @modifier      Guanri Qin
-    @modifier_link Guanri Qin
+    @modifier      覃冠日,李张勇
+    @modifier_link 覃冠日,李张勇
     @modified      2016-07-30 17:24 GMT
     @changes       1
 --->
 
->作者：又拍云 编辑：覃冠日 校验：李张勇 [原文链接](http://blog.sina.com.cn/s/blog_94c587f40102vm7k.html)
+> 作者：又拍云 &nbsp; 时间:&nbsp;2015-04-16 &nbsp;[原文链接](http://blog.sina.com.cn/s/blog_94c587f40102vm7k.html)
 
 ngx_lua 是一个 NGINX 的第三方扩展模块，它能够将 Lua 代码嵌入到 NGINX 中来执行。
 

@@ -1,15 +1,14 @@
 <!---
     @title         使用OpenResty搭建WAF应用
-    @creator       qinguanri
+    @creator       覃冠日,李张勇
     @created       2016-07-30 16:00 GMT
-    @modifier      qinguanri
+    @modifier      覃冠日,李张勇
     @modifier_link 
     @modified      
     @changes       1
 --->
 
-
-> 时间：2016-07-13 作者：周俊 编辑：覃冠日 校验：李张勇 [原文链接](http://mp.weixin.qq.com/s?__biz=MzIwODA4NjMwNA==&mid=2652897814&idx=1&sn=317b98c2b3044f80b4f0da82928496ee&scene=0#wechat_redirect)
+> 作者：周俊 &nbsp; 时间:&nbsp;2016-07-13 &nbsp;[原文链接](http://mp.weixin.qq.com/s?__biz=MzIwODA4NjMwNA==&mid=2652897814&idx=1&sn=317b98c2b3044f80b4f0da82928496ee&scene=0#wechat_redirect)
 
 ## OpenResty简介
 
