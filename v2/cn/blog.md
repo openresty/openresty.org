@@ -11,18 +11,9 @@
 
 # Year 2016 
 
-* #### <font color=#4d8d89> \[应用实践\] </font> &nbsp; [使用OpenResty搭建WAF应用](blog-develop-waf-with-resty.html) &nbsp; \(周俊\) &nbsp; 2016-07-13
+* #### <font color=#4d8d89> \[应用实践\] </font> &nbsp; [❲通俗易懂❳​怎样理解 cosocket](blog-understand-cosocket.html) &nbsp; \(王院生\) &nbsp; 2016-04-06
 
     <font size="2">
-    我们公司目前没有专门的安全工程师，安全的一些工作就落到我们运维工程师头上，遇到安全问题就找到我们身上了，因此我想做一个web应用防火墙，让开发人员不用考虑安全问题只关心业务开发；因此就考虑开发WAF来解决现在遇到的问题 ... &nbsp;[更多](blog-develop-waf-with-resty.html) 
-    </font>
-
-
-# Year 2015
-
-* #### <font color=#4d8d89> \[应用实践\] </font> &nbsp; [UPYUN的ngx_lua最佳技术实践](blog-ngx-lua-at-upyun.html) &nbsp; \(又拍云\) &nbsp; 2015-04-16    
-    
-    <font size="2">
-    UPYUN 的 CDN 大量使用了 NGINX 作为反向代理服务器，其中绝大部分的业务逻辑已经由 Lua 来驱动了... &nbsp;[更多](blog-ngx-lua-at-upyun.html)
+    笔者认为，cosocket 是 OpenResty 世界中技术、实用价值最高的部分。让我们可以用非常低廉的成本，优雅的姿势，比传统 socket 编程效率高好几倍的方式进行网络编程。无论资源占用、执行效率、并发数等都非常出色 ... &nbsp;[更多](blog-understand-cosocket.html) 
     </font>
 
