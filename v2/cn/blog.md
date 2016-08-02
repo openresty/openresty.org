@@ -1,8 +1,8 @@
 <!---
-    @title         博客 
-    @creator       Gary
+    @title         社区博客 
+    @creator       覃冠日,李张勇 
     @created       2016-07-30 14:50 GMT
-    @modifier      Gary
+    @modifier      覃冠日,李张勇
     @modifier_link 
     @modified      2016-07-30 14:50 GMT
     @changes       1
