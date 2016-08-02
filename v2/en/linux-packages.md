@@ -99,10 +99,11 @@ sudo dnf repo-pkgs openresty-openresty list available
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on these packages.
 
-# More to come
+# Support for More Linux Distributions
 
-We are still working hard on bringing package repositories for more Linux distributions like Ubuntu,
-Debian, and Amazon Linux. Stay tuned!
+We welcome community contrinbutions of packaging sources targeting more Linux distributions like Ubuntu and
+Debian. Please ensure the resulting packages resemble our existing [RPM Packages](rpm-packages.html)
+wherever possible. Thank you very much!
 
 # Packages for Non-Linux systems
 

@@ -95,9 +95,9 @@ sudo dnf repo-pkgs openresty-openresty list available
 在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
 
 
-# 更多精彩，未完待续
+# 对更多 Linux 发行版的支持
 
-我们正在尽力为你带来更多 Linux 发行版本的包资源库，比如 Ubuntu, Debian 和 Amazon Linux. 敬请期待!
+我们欢迎社区贡献更多的 Linux 发行版的打包源。请确保新的安装包尽可能地接近我们现有的 [RPM 安装包](rpm-packages.html)。非常感谢！
 
 # 非 Linux 系统的安装包
 

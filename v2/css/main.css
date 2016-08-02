@@ -327,6 +327,11 @@ header[role="header"] .site-name small {
   font-size: 13px;
   color: #f9fcf9;
 }
+header[role="header"] .site-name img {
+  margin-top: -6px;
+  margin-left: -20px;
+  margin-right: 10px;
+}
 header[role="header"] form {
   padding-top: 25px;
   padding-bottom: 10px;
