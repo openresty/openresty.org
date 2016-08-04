@@ -1,11 +1,11 @@
 <!---
     @title         怎样理解 cosocket
-    @creator       覃冠日，李张勇
-    @created       2016-08-01 17:24 GMT
-    @modifier      覃冠日，李张勇
-    @modifier_link 
-    @modified      2016-07-30 17:24 GMT
-    @changes       1
+    @creator
+    @created
+    @modifier
+    @modifier_link
+    @modified
+    @changes
 --->
 
 >作者：王院生  [原文链接](https://github.com/moonbingbing/openresty-best-practices/blob/master/ngx_lua/whats_cosocket.md )
@@ -16,9 +16,9 @@
 
 看来只能通过一些侧面信息，从而让这条路逐渐的清晰起来。
 
->cosocket = coroutine + socket  
->coroutine：协同程序（后面简称：协程）  
->socket：网络套接字  
+>cosocket = coroutine + socket
+>coroutine：协同程序（后面简称：协程）
+>socket：网络套接字
 
 OpenResty 中的 cosocket 不仅需要协程特性支撑，它还需 nginx 非常最重要的一部分“事件循环回调机制”，两部分拼在一起才达到了最后的 cosocket 效果，再结合 nginx 自身对各种资源的“小气”，使得整体加分不少。在 Lua 世界中调用任何一个有关 cosocket 网络函数内部关键调用如图所示：
 
