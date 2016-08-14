@@ -1,18 +1,12 @@
 <!---
     @title         社区博客
-    @creator
-    @created
-    @modifier
-    @modifier_link
-    @modified
-    @changes
 --->
 
 
-# Year 2016
+# Year 2015
 
-* #### <font color=#4d8d89> \[应用实践\] </font> &nbsp; [❲通俗易懂❳​怎样理解 cosocket](blog-understand-cosocket.html) &nbsp; \(王院生\) &nbsp; 2016-04-06
+* #### <font color=#4d8d89> \[应用实践\] </font> &nbsp; [京东商品详情页服务闭环实践](blog-jd-page-service-based-on-resty.html) &nbsp; \(张开涛\) &nbsp; 2015-11-26
 
     <font size="2">
-    笔者认为，cosocket 是 OpenResty 世界中技术、实用价值最高的部分。让我们可以用非常低廉的成本，优雅的姿势，比传统 socket 编程效率高好几倍的方式进行网络编程。无论资源占用、执行效率、并发数等都非常出色 ... &nbsp;[更多](blog-understand-cosocket.html)
+    京东商品详情页技术方案在之前《构建需求响应式亿级商品详情页》这篇文章已经为大家揭秘了，接下来为大家揭秘下双十一抗下几十亿流量的商品详情页统一服务架构，这次双十一整个商品详情页没有出现不服务的情况，服务非常稳定 ... &nbsp;[更多](blog-jd-page-service-based-on-resty.html)
     </font>
