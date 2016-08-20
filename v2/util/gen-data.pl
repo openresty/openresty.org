@@ -4,6 +4,7 @@
 
 use strict;
 use warnings;
+use Encode;
 
 my $lang = shift
     or die "No language tag specified.\n";
@@ -187,9 +188,9 @@ sub dump_rows {
               quote_value($r, 'permlink'), "\t",
               quote_value($r, 'html_body'), "\t",
               quote_value($r, 'txt_body'), "\t",
-              quote_value($r, 'creator'), "\t",
+              Encode::decode("utf8", quote_value($r, 'creator')), "\t",
               $created, "\t",
-              quote_value($r, 'modifier'), "\t",
+              Encode::decode("utf8", quote_value($r, 'modifier')), "\t",
               $r->{modifier_link} // "\\N", "\t",
               quote_value($r, 'modified'), "\t",
               quote_value($r, 'changes'),
