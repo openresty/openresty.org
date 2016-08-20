@@ -16,7 +16,7 @@ my ($out, $outfile) = tempfile("mdXXXXXXX", TMPDIR => 1);
 
 my $c = 0;
 while (<$in>) {
-    $c += s! (\s) (balancer|ssl_certificate)_by_lua\* ( [\s,.:?] )
+    $c += s! (\s) (balancer|ssl_certificate|ssl_session_(?:fetch|store))_by_lua\* ( [\s,.:?] )
            !$1\[${2}_by_lua*](https://github.com/openresty/lua-nginx-module#${2}_by_lua_block)$3!xgs;
 
     $c += s! (\s) set_(md5) ( [\s,.:?] )
@@ -26,7 +26,7 @@ while (<$in>) {
              ( [\s,.:?] )
            !$1\[${2}_by_lua*](https://github.com/openresty/lua-nginx-module#${2}_by_lua)$3!xgs;
 
-    $c += s! (\s) ngx_(encrypted_session|headers_more|lua|echo|memc|redis2|srcache) ( [\s,.:?] ) !
+    $c += s! (\s) ngx_(set_misc|lua_upstream|encrypted_session|headers_more|lua|echo|memc|redis2|srcache) ( [\s,.:?] ) !
             my ($pre, $name, $post) = ($1, $2, $3);
             (my $name2 = $name) =~ s/_/-/g;
             "$pre\[ngx_$name](https://github.com/openresty/$name2-nginx-module#readme)$post"
