@@ -121,6 +121,9 @@ https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.h
 This is our own build of the OpenSSL library. In particular, we have disabled the threads support in the build
 to save some overhead.
 
+We include our own (small) patches to support advanced SSL features in OpenResty like
+[ssl_session_fetch_by_lua](https://github.com/openresty/lua-nginx-module/#ssl_session_fetch_by_lua_block).
+
 Also, we ship our own OpenSSL package to ensure the latest
 mainstream version of OpenSSL is used in OpenResty even on old systems like CentOS 5.
 
