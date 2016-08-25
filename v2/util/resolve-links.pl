@@ -52,6 +52,7 @@ while (<$in>) {
                             | say
                             | status
                             | md5
+                            | log
                             | md5_bin
                             | sha1_bin
                             )
