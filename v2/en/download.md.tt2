@@ -17,15 +17,21 @@ All the releases are signed by the public PGP key
 # Releases
 
 ##  Lastest release
+[% ver = "1.11.2.1" %]
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 3.8MB
+&nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
+([Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
+[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)) &nbsp;
+[Changes](changelog-1011002.html) - 24 August 2016
+
+##  Legacy releases
+Sometimes, users may want to download old releases.
 [% ver = "1.9.15.1" %]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 3.6MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)) &nbsp;
 [Changes](changelog-1009015.html) - 3 June 2016
-
-##  Legacy releases
-Sometimes, users may want to download old releases.
 * [openresty-1.9.7.5.tar.gz](https://openresty.org/download/openresty-1.9.7.5.tar.gz) &nbsp; 3.5MB
 &nbsp; [PGP](https://openresty.org/download/openresty-1.9.7.5.tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/openresty-1.9.7.5-win32.zip) &nbsp;

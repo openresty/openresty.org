@@ -42,6 +42,7 @@ while (<$in>) {
 
     $c += s! (\s) ( ngx\. (?: exit
                             | req\.(?:append|init|finish)_body
+                            | req\.(?:raw_header|set_header|clear_header)
                             | re\.(?:g?match|g?sub|find)
                             | worker\.(?:p?id|count)
                             | send_headers
@@ -50,8 +51,13 @@ while (<$in>) {
                             | print
                             | say
                             | status
+                            | md5
+                            | log
+                            | md5_bin
+                            | sha1_bin
                             )
                   | tcpsock:sslhandshake
+                  | tcpsock:setkeepalive
                   | lua_ssl_verify_depth
                   | lua_ssl_trusted_certificate
                   | lua_check_client_abort
@@ -61,19 +67,21 @@ while (<$in>) {
             "$pre\[$txt$parens](https://github.com/openresty/lua-nginx-module#$anchor)$post"
             !xges;
 
-    $c += s! (\s) ( ngx_http_(ssi|addition) (?: [_ ] module)? ) ( [\s,.:?] ) !$1\[$2](http://nginx.org/en/docs/http/ngx_http_${3}_module.html)$4!gxs;
+    $c += s! (\s) ( ngx_http_(ssi|ssl||addition) (?: [_ ] module)? ) ( [\s,.:?] ) !$1\[$2](http://nginx.org/en/docs/http/ngx_http_${3}_module.html)$4!gxs;
 
     $c += s! (\s) FFI ( [\s,.:?] ) !$1\[FFI](http://luajit.org/ext_ffi.html)$2!gxs;
 
     $c += s! (\s) \$(upstream_addr) ( [\s,.:?] ) !$1\[\$$2](http://nginx.org/en/docs/http/ngx_http_upstream_module.html#var_$2)$3!gxs;
 
-    $c += s! (\s) ssl\.(cert_pem_to_der) ( (?:\(\))? ) ( [\s,.:?] ) !
+    $c += s! (\s) ssl\.(cert_pem_to_der|parse_pem_cert|parse_pem_priv_key|set_cert|set_priv_key) ( (?:\(\))? ) ( [\s,.:?] ) !
             my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
             my $anchor = gen_anchor($txt);
             "$pre\[$txt$parens](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#$anchor)$post"
             !egx;
 
-    $c += s! (\s) ( ngx\.(?:semaphore|ssl|balancer|ocsp) ) ( [\s,.:?] ) !
+    $c += s! (\s) (more_set_input_headers) \b !$1\[$2](https://github.com/openresty/headers-more-nginx-module#$2)!gx;
+
+    $c += s! (\s) ( ngx\.(?:semaphore|ssl(?:\.session)?|balancer|ocsp) ) ( [\s,.:?] ) !
             my ($pre, $txt, $post) = ($1, $2, $3);
             (my $file = $txt) =~ s{\.}{/}g;
             "$pre\[$txt](https://github.com/openresty/lua-resty-core/blob/master/lib/$file.md#readme)$post"
