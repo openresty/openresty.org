@@ -12,7 +12,7 @@
 
 大部分组件默认是激活的，也有些也不是。
 
-Lua 5.1 版本中, [DrizzleNginxModule](drizzle-nginx-module.html)、[PostgresNginxModule](postgres-nginx-module.html)和[IconvNginxModule](iconv-nginx-module.html)默认并未开启。 你需要加入`--with-lua51`、`--with-http_drizzle_module`、`--with-http_postgres_module`和`--with-http_iconv_module` 编译选项来开启它们，其余各组件的编译选项，可对照[安装OpenResty](installation.html)说明，按需使能。
+标准 Lua 5.1 解释器中, [DrizzleNginxModule](drizzle-nginx-module.html)、[PostgresNginxModule](postgres-nginx-module.html)和[IconvNginxModule](iconv-nginx-module.html)默认并未开启。 你需要加入`--with-lua51`、`--with-http_drizzle_module`、`--with-http_postgres_module`和`--with-http_iconv_module` 编译选项来开启它们，其余各组件的编译选项，可对照[安装OpenResty](installation.html)说明，按需使能。
 
 在 OpenResty 1.5.8.1 版本之前, 如果 [LuaJIT](luajit.html) 2.x 环境不具备，则将默认采用标准的Lua 5.1解释器。 所以对于早期的老版本，你需要显式的加入`--with-luajit`编译选项 ( 1.5.8.1+版本已默认开启 )来使能 [LuaJIT](luajit.html) 2.x功能.
 
