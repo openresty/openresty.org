@@ -51,6 +51,7 @@ function _M.run()
     end
 
     if (re_find(uri, [[ ^ / (?: [a-z]{2} ) $ ]], 'jox')) then
+        resp_header["Cache-Control"] = "max-age=604800"
         return ngx.redirect(uri .. "/", 301)
     end
 
@@ -98,6 +99,7 @@ function _M.run()
     -- print("tag: ", tag, ", fr: ", fr, ", to: ", to)
 
     if tag == "openresty" then
+        resp_header["Cache-Control"] = "max-age=604800"
         return ngx.redirect("/" .. lang .. "/", 301)
     end
 
