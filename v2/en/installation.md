@@ -30,6 +30,11 @@ If your system environment is modern enough, then you almost always want to
 enable the PCRE JIT support and IPv6 support in your NGINX by passing the `--with-pcre-jit` and
 `--with-ipv6` options to the `./configure` script.
 
+```
+./configure --with-pcre-jit --with-ipv6B
+```
+
+
 By default, OpenResty is installed into the prefix `/usr/local/openresty/`.
 
 Finally, you need to add the command-line utilities provided by OpenResty to your
