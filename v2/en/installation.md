@@ -17,10 +17,10 @@ as
 
 ```
 tar xvf ngx_openresty-VERSION.tar.gz
-cd ngx_openresty-VERSION/
+cd openresty-VERSION/
 ./configure
 make
-make install
+sudo make install
 ```
 
 where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html),
