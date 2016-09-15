@@ -14,11 +14,11 @@
 首先，您可以根据下面的示例安装和构建[OpenResty](openresty.html)。
 
 ```
-tar xzvf ngx_openresty-VERSION.tar.gz
-cd ngx_openresty-VERSION/
+tar -xzvf openresty-VERSION.tar.gz
+cd openresty-VERSION/
 ./configure
 make
-make install
+sudo make install
 ```
 
 示例中的 `VERSION`替换成 [OpenResty](openresty.html)的版本号, 比如
@@ -87,16 +87,16 @@ pfexec pkg install gcc-3 SUNWlibm
 # 构建 OpenResty
 
 ## 下载
-从下载页 [Download](download.html)下载最新的ngx_openresty源码包，并且像下面的示例一样将其解压:
+从下载页 [Download](download.html)下载最新的 openresty 源码包，并且像下面的示例一样将其解压:
 
 ```
-tar xzvf ngx_openresty-VERSION.tar.gz
+tar -xzvf openresty-VERSION.tar.gz
 ```
 
  `VERSION` 的地方替换成您下载的源码包的版本号，比如说 `0.8.54.6`。
 
 ## ./configure
-然后在进入 `ngx_openresty-VERSION/` 目录, 然后输入以下命令配置:
+然后在进入 `openresty-VERSION/` 目录, 然后输入以下命令配置:
 
 ```
 ./configure

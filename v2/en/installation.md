@@ -16,11 +16,11 @@ Basically, building and installing [OpenResty](openresty.html) is as simple
 as
 
 ```
-tar xvf ngx_openresty-VERSION.tar.gz
-cd ngx_openresty-VERSION/
+tar -xvf openresty-VERSION.tar.gz
+cd openresty-VERSION/
 ./configure
 make
-make install
+sudo make install
 ```
 
 where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html),
@@ -29,6 +29,10 @@ like `0.8.54.6`.
 If your system environment is modern enough, then you almost always want to
 enable the PCRE JIT support and IPv6 support in your NGINX by passing the `--with-pcre-jit` and
 `--with-ipv6` options to the `./configure` script.
+
+```
+./configure --with-pcre-jit --with-ipv6
+```
 
 By default, OpenResty is installed into the prefix `/usr/local/openresty/`.
 
@@ -92,7 +96,7 @@ $ ./configure \
 assuming that your PCRE and OpenSSL are installed under the prefix `/usr/local/opt/` which
 is the default for homebrew.
 
-See also [Issue #3](https://github.com/agentzh/ngx_openresty/issues/3).
+See also [Issue #3](https://github.com/agentzh/openresty/issues/3).
 
 
 ## FreeBSD users
@@ -115,17 +119,17 @@ pfexec pkg install gcc-3 SUNWlibm
 # Build OpenResty
 
 ## [Download](download.html)
-download the latest ngx_openresty tarball can be fetched from the [Download](download.html) page
+download the latest openresty tarball can be fetched from the [Download](download.html) page
 and unpack it like this:
 
 ```
-tar xzvf ngx_openresty-VERSION.tar.gz
+tar -xzvf openresty-VERSION.tar.gz
 ```
 
 where `VERSION` should be replaced by real version numbers like `0.8.54.6`.
 
 ## ./configure
-Then enter the `ngx_openresty-VERSION/` directory, and type the following command
+Then enter the `openresty-VERSION/` directory, and type the following command
 to configure:
 
 ```
