@@ -17,7 +17,7 @@ as
 
 ```
 tar xvf ngx_openresty-VERSION.tar.gz
-cd ngx_openresty-VERSION/
+cd openresty-VERSION/
 ./configure
 make
 make install
