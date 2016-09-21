@@ -24,7 +24,7 @@ sudo make install
 ```
 
 where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html),
-like `0.8.54.6`.
+like `1.11.2.1`.
 
 If your system environment is modern enough, then you almost always want to
 enable the PCRE JIT support and IPv6 support in your NGINX by passing the `--with-pcre-jit` and

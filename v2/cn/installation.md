@@ -2,10 +2,6 @@
     @title         安装
     @creator       Yichun Zhang
     @created       2011-06-21 04:40 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2016-01-22 04:25 GMT
-    @changes       52
 --->
 对于一些常见的 Linux 发行版本，OpenResty 提供 [官方预编译包](linux-packages.html)。确保你首先用这种方式来安装。
 
@@ -22,7 +18,7 @@ sudo make install
 ```
 
 示例中的 `VERSION`替换成 [OpenResty](openresty.html)的版本号, 比如
-`0.8.54.6`。
+`1.11.2.1`。
 如果您在构建过程中需要对于细节更加灵活的控制，请您继续阅读。
 
 # 安装前的准备
