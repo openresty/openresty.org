@@ -17,10 +17,10 @@ as
 
 ```
 tar xvf ngx_openresty-VERSION.tar.gz
-cd ngx_openresty-VERSION/
+cd openresty-VERSION/
 ./configure
 make
-make install
+sudo make install
 ```
 
 where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html),
@@ -29,6 +29,10 @@ like `0.8.54.6`.
 If your system environment is modern enough, then you almost always want to
 enable the PCRE JIT support and IPv6 support in your NGINX by passing the `--with-pcre-jit` and
 `--with-ipv6` options to the `./configure` script.
+
+```
+./configure --with-pcre-jit --with-ipv6
+```
 
 By default, OpenResty is installed into the prefix `/usr/local/openresty/`.
 
