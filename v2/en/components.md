@@ -63,3 +63,7 @@ to use [LuaJIT](luajit.html) 2.x.
 * [SetMiscNginxModule](set-misc-nginx-module.html)
 * [SrcacheNginxModule](srcache-nginx-module.html)
 * [XssNginxModule](xss-nginx-module.html)
+
+3rd-party OpenResty modules contributed by the community can be found on the [opm.openresty.org](https://opm.openresty.org)
+pacakge server. And they can also be installed and uninstalled easily with the [opm](https://github.com/openresty/opm#readme)
+command-line utility.
