@@ -2,10 +2,6 @@
     @title         Components
     @creator       Yichun Zhang
     @created       2011-06-21 04:24 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2015-11-23 13:15 GMT
-    @changes       35
 --->
 
 Below lists all the components bundled in [OpenResty](openresty.html). All of
