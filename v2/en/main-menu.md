@@ -2,14 +2,11 @@
     @title         Main Menu
     @creator       Yichun Zhang
     @created       2011-06-21 03:57 GMT
-    @modifier      YichunZhang
-    @modified      2015-12-21 00:36 GMT
-    @changes       49
 --->
 
-* [Getting Started](getting-started.html)
-* [Download](download.html)
+* <big>**[Download](download.html)**</big>
 * [Installation](installation.html)
+* [Getting Started](getting-started.html)
 * [Upgrading](upgrading.html)
 * [Changes](changes.html)
 * [Components](components.html)
