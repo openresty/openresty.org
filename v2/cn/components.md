@@ -8,11 +8,13 @@
     @changes       30
 --->
 
-下面列表中的组件被用于构建 [OpenResty](openresty.html)。所有的组件可以被激活或禁止。
-大部组件默认是激活的，也有部件不是。
-[LuaJIT](luajit.html)、 [DrizzleNginxModule](drizzle-nginx-module.html)、[PostgresNginxModule](postgres-nginx-module.html)和[IconvNginxModule](iconv-nginx-module.html) 默认是没有激活的。您需要通过以下选项在编译
-[OpenResty](openresty.html)的时候将它们各自激活， `--with-luajit`、
-`--with-http_drizzle_module`、 `--with-http_postgres_module`和 `--with-http_iconv_module` 。
+下面列表中的组件被用于构建 [OpenResty](openresty.html)。所有组件均可以方便的被激活或禁止。
+
+绝大部分组件已内置在OpenResty安装包中，但也有一部分不包含在内。
+
+标准 Lua 5.1 解释器中, [DrizzleNginxModule](drizzle-nginx-module.html)、[PostgresNginxModule](postgres-nginx-module.html)和[IconvNginxModule](iconv-nginx-module.html)默认并未开启。 你需要分别加入`--with-lua51`、`--with-http_drizzle_module`、`--with-http_postgres_module`和`--with-http_iconv_module` 编译选项来开启它们，其余各组件编译选项，可对照[安装OpenResty](installation.html)说明，按需使能。
+
+在 1.5.8.1 版本之前, OpenResty将默认使用标准的Lua 5.1解释器。 所以对于老版本，你需要显式的加入`--with-luajit`编译选项 ( 1.5.8.1+版本已默认开启 )来使能 [LuaJIT](luajit.html) 2.x功能.
 
 * [LuaJIT](luajit.html)
 * [ArrayVarNginxModule](array-var-nginx-module.html)
