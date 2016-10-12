@@ -4,8 +4,6 @@
     @created       2011-06-21 04:25 GMT
 --->
 
-[% cur_version = "1.11.2.1" %]
-
 # Binary Releases
 
 ## Linux
@@ -24,8 +22,8 @@ installing package updates can be trivial.
 All the releases are signed by the public PGP key
 [A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) of Yichun Zhang.
 
-[% ver = cur_version %]
-* [OpenResty [% ver %] for Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
+[% ver = "1.11.2.1" %]
+* [OpenResty [% ver %] for Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 10.5MB &nbsp;
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)
 
 # Source Code Releases
@@ -38,7 +36,7 @@ the instructions on the [Installation](installation.html) page to build and
 install it.
 
 ##  Lastest release
-[% ver = cur_version %]
+[% ver = "1.11.2.1" %]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 3.8MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 [Changes](changelog-1011002.html) - 24 August 2016
