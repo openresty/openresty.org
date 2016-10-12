@@ -6,7 +6,7 @@
 
 # Binary Packages
 
-**IMPORTANT** OpenResty provides [official pre-built packages](linux-packages.html) for some of the common
+OpenResty provides [official pre-built packages](linux-packages.html) for some of the common
 Linux distributions. Ensure you have checked them out first.
 
 We also provide pre-built Win32 packages for OpenResty on the [Download](download.html) page. And you should
