@@ -4,27 +4,51 @@
     @created       2011-06-21 04:40 GMT
 --->
 
-OpenResty provides [official pre-built packages](linux-packages.html) for some of the common
+# Binary Packages
+
+**IMPORTANT** OpenResty provides [official pre-built packages](linux-packages.html) for some of the common
 Linux distributions. Ensure you have checked them out first.
+
+We also provide pre-built Win32 packages for OpenResty on the [Download](download.html) page. And you should
+also check out [this documentation](https://github.com/openresty/openresty/blob/master/doc/README-win32.md#readme) instead.
+
+# Building from Source
 
 If you haven't downloaded the [OpenResty](openresty.html) source code tarball,
 please go to the [Download](download.html) page first.
 
-(If you are on Windows, then you should check out [this documentation](https://github.com/openresty/openresty/blob/master/doc/README-win32.md#readme) instead.)
-
 Basically, building and installing [OpenResty](openresty.html) is as simple
 as
 
-```
+```bash
 tar -xvf openresty-VERSION.tar.gz
 cd openresty-VERSION/
-./configure
-make
+./configure -j2
+make -j2
 sudo make install
+
+# better also add the following line to your ~/.bashrc or ~/.bash_profile file.
+export PATH=/usr/local/openresty/bin:$PATH
 ```
 
 where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html),
 like `1.11.2.1`.
+
+You can add 3rd-party NGINX modules or enable other NGINX core features just like with the standard
+NGINX distribution. For example, you can use the `--add-module=PATH` or `--add-dynamic-module=PATH` options
+of OpenResty's `./configure` tool to insert 3rd-party NGINX C modules. But please note that 3rd-party NGINX C modules
+not maintained by OpenResty are not supported by OpenResty and they *may* compromise OpenResty's stability.
+
+You can use the command `./configure --help` to see all the available options that you can use to
+enable and/or disable certain components or features of OpenResty during build time.
+
+To start your OpenResty, you can just use the `openresty` command in place of your original `nginx`
+command as long as you have correctly added the `<openresty-prefix>/bin/` directory to your system
+environment `PATH` (`<openresty-prefix>` is default to `/usr/local/openresty/` unless being overridden
+by `./configure`'s `--prefix=PATH` option).
+
+You can also invoke the `resty` command-line utility to run a head-less OpenResty program
+or the `restydoc` tool to browse OpenResty documentation on the terminal.
 
 If your system environment is modern enough, then you almost always want to
 enable the PCRE JIT support and IPv6 support in your NGINX by passing the `--with-pcre-jit` and
@@ -49,12 +73,14 @@ or `~/.bash_profile`.
 If you have problems while building or want finer control over the building
 process, please read on.
 
-# Prerequisites
+## Prerequisites
+
 You should have `perl 5.6.1+`, `libreadline`, `libpcre`, `libssl` installed
 into your system. For Linux, you should also ensure that `ldconfig` is in your
 PATH environment.
 
-## Debian and Ubuntu users
+### Debian and Ubuntu users
+
 You're recommended to install the following packages using apt-get:
 
 ```
@@ -62,8 +88,8 @@ apt-get install libreadline-dev libncurses5-dev libpcre3-dev \
     libssl-dev perl make build-essential
 ```
 
+### Fedora and RedHat users
 
-## Fedora and RedHat users
 You're recommended to install the following packages using yum:
 
 ```
@@ -71,7 +97,7 @@ yum install readline-devel pcre-devel openssl-devel gcc
 ```
 
 
-## Mac OS X (Darwin) users
+### Mac OS X (Darwin) users
 You're recommended to install prerequisites PCRE and OpenSSL using some package
 management tool, like [Homebrew](http://mxcl.github.com/homebrew/):
 
@@ -116,9 +142,9 @@ pfexec pkg install gcc-3 SUNWlibm
 ```
 
 
-# Build OpenResty
+## Building OpenResty
 
-## [Download](download.html)
+### [Download](download.html)
 download the latest openresty tarball can be fetched from the [Download](download.html) page
 and unpack it like this:
 
@@ -128,7 +154,7 @@ tar -xzvf openresty-VERSION.tar.gz
 
 where `VERSION` should be replaced by real version numbers like `0.8.54.6`.
 
-## ./configure
+### ./configure
 Then enter the `openresty-VERSION/` directory, and type the following command
 to configure:
 
@@ -159,12 +185,14 @@ Errors in running the ./configure script can be found in the file `build/nginx-V
 `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html),
 like `0.8.54.6`.
 
-### Notes for Solaris users
+#### Notes for Solaris users
+
 For Solaris, it's common to install libraries like OpenSSL to `/lib`, so when
 it complaints about missing OpenSSL and you have indeed already installed it,
 specify the `--with-ld-opt='-L/lib'` option.
 
-## make
+### make
+
 Now you can compile everything up using the command
 
 ```
@@ -180,7 +208,8 @@ make -j2
 
 assuming you have 2 CPU cores.
 
-## make install
+### make install
+
 If all the previous steps go without problems, you can install [OpenResty](openresty.html) into
 your system by typing the command
 
@@ -206,10 +235,10 @@ wget https://openresty.org/download/openresty-1.9.7.3.tar.gz
 tar -zxvf openresty-1.9.7.3.tar.gz
 cd openresty-1.9.7.3/
 
-# assuming your have 4 spare logical CPU cores
+## assuming your have 4 spare logical CPU cores
+
 ./configure --with-openssl=../openssl-1.0.2f \
                  --with-pcre=../pcre-8.38 -j4
 make -j4
 sudo make install
 ```
-
