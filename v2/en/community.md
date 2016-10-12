@@ -2,12 +2,7 @@
     @title         Community
     @creator       Yichun Zhang
     @created       2012-08-04 23:04 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2012-08-23 17:49 GMT
-    @changes       6
 --->
-
 
 #  Mailing Lists
 
@@ -22,3 +17,10 @@
 * Subscribing: send an empty email to `openresty+subscribe@googlegroups.com`
 * Posting: send emails to `openresty@googlegroups.com`
 * Unsuscribing: send emails to `openresty+unsubscribe@googlegroups.com`
+
+# Modules and Packages
+
+OpenResty Lua modules and packages contributed by the community are managed by the OpenResty
+Package Manager (OPM):
+
+https://opm.openresty.org/
