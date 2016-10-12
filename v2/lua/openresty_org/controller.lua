@@ -27,7 +27,7 @@ local MAX_SEARCH_QUERY_LEN = 128
 
 local function gen_cache_control_headers(ts)
     resp_header["Last-Modified"] = http_time(tonumber(ts))
-    resp_header["Cache-Control"] = "max-age=28800"
+    resp_header["Cache-Control"] = "max-age=3600"
 end
 
 local function search_error(i18n, main_menu, timeline, query, title, msg)
@@ -46,12 +46,12 @@ end
 function _M.run()
     local uri = ngx_var.uri
     if uri == "/" then
-        resp_header["Cache-Control"] = "max-age=604800"
+        resp_header["Cache-Control"] = "max-age=3600"
         return ngx.redirect("/en/", 302)
     end
 
     if (re_find(uri, [[ ^ / (?: [a-z]{2} ) $ ]], 'jox')) then
-        resp_header["Cache-Control"] = "max-age=604800"
+        resp_header["Cache-Control"] = "max-age=3600"
         return ngx.redirect(uri .. "/", 301)
     end
 
@@ -99,7 +99,7 @@ function _M.run()
     -- print("tag: ", tag, ", fr: ", fr, ", to: ", to)
 
     if tag == "openresty" then
-        resp_header["Cache-Control"] = "max-age=604800"
+        resp_header["Cache-Control"] = "max-age=3600"
         return ngx.redirect("/" .. lang .. "/", 301)
     end
 
