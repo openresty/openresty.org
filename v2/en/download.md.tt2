@@ -25,7 +25,7 @@ All the releases are signed by the public PGP key
 [A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) of Yichun Zhang.
 
 [% ver = cur_version %]
-[OpenResty [% ver %] for Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
+* [OpenResty [% ver %] for Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)
 
 # Source Code Releases
