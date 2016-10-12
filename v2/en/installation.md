@@ -79,6 +79,7 @@ You should have `perl 5.6.1+`, `libreadline`, `libpcre`, `libssl` installed
 into your system. For Linux, you should also ensure that `ldconfig` is in your
 PATH environment.
 
+
 ### Debian and Ubuntu users
 
 You're recommended to install the following packages using apt-get:
@@ -87,6 +88,7 @@ You're recommended to install the following packages using apt-get:
 apt-get install libreadline-dev libncurses5-dev libpcre3-dev \
     libssl-dev perl make build-essential
 ```
+
 
 ### Fedora and RedHat users
 
@@ -98,6 +100,7 @@ yum install readline-devel pcre-devel openssl-devel gcc
 
 
 ### Mac OS X (Darwin) users
+
 You're recommended to install prerequisites PCRE and OpenSSL using some package
 management tool, like [Homebrew](http://mxcl.github.com/homebrew/):
 
@@ -126,12 +129,15 @@ See also [Issue #3](https://github.com/agentzh/openresty/issues/3).
 
 
 ## FreeBSD users
+
 You need to install the following ports:
 * devel/gmake
 * security/openssl
 * devel/pcre
 
+
 ## Solaris 11 users
+
 You need to install the following packages from the official repository:
 * gcc-3
 * SUNWlibm
@@ -144,7 +150,9 @@ pfexec pkg install gcc-3 SUNWlibm
 
 ## Building OpenResty
 
-### [Download](download.html)
+
+### Download
+
 download the latest openresty tarball can be fetched from the [Download](download.html) page
 and unpack it like this:
 
@@ -154,7 +162,9 @@ tar -xzvf openresty-VERSION.tar.gz
 
 where `VERSION` should be replaced by real version numbers like `0.8.54.6`.
 
+
 ### ./configure
+
 Then enter the `openresty-VERSION/` directory, and type the following command
 to configure:
 
@@ -185,11 +195,13 @@ Errors in running the ./configure script can be found in the file `build/nginx-V
 `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html),
 like `0.8.54.6`.
 
+
 #### Notes for Solaris users
 
 For Solaris, it's common to install libraries like OpenSSL to `/lib`, so when
 it complaints about missing OpenSSL and you have indeed already installed it,
 specify the `--with-ld-opt='-L/lib'` option.
+
 
 ### make
 
@@ -208,6 +220,7 @@ make -j2
 
 assuming you have 2 CPU cores.
 
+
 ### make install
 
 If all the previous steps go without problems, you can install [OpenResty](openresty.html) into
@@ -225,20 +238,23 @@ number accordingly):
 
 
 ```
-wget https://www.openssl.org/source/openssl-1.0.2f.tar.gz
-tar -zvxf openssl-1.0.2f.tar.gz
+wget https://www.openssl.org/source/openssl-1.0.2j.tar.gz
+tar -zvxf openssl-1.0.2j.tar.gz
+cd openssl-1.0.2j/
+patch -p1 < /path/to/openresty/patches/openssl-1.0.2h-sess_set_get_cb_yield.patch
+cd ..
 
-wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz
-tar -xvf pcre-8.38.tar.gz
+wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.39.tar.gz
+tar -xvf pcre-8.39.tar.gz
 
-wget https://openresty.org/download/openresty-1.9.7.3.tar.gz
-tar -zxvf openresty-1.9.7.3.tar.gz
-cd openresty-1.9.7.3/
+wget https://openresty.org/download/openresty-1.11.2.1.tar.gz
+tar -zxvf openresty-1.11.2.1.tar.gz
+cd openresty-1.11.2.1/
 
 ## assuming your have 4 spare logical CPU cores
 
-./configure --with-openssl=../openssl-1.0.2f \
-                 --with-pcre=../pcre-8.38 -j4
+./configure --with-openssl=../openssl-1.0.2j \
+                 --with-pcre=../pcre-8.39 -j4
 make -j4
 sudo make install
 ```
