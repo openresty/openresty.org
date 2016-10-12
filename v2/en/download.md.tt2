@@ -6,25 +6,32 @@
 
 [% cur_version = "1.11.2.1" %]
 
-# PGP Keys
-
-All the releases are signed by the public PGP key
-[A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) of Yichun Zhang.
-
 # Binary Releases
 
 ## Linux
 
-OpenResty provides [official pre-built packages](linux-packages.html) for some of the
-common Linux distributions. Ensure you have checked them out first.
+OpenResty provides [official pre-built packages](linux-packages.html) for common
+Linux distributions.
+
+We currently support RHEL, CentOS, and Fedora but we are also adding binary package
+support for Ubuntu and Debian.
+
+We also provide official package repositories for our users so that receiving and
+installing package updates can be trivial.
 
 ## Win32
+
+All the releases are signed by the public PGP key
+[A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) of Yichun Zhang.
 
 [% ver = cur_version %]
 [OpenResty [% ver %] for Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)
 
 # Source Code Releases
+
+All the releases are signed by the public PGP key
+[A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) of Yichun Zhang.
 
 You can download the source release tarballs below. After that, you can follow
 the instructions on the [Installation](installation.html) page to build and
