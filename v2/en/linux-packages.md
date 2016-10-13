@@ -53,6 +53,13 @@ sudo yum install openresty
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on these packages.
 
+If you want to use all the `perl-*` packages in the `openresty` repository, then you should first enable the
+EPEL package repository by running the following command:
+
+```bash
+sudo yum install epel-release
+```
+
 # RHEL
 
 You can add the `openresty` repository to your RHEL system so as to easily install
@@ -73,6 +80,13 @@ enabled_metadata=1
 You need to replace `RELEASE` in the file content above with your RHEL system's major version number, like `5`, `6`, or `7`.
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on these packages.
+
+If you want to use all the `perl-*` packages in the `openresty` repository, then you should first enable the
+EPEL package repository by running the following command:
+
+```bash
+sudo yum install epel-release
+```
 
 # Fedora
 

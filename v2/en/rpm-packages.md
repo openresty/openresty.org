@@ -165,6 +165,13 @@ https://openresty.gitbooks.io/programming-openresty/content/testing/
 We do not provide this package for RHEL 5.x and CentOS 5.x since these sytems are too old to have enough
 Perl CPAN module dependencies in their standard yum repositories (like `perl-Test-Base` and `perl-Test-LongString`).
 
+On CentOS and RHEL distributions, you must first enable the EPEL package
+repository by running the following command:
+
+```bash
+sudo yum install epel-release
+```
+
 # Debuginfo Packages
 
 We provide debuginfo packages for those containing binary components like the `openresty` and `openresty-openssl` packages. Their
