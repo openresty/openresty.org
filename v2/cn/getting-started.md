@@ -14,7 +14,7 @@ First of all, you need to install OpenResty to your system.
 If you are in Linux, please check out OpenResty's official [pre-built packages](linux-packages.html) if your Linux distribution is currently supported. If you use the official pre-built package, please
 replace the `nginx` command in this document below with the `openresty` command.
 
-如果你使用的是 Linux 系统，请先用 OpenResty 的[官方预编译包](linux-packages.html)，检查你的 Linux 发行版是否支持。如果你使用官方预装包，请在下面的文件里，将 `nginx` 命令改为 `openresty` 命令。
+如果你使用的是 Linux 系统，并且你的 Linux 发行版支持的话，推荐你使用 OpenResty 的[官方预编译包](linux-packages.html)。如果你使用官方预编译包，请在下面的文档里，将 `nginx` 命令改为 `openresty` 命令。
 
 Failing that, you can go to the [Download](download.html) page to get the source
 code tarball of [OpenResty](openresty.html), and see the [Installation](installation.html) page
