@@ -5,7 +5,7 @@
 --->
 
 **WARNING! This page is deprecated.
-Use of LuaRocks with OpenResty is strongly discouraged since OpenResty provides its own package manager, [OPM](https://opm.openreresty.org).**
+Use of LuaRocks with OpenResty is strongly discouraged since OpenResty provides its own package manager, [OPM](https://opm.openresty.org).**
 
 This sample demonstrates usage of [LuaRocks](http://www.luarocks.org/) with
 [OpenResty](openresty.html). It's been tested on Linux and Mac OS X, with the
