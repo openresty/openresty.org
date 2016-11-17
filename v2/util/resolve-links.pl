@@ -55,13 +55,16 @@ while (<$in>) {
                             | log
                             | md5_bin
                             | sha1_bin
+                            | exec
+                            | redirect
                             )
                   | tcpsock:sslhandshake
                   | tcpsock:setkeepalive
                   | lua_ssl_verify_depth
                   | lua_ssl_trusted_certificate
                   | lua_check_client_abort
-                   ) ( (?: \( [^)]* \) )? ) ( [\s,.:?] ) !
+                  | lua_shared_dict
+                   ) ( (?: \( [^)]* \) )? ) ( [\s,.:?)(] ) !
             my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
             my $anchor = gen_anchor($txt);
             "$pre\[$txt$parens](https://github.com/openresty/lua-nginx-module#$anchor)$post"
@@ -81,13 +84,13 @@ while (<$in>) {
 
     $c += s! (\s) (more_set_input_headers) \b !$1\[$2](https://github.com/openresty/headers-more-nginx-module#$2)!gx;
 
-    $c += s! (\s) ( ngx\.(?:semaphore|ssl(?:\.session)?|balancer|ocsp) ) ( [\s,.:?] ) !
+    $c += s! (\s) ( resty\.core\.shdict | ngx\.(?:re|semaphore|ssl(?:\.session)?|balancer|ocsp) ) ( [\s,.:?] ) !
             my ($pre, $txt, $post) = ($1, $2, $3);
             (my $file = $txt) =~ s{\.}{/}g;
             "$pre\[$txt](https://github.com/openresty/lua-resty-core/blob/master/lib/$file.md#readme)$post"
             !egx;
 
-    $c += s! (\s) (resty-cli|lua-cjson|lua-resty-(?:core|memcached|mysql|redis|dns|lock|lrucache|websocket)) ( [\s,.:?] ) !$1\[$2](https://github.com/openresty/$2#readme)$3!gxs;
+    $c += s! (\s) (resty-cli|lua-cjson|lua-resty-(?:core|memcached|mysql|redis|dns|lock|lrucache|websocket|upload)) ( [\s,.:?] ) !$1\[$2](https://github.com/openresty/$2#readme)$3!gxs;
     $c += s! (\s) (error_page|client_body_buffer_size) ( [\s,.:?] ) !$1\[$2](http://nginx.org/r/$2)$3!gxs;
 
     $c += s! (\s) (table\.concat) ( (?:\(\))? ) ( [\s,.:?] ) !$1\[$2$3](http://www.lua.org/manual/5.1/manual.html#pdf-$2)$4!gxs;
