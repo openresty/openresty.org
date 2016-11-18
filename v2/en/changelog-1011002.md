@@ -15,7 +15,7 @@ note that this change may introduce some minor backeward incompatibilities on th
 * added new component, lua-resty-limit-traffic, which is enabled by default and can be explicitly
 disabled via the `--without-lua_resty_limit_traffic` option of the `./configure` script during build.
 * upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) to 0.10.7.
-    * feature: added a new api function `tcpsock:settimeouts(connect_timeout, send_timeout, read_timeout)`. thanks Dejiang Zhu for the patch.
+    * feature: added a new API function `tcpsock:settimeouts(connect_timeout, send_timeout, read_timeout)`. thanks Dejiang Zhu for the patch.
     * feature: added public C API for 3rd-party [NGINX](nginx.html) C modules to register their own shm-based data structures for the Lua land usage
       (that is, to create custom siblings to [lua_shared_dict](https://github.com/openresty/lua-nginx-module#lua_shared_dict)). thanks helloyi and Dejiang Zhu for the patches.
     * feature, bugfix: added new config directive `lua_malloc_trim N` to periodically call `malloc_trim(1)` every `N` requests when `malloc_trim()` is available.

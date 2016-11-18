@@ -78,6 +78,13 @@ For the best result, please ensure your terminal is using the UTF-8 character en
 and `groff` installations are modern enough. Otherwise those non-ASCII characters may not be displayed
 correctly.
 
+# openresty-opm
+
+This package contains the command-line utility [opm](https://github.com/openresty/opm#readme) for OpenResty Package Manager. This tool can be used
+to install community-contributed OpenResty packages from the central OPM package server:
+
+https://opm.openresty.org/
+
 # openresty-debug
 
 This is the normal debug build of OpenResty. As compared to the `openresty` package, it has the following
