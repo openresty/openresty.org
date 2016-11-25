@@ -39,6 +39,12 @@ enabled=1
 enabled_metadata=1
 ```
 
+Users in mainland China can use the following `baseurl` line instead for better speed:
+
+```ini
+baseurl=https://openresty.org/yum/openresty/openresty/epel-$releasever-$basearch/
+```
+
 To list all the packages in the `openresty` repository:
 
 ```bash
@@ -78,6 +84,12 @@ enabled_metadata=1
 ```
 
 You need to replace `RELEASE` in the file content above with your RHEL system's major version number, like `5`, `6`, or `7`.
+
+Users in mainland China can use the following `baseurl` line instead for better speed:
+
+```ini
+baseurl=https://openresty.org/yum/openresty/openresty/epel-RELEASE-$basearch/
+```
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on these packages.
 
