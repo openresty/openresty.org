@@ -18,6 +18,19 @@ local format = string.format
 local unescape_uri = ngx.unescape_uri
 local match_table = {}
 
+local repo_file = {}
+repo_file[1] = [[[openresty]
+name=Official OpenResty Repository
+baseurl=https://]]
+repo_file[2] = ""
+repo_file[3] = ""
+repo_file[4] = [[-$basearch/
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/pubkey.gpg
+enabled=1
+enabled_metadata=1]]
+
 local i18n_objs = {
     ['cn'] = i18n_class.new('cn'),
     ['en'] = i18n_class.new('en'),
@@ -53,6 +66,29 @@ function _M.run()
     if (re_find(uri, [[ ^ / (?: [a-z]{2} ) $ ]], 'jox')) then
         resp_header["Cache-Control"] = "max-age=3600"
         return ngx.redirect(uri .. "/", 301)
+    end
+
+    local from = re_find(uri, [[ ^ /yum/ ( cn/ )? ( [a-z-0-9]+ ) /OpenResty.repo $ ]], 'jox')
+    if from then
+        -- Skip /yum/
+        from = from + 5
+        resp_header["Content-Type"] = "text/plain"
+        if sub(uri, from, from + 2) == 'cn/' then
+            repo_file[2] = 'openresty.org/yum/openresty/openresty/epel-'
+            -- Skip cn/
+            from = from + 3
+        else
+            repo_file[2] = 'copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-'
+        end
+
+        if sub(uri, from, from + 3) == 'rhel' then
+            repo_file[3] = sub(uri, from+5, from+5)
+        else
+            repo_file[3] = '$releasever'
+        end
+
+        ngx.print(concat(repo_file))
+        return
     end
 
     local m, err = re_match(uri, [[ ^ / ( [a-z]{2} ) / (?: ([-\w]+) \.html )? $ ]], 'jox', nil, match_table)
