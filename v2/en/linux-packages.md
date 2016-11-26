@@ -17,9 +17,10 @@ OpenResty provides official pre-built packages for the following Linux distribut
 
 ```
     Version         Supported Architectures
-    22              x86_64, i386
     23              x86_64, i386
     24              x86_64, i386
+    25              x86_64, i386
+    rawhide         x86_64, i386
 ```
 
 # CentOS
