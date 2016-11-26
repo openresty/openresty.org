@@ -38,6 +38,16 @@ enabled=1
 enabled_metadata=1
 ```
 
+你也可以直接运行 `sudo yum-config-manager --add-repo https://openresty.org/yum/centos/OpenResty.repo` 添加该文件。
+
+中国大陆的用户可以把 `baseurl` 改成下面的链接，速度会更快。
+
+```ini
+baseurl=https://openresty.org/yum/openresty/openresty/epel-$releasever-$basearch/
+```
+
+或者运行 `sudo yum-config-manager --add-repo https://openresty.org/yum/cn/centos/OpenResty.repo` 添加对应的文件。
+
 列出 `openresty` 资源库里面所有的包:
 
 ```bash
@@ -69,6 +79,16 @@ enabled_metadata=1
 
 你需要将上面内容中的 `RELEASE` 替换为你的 RHEL 系统实际的大版本号，比如 `5`
 、`6` 或者 `7`。
+
+你也可以直接运行 `sudo yum-config-manager --add-repo https://openresty.org/yum/rhel-RELEASE/OpenResty.repo` 添加对应大版本号的文件。别忘了把 `RELEASE` 改成你的 RHEL 系统的大版本号。
+
+中国大陆的用户可以把 `baseurl` 改成下面的链接，速度会更快。
+
+```ini
+baseurl=https://openresty.org/yum/openresty/openresty/epel-$releasever-$basearch/
+```
+
+或者运行 `sudo yum-config-manager --add-repo https://openresty.org/yum/cn/rhel-RELEASE/OpenResty.repo` 添加对应的文件。
 
 在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
 

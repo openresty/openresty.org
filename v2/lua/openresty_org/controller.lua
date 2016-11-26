@@ -13,10 +13,26 @@ local byte = string.byte
 local http_time = ngx.http_time
 local tonumber = tonumber
 local resp_header = ngx.header
+local ngx_time = ngx.time
 local ngx_var = ngx.var
 local format = string.format
 local unescape_uri = ngx.unescape_uri
 local match_table = {}
+
+local repo_file = {}
+repo_file[1] = [[[openresty]
+name=Official OpenResty Repository
+baseurl=https://]]
+repo_file[2] = ""
+repo_file[3] = ""
+repo_file[4] = [[-$basearch/
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://]]
+repo_file[5] = ""
+repo_file[6] = [[pubkey.gpg
+enabled=1
+enabled_metadata=1]]
 
 local i18n_objs = {
     ['cn'] = i18n_class.new('cn'),
@@ -55,7 +71,33 @@ function _M.run()
         return ngx.redirect(uri .. "/", 301)
     end
 
-    local m, err = re_match(uri, [[ ^ / ( [a-z]{2} ) / (?: ([-\w]+) \.html )? $ ]], 'jox', nil, match_table)
+    local m = re_match(uri, [[ ^ /yum/ ( cn/ )? ( [a-z-0-9]+ ) /OpenResty.repo $ ]], 'jox', nil, match_table)
+    if m then
+        resp_header["Content-Type"] = "text/plain"
+        gen_cache_control_headers(ngx_time())
+
+        if m[1] == 'cn/' then
+            repo_file[2] = 'openresty.org/yum/openresty/openresty/epel-'
+            repo_file[5] = 'openresty.org/yum/openresty/openresty/'
+        else
+            repo_file[2] = 'copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-'
+            repo_file[5] = 'copr-be.cloud.fedoraproject.org/results/openresty/openresty/'
+        end
+
+        local distribution = m[2]
+        -- rhel-RELEASE
+        local from, to = re_find(distribution, [[^rhel-(\d+)$]], "jo", nil, 1)
+        if from then
+            repo_file[3] = sub(distribution, from, to)
+        else
+            repo_file[3] = '$releasever'
+        end
+
+        ngx.print(repo_file)
+        return
+    end
+
+    m = re_match(uri, [[ ^ / ( [a-z]{2} ) / (?: ([-\w]+) \.html )? $ ]], 'jox', nil, match_table)
     if not m then
         return ngx.exit(404)
     end
