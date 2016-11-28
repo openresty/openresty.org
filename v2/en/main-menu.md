@@ -9,6 +9,7 @@
 * [Getting Started](getting-started.html)
 * [Upgrading](upgrading.html)
 * [Changes](changes.html)
+* [Events](events.html)
 * [Components](components.html)
 * [Community](community.html)
 * [Benchmark](benchmark.html)
