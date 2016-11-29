@@ -9,6 +9,7 @@
 * [新手上路](getting-started.html)
 * [概览](openresty.html)
 * [组件](components.html)
+* [活动](events.html)
 * [样例](samples.html)
 * [性能评测](benchmark.html)
 * [幻灯片](presentations.html)
