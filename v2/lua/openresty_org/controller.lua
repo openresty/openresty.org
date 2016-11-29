@@ -79,13 +79,14 @@ function _M.run()
 
         local distribution = m[2]
         -- rhel-RELEASE
-        if sub(distribution, 1, 4) == 'rhel' then
-            repo_file[3] = sub(distribution, 6)
+        local from, to = re_find(distribution, [[^rhel-(\d+)$]], "jo", nil, 1)
+        if from then
+            repo_file[3] = sub(distribution, from, to)
         else
             repo_file[3] = '$releasever'
         end
 
-        ngx.print(concat(repo_file))
+        ngx.print(repo_file)
         return
     end
 
