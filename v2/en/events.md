@@ -10,6 +10,6 @@
 #  English Events
 
 #  Chinese Events
-* OpenResty Con 2016 (2016年12月10日 9:00AM at Shenzhen, China)
+* OpenResty Con 2016 (2016-12-10 9:00M at Shenzhen, China)
 
     http://con.openresty.org/cn/2016/
