@@ -68,21 +68,19 @@ function _M.run()
         return ngx.redirect(uri .. "/", 301)
     end
 
-    local from = re_find(uri, [[ ^ /yum/ ( cn/ )? ( [a-z-0-9]+ ) /OpenResty.repo $ ]], 'jox')
-    if from then
-        -- Skip /yum/
-        from = from + 5
+    local m = re_match(uri, [[ ^ /yum/ ( cn/ )? ( [a-z-0-9]+ ) /OpenResty.repo $ ]], 'jox', nil, match_table)
+    if m then
         resp_header["Content-Type"] = "text/plain"
-        if sub(uri, from, from + 2) == 'cn/' then
+        if m[1] == 'cn/' then
             repo_file[2] = 'openresty.org/yum/openresty/openresty/epel-'
-            -- Skip cn/
-            from = from + 3
         else
             repo_file[2] = 'copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-'
         end
 
-        if sub(uri, from, from + 3) == 'rhel' then
-            repo_file[3] = sub(uri, from+5, from+5)
+        local distribution = m[2]
+        -- rhel-RELEASE
+        if sub(distribution, 1, 4) == 'rhel' then
+            repo_file[3] = sub(distribution, 6)
         else
             repo_file[3] = '$releasever'
         end
@@ -91,7 +89,7 @@ function _M.run()
         return
     end
 
-    local m, err = re_match(uri, [[ ^ / ( [a-z]{2} ) / (?: ([-\w]+) \.html )? $ ]], 'jox', nil, match_table)
+    m = re_match(uri, [[ ^ / ( [a-z]{2} ) / (?: ([-\w]+) \.html )? $ ]], 'jox', nil, match_table)
     if not m then
         return ngx.exit(404)
     end
