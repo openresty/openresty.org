@@ -40,26 +40,34 @@ enabled=1
 enabled_metadata=1
 ```
 
-You can also directly add the file via `sudo yum-config-manager --add-repo https://openresty.org/yum/centos/OpenResty.repo`.
+You can also directly add the repository via the following command:
+
+```bash
+    sudo yum-config-manager --add-repo https://openresty.org/yum/centos/OpenResty.repo
+```
 
 Users in mainland China can use the following `baseurl` line instead for better speed:
 
 ```ini
-baseurl=https://openresty.org/yum/openresty/openresty/epel-$releasever-$basearch/
+    baseurl=https://openresty.org/yum/openresty/openresty/epel-$releasever-$basearch/
 ```
 
-Or add the corresponding file via `sudo yum-config-manager --add-repo https://openresty.org/yum/cn/centos/OpenResty.repo`.
+Or just add the repository via the following command:
+
+```bash
+    sudo yum-config-manager --add-repo https://openresty.org/yum/cn/centos/OpenResty.repo
+```
 
 To list all the packages in the `openresty` repository:
 
 ```bash
-sudo yum --disablerepo="*" --enablerepo="openresty" list available
+    sudo yum --disablerepo="*" --enablerepo="openresty" list available
 ```
 
 Then you can install a package, say, `openresty`, like this:
 
 ```bash
-sudo yum install openresty
+    sudo yum install openresty
 ```
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on these packages.
@@ -68,7 +76,7 @@ If you want to use all the `perl-*` packages in the `openresty` repository, then
 EPEL package repository by running the following command:
 
 ```bash
-sudo yum install epel-release
+    sudo yum install epel-release
 ```
 
 # RHEL
@@ -90,15 +98,25 @@ enabled_metadata=1
 
 You need to replace `RELEASE` in the file content above with your RHEL system's major version number, like `5`, `6`, or `7`.
 
-You can also directly add the file via `sudo yum-config-manager --add-repo https://openresty.org/yum/rhel-RELEASE/OpenResty.repo`. Don't forget to replace `RELEASE` with your RHEL system's major version number.
+You can also directly add the repository via the following command:
+
+```bash
+    sudo yum-config-manager --add-repo https://openresty.org/yum/rhel-RELEASE/OpenResty.repo
+```
+
+Do not forget to replace `RELEASE` with your RHEL system's major version number.
 
 Users in mainland China can use the following `baseurl` line instead for better speed:
 
 ```ini
-baseurl=https://openresty.org/yum/openresty/openresty/epel-RELEASE-$basearch/
+    baseurl=https://openresty.org/yum/openresty/openresty/epel-RELEASE-$basearch/
 ```
 
-Or add the corresponding file via `sudo yum-config-manager --add-repo https://openresty.org/yum/cn/rhel-RELEASE/OpenResty.repo`.
+Or just add the corresponding file via the following command:
+
+```bash
+    sudo yum-config-manager --add-repo https://openresty.org/yum/cn/rhel-RELEASE/OpenResty.repo
+```
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on these packages.
 
@@ -106,16 +124,16 @@ If you want to use all the `perl-*` packages in the `openresty` repository, then
 EPEL package repository by running the following command:
 
 ```bash
-sudo yum install epel-release
+    sudo yum install epel-release
 ```
 
 # Fedora
 
 You can enable the `openresty` repository on your Fedora system like this:
 
-```
-sudo dnf install 'dnf-command(copr)'
-sudo dnf copr enable openresty/openresty
+```bash
+    sudo dnf install 'dnf-command(copr)'
+    sudo dnf copr enable openresty/openresty
 ```
 
 Then you can easily install packages from the `openresty-openresty` repository and receive updates
@@ -123,20 +141,20 @@ in the future (through the `dnf update` command). For example, to install the `o
 following command:
 
 ```bash
-sudo dnf install openresty
+    sudo dnf install openresty
 ```
 
 To list all the available packages in the `openresty-openresty` repository, just type
 
 ```bash
-sudo dnf repo-pkgs openresty-openresty list available
+    sudo dnf repo-pkgs openresty-openresty list available
 ```
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on these packages.
 
 # Support for More Linux Distributions
 
-We welcome community contrinbutions of packaging sources targeting more Linux distributions like Ubuntu and
+We welcome community contributions of packaging sources targeting more Linux distributions like Ubuntu and
 Debian. Please ensure the resulting packages resemble our existing [RPM Packages](rpm-packages.html)
 wherever possible. Thank you very much!
 
