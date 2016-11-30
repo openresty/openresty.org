@@ -13,6 +13,7 @@ local byte = string.byte
 local http_time = ngx.http_time
 local tonumber = tonumber
 local resp_header = ngx.header
+local ngx_time = ngx.time
 local ngx_var = ngx.var
 local format = string.format
 local unescape_uri = ngx.unescape_uri
@@ -27,7 +28,9 @@ repo_file[3] = ""
 repo_file[4] = [[-$basearch/
 skip_if_unavailable=True
 gpgcheck=1
-gpgkey=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/pubkey.gpg
+gpgkey=https://]]
+repo_file[5] = ""
+repo_file[6] = [[pubkey.gpg
 enabled=1
 enabled_metadata=1]]
 
@@ -71,10 +74,14 @@ function _M.run()
     local m = re_match(uri, [[ ^ /yum/ ( cn/ )? ( [a-z-0-9]+ ) /OpenResty.repo $ ]], 'jox', nil, match_table)
     if m then
         resp_header["Content-Type"] = "text/plain"
+        gen_cache_control_headers(ngx_time())
+
         if m[1] == 'cn/' then
             repo_file[2] = 'openresty.org/yum/openresty/openresty/epel-'
+            repo_file[5] = 'openresty.org/yum/openresty/openresty/'
         else
             repo_file[2] = 'copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-'
+            repo_file[5] = 'copr-be.cloud.fedoraproject.org/results/openresty/openresty/'
         end
 
         local distribution = m[2]
