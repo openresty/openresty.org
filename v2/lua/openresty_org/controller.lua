@@ -71,7 +71,9 @@ function _M.run()
         return ngx.redirect(uri .. "/", 301)
     end
 
-    local m = re_match(uri, [[ ^ /yum/ ( cn/ )? ( [a-z-0-9]+ ) /OpenResty.repo $ ]], 'jox', nil, match_table)
+    local m = re_match(uri,
+                       [[ ^ /yum/ ( cn/ )? ( \w[-\w]+ ) /OpenResty\.repo $ ]],
+                       'jox', nil, match_table)
     if m then
         resp_header["Content-Type"] = "text/plain"
         gen_cache_control_headers(ngx_time())
@@ -79,25 +81,38 @@ function _M.run()
         if m[1] == 'cn/' then
             repo_file[2] = 'openresty.org/yum/openresty/openresty/epel-'
             repo_file[5] = 'openresty.org/yum/openresty/openresty/'
+
         else
-            repo_file[2] = 'copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-'
-            repo_file[5] = 'copr-be.cloud.fedoraproject.org/results/openresty/openresty/'
+            repo_file[2] =
+             'copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-'
+            repo_file[5] =
+                  'copr-be.cloud.fedoraproject.org/results/openresty/openresty/'
         end
 
         local distribution = m[2]
         -- rhel-RELEASE
         local from, to = re_find(distribution, [[^rhel-(\d+)$]], "jo", nil, 1)
         if from then
-            repo_file[3] = sub(distribution, from, to)
-        else
+            local ver_str = sub(distribution, from, to)
+            if ver_str ~= "5" and ver_str ~= "6" and ver_str ~= "7" then
+                return ngx.exit(404)
+            end
+
+            repo_file[3] = ver_str
+
+        elseif distribution == "centos" then
             repo_file[3] = '$releasever'
+
+        else
+            return ngx.exit(404)
         end
 
         ngx.print(repo_file)
         return
     end
 
-    m = re_match(uri, [[ ^ / ( [a-z]{2} ) / (?: ([-\w]+) \.html )? $ ]], 'jox', nil, match_table)
+    m = re_match(uri, [[ ^ / ( [a-z]{2} ) / (?: ([-\w]+) \.html )? $ ]], 'jox',
+                 nil, match_table)
     if not m then
         return ngx.exit(404)
     end
@@ -168,12 +183,13 @@ function _M.run()
         if #res == 0 then
             return search_error(i18n, main_menu, timeline, query,
                                 _("No search results found"),
-                                _("Please adjust your search query and try again."))
+                            _("Please adjust your search query and try again."))
         end
 
         -- print("search result: ", cjson.encode(res))
 
-        local result_html = view.process("search-result.tt2", { hits = res }, i18n)
+        local result_html = view.process("search-result.tt2", { hits = res },
+                                         i18n)
 
         local html = view.process("page.tt2",
                                   { main_menu = main_menu,
