@@ -253,7 +253,7 @@ location = /sub {
 Here you specify all the timeout thresholds provided by the [ngx_proxy](http://nginx.org/en/docs/http/ngx_http_proxy_module.html)
 module in the (internal) location (`= /sub`) accessed by your subrequest.
 
-Can I access remote URLs via ngx.locaiton.capture or alike?
+Can I access remote URLs via ngx.location.capture or alike?
 -----------------------------------------------------------
 
 Yes, but not directly. The subrequest API targets nginx's "locations". So you need a dedicated
