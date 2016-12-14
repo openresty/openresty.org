@@ -17,7 +17,7 @@ engine based on AJAX.
 
 This presentation was given at the [OpenResty Con 2016](https://con.openresty.org/cn/2016/) conference held in Shenzhen, China.
 
-Video recording (in Chinese): https://youtu.be/H5UFGDaf9Xk  (Visitors from mainland China should access [this MP4 video](openresty.org/videos/openresty-con-2016.mp4) instead)
+Video recording (in Chinese): https://youtu.be/H5UFGDaf9Xk  (Visitors from mainland China should access [this MP4 video](https://openresty.org/videos/openresty-con-2016.mp4) instead)
 
 Download the slides as PDF: https://openresty.org/slides/New-development-of-OpenResty-in-2016.pdf
 
