@@ -120,7 +120,7 @@ Copyright and License
 
 This module is licensed under the BSD license.
 
-Copyright (C) 2011, 2012, 2013, 2014, 2015, 2016 by Yichun "agentzh" Zhang (章亦春) &lt;agentzh@gmail.com&gt;, CloudFlare Inc.
+Copyright (C) 2011-2017 by Yichun "agentzh" Zhang (章亦春) &lt;agentzh@gmail.com&gt;, OpenResty Inc.
 
 All rights reserved.
 
