@@ -8,9 +8,9 @@
     @changes       17
 --->
 
-这个软件包主要由章亦春（[agentzh](http://agentzh.org)）维护。在 2011
-年之前曾由[淘宝网](http://www.taobao.com)赞助，此后一直主要由美国的
-[CloudFlare 公司](http://www.cloudflare.com) 提供支持。
+这个开源 Web 平台主要由章亦春（[agentzh](http://agentzh.org)）维护。在 2011
+年之前曾由[淘宝网](http://www.taobao.com)赞助，在后来的 2012 ~ 2016 年间主要由美国的
+[CloudFlare 公司](http://www.cloudflare.com) 提供支持。目前，OpenResty 主要由 OpenResty 软件基金会和 OpenResty Inc. 公司提供支持。
 
 因为大部分 [Nginx](nginx.html) 模块都是由本软件包的维护者开发，所以可以确保所有这些模块及其他组件可以很好地一起工作。
 
