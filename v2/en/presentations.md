@@ -34,6 +34,8 @@ Download the slides as PDF: https://openresty.org/slides/Optimizing-Lua-Applicat
 
 This presentation was given at the [nginx.conf](https://www.nginx.com/nginxconf/) 2016 conference held in Austin TX, USA.
 
+Video recording (in English): https://www.youtube.com/watch?v=w2RAZLptE-U
+
 Download the slides as PDF: https://openresty.org/slides/Building-Business-Systems-with-DSLs-atop-OpenResty.pdf
 
 #  Year 2015
