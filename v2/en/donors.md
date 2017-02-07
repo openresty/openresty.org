@@ -8,6 +8,8 @@ Donors donating more than 2000 USD are listed here to express
 our appreciation. If you have ever donated more than 2000 USD, please contact
 me and send me your company or personal logos.
 
+[![PowerDNS](/images/pdns.png)](https://www.powerdns.com)
+
 [![Volka](/images/logo-volka.png)](https://volka.social)
 
 Donors donating more than 1000 USD are listed here to express
