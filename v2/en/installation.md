@@ -86,7 +86,7 @@ You're recommended to install the following packages using apt-get:
 
 ```
 apt-get install libreadline-dev libncurses5-dev libpcre3-dev \
-    libssl-dev perl make build-essential
+    libssl-dev libcurl4-openssl-dev perl make build-essential
 ```
 
 
