@@ -86,7 +86,7 @@ You're recommended to install the following packages using apt-get:
 
 ```
 apt-get install libreadline-dev libncurses5-dev libpcre3-dev \
-    libssl-dev perl make build-essential
+    libssl-dev perl make build-essential curl
 ```
 
 
@@ -95,7 +95,7 @@ apt-get install libreadline-dev libncurses5-dev libpcre3-dev \
 You're recommended to install the following packages using yum:
 
 ```
-yum install readline-devel pcre-devel openssl-devel gcc
+yum install readline-devel pcre-devel openssl-devel gcc curl
 ```
 
 
@@ -106,7 +106,7 @@ management tool, like [Homebrew](http://mxcl.github.com/homebrew/):
 
 ```
 brew update
-brew install pcre openssl
+brew install pcre openssl curl
 ```
 
 Alternatively you can install PCRE and/or OpenSSL from source all by yourself
