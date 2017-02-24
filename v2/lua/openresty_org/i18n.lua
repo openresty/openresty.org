@@ -3,7 +3,7 @@
    Any changes made to this file will be lost the next
    time the templates are compiled.
 
-   Copyright 2016 - Yichun Zhang (agentzh) - All rights reserved.
+   Copyright 2017 - Yichun Zhang (agentzh) - All rights reserved.
 ]]
 
 local _M = {}
@@ -16,7 +16,7 @@ local trans_cn = {
     ["100% Powered by OpenResty and PostgreSQL"] = "100% 由 OpenResty 和 PostgreSQL 驱动",
     ["Bad search query"] = "非法的搜索查询",
     ["Contribute on GitHub"] = "在 GitHub 上贡献你的力量",
-    ["Copyright © 2016 Yichun Zhang (agentzh)"] = "版权所有 © 2016 章亦春（agentzh）",
+    ["Copyright © 2017 Yichun Zhang (agentzh)"] = "Copyright © 2017 章亦春 (agentzh)",
     ["It’s open-source stuff so you can contribute:"] = "这是一个开源项目，所以你也可以来贡献：",
     ["No query provided."] = "没有提供任何搜索词。",
     ["No search results found"] = "没有找到任何匹配的记录",

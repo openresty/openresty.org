@@ -26,8 +26,8 @@ msgid  "Search Result"
 msgstr "搜索结果"
 
 #: templates/footer.tt2:4
-msgid  "Copyright © 2016 Yichun Zhang (agentzh)"
-msgstr "版权所有 © 2016 章亦春（agentzh）"
+msgid  "Copyright © 2017 Yichun Zhang (agentzh)"
+msgstr "Copyright © 2017 章亦春 (agentzh)"
 
 #: templates/footer.tt2:5
 msgid  "100% Powered by OpenResty and PostgreSQL"
