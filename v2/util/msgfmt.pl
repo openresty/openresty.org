@@ -39,7 +39,7 @@ print $out <<_EOC_;
    Any changes made to this file will be lost the next
    time the templates are compiled.
 
-   Copyright 2016 - Yichun Zhang (agentzh) - All rights reserved.
+   Copyright 2017 - Yichun Zhang (agentzh) - All rights reserved.
 ]]
 
 local _M = {}

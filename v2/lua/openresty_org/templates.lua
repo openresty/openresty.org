@@ -15,7 +15,7 @@ local math_floor = math.floor
 local table_maxn = table.maxn
 
 local _M = {
-    version = '0.04'
+    version = '0.07'
 }
 
 local template_map = {}
@@ -144,7 +144,7 @@ template_map['footer.tt2'] = function (context)
 
 i = i + 1 output[i] = '<div class="content-footer">\n<hr class="footer-sep"/>\n<div class="footer">\n  <p>'
 -- line 4 "footer.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Copyright © 2016 Yichun Zhang (agentzh)' }})
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Copyright © 2017 Yichun Zhang (agentzh)' }})
 i = i + 1 output[i] = '</p>\n  <p>'
 -- line 5 "footer.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { '100% Powered by OpenResty and PostgreSQL' }})
