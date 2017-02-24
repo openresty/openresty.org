@@ -24,16 +24,16 @@ tpage = tpage
 
 .DELETE_ON_ERRORS: $(templates_lua) $(patsubst %.md.tt2,%.md,$(wildcard en/*.md.tt2))
 
-.PHONE: all
+.PHONY: all
 all: templates msgfmt
 
-.PHONE: templates
+.PHONY: templates
 templates: $(templates_lua)
 
 $(templates_lua): $(tt2_files)
 	lemplate --compile $^ > $@
 
-.PHONE: run
+.PHONY: run
 run:
 	mkdir -p logs
 	$(nginx) -p $$PWD -c conf/nginx.conf
@@ -46,19 +46,19 @@ stop: logs/nginx.pid
 	$(nginx) -p $$PWD -c conf/nginx.conf -t
 	kill -QUIT `cat $<`
 
-.PHONE: clean
+.PHONY: clean
 clean:
 	rm -rf html text *.tsv
 	rm -f $(templates_lua)
 
-.PHONE: html
+.PHONY: html
 html: $(html_files)
 
 html/%.html: %.md
 	mkdir -p html/en html/cn
 	$(md2html) $< --output $@
 
-.PHONE: text
+.PHONY: text
 text: $(txt_files)
 
 text/%.txt: %.md
@@ -70,34 +70,34 @@ text/%.txt: %.md
 
 # WARNING: this target will override existing .md files
 # so any manual edits would get lost!
-.PHONE: extract
+.PHONY: extract
 extract:
 	$(extract_pl) ../v1/index.html en
 	$(extract_pl) ../v1/cn/index.html cn
 
-.PHONE: gendata
+.PHONY: gendata
 gendata: $(tsv_files)
 
 $(tsv_files): $(html_files) $(txt_files) $(gendata_pl)
 	$(gendata_pl) en
 	$(gendata_pl) cn
 
-.PHONE: initdb
+.PHONY: initdb
 initdb: $(tsv_files)
 	psql -Uopenresty openresty_org -f init.sql
 
-.PHONE: deploy
+.PHONY: deploy
 deploy:
 	ls $(tsv_files)
 	psql -Uopenresty openresty_org -f init.sql
 
-.PHONE: msginit
+.PHONY: msginit
 msginit: $(po_files)
 
 $(po_files): $(lua_files) $(tt2_files) $(msginit_pl)
 	$(msginit_pl) --outdir po --locale cn $(lua_files) $(tt2_files)
 
-.PHONE: msgfmt
+.PHONY: msgfmt
 msgfmt: $(i18n_lua)
 
 $(i18n_lua): $(po_files) $(msgfmt_pl)
