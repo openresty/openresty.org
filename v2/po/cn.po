@@ -58,8 +58,8 @@ msgid  "Search OpenResty.org"
 msgstr "搜索 OpenResty.org 中文站"
 
 #: templates/index.tt2:5
-msgid  "OpenResty<sup>&reg;</sup> - Official Site"
-msgstr "OpenResty<sup>&reg;</sup> - Official Site"
+msgid  "OpenResty&reg; - Official Site"
+msgstr "OpenResty&reg; - 中文官方站"
 
 #: templates/index.tt2:24
 msgid  "OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT."

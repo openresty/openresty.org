@@ -217,7 +217,7 @@ template_map['index.tt2'] = function (context)
 
 i = i + 1 output[i] = '<!DOCTYPE html>\n<html lang="en">\n<head>\n	<meta charset="utf-8">\n        <title>'
 -- line 5 "index.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty<sup>&reg;</sup> - Official Site' }})
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty&reg; - Official Site' }})
 i = i + 1 output[i] = '</title>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">\n	<link href=\'https://openresty.org/css/fonts.css\' rel=\'stylesheet\' type=\'text/css\'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel="stylesheet" type="text/less" href="/css/main.less">\n	<script src="/js/less.js"></script>\n	-->\n	<link rel="stylesheet" type="text/css" href="/css/main.css">\n        <script>\n'
 -- line 15 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'old-permlink-js.tt2')
