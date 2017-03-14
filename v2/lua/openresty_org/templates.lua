@@ -144,18 +144,21 @@ template_map['footer.tt2'] = function (context)
 
 i = i + 1 output[i] = '<div class="content-footer">\n<hr class="footer-sep"/>\n<div class="footer">\n  <p>'
 -- line 4 "footer.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Copyright © 2017 Yichun Zhang (agentzh)' }})
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty<sup>&reg;</sup> is a registered trademark owned by OpenResty Inc.' }})
 i = i + 1 output[i] = '</p>\n  <p>'
 -- line 5 "footer.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Copyright © 2017 Yichun Zhang (agentzh)' }})
+i = i + 1 output[i] = '</p>\n  <p>'
+-- line 6 "footer.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { '100% Powered by OpenResty and PostgreSQL' }})
 i = i + 1 output[i] = '\n     '
--- line 6 "footer.tt2"
+-- line 7 "footer.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { '(' }})
 i = i + 1 output[i] = '<a href="https://github.com/openresty/openresty.org/">\n     '
--- line 7 "footer.tt2"
+-- line 8 "footer.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'view the source code of this site' }})
 i = i + 1 output[i] = '</a>'
--- line 7 "footer.tt2"
+-- line 8 "footer.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { ')' }})
 i = i + 1 output[i] = '</p>\n  <br/>\n  <p>京ICP备16021991号</p>\n</div>\n</div>\n\n<script src="/js/jquery.min.js"></script>\n<script src="/js/main.js"></script>\n\n<!-- Google analytics -->\n<script type="text/javascript">\n\n  var _gaq = _gaq || [];\n  _gaq.push([\'_setAccount\', \'UA-24724965-1\']);\n  //_gaq.push([\'_setDomainName\', \'openresty.org\']);\n  _gaq.push([\'_trackPageview\']);\n\n  var ga_f = function() {\n    var ga = document.createElement(\'script\'); ga.type = \'text/javascript\'; ga.async = true;\n    ga.src = (\'https:\' == document.location.protocol ? \'https://ssl\' : \'http://www\') + \'.google-analytics.com/ga.js\';\n    var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(ga, s);\n  };\n  setTimeout(ga_f, 0);\n\n</script>\n'
 
@@ -171,7 +174,7 @@ template_map['header.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '<header role="header">\n        <p class="site-name left">\n            <a href=".">\n                <img src="/images/logo.png" width="64">\n            </a>\n        </p>\n\n        <p class="site-name left">\n                <a href=".">OpenResty <span class="trade">&trade;</span></a>\n                <small>'
+i = i + 1 output[i] = '<header role="header">\n        <p class="site-name left">\n            <a href=".">\n                <img src="/images/logo.png" width="64">\n            </a>\n        </p>\n\n        <p class="site-name left">\n                <a href=".">OpenResty<span class="trade">&reg;</span></a>\n                <small>'
 -- line 10 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Scalable Web Platform by Extending NGINX with Lua' }})
 i = i + 1 output[i] = '</small>\n        </p><!-- / site-name -->\n\n        <form action="search.html" class="right">\n                <fieldset>\n                        <input type="search" name="query" id="search"'
@@ -212,9 +215,9 @@ template_map['index.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '<!DOCTYPE html>\n<html lang="en">\n<head>\n	<meta charset="utf-8">\n	<title>'
+i = i + 1 output[i] = '<!DOCTYPE html>\n<html lang="en">\n<head>\n	<meta charset="utf-8">\n        <title>'
 -- line 5 "index.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty - Official Site' }})
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty<sup>&reg;</sup> - Official Site' }})
 i = i + 1 output[i] = '</title>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">\n	<link href=\'https://openresty.org/css/fonts.css\' rel=\'stylesheet\' type=\'text/css\'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel="stylesheet" type="text/less" href="/css/main.less">\n	<script src="/js/less.js"></script>\n	-->\n	<link rel="stylesheet" type="text/css" href="/css/main.css">\n        <script>\n'
 -- line 15 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'old-permlink-js.tt2')
@@ -223,7 +226,7 @@ i = i + 1 output[i] = '\n        </script>\n</head>\n<body>\n\n'
 i = i + 1 output[i] = context.process(context, 'header.tt2')
 i = i + 1 output[i] = '\n\n	<section id="intro">\n		<div class="text">\n			<p>'
 -- line 24 "index.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty is a dynamic web platform based on NGINX and LuaJIT.' }})
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT.' }})
 i = i + 1 output[i] = '</p>\n			<p><small>'
 -- line 25 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'It’s open-source stuff so you can contribute:' }})

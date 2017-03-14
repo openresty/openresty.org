@@ -6,10 +6,10 @@
 
 # Binary Packages
 
-OpenResty provides [official pre-built packages](linux-packages.html) for some of the common
+OpenResty<sup>&reg;</sup> provides [official pre-built packages](linux-packages.html) for some of the common
 Linux distributions. Ensure you have checked them out first.
 
-We also provide pre-built Win32 packages for OpenResty on the [Download](download.html) page. And you should
+We also provide pre-built Win32 packages for OpenResty<sup>&reg;</sup> on the [Download](download.html) page. And you should
 also check out [this documentation](https://github.com/openresty/openresty/blob/master/doc/README-win32.md#readme) instead.
 
 # Building from Source
@@ -42,7 +42,7 @@ not maintained by OpenResty are not supported by OpenResty and they *may* compro
 You can use the command `./configure --help` to see all the available options that you can use to
 enable and/or disable certain components or features of OpenResty during build time.
 
-To start your OpenResty, you can just use the `openresty` command in place of your original `nginx`
+To start your OpenResty<sup>&reg;</sup>, you can just use the `openresty` command in place of your original `nginx`
 command as long as you have correctly added the `<openresty-prefix>/bin/` directory to your system
 environment `PATH` (`<openresty-prefix>` is default to `/usr/local/openresty/` unless being overridden
 by `./configure`'s `--prefix=PATH` option).

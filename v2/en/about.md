@@ -22,7 +22,7 @@ The bundled software components are copyrighted by the respective copyright
 holders.  Basically only components with BSD style licenses are included. If
 you find exceptions, please let me know.
 
-This web site is a dynamic web application built completely upon the OpenResty
+This web site is a dynamic web application built completely upon the OpenResty<sup>&reg;</sup>
 platform and the PostgreSQL database. The whole application is
 opensourced on [GitHub](github.html):
 

@@ -1,8 +1,8 @@
 <!---
-    @title         Linux Packages
+    @title         OpenResty® Linux Packages
 --->
 
-OpenResty provides official pre-built packages for the following Linux distributions and versions.
+OpenResty<sup>&reg;</sup> provides official pre-built packages for the following Linux distributions and versions.
 
 * RHEL/CentOS
 

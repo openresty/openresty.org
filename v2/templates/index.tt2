@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>[% c.l("OpenResty - Official Site") %]</title>
+        <title>[% c.l("OpenResty<sup>&reg;</sup> - Official Site") %]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
 	<link href='https://openresty.org/css/fonts.css' rel='stylesheet' type='text/css'>
 	<!--
@@ -21,7 +21,7 @@
 
 	<section id="intro">
 		<div class="text">
-			<p>[% c.l("OpenResty is a dynamic web platform based on NGINX and LuaJIT.") %]</p>
+			<p>[% c.l("OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT.") %]</p>
 			<p><small>[% c.l("It’s open-source stuff so you can contribute:") %]</small>
                            <a href="https://github.com/openresty/" class="github">[% c.l("Contribute on GitHub") %] &raquo;</a></p>
 		</div><!-- / text -->
