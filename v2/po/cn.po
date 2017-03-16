@@ -27,7 +27,7 @@ msgstr "搜索结果"
 
 #: templates/footer.tt2:4
 msgid  "OpenResty<sup>&reg;</sup> is a registered trademark owned by OpenResty Inc."
-msgstr "OpenResty<sup>&reg;</sup> OpenResty Inc. 的注册商标。"
+msgstr "OpenResty<sup>&reg;</sup> 是 OpenResty Inc. 公司所有的注册商标。"
 
 #: templates/footer.tt2:5
 msgid  "Copyright © 2017 Yichun Zhang (agentzh)"
