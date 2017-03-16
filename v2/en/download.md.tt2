@@ -8,7 +8,7 @@
 
 ## Linux
 
-OpenResty provides [official pre-built packages](linux-packages.html) for common
+OpenResty<sup>&reg;</sup> provides [official pre-built packages](linux-packages.html) for common
 Linux distributions.
 
 We currently support RHEL, CentOS, and Fedora but we are also adding binary package

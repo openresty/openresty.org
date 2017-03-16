@@ -4,7 +4,7 @@
     @created       2011-06-21 04:25 GMT
 --->
 
-对于一些常见的 Linux 发行版本，OpenResty 提供 [官方预编译包](linux-packages.html)。确保你首先用这种方式来安装。
+对于一些常见的 Linux 发行版本，OpenResty<sup>&reg;</sup> 提供 [官方预编译包](linux-packages.html)。确保你首先用这种方式来安装。
 
 你可以下载下面这些源码包。然后按照 [安装](installation.html)页面的说明来 build 和安装。
 
