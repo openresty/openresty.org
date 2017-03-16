@@ -1,8 +1,8 @@
 <!---
-    @title         Linux 包
+    @title         OpenResty® Linux 包
 --->
 
-对于下列 Linux 发行版的种类和版本号，OpenResty 提供官方的预编译包。
+对于下列 Linux 发行版的种类和版本号，OpenResty<sup>&reg;</sup> 提供官方的预编译包。
 
 * RHEL/CentOS
 

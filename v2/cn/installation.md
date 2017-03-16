@@ -3,7 +3,7 @@
     @creator       Yichun Zhang
     @created       2011-06-21 04:40 GMT
 --->
-对于一些常见的 Linux 发行版本，OpenResty 提供 [官方预编译包](linux-packages.html)。确保你首先用这种方式来安装。
+对于一些常见的 Linux 发行版本，OpenResty<sup>&reg;</sup> 提供 [官方预编译包](linux-packages.html)。确保你首先用这种方式来安装。
 
 如果您还没有下载 [OpenResty](openresty.html) 的源码包, 请到 [Download](download.html) 页下载。
 
@@ -83,7 +83,7 @@ pfexec pkg install gcc-3 SUNWlibm
 # 构建 OpenResty
 
 ## 下载
-从下载页 [Download](download.html)下载最新的 openresty 源码包，并且像下面的示例一样将其解压:
+从下载页 [Download](download.html)下载最新的 OpenResty<sup>&reg;</sup> 源码包，并且像下面的示例一样将其解压:
 
 ```
 tar -xzvf openresty-VERSION.tar.gz
