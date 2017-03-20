@@ -17,7 +17,6 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Supported Architectures
-    23              x86_64, i386
     24              x86_64, i386
     25              x86_64, i386
     26              x86_64, i386
