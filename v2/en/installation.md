@@ -12,6 +12,12 @@ Linux distributions. Ensure you have checked them out first.
 We also provide pre-built Win32 packages for OpenResty<sup>&reg;</sup> on the [Download](download.html) page. And you should
 also check out [this documentation](https://github.com/openresty/openresty/blob/master/doc/README-win32.md#readme) instead.
 
+It is highly recommended to install OpenResty on our Mac OS X or macOS systems via [homebrew](https://brew.sh/) package manager, like this:
+
+```
+brew install homebrew/nginx/openresty
+```
+
 # Building from Source
 
 If you haven't downloaded the [OpenResty](openresty.html) source code tarball,

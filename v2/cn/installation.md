@@ -3,7 +3,15 @@
     @creator       Yichun Zhang
     @created       2011-06-21 04:40 GMT
 --->
+
 对于一些常见的 Linux 发行版本，OpenResty<sup>&reg;</sup> 提供 [官方预编译包](linux-packages.html)。确保你首先用这种方式来安装。
+
+对于 Mac OS X 或 macOS 用户，强烈推荐您使用 [homebrew](https://brew.sh/) 包管理工具安装 OpenResty。可以直接使用下面
+这一条命令：
+
+```
+brew install homebrew/nginx/openresty
+```
 
 如果您还没有下载 [OpenResty](openresty.html) 的源码包, 请到 [Download](download.html) 页下载。
 
@@ -44,7 +52,7 @@ yum install readline-devel pcre-devel openssl-devel gcc
 
 ## Mac OS X (macOS) 用户
 
-强烈推荐您使用 [homebrew](https://brew.sh/) 包管理工具在您的 Mac OS X 或 macOS 系统上面安装 OpenResty。可以直接使用下面
+对于 Mac OS X 或 macOS 用户，强烈推荐您使用 [homebrew](https://brew.sh/) 包管理工具安装 OpenResty。可以直接使用下面
 这一条命令：
 
 ```
