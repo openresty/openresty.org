@@ -26,6 +26,14 @@ All the releases are signed by the public PGP key
 * [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 11MB &nbsp;
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 17 November 2016
 
+## macOS/Mac OS X
+
+It is highly recommended to install OpenResty on our Mac OS X or macOS systems via [homebrew](https://brew.sh/) package manager, like this:
+
+```
+brew install homebrew/nginx/openresty
+```
+
 # Source Code Releases
 
 All the releases are signed by the public PGP key
