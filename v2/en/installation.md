@@ -99,7 +99,13 @@ yum install readline-devel pcre-devel openssl-devel gcc curl
 ```
 
 
-### Mac OS X (Darwin) users
+### Mac OS X (macOS) users
+
+It is highly recommended to install OpenResty on our Mac OS X or macOS systems via [homebrew](https://brew.sh/) package manager, like this:
+
+```
+brew install homebrew/nginx/openresty
+```
 
 You're recommended to install prerequisites PCRE and OpenSSL using some package
 management tool, like [Homebrew](http://mxcl.github.com/homebrew/):

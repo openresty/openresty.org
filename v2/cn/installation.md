@@ -42,7 +42,15 @@ yum install readline-devel pcre-devel openssl-devel gcc
 ```
 
 
-## Mac OS X (Darwin) 用户
+## Mac OS X (macOS) 用户
+
+强烈推荐您使用 [homebrew](https://brew.sh/) 包管理工具在您的 Mac OS X 或 macOS 系统上面安装 OpenResty。可以直接使用下面
+这一条命令：
+
+```
+brew install homebrew/nginx/openresty
+```
+
 推荐您使用一些软件管理工具先安装PCRE, 比如说 [Homebrew](http://mxcl.github.com/homebrew/):
 
 ```
