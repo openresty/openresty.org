@@ -26,7 +26,7 @@ while (<$in>) {
              ( [\s,.:?] )
            !$1\[${2}_by_lua*](https://github.com/openresty/lua-nginx-module#${2}_by_lua)$3!xgs;
 
-    $c += s! (\s) ngx_(set_misc|lua_upstream|encrypted_session|headers_more|lua|echo|memc|redis2|srcache) ( [\s,.:?] ) !
+    $c += s! (\s) ngx_(set_misc|lua_upstream|encrypted_session|headers_more|lua|echo|memc|redis2|srcache|drizzle) ( [\s,.:?] ) !
             my ($pre, $name, $post) = ($1, $2, $3);
             (my $name2 = $name) =~ s/_/-/g;
             "$pre\[ngx_$name](https://github.com/openresty/$name2-nginx-module#readme)$post"
@@ -90,8 +90,8 @@ while (<$in>) {
             "$pre\[$txt](https://github.com/openresty/lua-resty-core/blob/master/lib/$file.md#readme)$post"
             !egx;
 
-    $c += s! (\s) (resty-cli|lua-cjson|lua-resty-(?:core|memcached|mysql|redis|dns|lock|lrucache|websocket|upload)) ( [\s,.:?] ) !$1\[$2](https://github.com/openresty/$2#readme)$3!gxs;
-    $c += s! (\s) (error_page|client_body_buffer_size) ( [\s,.:?] ) !$1\[$2](http://nginx.org/r/$2)$3!gxs;
+    $c += s! (\s) (opm|resty-cli|lua-cjson|lua-redis-parser|lua-resty-(?:core|memcached|mysql|redis|dns|lock|lrucache|websocket|upload|limit-traffic)) ( [\s,.:?] ) !$1\[$2](https://github.com/openresty/$2#readme)$3!gxs;
+    $c += s! (\s) (proxy_pass|proxy_next_upstream_tries|error_page|client_body_buffer_size) ( [\s,.:?] ) !$1\[$2](http://nginx.org/r/$2)$3!gxs;
 
     $c += s! (\s) (table\.concat) ( (?:\(\))? ) ( [\s,.:?] ) !$1\[$2$3](http://www.lua.org/manual/5.1/manual.html#pdf-$2)$4!gxs;
     $c += s! (\s) ([Nn]ginx) ( [\s,.:?] ) !$1\[$2](nginx.html)$3!gxsi;

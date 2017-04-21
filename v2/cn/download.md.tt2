@@ -13,15 +13,21 @@
 # 发布
 
 ##  最新版
+[% ver = "1.11.2.3" %]
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.0MB
+&nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
+([Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
+[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)) &nbsp;
+[Changes](changelog-1011002.html) - 2017年4月21日
+
+##  历史遗留版
+有的时候我们可能会需要较老的版本：
 [% ver = "1.11.2.2" %]
-* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 3.8MB
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.1MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)) &nbsp;
 [Changes](changelog-1011002.html) - 2016年11月17日
-
-##  历史遗留版
-有的时候我们可能会需要较老的版本：
 [% ver = "1.11.2.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 3.8MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;

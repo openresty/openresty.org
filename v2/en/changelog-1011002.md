@@ -2,6 +2,128 @@
     @title         ChangeLog 1.11.2
 --->
 
+# Version 1.11.2.3 - 21 April 2017
+
+* change: we no longer bundle the standard Lua 5.1 interpreter (aka the PUC-Rio Lua). now we only bundle LuaJIT.
+* win32: upgraded PCRE to 8.40, zlib to 1.2.11, and OpenSSL to 1.0.2k.
+* bugfix: we did not use `PATH` in `./configure --sbin-path=PATH` when creating symlinks. thanks David Galeano for the patch.
+* bugfix: default index.html: missing the `</p>` tag. thanks Xiaoyu Chen for the patch.
+* feature: applied the `safe_resolver_ipv6_option` patch to the [nginx](nginx.html) core to avoid the `ipv6=off` option to be parsed by [nginx](nginx.html) when it is not built with IPv6 support. thanks Thibault Charbonnier for the patch.
+* feature: now we automatically add the `-msse4.2` compilation option for building the bundled LuaJIT when it is available.
+* upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) to 0.10.8.
+    * feature: fixed build compatibility with BoringSSL. thanks Tom Thorogood for the patch. Note: BoringSSL is *not* an officially supported target.
+    * feature: `tcpsock:connect()`: allows the `options_table` argument being nil. thanks Dejiang Zhu for the patch.
+    * feature: added support for the 303 status code in [ngx.redirect()](https://github.com/openresty/lua-nginx-module#ngxredirect). thanks Tom Thorogood for the patch.
+    * bugfix: C API: `ngx_http_lua_add_package_preload()` might not take effect when lua_code_cache is off. thanks jimtan for the patch.
+    * bugfix: [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block): the number of retres might exceed the limit of [proxy_next_upstream_tries](http://nginx.org/r/proxy_next_upstream_tries) or alike.
+    * bugfix: setting response headers would change the `Content-Type` response header. thanks leafo for the report and Ming Wen for the patch.
+    * bugfix: tcp cosockets: `sslhandshake()`: typo in the error message. thanks detailyang for the patch.
+    * bugfix: typo fix in C POST args handler debug log. thanks Robert Paprocki for the patch.
+    * change: removed the use of `luaL_getn()` macro as it is no longer available in the latest LuaJIT v2.1. thanks Datong Sun for the patch.
+    * change: removed the `mmap(sbrk(0))` memory trick since glibc leaks memory when it is forced to use `mmap()` to fulfill `malloc()`.
+    * doc: [ngx.exit()](https://github.com/openresty/lua-nginx-module#ngxexit) also returns immediately in the [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block) context. thanks Jinhua Tan for the patch.
+    * doc: various wording tweaks and more code examples. thanks Dayo Akanji for the patch.
+    * doc: added a note about the LRU regex cache used in the [ngx.re](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#readme).* implementation of [lua-resty-core](https://github.com/openresty/lua-resty-core#readme).
+    * tests: the test suite can now work with PCRE 8.39 ~ 8.40. thanks Andreas Lubbe for the patch.
+* upgraded [resty-cli](https://github.com/openresty/resty-cli#readme) to 0.17.
+    * optimize: removed unwanted exit status handling. thanks Thibault Charbonnier for the patch.
+    * feature: generates Lua stacktraces by default for user errors. thanks Thibault Charbonnier for the patch.
+    * bugfix: fixed exit code handling for [nginx](nginx.html) crashes and INT signal interrupts. thanks Aliaxandr Rahalevich and Gordon Gao for the report.
+    * feature: resty: added the --shdict "NAME SIZE" option. thanks Thibault Charbonnier for the patch.
+    * feature: resty: added new command-line option `--resolve-ipv6`. thanks Thibault Charbonnier for the patch.
+* upgraded [opm](https://github.com/openresty/opm#readme) to 0.0.3.
+    * `dist.ini`: relaxed the github repo link check.
+    * feature: added support for HTTP proxies via environments `http_proxy` and `https_proxy`.
+    * bugfix: tar might give the permissions error 'Cannot change ownership to uid XX, gid XX: Operation not permitted'. thanks Jon Keys for the patch.
+* upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core#readme) to 0.1.11.
+    * feature: `resty.core.regex`: exported internal Lua helper functions `collect_captures`, `check_buf_size`, and `re_sub_compile`. these functions are deliberately undocumented and thus subject to future changes.
+    * change: `resty.core`: made the warning louder by turning it to an alert when LuaJIT 2.0 is used.
+    * bugfix: [ngx.re](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#readme): `split()` might enter infinite loops when the regex is an empty string. thanks Dejiang Zhu for the patch.
+* upgraded [lua-resty-lock](https://github.com/openresty/lua-resty-lock#readme) to 0.06.
+    * optimize: use branch-free algorithms for variables assignment. thanks Thibault Charbonnier for the patch.
+    * optimize: removed the unused shdict metatable retrieval code. thanks Thibault Charbonnier for the patch.
+    * doc: various documentation improvements from Thibault Charbonnier.
+* upgraded [lua-resty-lrucache](https://github.com/openresty/lua-resty-lrucache#readme) to 0.06.
+    * bugfix: `resty.lrucache`: the `get()` method incorrectly ignored `false` values. thanks Proton for the patch.
+    * optimize: small tweaks from Aapo Talvensaari and Thibault Charbonnier.
+    * doc: typo fixes from Gordon Gao.
+* upgraded [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql#readme) to 0.19.
+    * bugfix: the 8-bit packet numbers might overflow and led to runtime Lua exceptions. thanks Ming Wen for the patch.
+* upgraded [lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic#readme) to 0.03.
+    * bugfix: fixed several known race conditions by switching to `shdict:incr(k, v, init)`. thanks Thibault Charbonnier for the patch.
+    * optimize: use `math.max()` to reduce Lua branches. thanks Thibault Charbonnier for the patch.
+* upgraded [lua-redis-parser](https://github.com/openresty/lua-redis-parser#readme) to 0.13.
+    * bugfix: removed the use of the old Lua 5.0 `luaL_getn` API function since the latest LuaJIT 2.1 just removed it.
+* upgraded [lua-cjson](https://github.com/openresty/lua-cjson#readme) to 2.1.0.5.
+    * feature: supports MS C compiler older than VC2012. thanks spacewander for the patch.
+    * bugfix: fixed compilation errors from the Microsoft C compiler. thanks Tim Chen for the patch.
+    * bugfix: conditionally build `luaL_setfuncs()` function as the latest LuaJIT v2.1 already includes it. thanks Datong Sun for the patch.
+    * bugfix: preserve `empty_array_mt` behavior upon multiple loadings of the module. thanks Thibault Charbonnier for the patch.
+* upgraded [ngx_redis2](https://github.com/openresty/redis2-nginx-module#readme) to 0.14.
+    * feature: fixed compilation errors with [Nginx](nginx.html) 1.11.6+.
+* upgraded [ngx_memc](https://github.com/openresty/memc-nginx-module#readme) to 0.18.
+    * feature: fixed the compilation errors with [nginx](nginx.html) 1.11.6+. thanks Hiroaki Nakamura for the patch.
+* upgraded [ngx_drizzle](https://github.com/openresty/drizzle-nginx-module#readme) to 0.1.10.
+    * feature: fixed compilation issues with [nginx](nginx.html) 1.11.6+. thanks James Christopher Adduono for the patch.
+    * bugfix: fixed errors and warnings with C compilers without variadic macro support.
+* upgraded LuaJIT to v2.1-20170405: https://github.com/openresty/luajit2/tags
+    * feature: added the bytecode option `L` to display lua source line numbers. thanks Dejiang Zhu for the patch.
+    * optimize: x64: `lj_str_new`: uses randomized hash functions based on crc32 when `-msse4.2` is used in build options. thanks Shuxin Yang for the patch.
+    * optimize: `lj_str_new`: tests the full hash value before doing the full string comparison on hash collisions. thanks Shuxin Yang for the patch.
+    * imported Mike Pall's latest changes:
+        * Add some more changes and extensions from Lua 5.2.
+        * Remove old Lua 5.0 compatibility defines.
+        * [FFI](http://luajit.org/ext_ffi.html): Fix FOLD rules for `int64_t` comparisons.
+        * ARM64: Add big-endian support.
+        * x64/`LJ_GC64`: Fix `emit_loadk64()`.
+        * `LJ_GC64`: Fix `BC_CALLM` snapshot handling.
+        * x64/`LJ_GC64`: Fix assembly of CNEWI with 64 bit constant pointer.
+        * ARM64: Fix Nintendo Switch build.
+        * ARM64: Fix XLOAD/XSTORE with FP operand.
+        * Remove unnecessary mcode alloc pointer check.
+        * Limit mcode alloc probing, depending on the available pool size.
+        * Fix overly restrictive range calculation in mcode allocation.
+        * Fix out-of-scope goto handling in parser.
+        * Remove internal `__mode = "K"` and replace with safe check.
+        * Fix annoying warning, due to deterministic binutils configuration.
+        * DynASM: Fix warning.
+        * MIPS64, part 2: Add MIPS64 hard-float JIT compiler backend.
+        * Fix FOLD rules for `math.abs()` and FP negation.
+        * Fix soft-float `math.abs()` and negation.
+        * x64/`LJ_GC64`: Fix warning for DUALNUM build.
+        * x64/`LJ_GC64`: Fix (currently unused) integer stores in `asm_tvptr()`.
+        * ARM64: Cleanup and de-cargo-cult TValue store generation.
+        * MIPS: Don't use `RID_GP` as a scratch register.
+        * MIPS: Fix emitted code for U32 to float conversion.
+        * MIPS: Backport workaround for compact unwind tables.
+        * Make `checkptrGC()` actually work.
+        * ARM64: Fix AREF/HREF/UREF fusion.
+        * `LJ_GC64`: Add build options and install instructions.
+        * Add some more extensions from Lua 5.2/5.3.
+        * Fix cross-endian jit.bcsave for MIPS target.
+        * ARM64: Remove unused variables in disassembler.
+        * ARM64: Fuse BOR/BXOR and BNOT into ORN/EON.
+        * Add "proto" field to `jit.util.funcinfo()`.
+        * Add missing FOLD rule for 64 bit shift+BAND simplification.
+        * ARM64: Fix code generation for S19 offsets.
+        * ARM64: Fuse various BAND/BSHL/BSHR/BSAR combinations.
+        * ARM64: Fuse FP multiply-add/sub.
+        * ARM64: Fuse XLOAD/XSTORE with STRREF/ADD/BSHL/CONV.
+        * ARM64: Reorganize operand extension definitions.
+        * ARM64: Add missing ldrb/strb instructions to disassembler.
+        * ARM64: Fix pc-relative loads of consts. Cleanup branch codegen.
+        * ARM64: Make use of tbz/tbnz and cbz/cbnz.
+        * Eliminate use of lightuserdata derived from static data pointers.
+        * ARM64: Emit more efficient trace exits.
+        * Generalize deferred constant handling in backend to 64 bit.
+        * ARM64: Reject special case in `emit_isk13()`.
+        * ARM64: Allow full VA range for mcode allocation.
+        * ARM64: Add JIT compiler backend.
+        * Fix amalgamated build.
+        * Increase range of `GG_State` loads via `IR_FLOAD` with `REF_NIL`.
+        * MIPS: Fix TSETR barrier.
+        * Report parent of stitched trace.
+
 # Version 1.11.2.2 - 17 November 2016
 
 * feature: added new command-line utility, [opm](https://github.com/openresty/opm#readme) of version 0.02, for managing community contributed [OpenResty packages](https://opm.openresty.org/).
@@ -12,7 +134,7 @@ note that this change may introduce some minor backeward incompatibilities on th
 * updated the help text of `./configure --help` to sync with the new [nginx](nginx.html) 1.11.2 core.
 * `make install`: now we also create directories `<prefix>/site/pod/` and `<prefix>/site/manifest/`.
 * doc: updated [README-win32.md](https://github.com/openresty/openresty/blob/master/doc/README-win32.md#readme) to reflect recent changes.
-* added new component, lua-resty-limit-traffic, which is enabled by default and can be explicitly
+* added new component, [lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic#readme), which is enabled by default and can be explicitly
 disabled via the `--without-lua_resty_limit_traffic` option of the `./configure` script during build.
 * upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) to 0.10.7.
     * feature: added a new API function `tcpsock:settimeouts(connect_timeout, send_timeout, read_timeout)`. thanks Dejiang Zhu for the patch.
