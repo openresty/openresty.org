@@ -38,7 +38,7 @@ export PATH=/usr/local/openresty/bin:$PATH
 ```
 
 where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html),
-like `1.11.2.1`.
+like `1.11.2.3`.
 
 You can add 3rd-party NGINX modules or enable other NGINX core features just like with the standard
 NGINX distribution. For example, you can use the `--add-module=PATH` or `--add-dynamic-module=PATH` options
