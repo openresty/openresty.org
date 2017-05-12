@@ -16,7 +16,36 @@ for how to build and install it into your system.
 
 # HelloWorld
 
+The simplest way of printing a hello world output to the console is to use the
+[resty](https://github.com/openresty/resty-cli#readme) script shipped with OpenResty. For example,
+run the following command on the command line:
+
+```
+resty -e 'print("hello, world!")'
+```
+
+It should print out the following line to the stdout device:
+
+```
+hello, world
+```
+
+The rest of this text details how to run a very efficient HTTP server that speaks
+"hello world".
+
+If you install OpenResty through our official binary packages, then the `resty` utility
+should be visible to your `PATH` environment by default. Otherwise, you need to
+add the following line to your `~/.bashrc` or `~/.bash_profile` file:
+
+```
+export PATH=/usr/local/openresty/bin:$PATH
+```
+
+where we assume that you use the default installation prefix, `/usr/local/openresty/`, in
+your OpenResty installation.
+
 ## Prepare directory layout
+
 We first create a separate directory for our experiments. You can use an arbitrary
 directory. Here for simplicity, we just use `~/work`:
 
@@ -30,6 +59,7 @@ Note that we've also created the `logs/` directory for logging files and `conf/`
 our config files.
 
 ## Prepare the nginx.conf config file
+
 Create a simple plain text file named `conf/nginx.conf` with the following contents
 in it:
 
