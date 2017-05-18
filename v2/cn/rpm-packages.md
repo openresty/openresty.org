@@ -2,7 +2,7 @@
     @title         RPM 包
 --->
 
-OpenResty 官方 Yum 资源库提供下面的 PRM 包。
+OpenResty 官方 Yum 资源库提供下面的 RPM 包。
 
 # openresty
 
