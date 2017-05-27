@@ -4,12 +4,19 @@
 
 OpenResty<sup>&reg;</sup> provides official pre-built packages for the following Linux distributions and versions.
 
-* RHEL/CentOS
+* CentOS
 
 ```
     Version         Supported Architectures
-    5.x             x86_64, i386
-    6.x             x86_64, i386
+    6.x             x86_64
+    7.x             x86_64
+```
+
+* Red Hat Enterprise Linux (RHEL)
+
+```
+    Version         Supported Architectures
+    6.x             x86_64
     7.x             x86_64
 ```
 
@@ -17,50 +24,27 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Supported Architectures
-    24              x86_64, i386
-    25              x86_64, i386
-    26              x86_64, i386
+    24              x86_64
+    25              x86_64
+    26              x86_64
+```
+
+* Amazon Linux
+
+```
+    Version         Supported Architectures
+    2017.03         x86_64
 ```
 
 # CentOS
 
 You can add the `openresty` repository to your CentOS system so as to easily install
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
-create the file named `/etc/yum.repos.d/OpenResty.repo` with the following content:
-
-```ini
-[openresty]
-name=Official OpenResty Repository
-baseurl=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-$releasever-$basearch/
-skip_if_unavailable=True
-gpgcheck=1
-gpgkey=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/pubkey.gpg
-enabled=1
-enabled_metadata=1
-```
-
-You can also directly add the repository via the following command:
+run the following commands:
 
 ```bash
-    sudo yum-config-manager --add-repo https://openresty.org/yum/centos/OpenResty.repo
-```
-
-Users in mainland China can use the following `baseurl` line instead for better speed:
-
-```ini
-    baseurl=https://openresty.org/yum/openresty/openresty/epel-$releasever-$basearch/
-```
-
-Or just add the repository via the following command:
-
-```bash
-    sudo yum-config-manager --add-repo https://openresty.org/yum/cn/centos/OpenResty.repo
-```
-
-To list all the packages in the `openresty` repository:
-
-```bash
-    sudo yum --disablerepo="*" --enablerepo="openresty" list available
+    sudo yum install yum-utils
+    sudo yum-config-manager -y --add-repo https://openresty.org/package/centos/openresty.repo
 ```
 
 Then you can install a package, say, `openresty`, like this:
@@ -69,70 +53,78 @@ Then you can install a package, say, `openresty`, like this:
     sudo yum install openresty
 ```
 
-See the [OpenResty RPM Packages](rpm-packages.html) page for more details on these packages.
-
-If you want to use all the `perl-*` packages in the `openresty` repository, then you should first enable the
-EPEL package repository by running the following command:
+If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
 
 ```bash
-    sudo yum install epel-release
+    sudo yum install openresty-resty
 ```
+
+The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
+`openresty-doc` package.
+
+To list all the packages in the `openresty` repository:
+
+```bash
+    sudo yum --disablerepo="*" --enablerepo="openresty" list available
+```
+
+See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
 
 # RHEL
 
-You can add the `openresty` repository to your RHEL system so as to easily install
+You can add the `openresty` repository to your Red Hat Enterprise Linux (RHEL) system so as to easily install
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
-create the file named `/etc/yum.repos.d/OpenResty.repo` with the following content:
-
-```ini
-[openresty]
-name=Official OpenResty Repository
-baseurl=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-RELEASE-$basearch/
-skip_if_unavailable=True
-gpgcheck=1
-gpgkey=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/pubkey.gpg
-enabled=1
-enabled_metadata=1
-```
-
-You need to replace `RELEASE` in the file content above with your RHEL system's major version number, like `5`, `6`, or `7`.
-
-You can also directly add the repository via the following command:
+run the following commands:
 
 ```bash
-    sudo yum-config-manager --add-repo https://openresty.org/yum/rhel-RELEASE/OpenResty.repo
+    sudo yum install yum-utils
+    sudo yum-config-manager -y --add-repo https://openresty.org/package/rhel/openresty.repo
 ```
 
-Do not forget to replace `RELEASE` with your RHEL system's major version number.
+On older systems like RHEL 6.x, the last command may yield the following error due to a problem in its
+`yum-config-manager` command:
 
-Users in mainland China can use the following `baseurl` line instead for better speed:
-
-```ini
-    baseurl=https://openresty.org/yum/openresty/openresty/epel-RELEASE-$basearch/
+```
+    [Errno 14] Peer cert cannot be verified or peer cert invalid
 ```
 
-Or just add the corresponding file via the following command:
+If this error happens, then you can just use the following command instead to enable the repository:
+
 
 ```bash
-    sudo yum-config-manager --add-repo https://openresty.org/yum/cn/rhel-RELEASE/OpenResty.repo
+    sudo yum-config-manager -y --add-repo http://openresty.org/package/rhel/openresty.repo
 ```
 
-See the [OpenResty RPM Packages](rpm-packages.html) page for more details on these packages.
-
-If you want to use all the `perl-*` packages in the `openresty` repository, then you should first enable the
-EPEL package repository by running the following command:
+After adding the package repository, you can now install a package, say, `openresty`, like this:
 
 ```bash
-    sudo yum install epel-release
+    sudo yum install openresty
 ```
+
+If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
+
+```bash
+    sudo yum install openresty-resty
+```
+
+The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
+`openresty-doc` package.
+
+To list all the packages in the `openresty` repository:
+
+```bash
+    sudo yum --disablerepo="*" --enablerepo="openresty" list available
+```
+
+See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
 
 # Fedora
 
 You can enable the `openresty` repository on your Fedora system like this:
 
 ```bash
-    sudo dnf install 'dnf-command(copr)'
-    sudo dnf copr enable openresty/openresty
+    sudo dnf install -y dnf-plugins-core
+    sudo dnf config-manager --add-repo https://openresty.org/package/fedora/openresty.repo
 ```
 
 Then you can easily install packages from the `openresty-openresty` repository and receive updates
@@ -143,13 +135,54 @@ following command:
     sudo dnf install openresty
 ```
 
+If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
+
+```bash
+    sudo yum install openresty-resty
+```
+
+The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
+`openresty-doc` package.
+
 To list all the available packages in the `openresty-openresty` repository, just type
 
 ```bash
-    sudo dnf repo-pkgs openresty-openresty list available
+    sudo dnf repo-pkgs openresty list available
 ```
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on these packages.
+
+# Amazon Linux
+
+You can enable the `openresty` repository on your Fedora system like this:
+
+```bash
+    sudo yum install yum-utils
+    sudo yum-config-manager -y --add-repo https://openresty.org/package/amazon/openresty.repo
+```
+
+Then you can install a package, say, `openresty`, like this:
+
+```bash
+    sudo yum install openresty
+```
+
+If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
+
+```bash
+    sudo yum install openresty-resty
+```
+
+The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
+`openresty-doc` package.
+
+To list all the packages in the `openresty` repository:
+
+```bash
+    sudo yum --disablerepo="*" --enablerepo="openresty" list available
+```
+
+See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
 
 # Support for More Linux Distributions
 
