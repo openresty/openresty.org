@@ -36,6 +36,10 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     2017.03         x86_64
 ```
 
+All our repositories' metadata and binary packages in them are signed by the following GPG key, `0xD5EDEB74`:
+
+https://openresty.org/package/pubkey.gpg
+
 # CentOS
 
 You can add the `openresty` repository to your CentOS system so as to easily install
@@ -44,7 +48,7 @@ run the following commands:
 
 ```bash
     sudo yum install yum-utils
-    sudo yum-config-manager -y --add-repo https://openresty.org/package/centos/openresty.repo
+    sudo yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo
 ```
 
 Then you can install a package, say, `openresty`, like this:
@@ -78,7 +82,7 @@ run the following commands:
 
 ```bash
     sudo yum install yum-utils
-    sudo yum-config-manager -y --add-repo https://openresty.org/package/rhel/openresty.repo
+    sudo yum-config-manager --add-repo https://openresty.org/package/rhel/openresty.repo
 ```
 
 On older systems like RHEL 6.x, the last command may yield the following error due to a problem in its
@@ -92,7 +96,7 @@ If this error happens, then you can just use the following command instead to en
 
 
 ```bash
-    sudo yum-config-manager -y --add-repo http://openresty.org/package/rhel/openresty.repo
+    sudo yum-config-manager --add-repo http://openresty.org/package/rhel/openresty.repo
 ```
 
 After adding the package repository, you can now install a package, say, `openresty`, like this:
@@ -123,7 +127,7 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all
 You can enable the `openresty` repository on your Fedora system like this:
 
 ```bash
-    sudo dnf install -y dnf-plugins-core
+    sudo dnf install dnf-plugins-core
     sudo dnf config-manager --add-repo https://openresty.org/package/fedora/openresty.repo
 ```
 
@@ -138,7 +142,7 @@ following command:
 If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
 
 ```bash
-    sudo yum install openresty-resty
+    sudo dnf install openresty-resty
 ```
 
 The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
@@ -158,7 +162,7 @@ You can enable the `openresty` repository on your Fedora system like this:
 
 ```bash
     sudo yum install yum-utils
-    sudo yum-config-manager -y --add-repo https://openresty.org/package/amazon/openresty.repo
+    sudo yum-config-manager --add-repo https://openresty.org/package/amazon/openresty.repo
 ```
 
 Then you can install a package, say, `openresty`, like this:
