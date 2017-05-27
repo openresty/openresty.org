@@ -36,7 +36,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     2017.03         x86_64
 ```
 
-All our repositories' metadata and binary packages in them are signed by the following GPG key, `0xD5EDEB74`:
+All our repositories' metadata and binary packages are signed by the following GPG key, `0xD5EDEB74`:
 
 https://openresty.org/package/pubkey.gpg
 
