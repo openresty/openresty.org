@@ -158,7 +158,7 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on the
 
 # Amazon Linux
 
-You can enable the `openresty` repository on your Amzon Linux system like this:
+You can enable the `openresty` repository on your Amazon Linux system like this:
 
 ```bash
     sudo yum install yum-utils
