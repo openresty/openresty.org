@@ -4,12 +4,19 @@
 
 对于下列 Linux 发行版的种类和版本号，OpenResty<sup>&reg;</sup> 提供官方的预编译包。
 
-* RHEL/CentOS
+* CentOS
+
+```
+    版本号         支持的体系结构
+    6.x             x86_64
+    7.x             x86_64
+```
+
+* Red Hat 企业版本 Linux (RHEL)
 
 ```
     版本号          支持的体系结构
-    5.x             x86_64, i386
-    6.x             x86_64, i386
+    6.x             x86_64
     7.x             x86_64
 ```
 
@@ -17,97 +24,123 @@
 
 ```
     版本号          支持的体系结构
-    23              x86_64, i386
-    24              x86_64, i386
-    25              x86_64, i386
-    26              x86_64, i386
+    24              x86_64
+    25              x86_64
+    26              x86_64
 ```
+
+* 亚马逊 Linux
+
+```
+    版本号         支持的体系结构
+    2017.03         x86_64
+```
+
+我们仓库的所有元数据和二进制包都是用下面的 GPG 密钥， `0xD5EDEB74` 签名的：
+https://openresty.org/package/pubkey.gpg
 
 # CentOS
 
-你可以在你的 CentOS 系统中添加 `openresty` 资源库，这样就可以方便的安装我们的包，以后也可以更新（通过 `yum update` 命令）。添加资源库，你只用创建一个名为 `/etc/yum.repos.d/OpenResty.repo` 的文件，内容如下:
-
-```ini
-[openresty]
-name=Official OpenResty Repository
-baseurl=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-$releasever-$basearch/
-skip_if_unavailable=True
-gpgcheck=1
-gpgkey=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/pubkey.gpg
-enabled=1
-enabled_metadata=1
-```
-
-你也可以直接运行 `sudo yum-config-manager --add-repo https://openresty.org/yum/centos/OpenResty.repo` 添加该文件。
-
-中国大陆的用户可以把 `baseurl` 改成下面的链接，速度会更快。
-
-```ini
-baseurl=https://openresty.org/yum/openresty/openresty/epel-$releasever-$basearch/
-```
-
-或者运行 `sudo yum-config-manager --add-repo https://openresty.org/yum/cn/centos/OpenResty.repo` 添加对应的文件。
-
-列出 `openresty` 资源库里面所有的包:
+你可以在你的 CentOS 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum update` 命令）。运行下面的命令就可以添加我们的仓库：
 
 ```bash
-sudo yum --disablerepo="*" --enablerepo="openresty" list available
+    sudo yum install yum-utils
+    sudo yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo
 ```
 
-然后你可以安装一个包，比如安装 `openresty`, 像这样:
+然后就可以像下面这样安装软件包，比如 `openresty`：
 
 ```bash
-sudo yum install openresty
+    sudo yum install openresty
 ```
 
-在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
+如果你想安装命令行工具 `resty`，那么可以像下面这样安装 `openresty-resty` 包：
+
+```bash
+    sudo yum install openresty-resty
+```
+
+命令行工具 `opm` 在 `openresty-opm` 包里，而 `restydoc` 工具在
+`openresty-doc` 包里头。
+
+列出所有 `openresty` 仓库里头的软件包：
+
+```bash
+    sudo yum --disablerepo="*" --enablerepo="openresty" list available
+```
+
+参考 [OpenResty RPM 包](rpm-packages.html)页面获取这些包更多的细节。
 
 # RHEL
 
-你可以在你的 RHEL 系统中添加 `openresty` 资源库，这样就可以方便的安装我们的包，以后也可以更新（通过 `yum update` 命令）。添加资源库，你只用创建一个名为 `/etc/yum.repos.d/OpenResty.repo` 的文件，内容如下:
+你可以在你的 RHEL 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum update` 命令）。添加仓库，运行下面的命令：
 
-```ini
-[openresty]
-name=Official OpenResty Repository
-baseurl=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-RELEASE-$basearch/
-skip_if_unavailable=True
-gpgcheck=1
-gpgkey=https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/pubkey.gpg
-enabled=1
-enabled_metadata=1
+```bash
+    sudo yum install yum-utils
+    sudo yum-config-manager --add-repo https://openresty.org/package/rhel/openresty.repo
 ```
 
-你需要将上面内容中的 `RELEASE` 替换为你的 RHEL 系统实际的大版本号，比如 `5`
-、`6` 或者 `7`。
+在想 RHEL 6.x 这样的老系统上，最后那条命令可能因为 `yum-config-manager` 命令的内部问题，生成下面的错误：
 
-你也可以直接运行 `sudo yum-config-manager --add-repo https://openresty.org/yum/rhel-RELEASE/OpenResty.repo` 添加对应大版本号的文件。别忘了把 `RELEASE` 改成你的 RHEL 系统的大版本号。
-
-中国大陆的用户可以把 `baseurl` 改成下面的链接，速度会更快。
-
-```ini
-baseurl=https://openresty.org/yum/openresty/openresty/epel-$releasever-$basearch/
+```
+    [Errno 14] Peer cert cannot be verified or peer cert invalid
 ```
 
-或者运行 `sudo yum-config-manager --add-repo https://openresty.org/yum/cn/rhel-RELEASE/OpenResty.repo` 添加对应的文件。
+如果出现上述问题，你可以用下面的命令添加仓库：
+
+
+```bash
+    sudo yum-config-manager --add-repo http://openresty.org/package/rhel/openresty.repo
+```
+
+添加了包仓库之后就可以像下面这样安装软件包，比如 `openresty`：
+
+```bash
+    sudo yum install openresty
+```
+
+如果你想安装命令行工具 `resty`，那么可以像下面这样安装 `openresty-resty` 包：
+
+```bash
+    sudo yum install openresty-resty
+```
+
+命令行工具 `opm` 在 `openresty-opm` 包里，而 `restydoc` 工具在
+`openresty-doc` 包里头。
+
+列出所有 `openresty` 仓库里头的软件包：
+
+```bash
+    sudo yum --disablerepo="*" --enablerepo="openresty" list available
+```
 
 在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
 
 # Fedora
 
-在 Fedora 系统中你可以这样来启用 `openresty` 资源库:
+在 Fedora 系统中你可以这样来启用 `openresty` 仓库:
 
-```
-sudo dnf install 'dnf-command(copr)'
-sudo dnf copr enable openresty/openresty
+```bash
+    sudo dnf install dnf-plugins-core
+    sudo dnf config-manager --add-repo https://openresty.org/package/fedora/openresty.repo
 ```
 
-然后你就可以方便的从 `openresty-openresty` 资源库中安装和以后更新包(通过 `dnf update` 命令)。 比如我们可以运行下面的命令来安装 `openresty`:
+然后你就可以方便的从 `openresty-openresty` 仓库中安装和更新包(通过 `dnf update` 命令)。 比如我们可以运行下面的命令来安装 `openresty`:
 
 ```bash
 sudo dnf install openresty
 ```
 
-列出在 `openresty-openresty` 资源库中所有可用的包, 可以这样
+如果想安装 `resty` 命令行工具，则像下面这样安装 `openresty-resty` 软件包：
+
+```bash
+    sudo dnf install openresty-resty
+```
+
+命令行工具 `opm` 在 `openresty-opm` 包里，而 `restydoc` 工具在
+`openresty-doc` 包里头。
+
+列出在 `openresty-openresty` 仓库中所有可用的包, 可以这样
 
 ```bash
 sudo dnf repo-pkgs openresty-openresty list available
@@ -115,8 +148,39 @@ sudo dnf repo-pkgs openresty-openresty list available
 
 在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
 
+# 亚马逊 Linux
 
-# 对更多 Linux 发行版的支持
+你可以在你的 亚马逊 Linux 系统里头用下面命令添加 `openresty` 仓库：
+
+```bash
+    sudo yum install yum-utils
+    sudo yum-config-manager --add-repo https://openresty.org/package/amazon/openresty.repo
+```
+
+然后你就可以像下面这样安装包了，比如说安装 `openresty`：
+
+```bash
+    sudo yum install openresty
+```
+
+如果想安装 `resty` 命令行工具，则像下面这样安装 `openresty-resty` 软件包：
+
+```bash
+    sudo dnf install openresty-resty
+```
+
+命令行工具 `opm` 在 `openresty-opm` 包里，而 `restydoc` 工具在
+`openresty-doc` 包里头。
+
+列出在 `openresty-openresty` 仓库中所有可用的包, 可以这样
+
+```bash
+sudo dnf repo-pkgs openresty-openresty list available
+```
+
+在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
+
+# 更多 Linux 发行版的支持
 
 我们欢迎社区贡献更多的 Linux 发行版的打包源。请确保新的安装包尽可能地接近我们现有的 [RPM 安装包](rpm-packages.html)。非常感谢！
 
