@@ -1,8 +1,8 @@
 <!---
-    @title         RPM Packages
+    @title         Deb Packages
 --->
 
-The OpenResty official Yum repositories provide the following RPM packages.
+The OpenResty official APT repositories provide the following deb packages.
 
 # openresty
 
@@ -56,7 +56,7 @@ This package depends on the standard `perl` package and our `openresty` package 
 
 See the [resty-cli](https://github.com/openresty/resty-cli) project for more details.
 
-# openresty-doc
+# openresty-restydoc
 
 This package contains the OpenResty documentation tool chain and documentation data. The most useful tool
 is the `restydoc` command-line utility, which should be visible to your `PATH` environment by default (as
@@ -146,14 +146,14 @@ This is the debug build of OpenSSL library. As compared to `openresty-openssl`, 
 # openresty-zlib
 
 This is our own build of the zlib library for gzip compression. We ship our own zlib package to ensure the latest
-mainstream version of zlib is used in OpenResty even on old systems.
+mainstream version of zlib is used in OpenResty even on older systems.
 
 # openresty-pcre
 
 This is our own build of the PCRE library for gzip compression. We ship our own PCRE package to ensure the latest
 mainstream version of PCRE is used in OpenResty even on older systems.
 
-# perl-Lemplate
+# liblemplate-perl
 
 This package provides the command-line utility, [lemplate](https://metacpan.org/pod/Lemplate),
 that can compile template files in perl's TT2 templating language syntax to standalone
@@ -162,7 +162,7 @@ Lua modules for OpenResty.
 The OpenResty official site, openresty.org, [uses](https://github.com/openresty/openresty.org)
 Lemplate as the HTML page template compiler, for example.
 
-# perl-Test-Nginx
+# libtest-nginx-perl
 
 This is our [Test::Nginx](https://github.com/openresty/test-nginx) test framework. Read the following book chapter on a complete
 introduction to this test scaffold:
@@ -178,7 +178,7 @@ debuginfo packages just have the `-debuginfo` suffix in their package names, jus
 
 The source files used to build these packages can be found in the `openresty-packaging` GitHub repository:
 
-https://github.com/openresty/openresty-packaging/tree/master/rpm/
+https://github.com/openresty/openresty-packaging/tree/master/deb/
 
 # See Also
 

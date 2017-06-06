@@ -4,6 +4,17 @@
 
 OpenResty<sup>&reg;</sup> provides official pre-built packages for the following Linux distributions and versions.
 
+* Ubuntu
+
+```
+    Version         Supported Architectures
+    14.04           amd64 i386
+    16.04           amd64 i386
+    16.10           amd64 i386
+    17.04           amd64 i386
+    17.10           amd64 i386
+```
+
 * CentOS
 
 ```
@@ -39,6 +50,36 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 All our repositories' metadata and binary packages are signed by the following GPG key, `0xD5EDEB74`:
 
 https://openresty.org/package/pubkey.gpg
+
+The only exception is Ubuntu's PPA repositories. They use the `2E61F1063ED1B4FD` GPG key instead.
+
+# Ubuntu
+
+You can add the `openresty` repository to your Ubuntu system so as to easily install
+our packages and receive updates in the future (via the `yum update` command). To add the repository, just
+run the following commands:
+
+```bash
+sudo apt-get -y install software-properties-common
+sudo add-apt-repository -y ppa:openresty/ppa
+```
+
+Then you can install a package, say, `openresty`, like this:
+
+```bash
+    sudo apt-get install openresty
+```
+
+This package also recommends the `openresty-opm` and `openresty-restydoc` packages so the latter two will
+also automatically get installed by default. If that is not what you want, you can disable the automatic
+installation of recommended packages like this:
+
+```bash
+    sudo apt-get install --no-install-recommends openresty
+```
+
+See the [OpenResty Deb Packages](deb-packages.html) page for more details on all available packages in this
+repository.
 
 # CentOS
 
@@ -190,7 +231,7 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all
 
 # Support for More Linux Distributions
 
-We welcome community contributions of packaging sources targeting more Linux distributions like Ubuntu and
+We welcome community contributions of packaging sources targeting more Linux distributions like OpenSUSE and
 Debian. Please ensure the resulting packages resemble our existing [RPM Packages](rpm-packages.html)
 wherever possible. Thank you very much!
 
