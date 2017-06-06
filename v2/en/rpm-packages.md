@@ -171,8 +171,10 @@ https://openresty.gitbooks.io/programming-openresty/content/testing/
 
 # Debuginfo Packages
 
-We provide debuginfo packages for those containing binary components like the `openresty` and `openresty-openssl` packages. Their
+We provide debuginfo (or debug symbol) packages for those containing binary components like the `openresty` and `openresty-openssl` packages. Their
 debuginfo packages just have the `-debuginfo` suffix in their package names, just like other standard RPM packages.
+
+For example, to install the debuginfo package for the `openresty` package, just install the `openresty-debuginfo` package. Similarly, the debuginfo package for the `openresty-debug` package is `openresty-debug-debuginfo`.
 
 # Source
 

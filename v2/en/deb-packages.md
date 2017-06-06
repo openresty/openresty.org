@@ -2,7 +2,7 @@
     @title         Deb Packages
 --->
 
-The OpenResty official APT repositories provide the following deb packages.
+The OpenResty official APT repositories provide the following deb packages (for Ubuntu and Debian).
 
 # openresty
 
@@ -169,10 +169,12 @@ introduction to this test scaffold:
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/
 
-# Debuginfo Packages
+# Debug Symbol Packages
 
-We provide debuginfo packages for those containing binary components like the `openresty` and `openresty-openssl` packages. Their
-debuginfo packages just have the `-debuginfo` suffix in their package names, just like other standard RPM packages.
+We provide debug symbol packages for those containing binary components like the `openresty` and `openresty-openssl` packages. Their
+debug symbol packages just have the `-dbgsym` suffix in their package names, just like other standard deb packages.
+
+For example, to install the debug symbol package for the `openresty` package, just install the `openresty-dbgsym` package. Similarly, the debug symbol package for the `openresty-debug` package is `openresty-debug-dbgsym`.
 
 # Source
 

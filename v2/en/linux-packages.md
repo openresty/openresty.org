@@ -7,12 +7,12 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 * Ubuntu
 
 ```
-    Version         Supported Architectures
-    14.04           amd64 i386
-    16.04           amd64 i386
-    16.10           amd64 i386
-    17.04           amd64 i386
-    17.10           amd64 i386
+    Version         Codename        Supported Architectures
+    14.04           Trusty          amd64, i386
+    16.04           Xenial          amd64, i386
+    16.10           Yakkety         amd64, i386
+    17.04           Zesty           amd64, i386
+    17.10           Artful          amd64, i386
 ```
 
 * CentOS
