@@ -231,7 +231,7 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all
 
 # Support for More Linux Distributions
 
-We welcome community contributions of packaging sources targeting more Linux distributions like OpenSUSE and
+We welcome community contributions of packaging sources targeting more Linux distributions like Debian and OpenSUSE
 Debian. Please ensure the resulting packages resemble our existing [RPM Packages](rpm-packages.html)
 wherever possible. Thank you very much!
 
