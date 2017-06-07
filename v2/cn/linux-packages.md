@@ -220,7 +220,7 @@ sudo dnf repo-pkgs openresty-openresty list available
 
 # 更多 Linux 发行版的支持
 
-我们欢迎社区贡献更多的 Linux 发行版，比如 OpenSuse 和 Debian 的打包源。请确保新的安装包尽可能地接近我们现有的 [RPM 安装包](rpm-packages.html)。非常感谢！
+我们欢迎社区贡献更多的 Linux 发行版，比如 OpenSUSE 和 Debian 的打包源。请确保新的安装包尽可能地接近我们现有的 [RPM 安装包](rpm-packages.html)。非常感谢！
 
 # 非 Linux 系统的安装包
 
