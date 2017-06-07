@@ -4,6 +4,17 @@
 
 对于下列 Linux 发行版的种类和版本号，OpenResty<sup>&reg;</sup> 提供官方的预编译包。
 
+* Ubuntu
+
+```
+    版本            版本名         支持的体系结构
+    14.04           Trusty          amd64, i386
+    16.04           Xenial          amd64, i386
+    16.10           Yakkety         amd64, i386
+    17.04           Zesty           amd64, i386
+    17.10           Artful          amd64, i386
+```
+
 * CentOS
 
 ```
@@ -38,6 +49,33 @@
 
 我们仓库的所有元数据和二进制包都是用下面的 GPG 密钥， `0xD5EDEB74` 签名的：
 https://openresty.org/package/pubkey.gpg
+
+唯一的区别是 Ubuntu 的 PPA 仓库。他们用的 GPG key 是 `2E61F1063ED1B4FD`。
+
+# Ubuntu
+
+你可以在你的 Ubuntu 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum update` 命令）。
+运行下面的命令就可以添加我们的仓库：+You can add the `openresty` repository to your Ubuntu system so as to easily install
+
+```bash
+sudo apt-get -y install software-properties-common
+sudo add-apt-repository -y ppa:openresty/ppa
+```
+
+然后就可以像下面这样安装包了，比如装 `openresty`：
+
+```bash
+    sudo apt-get install openresty
+```
+
+这个包同时也推荐安装 `openresty-opm` 和 `openresty-restydoc` 包，所以后面两个包会缺省安装上。
+如果你不想自动关联安装，可以用下面方法关闭自动关联安装：
+
+```bash
+    sudo apt-get install --no-install-recommends openresty
+```
+
+参阅 [OpenResty Deb 包](deb-packages.html) 页面获取这个仓库里头更多可用包的信息。
 
 # CentOS
 
@@ -182,7 +220,7 @@ sudo dnf repo-pkgs openresty-openresty list available
 
 # 更多 Linux 发行版的支持
 
-我们欢迎社区贡献更多的 Linux 发行版的打包源。请确保新的安装包尽可能地接近我们现有的 [RPM 安装包](rpm-packages.html)。非常感谢！
+我们欢迎社区贡献更多的 Linux 发行版，比如 OpenSUSE 和 Debian 的打包源。请确保新的安装包尽可能地接近我们现有的 [RPM 安装包](rpm-packages.html)。非常感谢！
 
 # 非 Linux 系统的安装包
 
