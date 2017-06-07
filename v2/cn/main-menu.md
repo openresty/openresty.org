@@ -21,5 +21,6 @@
 * [用户问卷调查](https://openresty.org/survey/cn)
 * [捐助](donate-online.html)
 * [捐款者](donors.html)
+* [社区博客](blog.html)
 * [关于](about.html)
 * [English Site](/en/)
