@@ -139,7 +139,6 @@ mainstream version of OpenSSL is used in OpenResty even on older systems.
 This is the debug build of OpenSSL library. As compared to `openresty-openssl`, it has the following changes:
 
 * It disables any C compiler optimizations.
-* It relies on the libefence library of the standard `ElectricFence` package to do extra checks.
 * It is Valgrind clean and free of any Valgrind false positives.
 * Assembly code is disabled so we always have perfect C-land backtraces and etc.
 

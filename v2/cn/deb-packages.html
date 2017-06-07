@@ -1,5 +1,5 @@
 <!---
-    @title         Deb 包
+    @title         OpenResty Deb 安装包
 --->
 
 OpenResty 官方 APT 资源库提供下面的 deb 包 (适用于 Ubuntu 和 Debian)。
@@ -121,7 +121,6 @@ https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.h
 这是 OpenSSL 库的调试版本。和 `openresty-openssl` 相比，有这些不同：
 
 * 禁止了所有 C 编译器优化。
-* 它依赖标准 `ElectricFence` 包的 libefence 库来做些额外的检查。
 * 它没有 Valgrind 错误也没有任何 Valgrind 误报。
 * 汇编代码被禁止，所以我们总是有完美的基于 C 的回溯以及类似的。
 
@@ -151,15 +150,15 @@ Lemplate 作为 HTML 页面的模板编译器。page template compiler。
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/
 
-# Debug Symbol 包
+# 调试符号包
 
 我们为那些包含二进制组件的包，比如 `openresty` 和 `openresty-openssl` 提供 debug symbol 包。
-debug symbol 包和其他的标准的 RPM 包一样，只是在包的名字上加了 `-dbgsym` 的后缀。
+调试符号包和其他的标准的 Deb 包一样，只是在包的名字上加了 `-dbgsym` 的后缀。
 
 比如，你想安装 `openresty` 包的 debug symbol 包，那就是安装 `openresty-dbgsym` 这个包。
 类似的，`openresty-debug` 的 debug symbol 包就是 `openresty-debug-dbgsym`。
 
-# Source
+# 打包源码
 
 build 这些包的源文件都放在 `openresty-packaging` GitHub 仓库中:
 

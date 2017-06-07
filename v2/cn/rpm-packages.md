@@ -102,7 +102,6 @@ https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.h
 这是 OpenSSL 库的调试版本。和 `openresty-openssl` 相比，有这些不同：
 
 * 禁止了所有 C 编译器优化。
-* 它依赖标准 `ElectricFence` 包的 libefence 库来做些额外的检查。
 * 它没有 Valgrind 错误也没有任何 Valgrind 误报。
 * 汇编代码被禁止，所以我们总是有完美的基于 C 的回溯以及类似的。
 
