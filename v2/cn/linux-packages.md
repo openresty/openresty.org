@@ -4,6 +4,17 @@
 
 对于下列 Linux 发行版的种类和版本号，OpenResty<sup>&reg;</sup> 提供官方的预编译包。
 
+* Ubuntu
+
+```
+    版本            版本名         支持的体系结构
+    14.04           Trusty          amd64, i386
+    16.04           Xenial          amd64, i386
+    16.10           Yakkety         amd64, i386
+    17.04           Zesty           amd64, i386
+    17.10           Artful          amd64, i386
+```
+
 * CentOS
 
 ```
