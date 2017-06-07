@@ -50,6 +50,33 @@
 我们仓库的所有元数据和二进制包都是用下面的 GPG 密钥， `0xD5EDEB74` 签名的：
 https://openresty.org/package/pubkey.gpg
 
+唯一的区别是 Ubuntu 的 PPA 仓库。他们用的 GPG key 是 `2E61F1063ED1B4FD`。
+
+# Ubuntu
+
+你可以在你的 Ubuntu 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum update` 命令）。
+运行下面的命令就可以添加我们的仓库：+You can add the `openresty` repository to your Ubuntu system so as to easily install
+
+```bash
+sudo apt-get -y install software-properties-common
+sudo add-apt-repository -y ppa:openresty/ppa
+```
+
+然后就可以像下面这样安装包了，比如装 `openresty`：
+
+```bash
+    sudo apt-get install openresty
+```
+
+这个包同时也推荐安装 `openresty-opm` 和 `openresty-restydoc` 包，所以后面两个包会缺省安装上。
+如果你不想自动关联安装，可以用下面方法关闭自动关联安装：
+
+```bash
+    sudo apt-get install --no-install-recommends openresty
+```
+
+参阅 [OpenResty Deb 包](deb-packages.html) 页面获取这个仓库里头更多可用包的信息。
+
 # CentOS
 
 你可以在你的 CentOS 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum update` 命令）。运行下面的命令就可以添加我们的仓库：
