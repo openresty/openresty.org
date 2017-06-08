@@ -7,7 +7,8 @@
 # Binary Packages
 
 OpenResty<sup>&reg;</sup> provides [official pre-built packages](linux-packages.html) for some of the common
-Linux distributions. Ensure you have checked them out first.
+Linux distributions (Ubuntu, Debian, CentOS, RHEL, Fedora, and Amazon Linux).
+Make sure you have checked out these binary packages first if you are on Linux.
 
 We also provide pre-built Win32 packages for OpenResty<sup>&reg;</sup> on the [Download](download.html) page. And you should
 also check out [this documentation](https://github.com/openresty/openresty/blob/master/doc/README-win32.md#readme) instead.
