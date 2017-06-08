@@ -15,6 +15,15 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     17.10           Artful          amd64, i386
 ```
 
+* Debian
+
+```
+    Version         Codename        Supported Architectures
+    7.x             Wheezy          amd64
+    8.x             Jessie          amd64
+
+```
+
 * CentOS
 
 ```
@@ -57,11 +66,96 @@ The only exception is Ubuntu's PPA repositories. They use the `2E61F1063ED1B4FD`
 
 You can add the `openresty` repository to your Ubuntu system so as to easily install
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
-run the following commands:
+run the following commands (only need to run once for each system):
 
 ```bash
+# for installing the add-apt-repository command:
 sudo apt-get -y install software-properties-common
+
+# add the our official PPA repository:
 sudo add-apt-repository -y ppa:openresty/ppa
+
+# to update the APT index:
+sudo apt-get update
+```
+
+Then you can install a package, say, `openresty`, like this:
+
+```bash
+    sudo apt-get install openresty
+```
+
+This package also recommends the `openresty-opm` and `openresty-restydoc` packages so the latter two will
+also automatically get installed by default. If that is not what you want, you can disable the automatic
+installation of recommended packages like this:
+
+```bash
+    sudo apt-get install --no-install-recommends openresty
+```
+
+See the [OpenResty Deb Packages](deb-packages.html) page for more details on all available packages in this
+repository.
+
+# Debian
+
+## Debian Jessie or Later
+
+You can add the `openresty` repository to your Ubuntu system so as to easily install
+our packages and receive updates in the future (via the `yum update` command). To add the repository, just
+run the following commands (only need to run once for each system):
+
+```bash
+# importing our GPG key:
+wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+
+# for installing the add-apt-repository command:
+sudo apt-get -y install software-properties-common
+
+# add the our official APT repository:
+sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
+
+# to update the APT index:
+sudo apt-get update
+```
+
+Then you can install a package, say, `openresty`, like this:
+
+```bash
+    sudo apt-get install openresty
+```
+
+This package also recommends the `openresty-opm` and `openresty-restydoc` packages so the latter two will
+also automatically get installed by default. If that is not what you want, you can disable the automatic
+installation of recommended packages like this:
+
+```bash
+    sudo apt-get install --no-install-recommends openresty
+```
+
+See the [OpenResty Deb Packages](deb-packages.html) page for more details on all available packages in this
+repository.
+
+## Debian Wheezy
+
+You can add the `openresty` repository to your Ubuntu system so as to easily install
+our packages and receive updates in the future (via the `yum update` command). To add the repository, just
+run the following commands (only need to run once for each system):
+
+```bash
+# importing our GPG key:
+wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+
+# for installing the add-apt-repository command:
+sudo apt-get -y install python-software-properties
+
+# enable the wheezy-backports repository:
+sudo add-apt-repository -y "deb http://ftp.debian.org/debian wheezy-backports main"
+
+# add the our official APT repository:
+sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
+
+# to update the APT index:
+sudo apt-get update
 ```
 
 Then you can install a package, say, `openresty`, like this:
@@ -231,8 +325,8 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all
 
 # Support for More Linux Distributions
 
-We welcome community contributions of packaging sources targeting more Linux distributions like Debian and OpenSUSE
-Debian. Please ensure the resulting packages resemble our existing [RPM Packages](rpm-packages.html)
+We welcome community contributions of packaging sources targeting more Linux distributions like OpenSUSE, SLES, Arch Linux, and Slackware.
+Please ensure the resulting packages resemble our existing [RPM Packages](rpm-packages.html)
 wherever possible. Thank you very much!
 
 # Packages for Non-Linux systems
