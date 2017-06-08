@@ -105,7 +105,7 @@ our packages and receive updates in the future (via the `yum update` command). T
 run the following commands (only need to run once for each system):
 
 ```bash
-# importing our GPG key:
+# import our GPG key:
 wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
 # for installing the add-apt-repository command:
@@ -142,7 +142,7 @@ our packages and receive updates in the future (via the `yum update` command). T
 run the following commands (only need to run once for each system):
 
 ```bash
-# importing our GPG key:
+# import our GPG key:
 wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
 # for installing the add-apt-repository command:
