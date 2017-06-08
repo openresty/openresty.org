@@ -69,7 +69,8 @@ our packages and receive updates in the future (via the `yum update` command). T
 run the following commands (only need to run once for each system):
 
 ```bash
-# for installing the add-apt-repository command:
+# for installing the add-apt-repository command
+# (you can remove this package and its dependencies later):
 sudo apt-get -y install software-properties-common
 
 # add the our official PPA repository:
@@ -108,7 +109,8 @@ run the following commands (only need to run once for each system):
 # import our GPG key:
 wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
-# for installing the add-apt-repository command:
+# for installing the add-apt-repository command
+# (you can remove this package and its dependencies later):
 sudo apt-get -y install software-properties-common
 
 # add the our official APT repository:
@@ -145,7 +147,8 @@ run the following commands (only need to run once for each system):
 # import our GPG key:
 wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
-# for installing the add-apt-repository command:
+# for installing the add-apt-repository command
+# (you can remove this package and its dependencies later):
 sudo apt-get -y install python-software-properties
 
 # enable the wheezy-backports repository:
