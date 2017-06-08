@@ -1,5 +1,5 @@
 <!---
-    @title         RPM Packages
+    @title         OpenResty® RPM Packages
 --->
 
 The OpenResty official Yum repositories provide the following RPM packages.

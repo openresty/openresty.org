@@ -1,5 +1,5 @@
 <!---
-    @title         OpenResty Deb Packages
+    @title         OpenResty® Deb Packages
 --->
 
 The OpenResty official APT repositories provide the following deb packages (for Ubuntu and Debian).
