@@ -66,7 +66,7 @@ https://openresty.org/package/pubkey.gpg
 你可以在你的 Ubuntu 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum update` 命令）。
 运行下面的命令就可以添加我们的仓库（每个系统只需要运行一次）：
 
- ```bash
+```bash
 # 安装 add-apt-repository 命令：
 # （之后你可以删除这个包以及对应的关联包）
  sudo apt-get -y install software-properties-common
