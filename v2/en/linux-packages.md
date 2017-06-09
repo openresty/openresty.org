@@ -69,15 +69,15 @@ our packages and receive updates in the future (via the `yum update` command). T
 run the following commands (only need to run once for each system):
 
 ```bash
-# for installing the add-apt-repository command
-# (you can remove this package and its dependencies later):
-sudo apt-get -y install software-properties-common
+    # for installing the add-apt-repository command
+    # (you can remove this package and its dependencies later):
+    sudo apt-get -y install software-properties-common
 
-# add the our official PPA repository:
-sudo add-apt-repository -y ppa:openresty/ppa
+    # add the our official PPA repository:
+    sudo add-apt-repository -y ppa:openresty/ppa
 
-# to update the APT index:
-sudo apt-get update
+    # to update the APT index:
+    sudo apt-get update
 ```
 
 Then you can install a package, say, `openresty`, like this:
@@ -106,18 +106,18 @@ our packages and receive updates in the future (via the `yum update` command). T
 run the following commands (only need to run once for each system):
 
 ```bash
-# import our GPG key:
-wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+    # import our GPG key:
+    wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
-# for installing the add-apt-repository command
-# (you can remove this package and its dependencies later):
-sudo apt-get -y install software-properties-common
+    # for installing the add-apt-repository command
+    # (you can remove this package and its dependencies later):
+    sudo apt-get -y install software-properties-common
 
-# add the our official APT repository:
-sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
+    # add the our official APT repository:
+    sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
 
-# to update the APT index:
-sudo apt-get update
+    # to update the APT index:
+    sudo apt-get update
 ```
 
 Then you can install a package, say, `openresty`, like this:
@@ -144,21 +144,21 @@ our packages and receive updates in the future (via the `yum update` command). T
 run the following commands (only need to run once for each system):
 
 ```bash
-# import our GPG key:
-wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+    # import our GPG key:
+    wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
-# for installing the add-apt-repository command
-# (you can remove this package and its dependencies later):
-sudo apt-get -y install python-software-properties
+    # for installing the add-apt-repository command
+    # (you can remove this package and its dependencies later):
+    sudo apt-get -y install python-software-properties
 
-# enable the wheezy-backports repository:
-sudo add-apt-repository -y "deb http://ftp.debian.org/debian wheezy-backports main"
+    # enable the wheezy-backports repository:
+    sudo add-apt-repository -y "deb http://ftp.debian.org/debian wheezy-backports main"
 
-# add the our official APT repository:
-sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
+    # add the our official APT repository:
+    sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
 
-# to update the APT index:
-sudo apt-get update
+    # to update the APT index:
+    sudo apt-get update
 ```
 
 Then you can install a package, say, `openresty`, like this:

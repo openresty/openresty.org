@@ -67,14 +67,14 @@ https://openresty.org/package/pubkey.gpg
 运行下面的命令就可以添加我们的仓库（每个系统只需要运行一次）：
 
 ```bash
-# 安装 add-apt-repository 命令：
-# （之后你可以删除这个包以及对应的关联包）
- sudo apt-get -y install software-properties-common
-# 添加我们官方的 PPA 仓库：
- sudo add-apt-repository -y ppa:openresty/ppa
+    # 安装 add-apt-repository 命令：
+    # （之后你可以删除这个包以及对应的关联包）
+     sudo apt-get -y install software-properties-common
+    # 添加我们官方的 PPA 仓库：
+     sudo add-apt-repository -y ppa:openresty/ppa
 
-# 更新 APT 索引：
-sudo apt-get update
+    # 更新 APT 索引：
+    sudo apt-get update
 ```
 
 然后就可以像下面这样安装软件包，比如 `openresty`：
@@ -100,18 +100,18 @@ sudo apt-get update
 运行下面的命令就可以添加我们的仓库（每个系统只需要运行一次）：
 
 ```bash
-# 输入我们的 GPG 密钥：
-wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+    # 输入我们的 GPG 密钥：
+    wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
-# 安装 add-apt-repository 命令
-# （之后你可以删除这个包以及对应的关联包）
-sudo apt-get -y install software-properties-common
+    # 安装 add-apt-repository 命令
+    # （之后你可以删除这个包以及对应的关联包）
+    sudo apt-get -y install software-properties-common
 
-# 添加我们官方 official APT 仓库：
-sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
+    # 添加我们官方 official APT 仓库：
+    sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
 
-# 更新 APT 索引：
-sudo apt-get update
+    # 更新 APT 索引：
+    sudo apt-get update
 ```
 
 然后就可以像下面这样安装软件包，比如 `openresty`：
@@ -135,21 +135,21 @@ sudo apt-get update
 运行下面的命令就可以添加我们的仓库（每个系统只需要运行一次）：
 
 ```bash
-# 输入我们 GPG 密钥：
-wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+    # 输入我们 GPG 密钥：
+    wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
-# 安装 add-apt-repository 命令：
-# （之后你可以删除这个包以及对应的关联包）
-sudo apt-get -y install python-software-properties
+    # 安装 add-apt-repository 命令：
+    # （之后你可以删除这个包以及对应的关联包）
+    sudo apt-get -y install python-software-properties
 
-# 打开 wheezy-backports 仓库：
-sudo add-apt-repository -y "deb http://ftp.debian.org/debian wheezy-backports main"
+    # 打开 wheezy-backports 仓库：
+    sudo add-apt-repository -y "deb http://ftp.debian.org/debian wheezy-backports main"
 
-# 添加我们官方 APT 仓库
-sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
+    # 添加我们官方 APT 仓库
+    sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
 
-# 更新 APT 索引：
-sudo apt-get update
+    # 更新 APT 索引：
+    sudo apt-get update
 ```
 
 然后就可以像下面这样安装包了，比如装 `openresty`：
