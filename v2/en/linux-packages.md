@@ -101,7 +101,7 @@ repository.
 
 ## Debian Jessie or Later
 
-You can add the `openresty` repository to your Ubuntu system so as to easily install
+You can add the `openresty` repository to your Debian Jessie system so as to easily install
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
 run the following commands (only need to run once for each system):
 
@@ -139,7 +139,7 @@ repository.
 
 ## Debian Wheezy
 
-You can add the `openresty` repository to your Ubuntu system so as to easily install
+You can add the `openresty` repository to your Deian Wheezy system so as to easily install
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
 run the following commands (only need to run once for each system):
 
