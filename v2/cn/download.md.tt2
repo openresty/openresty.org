@@ -1,146 +1,182 @@
 <!---
     @title         下载
-    @creator       Yichun Zhang
+    @creator       章亦春
+    @Translator    何伟平
     @created       2011-06-21 04:25 GMT
 --->
 
-对于一些常见的 Linux 发行版本，OpenResty<sup>&reg;</sup> 提供 [官方预编译包](linux-packages.html)。确保你首先用这种方式来安装。
+# 二进制版本
 
-你可以下载下面这些源码包。然后按照 [安装](installation.html)页面的说明来 build 和安装。
+## Linux
 
-所有的版本都已经使用 Yichun Zhang 的 PGP 公钥 [A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) 签名。
+OpenResty<sup>&reg;</sup> 给常见 Linux 发布提供[官方预编译安装包](linux-packages.html)。 
 
-# 发布
+目前我们支持 Ubuntu, Debian, RHEL, CentOS, Fedora, 和 Amazon Linux。
+
+我们还给用户提供官方的包仓库，可以很容易检索和安装、更新包。
+
+## Win32
+
+所有版本都是用章亦春的 PGP 公钥
+[A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) 签发的。
+
+[% ver = "1.11.2.3" -%]
+* [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 11MB &nbsp;
+[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 2017年4月21日
+
+## macOS/Mac OS X
+
+强烈建议 Mac OS X 或者 macOS 系统用户通过 [homebrew](https://brew.sh/) 包管理器安装 OpenResty，像下面这样：
+
+```
+brew install homebrew/nginx/openresty
+```
+
+# 源代码发布
+
+所有版本都是用章亦春的 PGP 公钥
+[A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) 签发的。
+
+你可以在下面下载源代码的 tar 包。然后可以参考[安装指导](installation.html)页面里头的步骤编译、安装之。
+
 
 ##  最新版
-[% ver = "1.11.2.3" %]
+[% ver = "1.11.2.3" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.0MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
-([Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)) &nbsp;
-[Changes](changelog-1011002.html) - 2017年4月21日
+[变更列表](changelog-1011002.html) - 2017年4月21日
 
-##  历史遗留版
+##  历史版
 有的时候我们可能会需要较老的版本：
 [% ver = "1.11.2.2" %]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.1MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
-([Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)) &nbsp;
-[Changes](changelog-1011002.html) - 2016年11月17日
-[% ver = "1.11.2.1" -%]
+[变更劣币哦啊](changelog-1011002.html) - 2016年11月17日
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 3.8MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
-([Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)) &nbsp;
-[Changes](changelog-1011002.html) - 2016年8月24日
+[变更列表](changelog-1011002.html) - 2016年8月24日
 [% ver = "1.9.15.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 3.6MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc)) &nbsp;
-[Changes](changelog-1009015.html) - 2016年6月3日
+[变更列表](changelog-1009015.html) - 2016年6月3日
 * [openresty-1.9.7.5.tar.gz](https://openresty.org/download/openresty-1.9.7.5.tar.gz) &nbsp; 3.5MB
 &nbsp; [PGP](https://openresty.org/download/openresty-1.9.7.5.tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/openresty-1.9.7.5-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/openresty-1.9.7.5-win32.zip.asc)) &nbsp;
-[Changes](changelog-1009007.html) - 2016年5月31日
+[变更列表](changelog-1009007.html) - 2016年5月31日
 * [openresty-1.9.7.4.tar.gz](https://openresty.org/download/openresty-1.9.7.4.tar.gz) &nbsp; 3.5MB
 &nbsp; [PGP](https://openresty.org/download/openresty-1.9.7.4.tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/openresty-1.9.7.4-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/openresty-1.9.7.4-win32.zip.asc)) &nbsp;
-[Changes](changelog-1009007.html) - 2016年3月16日
+[变更列表](changelog-1009007.html) - 2016年5月16日
 * [openresty-1.9.7.3.tar.gz](https://openresty.org/download/openresty-1.9.7.3.tar.gz) &nbsp; 3.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-1.9.7.3.tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/openresty-1.9.7.3-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/openresty-1.9.7.3-win32.zip.asc)) &nbsp;
-[Changes](changelog-1009007.html) - 2016年1月28日
+[变更列表](changelog-1009007.html) - 2016年1月28日
 * [ngx_openresty-1.9.7.2.tar.gz](https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz) &nbsp; 3.4MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.9.7.2.tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/ngx_openresty-1.9.7.2-win32.zip.asc)) &nbsp;
-[Changes](changelog-1009007.html) - 2016年1月21日
+[变更列表](changelog-1009007.html) - 2016年1月21日
 * [ngx_openresty-1.9.7.1.tar.gz](https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz) &nbsp; 3.4MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.9.7.1.tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/ngx_openresty-1.9.7.1-win32.zip.asc)) &nbsp;
-[Changes](changelog-1009007.html) - 2015年12月25日
+[变更列表](changelog-1009007.html) - 25 December 2015
 * [ngx_openresty-1.9.3.2.tar.gz](https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz) &nbsp; 3.4MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.9.3.2.tar.gz.asc) &nbsp;
 ([Win32](https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip) &nbsp;
 [PGP](https://openresty.org/download/ngx_openresty-1.9.3.2-win32.zip.asc)) &nbsp;
-[Changes](changelog-1009003.html) - 2015年11月23日
+[变更列表](changelog-1009003.html) - 2015年11月23日
 * [ngx_openresty-1.9.3.1.tar.gz](https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz) &nbsp; 3.4MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz.asc) &nbsp;
-[Changes](changelog-1009003.html) - 2015年8月12日
+[变更列表](changelog-1009003.html) - 2015年8月12日
 * [ngx_openresty-1.7.10.2.tar.gz](https://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz) &nbsp; 3.3MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.7.10.2.tar.gz.asc) &nbsp;
-[Changes](changelog-1007010.html) - 2015年7月3日
+[变更列表](changelog-1007010.html) - 2015年7月3日
 * [ngx_openresty-1.7.10.1.tar.gz](https://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz) &nbsp; 3.2MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz.asc) &nbsp;
-[Changes](changelog-1007010.html) - 2015年2月28日
+[变更列表](changelog-1007010.html) - 2015年2月28日
 * [ngx_openresty-1.7.7.2.tar.gz](https://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz) &nbsp; 3.2MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz.asc) &nbsp;
-[Changes](changelog-1007007.html) - 2015年2月4日
+[变更列表](changelog-1007007.html) - 2015年2月4日
 * [ngx_openresty-1.7.7.1.tar.gz](https://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz) &nbsp; 3.2MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.7.7.1.tar.gz.asc) &nbsp;
-[Changes](changelog-1007007.html) - 2014年12月6日
+[变更列表](changelog-1007007.html) - 2014年12月6日
 * [ngx_openresty-1.7.4.1.tar.gz](https://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz) &nbsp; 3.2MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.7.4.1.tar.gz.asc) &nbsp;
-[Changes](changelog-1007004.html) - 2014年10月9日
+[变更列表](changelog-1007004.html) - 2014年10月9日
 * [ngx_openresty-1.7.2.1.tar.gz](https://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz) &nbsp; 3.2MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.7.2.1.tar.gz.asc) &nbsp;
-[Changes](changelog-1007002.html) - 2014年7月12日
+[变更列表](changelog-1007002.html) - 2014年7月12日
 * [ngx_openresty-1.7.0.1.tar.gz](https://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz) &nbsp; 3.1MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.7.0.1.tar.gz.asc) &nbsp;
-[Changes](changelog-1007000.html) - 2014年6月7日
+[变更列表](changelog-1007000.html) - 2014年6月7日
 * [ngx_openresty-1.5.12.1.tar.gz](https://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz) &nbsp; 3.1MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.5.12.1.tar.gz.asc) &nbsp;
-[Changes](changelog-1005012.html) - 2014年4月29日
+[变更列表](changelog-1005012.html) - 2014年4月29日
 * [ngx_openresty-1.5.11.1.tar.gz](https://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz) &nbsp; 3.1MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.5.11.1.tar.gz.asc) &nbsp;
-[Changes](changelog-1005011.html) - 2014年3月30日
+[变更列表](changelog-1005011.html) - 2014年3月30日
 * [ngx_openresty-1.5.8.1.tar.gz](https://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz) &nbsp; 3.1MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.5.8.1.tar.gz.asc) &nbsp;
-[Changes](changelog-1005008.html) - 2014年1月10日
+[变更列表](changelog-1005008.html) - 2014年1月10日
 * [ngx_openresty-1.4.3.6.tar.gz](https://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz) &nbsp; 3.1MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz.asc) &nbsp;
-[Changes](changelog-1004003.html) - 2013年11月20日
+[变更列表](changelog-1004003.html) - 2013年11月20日
 * [ngx_openresty-1.4.3.4.tar.gz](https://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz) &nbsp; 3.1MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.4.3.4.tar.gz.asc) &nbsp;
-[Changes](changelog-1004003.html) - 2013年11月12日
+[变更列表](changelog-1004003.html) - 2013年11月12日
 * [ngx_openresty-1.4.2.8.tar.gz](https://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz) &nbsp; 3.0MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.4.2.8.tar.gz.asc) &nbsp;
-[Changes](changelog-1004002.html) - 2013年9月22日
+[变更列表](changelog-1004002.html) - 2013年9月22日
 * [ngx_openresty-1.2.8.6.tar.gz](https://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz) &nbsp; 2.9MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.2.8.6.tar.gz.asc) &nbsp;
-[Changes](changelog-1002008.html) - 2013年6月10日
+[变更列表](changelog-1002008.html) - 2013年6月10日
 * [ngx_openresty-1.2.7.8.tar.gz](https://openresty.org/download/ngx_openresty-1.2.7.8.tar.gz) &nbsp; 2.9MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.2.7.8.tar.gz.asc) &nbsp;
-[Changes](changelog-1002007.html) - 2013年5月13日
+[变更列表](changelog-1002007.html) - 2013年5月13日
 * [ngx_openresty-1.2.7.6.tar.gz](https://openresty.org/download/ngx_openresty-1.2.7.6.tar.gz) &nbsp; 2.9MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.2.7.6.tar.gz.asc) &nbsp;
-[Changes](changelog-1002007.html) - 2013年4月17日
+[变更列表](changelog-1002007.html) - 2013年4月17日
 * [ngx_openresty-1.2.6.6.tar.gz](https://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz) &nbsp; 2.9MB
 &nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.2.6.6.tar.gz.asc) &nbsp;
-[Changes](changelog-1002006.html) - 2013年2月17日
-* [ngx_openresty-1.2.4.14.tar.gz](https://openresty.org/download/ngx_openresty-1.2.4.14.tar.gz) 2.9MB
-[Changes](changelog-1002004.html) - 2012年12月23日
-* [ngx_openresty-1.2.3.8.tar.gz](https://openresty.org/download/ngx_openresty-1.2.3.8.tar.gz) 2.9MB
-[Changes](changelog-1002003.html) - 2012年10月8日
-* [ngx_openresty-1.0.11.28.tar.gz](https://openresty.org/download/ngx_openresty-1.0.11.28.tar.gz) 2.7MB
-[Changes](changelog-1000011.html) - 25 March 2012
-* [ngx_openresty-1.0.10.48.tar.gz](https://openresty.org/download/ngx_openresty-1.0.10.48.tar.gz) 2.6MB
-[Changes](changelog-1000010.html) - 1 February 2012
-* [ngx_openresty-1.0.10.44.tar.gz](https://openresty.org/download/ngx_openresty-1.0.10.44.tar.gz) 2.5MB
-[Changes](changelog-1000010.html) - 16 January 2012
-* [ngx_openresty-1.0.10.24.tar.gz](https://openresty.org/download/ngx_openresty-1.0.10.24.tar.gz) 2.5MB
-[Changes](changelog-1000010.html) - 11 December 2011
-* [ngx_openresty-1.0.9.10.tar.gz](https://openresty.org/download/ngx_openresty-1.0.9.10.tar.gz) 2.5MB
-[Changes](changelog-1000009.html) - 16 November 2011
-* [ngx_openresty-1.0.8.26.tar.gz](https://openresty.org/download/ngx_openresty-1.0.8.26.tar.gz) 2.5MB
-[Changes](changelog-1000008.html) - 3 November 2011
-* [ngx_openresty-1.0.6.22.tar.gz](https://openresty.org/download/ngx_openresty-1.0.6.22.tar.gz) 2.4MB
-[Changes](changelog-1000006.html) - 7 October 2011
+[变更列表](changelog-1002006.html) - 2013年2月17日
+* [ngx_openresty-1.2.4.14.tar.gz](https://openresty.org/download/ngx_openresty-1.2.4.14.tar.gz) &nbsp; 2.9MB
+&nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.2.4.14.tar.gz.asc) &nbsp;
+[变更列表](changelog-1002004.html) - 2012年12月23日
+* [ngx_openresty-1.2.3.8.tar.gz](https://openresty.org/download/ngx_openresty-1.2.3.8.tar.gz) &nbsp; 2.9MB
+&nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.2.3.8.tar.gz.asc) &nbsp;
+[变更列表](changelog-1002003.html) - 2012年10月8日
+* [ngx_openresty-1.2.1.14.tar.gz](https://openresty.org/download/ngx_openresty-1.2.1.14.tar.gz) &nbsp; 2.9MB
+&nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.2.1.14.tar.gz.asc) &nbsp;
+[变更列表](changelog-1002001.html) - 2012年8月14日
+* [ngx_openresty-1.0.15.10.tar.gz](https://openresty.org/download/ngx_openresty-1.0.15.10.tar.gz) &nbsp; 2.7MB
+&nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.0.15.10.tar.gz.asc) &nbsp;
+[变更列表](changelog-1000015.html) - 2012年6月13日
+* [ngx_openresty-1.0.11.28.tar.gz](https://openresty.org/download/ngx_openresty-1.0.11.28.tar.gz) &nbsp; 2.7MB
+&nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.0.11.28.tar.gz.asc) &nbsp;
+[变更列表](changelog-1000011.html) - 2012年3月25日
+* [ngx_openresty-1.0.10.48.tar.gz](https://openresty.org/download/ngx_openresty-1.0.10.48.tar.gz) &nbsp; 2.6MB
+&nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.0.10.48.tar.gz.asc) &nbsp;
+[变更列表](changelog-1000010.html) - 2012年2月1日
+* [ngx_openresty-1.0.10.44.tar.gz](https://openresty.org/download/ngx_openresty-1.0.10.44.tar.gz) &nbsp; 2.5MB
+&nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.0.10.44.tar.gz.asc) &nbsp;
+[变更列表](changelog-1000010.html) - 2012年1月16日
+* [ngx_openresty-1.0.10.24.tar.gz](https://openresty.org/download/ngx_openresty-1.0.10.24.tar.gz) &nbsp; 2.5MB
+&nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.0.10.24.tar.gz.asc) &nbsp;
+[变更列表](changelog-1000010.html) - 2011年12月11日
+* [ngx_openresty-1.0.9.10.tar.gz](https://openresty.org/download/ngx_openresty-1.0.9.10.tar.gz) &nbsp; 2.5MB
+&nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.0.9.10.tar.gz.asc) &nbsp;
+[变更列表](changelog-1000009.html) - 2011年11月16日
+* [ngx_openresty-1.0.8.26.tar.gz](https://openresty.org/download/ngx_openresty-1.0.8.26.tar.gz) &nbsp; 2.5MB
+&nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.0.8.26.tar.gz.asc) &nbsp;
+[变更列表](changelog-1000008.html) - 2011年11月3日
+* [ngx_openresty-1.0.6.22.tar.gz](https://openresty.org/download/ngx_openresty-1.0.6.22.tar.gz) &nbsp; 2.4MB
+&nbsp; [PGP](https://openresty.org/download/ngx_openresty-1.0.6.22.tar.gz.asc) &nbsp;
+[变更列表](changelog-1000006.html) - 2011年10月7日
 
-安装介绍参考: [安装](installation.html)
+安装帮助请参考[安装指导](installation.html)。
