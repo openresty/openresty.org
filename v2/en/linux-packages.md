@@ -56,25 +56,26 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     2017.03         x86_64
 ```
 
-All our repositories' metadata and binary packages are signed by the following GPG key, `0xD5EDEB74`:
+All our repositories' metadata (and rpm binary packages) are signed by the following GPG key, `0xD5EDEB74`:
 
 https://openresty.org/package/pubkey.gpg
 
-The only exception is Ubuntu's PPA repositories. They use the `2E61F1063ED1B4FD` GPG key instead.
-
 # Ubuntu
 
-You can add the `openresty` repository to your Ubuntu system so as to easily install
+You can add our APT repository to your Ubuntu system so as to easily install
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
 run the following commands (only need to run once for each system):
 
 ```bash
+    # import our GPG key:
+    wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+
     # for installing the add-apt-repository command
     # (you can remove this package and its dependencies later):
     sudo apt-get -y install software-properties-common
 
-    # add the our official PPA repository:
-    sudo add-apt-repository -y ppa:openresty/ppa
+    # add the our official APT repository:
+    sudo add-apt-repository -y "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main"
 
     # to update the APT index:
     sudo apt-get update

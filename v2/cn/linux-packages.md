@@ -56,22 +56,25 @@
     2017.03         x86_64
 ```
 
-我们仓库的所有元数据和二进制包都是用下面的 GPG 密钥， `0xD5EDEB74` 签名的：
-https://openresty.org/package/pubkey.gpg
+我们仓库的所有元数据（以及 rpm 二进制包）都是用下面的 GPG 密钥， `0xD5EDEB74` 签名的：
 
-唯一的区别是 Ubuntu 的 PPA 仓库。他们用的 GPG key 是 `2E61F1063ED1B4FD`。
+https://openresty.org/package/pubkey.gpg
 
 # Ubuntu
 
-你可以在你的 Ubuntu 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum update` 命令）。
-运行下面的命令就可以添加我们的仓库（每个系统只需要运行一次）：
+你可以在你的 Ubuntu 系统中添加我们的 APT 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum update` 命令）。
+运行下面的命令就可以添加仓库（每个系统只需要运行一次）：
 
 ```bash
-    # 安装 add-apt-repository 命令：
+    # 导入我们的 GPG 密钥：
+    wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+
+    # 安装 add-apt-repository 命令
     # （之后你可以删除这个包以及对应的关联包）
-     sudo apt-get -y install software-properties-common
-    # 添加我们官方的 PPA 仓库：
-     sudo add-apt-repository -y ppa:openresty/ppa
+    sudo apt-get -y install software-properties-common
+
+    # 添加我们官方 official APT 仓库：
+    sudo add-apt-repository -y "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main"
 
     # 更新 APT 索引：
     sudo apt-get update
@@ -100,7 +103,7 @@ https://openresty.org/package/pubkey.gpg
 运行下面的命令就可以添加我们的仓库（每个系统只需要运行一次）：
 
 ```bash
-    # 输入我们的 GPG 密钥：
+    # 导入我们的 GPG 密钥：
     wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
     # 安装 add-apt-repository 命令
@@ -135,7 +138,7 @@ https://openresty.org/package/pubkey.gpg
 运行下面的命令就可以添加我们的仓库（每个系统只需要运行一次）：
 
 ```bash
-    # 输入我们 GPG 密钥：
+    # 导入我们 GPG 密钥：
     wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
     # 安装 add-apt-repository 命令：
