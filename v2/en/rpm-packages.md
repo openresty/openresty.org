@@ -168,6 +168,14 @@ introduction to this test scaffold:
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/
 
+# Development Packages
+
+We provide development packages for our binary library packages `openresty-zlib`, `openresty-pcre`, `openresty-openssl`,
+and `openresty-openssl-debug`. These packages contain header files and static library archive files for the corresponding
+binary package. Their name all have a `-devel` suffix as compared to their binary counterpart. For example, we have
+`openresty-zlib-devel` for `openresty-zlib`, `openresty-pcre-devel` for `openresty-pcre`, `openresty-openssl-devel` for
+`openresty-opnessl`, and also `openresty-openssl-debug-devel` for `openresty-openssl-debug`.
+
 # Debuginfo Packages
 
 We provide debuginfo (or debug symbol) packages for those containing binary components like the `openresty` and `openresty-openssl` packages. Their
