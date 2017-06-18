@@ -60,6 +60,11 @@ All our repositories' metadata (and rpm binary packages) are signed by the follo
 
 https://openresty.org/package/pubkey.gpg
 
+**IMPORTANT!** All the official binaruy packages for Intel `x86_64` CPUs require SSE 4.2 instruction support in the CPU.
+If you use an old CPU that does not support SSE 4.2, then you need to build OpenResty from its source tarball on *that*
+CPU yourself. See the [Download](download.html) and [Installation](installation.html) page for details. Otherwise you
+will see the `Illegal instruction` error when using the binary packages on your CPUs lacking SSE 4.2 support.
+
 # Ubuntu
 
 You can add our APT repository to your Ubuntu system so as to easily install
