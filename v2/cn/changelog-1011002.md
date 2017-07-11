@@ -2,6 +2,10 @@
     @title         ChangeLog 1.11.2
 --->
 
+# Version 1.11.2.4 - 11 July 2017
+
+* bugfix: nginx: applied nginx's official security fix for an issue in the range filter (CVE-2017-7529).
+
 # Version 1.11.2.3 - 21 April 2017
 
 * change: we no longer bundle the standard Lua 5.1 interpreter (aka the PUC-Rio Lua). now we only bundle LuaJIT.
