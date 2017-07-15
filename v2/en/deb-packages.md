@@ -115,13 +115,25 @@ done in the `openresty-debug` package:
 
 * It disables the memory pools used in the NGINX by applying the "[no-pool](https://github.com/openresty/no-pool-nginx)" patch.
 * It enforces LuaJIT to use the system allocator instead of its own.
-* It enables the internal Valgrind co-operations in the LuaJIT build.
+* It enables the internal Valgrind co-operations in the LuaJIT build through the `-DLUAJIT_USE_VALGRIND` C compiler flag.
 * The default server prefix of its NGINX is `/usr/local/openresty-valgrind/`.
 * The entry point visible to your `PATH` environment is `openresty-valgrind` instead of `openresty-debug`.
 
 See the following tutorials on more details on Valgrind-based testing in the context of OpenResty:
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.html#_valgrind_mode
+
+To use this special build of OpenResty on `x86_64` systems, you must use Valgrind to run, otherwise the LuaJIT
+VM cannot even do allocations properly.
+
+Also, it is important to configure the following at the beginning of your `nginx.conf` file for the best
+result:
+
+```nginx
+daemon off;
+maser_process off;
+worker_processes 1;
+```
 
 # openresty-openssl
 
@@ -141,6 +153,7 @@ This is the debug build of OpenSSL library. As compared to `openresty-openssl`, 
 * It disables any C compiler optimizations.
 * It is Valgrind clean and free of any Valgrind false positives.
 * Assembly code is disabled so we always have perfect C-land backtraces and etc.
+* It is installed into the prefix `/usr/local/openresty-debug/openssl/`.
 
 # openresty-zlib
 
