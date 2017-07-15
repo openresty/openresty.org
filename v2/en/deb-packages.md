@@ -131,7 +131,7 @@ result:
 
 ```nginx
 daemon off;
-maser_process off;
+master_process off;
 worker_processes 1;
 ```
 

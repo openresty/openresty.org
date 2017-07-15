@@ -131,13 +131,13 @@ result:
 
 ```nginx
 daemon off;
-maser_process off;
+master_process off;
 worker_processes 1;
 ```
 
 # openresty-asan
 
-This is the clang AddressSanitizer build of the Zlib library. As compared to the `openresty-debug`
+This is the clang AddressSanitizer build of OpenResty. As compared to the `openresty-debug`
 package, it has the following changes:
 
 * It uses the command `clang -fsanitize=address` to compile and link.
