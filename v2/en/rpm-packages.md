@@ -123,6 +123,18 @@ See the following tutorials on more details on Valgrind-based testing in the con
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.html#_valgrind_mode
 
+To use this special build of OpenResty on `x86_64` systems, you must use Valgrind to run, otherwise the LuaJIT
+VM cannot even do allocations properly.
+
+Also, it is important to configure the following at the beginning of your `nginx.conf` file for the best
+result:
+
+```nginx
+daemon off;
+maser_process off;
+worker_processes 1;
+```
+
 # openresty-asan
 
 This is the clang AddressSanitizer build of the Zlib library. As compared to the `openresty-debug`
@@ -135,6 +147,18 @@ package, it has the following changes:
 * The default server prefix of its NGINX is `/usr/local/openresty-asan/`.
 * The entry point visible to your `PATH` environment is `openresty-asan` instead of `openresty-debug`.
 * It uses the `openresty-zlib-asan`, `openresty-pcre-asan`, and `openresty-openssl-asan` packages as runtime dependencies.
+
+It is important to specify the following system environment before starting this special build of openresty
+to avoid known false positives of memory leaks:
+
+```bash
+export ASAN_OPTIONS=detect_leaks=0
+```
+
+You may also need to specify some suppression rules to silence other false positives. See the following
+clang ASAN document for more details:
+
+https://clang.llvm.org/docs/AddressSanitizer.html#suppressing-reports-in-external-libraries
 
 # openresty-openssl
 
