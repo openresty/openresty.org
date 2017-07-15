@@ -115,13 +115,26 @@ done in the `openresty-debug` package:
 
 * It disables the memory pools used in the NGINX by applying the "[no-pool](https://github.com/openresty/no-pool-nginx)" patch.
 * It enforces LuaJIT to use the system allocator instead of its own.
-* It enables the internal Valgrind co-operations in the LuaJIT build.
+* It enables the internal Valgrind co-operations in the LuaJIT build through the `-DLUAJIT_USE_VALGRIND` C compiler flag.
 * The default server prefix of its NGINX is `/usr/local/openresty-valgrind/`.
 * The entry point visible to your `PATH` environment is `openresty-valgrind` instead of `openresty-debug`.
 
 See the following tutorials on more details on Valgrind-based testing in the context of OpenResty:
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.html#_valgrind_mode
+
+# openresty-asan
+
+This is the clang AddressSanitizer build of the Zlib library. As compared to the `openresty-debug`
+package, it has the following changes:
+
+* It uses the command `clang -fsanitize=address` to compile and link.
+* It uses the C compiler options `-O1 -fno-omit-frame-pointer` in the build.
+* It disables the memory pools used in the NGINX by applying the "[no-pool](https://github.com/openresty/no-pool-nginx)" patch.
+* It enables the internal Valgrind co-operations in the LuaJIT build through the `-DLUAJIT_USE_VALGRIND` C compiler flag.
+* The default server prefix of its NGINX is `/usr/local/openresty-asan/`.
+* The entry point visible to your `PATH` environment is `openresty-asan` instead of `openresty-debug`.
+* It uses the `openresty-zlib-asan`, `openresty-pcre-asan`, and `openresty-openssl-asan` packages as runtime dependencies.
 
 # openresty-openssl
 
@@ -136,21 +149,50 @@ mainstream version of OpenSSL is used in OpenResty even on older systems.
 
 # openresty-openssl-debug
 
-This is the debug build of OpenSSL library. As compared to `openresty-openssl`, it has the following changes:
+This is the debug build of the OpenSSL library. As compared to `openresty-openssl`, it has the following changes:
 
 * It disables any C compiler optimizations.
 * It is Valgrind clean and free of any Valgrind false positives.
 * Assembly code is disabled so we always have perfect C-land backtraces and etc.
+* It is installed into the prefix `/usr/local/openresty-debug/openssl/`.
+
+# openresty-openssl-asan
+
+This is the clang AddressSanitizer build of the OpenSSL library. As compared to the `openresty-openssl-debug`
+package, it has the following changes:
+
+* It uses the command `clang -fsanitize=address` to compile and link.
+* It uses the `openresty-zlib-asan` package instead of `openresty-zlib` as the runtime dependency.
+* It uses the C compiler options `-O1 -fno-omit-frame-pointer` in the build.
+* It is installed into the prefix `/usr/local/openresty-asan/openssl/`.
 
 # openresty-zlib
 
 This is our own build of the zlib library for gzip compression. We ship our own zlib package to ensure the latest
 mainstream version of zlib is used in OpenResty even on old systems.
 
+# openresty-zlib-asan
+
+This is the clang AddressSanitizer build of the Zlib library. As compared to the `openresty-zlib-debug`
+package, it has the following changes:
+
+* It uses the command `clang -fsanitize=address` to compile and link.
+* It uses the C compiler options `-O1 -fno-omit-frame-pointer` in the build.
+* It is installed into the prefix `/usr/local/openresty-asan/zlib/`.
+
 # openresty-pcre
 
 This is our own build of the PCRE library for gzip compression. We ship our own PCRE package to ensure the latest
 mainstream version of PCRE is used in OpenResty even on older systems.
+
+# openresty-pcre-asan
+
+This is the clang AddressSanitizer build of the PCRE library. As compared to the `openresty-pcre-debug`
+package, it has the following changes:
+
+* It uses the command `clang -fsanitize=address` to compile and link.
+* It uses the C compiler options `-O1 -fno-omit-frame-pointer` in the build.
+* It is installed into the prefix `/usr/local/openresty-asan/pcre/`.
 
 # perl-Lemplate
 
