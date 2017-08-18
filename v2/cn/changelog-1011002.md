@@ -59,7 +59,7 @@
     * optimize: simplified the "BOOL and true or false" expressions. thanks Evgeny S for the patch.
     * doc: [ngx.ssl](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#readme): added performace notes for [set_priv_key()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#set_priv_key) and [set_cert()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#set_cert). thanks Filip Slavik for the patch.
     * doc: [ngx.balancer](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/balancer.md#readme): fixed some typos. thanks detailyang for the patch.
-    * doc: code example: private keys are usually stored in PEM, so we use the func [priv_key_pem_to_der](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#priv_key_pem_to_der) in the example to do the conversion.
+    * doc: code example: private keys are usually stored in PEM, so we use the func [priv_key_pem_to_der](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#priv_key_pem_to_der) in the example to do the conversion. thanks soul11201 for the patch.
     * doc: [ngx.ssl.session](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl/session.md#readme): fixed the missing arguments in the code example. thanks soul11201 for the patch.
     * doc: fixed the code examples since directives `ssl_session_*_by_lua*` are no longer allowed in `server {}`. thanks Yuansheng Wang for the patch.
 * upgraded [lua-resty-dns](https://github.com/openresty/lua-resty-dns#readme) to 0.19.
