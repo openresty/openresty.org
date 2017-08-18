@@ -69,9 +69,9 @@
     * feature: added support for `FIELD_TYPE_DECIMAL` for MySQL servers prior to 5.0 and 5.0. thanks panyingxue for the patch.
     * bugfix: newer versions of MySQL use length-encoded strings for the human readable "info" message in MySQL's "OK packet". thanks zhuanyenan for the report.
 * upgraded [lua-resty-lock](https://github.com/openresty/lua-resty-lock#readme) to 0.07.
-    * feature: added new method [expire()](https://github.com/openresty/lua-resty-lock/#expire) that can change the TTL of the lock being held.
-* upgraded lua-resty-string to 0.10. thanks Datong Sun for the patch.
-    * bugfix: resty.aes: fixed memory overrun bug when user provided a salt of less than 8 characters but EVP_BytesToKey() expects more. disallows salt strings longer than 8 characters to avoid false sense of security.
+    * feature: added new method [expire()](https://github.com/openresty/lua-resty-lock/#expire) that can change the TTL of the lock being held. thanks Datong Sun for the patch.
+* upgraded lua-resty-string to 0.10.
+    * bugfix: resty.aes: fixed memory overrun bug when user provided a salt of less than 8 characters but `EVP_BytesToKey()` expects more. disallows salt strings longer than 8 characters to avoid false sense of security. thanks Datong Sun for the patch.
     * refactor: commented out unneeded locals, and removed unused variable declarations. thanks Aapo Talvensaari for the patch.
     * doc: typo fixes from Juarez Bochi.
 * upgraded lua-resty-upstream-healthcheck to 0.05.
@@ -82,8 +82,8 @@
 * upgraded [lua-resty-lrucache](https://github.com/openresty/lua-resty-lrucache#readme) to 0.07.
     * bugfix: fixed a type mismatch issue found by 其实不想走. the old form still works due to LuaJIT FFI's magic.
 * upgraded [ngx_lua_upstream](https://github.com/openresty/lua-upstream-nginx-module#readme) to 0.07.
-    * bugfix: turning a peer up via [set_peer_down()](https://github.com/openresty/lua-upstream-nginx-module/#set_peer_down) did not reset the peer's "fails" counter, which might get the peer to be marked down again prematurely.
-    * doc: documented the "down" key in the [get_primary_peers()](https://github.com/openresty/lua-upstream-nginx-module/#get_primary_peers) result.
+    * bugfix: turning a peer up via [set_peer_down()](https://github.com/openresty/lua-upstream-nginx-module/#set_peer_down) did not reset the peer's "fails" counter, which might get the peer to be marked down again prematurely. thanks letian for the patch.
+    * doc: documented the "down" key in the [get_primary_peers()](https://github.com/openresty/lua-upstream-nginx-module/#get_primary_peers) result. thanks Kipras Mancevičius for the patch.
 * upgraded [ngx_echo](https://github.com/openresty/echo-nginx-module#readme) to 0.61.
     * feature: [nginx](nginx.html) 1.11.11+ can now build with this module. note: [nginx](nginx.html) 1.11.11+ are still not an officially supported target yet. thanks Andrei Belov for the patch.
     * doc: minor typo fixes from mrefish and Mathieu Aubin.
@@ -93,9 +93,9 @@
     * feature: fixed the compilation errors with [nginx](nginx.html) 1.11.6+.
 * upgraded LuaJIT to v2.1-20170808: https://github.com/openresty/luajit2/tags
     * bugfix: [FFI](http://luajit.org/ext_ffi.html) C parsers could not parse some C constructs like `__attribute((aligned(N)))` and `#pragma`. decoupled hash functions used in comparison (hardcoded) and string table. thanks Shuxin Yang for the patch. this bug had first appeared in v2.1-20170405 (or OpenResty 1.11.2.3).
-    * bugfix: fixed a clang warning in lj_str.c regarding unused str_fastcmp() when macro LUAJIT_USE_VALGRIND is defined.
+    * bugfix: fixed a clang warning in `lj_str.c` regarding unused `str_fastcmp()` when macro `LUAJIT_USE_VALGRIND` is defined.
     * imported Mike Pall's latest changes:
-        * bugfix: added missing LJ_MAX_JSLOTS check, which might lead to JIT stack overflow when exceeding this limit. tracked down the Mozilla rr tool. already merged in upstream LuaJIT.
+        * bugfix: added missing `LJ_MAX_JSLOTS` check, which might lead to JIT stack overflow when exceeding this limit. tracked down the Mozilla rr tool. already merged in upstream LuaJIT.
         * FreeBSD/x64: Avoid changing resource limits, if not needed.
         * PPC: Add soft-float support to interpreter.
         * x64/`LJ_GC64`: Fix `emit_rma()`.
