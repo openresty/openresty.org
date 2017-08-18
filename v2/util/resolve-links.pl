@@ -34,6 +34,8 @@ while (<$in>) {
 
     $c += s! (\s) ngx_devel_kit ( [\s,.:?] ) !$1\[ngx_devel_kit](https://github.com/simpl/ngx_devel_kit#readme)$2!xgs;
 
+    $c += s! (\s) ngx_postgres ( [\s,.:?] ) !$1\[ngx_postgres](https://github.com/openresty/ngx_postgres#readme)$2!xgs;
+
     $c += s! (\s) ngx_(iconv|form_input) ( [\s,.:?] ) !
             my ($pre, $name, $post) = ($1, $2, $3);
             (my $name2 = $name) =~ s/_/-/g;
@@ -41,12 +43,15 @@ while (<$in>) {
            !xgse;
 
     $c += s! (\s) ( ngx\. (?: exit
+                            | escape_uri
+                            | encode_args
                             | req\.(?:append|init|finish)_body
                             | req\.(?:raw_header|set_header|clear_header)
                             | re\.(?:g?match|g?sub|find)
                             | worker\.(?:p?id|count)
                             | send_headers
                             | status
+                            | timer\.(?:at|every)
                             | flush
                             | print
                             | say
@@ -61,6 +66,8 @@ while (<$in>) {
                   | tcpsock:sslhandshake
                   | tcpsock:setkeepalive
                   | lua_ssl_verify_depth
+                  | lua_regex_cache_max_entries
+                  | lua_intercept_error_log
                   | lua_ssl_trusted_certificate
                   | lua_check_client_abort
                   | lua_shared_dict
@@ -76,22 +83,58 @@ while (<$in>) {
 
     $c += s! (\s) \$(upstream_addr) ( [\s,.:?] ) !$1\[\$$2](http://nginx.org/en/docs/http/ngx_http_upstream_module.html#var_$2)$3!gxs;
 
-    $c += s! (\s) ssl\.(cert_pem_to_der|parse_pem_cert|parse_pem_priv_key|set_cert|set_priv_key) ( (?:\(\))? ) ( [\s,.:?] ) !
+    $c += s! (\s) ssl\.(cert_pem_to_der|parse_pem_cert|priv_key_pem_to_der|parse_pem_priv_key|set_cert|set_priv_key) ( (?:\(\))? ) ( [\s,.:?] ) !
             my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
             my $anchor = gen_anchor($txt);
             "$pre\[$txt$parens](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#$anchor)$post"
             !egx;
 
+    $c += s! (\s) process\.(signal_graceful_exit|type|enable_privileged_agent) ( (?:\(\))? ) ( [\s,.:?] ) !
+            my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
+            my $anchor = gen_anchor($txt);
+            "$pre\[$txt$parens](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#$anchor)$post"
+            !egx;
+
+    $c += s! (\s) errlog\.(get_sys_filter_level) ( (?:\(\))? ) ( [\s,.:?] ) !
+            my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
+            my $anchor = gen_anchor($txt);
+            "$pre\[$txt$parens](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#$anchor)$post"
+            !egx;
+
+    $c += s! (\s) re\.(split|opt) ( (?:\(\))? ) ( [\s,.:?] ) !
+            my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
+            my $anchor = gen_anchor($txt);
+            "$pre\[$txt$parens](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#$anchor)$post"
+            !egx;
+
+    $c += s! (\s) mysql\.(connect) ( (?:\(\))? ) ( [\s,.:?] ) !
+            my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
+            my $anchor = gen_anchor($txt);
+            "$pre\[$txt$parens](https://github.com/openresty/lua-resty-mysql/#$anchor)$post"
+            !egx;
+
+    $c += s! (\s) lock\.(expire) ( (?:\(\))? ) ( [\s,.:?] ) !
+            my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
+            my $anchor = gen_anchor($txt);
+            "$pre\[$txt$parens](https://github.com/openresty/lua-resty-lock/#$anchor)$post"
+            !egx;
+
+    $c += s! (\s) upstream\.(set_peer_down|get_primary_peers) ( (?:\(\))? ) ( [\s,.:?] ) !
+            my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
+            my $anchor = gen_anchor($txt);
+            "$pre\[$txt$parens](https://github.com/openresty/lua-upstream-nginx-module/#$anchor)$post"
+            !egx;
+
     $c += s! (\s) (more_set_input_headers) \b !$1\[$2](https://github.com/openresty/headers-more-nginx-module#$2)!gx;
 
-    $c += s! (\s) ( resty\.core\.shdict | ngx\.(?:re|semaphore|ssl(?:\.session)?|balancer|ocsp) ) ( [\s,.:?] ) !
+    $c += s! (\s) ( resty\.core\.shdict | ngx\.(?:re|process|errlog|semaphore|ssl(?:\.session)?|balancer|ocsp) ) ( [\s,.:?] ) !
             my ($pre, $txt, $post) = ($1, $2, $3);
             (my $file = $txt) =~ s{\.}{/}g;
             "$pre\[$txt](https://github.com/openresty/lua-resty-core/blob/master/lib/$file.md#readme)$post"
             !egx;
 
     $c += s! (\s) (opm|resty-cli|lua-cjson|lua-redis-parser|lua-resty-(?:core|memcached|mysql|redis|dns|lock|lrucache|websocket|upload|limit-traffic)) ( [\s,.:?] ) !$1\[$2](https://github.com/openresty/$2#readme)$3!gxs;
-    $c += s! (\s) (proxy_pass|proxy_next_upstream_tries|error_page|client_body_buffer_size) ( [\s,.:?] ) !$1\[$2](http://nginx.org/r/$2)$3!gxs;
+    $c += s! (\s) (error_log|proxy_pass|proxy_next_upstream_tries|error_page|client_body_buffer_size) ( [\s,.:?] ) !$1\[$2](http://nginx.org/r/$2)$3!gxs;
 
     $c += s! (\s) (table\.concat) ( (?:\(\))? ) ( [\s,.:?] ) !$1\[$2$3](http://www.lua.org/manual/5.1/manual.html#pdf-$2)$4!gxs;
     $c += s! (\s) ([Nn]ginx) ( [\s,.:?] ) !$1\[$2](nginx.html)$3!gxsi;

@@ -2,6 +2,121 @@
     @title         ChangeLog 1.11.2
 --->
 
+# Version 1.11.2.5 - 17 August 2017
+
+* feature: applied a patch to the [nginx](nginx.html) core to make the [nginx](nginx.html) variable `$proxy_add_x_forwarded_for` accessible on Lua land. thanks spacewander for the patch.
+* feature: added the balancer-status-code patch to the [nginx](nginx.html) core to allow returning arbitrary HTTP status codes inside upstream balancers. thanks Datong Sun for the patch.
+* feature: we now search LuaJIT bytecode files `*.ljbc` before Lua source files `*.lua` in the default Lua module search paths.
+* feature: applied the intercept-error-log patch to the [nginx](nginx.html) core to provide 3rd-party modules a hook to intercept [nginx](nginx.html) error log data without touching files. 3rd-party modules can register a custom interception hook to `ngx_http_core_main_conf_t.intercept_log_handler`. thanks Yuansheng Wang for the patch.
+* feature: `./configure`: the user flags specified by the `--with-luajit-xcflags=FLAGS` option are not appended to the default flags instead of being prepended. thanks spacewander for the report.
+* feature: applied a small patch to the [nginx](nginx.html) core to add support for the "privileged agent" process which is run by the same system account as the master. thanks Yuansheng Wang for the patch.
+* change: applied a patch to the [nginx](nginx.html) core to turn [nginx](nginx.html) to openresty in the builtin special response pages' footer. thanks Datong Sun for the patch.
+* bugfix: the feature test for SSE 4.2 support did not really check if the local CPU indeed has it. thanks Jukka Raimovaara for the patch.
+* bugfix: applied the single-process-graceful-exit patch to the [nginx](nginx.html) core to fix the issue that [nginx](nginx.html) fails to perform graceful exit when `master_process` is turned off.
+* bugfix: `./configure`: the `--without-http_lua_upstream` option alone incorrectly disabled all the Lua stuff.
+* feature: applied the delayed-posted-events patch to the [nginx](nginx.html) core for adding "delayed posted events" which run in the next event cycle with 0 delay. this [nginx](nginx.html) core feature is needed by the `ngx.sleep(0)` feature in [ngx_lua](https://github.com/openresty/lua-nginx-module#readme), for example. thanks Datong Sun for the patch.
+* change: swtched to OpenResty's own fork of `ngx_postgres`: https://github.com/openresty/ngx_postgres
+* doc: updated the LuaJIT restydoc indexes to the latest version.
+* upgraded [resty-cli](https://github.com/openresty/resty-cli#readme) to 0.19.
+    * feature: resty: added new command-line option `--errlog-level LEVEL`. thanks Michal Cichra for the patch.
+    * feature: resty: added new command-line option `--rr` to use `rr record` to run the underlying C process. this is for [Mozilla rr](http://rr-project.org/) recording.
+    * feature: resty: added new command-line option `--gdb` to use gdb to run the underlying C process.
+    * feature: resty: implemented the `--http-conf CONF` command-line option.
+    * feature: added the `--ns IP` command line options to override system (or google) nameservers. thanks Aapo Talvensaari for the patch.
+    * bugfix: we did not quote the Lua code chunk names properly.
+    * bugfix: bad Lua file names given on the command line might give rise to strange errors and even hanging.
+    * bugfix: resty: user created timers and unwaited light threads were not handled gracefully upon exit.
+    * bugfix: md2pod.pl: we did not unescape `&ast;`.
+    * optimize: resty: now we increase the value of [lua_regex_cache_max_entries](https://github.com/openresty/lua-nginx-module#lua_regex_cache_max_entries) to 40K.
+    * doc: made it clear that one should install `openresty-resty` and/or `openresty-doc` if they uses the [offiical OpenResty pre-built Linux package repositories](https://openresty.org/en/linux-packages.html).
+* upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) to 0.10.10.
+    * feature: added pure C API for tuning the `jit_stack_size` option in PCRE. this is used by the [ngx.re](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#readme) library of [lua-resty-core](https://github.com/openresty/lua-resty-core#readme).
+    * feature: added pure C functions `ngx_http_lua_ffi_worker_type()` & `ngx_http_lua_ffi_worker_privileged()` for the [ngx.process](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#readme) module in [lua-resty-core](https://github.com/openresty/lua-resty-core#readme).
+    * feature: added new config directive [lua_intercept_error_log](https://github.com/openresty/lua-nginx-module#lua_intercept_error_log) for capturing [nginx](nginx.html) error logs on Lua land. the corresponding Lua API is provided by the [ngx.errlog](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#readme) module in [lua-resty-core](https://github.com/openresty/lua-resty-core#readme). thanks Yuansheng Wang for the patch and Jan Prachař for a bug fix.
+    * feature: implemented the [ngx.timer.every()](https://github.com/openresty/lua-nginx-module#ngxtimerevery) API function for creating recurring timers. thanks Dejiang Zhu for the patch.
+    * feature: [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block): now the user Lua code can terminate the current request with arbitrary HTTP response status codes via [ngx.exit()](https://github.com/openresty/lua-nginx-module#ngxexit).
+    * feature: added pure C API function `ngx_http_lua_ffi_errlog_get_sys_filter_level` for the `ngx.errlog` module's `get_sys_filter_level()` function in the [lua-resty-core](https://github.com/openresty/lua-resty-core#readme) library. thanks spacewander for the patch.
+    * feature: `ngx.sleep(0)` now always yield the control to the [nginx](nginx.html) event loop. this can be used to do voluntary CPU time slicing when running CPU intensive computations on the Lua land and to avoid such computations from blocking the [nginx](nginx.html) event loop for too long. this feature requires OpenResty's delayed-posted-event patch for the [nginx](nginx.html) core.
+    * feature: added new pure C API `ngx_http_lua_ffi_process_signal_graceful_exit()` for the [signal_graceful_exit()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#signal_graceful_exit) function of the [ngx.process](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#readme) module in [lua-resty-core](https://github.com/openresty/lua-resty-core#readme).
+    * feature: [nginx](nginx.html) 1.11.11+ can now build with this module. note: [nginx](nginx.html) 1.11.11+ are still not an officially supported target yet.
+    * bugfix: the running timer counter might go out of sync when non-timer handlers using fake requests are involved (like ssl_certficate_by_lua* and ssl_session_fetch_by_lua*). thanks guanglinlv for the patch.
+    * bugfix: [ngx.encode_args()](https://github.com/openresty/lua-nginx-module#ngxencode_args) did not escape "|", ",", "$", "@", and "`". now it is now consistent with what Google Chrome's JavaScript API function `encodeURIComponent()` does. thanks goecho for the patch.
+    * bugfix: [ngx.escape_uri()](https://github.com/openresty/lua-nginx-module#ngxescape_uri) did not escape "|", ",", "$", "@", and "`".
+    * bugfix: segmentation fault would occur when several server {} blocks listen on the same port or unix domain socket file path *and* some of them are using [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block) configurations while some are not. thanks petrovich-ua for the report and original patch.
+    * bugfix: the fake requests/connections might leak when memory allocations fail. thanks skyever for the patch.
+    * bugfix: segmentation fault might happen when a stale read event happens after the downstream cosocket object is closed. thanks Dejiang Zhu for the report.
+    * bugfix: [ngx.semaphore](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md#readme): when [nginx](nginx.html) workers exit, the harmless error message "semaphore gc wait queue is not empty" might be logged.
+    * bugfix: fixed typos in error messages. thanks spacewander for the patch.
+    * refactor: ocsp: removed a useless line of code, which unbreak the libressl build. thanks Kyra Zimmer for the original patch.
+    * doc: fixed a typo in a code example for `ngx.re.match`. thanks Ming Wen for the patch.
+* upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core#readme) to 0.1.12.
+    * feature: added [opt()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#opt) function to the [ngx.re](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#readme) Lua module that accepts the "jit_stack_size" option to tune the JIT stack size of PCRE. thanks Andreas Lubbe for the patch.
+    * feature: added new Lua module [ngx.process](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#readme) which has functions [type()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#type) and [enable_privileged_agent()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#enable_privileged_agent). thanks Yuansheng Wang for the patch.
+    * feature: added new Lua module [ngx.errlog](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#readme) which provides Lua API to capture [nginx](nginx.html) error log data on Lua land.
+    * feature: added the new [signal_graceful_exit()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#signal_graceful_exit) function to the [ngx.process](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#readme) Lua module.
+    * feature: [ngx.errlog](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#readme): added the [get_sys_filter_level()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#get_sys_filter_level) API function to get the "system" error log filtering level defined in [nginx](nginx.html).conf's [error_log](http://nginx.org/r/error_log) directive. thanks spacewander for the patch.
+    * bugfix: [ngx.re](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#readme): [split()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#split) might enter infinite loops when the regex yields matches with empty captures.
+    * optimize: simplified the "BOOL and true or false" expressions. thanks Evgeny S for the patch.
+    * doc: [ngx.ssl](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#readme): added performace notes for [set_priv_key()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#set_priv_key) and [set_cert()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#set_cert). thanks Filip Slavik for the patch.
+    * doc: [ngx.balancer](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/balancer.md#readme): fixed some typos. thanks detailyang for the patch.
+    * doc: code example: private keys are usually stored in PEM, so we use the func [priv_key_pem_to_der](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#priv_key_pem_to_der) in the example to do the conversion.
+    * doc: [ngx.ssl.session](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl/session.md#readme): fixed the missing arguments in the code example. thanks soul11201 for the patch.
+    * doc: fixed the code examples since directives `ssl_session_*_by_lua*` are no longer allowed in `server {}`. thanks Yuansheng Wang for the patch.
+* upgraded [lua-resty-dns](https://github.com/openresty/lua-resty-dns#readme) to 0.19.
+    * feature: added support for SOA typed queries. thanks Ming Wen for the patch.
+* upgraded [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql#readme) to 0.20.
+    * feature: [connect()](https://github.com/openresty/lua-resty-mysql/#connect): added the charset option to specify the connection charset.
+    * feature: added support for `FIELD_TYPE_DECIMAL` for MySQL servers prior to 5.0 and 5.0.
+    * bugfix: newer versions of MySQL use length-encoded strings for the human readable "info" message in MySQL's "OK packet". thanks zhuanyenan for the report.
+* upgraded [lua-resty-lock](https://github.com/openresty/lua-resty-lock#readme) to 0.07.
+    * feature: added new method [expire()](https://github.com/openresty/lua-resty-lock/#expire) that can change the TTL of the lock being held.
+* upgraded lua-resty-string to 0.10.
+    * bugfix: resty.aes: fixed memory overrun bug when user provided a salt of less than 8 characters but EVP_BytesToKey() expects more. disallows salt strings longer than 8 characters to avoid false sense of security.
+    * refactor: commented out unneeded locals, and removed unused variable declarations. thanks Aapo Talvensaari for the patch.
+    * doc: typo fixes from Juarez Bochi.
+* upgraded lua-resty-upstream-healthcheck to 0.05.
+    * optimize: removed useless code. thanks Yuansheng Wang for the patch.
+    * doc: typo fixes from Mike Rostermund.
+* upgraded [lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic#readme) to 0.04.
+    * bugfix: reduce race condition between get/incr(key). by using `incr` first, we could avoid overcommits between `get(key)` and `incr(key)`. thanks spacewander for the patch.
+* upgraded [lua-resty-lrucache](https://github.com/openresty/lua-resty-lrucache#readme) to 0.07.
+    * bugfix: fixed a type mismatch issue found by 其实不想走. the old form still works due to LuaJIT FFI's magic.
+* upgraded [ngx_lua_upstream](https://github.com/openresty/lua-upstream-nginx-module#readme) to 0.07.
+    * bugfix: turning a peer up via [set_peer_down()](https://github.com/openresty/lua-upstream-nginx-module/#set_peer_down) did not reset the peer's "fails" counter, which might get the peer to be marked down again prematurely.
+    * doc: documented the "down" key in the [get_primary_peers()](https://github.com/openresty/lua-upstream-nginx-module/#get_primary_peers) result.
+* upgraded [ngx_echo](https://github.com/openresty/echo-nginx-module#readme) to 0.61.
+    * feature: [nginx](nginx.html) 1.11.11+ can now build with this module. note: [nginx](nginx.html) 1.11.11+ are still not an officially supported target yet. thanks Andrei Belov for the patch.
+    * doc: minor typo fixes from mrefish and Mathieu Aubin.
+    * doc: added a note about the empty values of `$echo_client_request_headers` in HTTP/2 requests.
+* upgraded [ngx_postgres](https://github.com/openresty/ngx_postgres#readme) to 1.0.
+    * feature: fixed compilation errors with [nginx](nginx.html) 1.9.1+. thanks Vadim A. Misbakh-Soloviov for the original patch.
+    * feature: fixed the compilation errors with [nginx](nginx.html) 1.11.6+.
+* upgraded LuaJIT to v2.1-20170808: https://github.com/openresty/luajit2/tags
+    * bugfix: [FFI](http://luajit.org/ext_ffi.html) C parsers could not parse some C constructs like `__attribute((aligned(N)))` and `#pragma`. decoupled hash functions used in comparison (hardcoded) and string table. thanks Shuxin Yang for the patch. this bug had first appeared in v2.1-20170405 (or OpenResty 1.11.2.3).
+    * bugfix: fixed a clang warning in lj_str.c regarding unused str_fastcmp() when macro LUAJIT_USE_VALGRIND is defined.
+    * imported Mike Pall's latest changes:
+        * bugfix: added missing LJ_MAX_JSLOTS check, which might lead to JIT stack overflow when exceeding this limit. tracked down the Mozilla rr tool. already merged in upstream LuaJIT.
+        * FreeBSD/x64: Avoid changing resource limits, if not needed.
+        * PPC: Add soft-float support to interpreter.
+        * x64/`LJ_GC64`: Fix `emit_rma()`.
+        * MIPS64: Add soft-float support to JIT compiler backend.
+        * MIPS: Fix handling of spare long-range jump slots.
+        * MIPS: Use precise search for exit jump patching.
+        * Add FOLD rules for mixed BAND/BOR with constants.
+        * [FFI](http://luajit.org/ext_ffi.html): Compile bitfield loads/stores.
+        * Add workaround for MSVC 2015 stdio changes.
+        * MIPS64: Fix stores of MULTRES.
+        * MIPS64: Fix write barrier in `BC_USETV`.
+        * ARM64: Fix stores to vmstate.
+        * From Lua 5.2: Add `lua_tonumberx()` and `lua_tointegerx()`.
+        * From Lua 5.2: Add `luaL_setmetatable()`.
+        * From Lua 5.2: Add `luaL_testudata()`.
+        * From Lua 5.3: Add `lua_isyieldable()`.
+        * From Lua 5.2: Add `lua_copy()`.
+        * From Lua 5.2: Add `lua_version()`.
+        * OSX: Fix build with recent XCode.
+        * Allow building on Haiku OS. Note: this is not an officially supported target.
+
 # Version 1.11.2.4 - 11 July 2017
 
 * bugfix: nginx: applied nginx's official security fix for an issue in the range filter (CVE-2017-7529).
