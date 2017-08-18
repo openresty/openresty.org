@@ -70,7 +70,7 @@
     * bugfix: newer versions of MySQL use length-encoded strings for the human readable "info" message in MySQL's "OK packet". thanks zhuanyenan for the report.
 * upgraded [lua-resty-lock](https://github.com/openresty/lua-resty-lock#readme) to 0.07.
     * feature: added new method [expire()](https://github.com/openresty/lua-resty-lock/#expire) that can change the TTL of the lock being held.
-* upgraded lua-resty-string to 0.10.
+* upgraded lua-resty-string to 0.10. thanks Datong Sun for the patch.
     * bugfix: resty.aes: fixed memory overrun bug when user provided a salt of less than 8 characters but EVP_BytesToKey() expects more. disallows salt strings longer than 8 characters to avoid false sense of security.
     * refactor: commented out unneeded locals, and removed unused variable declarations. thanks Aapo Talvensaari for the patch.
     * doc: typo fixes from Juarez Bochi.
