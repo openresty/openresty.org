@@ -65,8 +65,8 @@
 * upgraded [lua-resty-dns](https://github.com/openresty/lua-resty-dns#readme) to 0.19.
     * feature: added support for SOA typed queries. thanks Ming Wen for the patch.
 * upgraded [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql#readme) to 0.20.
-    * feature: [connect()](https://github.com/openresty/lua-resty-mysql/#connect): added the charset option to specify the connection charset.
-    * feature: added support for `FIELD_TYPE_DECIMAL` for MySQL servers prior to 5.0 and 5.0.
+    * feature: [connect()](https://github.com/openresty/lua-resty-mysql/#connect): added the charset option to specify the connection charset. thanks Wilhelm Liao for the patch.
+    * feature: added support for `FIELD_TYPE_DECIMAL` for MySQL servers prior to 5.0 and 5.0. thanks panyingxue for the patch.
     * bugfix: newer versions of MySQL use length-encoded strings for the human readable "info" message in MySQL's "OK packet". thanks zhuanyenan for the report.
 * upgraded [lua-resty-lock](https://github.com/openresty/lua-resty-lock#readme) to 0.07.
     * feature: added new method [expire()](https://github.com/openresty/lua-resty-lock/#expire) that can change the TTL of the lock being held.
