@@ -45,7 +45,7 @@
     * bugfix: segmentation fault would occur when several server {} blocks listen on the same port or unix domain socket file path *and* some of them are using [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block) configurations while some are not. thanks petrovich-ua for the report and original patch.
     * bugfix: the fake requests/connections might leak when memory allocations fail. thanks skyever for the patch.
     * bugfix: segmentation fault might happen when a stale read event happens after the downstream cosocket object is closed. thanks Dejiang Zhu for the report.
-    * bugfix: [ngx.semaphore](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md#readme): when [nginx](nginx.html) workers exit, the harmless error message "semaphore gc wait queue is not empty" might be logged.
+    * bugfix: [ngx.semaphore](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md#readme): when [nginx](nginx.html) workers exit, the harmless error message "semaphore gc wait queue is not empty" might be logged. thanks Yuansheng Wang for the patch.
     * bugfix: fixed typos in error messages. thanks spacewander for the patch.
     * refactor: ocsp: removed a useless line of code, which unbreak the libressl build. thanks Kyra Zimmer for the original patch.
     * doc: fixed a typo in a code example for `ngx.re.match`. thanks Ming Wen for the patch.
