@@ -82,17 +82,16 @@ process, please read on.
 
 ## Prerequisites
 
-You should have `perl 5.6.1+`, `libreadline`, `libpcre`, `libssl` installed
+You should have `perl 5.6.1+`, `libpcre`, `libssl` installed
 into your system. For Linux, you should also ensure that `ldconfig` is in your
 PATH environment.
-
 
 ### Debian and Ubuntu users
 
 You're recommended to install the following packages using apt-get:
 
 ```
-apt-get install libreadline-dev libncurses5-dev libpcre3-dev \
+apt-get install libpcre3-dev \
     libssl-dev perl make build-essential curl
 ```
 
@@ -102,7 +101,7 @@ apt-get install libreadline-dev libncurses5-dev libpcre3-dev \
 You're recommended to install the following packages using yum:
 
 ```
-yum install readline-devel pcre-devel openssl-devel gcc curl
+yum install pcre-devel openssl-devel gcc curl
 ```
 
 
