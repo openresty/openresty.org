@@ -39,7 +39,7 @@ export PATH=/usr/local/openresty/bin:$PATH
 ```
 
 where `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html),
-like `1.11.2.3`.
+like `1.11.2.5`.
 
 You can add 3rd-party NGINX modules or enable other NGINX core features just like with the standard
 NGINX distribution. For example, you can use the `--add-module=PATH` or `--add-dynamic-module=PATH` options
@@ -238,23 +238,23 @@ number accordingly):
 
 
 ```
-wget https://www.openssl.org/source/openssl-1.0.2j.tar.gz
-tar -zvxf openssl-1.0.2j.tar.gz
-cd openssl-1.0.2j/
+wget https://www.openssl.org/source/openssl-1.0.2k.tar.gz
+tar -zvxf openssl-1.0.2k.tar.gz
+cd openssl-1.0.2k/
 patch -p1 < /path/to/openresty/patches/openssl-1.0.2h-sess_set_get_cb_yield.patch
 cd ..
 
-wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.39.tar.gz
-tar -xvf pcre-8.39.tar.gz
+wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.40.tar.gz
+tar -xvf pcre-8.40.tar.gz
 
-wget https://openresty.org/download/openresty-1.11.2.1.tar.gz
-tar -zxvf openresty-1.11.2.1.tar.gz
-cd openresty-1.11.2.1/
+wget https://openresty.org/download/openresty-1.11.2.5.tar.gz
+tar -zxvf openresty-1.11.2.5.tar.gz
+cd openresty-1.11.2.5/
 
 ## assuming your have 4 spare logical CPU cores
 
-./configure --with-openssl=../openssl-1.0.2j \
-                 --with-pcre=../pcre-8.39 -j4
+./configure --with-openssl=../openssl-1.0.2k \
+                 --with-pcre=../pcre-8.40 -j4
 make -j4
 sudo make install
 ```
