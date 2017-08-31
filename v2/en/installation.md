@@ -160,7 +160,7 @@ and unpack it like this:
 tar -xzvf openresty-VERSION.tar.gz
 ```
 
-where `VERSION` should be replaced by real version numbers like `0.8.54.6`.
+where `VERSION` should be replaced by real version numbers like `1.11.2.5`.
 
 
 ### ./configure
@@ -193,7 +193,7 @@ modules. Try `./configure --help` to see more options available.
 
 Errors in running the ./configure script can be found in the file `build/nginx-VERSION/objs/autoconf.err` where
 `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html),
-like `0.8.54.6`.
+like `1.11.2.5`.
 
 
 #### Notes for Solaris users
