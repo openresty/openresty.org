@@ -148,18 +148,6 @@ You need to install the following ports:
 * devel/pcre
 
 
-## Solaris 11 users
-
-You need to install the following packages from the official repository:
-* gcc-3
-* SUNWlibm
-Usually it's just as simple as
-
-```
-pfexec pkg install gcc-3 SUNWlibm
-```
-
-
 ## Building OpenResty
 
 
