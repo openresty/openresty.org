@@ -55,7 +55,7 @@ Furthermore, we should also enable the internal assertions in various
 OpenResty core components like `ngx_lua` and LuaJIT.
 
 To simplify the special build settings for Valgrind usage, OpenResty
-provides the `openresyt-valgrind` pre-built Linux packages for various
+provides the `openresty-valgrind` pre-built Linux packages for various
 common Linux distributions:
 
 * https://openresty.org/en/linux-packages.html
