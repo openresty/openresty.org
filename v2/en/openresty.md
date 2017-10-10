@@ -44,5 +44,8 @@ See [GettingStarted](getting-started.html) on how to quickly setup an OpenResty<
 server that can say hello world over HTTP. Or you can go to the [Download](download.html) section
 to grab OpenResty<sup>&reg;</sup>'s source code tarball directly.
 
-We provide free technical support in the openresty and openresty-en mailing
+We provide free technical support through the community on the openresty and openresty-en mailing
 lists. See [Community](community.html).
+
+Our [OpenResty Inc.](https://openresty.com/) company offers commercial products based on OpenResty
+to its global customers, with commercial support.
