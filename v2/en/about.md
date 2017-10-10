@@ -2,9 +2,6 @@
     @title         About
     @creator       Yichun Zhang
     @created       2011-06-21 04:07 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2013-07-19 00:24 GMT
     @changes       21
 --->
 
