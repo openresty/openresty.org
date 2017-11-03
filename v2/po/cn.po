@@ -26,8 +26,8 @@ msgid  "Search Result"
 msgstr "搜索结果"
 
 #: templates/footer.tt2:4
-msgid  "OpenResty<sup>&reg;</sup> is a registered trademark owned by OpenResty Inc."
-msgstr "OpenResty<sup>&reg;</sup> 是 OpenResty Inc. 公司所有的注册商标。"
+msgid  "OpenResty<sup>&reg;</sup> is a registered trademark owned by <a href=\"https://openresty.com/\">OpenResty Inc</a>."
+msgstr "OpenResty<sup>&reg;</sup> 是 <a href=\"https://openresty.com/\">OpenResty Inc</a> 公司所有的注册商标。"
 
 #: templates/footer.tt2:5
 msgid  "Copyright © 2017 Yichun Zhang (agentzh)"

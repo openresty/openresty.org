@@ -1,7 +1,7 @@
 <div class="content-footer">
 <hr class="footer-sep"/>
 <div class="footer">
-  <p>[% c.l("OpenResty<sup>&reg;</sup> is a registered trademark owned by OpenResty Inc.") %]</p>
+  <p>[% c.l("OpenResty<sup>&reg;</sup> is a registered trademark owned by <a href=\"https://openresty.com/\">OpenResty Inc</a>.") %]</p>
   <p>[% c.l("Copyright © 2017 Yichun Zhang (agentzh)") %]</p>
   <p>[% c.l("100% Powered by OpenResty and PostgreSQL") %]
      [% c.l("(") %]<a href="https://github.com/openresty/openresty.org/">
