@@ -26,10 +26,10 @@ while (<$in>) {
              ( [\s,.:;?] )
            !$1\[${2}_by_lua*](https://github.com/openresty/lua-nginx-module#${2}_by_lua)$3!xgs;
 
-    $c += s! (\s) ngx_(stream_lua|rds_json|rds_csv|encrypted_session|set_misc|lua_upstream|encrypted_session|headers_more|lua|echo|memc|redis2|srcache|drizzle)(?:_module)? ( [\s,.:;?;] ) !
-            my ($pre, $name, $post) = ($1, $2, $3);
+    $c += s! (\s) ( ngx_(stream_lua|rds_json|rds_csv|encrypted_session|set_misc|lua_upstream|encrypted_session|headers_more|lua|echo|memc|redis2|srcache|drizzle)(?:_module)? ) ( [\s,.:;?;'] ) !
+            my ($pre, $label, $name, $post) = ($1, $2, $3, $4);
             (my $name2 = $name) =~ s/_/-/g;
-            "$pre\[ngx_$name](https://github.com/openresty/$name2-nginx-module#readme)$post"
+            "$pre\[$label](https://github.com/openresty/$name2-nginx-module#readme)$post"
            !xegs;
 
     $c += s! (\s) ngx_devel_kit ( [\s,.:;?] ) !$1\[ngx_devel_kit](https://github.com/simpl/ngx_devel_kit#readme)$2!xgs;
