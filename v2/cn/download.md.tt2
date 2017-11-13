@@ -19,9 +19,9 @@ OpenResty<sup>&reg;</sup> 给常见 Linux 发布提供[官方预编译安装包]
 所有版本都是用 Yichun Zhang 的 PGP 公钥
 [A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) 签发的。
 
-[% ver = "1.11.2.5" -%]
-* [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 11MB &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 2017年8月17日
+[% ver = "1.13.6.1" -%]
+* [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 12MB &nbsp;
+[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 2017年11月13日
 
 ## macOS/Mac OS X
 
@@ -39,13 +39,17 @@ brew install homebrew/nginx/openresty
 你可以在下面下载源代码的 tar 包。然后可以参考[安装指导](installation.html)页面里头的步骤编译、安装之。
 
 ##  最新版
+[% ver = "1.13.6.1" -%]
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.4MB
+&nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
+[变更列表](changelog-1011002.html) - 2017年11月13日
+
+##  历史版
+有的时候我们可能会需要较老的版本：
 [% ver = "1.11.2.5" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.0MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 [变更列表](changelog-1011002.html) - 2017年8月17日
-
-##  历史版
-有的时候我们可能会需要较老的版本：
 [% ver = "1.11.2.4" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.0MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;

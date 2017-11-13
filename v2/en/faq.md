@@ -24,7 +24,7 @@ NGINX 1.7.10 while OpenResty 1.9.1.1 bundles NGINX 1.9.1.
 How often does OpenResty make a new release?
 --------------------------------------------
 
-We are trying to make a new release of OpenResty every one or two months. It may sometimes take longer because this project is mainly based on volunteers.
+We are trying to make a new release of OpenResty every couple of months. It may sometimes take longer because this project is mainly based on volunteers.
 
 How should I report a problem?
 ------------------------------

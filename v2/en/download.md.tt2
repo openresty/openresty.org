@@ -21,9 +21,9 @@ installing package updates can be trivial.
 All the releases are signed by the public PGP key
 [A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) of Yichun Zhang.
 
-[% ver = "1.11.2.5" -%]
-* [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 11MB &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 17 August 2017
+[% ver = "1.13.6.1" -%]
+* [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 12MB &nbsp;
+[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 13 November 2017
 
 ## macOS/Mac OS X
 
@@ -43,13 +43,17 @@ the instructions on the [Installation](installation.html) page to build and
 install it.
 
 ##  Lastest release
+[% ver = "1.13.6.1" -%]
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.4MB
+&nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
+[Changes](changelog-1013006.html) - 13 November 2017
+
+##  Legacy releases
+Sometimes, users may want to download old releases.
 [% ver = "1.11.2.5" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.0MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 [Changes](changelog-1011002.html) - 17 August 2017
-
-##  Legacy releases
-Sometimes, users may want to download old releases.
 [% ver = "1.11.2.4" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.0MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;

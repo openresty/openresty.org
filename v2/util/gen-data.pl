@@ -116,8 +116,12 @@ sub parse_file {
         open my $in, "$cmd|"
             or die "cannot open pipe to command $cmd: $!\n";
 
-        my ($changes, $modifier, $creator, $modified, $created);
+        my ($changes, $modifier, $creator, $modified, $created, $found_data);
         while (<$in>) {
+            if (!$found_data && /\S/) {
+                $found_data = 1;
+            }
+
             if (/^commit /) {
                 $changes++;
                 next;
@@ -142,6 +146,10 @@ sub parse_file {
         }
 
         close $in;
+
+        if (!$found_data) {
+            die "File $lang/$name.md is not under git version control?\n";
+        }
 
         if (defined $creator) {
             $creator =~ s/^\s+|\s+$//g;

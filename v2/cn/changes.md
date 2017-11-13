@@ -4,6 +4,7 @@
     @created       2012-10-17 23:06 GMT
 --->
 
+* [Release 1.13.6.x](changelog-1013006.html)
 * [Release 1.11.2.x](changelog-1011002.html)
 * [Release 1.9.15.x](changelog-1009015.html)
 * [Release 1.9.7.x](changelog-1009007.html)
