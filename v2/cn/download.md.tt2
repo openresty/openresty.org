@@ -42,7 +42,7 @@ brew install homebrew/nginx/openresty
 [% ver = "1.13.6.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
-[变更列表](changelog-1011002.html) - 2017年11月13日
+[变更列表](changelog-1013006.html) - 2017年11月13日
 
 ##  历史版
 有的时候我们可能会需要较老的版本：
