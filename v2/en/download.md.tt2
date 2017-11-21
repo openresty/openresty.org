@@ -30,7 +30,7 @@ All the releases are signed by the public PGP key
 It is highly recommended to install OpenResty on our Mac OS X or macOS systems via [homebrew](https://brew.sh/) package manager, like this:
 
 ```
-brew install homebrew/nginx/openresty
+brew install denji/nginx/openresty
 ```
 
 # Source Code Releases

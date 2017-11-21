@@ -10,7 +10,7 @@
 这一条命令：
 
 ```
-brew install homebrew/nginx/openresty
+brew install denji/nginx/openresty
 ```
 
 如果您还没有下载 [OpenResty](openresty.html) 的源码包, 请到 [Download](download.html) 页下载。
@@ -56,7 +56,7 @@ yum install readline-devel pcre-devel openssl-devel gcc
 这一条命令：
 
 ```
-brew install homebrew/nginx/openresty
+brew install denji/nginx/openresty
 ```
 
 推荐您使用一些软件管理工具先安装PCRE, 比如说 [Homebrew](http://mxcl.github.com/homebrew/):
