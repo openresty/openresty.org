@@ -16,7 +16,7 @@ also check out [this documentation](https://github.com/openresty/openresty/blob/
 It is highly recommended to install OpenResty on our Mac OS X or macOS systems via [homebrew](https://brew.sh/) package manager, like this:
 
 ```
-brew install openresty/nginx/openresty
+brew install openresty/brew/openresty
 ```
 
 If you already installed OpenResty from `homebrew/nginx`, please run the following command first:
@@ -115,7 +115,7 @@ yum install pcre-devel openssl-devel gcc curl
 It is highly recommended to install OpenResty on our Mac OS X or macOS systems via [homebrew](https://brew.sh/) package manager, like this:
 
 ```
-brew install openresty/nginx/openresty
+brew install openresty/brew/openresty
 ```
 
 If you already installed OpenResty from `homebrew/nginx`, please run the following command first:

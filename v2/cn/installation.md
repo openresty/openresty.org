@@ -10,7 +10,7 @@
 这一条命令：
 
 ```
-brew install openresty/nginx/openresty
+brew install openresty/brew/openresty
 ```
 
 如果你之前是从 `homebrew/nginx` 安装的 OpenResty，请先执行：
@@ -61,7 +61,7 @@ yum install readline-devel pcre-devel openssl-devel gcc
 这一条命令：
 
 ```
-brew install openresty/nginx/openresty
+brew install openresty/brew/openresty
 ```
 
 如果你之前是从 `homebrew/nginx` 安装的 OpenResty，请先执行：

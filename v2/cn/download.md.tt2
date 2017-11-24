@@ -28,7 +28,7 @@ OpenResty<sup>&reg;</sup> 给常见 Linux 发布提供[官方预编译安装包]
 强烈建议 Mac OS X 或者 macOS 系统用户通过 [homebrew](https://brew.sh/) 包管理器安装 OpenResty，像下面这样：
 
 ```
-brew tap openresty/nginx
+brew tap openresty/brew
 brew install openresty
 ```
 
