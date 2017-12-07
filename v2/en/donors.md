@@ -20,6 +20,8 @@ Donors donating more than 1000 USD are listed here to express
 our appreciation. If you have ever donated more than 1000 USD, please contact
 me and send me your company or personal logos.
 
+[![Qunar](/images/qunar-logo.jpg)](https://www.qunar.com)
+
 ![V Site](/images/v-site2.png)
 
 [![Kugou Music](/images/kugou-music.jpg)](http://www.kugou.com/)
