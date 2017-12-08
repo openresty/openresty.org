@@ -35,15 +35,15 @@ sudo make install
 如果您在构建过程中需要对于细节更加灵活的控制，请您继续阅读。
 
 # 安装前的准备
-您必须将这些库 `perl 5.6.1+`, `libreadline`, `libpcre`, `libssl`安装在您的电脑之中。
+您必须将这些库 `perl 5.6.1+`, `libpcre`, `libssl`安装在您的电脑之中。
 对于 Linux来说, 您需要确认使用 `ldconfig` 命令，让其在您的系统环境路径中能找到它们。
 
 ## Debian 和 Ubuntu 用户
 推荐您使用 apt-get安装以下的开发库:
 
 ```
-apt-get install libreadline-dev libncurses5-dev libpcre3-dev \
-    libssl-dev perl make build-essential
+apt-get install libpcre3-dev \
+    libssl-dev perl make build-essential curl
 ```
 
 
@@ -51,7 +51,7 @@ apt-get install libreadline-dev libncurses5-dev libpcre3-dev \
 推荐您使用yum安装以下的开发库:
 
 ```
-yum install readline-devel pcre-devel openssl-devel gcc
+yum install pcre-devel openssl-devel gcc curl
 ```
 
 
