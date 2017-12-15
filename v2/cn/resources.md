@@ -26,7 +26,7 @@
      http://wdicc.com/intro-openresty/
 * [Nginx](nginx.html) 3rd-Party Module Experiments Journal
 
-     http://chenxiaoyu.org/2011/10/30/nginx-modules.html
+     http://chenxiaoyu.org/2011/10/30/nginx-modules/
 * Recommending [OpenResty](openresty.html) - An [Nginx](nginx.html) Version
 with Fully Capable Addons
 

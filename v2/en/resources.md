@@ -63,7 +63,7 @@ Diaz-Gonzalez
      http://wdicc.com/intro-openresty/
 * [Nginx](nginx.html) 3rd-Party Module Experiments Journal, by smallfish
 
-     http://chenxiaoyu.org/2011/10/30/nginx-modules.html
+     http://chenxiaoyu.org/2011/10/30/nginx-modules/
 * Recommending [OpenResty](openresty.html) - An [Nginx](nginx.html) Version
 with Fully Capable Addons, by Wendal Chen
 
@@ -74,10 +74,10 @@ with Fully Capable Addons, by Wendal Chen
      http://www.codinglabs.org/html/nginx-memc-and-srcache.html
 * The [Nginx](nginx.html) Session Module, by smallfish
 
-     http://chenxiaoyu.org/2011/11/09/nginx-session.html
+     http://chenxiaoyu.org/2011/11/09/nginx-session/
 * Nginx-Lua HTTP 401 Basic Authentication, by smallfish
 
-     http://chenxiaoyu.org/2012/02/08/nginx-lua-401-auth.html
+     http://chenxiaoyu.org/2012/02/08/nginx-lua-401-auth/
 * Using ngx_openresty to create an AJAX-style pager for data listing, by lhmwzy
 
      http://blog.163.com/lhmwzy@126/blog/static/64215736201212384413704/
