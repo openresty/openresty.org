@@ -28,3 +28,4 @@
 * [User Survey](https://openresty.org/survey/)
 * [About](about.html)
 * [中文站](/cn/)
+* [OpenResty.com](https://openresty.com/)

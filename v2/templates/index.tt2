@@ -22,8 +22,15 @@
 	<section id="intro">
 		<div class="text">
 			<p>[% c.l("OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT.") %]</p>
-			<p><small>[% c.l("It’s open-source stuff so you can contribute:") %]</small>
-                           <a href="https://github.com/openresty/" class="github">[% c.l("Contribute on GitHub") %] &raquo;</a></p>
+			<form action="search.html">
+			  <fieldset>
+			    <input type="search" name="query" id="search"
+			        [%- IF search_query %]
+			        value="[% search_query | html %]"
+			        [%- END %]
+			        placeholder="[% c.l("Search OpenResty.org") %]" required>
+			  </fieldset>
+			</form>
 		</div><!-- / text -->
 	</section><!-- / intro -->
 
@@ -36,7 +43,7 @@
 [% PROCESS 'main-menu-buttons.tt2' %]
 
 		</div><!-- / sidebar left -->
-		
+
 		<section id="main">
 [% PROCESS 'post.tt2' %]
 		</section><!-- / main -->

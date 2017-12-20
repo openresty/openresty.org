@@ -9,14 +9,14 @@
                 <a href=".">OpenResty<span class="trade">&reg;</span></a>
                 <small>[% c.l("Scalable Web Platform by Extending NGINX with Lua") %]</small>
         </p><!-- / site-name -->
-
-        <form action="search.html" class="right">
-                <fieldset>
-                        <input type="search" name="query" id="search"
-                               [%- IF search_query %]
-                               value="[% search_query | html %]"
-                               [%- END %]
-                               placeholder="[% c.l("Search OpenResty.org") %]" required>
-                </fieldset>
-        </form>
+        <p class="right link">
+                <a href="https://github.com/openresty/" title="Contribute on GitHub">
+                        <img src="/images/ico-github.png">
+                        <span class="link-title">[% c.l("Contribute on GitHub") %]</span>
+                </a>
+                <a href="https://openresty.com/" title="OpenResty.com">
+                        <img src="/images/money.png">
+                        <span class="link-title">[% c.l("Commercial Offering") %]</span>
+                </a>
+        </p><!-- / links -->
 </header>

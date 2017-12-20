@@ -127,26 +127,22 @@ header[role="header"] {
  		}
  		small { display: block; font-size: 13px; color: @bg; }
 		img { margin-top: -6px; margin-left: -20px; margin-right: 10px; }
-	}
-
-	form {
-        padding-top: 25px;
-        padding-bottom: 10px;
-        text-align: right;
-
-		input[type=search] {
-            .x(300px, 36px);
-            border: 1px solid darken(@green, 15%); .br(18px;); font-size: 12px; padding: 0 10px 0 40px; background: rgba(255,255,255,0.9) url(../images/ico-search.png) 15px 50% no-repeat;
-
-            @media (max-width: (@screen-xs - 1)) { /* very small screen */
-                max-width: 80%;
-            }
-
-		  .bs(0 1px 1px rgba(255,255,255,0.3));
-		  -webkit-appearance: none; -moz-appearance: none; appearance: none;
-		  &:focus, &:active { background-color: #fff; outline: none; }
-		}
-	}
+    }
+    .link {
+        margin-top: 30px;
+        a {margin-right: 10px; display: inline-block; color: #fff; font-size: 12px; text-align: center; text-decoration: none;}
+        img {width: 20px;}
+        .link-title {display: inline; line-height: 20px; vertical-align: middle; margin-left: 5px;}
+    }
+    @media (max-width: @screen-sm) {
+        .link {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            a { width: 49%; margin-right: unset; display: inline-flex; flex-direction: column; justify-content: center; align-items: center; }
+            .link-title {margin-top: 5px;}
+        }
+    }
 }
 
 /*=====================================================================================
@@ -181,7 +177,24 @@ header[role="header"] {
 	 		&:last-child { margin-bottom: 0; }
 			small { font-size: 16px; }
 	 	}
-	 	.github {  .bs(0 1px 1px rgba(255,255,255,0.2)); .br; background: #1b2c1b url(../images/ico-github.png) 14px 50% no-repeat; display: inline-block; line-height: 50px; font-weight: bold; text-decoration: none; padding: 0 20px 0 54px; color: @bg; font-size: 18px; margin-left: 10px; }
+    }
+
+    form {
+        margin-top: 40px;
+        margin-bottom: 35px;
+
+        input[type=search] {
+            .x(300px, 36px);
+            border: 1px solid darken(@green, 15%); .br(18px;); font-size: 12px; padding: 0 10px 0 40px; background: rgba(255,255,255,0.9) url(../images/ico-search.png) 15px 50% no-repeat;
+
+            @media (max-width: (@screen-xs - 1)) { /* very small screen */
+                max-width: 80%;
+            }
+
+		  .bs(0 1px 1px rgba(255,255,255,0.3));
+		  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+		  &:focus, &:active { background-color: #fff; outline: none; }
+		}
 	}
 
 }
@@ -226,7 +239,7 @@ header[role="header"] {
 						}
 					}
 				}
-				
+
 			}
 		}
 
