@@ -17,7 +17,6 @@ local trans_cn = {
     ["Bad search query"] = "非法的搜索查询",
     ["Contribute on GitHub"] = "在 GitHub 上贡献你的力量",
     ["Copyright © 2017 Yichun Zhang (agentzh)"] = "Copyright © 2017 章亦春 (agentzh)",
-    ["It’s open-source stuff so you can contribute:"] = "这是一个开源项目，所以你也可以来贡献：",
     ["No query provided."] = "没有提供任何搜索词。",
     ["No search results found"] = "没有找到任何匹配的记录",
     ["OpenResty&reg; - Official Site"] = "OpenResty&reg; - 中文官方站",

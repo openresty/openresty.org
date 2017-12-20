@@ -332,44 +332,38 @@ header[role="header"] .site-name img {
   margin-left: -20px;
   margin-right: 10px;
 }
-header[role="header"] form {
-  padding-top: 25px;
-  padding-bottom: 10px;
-  text-align: right;
+header[role="header"] .link {
+  margin-top: 30px;
 }
-header[role="header"] form input[type=search] {
-  width: 300px;
-  height: 36px;
-  border: 1px solid #3c613c;
-  -webkit-border-radius: 18px;
-  -moz-border-radius: 18px;
-  -o-border-radius: 18px;
-  -khtml-border-radius: 18px;
-  -ms-border-radius: 18px;
-  border-radius: 18px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  font-size: 12px;
-  padding: 0 10px 0 40px;
-  background: rgba(255, 255, 255, 0.9) url(../images/ico-search.png) 15px 50% no-repeat;
-  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
-  -moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
-  -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+header[role="header"] .link a {
+  margin-right: 10px;
+  display: inline-block;
 }
-@media (max-width: 479px) {
-  header[role="header"] form input[type=search] {
-    /* very small screen */
-    max-width: 80%;
+header[role="header"] .link .link-title {
+  display: none;
+}
+@media (max-width: 520px) {
+  header[role="header"] .link {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
   }
-}
-header[role="header"] form input[type=search]:focus,
-header[role="header"] form input[type=search]:active {
-  background-color: #fff;
-  outline: none;
+  header[role="header"] .link a {
+    width: 49%;
+    color: #fff;
+    text-decoration: none;
+    margin-right: unset;
+    font-size: 13px;
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header[role="header"] .link .link-title {
+    display: inline;
+    line-height: 30px;
+  }
 }
 /*=====================================================================================
   FOOTER
@@ -420,28 +414,43 @@ header[role="header"] form input[type=search]:active {
 #intro .text p small {
   font-size: 16px;
 }
-#intro .text .github {
-  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-  -moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-  -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -o-border-radius: 3px;
-  -khtml-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
+#intro form {
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
+#intro form input[type=search] {
+  width: 300px;
+  height: 36px;
+  border: 1px solid #3c613c;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -o-border-radius: 18px;
+  -khtml-border-radius: 18px;
+  -ms-border-radius: 18px;
+  border-radius: 18px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  background: #1b2c1b url(../images/ico-github.png) 14px 50% no-repeat;
-  display: inline-block;
-  line-height: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0 20px 0 54px;
-  color: #f9fcf9;
-  font-size: 18px;
-  margin-left: 10px;
+  font-size: 12px;
+  padding: 0 10px 0 40px;
+  background: rgba(255, 255, 255, 0.9) url(../images/ico-search.png) 15px 50% no-repeat;
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+  -moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+@media (max-width: 479px) {
+  #intro form input[type=search] {
+    /* very small screen */
+    max-width: 80%;
+  }
+}
+#intro form input[type=search]:focus,
+#intro form input[type=search]:active {
+  background-color: #fff;
+  outline: none;
 }
 /*=====================================================================================
   MAIN

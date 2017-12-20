@@ -274,31 +274,10 @@ template_map['header.tt2'] = function (context)
 i = i + 1 output[i] = '<header role="header">\n        <p class="site-name left">\n            <a href=".">\n                <img src="/images/logo.png" width="64">\n            </a>\n        </p>\n\n        <p class="site-name left">\n                <a href=".">OpenResty<span class="trade">&reg;</span></a>\n                <small>'
 -- line 10 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Scalable Web Platform by Extending NGINX with Lua' }})
-i = i + 1 output[i] = '</small>\n        </p><!-- / site-name -->\n\n        <form action="search.html" class="right">\n                <fieldset>\n                        <input type="search" name="query" id="search"'
--- line 18 "header.tt2"
-if tt2_true(stash_get(stash, 'search_query')) then
-i = i + 1 output[i] = '\n                               value="'
--- line 17 "header.tt2"
-
--- FILTER
-local value
-do
-    local output = {}
-    local i = 0
-
-i = i + 1 output[i] = stash_get(stash, 'search_query')
-
-    value = context.filter(output, 'html', {})
-end
-i = i + 1 output[i] = value
-
-i = i + 1 output[i] = '"'
-end
-
-i = i + 1 output[i] = '\n                               placeholder="'
--- line 19 "header.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Search OpenResty.org' }})
-i = i + 1 output[i] = '" required>\n                </fieldset>\n        </form>\n</header>\n'
+i = i + 1 output[i] = '</small>\n        </p><!-- / site-name -->\n        <p class="right link">\n                <a href="https://github.com/openresty/" title="Contribute on GitHub">\n                        <img src="/images/ico-github.png">\n                        <span class="link-title">'
+-- line 15 "header.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Contribute on GitHub' }})
+i = i + 1 output[i] = '</span>\n                </a>\n                <a href="https://openresty.com/" title="OpenResty.com">\n                        <img src="/images/ico-orinc.png">\n                        <span class="link-title">OpenResty.com</span>\n                </a>\n        </p><!-- / links -->\n</header>\n'
 
     return output
 end
@@ -324,26 +303,44 @@ i = i + 1 output[i] = context.process(context, 'header.tt2')
 i = i + 1 output[i] = '\n\n	<section id="intro">\n		<div class="text">\n			<p>'
 -- line 24 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT.' }})
-i = i + 1 output[i] = '</p>\n			<p><small>'
--- line 25 "index.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'It’s open-source stuff so you can contribute:' }})
-i = i + 1 output[i] = '</small>\n                           <a href="https://github.com/openresty/" class="github">'
--- line 26 "index.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Contribute on GitHub' }})
-i = i + 1 output[i] = ' &raquo;</a></p>\n		</div><!-- / text -->\n	</section><!-- / intro -->\n\n	<div id="wrapper">\n		<div class="sidebar sleft">\n			<nav id="nav">\n'
--- line 33 "index.tt2"
+i = i + 1 output[i] = '</p>\n			<form action="search.html">\n			  <fieldset>\n			    <input type="search" name="query" id="search"'
+-- line 30 "index.tt2"
+if tt2_true(stash_get(stash, 'search_query')) then
+i = i + 1 output[i] = '\n			        value="'
+-- line 29 "index.tt2"
+
+-- FILTER
+local value
+do
+    local output = {}
+    local i = 0
+
+i = i + 1 output[i] = stash_get(stash, 'search_query')
+
+    value = context.filter(output, 'html', {})
+end
+i = i + 1 output[i] = value
+
+i = i + 1 output[i] = '"'
+end
+
+i = i + 1 output[i] = '\n			        placeholder="'
+-- line 31 "index.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Search OpenResty.org' }})
+i = i + 1 output[i] = '" required>\n			  </fieldset>\n			</form>\n		</div><!-- / text -->\n	</section><!-- / intro -->\n\n	<div id="wrapper">\n		<div class="sidebar sleft">\n			<nav id="nav">\n'
+-- line 40 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, 'main_menu')
 i = i + 1 output[i] = '\n			</nav><!-- / nav -->\n\n'
--- line 36 "index.tt2"
+-- line 43 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'main-menu-buttons.tt2')
-i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n		\n		<section id="main">\n'
--- line 41 "index.tt2"
+i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n\n		<section id="main">\n'
+-- line 48 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'post.tt2')
 i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n'
--- line 44 "index.tt2"
+-- line 51 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
 i = i + 1 output[i] = '\n\n	</div><!-- / wrapper -->\n\n'
--- line 48 "index.tt2"
+-- line 55 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'footer.tt2')
 i = i + 1 output[i] = '\n\n</body>\n</html>\n'
 

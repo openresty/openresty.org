@@ -28,10 +28,9 @@ tpage = tpage
 all: templates msgfmt
 
 .PHONY: templates
-templates: $(templates_lua)
-
-$(templates_lua): $(tt2_files)
-	lemplate --compile $^ > $@
+templates:
+	lessc css/main.less css/main.css
+	lemplate --compile $(tt2_files) > $(templates_lua)
 
 .PHONY: run
 run:

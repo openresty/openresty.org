@@ -23,3 +23,4 @@
 * [捐款者](donors.html)
 * [关于](about.html)
 * [English Site](/en/)
+* [OpenResty.com](https://openresty.com/)
