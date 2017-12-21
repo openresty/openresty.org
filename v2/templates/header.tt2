@@ -15,8 +15,8 @@
                         <span class="link-title">[% c.l("Contribute on GitHub") %]</span>
                 </a>
                 <a href="https://openresty.com/" title="OpenResty.com">
-                        <img src="/images/ico-orinc.png">
-                        <span class="link-title">OpenResty.com</span>
+                        <img src="/images/money.png">
+                        <span class="link-title">[% c.l("Commercial Offering") %]</span>
                 </a>
         </p><!-- / links -->
 </header>

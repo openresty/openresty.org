@@ -15,6 +15,7 @@ local trans_cn = {
     [")"] = "）",
     ["100% Powered by OpenResty and PostgreSQL"] = "100% 由 OpenResty 和 PostgreSQL 驱动",
     ["Bad search query"] = "非法的搜索查询",
+    ["Commercial Offering"] = "商业支持",
     ["Contribute on GitHub"] = "在 GitHub 上贡献你的力量",
     ["Copyright © 2017 Yichun Zhang (agentzh)"] = "Copyright © 2017 章亦春 (agentzh)",
     ["No query provided."] = "没有提供任何搜索词。",
