@@ -338,11 +338,21 @@ header[role="header"] .link {
 header[role="header"] .link a {
   margin-right: 10px;
   display: inline-block;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+}
+header[role="header"] .link img {
+  width: 20px;
 }
 header[role="header"] .link .link-title {
-  display: none;
+  display: inline;
+  line-height: 20px;
+  vertical-align: middle;
+  margin-left: 5px;
 }
-@media (max-width: 520px) {
+@media (max-width: 768px) {
   header[role="header"] .link {
     display: block;
     width: 100%;
@@ -350,19 +360,14 @@ header[role="header"] .link .link-title {
   }
   header[role="header"] .link a {
     width: 49%;
-    color: #fff;
-    text-decoration: none;
     margin-right: unset;
-    font-size: 13px;
-    text-align: center;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   header[role="header"] .link .link-title {
-    display: inline;
-    line-height: 30px;
+    margin-top: 5px;
   }
 }
 /*=====================================================================================

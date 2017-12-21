@@ -130,17 +130,17 @@ header[role="header"] {
     }
     .link {
         margin-top: 30px;
-        a {margin-right: 10px; display: inline-block;}
-        .link-title {display: none;}
+        a {margin-right: 10px; display: inline-block; color: #fff; font-size: 12px; text-align: center; text-decoration: none;}
+        img {width: 20px;}
+        .link-title {display: inline; line-height: 20px; vertical-align: middle; margin-left: 5px;}
     }
-    @media (max-width: 520px) {
+    @media (max-width: @screen-sm) {
         .link {
             display: block;
             width: 100%;
             margin-bottom: 10px;
-            a { width: 49%; color: #fff; text-decoration: none; margin-right: unset; font-size: 13px; text-align: center;
-                display: inline-flex; flex-direction: column; justify-content: center; align-items: center; }
-            .link-title {display: inline; line-height: 30px; }
+            a { width: 49%; margin-right: unset; display: inline-flex; flex-direction: column; justify-content: center; align-items: center; }
+            .link-title {margin-top: 5px;}
         }
     }
 }
