@@ -13,8 +13,8 @@ templates_lua = lua/openresty_org/templates.lua
 lua_files := $(sort $(filter-out $(i18n_lua) $(templates_lua),$(wildcard lua/*.lua lua/openresty_org/*.lua)))
 tt2_files := $(sort $(wildcard templates/*.tt2))
 
-css_file = css/main.css
 less_file = css/main.less
+css_file = $(patsubst %.less, %.css, $(less_file))
 
 extract_pl = ./util/extract.pl
 gendata_pl = ./util/gen-data.pl
