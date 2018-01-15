@@ -30,8 +30,8 @@ msgid  "OpenResty<sup>&reg;</sup> is a registered trademark owned by <a href=\"h
 msgstr "OpenResty<sup>&reg;</sup> 是 <a href=\"https://openresty.com/\">OpenResty Inc</a> 公司所有的注册商标。"
 
 #: templates/footer.tt2:5
-msgid  "Copyright © 2017 Yichun Zhang (agentzh)"
-msgstr "Copyright © 2017 章亦春 (agentzh)"
+msgid  "Copyright © 2017, 2018 Yichun Zhang (agentzh)"
+msgstr "Copyright © 2017, 2018 Yichun Zhang (agentzh)"
 
 #: templates/footer.tt2:6
 msgid  "100% Powered by OpenResty and PostgreSQL"
