@@ -127,6 +127,6 @@ the bundled [LuaJIT](luajit.html) 2.0.1.
 * upgraded [LuaJIT](luajit.html) 2.0 to 2.0.1.
     * see http://luajit.org/changes.html for changes.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.7.16.
-    * optimize: removed the unsed `size` field and related computatins from the script engine for the `ngx.re` API.
+    * optimize: removed the unused `size` field and related computatins from the script engine for the `ngx.re` API.
     * optimize: saved a little memory in the script engine for the `ngx.re` API.
 See [ChangeLog 1.2.6](changelog-1002006.html) for change log for [OpenResty](openresty.html) 1.2.6.x.

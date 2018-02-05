@@ -207,7 +207,7 @@ You can try the following to address the issue:
 1. Scale your backend to multiple nodes so as to utilize more (CPU) resources (for example, the redis server is single-threaded
 and can easily exhaust a single CPU core).
 2. Increase the backlog setting in your backend server (for example, there is a `tcp-backlog`
-parameter to tune in the `redis.conf` configuration file); the backlog setting determins the length limit
+parameter to tune in the `redis.conf` configuration file); the backlog setting determines the length limit
 of your `accept()` queue on your backend server.
 3. Check whether your nginx server is too busy doing CPU intensive work or blocking syscalls
 (like disk I/O syscalls) by using the [flame graph tools](profiling.html),
@@ -229,7 +229,7 @@ we can work on solving the problem (like avoid calling `setkeepalive()` or `set_
 Can I set timeout threshold on subrequests?
 -------------------------------------------
 
-Yes, you can, but not directy via an option or parameter on the subrequest calls like
+Yes, you can, but not directly via an option or parameter on the subrequest calls like
 [ngx.location.capture](https://github.com/openresty/lua-nginx-module#ngxlocationcapture) and
 [echo_subrequest](https://github.com/openresty/echo-nginx-module#echo_subrequest).
 Rather, you should specify the timeout configurations in the location *targeted* by your subrequest. For example,

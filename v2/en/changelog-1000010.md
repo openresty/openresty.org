@@ -103,7 +103,7 @@ for `./configure`.
     * Bugfix: module could not be built without the ngx_http_ssl_module.
     * Feature: https connections support (requires patches).
     * Bugfix: invalid connections might be cached.
-    * Bugfix: the "[alert] ... open socket ... left in connection ..." messages were logged on nginx worker process gracefull exit for each cached connection; the bug had appeared in version 0.3.
+    * Bugfix: the "[alert] ... open socket ... left in connection ..." messages were logged on nginx worker process graceful exit for each cached connection; the bug had appeared in version 0.3.
 * upgraded [Echo Nginx Module](echo-nginx-module.html) to 0.37rc8.
     * bugfix: fixed two spots that we did not check null pointers returned by the memory allocator.
     * bugfix: attempt to fix places where `ngx_time_update` might not be compiled properly.

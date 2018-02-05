@@ -32,7 +32,7 @@ at least in recent Mac OS X systems. thanks Hamish Forbes for the report.
     * feature: added new API function [ngx.config.nginx_configure()](https://github.com/chaoslawful/lua-nginx-module/#ngxconfignginx_configure) to return the NGINX `./configure` arguments string to the Lua land. thanks Tatsuhiko Kubo for the patch.
     * feature: added new API function [ngx.resp.get_headers()](https://github.com/chaoslawful/lua-nginx-module/#ngxrespget_headers) for fetching all the response headers. thanks Tatsuhiko Kubo for the patch.
     * feature: added new API function [ngx.worker.pid()](https://github.com/chaoslawful/lua-nginx-module/#ngxworkerpid) for retrieving the current nginx worker process's pid.
-    * feature: explicitly check Lua langauge version mismatch; we only accept the Lua 5.1 language (for now).
+    * feature: explicitly check Lua language version mismatch; we only accept the Lua 5.1 language (for now).
     * bugfix: accessing a cosocket object from a request which does not create it could lead to segmentation faults. now we throw out a Lua error "bad request" properly in this case.
     * change: it is now the user's responsibility to clear the captures table for [ngx.re.match()](https://github.com/chaoslawful/lua-nginx-module/#ngxrematch).
     * bugfix: we should prefix our chunk names for from-string lua source (which also leads to nicer error messages). thanks Mike Pall for the catch.
