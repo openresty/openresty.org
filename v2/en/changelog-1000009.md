@@ -41,7 +41,7 @@
 
 #  Mainline Version 1.0.9.9 - 13 November 2011
 * upgraded [Drizzle Nginx Module](drizzle-nginx-module.html) to 0.1.2rc4.
-    * bugfix: it might prematurly remove a write event when still busily connecting to the database from the event model.
+    * bugfix: it might prematurely remove a write event when still busily connecting to the database from the event model.
 
 #  Mainline Version 1.0.9.7 - 10 November 2011
 * applied [a patch](https://github.com/openresty/ngx_openresty/blob/master/patches/nginx-1.0.9-log_escape_non_ascii.patch) to

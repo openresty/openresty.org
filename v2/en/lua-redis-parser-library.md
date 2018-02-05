@@ -9,7 +9,7 @@
 --->
 
 The lua-redis-parser library implements a thin and fast redis raw response parser
-that constructs corresponding lua data strucutres, as well as a function that
+that constructs corresponding lua data structures, as well as a function that
 constructs redis raw requests.
 
 Documentation page: https://github.com/agentzh/lua-redis-parser#readme
