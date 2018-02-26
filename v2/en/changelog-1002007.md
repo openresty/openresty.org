@@ -2,10 +2,6 @@
     @title         ChangeLog 1.2.7
     @creator       Yichun Zhang
     @created       2013-02-23 06:51 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2013-05-13 19:27 GMT
-    @changes       59
 --->
 
 

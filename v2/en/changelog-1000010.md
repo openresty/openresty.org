@@ -2,10 +2,6 @@
     @title         ChangeLog 1.0.10
     @creator       Yichun Zhang
     @created       2011-11-16 07:21 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2012-02-02 04:52 GMT
-    @changes       72
 --->
 
 

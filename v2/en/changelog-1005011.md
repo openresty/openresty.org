@@ -2,10 +2,6 @@
     @title         ChangeLog 1.5.11
     @creator       Yichun Zhang
     @created       2014-03-25 22:05 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2014-04-29 20:55 GMT
-    @changes       36
 --->
 
 
