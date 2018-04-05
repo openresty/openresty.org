@@ -8,6 +8,8 @@ Donors donating more than 5000 USD are listed here to express
 our appreciation. If you have ever donated more than 5000 USD, please contact
 me and send me your company or personal logos.
 
+[![Smartisan](/images/logo-smartisan.png)](https://www.smartisan.com/)
+
 [![Volka](/images/logo-volka.png)](https://volka.social)
 
 Donors donating more than 2000 USD are listed here to express
