@@ -19,7 +19,7 @@ while (<$in>) {
     $c += s! (\s) (balancer|ssl_certificate|ssl_session_(?:fetch|store))_by_lua\* ( [\s,.:;?] )
            !$1\[${2}_by_lua*](https://github.com/openresty/lua-nginx-module#${2}_by_lua_block)$3!xgs;
 
-    $c += s! (\s) set_(md5) ( [\s,.:;?] )
+    $c += s! (\s) set_(md5|quote_pgsql_str) ( [\s,.:;?] )
            !$1\[set_$2](https://github.com/openresty/set-misc-nginx-module#set_$2)$3!xgs;
 
     $c += s! (\s) (init(?:_worker)?|content|rewrite|access|log|(?:header|body)_filter)_by_lua\*
@@ -46,14 +46,17 @@ while (<$in>) {
                             | escape_uri
                             | encode_args
                             | req\.(?:append|init|finish)_body
-                            | req\.(?:raw_header|set_header|clear_header)
+                            | req\.(?:raw_header|set_header|clear_header|get_uri_args|get_post_args|get_headers)
+                            | resp\.(?:get_headers)
                             | re\.(?:g?match|g?sub|find)
                             | worker\.(?:p?id|count)
+                            | location\.capture\*?
                             | send_headers
                             | status
                             | timer\.(?:at|every)
                             | flush
                             | print
+                            | decode_args
                             | say
                             | status
                             | md5
@@ -62,11 +65,13 @@ while (<$in>) {
                             | sha1_bin
                             | exec
                             | redirect
+                            | get_phase
                             )
                   | tcpsock:(?:sslhandshake|setkeepalive|connect|settimeout|settimeouts)
                   | lua_ssl_verify_depth
                   | lua_regex_cache_max_entries
                   | lua_intercept_error_log
+                  | lua_ssl_protocols
                   | lua_ssl_trusted_certificate
                   | lua_check_client_abort
                   | lua_shared_dict
@@ -77,6 +82,8 @@ while (<$in>) {
             !xges;
 
     $c += s! (\s) ( ngx_http_(ssi|ssl||addition) (?: [_ ] module)? ) ( [\s,.:;?] ) !$1\[$2](http://nginx.org/en/docs/http/ngx_http_${3}_module.html)$4!gxs;
+
+    $c += s! (\s) ( ngx_stream_(ssl(?:_preread)?) (?: [_ ] module)? ) ( [\s,.:;?] ) !$1\[$2](http://nginx.org/en/docs/stream/ngx_stream_${3}_module.html)$4!gxs;
 
     $c += s! (\s) FFI ( [\s,.:;?] ) !$1\[FFI](http://luajit.org/ext_ffi.html)$2!gxs;
 
@@ -126,7 +133,7 @@ while (<$in>) {
 
     $c += s! (\s) (more_set_input_headers|more_clear_input_headers) \b !$1\[$2](https://github.com/openresty/headers-more-nginx-module#$2)!gx;
 
-    $c += s! (\s) ( shdict:(ttl|expire|free_space|capacity) ) \b !$1\[$2](https://github.com/openresty/lua-nginx-module#ngxshareddict$3)!gx;
+    $c += s! (\s) ( shdict:(incr|set|get|ttl|expire|free_space|capacity) ) \b !$1\[$2](https://github.com/openresty/lua-nginx-module#ngxshareddict$3)!gx;
 
     $c += s! (\s) ( resty\.limit\.(?:count|traffic|req|conn) ) ( [\s,.:;?] ) !
             my ($pre, $txt, $post) = ($1, $2, $3);
@@ -134,7 +141,7 @@ while (<$in>) {
             "$pre\[$txt](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/$file.md#readme)$post"
             !egx;
 
-    $c += s! (\s) ( resty\.core\.shdict | ngx\.(?:re|process|errlog|semaphore|ssl(?:\.session)?|balancer|ocsp) ) ( [\s,.:;?] ) !
+    $c += s! (\s) ( resty\.core\.shdict | ngx\.(?:re|process|errlog|semaphore|ssl(?:\.session)?|balancer|ocsp|resp|req) ) ( [\s,.:;?] ) !
             my ($pre, $txt, $post) = ($1, $2, $3);
             (my $file = $txt) =~ s{\.}{/}g;
             "$pre\[$txt](https://github.com/openresty/lua-resty-core/blob/master/lib/$file.md#readme)$post"
@@ -143,7 +150,7 @@ while (<$in>) {
     $c += s! (\s) (opm|resty-cli|lua-cjson|lua-redis-parser|lua-resty-(?:core|memcached|mysql|redis|dns|lock|lrucache|websocket|upload|limit-traffic)) ( [\s,.:;?] ) !$1\[$2](https://github.com/openresty/$2#readme)$3!gxs;
     $c += s! (\s) (error_log|proxy_pass|proxy_next_upstream_tries|error_page|client_body_buffer_size) ( [\s,.:;?] ) !$1\[$2](http://nginx.org/r/$2)$3!gxs;
 
-    $c += s! (\s) (table\.concat) ( (?:\(\))? ) ( [\s,.:;?] ) !$1\[$2$3](http://www.lua.org/manual/5.1/manual.html#pdf-$2)$4!gxs;
+    $c += s! (\s) (table\.concat|string\.find) ( (?:\(\))? ) ( [\s,.:;?] ) !$1\[$2$3](http://www.lua.org/manual/5.1/manual.html#pdf-$2)$4!gxs;
     $c += s! (\s) ([Nn]ginx) ( [\s,.:;?] ) !$1\[$2](nginx.html)$3!gxsi;
     print $out $_;
 }

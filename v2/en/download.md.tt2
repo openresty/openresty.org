@@ -16,14 +16,18 @@ We currently support Ubuntu, Debian, RHEL, CentOS, Fedora, and Amazon Linux.
 We also provide official package repositories for our users so that receiving and
 installing package updates can be trivial.
 
-## Win32
+## Windows
 
 All the releases are signed by the public PGP key
 [A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) of Yichun Zhang.
 
-[% ver = "1.13.6.1" -%]
-* [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 12MB &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 13 November 2017
+[% ver = "1.13.6.2" -%]
+* For 32-bit Windows: [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 12MB &nbsp;
+[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 22 April 2018
+* For 64-bit Windows: [openresty-[% ver %]-win64.zip](https://openresty.org/download/openresty-[% ver %]-win64.zip) &nbsp; 12MB &nbsp;
+[PGP](https://openresty.org/download/openresty-[% ver %]-win64.zip.asc) - 22 April 2018
+
+See [Windows-specific documentation](https://github.com/openresty/openresty/blob/master/doc/README-windows.md) for basic usage on Windows.
 
 ## macOS/Mac OS X
 
@@ -49,13 +53,17 @@ the instructions on the [Installation](installation.html) page to build and
 install it.
 
 ##  Lastest release
+[% ver = "1.13.6.2" -%]
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.5MB
+&nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
+[Changes](changelog-1013006.html) - 22 April 2018
+
+##  Legacy releases
+Sometimes, users may want to download old releases.
 [% ver = "1.13.6.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 [Changes](changelog-1013006.html) - 13 November 2017
-
-##  Legacy releases
-Sometimes, users may want to download old releases.
 [% ver = "1.11.2.5" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.0MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
