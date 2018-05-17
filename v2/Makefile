@@ -20,6 +20,7 @@ extract_pl = ./util/extract.pl
 gendata_pl = ./util/gen-data.pl
 msginit_pl = ./util/msginit.pl
 msgfmt_pl = ./util/msgfmt.pl
+fix_md = ./util/fix-md.pl
 
 po_files = po/cn.po
 tsv_files = posts-en.tsv posts-cn.tsv
@@ -63,8 +64,8 @@ clean:
 html: $(html_files)
 
 html/%.html: %.md
-	mkdir -p html/en html/cn
-	$(md2html) $< --output $@
+	@mkdir -p html/en html/cn
+	$(fix_md) $< | $(md2html) - --output $@
 
 .PHONY: text
 text: $(txt_files)
