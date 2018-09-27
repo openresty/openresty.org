@@ -21,7 +21,7 @@ The simplest way of printing a hello world output to the console is to use the
 run the following command on the command line:
 
 ```
-resty -e 'print("hello, world!")'
+resty -e 'print("hello, world")'
 ```
 
 It should print out the following line to the stdout device:
