@@ -12,6 +12,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     16.04           Xenial          amd64, i386
     17.10           Artful          amd64, i386
     18.04           Bionic          amd64, i386
+    18.10           Cosmic          amd64, i386
 ```
 
 * Debian
