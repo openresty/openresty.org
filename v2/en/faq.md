@@ -237,7 +237,7 @@ Rather, you should specify the timeout configurations in the location *targeted*
 ```nginx
 location = /api {
     content_by_lua '
-        local res = ngx.locatin.capture("/sub")
+        local res = ngx.location.capture("/sub")
     ';
 }
 
