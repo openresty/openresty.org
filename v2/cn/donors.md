@@ -28,4 +28,4 @@
 
 [![Kugou Music](/images/kugou-music.jpg)](http://www.kugou.com/)
 
-[![Mashape](/images/kong-logo.png)](https://www.konghq.com/)
+[![Kong](/images/kong-logo.png)](https://www.konghq.com/)
