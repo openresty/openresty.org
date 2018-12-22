@@ -32,5 +32,4 @@ me and send me your company or personal logos.
 
 [![Kugou Music](/images/kugou-music.jpg)](http://www.kugou.com/)
 
-[![Mashape](/images/mashape-logo.png)](https://www.mashape.com/)
-
+[![Kong](/images/kong-logo.png)](https://www.konghq.com/)
