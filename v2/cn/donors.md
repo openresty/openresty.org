@@ -28,5 +28,4 @@
 
 [![Kugou Music](/images/kugou-music.jpg)](http://www.kugou.com/)
 
-[![Mashape](/images/mashape-logo.png)](https://www.mashape.com/)
-
+[![Mashape](/images/kong-logo.png)](https://www.konghq.com/)
