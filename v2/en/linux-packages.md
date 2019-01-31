@@ -66,6 +66,15 @@ will see the `Illegal instruction` error when using the binary packages on your 
 
 # Ubuntu
 
+Note: if nginx is already installed and running, try disabling and stopping it before installing openresty like below:
+
+```bash
+sudo systemctl disable nginx
+sudo systemctl stop nginx
+```
+
+Otherwise the installation might fail.
+
 You can add our APT repository to your Ubuntu system so as to easily install
 our packages and receive updates in the future (via the `apt-get update` command). To add the repository, just
 run the following commands (only need to run once for each system):
@@ -103,6 +112,15 @@ See the [OpenResty Deb Packages](deb-packages.html) page for more details on all
 repository.
 
 # Debian
+
+Note: if nginx is already installed and running, try disabling and stopping it before installing openresty like below:
+
+```bash
+sudo systemctl disable nginx
+sudo systemctl stop nginx
+```
+
+Otherwise the installation might fail.
 
 ## Debian Jessie or Later
 
