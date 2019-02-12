@@ -41,7 +41,7 @@
     * doc: noted that [ngx.req.get_method()](https://github.com/openresty/lua-nginx-module#ngxreqget_method) can be used in the [body_filter_by_lua*](https://github.com/openresty/lua-nginx-module#body_filter_by_lua) and [log_by_lua*](https://github.com/openresty/lua-nginx-module#log_by_lua) phases. _Thanks tokers for the patch._
     * doc: updated the docs to reflect the change that we now no longer support the standard Lua 5.1 interpreter in this module. also recommended OpenResty's LuaJIT branch version instead of the stock LuaJIT.
     * doc: mention that [ngx.req.set_body_data()](https://github.com/openresty/lua-nginx-module#ngxreqset_body_data) and [ngx.req.set_body_file()](https://github.com/openresty/lua-nginx-module#ngxreqset_body_file) must read the request body. _Thanks Thibault Charbonnier for the patch._
-    * doc: fixed the links to [ssl_session_store_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_session_store_by_lua_block). _Thanks chronolow for the patch._
+    * doc: fixed the links to [ssl_session_store_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_session_store_by_lua_block). _Thanks chronolaw for the patch._
     * typo: fixed a debug log in access and rewrite handlers. _Thanks sbhr for the patch._
 * upgraded [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module#readme) to 0.0.6rc5.
     * feature: added support for ARM64. _Thanks Cloudflare for sponsoring this work. Thanks Dejiang Zhu and Zexuan Luo for the development of the patch._
