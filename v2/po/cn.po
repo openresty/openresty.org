@@ -65,11 +65,11 @@ msgstr "商业支持"
 msgid  "OpenResty&reg; - Official Site"
 msgstr "OpenResty&reg; - 中文官方站"
 
-#: templates/index.tt2:24
+#: templates/index.tt2:25
 msgid  "OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT."
 msgstr "OpenResty<sup>&reg;</sup> 是一款基于 NGINX 和 LuaJIT 的 Web 平台。"
 
-#: templates/index.tt2:31
+#: templates/index.tt2:32
 msgid  "Search OpenResty.org"
 msgstr "搜索 OpenResty.org 中文站"
 

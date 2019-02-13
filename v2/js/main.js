@@ -19,5 +19,11 @@ var UI = {
 $(document).ready(function() {
 
 	UI.init();
+	// hljs.configure({languages:});
 
 });
+
+document.querySelectorAll('pre code:not([class])').forEach(function ($) {
+	$.className = 'no-highlight hljs';
+});
+hljs.initHighlightingOnLoad();

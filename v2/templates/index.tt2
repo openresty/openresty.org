@@ -11,6 +11,7 @@
 	<script src="/js/less.js"></script>
 	-->
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/github.css">
         <script>
 [% PROCESS 'old-permlink-js.tt2' %]
         </script>

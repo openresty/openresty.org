@@ -1,6 +1,6 @@
 nginx = nginx
 
-md2html = pandoc --from markdown_github-hard_line_breaks --to html
+md2html = marked --gfm
 md2text = pandoc --from markdown_github-hard_line_breaks --to plain
 
 md_files := $(wildcard en/*.md cn/*.md) $(patsubst %.md.tt2,%.md,$(wildcard en/*.md.tt2 cn/*.md.tt2))
@@ -20,7 +20,6 @@ extract_pl = ./util/extract.pl
 gendata_pl = ./util/gen-data.pl
 msginit_pl = ./util/msginit.pl
 msgfmt_pl = ./util/msgfmt.pl
-fix_md = ./util/fix-md.pl
 
 po_files = po/cn.po
 tsv_files = posts-en.tsv posts-cn.tsv
@@ -65,7 +64,7 @@ html: $(html_files)
 
 html/%.html: %.md
 	@mkdir -p html/en html/cn
-	$(fix_md) $< | $(md2html) - --output $@
+	$(md2html) -i $< --output $@
 
 .PHONY: text
 text: $(txt_files)

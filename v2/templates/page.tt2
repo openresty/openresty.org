@@ -11,6 +11,7 @@
 	<script src="/js/less.js"></script>
 	-->
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/github.css">
 </head>
 <body>
 
@@ -25,7 +26,7 @@
 [% PROCESS 'main-menu-buttons.tt2' %]
 
 		</div><!-- / sidebar left -->
-		
+
 		<section id="main">
 [% PROCESS post.tt2 %]
 		</section><!-- / main -->
