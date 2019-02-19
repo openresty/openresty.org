@@ -72,10 +72,8 @@ char *ngx_http_types_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf);
 
 # 函数定义
 
-C 函数定义遵循不同于函数声明 (见 [Function declarations][]) 的风格. The first line should be the return type
-alone, the 2nd line goes the function name as well as the parameter list,
-and the 3rd line goes the opening curly bracket alone. Below is an example
-from the NGINX core:
+C 函数定义遵循不同于函数声明 (见 [Function declarations][]) 的风格. 第一行单独放返回类型, 
+第二行是函数名和参数列表, 第三行是单独一个花括号. 以下是一个来自 NGINX core 的例子:
 
 ```C
 ngx_int_t
@@ -85,11 +83,11 @@ ngx_http_compile_complex_value(ngx_http_compile_complex_value_t *ccv)
 }
 ```
 
-Please note that there is no spaces around the `(` character for the parameter
-list. And there's no indentations for the first 3 lines.
+请注意在参数列表处的 `(` 字符周围没有空格. 并且前三行是没有缩进的.
 
-If the parameter list is too long, like exceeding the 80 column limit,
-then we can break up the parameter list into separate lines with a 4-space
+如果参数列表太长, 比如超过了 80 列的限制, 我可以分成多行，在并带 4-space 的
+如果参数列表太长, 比如超过了 80 列的限制,缩进
+如果参数列表太长, 比如超过了 80 列的限制,
 indentation for each following lines. Below is such an example from the
 NGINX core:
 
