@@ -21,10 +21,9 @@ OpenResty 和 NGINX 社区也鼓励大家在用 C 开发插件和库的时候去
 用于所有相关的 C 编译单元的顶层 C 符号的命名.
 
 我们应该对 C 函数里的局部变量用简称命名. 在 NGINX core 被广泛使用的简称命名是 `cl`, `ev`, `ctx`, `v`,
-`p`, `q`, 等等. 这些变量通常生命周期很短并且作用域有限. 根据霍夫曼原则, we should use short
-names for commonly used stuff in the current context to avoid line noises.
-即使是简称命名也要遵循 NGINX 的习惯. 如无必要不要发明自己的命名方式. 一定要用有意义的名字. 即使像 `p` 和 `q`,
-它们是在上下文中进行字符处理的字符串指针变量的常见命名.
+`p`, `q`, 等等. 这些变量通常生命周期很短并且作用域有限. 根据霍夫曼原则, 我们应该在一些常见用法里使用简称命名
+以避免文字杂音.即使是简称命名也要遵循 NGINX 的习惯. 如无必要别发明自己的命名方式. 一定要用有意义的名字. 即使
+像 `p` 和 `q`,它们是在上下文中进行字符处理的字符串指针变量的常见命名.
 
 C struct and union names should use the full spelling form of words wherever
 possible (unless the member name would be too long). For example, in NGINX
