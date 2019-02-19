@@ -2,10 +2,9 @@
     @title         OpenResty® C Coding Style Guide
 --->
 
-OpenResty follows NGINX's coding style in its C language components, like
-OpenResty's own NGINX add-on modules and OpenResty's own Lua libraries'
-C parts. Unfortunately even the NGINX core's own C source code may not
-strictly follow the same convention as the rest of the code base. It is
+OpenResty 在它的 C 语言模块里遵循 NGINX 的代码风格, 像 OpenResty 自己的那些 NGINX 插件
+模块和 OpenResty 的那些 Lua 库的 C 部分。 不太幸运的是，即使是 NGINX core 自己的 C 代码
+也没有严格遵循同样的 the same convention as the rest of the code base. It is
 so desired to prepare a formal guideline document to avoid any ambiguity.
 
 Patches contributed to the OpenResty core projects should always follow
