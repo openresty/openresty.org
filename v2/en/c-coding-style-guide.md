@@ -992,7 +992,7 @@ being checked and thus helps improve code readability.
 
 # Author
 
-The author of this guideline is Yichun Zhang, the creator or OpenResty.
+The author of this guideline is Yichun Zhang, the creator of OpenResty.
 
 # Feedback and patches
 
