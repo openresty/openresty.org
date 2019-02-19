@@ -25,17 +25,13 @@ OpenResty 和 NGINX 社区也鼓励大家在用 C 开发插件和库的时候去
 以避免文字杂音.即使是简称命名也要遵循 NGINX 的习惯. 如无必要别发明自己的命名方式. 一定要用有意义的名字. 即使
 像 `p` 和 `q`,它们是在上下文中进行字符处理的字符串指针变量的常见命名.
 
-C struct and union names should use the full spelling form of words wherever
-possible (unless the member name would be too long). For example, in NGINX
-core's `struct ngx_http_request_s`, we have long member names like `read_event_handler`,
-`upstream_states`, and `request_body_in_persistent_file`.
+C 结构体和联合体的名字应该尽可能地用单词的全拼形式(除非名称过于长). 举例子, 在 NGINX core 里 `struct ngx_http_request_s`, 
+我们有长的成员名字 `read_event_handler`, `upstream_states`, 和 `request_body_in_persistent_file`.
 
-# Indentation
+# 缩进
 
-The NGINX world uses *spaces* exclusively for indentation. Do not use tabs!
-Usually we use *4-space* indentation unless there is some special alignment
-requirements or some other requirements in certain cases (we will explain
-such cases in detail below).
+在 NGINX 的世界里用并且只用 *空格* 作为缩进. 不要用 tabs! 一般我们用 *4-space* 缩进 除了有一些特殊的
+对齐要求或者一些特殊情况下的其他要求 (we will explain such cases in detail below).
 
 Always indent your code properly.
 
