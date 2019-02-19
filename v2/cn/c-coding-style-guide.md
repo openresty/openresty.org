@@ -3,9 +3,9 @@
 --->
 
 OpenResty 在它的 C 语言模块里遵循 NGINX 的代码风格, 像 OpenResty 自己的那些 NGINX 插件
-模块和 OpenResty 的那些 Lua 库的 C 部分。 不太幸运的是，即使是 NGINX core 自己的 C 代码
-也没有严格遵循同样的 the same convention as the rest of the code base. It is
-so desired to prepare a formal guideline document to avoid any ambiguity.
+模块和 OpenResty 的那些 Lua 库的 C 部分. 不太幸运的是，即使是 NGINX core 自己的 C 代码
+也没有严格遵循和其他 code base 同样的代码习惯. 能够有一个正式的导则文档以避免混淆是一个很被
+期待的事情.
 
 Patches contributed to the OpenResty core projects should always follow
 this guideline otherwise they will not pass the review process and will
