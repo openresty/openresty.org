@@ -4,16 +4,13 @@
 
 OpenResty 在它的 C 语言模块里遵循 NGINX 的代码风格, 像 OpenResty 自己的那些 NGINX 插件
 模块和 OpenResty 的那些 Lua 库的 C 部分. 不太幸运的是，即使是 NGINX core 自己的 C 代码
-也没有严格遵循和其他 code base 同样的代码习惯. 能够有一个正式的导则文档以避免混淆是一个很被
-期待的事情.
+也没有严格遵循和其他 code base 同样的代码习惯. 能够有一个正式的导则文档以避免混淆是一个非常
+被期待的事情.
 
-Patches contributed to the OpenResty core projects should always follow
-this guideline otherwise they will not pass the review process and will
-not get merged as is. The OpenResty and NGINX communities are always encouraged
-to follow this guideline when developing their own add-on modules and libraries
-in C.
+给 OpenResty core 提交的补丁也应该遵循这些导则，不然它们将会无法通过代码审核也无法得到合并.
+OpenResty 和 NGINX 社区也鼓励大家在用 C 开发插件和库的时候去遵循这个导则.
 
-# Naming convention
+# 命名习惯
 
 For NGINX related C code, source file names (including `.c` and `.h` files),
 global variables, global functions, C struct/union/enum names, compilation-unit
