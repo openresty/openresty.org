@@ -31,9 +31,9 @@ C 结构体和联合体的名字应该尽可能地用单词的全拼形式(除�
 # 缩进
 
 在 NGINX 的世界里用并且只用 *空格* 作为缩进. 不要用 tabs! 一般我们用 *4-space* 缩进 除了有一些特殊的
-对齐要求或者一些特殊情况下的其他要求 (we will explain such cases in detail below).
+对齐要求或者一些特殊情况下的其他要求 (下面的内容有详细解释).
 
-Always indent your code properly.
+总是恰当地缩进你的代码.
 
 # The 80 column limit
 
