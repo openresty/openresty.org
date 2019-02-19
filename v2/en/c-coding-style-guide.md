@@ -122,8 +122,7 @@ NGINX core:
 
 ```c
 ngx_int_t
-ngx_http_complex_value(ngx_http_request_t *r, ngx_http_complex_value_t
-*val,
+ngx_http_complex_value(ngx_http_request_t *r, ngx_http_complex_value_t *val,
     ngx_str_t *value)
 {
     ...
@@ -172,8 +171,7 @@ identifiers do not need to be aligned vertically. Below is such an example:
 
 ```C
 static char *
-ngx_http_core_open_file_cache(ngx_conf_t *cf, ngx_command_t *cmd, void
-*conf)
+ngx_http_core_open_file_cache(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 {
     ngx_http_core_loc_conf_t *clcf = conf;
 
