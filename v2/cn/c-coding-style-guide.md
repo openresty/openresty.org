@@ -85,11 +85,8 @@ ngx_http_compile_complex_value(ngx_http_compile_complex_value_t *ccv)
 
 请注意在参数列表处的 `(` 字符周围没有空格. 并且前三行是没有缩进的.
 
-如果参数列表太长, 比如超过了 80 列的限制, 我可以分成多行，在并带 4-space 的
-如果参数列表太长, 比如超过了 80 列的限制,缩进
-如果参数列表太长, 比如超过了 80 列的限制,
-indentation for each following lines. Below is such an example from the
-NGINX core:
+如果参数列表太长, 比如超过了 80 列的限制, 我可以分成多行，并在每一个跟随行加 4 空格的缩进. 以下是一个来自 
+NGINX core 里的这样的例子:
 
 ```c
 ngx_int_t
@@ -100,8 +97,7 @@ ngx_http_complex_value(ngx_http_request_t *r, ngx_http_complex_value_t *val,
 }
 ```
 
-If the return type is a pointer type, then there should be a space before
-the first `*`, like this:
+如果返回类型是指针类型, 在第一个 `*` 之前应该有一个空格, 就像这样:
 
 ```C
 static char *
@@ -111,11 +107,9 @@ ngx_http_core_pool_size(ngx_conf_t *cf, void *post, void *data)
 }
 ```
 
-# Local variables
+# 局部变量
 
-In section [Naming convention][], we require local variables to use shorter
-names like `ev`, `clcf`, and etc. Their definitions also have some style
-requirements.
+在 [命名习惯][] 部分, 我们要求局部变量应用短名称，如 `ev`, `clcf`, 等等. 它们的定义也有一些风格上的要求.
 
 They should always be put at the beginning of each C function definition
 block, not just at the beginning of any arbitrary code block, unless to
