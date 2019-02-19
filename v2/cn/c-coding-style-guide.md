@@ -12,14 +12,10 @@ OpenResty 和 NGINX 社区也鼓励大家在用 C 开发插件和库的时候去
 
 # 命名习惯
 
-For NGINX related C code, source file names (including `.c` and `.h` files),
-global variables, global functions, C struct/union/enum names, compilation-unit
-scoped static variables and functions, as well as public macros defined
-in header files should always use full-qualified names like `ngx_http_core_module.c`,
-`ngx_http_finalize_request` and ` NGX_HTTP_MAIN_CONF`. This is important
-because the C language does not have the concept of explicit namespaces
-like in C++. Using fully-qualified names help avoid symbol clashes and
-also help debugging.
+和 NGINX 相关的 C 代码, 源文件名称 (包括 `.c` 和 `.h` 文件), 全局变量, 全局函数, C 结构体、
+联合体和枚举的名字, 编译单元域内的静态变量和函数，以及头文件里公用的宏定义应该用全称命名, 就像 
+`ngx_http_core_module.c`, `ngx_http_finalize_request` 和 ` NGX_HTTP_MAIN_CONF`. 这
+很重要，因为 C 语言没有像 C++ 里那样明确的命名空间的概念. 用全称命名有助于避免符号冲突，也有助于调试.
 
 In Lua libraries' C components, we should also use prefixes like `resty_blah_` (if
 the library is called `lua-resty-blah`) for all the top-level C symbols
