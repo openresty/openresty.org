@@ -35,48 +35,40 @@ C 结构体和联合体的名字应该尽可能地用单词的全拼形式(除�
 
 总是恰当地缩进你的代码.
 
-# The 80 column limit
+# 80 列限制
 
-All the source code lines should be kept within the 80 column limit (some
-code in the NGINX core even keep at 78 columns, but I suggest 80 columns
-as the hard limit). Different contexts will have different indentation
-rules for the indentations used in the continued lines. We will discuss
-each cases below in detail.
+所有的代码行应该保持在 80 列以内 (在 NGINX core 的一些代码里甚至保持在 78 列, 但是我建议 80 列作为硬限制). 
+对于连续行中使用的缩进, 不同的上下文将具有不同的缩进规则。我们将在下面详细讨论案例细节。
 
 # Line trailing white-spaces
 
-There should never be any spaces or tabs at the end of source lines, not
-even blank lines. Many editors support highlighting or trimming such white-space
+在代码行的结尾不应该有任何空格或者 Tabs, 即使是空行. Many editors support highlighting or trimming such white-space
 characters automatically on the user's behalf. Make sure you configure
 your editor or IDE properly.
 
-# Function declarations
+# 函数声明
 
-C function declarations (not definitions!) used in header files or at the
-beginning of `.c` files should put everything in a single line if possible.
-Below is an example from the NGINX core:
+在头文件或者 `.c` 文件的开头的 C 函数声明 (不是定义!) 应该尽可能地放在单独一行.
+以下是一个 NGINX core 里的例子:
 
 ```C
 ngx_int_t ngx_http_send_special(ngx_http_request_t *r, ngx_uint_t flags);
 ```
 
-If the line is too long, exceeding 80 columns, then we should split the
-declaration into more lines, with a 4-space indentation. For example,
+如果一行太长, 超过了 80 列, 然后我们应该把声明分成多行, 带 4-space 的缩进. 比如,
 
 ```C
 ngx_int_t ngx_http_filter_finalize_request(ngx_http_request_t *r,
     ngx_module_t *m, ngx_int_t error);
 ```
 
-If the return type is a pointer type, then there should be a space before
-but not after the first `*`, as in
+如果返回类型是指针类型, 在 `*` 之前应该有一个空格，在之后没有, 像这样
 
 ```C
 char *ngx_http_types_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf);
 ```
 
-Please note that function definitions follow a different style than declarations.
-See [Function definitions][] for more details.
+请注意函数定义遵循不同与函数声明的风格. 详见 [Function definitions][] .
 
 # Function definitions
 
