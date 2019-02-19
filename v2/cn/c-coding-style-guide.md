@@ -2,7 +2,7 @@
     @title         OpenResty® C Coding Style Guide
 --->
 
-OpenResty 在它的 C 语言模块里遵循 NGINX 的代码风格, 像 OpenResty 自己的那些 NGINX 插件
+OpenResty 在它的 C 语言模块里遵循 NGINX 的代码风格, 比如 OpenResty 自己的那些 NGINX 插件
 模块和 OpenResty 的那些 Lua 库的 C 部分. 不太幸运的是，即使是 NGINX core 自己的 C 代码
 也没有严格遵循和其他 code base 同样的代码习惯. 能够有一个正式的导则文档以避免混淆是一个非常
 被期待的事情.
@@ -17,19 +17,14 @@ OpenResty 和 NGINX 社区也鼓励大家在用 C 开发插件和库的时候去
 `ngx_http_core_module.c`, `ngx_http_finalize_request` 和 ` NGX_HTTP_MAIN_CONF`. 这
 很重要，因为 C 语言没有像 C++ 里那样明确的命名空间的概念. 用全称命名有助于避免符号冲突，也有助于调试.
 
-In Lua libraries' C components, we should also use prefixes like `resty_blah_` (if
-the library is called `lua-resty-blah`) for all the top-level C symbols
-in the corresponding C compilation units
+在 Lua 库的 C 模块里, 我们也应该用前缀，比如 `resty_blah_` (假如库的名字是 `lua-resty-blah`) 
+用于所有相关的 C 编译单元的顶层 C 符号的命名.
 
-We should use short names for local variables defined in C functions. Common
-short names used extensively in the NGINX core are `cl`, `ev`, `ctx`, `v`,
-`p`, `q`, and etc. Such variables are usually short-lived and have very
-limited scope. According to the Huffman principle, we should use short
+我们应该对 C 函数里的局部变量用简称命名. 在 NGINX core 被广泛使用的简称命名是 `cl`, `ev`, `ctx`, `v`,
+`p`, `q`, 等等. 这些变量通常生命周期很短并且作用域有限. 根据霍夫曼原则, we should use short
 names for commonly used stuff in the current context to avoid line noises.
-Even short names should following NGINX's convention. Do not invent your
-own unless necessary. And do use meaningful names. Even for `p` and `q`,
-they are common names for string pointer variables used in the context
-of string processing.
+即使是简称命名也要遵循 NGINX 的习惯. 如无必要不要发明自己的命名方式. 一定要用有意义的名字. 即使像 `p` 和 `q`,
+它们是在上下文中进行字符处理的字符串指针变量的常见命名.
 
 C struct and union names should use the full spelling form of words wherever
 possible (unless the member name would be too long). For example, in NGINX
