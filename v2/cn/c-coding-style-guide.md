@@ -68,12 +68,11 @@ ngx_int_t ngx_http_filter_finalize_request(ngx_http_request_t *r,
 char *ngx_http_types_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf);
 ```
 
-请注意函数定义遵循不同与函数声明的风格. 详见 [Function definitions][] .
+请注意函数定义遵循不同于函数声明的风格. 详见 [Function definitions][] .
 
-# Function definitions
+# 函数定义
 
-C function definitions follow a different style than their declarations
-(see [Function declarations][]). The first line should be the return type
+C 函数定义遵循不同于函数声明 (见 [Function declarations][]) 的风格. The first line should be the return type
 alone, the 2nd line goes the function name as well as the parameter list,
 and the 3rd line goes the opening curly bracket alone. Below is an example
 from the NGINX core:
