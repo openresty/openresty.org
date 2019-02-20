@@ -244,11 +244,9 @@ ngx_uint_t  ngx_http_degraded(ngx_http_request_t *);
 extern ngx_module_t  ngx_http_module;
 ```
 
-The static function declaration is separated by 2 blank lines from the following
-C global variable declaration.
+静态函数的声明被 2 个空行与后续的全局变量声明分开.
 
-Successive C function declarations do not use 2 blank lines to separate
-each other, as in
+连续的 C 函数声明不使用 2 个空行分开, 像以下这样
 
 ```C
 ngx_int_t ngx_http_discard_request_body(ngx_http_request_t *r);
@@ -257,7 +255,7 @@ void ngx_http_block_reading(ngx_http_request_t *r);
 void ngx_http_test_reading(ngx_http_request_t *r);
 ```
 
-Even when some of them span multiple lines, as in
+即使当有些函数声明分成了多行, 诸如
 
 ```C
 char *ngx_http_merge_types(ngx_conf_t *cf, ngx_array_t **keys,
@@ -267,8 +265,7 @@ ngx_int_t ngx_http_set_default_types(ngx_conf_t *cf, ngx_array_t **types,
     ngx_str_t *default_type);
 ```
 
-Still, sometimes we *could* use 2 blank lines to separate them into semantically
-meaningful groups, for better code readability, as in
+尽管如此, 有时候我们 *可以* 用 2 个空行把它们分成不同的有意义的组, 以使得代码更易读, 就像这样
 
 ```C
 ngx_int_t ngx_http_send_header(ngx_http_request_t *r);
@@ -285,10 +282,9 @@ void ngx_http_block_reading(ngx_http_request_t *r);
 void ngx_http_test_reading(ngx_http_request_t *r);
 ```
 
-The first group is mostly about response headers while the latter group
-is for request bodies.
+第一组都是关于 response headers 而接下来那组是关于 request bodies.
 
-# Type casting
+# 类型转换
 
 The C language does not require explicit type casting when assigning the
 value of a void pointer (`void *`) to a non-void pointer. And the NGINX
