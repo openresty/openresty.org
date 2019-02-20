@@ -928,9 +928,9 @@ if (name == NULL) {
 Testing against `NULL` is usually clearer about the nature of the value
 being checked and thus helps improve code readability.
 
-# Author
+# 作者
 
-The author of this guideline is Yichun Zhang, the creator of OpenResty.
+本导则作者是章亦春, OpenResty 的创始人.
 
 # Feedback and patches
 
