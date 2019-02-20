@@ -337,13 +337,11 @@ if (a > 3) {
 }
 ```
 
-Note the space after `if` and the space before `{`. Note, however, there
-is no spaces right after `(` or right before `)`.
+注意在 `if` 之后的空格和在 `{` 之前的空格. 注意, 尽管如此, `(` 之后或者 `)` 之前并没有
+空格.
 
-Also note that the opening curly bracket must be on the same line as the
-`if` keyword, unless this line would exceed 80 columns, in which case,
-we should split the condition into multiple lines *and* put the opening
-curly bracket on its own line. The following example demonstrates this:
+也要注意左大括号必须和 `if` 关键词在同一行, 除非这一行超过了 80 列, 这种情况下, 我们应该
+分成多行 *并且* 把左大括号单独放一行. 以下的例子展示了这种情况:
 
 ```C
             if (ngx_http_set_default_types(cf, prev_keys, default_types)
@@ -353,8 +351,7 @@ curly bracket on its own line. The following example demonstrates this:
             }
 ```
 
-Note how `!= OK` is aligned up vertically with the condition part (excluding
-`(`) of the `if` statement.
+注意 `!= OK` 是如何与 `if` 语句的条件部分 (不包含 `(`) 垂直对齐的.
 
 When logical operators are involved in the long condition part, then we
 should make sure the connecting logical operators are at the beginning
