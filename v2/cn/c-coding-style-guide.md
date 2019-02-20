@@ -932,7 +932,6 @@ being checked and thus helps improve code readability.
 
 本导则作者是章亦春, OpenResty 的创始人.
 
-# Feedback and patches
+# 反馈和补丁
 
-Feedback and patches are always welcome! They should go to Yichun Zhang'
-s email address `yichun@openresty.com`.
+欢迎提交反馈和补丁! 可以发邮件给章亦春 `yichun@openresty.com`.
