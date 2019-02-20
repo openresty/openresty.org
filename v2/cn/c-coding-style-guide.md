@@ -108,13 +108,10 @@ ngx_http_core_pool_size(ngx_conf_t *cf, void *post, void *data)
 
 # 局部变量
 
-在 [命名习惯][] 部分, 我们要求局部变量应用简命名，如 `ev`, `clcf`, 等等. 它们的定义也有一些风格上的要求.
+在 [命名习惯][] 部分, 我们要求局部变量应用简称命名，如 `ev`, `clcf`, 等等. 它们的定义也有一些风格上的要求.
 
-They should always be put at the beginning of each C function definition
-block, not just at the beginning of any arbitrary code block, unless to
-aid debugging or some other special requirements. Also, their variable
-identifiers (excluding any `*` prefixes), must be aligned up vertically.
-Below is an example from the NGINX core:
+它们应该总是被放在每个 C 函数定义块的开始, 不仅仅是随意一个代码块的开始, 除非是 debugging 需要或者其他特殊要求. 
+并且, 它们的变量名称 (不包括任何 `*` 前缀), 必须垂直对齐. 以下是一个 NGINX core 里的例子:
 
 ```C
     ngx_str_t            *value;
