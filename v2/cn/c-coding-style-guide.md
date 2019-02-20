@@ -879,11 +879,10 @@ set softtabstop=4
 set tabstop=4
 ```
 
-# Goto statements and code labels
+# Goto 语句和代码标记
 
-NGINX uses `goto` statements wisely for error handling. It is a good use
-case for the notorious `goto` statement. Many inexperienced C programmers
-may panic upon any uses of `goto` statements, which is not fair. It is
+NGINX 把 `goto` 语句广泛地应用于错误处理. 对于声名狼藉的 `goto` 语句这是非常好的
+应用案例. 很多没经验的 C 程序员可能忌惮于任何 `goto` 语句的应用, 这不公平. It is
 just bad to use `goto` statements to jump backward, otherwise it's usually
 fine, especially for error handling. NGINX requires that the code labels
 to be surrounded by blank lines, as in
