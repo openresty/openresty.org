@@ -286,9 +286,8 @@ void ngx_http_test_reading(ngx_http_request_t *r);
 
 # 类型转换
 
-The C language does not require explicit type casting when assigning the
-value of a void pointer (`void *`) to a non-void pointer. And the NGINX
-coding style does not require that either. For instance:
+当把一个无类型指针 (`void *`) 的值赋给一个有类型指针时，C 语言并不要求明确的类型转换.
+ 并且 NGINX 的代码风格也不要求这些. 比如:
 
 ```C
 char *
