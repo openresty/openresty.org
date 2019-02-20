@@ -908,14 +908,13 @@ failed:
     return NGX_ERROR;
 ```
 
-# Checking pointer nullity
+# 空指针检查
 
-In the NGINX world, we usually use `p == NULL` instead of `!p` to check
-if a pointer value is `NULL`. Follow this convention wherever possible.
-It is also recommended to use `p != NULL` instead of `p` to test the opposite,
-but it is also fine to simply use `p` to test in this case.
+在 NGINX 的世界里, 我们经常用 `p == NULL` 代替 `!p` 来检查一个指针变量是否是 `NULL`. 
+尽最大可能地遵循这个习惯. 同样也推荐用 `p != NULL` 代替 `p` 来检查指针不是空, 但简单地用 `p` 
+来检查也是可以的.
 
-Below are some examles:
+以下是一些例子:
 
 ```C
 if (addrs != NULL) {
@@ -925,8 +924,7 @@ if (addrs != NULL) {
 if (name == NULL) {
 ```
 
-Testing against `NULL` is usually clearer about the nature of the value
-being checked and thus helps improve code readability.
+用 `NULL` 来判断通常能清楚地表达被检查值的真实含义，并且，正因如此，这样做也有助于提高代码的可读性.
 
 # 作者
 
