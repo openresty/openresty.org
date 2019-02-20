@@ -882,10 +882,9 @@ set tabstop=4
 # Goto 语句和代码标记
 
 NGINX 把 `goto` 语句广泛地应用于错误处理. 对于声名狼藉的 `goto` 语句这是非常好的
-应用案例. 很多没经验的 C 程序员可能忌惮于任何 `goto` 语句的应用, 这不公平. It is
-just bad to use `goto` statements to jump backward, otherwise it's usually
-fine, especially for error handling. NGINX requires that the code labels
-to be surrounded by blank lines, as in
+应用案例. 很多没经验的 C 程序员可能忌惮于任何 `goto` 语句的应用, 这不公平. 只有用 `goto` 
+语句往回跳这种情况是不好的, 其他情况一般没问题, 尤其是错误处理. NGINX 要求代码标记要被空行
+包围, 就像以下
 
 ```C
         p = ngx_pnalloc(pool, len);
