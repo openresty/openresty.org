@@ -823,10 +823,9 @@ typedef enum {
 } ngx_http_state_e;
 ```
 
-# Typedef definitions
+# Typedef 的定义
 
-Similar to [Macros][], `typedef` definitions also require at least 2 spaces
-(usually just 2) before the definition body part. For instance,
+和 [Macros][] 类似, `typedef` 的定义也要求在定义体部分之前至少空 2 格(一般就是 2). 比如,
 
 ```C
 typedef u_int  aio_context_t;
@@ -846,7 +845,7 @@ typedef struct ngx_log_s             ngx_log_t;
 typedef struct ngx_open_file_s       ngx_open_file_t;
 ```
 
-# Tools
+# 工具
 
 The OpenResty team maintains the [ngx-releng](https://github.com/openresty/openresty-devel-utils/blob/master/ngx-releng)
 tool to statically scan the current C source tree for many (but not all)
