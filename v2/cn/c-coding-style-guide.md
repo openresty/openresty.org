@@ -121,14 +121,12 @@ ngx_http_core_pool_size(ngx_conf_t *cf, void *post, void *data)
     u_char                errstr[NGX_MAX_CONF_ERRSTR];
 ```
 
-Please note how the identifiers `value`, `i`, `re`, `rc`, and `errstr`
-are aligned up vertically. The `*` prefix does not count in this alignment.
+请注意变量名称 `value`, `i`, `re`, `rc`, and `errstr` 是如何垂直对齐的. 
+`*` 前缀并不算在这些对齐之内.
 
-Some times, some local variable's definition may be exceptionally long,
-aligning it with the rest of the variables may make the code ugly. Then
-we should put a single blank line between this long variable definition
-and the rest of the local variable definitions. In this case, the two groups'
-identifiers do not need to be aligned vertically. Below is such an example:
+有时候, 一些局部变量的定义可能会格外地长, 把它和其他变量对齐可能使得代码很难看.
+这时候我们应该在这个长变量定义和其他局部变量之间放一个空行. 这样, 这个长变量就不
+需要和另一组垂直对齐了. 以下是一个这样的例子:
 
 ```C
 static char *
