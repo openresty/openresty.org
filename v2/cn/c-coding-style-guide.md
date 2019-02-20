@@ -40,7 +40,7 @@ C 结构体和联合体的名字应该尽可能地用单词的全拼形式(除�
 所有的代码行应该保持在 80 列以内 (在 NGINX core 的一些代码里甚至保持在 78 列, 但是我建议 80 列作为硬限制). 
 对于连续行中使用的缩进, 不同的上下文将具有不同的缩进规则。我们将在下面详细讨论案例细节。
 
-# Line trailing white-spaces
+# 行尾的空字符
 
 在代码行的结尾不应该有任何空格或者 Tabs, 即使是空行. 很多编辑器支持用户通过操作自动高亮或截去这些空字符. 确认你正确地
 配置了你的编辑器或者集成开发环境.
@@ -142,9 +142,7 @@ ngx_http_core_open_file_cache(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 }
 ```
 
-Note how the variable `clcf`'s definition is separated by a blank line with
-the rest of the local variables. The rest of the local variables still
-align up vertically.
+注意变量 `clcf` 的定义是如何被一个空行和其他局部变量分开的. 剩下的局部变量仍然要垂直对齐.
 
 The local variables declarations also must be followed by a blank line which
 separate them from the actual execution code statements of the current
