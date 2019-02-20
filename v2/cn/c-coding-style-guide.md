@@ -351,7 +351,7 @@ if (a > 3) {
             }
 ```
 
-注意 `!= OK` 是如何与 `if` 语句的条件部分 (不包含 `(`) 垂直对齐的.
+注意 `!= NGX_OK` 是如何与 `if` 语句的条件部分 (不包含 `(`) 垂直对齐的.
 
 When logical operators are involved in the long condition part, then we
 should make sure the connecting logical operators are at the beginning
