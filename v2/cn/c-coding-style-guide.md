@@ -42,9 +42,8 @@ C 结构体和联合体的名字应该尽可能地用单词的全拼形式(除�
 
 # Line trailing white-spaces
 
-在代码行的结尾不应该有任何空格或者 Tabs, 即使是空行. Many editors support highlighting or trimming such white-space
-characters automatically on the user's behalf. Make sure you configure
-your editor or IDE properly.
+在代码行的结尾不应该有任何空格或者 Tabs, 即使是空行. 很多编辑器支持用户通过操作自动高亮或截去这些空字符. 确认你正确地
+配置了你的编辑器或者集成开发环境.
 
 # 函数声明
 
@@ -68,11 +67,11 @@ ngx_int_t ngx_http_filter_finalize_request(ngx_http_request_t *r,
 char *ngx_http_types_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf);
 ```
 
-请注意函数定义遵循不同于函数声明的风格. 详见 [Function definitions][] .
+请注意函数定义遵循不同于函数声明的风格. 详见 [函数定义][] .
 
 # 函数定义
 
-C 函数定义遵循不同于函数声明 (见 [Function declarations][]) 的风格. 第一行单独放返回类型, 
+C 函数定义遵循不同于函数声明 (见 [函数声明][]) 的风格. 第一行单独放返回类型, 
 第二行是函数名和参数列表, 第三行是单独一个花括号. 以下是一个来自 NGINX core 的例子:
 
 ```C
@@ -109,7 +108,7 @@ ngx_http_core_pool_size(ngx_conf_t *cf, void *post, void *data)
 
 # 局部变量
 
-在 [命名习惯][] 部分, 我们要求局部变量应用短名称，如 `ev`, `clcf`, 等等. 它们的定义也有一些风格上的要求.
+在 [命名习惯][] 部分, 我们要求局部变量应用简命名，如 `ev`, `clcf`, 等等. 它们的定义也有一些风格上的要求.
 
 They should always be put at the beginning of each C function definition
 block, not just at the beginning of any arbitrary code block, unless to
