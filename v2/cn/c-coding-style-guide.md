@@ -144,9 +144,7 @@ ngx_http_core_open_file_cache(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 
 注意变量 `clcf` 的定义是如何被一个空行和其他局部变量分开的. 剩下的局部变量仍然要垂直对齐.
 
-The local variables declarations also must be followed by a blank line which
-separate them from the actual execution code statements of the current
-C function. For example:
+局部变量的定义之后也要紧跟一个空行，从而把它们和这个 C 函数的实际执行代码语句分开. 比如:
 
 ```C
 u_char * ngx_cdecl
@@ -163,9 +161,9 @@ ngx_sprintf(u_char *buf, const char *fmt, ...)
 }
 ```
 
-There is a blank line right after the local variable definitions.
+在局部变量之后紧跟着有一个空行.
 
-# Use of blank lines
+# 空行的运用
 
 Successive C function definitions, multi-line global/static variable definitions,
 and struct/union/enum definitions must be separated by 2 blank lines. Below
