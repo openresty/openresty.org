@@ -308,8 +308,7 @@ ngx_http_types_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 *types = (void *) -1;
 ```
 
-There is a space before `*)` and also a space after `)`. This also applies
-to the case when the value to be type-casted is an example:
+在 `*)` 之前有一个空格在 `)` 之后也有一个. 这也适用于那种对计算结果进行类型转换的情况:
 
 ```C
 if ((size_t) (last - buf) < len) {
@@ -317,22 +316,20 @@ if ((size_t) (last - buf) < len) {
 }
 ```
 
-Or multiple successive type casting:
+或者多个连续的类型转换:
 
 ```C
 aio->aiocb.aio_data = (uint64_t) (uintptr_t) ev;
 ```
 
-Note the space between `(uint64_t)` and `(uintptr_t)`, as well as the space
-after `(uintptr_t)`.
+注意 `(uint64_t)` 和 `(uintptr_t)` 之间的空格, 以及同样的情况在 `(uintptr_t)` 之后的
+空格.
 
 # If 语句
 
 NGINX 中对 C 语言的 if 语句使用也有一些风格上的要求.
 
-First of all, there must be a space after the `if` keyword, and also a
-space between the condition's closing parenthesis and the opening curly
-bracket. That is,
+首先, 在 `if` 关键词之后有一个空格, 并且在右小括号和左大括号之间也有一个空格. 也就是,
 
 ```C
 if (a > 3) {
