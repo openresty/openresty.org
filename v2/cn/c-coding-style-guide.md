@@ -165,9 +165,8 @@ ngx_sprintf(u_char *buf, const char *fmt, ...)
 
 # 空行的运用
 
-Successive C function definitions, multi-line global/static variable definitions,
-and struct/union/enum definitions must be separated by 2 blank lines. Below
-is an example for successive C function definitions:
+连续的 C 函数定义, 多行的 全局/静态 变量定义, 和结构/联合/枚举 的定义必须用 2 个空行分开.
+以下是一个连续 C 函数定义的例子:
 
 ```c
 void
@@ -184,7 +183,7 @@ bar(...)
 }
 ```
 
-And here is an example for successive static variable definitions:
+以及这里是一个连续的静态变量定义的例子:
 
 ```C
 static ngx_conf_bitmask_t  ngx_http_core_keepalive_disable[] = {
@@ -198,7 +197,7 @@ static ngx_path_init_t  ngx_http_client_temp_path = {
 };
 ```
 
-Single-line variable definitions may be grouped together, as in
+单行的变量定义可以放到一组, 像这样
 
 ```C
 static ngx_str_t  ngx_http_gzip_no_cache = ngx_string("no-cache");
@@ -206,7 +205,7 @@ static ngx_str_t  ngx_http_gzip_no_store = ngx_string("no-store");
 static ngx_str_t  ngx_http_gzip_private = ngx_string("private");
 ```
 
-Below is an example for successive (multi-line) struct definitions:
+以下是一个连续 (多行) 结构体定义的例子:
 
 ```C
 struct ngx_http_log_ctx_s {
@@ -232,10 +231,9 @@ typedef struct {
 } ngx_http_status_t;
 ```
 
-All separated by 2 blank lines.
+都是以 2 个空行分开.
 
-And if different kinds of these top-level object definitions should also
-be separated by 2 blank lines if they are neighbors, for example:
+并且如果是挨着的不同类型的顶层对象定义也应该被 2 个空行分开, 比如:
 
 ```C
 #if (NGX_HTTP_DEGRADATION)
