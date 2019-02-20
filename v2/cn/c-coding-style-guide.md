@@ -298,13 +298,11 @@ ngx_http_types_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 }
 ```
 
-Here the `conf` variable is a void pointer and the NGINX core assign it
-to the local variable `p` of the type `char *` without any explicit type
-casting.
+这里的 `conf` 变量是一个无类型指针，并且 NGINX core 把它赋给了局部变量 `p` 类型是 `char *`, 
+没有做任何明确的类型转换.
 
-When explicit type casting is needed, make sure there is a space before
-the first `*` character for the target pointer type name, and also a space
-after the `)` character, as in
+当需要明确的类型转换时, 确保在第一个 `*` 符号前有一个空格紧随指针类型名称之后, 并且在 `)` 之后
+也有一个空格, 就像这里
 
 ```C
 *types = (void *) -1;
@@ -328,9 +326,9 @@ aio->aiocb.aio_data = (uint64_t) (uintptr_t) ev;
 Note the space between `(uint64_t)` and `(uintptr_t)`, as well as the space
 after `(uintptr_t)`.
 
-# If statements
+# If 语句
 
-NGINX's use of C's if statements also have some style requirements.
+NGINX 中对 C 语言的 if 语句使用也有一些风格上的要求.
 
 First of all, there must be a space after the `if` keyword, and also a
 space between the condition's closing parenthesis and the opening curly
