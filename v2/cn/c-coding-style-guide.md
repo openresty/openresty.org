@@ -627,9 +627,8 @@ sa = ngx_palloc(cf->pool, socklen);
 
 # Global/Static 变量
 
-Definitions and declarations for local variables and top-level static variables
-should put at least 2 spaces between the type declarator and the variable
-identifier part (including any leading `*` modifiers). Below are some examples:
+局部变量以及顶层静态变量的定义和声明时, 在类型声明和变量名称部分 (包括任何前置的 `*` 修改符) 
+之间至少空 2 格. 以下是一个例子:
 
 ```C
 ngx_uint_t   ngx_http_max_module;
@@ -640,8 +639,7 @@ ngx_http_output_body_filter_pt    ngx_http_top_body_filter;
 ngx_http_request_body_filter_pt   ngx_http_top_request_body_filter;
 ```
 
-The same applies to variable definitions taking an initializer expression,
-as in
+同样适用于变量定义中包含初始化表达式的情况, 如
 
 ```C
 ngx_str_t  ngx_http_html_default_types[] = {
