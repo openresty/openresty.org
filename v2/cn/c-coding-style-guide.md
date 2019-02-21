@@ -623,10 +623,9 @@ sa = ngx_palloc(cf->pool, socklen);
     }
 ```
 
-We recommend putting `\` on the 78th column though the NGINX core some
-times disagrees with itself.
+我们推荐放置 \ 在第 78 列, 尽管有时侯 NGINX core 也没有完全这样做.
 
-# Global/Static variables
+# Global/Static 变量
 
 Definitions and declarations for local variables and top-level static variables
 should put at least 2 spaces between the type declarator and the variable
