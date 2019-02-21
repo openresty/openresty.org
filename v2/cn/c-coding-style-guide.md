@@ -463,7 +463,7 @@ for (i = 0; i < size; i++) {
     }
 ```
 
-Or when comma expressions are used in the `for` statement's condition part:
+还有逗号表达式被用在 `for` 语句的条件部分:
 
 ```C
     for (i = 0, n = 2; n < cf->args->nelts; i++, n++) {
@@ -481,10 +481,9 @@ Or when comma expressions are used in the `for` statement's condition part:
 
 # While statements
 
-The `while` statement is similar to the `if` statement style explained in
-section [If statements][] in many ways. A space is also required after
-the `while` keyword and also before `{`. Additionally, curly braces must
-be used for the contained statements. Below is an example:
+`while` 语句在很多方面和 `if` 语句的风格是相似的，正如 [If 语句][] 部分阐述的那样. 
+在 `while` 关键词之后以及 `{` 符号之前也都要求有一个空格. 另外, 必须用大括号把它的语句包起来. 
+还有, 在 `for` 的条件部分要求在 `;` 之后放一个空格. 以下是一个例子:
 
 ```C
     while (log->next) {
@@ -498,7 +497,7 @@ be used for the contained statements. Below is an example:
     }
 ```
 
-Do-while statements are also similar:
+Do-while 语句也是类似的:
 
 ```C
         do {
@@ -511,8 +510,7 @@ Do-while statements are also similar:
         } while (p != end);
 ```
 
-Note the use of a single space between `do` and `{`, as well as single
-space before and after `while`.
+注意在 `do` 和 `{` 之间有一个空格, 同样在 `while` 之前和之后都有一个空格.
 
 # Switch statements
 
