@@ -371,11 +371,9 @@ if (a > 3) {
         }
 ```
 
-我们可以忽略这其中的宏指令We can ignore the macro directives in the middle. They are not really relevant
-to the coding style of the `if` statement itself.
+我们可以忽略这其中的宏指令. 它们和 `if` 语句本身的代码风格没什么关系.
 
-Usually we should leave a blank line after the `if` statement's code block
-if there is other statements following up. For example:
+通常我们应该放一个空行在 `if` 语句块的后面，如果其后有其他代码的话. 比如:
 
 ```C
         if (rc != NGX_OK && (of->err == 0 || !of->errors)) {
@@ -387,8 +385,7 @@ if there is other statements following up. For example:
         }
 ```
 
-Note how a blank line is used to separate successive if statement blocks.
-Or with some other statements:
+注意空行是如何把连续的 if 语句块分开的. 或者是和其他语句:
 
 ```C
         if (file->is_dir) {
