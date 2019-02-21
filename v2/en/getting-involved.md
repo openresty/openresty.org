@@ -43,6 +43,8 @@ The maintainer of the [OpenResty](openresty.html) bundle periodically runs a
 big test cluster on [Amazon EC2](http://aws.amazon.com/ec2/) where the test
 suite of each component bundled is run against the latest [Nginx](nginx.html) releases.
 You can always check out the test reports on the [qa.openresty.org site](http://qa.openresty.org).
+You can read the [detailed documentation]( for this EC2 test cluster if you want
+to run and/or hack on it yourself.
 
 Make sure you read the [OpenResty C Coding Style Guide](c-coding-style-guide.html)
 document carefully before hacking on the OpenResty or NGINX core.

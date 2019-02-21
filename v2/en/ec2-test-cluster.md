@@ -2,10 +2,13 @@
     @title         OpenResty® EC2 Test Cluster
 --->
 
-# Basic workflow
-
 The OpenResty EC2 test cluster (we'll call it "test cluster" from now on)
-works like this:
+is used by OpenResty core developers to run most of its components' test
+suites in various different test modes on Amazon EC2. The latest official
+test report can always be browsed on the
+[qa.openresty.org site](http://qa.openresty.org) website.
+
+On the highest level, it works like this:
 
 1. The user spawns the EC2 test cluster using her AWS API credentials locally
 in a terminal by invoking the command-line tool, `dispatcher`, provided
