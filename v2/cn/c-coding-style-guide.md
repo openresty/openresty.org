@@ -815,15 +815,15 @@ typedef struct ngx_open_file_s       ngx_open_file_t;
 # 工具
 
 OpenResty 团队维护着 [ngx-releng](https://github.com/openresty/openresty-devel-utils/blob/master/ngx-releng)
-这个工具，用以静态扫描当前的 C 代码，检查大部分 (但不是全部) 本文提到的风格. 它是 OpenResty core 开发者必备的，并且也对
-NGINX module 开发者和 NGINX core 研究爱好者有帮助. 我们一直在给这个工具增加更多的 checkers, 也欢迎你为此做出贡献.
+这个工具，用以静态扫描当前的 C 代码，检查大部分 (但不是全部) 本文提到的风格. 
+它是 OpenResty core 开发者必备的，并且也对 NGINX module 开发者和 NGINX core 
+研究爱好者有帮助. 我们一直在给这个工具增加更多的 checkers, 也欢迎你为此做出贡献.
 
-Clang 静态代码分析器也对发现不易察觉的代码问题非常有帮助, 所以请用打开高优化选项的 gcc 编译一切.
+Clang 静态代码分析器也对发现不易察觉的代码问题非常有帮助, 所以请用打开高优化选项的 
+gcc 编译一切.
 
-Many editors provide features to highlight and/or auto-trim line trailing
-spaces as well as expanding tabs into spaces. For example, in vim, we could
-put the following lines to our `~/.vimrc` file to highlight any line-trailing
-white-spaces:
+许多编辑器提供高亮 或/和 自动截取行尾空字符的功能，还有展开 Tab 成空格等. 比如, 
+在 vim, 我们可以把下述几行放到我们的 `~/.vimrc` 文件里以高亮显示任何行尾的空字符:
 
 ```vim
 highlight WhiteSpaceEOL ctermbg=darkgreen guibg=lightgreen
@@ -831,7 +831,7 @@ match WhiteSpaceEOL /\s$/
 autocmd WinEnter * match WhiteSpaceEOL /\s$/
 ```
 
-并且还要争取设置缩进的配置:
+并且还可以正确设置缩进的配置:
 
 ```vim
 set expandtab
