@@ -682,8 +682,7 @@ for (p = pool, n = pool->d.next; /* void */; p = n, n = n->d.next) {
 
 ## 一元操作符
 
-We usually do not put any spaces before or after the C unary prefix operators.
-Below are some examples:
+在 C 一元前缀操作符之前或之后, 我们一般不放任何空格. 以下是例子:
 
 ```C
 for (p = salt; *p && *p != '$' && p < last; p++) { /* void */ }
@@ -693,29 +692,25 @@ for (p = salt; *p && *p != '$' && p < last; p++) { /* void */ }
 #define SET(n)      (*(uint32_t *) &p[n * 4])
 ```
 
-Note that we do not put any spaces around the unary `*` operator or the
-unary `&` operator (the space used before `&` in the 2nd example above
-is due to the use of type casting expression; see section [Type casting][]
-for more details).
+注意在一元 `*` 操作符和一元 `&` 操作符周围我们没有放置任何空格. (第二个例子里 `&` 之前
+的空格是由于类型转换表达式的需要; 详见 [类型转换][] ).
 
-The same applies to the suffix operators:
+同样的情况也适用于后缀操作符:
 
 ```C
 for (value = 0; n--; line++) {
 ```
 
-## Ternary operators
+## 三元操作符
 
-Ternary operators also require the use of spaces around the operators,
-just as with the binary operators. For example:
+三元操作符也需要在操作符前后放置空格, 和二元操作符一样. 比如:
 
 ```C
 node = (rc < 0) ? node->left : node->right;
 ```
 
-As we can see from this example that when the condition part of the ternary
-operator is an expression, we *could* also add a pair of parentheses around
-it. This is not required though.
+就像我们从这个例子看到的，当条件部分是一个表达式，我们 *可以* 加一对小括号给它. 尽管这不是
+强制要求的.
 
 # Struct/union/enum 定义
 
