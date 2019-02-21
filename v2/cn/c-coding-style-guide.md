@@ -581,9 +581,8 @@ C 函数调用不应该放任何空格在参数列表的左右小括号周围. �
 sa = ngx_palloc(cf->pool, socklen);
 ```
 
-When the function call is so long that would exceed the 80 column limit,
-then we should break up the argument list into separate lines. The subsequent
-lines must align up with the first argument vertically, as in
+当函数调用太长以至于超过了 80 列的限制, 我们应该把参数列表打散分成多个单独的行. 
+被分出来的行必须和第一个参数垂直对齐, 如
 
 ```C
         buf->pos = ngx_slprintf(buf->start, buf->end, "MEMLOG %uz %V:%ui%N",
