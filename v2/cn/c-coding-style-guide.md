@@ -818,9 +818,7 @@ OpenResty 团队维护着 [ngx-releng](https://github.com/openresty/openresty-de
 这个工具，用以静态扫描当前的 C 代码，检查大部分 (但不是全部) 本文提到的风格. 它是 OpenResty core 开发者必备的，并且也对
 NGINX module 开发者和 NGINX core 研究爱好者有帮助. 我们一直在给这个工具增加更多的 checkers, 也欢迎你为此做出贡献.
 
-The clang static code analyzer is also immensely helpful for catching subtle
-coding problems so does using high optimization flags of gcc to compile
-everything.
+Clang 静态代码分析器也对发现不易察觉的代码问题非常有帮助, 所以请用打开高优化选项的 gcc 编译一切.
 
 Many editors provide features to highlight and/or auto-trim line trailing
 spaces as well as expanding tabs into spaces. For example, in vim, we could
@@ -833,7 +831,7 @@ match WhiteSpaceEOL /\s$/
 autocmd WinEnter * match WhiteSpaceEOL /\s$/
 ```
 
-And also to set the indentation facilities properly:
+并且还要争取设置缩进的配置:
 
 ```vim
 set expandtab
