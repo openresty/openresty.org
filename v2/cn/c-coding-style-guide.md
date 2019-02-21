@@ -656,26 +656,24 @@ ngx_str_t  ngx_http_html_default_types[] = {
 };
 ```
 
-# Operators
+# 操作符
 
-## Binary operators
+## 二元操作符
 
-A single space is required before *and* after most of the binary C operators
-like arithmetic operators, bit operators, relational operators, and logical
-operators. Below are some examples:
+A single space is required大多数二元操作符之前 *和* 之后都要求空一格, 像 算术运算符, 位运算符, 
+关系运算符, 和逻辑运算符. 以下是一个例子:
 
 ```C
  yday = days - (365 * year + year / 4 - year / 100 + year / 400);
 ```
 
-and also
+还有
 
 ```C
 if (*p >= '0' && *p <= '9') {
 ```
 
-For struct/union member operators `->` and `.`, *no* spaces are allowed
-around them, for instance:
+对于 struct/union 的成员操作符 `->` 和 `.`, *没有* 空格在它们周围, 比如:
 
 ```C
 ls = cycle->listening.elts;
@@ -802,7 +800,7 @@ typedef enum {
 
 # Typedef 的定义
 
-和 [Macros][] 类似, `typedef` 的定义也要求在定义体部分之前至少空 2 格(一般就是 2). 比如,
+和 [宏][] 类似, `typedef` 的定义也要求在定义体部分之前至少空 2 格(一般就是 2). 比如,
 
 ```C
 typedef u_int  aio_context_t;
@@ -825,7 +823,7 @@ typedef struct ngx_open_file_s       ngx_open_file_t;
 # 工具
 
 OpenResty 团队维护着 [ngx-releng](https://github.com/openresty/openresty-devel-utils/blob/master/ngx-releng)
-这个工具，用以静态扫描当前的 C 代码，包含大部分 (但不是全部) 本文提到的风格. 它是 OpenResty core 开发者必备的，并且也对
+这个工具，用以静态扫描当前的 C 代码，检查大部分 (但不是全部) 本文提到的风格. 它是 OpenResty core 开发者必备的，并且也对
 NGINX module 开发者和 NGINX core 研究爱好者有帮助. 我们一直在给这个工具增加更多的 checkers, 也欢迎你为此做出贡献.
 
 The clang static code analyzer is also immensely helpful for catching subtle
