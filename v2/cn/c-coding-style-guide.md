@@ -427,9 +427,8 @@ if (a > 3) {
 
 ## else 部分
 
-When the `if` statement takes an `else` branch, then it also must take
-curly braces to group the contained statements. Also, a blank line must
-be used before the `} else {` line. Below is an example:
+当 `if` 语句里采用了一个 `else` 分支, 它也必须采用大括号把它包含的语句括起来. 同样, 
+必须在 `} else {` 这一行之前放一个空行. 以下是一个例子:
 
 ```C
     if (of->disable_symlinks == NGX_DISABLE_SYMLINKS_NOTOWNER
@@ -442,8 +441,7 @@ be used before the `} else {` line. Below is an example:
     }
 ```
 
-Note how `} else {` is put on the same line and there is a blank line right
-before the `} else {` line.
+注意 `} else {` 是如何放成一行并且在 `} else {` 这行之前有一个空行.
 
 # For statements
 
