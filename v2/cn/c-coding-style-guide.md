@@ -443,11 +443,10 @@ if (a > 3) {
 
 注意 `} else {` 是如何放成一行并且在 `} else {` 这行之前有一个空行.
 
-# For statements
+# For 语句
 
-The `for` statement is similar to the `if` statement style explained in
-section [If statements][] in many ways. A space is also required after
-the `for` keyword and also before `{`. Additionally, curly braces must
+`for` 语句在很多方面和 `if` 语句的风格是相似的，正如 [If 语句][] 部分阐述的那样. 
+在 `for` 关键词之后和 `{` 符号之前也要求有一个空格. Additionally, curly braces must
 be used for the contained statements. Furthermore, a space is required
 right after `;` in the `for` condition part. The following example demonstrates
 these requirements:
