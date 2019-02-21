@@ -671,8 +671,7 @@ if (*p >= '0' && *p <= '9') {
 ls = cycle->listening.elts;
 ```
 
-For the comma operator, a single space should be used after the comma,
-not before:
+对于逗号操作符, 在逗号之后应该有一个空格, 之前没有:
 
 ```C
 for (p = pool, n = pool->d.next; /* void */; p = n, n = n->d.next) {
