@@ -3,10 +3,14 @@
 --->
 
 The OpenResty EC2 test cluster (we'll call it "test cluster" from now on)
-is used by OpenResty core developers to run most of its components' test
+is used by OpenResty core developers to run most of its software components'
+test
 suites in various different test modes on Amazon EC2. The latest official
 test report can always be browsed on the
 [qa.openresty.org site](http://qa.openresty.org) website.
+
+Over the years, this tool chain successfully captured various obscure regressions
+in new NGINX cores, new LuaJIT cores, as well as our own components.
 
 On the highest level, it works like this:
 
@@ -384,5 +388,6 @@ the test run log file tarball to the remote server (by default, it is `qa-data.o
 # The future
 
 There are plans to migrate this tool chain over to the upcoming OpenResty
-Ops and OpenResty CI platforms developed by [OpenResty Inc.](https://openresty.com) in
+Ops and OpenResty CI platforms developed by [OpenResty Inc.](https://openresty.com)
+in
 the future so that it would be much easier to use, to extend, and to maintain.
