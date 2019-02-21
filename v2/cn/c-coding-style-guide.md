@@ -403,8 +403,7 @@ if (a > 3) {
         of->uniq = file->uniq;
 ```
 
-Similarly, there is often a single blank line used before the `if` statement,
-as in
+相似地, 在 `if` 语句之前经常也有一个空行, 如
 
 ```C
         rc = ngx_open_and_stat_file(name, of, pool->log);
@@ -414,11 +413,9 @@ as in
         }
 ```
 
-Use of blank lines around such code blocks help make the code less crowded.
-The same applies to "while" statements, `for` statements, and etc.
+在这样的代码块之间应用空行有助于使得代码不那么拥挤. 这些同样适用于 "while" 语句, `for` 语句, 等等.
 
-`If` statements must always use curly brackets even when the "then" branch
-has only a single statement. For instance,
+`If` 语句必须总是应用大括号即使是 "then" 分支只有一个语句. 比如这个例子,
 
 ```C
             if (file->is_dir || file->err) {
@@ -426,10 +423,9 @@ has only a single statement. For instance,
             }
 ```
 
-We must not omit the curly braces in such cases even though the standard
-C language allows that.
+在这里我们不能省去大括号即使 C 语言标准允许这样做.
 
-## else part
+## else 部分
 
 When the `if` statement takes an `else` branch, then it also must take
 curly braces to group the contained statements. Also, a blank line must
