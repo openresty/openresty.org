@@ -798,9 +798,7 @@ typedef enum {
 typedef u_int  aio_context_t;
 ```
 
-More than 2 spaces can be used when a group of typedef definitions are
-put together and it's nice to have them align up vertically for aesthetic
-reasons, as in
+当一组 typedef 定义放到一起并且最好垂直对齐以使代码美观时可以用多于 2 个空格, 如
 
 ```
 typedef struct ngx_module_s          ngx_module_t;
