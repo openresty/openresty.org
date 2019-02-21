@@ -446,10 +446,8 @@ if (a > 3) {
 # For 语句
 
 `for` 语句在很多方面和 `if` 语句的风格是相似的，正如 [If 语句][] 部分阐述的那样. 
-在 `for` 关键词之后和 `{` 符号之前也要求有一个空格. Additionally, curly braces must
-be used for the contained statements. Furthermore, a space is required
-right after `;` in the `for` condition part. The following example demonstrates
-these requirements:
+在 `for` 关键词之后和 `{` 符号之前也要求有一个空格. 另外, 必须用大括号把它的语句包起来. 
+还有, 在 `for` 的条件部分要求在 `;` 之后放一个空格. 以下的例子展示了这种情况:
 
 ```C
 for (i = 0; i < size; i++) {
@@ -457,8 +455,7 @@ for (i = 0; i < size; i++) {
 }
 ```
 
-A special case is the infinite loop, which is usually encoded as below
-in the NGINX world:
+一个特殊情况是无限循环, 在 NGINX 的世界里经常编写成以下这样:
 
 ```C
     for ( ;; ) {
@@ -474,7 +471,7 @@ Or when comma expressions are used in the `for` statement's condition part:
     }
 ```
 
-Or when the loop condition alone is omitted:
+又或者循环条件被单独置空:
 
 ```C
     for (p = pool, n = pool->d.next; /* void */; p = n, n = n->d.next) {
