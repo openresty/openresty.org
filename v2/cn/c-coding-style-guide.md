@@ -446,7 +446,7 @@ if (a > 3) {
 # For 语句
 
 `for` 语句在很多方面和 `if` 语句的风格是相似的，正如 [If 语句][] 部分阐述的那样. 
-在 `for` 关键词之后和 `{` 符号之前也要求有一个空格. 另外, 必须用大括号把它的语句包起来. 
+在 `for` 关键词之后和 `{` 符号之前也都要求有一个空格. 另外, 必须用大括号把它的语句包起来. 
 还有, 在 `for` 的条件部分要求在 `;` 之后放一个空格. 以下的例子展示了这种情况:
 
 ```C
@@ -514,10 +514,9 @@ Do-while 语句也是类似的:
 
 # Switch statements
 
-The `for` statement is similar to the `if` statement style explained in
-section [If statements][] in many ways. A space is also required after
-the `switch` keyword and also before `{`. Additionally, curly braces must
-be used for the contained statements. Below is an example:
+`switch` 语句在很多方面和 `if` 语句的风格是相似的，正如 [If 语句][] 部分阐述的那样. 
+在 `switch` 关键词之后以及 `{` 符号之前也都要求有一个空格. 另外, 必须用大括号把它的语句包起来. 
+以下是一个例子:
 
 ```C
     switch (unit) {
@@ -541,10 +540,9 @@ be used for the contained statements. Below is an example:
     }
 ```
 
-Note how the `case` labels are aligned vertically with the `switch` keyword.
+注意那些 `case` 标签是如何与 `switch` 关键词垂直对齐的.
 
-Sometimes, a blank line is used before the first `case` label line, as
-in
+有时候, 在第一个 `case` 之前有一个空行被应用, 如
 
 ```C
         switch (c->log_error) {
@@ -560,7 +558,7 @@ in
         }
 ```
 
-# Allocation error handling
+# 内存分配错误处理
 
 The NGINX world has a good habit of always checking memory dynamic allocation
 failures. It's everywhere, like this:
