@@ -677,12 +677,10 @@ ls = cycle->listening.elts;
 for (p = pool, n = pool->d.next; /* void */; p = n, n = n->d.next) {
 ```
 
-NGINX usually avoids the comma operators except in the context of `for`
-statement conditions and in multiple variable declarations of the same
-type. Better split your comma expressions into separate statements in other
-cases.
+除了 `for` 语句的条件部分和声明多个相同类型的变量, NGINX 一般避免使用逗号操作符. 
+在其他情况下，最好把逗号表达式分成多个单独的语句.
 
-## Unary operators
+## 一元操作符
 
 We usually do not put any spaces before or after the C unary prefix operators.
 Below are some examples:
