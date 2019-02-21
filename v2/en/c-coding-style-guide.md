@@ -25,17 +25,18 @@ because the C language does not have the concept of explicit namespaces
 like in C++. Using fully-qualified names help avoid symbol clashes and
 also help debugging.
 
-In Lua libraries' C components, we should also use prefixes like `resty_blah_` (if
-the library is called `lua-resty-blah`) for all the top-level C symbols
+In Lua libraries' C components, we should also use prefixes like `resty_blah_`
+(if
+the library is called `lua-resty-blah`) for all the top-level C symbols
 in the corresponding C compilation units
 
 We should use short names for local variables defined in C functions. Common
-short names used extensively in the NGINX core are `cl`, `ev`, `ctx`, `v`,
-`p`, `q`, and etc. Such variables are usually short-lived and have very
+short names used extensively in the NGINX core are `cl`, `ev`, `ctx`, `v`,
+`p`, `q`, and etc. Such variables are usually short-lived and have very
 limited scope. According to the Huffman principle, we should use short
 names for commonly used stuff in the current context to avoid line noises.
 Even short names should following NGINX's convention. Do not invent your
-own unless necessary. And do use meaningful names. Even for `p` and `q`,
+own unless necessary. And do use meaningful names. Even for `p` and `q`,
 they are common names for string pointer variables used in the context
 of string processing.
 
@@ -43,6 +44,39 @@ C struct and union names should use the full spelling form of words wherever
 possible (unless the member name would be too long). For example, in NGINX
 core's `struct ngx_http_request_s`, we have long member names like `read_event_handler`,
 `upstream_states`, and `request_body_in_persistent_file`.
+
+We should use `_t` suffix for `typedef` type names referring to structs, `_s`
+for `struct` names, and `_e` for `typedef` type names referring to enums. Local
+types defined in function scopes are not subject to this suffix convention.
+Below are some examples from the NGINX core:
+
+```C
+typedef struct ngx_connection_s      ngx_connection_t;
+```
+
+```C
+typedef struct {
+    WSAOVERLAPPED    ovlp;
+    ngx_event_t     *event;
+    int              error;
+} ngx_event_ovlp_t;
+```
+
+```C
+struct ngx_chain_s {
+    ngx_buf_t    *buf;
+    ngx_chain_t  *next;
+};
+```
+
+```C
+typedef enum {
+    ngx_pop3_start = 0,
+    ngx_pop3_user,
+    ...
+    ngx_pop3_auth_external
+} ngx_pop3_state_e;
+```
 
 # Indentation
 
@@ -94,7 +128,7 @@ char *ngx_http_types_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf);
 ```
 
 Please note that function definitions follow a different style than declarations.
-See [Function definitions][] for more details.
+See [Function definitions][] for more details.
 
 # Function definitions
 
@@ -351,7 +385,7 @@ ngx_http_types_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 ```
 
 Here the `conf` variable is a void pointer and the NGINX core assign it
-to the local variable `p` of the type `char *` without any explicit type
+to the local variable `p` of the type `char *` without any explicit type
 casting.
 
 When explicit type casting is needed, make sure there is a space before
@@ -377,7 +411,7 @@ Or multiple successive type casting:
 aio->aiocb.aio_data = (uint64_t) (uintptr_t) ev;
 ```
 
-Note the space between `(uint64_t)` and `(uintptr_t)`, as well as the space
+Note the space between `(uint64_t)` and `(uintptr_t)`, as well as the space
 after `(uintptr_t)`.
 
 # If statements
@@ -512,7 +546,7 @@ be used before the `} else {` line. Below is an example:
 ```
 
 Note how `} else {` is put on the same line and there is a blank line right
-before the `} else {` line.
+before the `} else {` line.
 
 # For statements
 
@@ -711,7 +745,7 @@ continuation character `\` vertically, as in
     }
 ```
 
-We recommend putting `\` on the 78th column though the NGINX core some
+We recommend putting `\` on the 78th column though the NGINX core some
 times disagrees with itself.
 
 # Global/Static variables
@@ -954,7 +988,7 @@ to be surrounded by blank lines, as in
             goto failed;
         }
 
-		...
+        ...
 
         i++;
     }
@@ -985,7 +1019,7 @@ if (addrs != NULL) {
 if (name == NULL) {
 ```
 
-Testing against `NULL` is usually clearer about the nature of the value
+Testing against `NULL` is usually clearer about the nature of the value
 being checked and thus helps improve code readability.
 
 # Author
