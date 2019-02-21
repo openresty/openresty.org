@@ -831,7 +831,7 @@ match WhiteSpaceEOL /\s$/
 autocmd WinEnter * match WhiteSpaceEOL /\s$/
 ```
 
-并且还可以正确设置缩进的配置:
+还有正确缩进相关的配置:
 
 ```vim
 set expandtab
