@@ -732,8 +732,7 @@ typedef struct {
 } ngx_http_status_t;
 ```
 
-Just with the case of local variable definitions, we could also use a blank
-line to separate out groups of fields, as in
+和局部变量的定义一样的情况, 我们可以用空行把字段分成多个组, 如
 
 ```C
 struct ngx_http_request_s {
@@ -752,11 +751,10 @@ struct ngx_http_request_s {
 };
 ```
 
-In this case, each group still must align up the field member identifiers
-vertically, but different groups are not required to be aligned (although
-we still could, as demonstrated in the example above).
+在这种情况下, 每一组的字段成员名称应该垂直对齐, 但不同组并不要求垂直对齐 (那我们依然可以
+这样做, 就像上面的例子展示的).
 
-Unions are similar:
+联合体是相似的:
 
 ```C
 typedef union epoll_data {
@@ -767,7 +765,7 @@ typedef union epoll_data {
 } epoll_data_t
 ```
 
-So are enums:
+枚举也是这样:
 
 ```C
 typedef enum {
