@@ -824,12 +824,9 @@ typedef struct ngx_open_file_s       ngx_open_file_t;
 
 # 工具
 
-The OpenResty team maintains the [ngx-releng](https://github.com/openresty/openresty-devel-utils/blob/master/ngx-releng)
-tool to statically scan the current C source tree for many (but not all)
-style issues covered in this document. It's been a must-have for OpenResty
-core developers and also be helpful for NGINX module developers and NGINX
-core hackers in general. We keep adding more checkers to this tool and
-we welcome your contributions as well.
+OpenResty 团队维护着 [ngx-releng](https://github.com/openresty/openresty-devel-utils/blob/master/ngx-releng)
+这个工具，用以静态扫描当前的 C 代码，包含大部分 (但不是全部) 本文提到的风格. 它是 OpenResty core 开发者必备的，并且也对
+NGINX module 开发者和 NGINX core 研究爱好者有帮助. 我们一直在给这个工具增加更多的 checkers, 也欢迎你为此做出贡献.
 
 The clang static code analyzer is also immensely helpful for catching subtle
 coding problems so does using high optimization flags of gcc to compile
