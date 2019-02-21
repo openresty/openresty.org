@@ -244,7 +244,7 @@ Still we explain them one by one below:
   Builds with aggressive gcc optimization levels (`-O3`) and other options (like `-funsigned-char`).
 
 Except `to`, all the test modes above are implemented by the `Test::Nginx`
-scaffold. You can read this free [book section](https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.html)
+scaffold. You can read this [free e-book section](https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.html)
 to learn more details about these `Test::Nginx` test modes.
 
 The `<project-name>` component is defined as the target open source project
