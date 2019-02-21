@@ -391,3 +391,19 @@ There are plans to migrate this tool chain over to the upcoming OpenResty
 Ops and OpenResty CI platforms developed by [OpenResty Inc.](https://openresty.com)
 in
 the future so that it would be much easier to use, to extend, and to maintain.
+
+# Author
+
+This document was written by Yichun Zhang, the creator of this OpenResty
+EC2 test cluster tool chain. Feel free to contact the author by sending
+emails to the yichun@openresty.com address.
+
+# Feedback and patches
+
+The source of this document resides in the [openresty/openresty.org](https://github.com/openresty/openresty.org/)
+GitHub repository. You are welcome to create issues and/or pull requests
+if you have questions or edits for this document.
+
+Translations to other languages are also welcome.
+
+General feedback is welcome to send to the author of this document.
