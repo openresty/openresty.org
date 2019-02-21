@@ -353,10 +353,8 @@ if (a > 3) {
 
 注意 `!= NGX_OK` 是如何与 `if` 语句的条件部分 (不包含 `(`) 垂直对齐的.
 
-When logical operators are involved in the long condition part, then we
-should make sure the connecting logical operators are at the beginning
-of the subsequent lines and the indentation reflects the nesting structure
-of the condition expression, as in
+当较长的条件表达式涉及到逻辑运算符时，我们应该确保逻辑运算符位于后续行的开头，并且
+缩进反映了条件表达式的嵌套结构，如
 
 ```C
         if (file->use_event
@@ -373,7 +371,7 @@ of the condition expression, as in
         }
 ```
 
-We can ignore the macro directives in the middle. They are not really relevant
+我们可以忽略这其中的宏指令We can ignore the macro directives in the middle. They are not really relevant
 to the coding style of the `if` statement itself.
 
 Usually we should leave a blank line after the `if` statement's code block
