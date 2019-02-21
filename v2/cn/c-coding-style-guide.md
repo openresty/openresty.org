@@ -479,7 +479,7 @@ for (i = 0; i < size; i++) {
     }
 ```
 
-# While statements
+# While 语句
 
 `while` 语句在很多方面和 `if` 语句的风格是相似的，正如 [If 语句][] 部分阐述的那样. 
 在 `while` 关键词之后以及 `{` 符号之前也都要求有一个空格. 另外, 必须用大括号把它的语句包起来. 
@@ -512,7 +512,7 @@ Do-while 语句也是类似的:
 
 注意在 `do` 和 `{` 之间有一个空格, 同样在 `while` 之前和之后都有一个空格.
 
-# Switch statements
+# Switch 语句
 
 `switch` 语句在很多方面和 `if` 语句的风格是相似的，正如 [If 语句][] 部分阐述的那样. 
 在 `switch` 关键词之后以及 `{` 符号之前也都要求有一个空格. 另外, 必须用大括号把它的语句包起来. 
@@ -560,8 +560,7 @@ Do-while 语句也是类似的:
 
 # 内存分配错误处理
 
-The NGINX world has a good habit of always checking memory dynamic allocation
-failures. It's everywhere, like this:
+在 NGINX 的世界里有一个总是检查内存动态分配失败的好习惯. 每个地方都是, 就像这样:
 
 ```C
     sa = ngx_palloc(cf->pool, socklen);
@@ -570,13 +569,11 @@ failures. It's everywhere, like this:
     }
 ```
 
-These two statements appear together so frequently that we usually do not
-put a blank line between the allocation statement and the `if` statement.
+这两个语句出现在一起的频率很高以至于我们经常不在分配语句和 `if` 语句之间加空行了.
 
-Make sure you never omit such a check after a dynamic memory allocation
-statement.
+确保你在一个动态内存分配语句之后从不忽略这样一个检查.
 
-# Function calls
+# 函数调用
 
 C function calls should not put any spaces around the opening or closing
 parentheses for the argument list. Below is an example:
