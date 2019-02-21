@@ -21,7 +21,8 @@ It will try distributing the test jobs evenly across a minimum number of
 EC2 VM instances while meeting the total running time constraint at its
 best effort. The VM instances will keep running. Upon job completion or
 job failures, they will automatically upload the raw test run logs as tarballs
-to the server `qa-data.openresty.org`. See the [Spawn the test cluster][] section
+to the server `qa-data.openresty.org`. See the [Spawn the test cluster][]
+section
 for more details.
 3. The user waits for a period of time approximately equal to the time
 constraint she specifies, until all the EC2 VM instances are terminated
@@ -49,7 +50,8 @@ bill.
 
 To prepare for a new OpenResty release, all projects in all test modes
 using the (new) version of the nginx core the new OpenResty release is
-going to use. But usually we first only run `./dispatcher` with the `t` test
+going to use. But usually we first only run `./dispatcher` with the `t`
+test
 target, that is, testing all projects using the "normal test mode" (which
 explains in details below in the [Test job names][] section). If there
 is some big problems with the opsboy script or some projects themselves,
@@ -359,18 +361,28 @@ to your own branch and create a GitHub pull request for review and merge.
 Under the hood, the `dispatcher` script invokes `gen-user-data` script
 to generate final test job specification strings from the user's command-line
 arguments (see [Test job names][]). This final test job specification is
-passed to the new EC2 VM instances as plain-text "user data". The `dispatcher` script
+passed to the new EC2 VM instances as plain-text "user data". The `dispatcher`
+script
 invokes the `run-node` script which in turn runs the `aws` tool provided
 by the AWS CLI tool chain to spawn the EC2 instances with the specified
 "user data" from our pre-defined EC2 AMI images. Our EC2 AMI image registers
-the [openresty-tester](https://github.com/openresty/opsboy/blob/master/misc/openresty-tester) init
+the [openresty-tester](https://github.com/openresty/opsboy/blob/master/misc/openresty-tester)
+init
 script as a symlink under the VM's `/etc/init.d/` directory such that new
 changes in this file in the GitHub repository does not require updates
 in the AMI image. This `openresty-tester` script in turn calls the [openresty-tester-wrapper](https://github.com/openresty/opsboy/blob/master/misc/openresty-tester-wrapper)
 script. This `openresty-tester-wrapper` script does the heavy lifting of
 running the `openresty-tester.pl` script which is automatically generated
-from the [ortest-ec2.ob.tt](https://github.com/openresty/opsboy/blob/master/samples/ortest-ec2.ob.tt) opsboy
+from the [ortest-ec2.ob.tt](https://github.com/openresty/opsboy/blob/master/samples/ortest-ec2.ob.tt)
+opsboy
 script template file using the Perl TT2 template tool chain and the opsboy
-compiler tool chain. Finally, upon completion, the `openresty-tester-wrapper` script
+compiler tool chain. Finally, upon completion, the `openresty-tester-wrapper`
+script
 invokes the `~/ortest-upload` script bundled in the AMI image to upload
 the test run log file tarball to the remote server (by default, it is `qa-data.openresty.org`).
+
+# The future
+
+There are plans to migrate this tool chain over to the upcoming OpenResty
+Ops and OpenResty CI platforms developed by [OpenResty Inc.](https://openresty.com) in
+the future so that it would be much easier to use, to extend, and to maintain.
