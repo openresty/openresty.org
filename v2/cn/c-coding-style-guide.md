@@ -592,16 +592,13 @@ sa = ngx_palloc(cf->pool, socklen);
 
 # 宏
 
-Macro defintions requires a single space after `#define` while (at least)
-2 spaces before the definition body part. For example:
+宏定义要求在 `#define` 之后空一格，在定义体部分之前至少空 2 格. 比如:
 
 ```C
 #define F(x, y, z)  ((z) ^ ((x) & ((y) ^ (z))))
 ```
 
-Some times more spaces may be used before the definition body part for
-the sake of vertical alignment among multiple closely related macro definitions,
-as in
+有时候由于垂直对齐多个相邻有关系的宏定义的缘故，更多的空格可以被应用在定义体部分之前, 如
 
 ```C
 #define NGX_RESOLVE_A         1
@@ -616,8 +613,7 @@ as in
 #define NGX_RESOLVE_SERVFAIL  2
 ```
 
-For macro definitions spanning multiple lines, we should align up the line
-continuation character `\` vertically, as in
+对于被分成多行的宏定义, 我们应该垂直对齐行连接符 `\`, 如下
 
 ```
 #define ngx_conf_init_value(conf, default)
