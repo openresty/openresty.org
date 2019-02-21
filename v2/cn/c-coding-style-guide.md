@@ -575,8 +575,7 @@ Do-while 语句也是类似的:
 
 # 函数调用
 
-C function calls should not put any spaces around the opening or closing
-parentheses for the argument list. Below is an example:
+C 函数调用不应该放任何空格在参赛列表的左右小括号周围. 以下是一个例子:
 
 ```C
 sa = ngx_palloc(cf->pool, socklen);
@@ -592,7 +591,7 @@ lines must align up with the first argument vertically, as in
                                 cf->conf_file->line);
 ```
 
-# Macros
+# 宏
 
 Macro defintions requires a single space after `#define` while (at least)
 2 spaces before the definition body part. For example:
