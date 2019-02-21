@@ -720,12 +720,10 @@ As we can see from this example that when the condition part of the ternary
 operator is an expression, we *could* also add a pair of parentheses around
 it. This is not required though.
 
-# Struct/union/enum definitions
+# Struct/union/enum 定义
 
-The definition style for structs, unions, and enums are similar. They should
-align up the fields' identifiers vertically, in a similar way to local
-variable definitions explained in section [Local variables][]. We will
-just give some real examples from the NGINX core to demonstrate the style:
+结构体, 联合体, 和枚举的定义风格是相似的. 它们应该垂直对齐域内的变量名称, 和 [局部变量][] 
+部分阐述的局部变量定义一样. 我们只给出一些来自 NGINX core 的真实例子以展示这种风格:
 
 ```C
 typedef struct {
