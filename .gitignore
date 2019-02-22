@@ -11,3 +11,5 @@ v2/upload-data
 v2/old-permlinks.js
 v2/[ce]n/download.md
 *.md.fixed
+node_modules
+package-lock.json

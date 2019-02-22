@@ -128,12 +128,12 @@ char *ngx_http_types_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf);
 ```
 
 Please note that function definitions follow a different style than declarations.
-See [Function definitions][] for more details.
+See [Function definitions](#) for more details.
 
 # Function definitions
 
 C function definitions follow a different style than their declarations
-(see [Function declarations][]). The first line should be the return type
+(see [Function declarations](#)). The first line should be the return type
 alone, the 2nd line goes the function name as well as the parameter list,
 and the 3rd line goes the opening curly bracket alone. Below is an example
 from the NGINX core:
@@ -176,7 +176,7 @@ ngx_http_core_pool_size(ngx_conf_t *cf, void *post, void *data)
 
 # Local variables
 
-In section [Naming convention][], we require local variables to use shorter
+In section [Naming convention](#), we require local variables to use shorter
 names like `ev`, `clcf`, and etc. Their definitions also have some style
 requirements.
 
@@ -551,7 +551,7 @@ before the `} else {` line.
 # For statements
 
 The `for` statement is similar to the `if` statement style explained in
-section [If statements][] in many ways. A space is also required after
+section [If statements](#) in many ways. A space is also required after
 the `for` keyword and also before `{`. Additionally, curly braces must
 be used for the contained statements. Furthermore, a space is required
 right after `;` in the `for` condition part. The following example demonstrates
@@ -591,7 +591,7 @@ Or when the loop condition alone is omitted:
 # While statements
 
 The `for` statement is similar to the `if` statement style explained in
-section [If statements][] in many ways. A space is also required after
+section [If statements](#) in many ways. A space is also required after
 the `while` keyword and also before `{`. Additionally, curly braces must
 be used for the contained statements. Below is an example:
 
@@ -626,7 +626,7 @@ space before and after `while`.
 # Switch statements
 
 The `for` statement is similar to the `if` statement style explained in
-section [If statements][] in many ways. A space is also required after
+section [If statements](#) in many ways. A space is also required after
 the `switch` keyword and also before `{`. Additionally, curly braces must
 be used for the contained statements. Below is an example:
 
@@ -825,7 +825,7 @@ for (p = salt; *p && *p != '$' && p < last; p++) { /* void */ }
 
 Note that we do not put any spaces around the unary `*` operator or the
 unary `&` operator (the space used before `&` in the 2nd example above
-is due to the use of type casting expression; see section [Type casting][]
+is due to the use of type casting expression; see section [Type casting](#)
 for more details).
 
 The same applies to the suffix operators:
@@ -851,7 +851,7 @@ it. This is not required though.
 
 The definition style for structs, unions, and enums are similar. They should
 align up the fields' identifiers vertically, in a similar way to local
-variable definitions explained in section [Local variables][]. We will
+variable definitions explained in section [Local variables](#). We will
 just give some real examples from the NGINX core to demonstrate the style:
 
 ```C
@@ -919,7 +919,7 @@ typedef enum {
 
 # Typedef definitions
 
-Similar to [Macros][], `typedef` definitions also require at least 2 spaces
+Similar to [Macros](#), `typedef` definitions also require at least 2 spaces
 (usually just 2) before the definition body part. For instance,
 
 ```C
