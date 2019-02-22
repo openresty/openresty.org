@@ -25,7 +25,7 @@ It will try distributing the test jobs evenly across a minimum number of
 EC2 VM instances while meeting the total running time constraint at its
 best effort. The VM instances will keep running. Upon job completion or
 job failures, they will automatically upload the raw test run logs as tarballs
-to the server `qa-data.openresty.org`. See the [Spawn the test cluster][]
+to the server `qa-data.openresty.org`. See the [Spawn the test cluster](#)
 section
 for more details.
 3. The user waits for a period of time approximately equal to the time
@@ -57,7 +57,7 @@ using the (new) version of the nginx core the new OpenResty release is
 going to use. But usually we first only run `./dispatcher` with the `t`
 test
 target, that is, testing all projects using the "normal test mode" (which
-explains in details below in the [Test job names][] section). If there
+explains in details below in the [Test job names](#) section). If there
 is some big problems with the opsboy script or some projects themselves,
 we can fix it more quickly and without paying too much money for too many
 EC2 instances. If `t` is green, we then try `tv` and etc, one by one, or
@@ -330,7 +330,7 @@ parse-logs:    'lua-resty-websocket' => [
 We can see that lua-resty-websocket has information in the files `gen-report`,
 `gen-user-data`,`index.tt`, and `parse-logs`. The last one in `parse-logs`
 is not necessary since it is for the white-list of expected failures (see
-the [The expected test failure white-list][] section for details). So we
+the [The expected test failure white-list](#) section for details). So we
 can simply add similar entries in the same way as `lua-resty-websocket`
 to the same places (or similar places).
 
@@ -364,7 +364,7 @@ to your own branch and create a GitHub pull request for review and merge.
 
 Under the hood, the `dispatcher` script invokes `gen-user-data` script
 to generate final test job specification strings from the user's command-line
-arguments (see [Test job names][]). This final test job specification is
+arguments (see [Test job names](#)). This final test job specification is
 passed to the new EC2 VM instances as plain-text "user data". The `dispatcher`
 script
 invokes the `run-node` script which in turn runs the `aws` tool provided
