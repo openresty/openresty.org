@@ -28,6 +28,37 @@ OpenResty 和 NGINX 社区也鼓励大家在用 C 开发插件和库的时候去
 C 结构体和联合体的名字应该尽可能地用单词的全拼形式(除非名称过于长). 举例子, 在 NGINX core 里 `struct ngx_http_request_s`, 
 我们有长的成员名字 `read_event_handler`, `upstream_states`, 和 `request_body_in_persistent_file`.
 
+我们应该用 `_t` 作为 `typedef` 中指代结构体的类型名称的后缀 , `_s` 用于 `struct` 名称后缀, 以及 `_e` 作为 `typedef` 
+中指代枚举的类型名称的后缀. 函数范围内的局部类型定义不适用于这个后缀习惯. 以下是一些来自 NGINX core 的例子:
+
+```C
+typedef struct ngx_connection_s      ngx_connection_t;
+```
+
+```C
+typedef struct {
+    WSAOVERLAPPED    ovlp;
+    ngx_event_t     *event;
+    int              error;
+} ngx_event_ovlp_t;
+```
+
+```C
+struct ngx_chain_s {
+    ngx_buf_t    *buf;
+    ngx_chain_t  *next;
+};
+```
+
+```C
+typedef enum {
+    ngx_pop3_start = 0,
+    ngx_pop3_user,
+    ...
+    ngx_pop3_auth_external
+} ngx_pop3_state_e;
+```
+
 # 缩进
 
 在 NGINX 的世界里用并且只用 *空格* 作为缩进. 不要用制表符! 一般我们用 *4 空格* 缩进 除了有一些特殊的
