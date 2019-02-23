@@ -19,7 +19,21 @@ var UI = {
 $(document).ready(function() {
 
 	UI.init();
-	// hljs.configure({languages:});
+
+	// for each header link, click to copy the permalink
+	$('.header-anchor').on('click', function () {
+		var url = location.origin + location.pathname + $(this).attr('href');
+
+		var $temp = $('<input style="position: absolute; left: -9999px; bottom: 0;">');
+		$("body").append($temp);
+		$temp.val(url).select();
+
+		try {
+			document.execCommand("copy");
+		} catch (e) {
+			alert('Failed to copy to clipboard, please try again or use other browsers.')
+		}
+	})
 
 });
 

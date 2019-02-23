@@ -646,6 +646,28 @@ header[role="header"] .link .link-title {
   padding-top: 1em;
   padding-bottom: 0.1em;
 }
+#main .item .body h1,
+#main .item .body h2,
+#main .item .body h3,
+#main .item .body h4,
+#main .item .body h5,
+#main .item .body h6 {
+  line-height: 1.25;
+}
+#main .item .body .icon {
+  vertical-align: middle;
+  visibility: hidden;
+  width: 16px;
+  height: 16px;
+}
+#main .item .body .header-anchor {
+  float: left;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+#main .item .body .header-anchor:hover .icon {
+  visibility: visible;
+}
 /*=====================================================================================
   SIDEBARS
 =======================================================================================*/

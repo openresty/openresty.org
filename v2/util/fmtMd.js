@@ -8,14 +8,25 @@ marked.setOptions({
     gfm: true,
 });
 
+// create internal links for ()[#]
 renderer.link = function (href, title, text) {
     title = title || text;
     if (href === '#') {
         var slugger = new marked.Slugger();
-        href = '#' + slugger.slug(text); // create internal links
+        href = '#' + slugger.slug(text);
     }
     return '<a href="' + href + '" title="' + title + '">' + text + '</a>';
 }
+
+// add link icon for each heading, just like github
+renderer.heading = function (text, level, raw, slugger) {
+    var anchorId = renderer.options.headerPrefix + slugger.slug(raw);
+    return '<h' + level + '>'
+        + '<a id="' + anchorId + '" class="header-anchor" href="#' + anchorId + '" title="copy permalink to clipboard">'
+        + '<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>'
+        + '</a>' + text
+        + '</h' + level + '>\n';
+};
 
 var args = process.argv.slice(2);
 if (args.length === 0) {
