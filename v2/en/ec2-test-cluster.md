@@ -396,7 +396,7 @@ the future so that it would be much easier to use, to extend, and to maintain.
 
 This document was written by Yichun Zhang, the creator of this OpenResty
 EC2 test cluster tool chain. Feel free to contact the author by sending
-emails to the yichun@openresty.com address.
+emails to the yichun@openresty.com address.
 
 # Feedback and patches
 
