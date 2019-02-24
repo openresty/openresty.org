@@ -8,7 +8,7 @@ OpenResty 在它的 C 语言模块里遵循 NGINX 的代码风格, 比如 OpenRe
 被期待的事情.
 
 给 OpenResty core 提交的补丁也应该遵循这些导则，不然它们将会无法通过代码审核也无法得到合并.
-OpenResty 和 NGINX 社区也鼓励大家在用 C 开发插件和库的时候去遵循这个规则。
+OpenResty 和 NGINX 社区也鼓励大家在用 C 开发插件和库的时候去遵循这套规范。
 
 # 命名约定
 
