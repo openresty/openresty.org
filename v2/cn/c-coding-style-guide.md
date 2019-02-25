@@ -2,23 +2,23 @@
     @title         OpenResty® C 代码风格指南
 --->
 
-OpenResty 在它的 C 语言模块里遵循 NGINX 的代码风格, 比如 OpenResty 自己的那些 NGINX 插件
-模块和 OpenResty 的那些 Lua 库的 C 部分. 不太幸运的是，即使是 NGINX core 自己的 C 代码
-也没有严格遵循和其他 code base 同样的代码约定. 能够有一个正式的规范文档以避免混淆是一个非常
-被期待的事情.
+OpenResty 在它的 C 语言模块里遵循 NGINX 的代码风格，比如 OpenResty 自己的那些 NGINX 插件
+模块和 OpenResty 的那些 Lua 库的 C 部分。 不太幸运的是，即使是 NGINX core 自己的 C 代码
+也没有严格遵循和其他 code base 同样的代码约定。 能够有一个正式的规范文档以避免混淆是一个非常
+被期待的事情。
 
-给 OpenResty core 提交的补丁也应该遵循这些规范，不然它们将会无法通过代码审核也无法得到合并.
+给 OpenResty core 提交的补丁也应该遵循这些规范，不然它们将会无法通过代码审核也无法得到合并。
 OpenResty 和 NGINX 社区也鼓励大家在用 C 开发插件和库的时候去遵循这套规范。
 
 # 命名约定
 
-和 NGINX 相关的 C 代码, 源文件名称 (包括 `.c` 和 `.h` 文件), 全局变量, 全局函数, C 结构体、
-联合体和枚举的名字, 编译单元域内的静态变量和函数，以及头文件里公用的宏定义应该用全称命名, 就像
-`ngx_http_core_module.c`, `ngx_http_finalize_request` 和 ` NGX_HTTP_MAIN_CONF`. 这
-很重要，因为 C 语言没有像 C++ 里那样明确的命名空间的概念. 用全称命名有助于避免符号冲突，也有助于调试.
+和 NGINX 相关的 C 代码、源文件名称 (包括 `.c` 和 `.h` 文件)、全局变量、全局函数、 C 结构体、
+联合体和枚举的名字，编译单元域内的静态变量和函数，以及头文件里公用的宏定义应该用全称命名，就像
+`ngx_http_core_module.c`, `ngx_http_finalize_request` 和 ` NGX_HTTP_MAIN_CONF`。 这
+很重要，因为 C 语言没有像 C++ 里那样明确的命名空间的概念。用全称命名有助于避免符号冲突，也有助于调试。
 
-在 Lua 库的 C 模块里, 我们也应该用前缀，比如 `resty_blah_` (假如库的名字是 `lua-resty-blah`)
-用于所有相关的 C 编译单元的顶层 C 符号的命名.
+在 Lua 库的 C 模块里，我们也应该用前缀，比如 `resty_blah_` (假如库的名字是 `lua-resty-blah`)
+用于所有相关的 C 编译单元的顶层 C 符号的命名。
 
 我们应该对 C 函数里的局部变量用简称命名. 在 NGINX core 被广泛使用的简称命名是 `cl`, `ev`, `ctx`, `v`,
 `p`, `q`, 等等. 这些变量通常生命周期很短并且作用域有限. 根据霍夫曼原则, 我们应该在一些常见用法里使用简称命名
