@@ -244,7 +244,7 @@ i = i + 1 output[i] = '<div class="content-footer">\n<hr class="footer-sep"/>\n<
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty<sup>&reg;</sup> is a registered trademark owned by <a href="https://openresty.com/">OpenResty Inc</a>.' }})
 i = i + 1 output[i] = '</p>\n  <p>'
 -- line 5 "footer.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Copyright © 2017, 2018 Yichun Zhang (agentzh)' }})
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Copyright © 2017, 2018, 2019 by Yichun Zhang (agentzh)' }})
 i = i + 1 output[i] = '</p>\n  <p>'
 -- line 6 "footer.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { '100% Powered by OpenResty and PostgreSQL' }})
