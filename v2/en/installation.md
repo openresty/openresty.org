@@ -15,12 +15,13 @@ also check out [this documentation](https://github.com/openresty/openresty/blob/
 
 It is highly recommended to install OpenResty on our Mac OS X or macOS systems via [homebrew](https://brew.sh/) package manager, like this:
 
-```
+```bash
 brew install openresty/brew/openresty
 ```
 
 If you already installed OpenResty from `homebrew/nginx`, please run the following command first:
-```
+
+```bash
 brew untap homebrew/nginx
 ```
 
@@ -66,7 +67,7 @@ If your system environment is modern enough, then you almost always want to
 enable the PCRE JIT support and IPv6 support in your NGINX by passing the `--with-pcre-jit` and
 `--with-ipv6` options to the `./configure` script.
 
-```
+```bash
 ./configure --with-pcre-jit --with-ipv6
 ```
 
@@ -75,7 +76,7 @@ By default, OpenResty is installed into the prefix `/usr/local/openresty/`.
 Finally, you need to add the command-line utilities provided by OpenResty to your
 `PATH` environment, as in
 
-```
+```bash
 export PATH=/usr/local/openresty/bin:/usr/local/openresty/nginx/sbin:$PATH
 ```
 
@@ -95,38 +96,37 @@ PATH environment.
 
 You're recommended to install the following packages using apt-get:
 
-```
+```bash
 apt-get install libpcre3-dev \
     libssl-dev perl make build-essential curl
 ```
-
 
 ### Fedora and RedHat users
 
 You're recommended to install the following packages using yum:
 
-```
+```bash
 yum install pcre-devel openssl-devel gcc curl
 ```
-
 
 ### Mac OS X (macOS) users
 
 It is highly recommended to install OpenResty on our Mac OS X or macOS systems via [homebrew](https://brew.sh/) package manager, like this:
 
-```
+```bash
 brew install openresty/brew/openresty
 ```
 
 If you already installed OpenResty from `homebrew/nginx`, please run the following command first:
-```
+
+```bash
 brew untap homebrew/nginx
 ```
 
 You're recommended to install prerequisites PCRE and OpenSSL using some package
 management tool, like [Homebrew](http://mxcl.github.com/homebrew/):
 
-```
+```bash
 brew update
 brew install pcre openssl curl
 ```
@@ -137,7 +137,7 @@ Alternatively you can install PCRE and/or OpenSSL from source all by yourself
 After installing PCRE and OpenSSL, you may need to specify the paths for their
 headers and libraries to your C compiler and linker, for example,
 
-```
+```bash
 $ ./configure \
    --with-cc-opt="-I/usr/local/opt/openssl/include/ -I/usr/local/opt/pcre/include/" \
    --with-ld-opt="-L/usr/local/opt/openssl/lib/ -L/usr/local/opt/pcre/lib/" \
@@ -149,7 +149,6 @@ is the default for homebrew.
 
 See also [Issue #3](https://github.com/agentzh/openresty/issues/3).
 
-
 ## FreeBSD users
 
 You need to install the following ports:
@@ -157,28 +156,25 @@ You need to install the following ports:
 * security/openssl
 * devel/pcre
 
-
 ## Building OpenResty
-
 
 ### Download
 
 download the latest openresty tarball can be fetched from the [Download](download.html) page
 and unpack it like this:
 
-```
+```bash
 tar -xzvf openresty-VERSION.tar.gz
 ```
 
 where `VERSION` should be replaced by real version numbers like `1.11.2.5`.
-
 
 ### ./configure
 
 Then enter the `openresty-VERSION/` directory, and type the following command
 to configure:
 
-```
+```bash
 ./configure
 ```
 
@@ -187,14 +183,14 @@ By default, `--prefix=/usr/local/openresty` is assumed. You should only disable
 
 You can specify various options, as in
 
-```
+```bash
 ./configure --prefix=/opt/openresty \
             --with-pcre-jit \
             --with-ipv6 \
             --without-http_redis2_module \
             --with-http_iconv_module \
             --with-http_postgres_module \
-            -j2
+            -j8
 ```
 
 All of the standard [Nginx](nginx.html) configure file options can be used here,
@@ -205,38 +201,35 @@ Errors in running the ./configure script can be found in the file `build/nginx-V
 `VERSION` should be replaced by a concrete version number of [OpenResty](openresty.html),
 like `1.11.2.5`.
 
-
 #### Notes for Solaris users
 
 For Solaris, it's common to install libraries like OpenSSL to `/lib`, so when
 it complaints about missing OpenSSL and you have indeed already installed it,
 specify the `--with-ld-opt='-L/lib'` option.
 
-
 ### make
 
 Now you can compile everything up using the command
 
-```
+```bash
 make
 ```
 
 If your machine has multiple cores and your `make` supports the jobserver feature,
 you can compile things in parallel like this:
 
-```
+```bash
 make -j2
 ```
 
 assuming you have 2 CPU cores.
-
 
 ### make install
 
 If all the previous steps go without problems, you can install [OpenResty](openresty.html) into
 your system by typing the command
 
-```
+```bash
 make install
 ```
 
@@ -246,8 +239,7 @@ If you prefer building the OpenSSL and PCRE dependencies from their source tarba
 then you could follow the commands below (you may want to change the version
 number accordingly):
 
-
-```
+```bash
 wget https://www.openssl.org/source/openssl-1.0.2k.tar.gz
 tar -zvxf openssl-1.0.2k.tar.gz
 cd openssl-1.0.2k/
@@ -265,6 +257,6 @@ cd openresty-1.11.2.5/
 
 ./configure --with-openssl=../openssl-1.0.2k \
                  --with-pcre=../pcre-8.40 -j4
-make -j4
+make -j8
 sudo make install
 ```

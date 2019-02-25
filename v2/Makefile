@@ -1,6 +1,6 @@
 nginx = nginx
 
-md2html = marked --gfm
+md2html = ./util/fmtMd.js
 md2text = pandoc --from markdown_github-hard_line_breaks --to plain
 
 md_files := $(wildcard en/*.md cn/*.md) $(patsubst %.md.tt2,%.md,$(wildcard en/*.md.tt2 cn/*.md.tt2))
@@ -64,7 +64,7 @@ html: $(html_files)
 
 html/%.html: %.md
 	@mkdir -p html/en html/cn
-	$(md2html) -i $< --output $@
+	$(md2html) $< > $@
 
 .PHONY: text
 text: $(txt_files)

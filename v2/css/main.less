@@ -31,7 +31,7 @@ a, a:visited { color: @link; text-decoration: underline; }
 a:active { color: @link; outline: 0; text-decoration: underline; }
 a:hover { color: darken(@link, 15%); }
 input { font-family: @fontstack; }
-code {background: #eee; padding: 0.3em;}
+code {background: #f5f4f4; padding: 0.3em;}
 
 
 /*=====================================================================================
@@ -266,6 +266,21 @@ header[role="header"] {
 
             h1 { font-size: 150%; padding-top: 1em; padding-bottom: 0.1em;}
             h2 { font-size: 120%; padding-top: 1em; padding-bottom: 0.1em;}
+            h1, h2, h3, h4, h5, h6 {line-height: 1.25;}
+            .icon {
+                vertical-align: middle;
+                visibility: hidden;
+                width: 16px;
+                height: 16px;
+            }
+            .header-anchor {
+                float: left;
+                margin-left: -20px;
+                padding-right: 4px;
+                &:hover {
+                    .icon {visibility: visible;}
+                }
+            }
 
         }
 
