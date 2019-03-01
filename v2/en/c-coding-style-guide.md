@@ -590,7 +590,7 @@ Or when the loop condition alone is omitted:
 
 # While statements
 
-The `for` statement is similar to the `if` statement style explained in
+The `while` statement is similar to the `if` statement style explained in
 section [If statements](#) in many ways. A space is also required after
 the `while` keyword and also before `{`. Additionally, curly braces must
 be used for the contained statements. Below is an example:
@@ -625,7 +625,7 @@ space before and after `while`.
 
 # Switch statements
 
-The `for` statement is similar to the `if` statement style explained in
+The `switch` statement is similar to the `if` statement style explained in
 section [If statements](#) in many ways. A space is also required after
 the `switch` keyword and also before `{`. Additionally, curly braces must
 be used for the contained statements. Below is an example:
