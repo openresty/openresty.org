@@ -152,6 +152,7 @@ while (<$in>) {
 
     $c += s! (\s) (table\.concat|string\.find) ( (?:\(\))? ) ( [\s,.:;?] ) !$1\[$2$3](http://www.lua.org/manual/5.1/manual.html#pdf-$2)$4!gxs;
     $c += s! (\s) (table)\.(isempty|isarray|nkeys|clone) ( (?:\(\))? ) ( [\s,.:;?] ) !$1\[$2.$3$4](https://github.com/openresty/luajit2#$2$3)$5!gxs;
+    $c += s! (\s) (thread)\.(exdata) ( (?:\(\))? ) ( [\s,.:;?] ) !$1\[$2.$3$4](https://github.com/openresty/luajit2#$2$3)$5!gxs;
     $c += s! (\s) ([Nn]ginx) ( [\s,.:;?] ) !$1\[$2](nginx.html)$3!gxsi;
     print $out $_;
 }
