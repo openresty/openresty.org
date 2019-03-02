@@ -10,7 +10,7 @@ sub test_link ($) {
     my $out = `curl -I -sS '$link'`;
     #print "$link\n";
     #my $out = "HTTP/1.1 200 OK";
-    if ($out !~ m{\bHTTP/\d+(?:\.\d+)?\s+200\s+OK\b}) {
+    if ($out !~ m{\bHTTP/\d+(?:\.\d+)?\s+(?:200|30[0-9])\b}) {
         die "\nFailed to test link: $link\n$out";
     } else {
         $i++;
