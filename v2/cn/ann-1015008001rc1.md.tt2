@@ -191,6 +191,4 @@ Complete change logs since the last (formal) release, 1.13.6.2:
 * upgraded [lua-resty-upstream-healthcheck](https://github.com/openresty/lua-resty-upstream-healthcheck#readme) to 0.06.
     * bugfix: avoided shadowing a variable which would prevent the checking threads from being waited upon. _Thanks Thijs Schreijer and Thibault Charbonnier for the report and fix._
 
-Feedback welcome!
-
-Thanks!
+Feedback on this version is always welcome. Feel free to create new [GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](community.html).
