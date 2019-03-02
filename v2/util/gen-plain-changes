@@ -7,5 +7,5 @@ perl -ne 'exit if /^See \[ChangeLog \d/;
               next;
           }
           print;
-          ' $1 > /tmp/changes.txt || exit 1
-exec md2pod.pl /tmp/changes.txt | pod2text -u -i 1 -w 69 --nourls -
+          ' $1 > /tmp/changes.md || exit 1
+exec md2pod.pl /tmp/changes.md | pod2text -u -i 1 -w 69 --nourls -
