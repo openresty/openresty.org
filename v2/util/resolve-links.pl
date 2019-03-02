@@ -141,7 +141,7 @@ while (<$in>) {
             "$pre\[$txt](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/$file.md#readme)$post"
             !egx;
 
-    $c += s! (\s) ( resty\.core\.shdict | ngx\.(?:re|process|errlog|semaphore|ssl(?:\.session)?|balancer|ocsp|resp|req) ) ( [\s,.:;?] ) !
+    $c += s! (\s) ( ngx\.(?:re|process|errlog|semaphore|ssl(?:\.session)?|balancer|ocsp|resp|req) ) ( [\s,.:;?] ) !
             my ($pre, $txt, $post) = ($1, $2, $3);
             (my $file = $txt) =~ s{\.}{/}g;
             "$pre\[$txt](https://github.com/openresty/lua-resty-core/blob/master/lib/$file.md#readme)$post"
@@ -151,6 +151,7 @@ while (<$in>) {
     $c += s! (\s) (error_log|proxy_pass|proxy_next_upstream_tries|error_page|client_body_buffer_size) ( [\s,.:;?] ) !$1\[$2](http://nginx.org/r/$2)$3!gxs;
 
     $c += s! (\s) (table\.concat|string\.find) ( (?:\(\))? ) ( [\s,.:;?] ) !$1\[$2$3](http://www.lua.org/manual/5.1/manual.html#pdf-$2)$4!gxs;
+    $c += s! (\s) (table)\.(isempty|isarray|nkeys|clone) ( (?:\(\))? ) ( [\s,.:;?] ) !$1\[$2.$3$4](https://github.com/openresty/luajit2#$2$3)$5!gxs;
     $c += s! (\s) ([Nn]ginx) ( [\s,.:;?] ) !$1\[$2](nginx.html)$3!gxsi;
     print $out $_;
 }

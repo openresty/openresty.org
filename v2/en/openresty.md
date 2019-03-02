@@ -4,6 +4,8 @@
     @created       2011-06-21 04:03 GMT
 --->
 
+***New!*** [OpenResty 1.15.8.1 RC1](ann-1015008001rc1.html) is now available for testing.
+
 OpenResty<sup>&reg;</sup> is a full-fledged web platform that integrates the standard
 [Nginx](nginx.html) core, [LuaJIT](luajit.html), many carefully written Lua
 libraries, lots of high quality [3rd-party Nginx modules](components.html), and
