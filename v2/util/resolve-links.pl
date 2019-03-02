@@ -16,8 +16,8 @@ my ($out, $outfile) = tempfile("mdXXXXXXX", TMPDIR => 1);
 
 my $c = 0;
 while (<$in>) {
-    $c += s! (\s) (balancer|ssl_certificate|ssl_session_(?:fetch|store))_by_lua\* ( [\s,.:;?] )
-           !$1\[${2}_by_lua*](https://github.com/openresty/lua-nginx-module#${2}_by_lua_block)$3!xgs;
+    $c += s! (\s) (balancer|ssl_certificate|ssl_session_(?:fetch|store))_by_lua(_block|\*) ( [\s,.:;?] )
+           !$1\[${2}_by_lua${3}](https://github.com/openresty/lua-nginx-module#${2}_by_lua_block)$4!xgs;
 
     $c += s! (\s) set_(md5|quote_pgsql_str) ( [\s,.:;?] )
            !$1\[set_$2](https://github.com/openresty/set-misc-nginx-module#set_$2)$3!xgs;
@@ -34,6 +34,8 @@ while (<$in>) {
 
     $c += s! (\s) ngx_devel_kit ( [\s,.:;?] ) !$1\[ngx_devel_kit](https://github.com/simpl/ngx_devel_kit#readme)$2!xgs;
 
+    $c += s! (\s) ngx_coolkit ( [\s,.:;?] ) !$1\[ngx_coolkit](https://github.com/FRiCKLE/ngx_coolkit)$2!xgs;
+
     $c += s! (\s) ngx_postgres ( [\s,.:;?] ) !$1\[ngx_postgres](https://github.com/openresty/ngx_postgres#readme)$2!xgs;
 
     $c += s! (\s) ngx_(iconv|form_input) ( [\s,.:;?] ) !
@@ -46,7 +48,7 @@ while (<$in>) {
                             | escape_uri
                             | encode_args
                             | req\.(?:append|init|finish)_body
-                            | req\.(?:raw_header|set_header|clear_header|get_uri_args|get_post_args|get_headers)
+                            | req\.(?:raw_header|set_header|clear_header|get_uri_args|get_post_args|get_headers|get_method|set_body_data|set_body_file)
                             | resp\.(?:get_headers)
                             | re\.(?:g?match|g?sub|find)
                             | worker\.(?:p?id|count)
@@ -67,7 +69,7 @@ while (<$in>) {
                             | redirect
                             | get_phase
                             )
-                  | tcpsock:(?:sslhandshake|setkeepalive|connect|settimeout|settimeouts)
+                  | tcpsock:(?:sslhandshake|setkeepalive|connect|settimeout|settimeouts|receiveany)
                   | lua_ssl_verify_depth
                   | lua_regex_cache_max_entries
                   | lua_intercept_error_log
@@ -75,10 +77,21 @@ while (<$in>) {
                   | lua_ssl_trusted_certificate
                   | lua_check_client_abort
                   | lua_shared_dict
+                  | lua_sa_restart
                    ) ( (?: \( [^)]* \) )? ) ( [\s,.:;?)(] ) !
             my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
             my $anchor = gen_anchor($txt);
             "$pre\[$txt$parens](https://github.com/openresty/lua-nginx-module#$anchor)$post"
+            !xges;
+
+    $c += s! (\s) preread_by_lua\*
+             ( [\s,.:;?] )
+           !$1\[${2}_by_lua*](https://github.com/openresty/stream-lua-nginx-module#${2}_by_lua)$3!xgs;
+
+    $c += s! (\s) ( tcpsock:shutdown|reqsock:peek ) ( (?: \( [^)]* \) )? ) ( [\s,.:;?)(] ) !
+            my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
+            my $anchor = gen_anchor($txt);
+            "$pre\[$txt$parens](https://github.com/openresty/stream-lua-nginx-module#$anchor)$post"
             !xges;
 
     $c += s! (\s) ( ngx_http_(ssi|ssl||addition) (?: [_ ] module)? ) ( [\s,.:;?] ) !$1\[$2](http://nginx.org/en/docs/http/ngx_http_${3}_module.html)$4!gxs;
@@ -141,18 +154,29 @@ while (<$in>) {
             "$pre\[$txt](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/$file.md#readme)$post"
             !egx;
 
-    $c += s! (\s) ( ngx\.(?:re|process|errlog|semaphore|ssl(?:\.session)?|balancer|ocsp|resp|req) ) ( [\s,.:;?] ) !
+    $c += s! (\s) ( ngx\.(?:re|process|errlog|semaphore|ssl(?:\.session)?|balancer|ocsp|resp|req|pipe) ) ( [\s,.:;?] ) !
             my ($pre, $txt, $post) = ($1, $2, $3);
             (my $file = $txt) =~ s{\.}{/}g;
             "$pre\[$txt](https://github.com/openresty/lua-resty-core/blob/master/lib/$file.md#readme)$post"
             !egx;
 
-    $c += s! (\s) (opm|resty-cli|lua-cjson|lua-redis-parser|lua-resty-(?:core|memcached|mysql|redis|dns|lock|lrucache|websocket|upload|limit-traffic)) ( [\s,.:;?] ) !$1\[$2](https://github.com/openresty/$2#readme)$3!gxs;
+    $c += s! (\s) (opm|resty-cli|lua-cjson|lua-tablepool|lua-redis-parser|lua-resty-(?:core|memcached|mysql|redis|dns|lock|lrucache|websocket|upload|limit-traffic|signal|shell|upstream-healthcheck)) ( [\s,.:;?] ) !$1\[$2](https://github.com/openresty/$2#readme)$3!gxs;
     $c += s! (\s) (error_log|proxy_pass|proxy_next_upstream_tries|error_page|client_body_buffer_size) ( [\s,.:;?] ) !$1\[$2](http://nginx.org/r/$2)$3!gxs;
 
     $c += s! (\s) (table\.concat|string\.find) ( (?:\(\))? ) ( [\s,.:;?] ) !$1\[$2$3](http://www.lua.org/manual/5.1/manual.html#pdf-$2)$4!gxs;
-    $c += s! (\s) (table)\.(isempty|isarray|nkeys|clone) ( (?:\(\))? ) ( [\s,.:;?] ) !$1\[$2.$3$4](https://github.com/openresty/luajit2#$2$3)$5!gxs;
-    $c += s! (\s) (thread)\.(exdata) ( (?:\(\))? ) ( [\s,.:;?] ) !$1\[$2.$3$4](https://github.com/openresty/luajit2#$2$3)$5!gxs;
+
+    $c += s! (\s) ( table\. (?:isempty
+                             |isarray
+                             |nkeys
+                             |clone)
+                    | thread\. (?:exdata)
+                    | jit\. (?:prngstate)
+                     ) ( (?:\(\))? ) ( [\s,.:;?] ) !
+            my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
+            my $anchor = gen_anchor($txt);
+            "$pre\[$txt$parens](https://github.com/openresty/luajit2#$anchor)$post"
+            !egx;
+
     $c += s! (\s) ([Nn]ginx) ( [\s,.:;?] ) !$1\[$2](nginx.html)$3!gxsi;
     $c += s! \b (OpenResty \s+ Inc\.?) ( [\s,.:;?] ) !\[$1](https://openresty.com/)$2!gxsi;
     print $out $_;
