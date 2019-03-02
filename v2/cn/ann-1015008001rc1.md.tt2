@@ -32,7 +32,7 @@ PGP for the Win32 zip file:
 
 https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip.asc
 
-# Acknowledgement
+# Acknowledgment
 
 Special thanks go to all our developers and contributors! Also thanks Thibault Charbonnier
 for his great help in preparing this release.
