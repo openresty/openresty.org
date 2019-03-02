@@ -4,13 +4,17 @@
 --->
 
 We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],
-for the community to test out:
+for the community to test out.
+
+# Source package
 
 https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz
 
 PGP for this source tar ball:
 
 https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz.asc
+
+# Windows binary packages
 
 Win64 version:
 
@@ -28,10 +32,14 @@ PGP for the Win32 zip file:
 
 https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip.asc
 
+# Acknowledgement
+
 Special thanks go to all our developers and contributors! Also thanks Thibault Charbonnier
 for his great help in preparing this release.
 
-The highlights of this release are:
+# Version highlights
+
+The highlights of this release candidate are:
 
 1. Based on the very recent mainline [nginx](nginx.html) core 1.15.8.
 2. Support for ARM64 architectures. The underlying work for this feature
@@ -64,6 +72,8 @@ recommend the use of OpenResty's fork of LuaJIT.
     * Implemented a new [table.nkeys()](https://github.com/openresty/luajit2#tablenkeys) API.
 
     All our new Lua API functions documentation can be found here: https://github.com/openresty/luajit2#new-api
+
+# Full Change logs
 
 Complete change logs since the last (formal) release, 1.13.6.2:
 
@@ -190,5 +200,7 @@ Complete change logs since the last (formal) release, 1.13.6.2:
     * bugfix: md2pod: infinite looping might happen when an empty `.md` file is given.
 * upgraded [lua-resty-upstream-healthcheck](https://github.com/openresty/lua-resty-upstream-healthcheck#readme) to 0.06.
     * bugfix: avoided shadowing a variable which would prevent the checking threads from being waited upon. _Thanks Thijs Schreijer and Thibault Charbonnier for the report and fix._
+
+# Feedback
 
 Feedback on this version is always welcome. Feel free to create new [GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](community.html).
