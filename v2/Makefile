@@ -30,6 +30,10 @@ tpage = tpage
 .PHONY: all
 all: templates css msgfmt
 
+.PHONY: check
+check:
+	@echo $(md_files)
+
 .PHONY: templates
 templates: $(templates_lua)
 

@@ -19,7 +19,8 @@ https://github.com/agentzh/ngx_openresty/issues
 Alternatively you can send mails privately to [agentzh](http://agentzh.org):
 agentzh at gmail dot com.
 
-     严正建议:"去邮件列表沟通令众人受益;-)"
+强烈建议:"去邮件列表沟通令众人受益;-)"
+
 + 订阅: 请发邮件至 openresty+subscribe@googlegroups.com
 + 发言: 请发邮件到 openresty@googlegroups.com
 + 退订: 请发邮件至 openresty+unsubscribe@googlegroups.com

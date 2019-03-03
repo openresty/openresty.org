@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+infile=$1
+name=$2
+
+if [ -z "$infile" ]; then
+    echo "No .md input file specified." > /dev/stderr
+    exit 1
+fi
+
+if [ ! -f "$infile" ]; then
+    echo "Input file $infile not found." > /dev/stderr
+    exit 1
+fi
+
+if [ -z "$name" ]; then
+    name=Yichun
+fi
+
+outfile=email.md
+printf "Hi folks!\n\n" > $outfile || exit 1
+cat $infile >> $outfile || exit 1
+printf "\nBest regards,\n$name\n" >> $outfile || exit 1
+
+exec md2pod.pl $outfile | pod2text -u -i 1 -w 69 --nourls -
