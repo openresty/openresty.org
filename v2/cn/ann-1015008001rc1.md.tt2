@@ -16,7 +16,7 @@ https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz.asc
 
 # Windows binary packages
 
-Win64 version:
+## Win64 version:
 
 https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip
 
@@ -24,7 +24,7 @@ PGP for the Win64 zip file:
 
 https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip.asc
 
-Win32 version:
+## Win32 version:
 
 https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip
 
@@ -147,7 +147,7 @@ Complete change logs since the last (formal) release, 1.13.6.2:
     * doc: [ngx.balancer](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/balancer.md#readme): fixed a typo in the sample code. _Thanks chronolaw for the patch._
     * doc: [ngx.ssl](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#readme): documented the `get_tls1_version_str()` API function.
     * doc: [ngx.semaphore](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md#readme): switch status to production ready.
-* upgraded [LuaJIT](https://github.com/openresty/luajit2#readme) to 2.1-20190228: https://github.com/openresty/luajit2/tags
+* upgraded [LuaJIT](https://github.com/openresty/luajit2#readme) to 2.1-20190228.
     * feature: implemented a new [table.isempty()](https://github.com/openresty/luajit2#tableisempty) API. _Thanks [OpenResty Inc.](https://openresty.com/) for supporting this work._
     * feature: implemented a new [table.isarray()](https://github.com/openresty/luajit2#tableisarray) API. _Thanks [OpenResty Inc.](https://openresty.com/) for supporting this work._
     * feature: implemented a new [table.nkeys()](https://github.com/openresty/luajit2#tablenkeys) API. _Thanks [OpenResty Inc.](https://openresty.com/) for supporting this work._
