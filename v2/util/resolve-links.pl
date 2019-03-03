@@ -179,6 +179,7 @@ while (<$in>) {
 
     $c += s! (\s) ([Nn]ginx) ( [\s,.:;?] ) !$1\[$2](nginx.html)$3!gxsi;
     $c += s! (\s) (OpenResty \s+ Inc\.?) ( [\s,.:;?] ) !$1\[$2](https://openresty.com/)$3!gxsi;
+    $c += s! (\s) (LuaJIT) ( [\s,.:;?] ) !$1\[$2](https://github.com/openresty/luajit2#readme)$3!gxsi;
     print $out $_;
 }
 
