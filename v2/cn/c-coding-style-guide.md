@@ -196,8 +196,8 @@ ngx_sprintf(u_char *buf, const char *fmt, ...)
 
 # 空行的运用
 
-连续的 C 函数定义, 多行的 全局/静态 变量定义, 和结构/联合/枚举 的定义必须用 2 个空行分开.
-以下是一个连续 C 函数定义的例子:
+连续的 C 函数定义，多行的全局/静态变量定义，和结构/联合/枚举的定义必须用 2 个空行分开。
+以下是一个连续 C 函数定义的例子：
 
 ```c
 void
@@ -214,7 +214,7 @@ bar(...)
 }
 ```
 
-以及这里是一个连续的静态变量定义的例子:
+以及这里是一个连续的静态变量定义的例子：
 
 ```C
 static ngx_conf_bitmask_t  ngx_http_core_keepalive_disable[] = {
@@ -228,7 +228,7 @@ static ngx_path_init_t  ngx_http_client_temp_path = {
 };
 ```
 
-单行的变量定义可以放到一组, 像这样
+单行的变量定义可以放到一组，像这样：
 
 ```C
 static ngx_str_t  ngx_http_gzip_no_cache = ngx_string("no-cache");
@@ -236,7 +236,7 @@ static ngx_str_t  ngx_http_gzip_no_store = ngx_string("no-store");
 static ngx_str_t  ngx_http_gzip_private = ngx_string("private");
 ```
 
-以下是一个连续 (多行) 结构体定义的例子:
+以下是一个连续 (多行) 结构体定义的例子：
 
 ```C
 struct ngx_http_log_ctx_s {
@@ -262,9 +262,9 @@ typedef struct {
 } ngx_http_status_t;
 ```
 
-都是以 2 个空行分开.
+都是以 2 个空行分开。
 
-并且如果是挨着的不同类型的顶层对象定义也应该被 2 个空行分开, 比如:
+并且如果是挨着的不同类型的顶层对象定义也应该被 2 个空行分开，比如：
 
 ```C
 #if (NGX_HTTP_DEGRADATION)
@@ -275,9 +275,9 @@ ngx_uint_t  ngx_http_degraded(ngx_http_request_t *);
 extern ngx_module_t  ngx_http_module;
 ```
 
-静态函数的声明被 2 个空行与后续的全局变量声明分开.
+静态函数的声明被 2 个空行与后续的全局变量声明分开。
 
-连续的 C 函数声明不使用 2 个空行分开, 像以下这样
+连续的 C 函数声明不使用 2 个空行分开，像以下这样：
 
 ```C
 ngx_int_t ngx_http_discard_request_body(ngx_http_request_t *r);
@@ -286,7 +286,7 @@ void ngx_http_block_reading(ngx_http_request_t *r);
 void ngx_http_test_reading(ngx_http_request_t *r);
 ```
 
-即使当有些函数声明分成了多行, 诸如
+即使当有些函数声明分成了多行，诸如：
 
 ```C
 char *ngx_http_merge_types(ngx_conf_t *cf, ngx_array_t **keys,
@@ -296,7 +296,7 @@ ngx_int_t ngx_http_set_default_types(ngx_conf_t *cf, ngx_array_t **types,
     ngx_str_t *default_type);
 ```
 
-尽管如此, 有时候我们 *可以* 用 2 个空行把它们分成不同的有意义的组, 以使得代码更易读, 就像这样
+尽管如此，有时候我们 *可以* 用 2 个空行把它们分成不同的有意义的组，以使得代码更易读，就像这样：
 
 ```C
 ngx_int_t ngx_http_send_header(ngx_http_request_t *r);
@@ -313,12 +313,12 @@ void ngx_http_block_reading(ngx_http_request_t *r);
 void ngx_http_test_reading(ngx_http_request_t *r);
 ```
 
-第一组都是关于 response headers 而接下来那组是关于 request bodies.
+第一组都是关于 response headers 而接下来那组是关于 request bodies 。
 
 # 类型转换
 
-当把一个无类型指针 (`void *`) 的值赋给一个有类型指针时，C 语言并不要求明确的类型转换.
- 并且 NGINX 的代码风格也不要求这些. 比如:
+当把一个无类型指针 (`void *`) 的值赋给一个有类型指针时，C 语言并不要求明确的类型转换。
+ 并且 NGINX 的代码风格也不要求这些。比如：
 
 ```C
 char *
@@ -329,17 +329,17 @@ ngx_http_types_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 }
 ```
 
-这里的 `conf` 变量是一个无类型指针，并且 NGINX core 把它赋给了局部变量 `p` 类型是 `char *`,
-没有做任何明确的类型转换.
+这里的 `conf` 变量是一个无类型指针，并且 NGINX core 把它赋给了局部变量 `p` 类型是 `char *`，
+没有做任何明确的类型转换。
 
-当需要明确的类型转换时, 确保在第一个 `*` 符号前有一个空格紧随指针类型名称之后, 并且在 `)` 之后
-也有一个空格, 就像这里
+当需要明确的类型转换时，确保在第一个 `*` 符号前有一个空格紧随指针类型名称之后，并且在 `)` 之后
+也有一个空格，就像这里：
 
 ```C
 *types = (void *) -1;
 ```
 
-在 `*)` 之前有一个空格在 `)` 之后也有一个. 这也适用于那种对计算结果进行类型转换的情况:
+在 `*)` 之前有一个空格在 `)` 之后也有一个。这也适用于那种对计算结果进行类型转换的情况:
 
 ```C
 if ((size_t) (last - buf) < len) {
@@ -347,14 +347,14 @@ if ((size_t) (last - buf) < len) {
 }
 ```
 
-或者多个连续的类型转换:
+或者多个连续的类型转换：
 
 ```C
 aio->aiocb.aio_data = (uint64_t) (uintptr_t) ev;
 ```
 
 注意 `(uint64_t)` 和 `(uintptr_t)` 之间的空格, 以及同样的情况在 `(uintptr_t)` 之后的
-空格.
+空格。
 
 # If 语句
 
