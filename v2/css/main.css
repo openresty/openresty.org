@@ -127,9 +127,11 @@ blockquote,
 q {
   quotes: none;
 }
-ul,
-ol {
+ul {
   list-style: none;
+}
+ol {
+  padding-left: 20px;
 }
 table {
   border-spacing: 0;
@@ -636,16 +638,6 @@ header[role="header"] .link .link-title {
   margin-bottom: 0.6em;
   list-style: circle;
 }
-#main .item .body h1 {
-  font-size: 150%;
-  padding-top: 1em;
-  padding-bottom: 0.1em;
-}
-#main .item .body h2 {
-  font-size: 120%;
-  padding-top: 1em;
-  padding-bottom: 0.1em;
-}
 #main .item .body h1,
 #main .item .body h2,
 #main .item .body h3,
@@ -653,6 +645,16 @@ header[role="header"] .link .link-title {
 #main .item .body h5,
 #main .item .body h6 {
   line-height: 1.25;
+  padding-top: 0.75em;
+  padding-bottom: 0.1em;
+}
+#main .item .body h1 {
+  font-size: 150%;
+  padding-top: 1em;
+}
+#main .item .body h2 {
+  font-size: 120%;
+  padding-top: 1em;
 }
 #main .item .body .icon {
   vertical-align: middle;
