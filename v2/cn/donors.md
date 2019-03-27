@@ -29,3 +29,5 @@
 [![Kugou Music](/images/kugou-music.jpg)](http://www.kugou.com/)
 
 [![Kong](/images/kong-logo.png)](https://www.konghq.com/)
+
+[![Vlion](/images/vlion.png)](http://www.vlion.cn/)
