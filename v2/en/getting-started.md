@@ -74,9 +74,9 @@ http {
         listen 8080;
         location / {
             default_type text/html;
-            content_by_lua '
+            content_by_lua_block {
                 ngx.say("<p>hello, world</p>")
-            ';
+            }
         }
     }
 }
