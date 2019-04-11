@@ -17,3 +17,7 @@
 * OpenResty × Open Talk (2019年3月23日 2:00 PM @北京)
 
     http://www.huodongxing.com/event/2481310558700
+
+* OpenResty × Open Talk (2019年5月11日 2:00 PM @武汉)
+
+    https://www.huodongxing.com/event/1487401382400
