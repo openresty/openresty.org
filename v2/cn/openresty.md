@@ -4,7 +4,7 @@
     @created       2011-06-21 04:03 GMT
 --->
 
-***最新！*** [OpenResty 1.15.8.1 RC1](ann-1015008001rc1.html) 已经发布供测试。
+***最新！*** [OpenResty 1.15.8.1 RC2](ann-1015008001rc2.html) 已经发布供测试。
 
 OpenResty<sup>&reg;</sup> 是一个基于 [Nginx](nginx.html) 与 Lua 的高性能 Web 平台，其内部集成了大量精良的
 Lua 库、第三方模块以及大多数的依赖项。用于方便地搭建能够处理超高并发、扩展性极高的动态

@@ -1,0 +1,75 @@
+[% VER = "1.15.8.1"; RC = 2 -%]
+<!---
+    @title         OpenResty [% VER %] RC[% RC %] is out
+--->
+
+We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],
+for the community to test out.
+
+# Source package
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz
+
+PGP for this source tar ball:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz.asc
+
+# Windows binary packages
+
+## Win64 version:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip
+
+PGP for the Win64 zip file:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip.asc
+
+## Win32 version:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip
+
+PGP for the Win32 zip file:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip.asc
+
+# Acknowledgment
+
+Special thanks go to all our developers and contributors! Also thanks Thibault Charbonnier
+for his great help in preparing this release.
+
+# Version highlights
+
+The highlights of this release candidate are:
+
+* We now load `resty.core` by default in ngx_lua and ngx_stream_lua. This behavior can be disabled with the new [lua_load_resty_core](https://github.com/openresty/lua-nginx-module#lua_load_resty_core) directive. Note that the `resty.core` implementation is both safer and faster, but also required for complete ARM64 support.
+
+# Full Change logs
+
+Complete change logs since the last release candidate, [1.15.8.1 RC1](ann-1015008001rc1.html):
+
+* bugfix: win32/win64: the error log buffer size was merely 2048 bytes, and is now updated to 4096 bytes.
+* upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) to 0.10.15.
+    * feature: implemented the [lua_load_resty_core](https://github.com/openresty/lua-nginx-module#lua_load_resty_core) directive which loads `resty.core` by default. _Thanks Thibault Charbonnier for the patch._
+    * bugfix: [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme): fixed a segfault when [error_log](http://nginx.org/r/error_log) is configured with syslog. _Thanks spacewander for the patch._
+    * bugfix: [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme): cleared the pending event after aborting the uthread. _Thanks spacewander for the patch._
+* upgraded [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module#readme) to 0.0.7.
+    * feature: implemented the [lua_load_resty_core](https://github.com/openresty/lua-nginx-module#lua_load_resty_core) directive which loads `resty.core` by default. _Thanks Thibault Charbonnier for the patch._
+* upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core#readme) to 0.1.17.
+    * bugfix: regex: disabled PCRE JIT compilation and regex caching in [init_by_lua*](https://github.com/openresty/lua-nginx-module#init_by_lua) when running on macOS. _Thanks Datong Sun for the patch._
+    * bugfix: ensured `resty.core` can be loaded in [NGINX](https://openresty.org/en/nginx.html) < 1.11.7. _Thanks Thibault Charbonnier for the patch._
+    * bugfix: ensured `resty.core` can be loaded in binaries without PCRE support. _Thanks Thibault Charbonnier for the patch._
+    * optimize: removed redundant requires in `resty/core.lua`. _Thanks chronolaw for the patch._
+    * misc: updated calls to `error()` to be thrown from the user's stack level. _Thanks Thibault Charbonnier for the patch._
+    * bugfix: ensured `os.getenv()` can be localized before/after loading `resty.core`. _Thanks Thibault Charbonnier for the patch._
+    * bugfix: ndk: we should use the current request when the function is called. _Thanks spacewander for the patch._
+    * optimize: regex: improved heuristic enabling the PCRE `MAP_JIT` workaround. _Thanks Thibault Charbonnier for the patch._
+* upgraded [LuaJIT](https://github.com/openresty/luajit2) to 2.1-20190507.
+    * feature: luajit -bl: dump the constant tables (KGC and KN) for each Lua proto object as well.
+    * bugfix: fixed a segfault when unsinking 64-bit pointers. _Thanks Luke Gorrie and Thibault Charbonnier for the patch._
+    * bugfix: guarded the `jit_prngstate()` builtin with the `LJ_HAS_JIT` macro. _Thanks abhay1722 for the patch._
+* upgraded [resty-cli](https://github.com/openresty/resty-cli#readme) to 0.24.
+    * bugfix: nginx-xml2pod: ensured `<link>` tags contents are parsed. _Thanks Thibault Charbonnier for the patch._
+
+# Feedback
+
+Feedback on this version is always welcome. Feel free to create new [GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](community.html).
