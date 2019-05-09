@@ -8,13 +8,12 @@
 
 绝大部分组件已内置在OpenResty安装包中，但也有一部分不包含在内。
 
-标准 Lua 5.1 解释器、[Drizzle Nginx 模块](drizzle-nginx-module.html)、
+[Drizzle Nginx 模块](drizzle-nginx-module.html)、
 [Postgres Nginx 模块](postgres-nginx-module.html) 以及 [Iconv Nginx 模块](iconv-nginx-module.html) 默认并未启用。
-你需要分别加入`--with-lua51`、`--with-http_drizzle_module`、`--with-http_postgres_module` 和 `--with-http_iconv_module`
-编译选项来开启它们，其余各组件编译选项，可对照[安装OpenResty](installation.html) 说明，按需启用。不到万不得已，不推荐
-启用标准 Lua 5.1 解释器，而应尽量使用 LuaJIT 组件。
+你需要分别加入`--with-http_drizzle_module`、`--with-http_postgres_module` 和 `--with-http_iconv_module`
+编译选项来开启它们，其余各组件编译选项，可对照[安装OpenResty](installation.html) 说明，按需启用。
 
-在 1.5.8.1 版本之前, OpenResty 默认使用标准 Lua 5.1 解释器。所以对于老版本，
+在 OpenResty 1.5.8.1 版本之前, OpenResty 默认使用标准 Lua 5.1 解释器。所以对于老版本，
 你需要显式地加入`--with-luajit` 编译选项（1.5.8.1 以后的版本已默认开启）来启用 [LuaJIT](luajit.html) 组件。
 
 * [LuaJIT](luajit.html)
@@ -47,6 +46,9 @@
 * [LuaRestyUpstreamHealthcheckLibrary](lua-resty-upstream-healthcheck-library.html)
 * [LuaRestyWebSocketLibrary](lua-resty-web-socket-library.html)
 * [LuaRestyLimitTrafficLibrary](https://github.com/openresty/lua-resty-limit-traffic)
+* [LuaRestyShellLibrary](https://github.com/openresty/lua-resty-shell)
+* [LuaRestySignalLibrary](https://github.com/openresty/lua-resty-signal)
+* [LuaTablePoolLibrary](https://github.com/openresty/lua-tablepool)
 * [LuaUpstreamNginxModule](lua-upstream-nginx-module.html)
 * [OPM](https://github.com/openresty/opm#readme)
 * [PostgresNginxModule](postgres-nginx-module.html)
@@ -60,3 +62,6 @@
 * [StreamLuaNginxModule](https://github.com/openresty/stream-lua-nginx-module#readme)
 * [XssNginxModule](xss-nginx-module.html)
 
+由社区贡献的第三方 OpenResty 库可以在[opm.openresty.org](https://opm.openresty.org)
+网站上找到。它们可以很容易地通过 OpenResty 自带的 [opm](https://github.com/openresty/opm#readme)
+命令行工具来安装。
