@@ -750,7 +750,7 @@ times disagrees with itself.
 
 # Global/Static variables
 
-Definitions and declarations for local variables and top-level static variables
+Definitions and declarations for global and static variables and top-level static variables
 should put at least 2 spaces between the type declarator and the variable
 identifier part (including any leading `*` modifiers). Below are some examples:
 
