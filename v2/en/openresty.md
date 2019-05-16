@@ -4,10 +4,11 @@
     @created       2011-06-21 04:03 GMT
 --->
 
-***New!*** [OpenResty 1.15.8.1 RC2](ann-1015008001rc2.html) is now available for testing.
+***New!*** [OpenResty 1.15.8.1](ann-1015008001.html) is now released!
 
-OpenResty<sup>&reg;</sup> is a full-fledged web platform that integrates the standard
-[Nginx](nginx.html) core, [LuaJIT](luajit.html), many carefully written Lua
+OpenResty<sup>&reg;</sup> is a full-fledged web platform that integrates our
+enhanced version of the
+[Nginx](nginx.html) core, our enhanced version of [LuaJIT](https://github.com/openresty/luajit2), many carefully written Lua
 libraries, lots of high quality [3rd-party Nginx modules](components.html), and
 most of their external dependencies. It is designed to help developers easily
 build scalable web applications, web services, and dynamic web gateways.
@@ -32,12 +33,12 @@ run OpenResty<sup>&reg;</sup> also ranges from very big metals to embedded devic
 limited resources. It is not uncommon for our production users to serve billions
 of requests daily for millions of active users with just a handful of machines.
 
-OpenResty<sup>&reg;</sup> is *not* an [Nginx](nginx.html) fork. It is just a software bundle.
+OpenResty<sup>&reg;</sup> is *not* an [Nginx](nginx.html) fork. It is a higher
+level application and gateawy platform using Nginx as a component.
 Most of the patches applied to the [Nginx](nginx.html) core in OpenResty<sup>&reg;</sup> have
 already been submitted to the official [Nginx](nginx.html) team and most of
-the patches submitted have also been accepted. We are trying hard *not* to fork
-[Nginx](nginx.html) and always to use the latest best [Nginx](nginx.html) core
-from the official [Nginx](nginx.html) team.
+the patches submitted have also been accepted. We constantly import the latest
+features and bug fixes from the official [Nginx](nginx.html) team, the official LuaJIT repositorty, and other sources.
 
 See [Components](components.html) for the complete list of software bundled
 in OpenResty<sup>&reg;</sup>.

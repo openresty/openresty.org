@@ -1,0 +1,65 @@
+<!---
+    @title         OpenResty 1.15.8.1 Released
+    @creator       Yichun Zhang
+--->
+
+[% major_ver = "1.15.8"; version = major_ver _ ".1" %]
+We am happy to announce the new formal release, [% version %], of the
+OpenResty web platform based on NGINX and LuaJIT:
+
+The (portable) source code distribution, the Win32/Win64 binary
+distributions, and the pre-built binary Linux packages for Ubuntu,
+Debian, Fedora, CentOS, RHEL, Amazon Linux are provided on this
+[Download page](download.html).
+
+This is the first OpenResty release based on the nginx [% major_ver %] core.
+
+# Acknowledgment
+
+Special thanks go to all our developers, sponsors, and contributors! Also thanks Thibault Charbonnier
+for his great help in preparing this release.
+
+The highlights of this release candidate are:
+
+* Based on the very recent mainline [nginx](nginx.html) core [% major_ver %].
+* Support for ARM64 architectures. The underlying work for this feature
+allowed to speed up other architectures by up to ~10%.
+* We now load `resty.core` by default in ngx_lua and ngx_stream_lua. This behavior can be disabled with the new [lua_load_resty_core](https://github.com/openresty/lua-nginx-module#lua_load_resty_core) directive. Note that the `resty.core` implementation is both safer and faster, but also required for complete ARM64 support.
+* New [lua-resty-shell](https://github.com/openresty/lua-resty-shell#readme) library for efficiently spawning sub-processes via the
+new [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme) API.
+* New [lua-resty-signal](https://github.com/openresty/lua-resty-signal#readme) library for killing and sending signals to UNIX
+processes.
+* New [lua-tablepool](https://github.com/openresty/lua-tablepool#readme) library for efficiently recycling Lua tables.
+* We dropped support for the standard Lua 5.1 interpreter, and vividly
+recommend the use of OpenResty's fork of [LuaJIT](https://github.com/openresty/luajit2#readme).
+* [ngx_lua](https://github.com/openresty/lua-nginx-module#readme)
+    * New [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme) API which allows spawning sub-processes and communicating
+    with them in a non-blocking way.
+    * Support for connections backlog queuing in cosockets via the new pool_size
+    and backlog options of the [tcpsock:connect()](https://github.com/openresty/lua-nginx-module#tcpsockconnect) method.
+    * New [tcpsock:receiveany()](https://github.com/openresty/lua-nginx-module#tcpsockreceiveany) API for BSD-style receive.
+* [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module#readme) module
+    * New [reqsock:peek()](https://github.com/openresty/stream-lua-nginx-module#reqsockpeek) API for the [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module#readme) module, to peek into the
+    preread buffer without consuming the data.
+    * We enabled support for [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block) in the [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module#readme)
+    module.
+    * We enabled support for the FFI-based shdict API, [ngx.semaphore](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md#readme), and
+    [ngx.errlog](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#readme).
+* [LuaJIT](https://github.com/openresty/luajit2#readme)
+    * We now enable the GC64 mode of [LuaJIT](https://github.com/openresty/luajit2#readme) by default on x86_64
+    platforms.
+    * Implemented a new [table.isempty()](https://github.com/openresty/luajit2#tableisempty) API.
+    * Implemented a new [table.isarray()](https://github.com/openresty/luajit2#tableisarray) API.
+    * Implemented a new [table.nkeys()](https://github.com/openresty/luajit2#tablenkeys) API.
+
+    All our new Lua API functions documentation can be found here: https://github.com/openresty/luajit2#new-api
+
+# Full Change logs
+
+Complete change logs since the last (formal) release, 1.13.6.2, can be browsed
+in the page [Change Log for [% major_ver %].x](changelog-1015008.html).
+
+# Feedback
+
+Feedback on this release is more than welcome. Feel free to create new
+[GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](community.html).

@@ -78,6 +78,7 @@ while (<$in>) {
                   | lua_check_client_abort
                   | lua_shared_dict
                   | lua_sa_restart
+                  | lua_load_resty_core
                    ) ( (?: \( [^)]* \) )? ) ( [\s,.:;?)(] ) !
             my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
             my $anchor = gen_anchor($txt);
@@ -179,7 +180,7 @@ while (<$in>) {
 
     $c += s! (\s) ([Nn]ginx) ( [\s,.:;?] ) !$1\[$2](nginx.html)$3!gxsi;
     $c += s! (\s) (OpenResty \s+ Inc\.?) ( [\s,.:;?] ) !$1\[$2](https://openresty.com/)$3!gxsi;
-    $c += s! (\s) (LuaJIT) ( [\s,.:;?] ) !$1\[$2](https://github.com/openresty/luajit2#readme)$3!gxsi;
+    $c += s! (\s) (LuaJIT) ( [\s,.:;?] ) !$1\[$2](https://github.com/openresty/luajit2#readme)$3!gxs;
     print $out $_;
 }
 
