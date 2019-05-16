@@ -4,7 +4,7 @@
 --->
 
 [% major_ver = "1.15.8"; version = major_ver _ ".1" %]
-We am happy to announce the new formal release, [% version %], of the
+We are happy to announce the new formal release, [% version %], of the
 OpenResty web platform based on NGINX and LuaJIT:
 
 The (portable) source code distribution, the Win32/Win64 binary
