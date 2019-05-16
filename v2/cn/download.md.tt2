@@ -18,8 +18,7 @@ OpenResty<sup>&reg;</sup> 给常见 Linux 发布提供[官方预编译安装包]
 
 ## Windows
 
-所有版本都是用 Yichun Zhang 的 PGP 公钥
-[A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) 签发的。
+所有版本都是用 Yichun Zhang 的 PGP 公钥 `A0E98066` 签发的。
 
 [% ver = "1.15.8.1" -%]
 * 32 位 Windows: [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 12MB &nbsp;
@@ -45,8 +44,7 @@ brew untap homebrew/nginx
 
 # 源码发布
 
-所有版本都是用 Yichun Zhang 的 PGP 公钥
-[A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) 签发的。
+所有版本都是用 Yichun Zhang 的 PGP 公钥 `A0E98066` 签发的。
 
 你可以在下面下载源代码的 tar 包。然后可以参考[安装指导](installation.html)页面里头的步骤编译、安装之。
 

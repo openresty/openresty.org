@@ -20,8 +20,7 @@ installing package updates can be trivial.
 
 ## Windows
 
-All the releases are signed by the public PGP key
-[A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) of Yichun Zhang.
+All the releases are signed by the public PGP key `A0E98066` of Yichun Zhang.
 
 [% ver = "1.15.8.1" -%]
 * For 32-bit Windows: [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 12MB &nbsp;
@@ -47,8 +46,7 @@ brew untap homebrew/nginx
 
 # Source Code Releases
 
-All the releases are signed by the public PGP key
-[A0E98066](https://pgp.mit.edu/pks/lookup?op=get&search=0xB550E09EA0E98066) of Yichun Zhang.
+All the releases are signed by the public PGP key `A0E98066` of Yichun Zhang.
 
 You can download the source release tarballs below. After that, you can follow
 the instructions on the [Installation](installation.html) page to build and
