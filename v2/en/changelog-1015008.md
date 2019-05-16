@@ -127,7 +127,7 @@
 * upgraded [lua-resty-lrucache](https://github.com/openresty/lua-resty-lrucache#readme) to 0.09.
     * optimize: fixed misuses of Lua global variables in our Lua code (caught by the new version of the lj-releng tool).
 * upgraded [lua-resty-lock](https://github.com/openresty/lua-resty-lock#readme) to 0.08.
-    * bugfix: we now enforce the use of lua-resty-core's [resty.core.shdict](https://github.com/openresty/lua-resty-core/blob/master/lib/resty/core/shdict.md#readme) module to avoid dead locking with the CFunction-based shdict API in [ngx_lua](https://github.com/openresty/lua-nginx-module#readme).
+    * bugfix: we now enforce the use of lua-resty-core's resty.core.shdict module to avoid dead locking with the CFunction-based shdict API in [ngx_lua](https://github.com/openresty/lua-nginx-module#readme).
     * doc: made it clearer that we depend on [lua-resty-core](https://github.com/openresty/lua-resty-core#readme).
     * doc: documented the limitations of certain [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) execution contexts which prohibit yielding.
 * upgraded [lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic#readme) to 0.06.

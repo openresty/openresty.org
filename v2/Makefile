@@ -25,7 +25,8 @@ po_files = po/cn.po
 tsv_files = posts-en.tsv posts-cn.tsv
 tpage = tpage
 
-.DELETE_ON_ERRORS: $(templates_lua) $(patsubst %.md.tt2,%.md,$(wildcard en/*.md.tt2))
+.PRECIOUS: $(md_files)
+.DELETE_ON_ERRORS: $(templates_lua) $(patsubst %.md.tt2,%.md,$(wildcard en/*.md.tt2)) $(patsubst %.md.tt2,%.md,$(wildcard cn/*.md.tt2))
 
 .PHONY: all
 all: templates css msgfmt
