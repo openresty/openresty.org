@@ -19,6 +19,8 @@ This is the first OpenResty release based on the nginx [% major_ver %] core.
 Special thanks go to all our developers, sponsors, and contributors! Also thanks Thibault Charbonnier
 for his great help in preparing this release.
 
+# Version highlights
+
 The highlights of this release candidate are:
 
 * Based on the very recent mainline [nginx](nginx.html) core [% major_ver %].
@@ -59,7 +61,24 @@ recommend the use of OpenResty's fork of [LuaJIT](https://github.com/openresty/l
 Complete change logs since the last (formal) release, 1.13.6.2, can be browsed
 in the page [Change Log for [% major_ver %].x](changelog-1015008.html).
 
+# Testing
+
+We have run extensive testing on our Amazon EC2 test cluster and
+ensured that all the components (including the Nginx core) play well
+together. The latest test report can always be found here:
+
+https://qa.openresty.org/
+
+We also always run our OpenResty Edge commercial software based on the
+latest open source version of OpenResty in our own global CDN network
+(dubbed "mini CDN") powering our openresty.org and openresty.com
+websites. See https://openresty.com/ for more details.
+
+[Back to TOC](#table-of-contents)
+
 # Feedback
 
 Feedback on this release is more than welcome. Feel free to create new
 [GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](community.html).
+
+[Back to TOC](#table-of-contents)
