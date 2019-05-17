@@ -10,9 +10,9 @@
     版本            版本名         支持的体系结构
     14.04           Trusty          amd64, i386
     16.04           Xenial          amd64, i386
-    17.10           Artful          amd64, i386
     18.04           Bionic          amd64, i386
     18.10           Cosmic          amd64, i386
+    19.04           Disco           amd64, i386
 ```
 
 * Debian
