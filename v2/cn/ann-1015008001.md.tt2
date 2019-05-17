@@ -5,7 +5,9 @@
 
 [% major_ver = "1.15.8"; version = major_ver _ ".1" %]
 We are happy to announce the new formal release, [% version %], of the
-OpenResty web platform based on NGINX and LuaJIT:
+OpenResty web platform based on NGINX and LuaJIT.
+
+[Download this version here](download.html).
 
 The (portable) source code distribution, the Win32/Win64 binary
 distributions, and the pre-built binary Linux packages for Ubuntu,
