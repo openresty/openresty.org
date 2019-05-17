@@ -51,7 +51,7 @@ recommend the use of OpenResty's fork of [LuaJIT](https://github.com/openresty/l
     [ngx.errlog](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#readme).
 * [LuaJIT](https://github.com/openresty/luajit2#readme)
     * We now enable the GC64 mode of [LuaJIT](https://github.com/openresty/luajit2#readme) by default on x86_64
-    platforms.
+    platforms. The 2G GC-managed memory limit is now gone by default on x86_64 (the new limit is 128 TB).
     * Implemented a new [table.isempty()](https://github.com/openresty/luajit2#tableisempty) API.
     * Implemented a new [table.isarray()](https://github.com/openresty/luajit2#tableisarray) API.
     * Implemented a new [table.nkeys()](https://github.com/openresty/luajit2#tablenkeys) API.
