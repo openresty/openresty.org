@@ -19,7 +19,6 @@
 
 ```
     版本           版本名        支持的体系结构
-    7.x             Wheezy          amd64
     8.x             Jessie          amd64
     9.x             Stretch         amd64
 ```
