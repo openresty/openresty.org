@@ -26,7 +26,7 @@ for his great help in preparing this release.
 The highlights of this release candidate are:
 
 * Based on the very recent mainline [nginx](nginx.html) core [% major_ver %].
-* Support for ARM64 architectures. The underlying work for this feature
+* Support for ARM64 (Aarch64) architectures. The underlying work for this feature
 allowed to speed up other architectures by up to ~10%.
 * We now load `resty.core` by default in ngx_lua and ngx_stream_lua. This behavior can be disabled with the new [lua_load_resty_core](https://github.com/openresty/lua-nginx-module#lua_load_resty_core) directive. Note that the `resty.core` implementation is both safer and faster, but also required for complete ARM64 support.
 * New [lua-resty-shell](https://github.com/openresty/lua-resty-shell#readme) library for efficiently spawning sub-processes via the
