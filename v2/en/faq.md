@@ -266,6 +266,15 @@ by the community. To name a few:
 * Brian Akins' [lua-resty-http-simple](https://github.com/bakins/lua-resty-http-simple)
 * James Hurst's [lua-resty-http](https://github.com/pintsized/lua-resty-http)
 
+When install the OpenResty on Amazon(AWS) EC2 Linux seeing the follow error:
+https://openresty.org/package/amazon/2/x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 404 - Not Found
+-----------------------------------------------------------
+
+please see the follow article:
+
+[Resolve the Amazon(AWS) EC2 Linux OpenResty Install with repomd.xml return 404 error](https://www.fcblog.top/articles/2018/09/09/1536494224619.html)
+
+
 Contributing to this FAQ
 =========================
 
