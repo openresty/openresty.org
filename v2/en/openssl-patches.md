@@ -4,8 +4,11 @@
 --->
 
 If you are using OpenSSL 1.1.0 or older, then to support yielding operations
-in nginx lua module's [ssl_session_fetch_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_session_fetch_by_lua_block)
-directive, you need to use OpenResty's own
+in nginx lua module's
+[ssl_session_fetch_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_session_fetch_by_lua_block)
+and [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block)
+directives,
+you need to use OpenResty's own
 `openresty-openssl` [RPM/DEB packages](linux-packages.html) or just apply our
 OpenSSL patches to the official OpenSSL source trees and build from source.
 
