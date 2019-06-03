@@ -4,7 +4,8 @@
 --->
 
 If you are using OpenSSL 1.1.1 or later, then you need to apply our NGINX core patches
-to support yielding operations in OpenResty's `ssl_session_fetch_by_lua*` directive.
+to support yielding operations in OpenResty's [ssl_session_fetch_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_session_fetch_by_lua_block)
+directive.
 OpenResty releases after 1.15.8.1 already has this patch by default. If you are building
 your own Nginx with OpenResty's lua modules, then you will have to apply the patch yourself:
 
