@@ -15,8 +15,8 @@ to avoid all such troubles.
 OpenSSL 1.1.1 or later
 ----------------------
 
-You do *not* need to apply any patches to OpenSSL 1.1.1 or later. They do work out of the box. But
-keep in mind, you still need to apply [Nginx core patches]() if you are *not* using OpenResty.
+You do *not* need to apply any patches to OpenSSL 1.1.1 or later. They *do* work out of the box. But
+keep in mind, you still need to apply [Nginx core patches](nginx-ssl-patches.html) if you are *not* using OpenResty.
 
 OpenSSL 1.1.0 series
 --------------------
@@ -25,7 +25,11 @@ For OpenSSL 1.1.0c or earlier, apply [this patch](https://raw.githubusercontent.
 
 For OpenSSL 1.1.0d or later, apply [this patch](https://raw.githubusercontent.com/openresty/openresty/master/patches/openssl-1.1.0d-sess_set_get_cb_yield.patch)
 
+Note that you also need to apply [Nginx core patches](nginx-ssl-patches.html) if you are *not* using OpenResty.
+
 OpenSSL 1.0.2 series
 --------------------
 
 Apply [this patch](https://raw.githubusercontent.com/openresty/openresty/master/patches/openssl-1.0.2h-sess_set_get_cb_yield.patch).
+
+Note that you also need to apply [Nginx core patches](nginx-ssl-patches.html) if you are *not* using OpenResty.
