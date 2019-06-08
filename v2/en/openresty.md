@@ -34,11 +34,11 @@ limited resources. It is not uncommon for our production users to serve billions
 of requests daily for millions of active users with just a handful of machines.
 
 OpenResty<sup>&reg;</sup> is *not* an [Nginx](nginx.html) fork. It is a higher
-level application and gateawy platform using Nginx as a component.
+level application and gateway platform using Nginx as a component.
 Most of the patches applied to the [Nginx](nginx.html) core in OpenResty<sup>&reg;</sup> have
 already been submitted to the official [Nginx](nginx.html) team and most of
 the patches submitted have also been accepted. We constantly import the latest
-features and bug fixes from the official [Nginx](nginx.html) team, the official LuaJIT repositorty, and other sources.
+features and bug fixes from the official [Nginx](nginx.html) team, the official LuaJIT repository, and other sources.
 
 See [Components](components.html) for the complete list of software bundled
 in OpenResty<sup>&reg;</sup>.
