@@ -97,7 +97,7 @@ $(tsv_files): $(html_files) $(txt_files) $(gendata_pl)
 
 .PHONY: initdb
 initdb: $(tsv_files)
-	psql -Uopenresty openresty_org -f init.sql
+	psql -Uopenresty openresty_org -v "ON_ERROR_STOP=1" -f init.sql
 
 .PHONY: deploy
 deploy:
