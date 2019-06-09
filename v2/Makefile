@@ -102,7 +102,7 @@ initdb: $(tsv_files)
 .PHONY: deploy
 deploy:
 	ls $(tsv_files)
-	psql -Uopenresty openresty_org -f init.sql
+	psql -Uopenresty openresty_org -v "ON_ERROR_STOP=1" -f init.sql
 
 .PHONY: msginit
 msginit: $(po_files)
