@@ -2,7 +2,7 @@
     @title         OpenResty Deb 安装包
 --->
 
-OpenResty 官方 APT 资源库提供下面的 deb 包 (适用于 Ubuntu 和 Debian)。
+OpenResty 官方 [APT 包仓库](linux-packages.html)提供下面的 deb 包 (适用于 Ubuntu 和 Debian)。
 
 # openresty
 
