@@ -28,7 +28,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 ```
     Version         Supported Architectures
     6.x             x86_64
-    7.x             x86_64
+    7.x             x86_64, aarch64 (arm64)
 ```
 
 * Red Hat Enterprise Linux (RHEL)
