@@ -3,23 +3,23 @@
     @creator       Yichun Zhang
 --->
 
-If you are using OpenSSL 1.1.0 or older, then to support yielding operations
-in nginx lua module's
+If your are not using the OpenResty `openresty-openssl` [RPM/DEB
+packages](linux-packages.html), you must apply our OpenSSL patches to the
+OpenSSL source tree before building it in order to support yielding operations
+in
 [ssl_session_fetch_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_session_fetch_by_lua_block)
-and [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block)
-directives,
-you need to use OpenResty's own
-`openresty-openssl` [RPM/DEB packages](linux-packages.html) or just apply our
-OpenSSL patches to the official OpenSSL source trees and build from source.
+and
+[ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block).
 
-It is highly recommended to use OpenResty and OpenResty's official [pre-built binary packages](download.html)
-to avoid all such troubles.
+Our `openresty-openssl` pre-built packages already include these patches.
 
-OpenSSL 1.1.1 or later
-----------------------
+Additionally, if you are not using an official OpenResty release, you must also
+apply our [NGINX core patches](nginx-ssl-patches.html) yourself.
 
-You do *not* need to apply any patches to OpenSSL 1.1.1 or later. They *do* work out of the box. But
-keep in mind, you still need to apply [Nginx core patches](nginx-ssl-patches.html) if you are *not* using OpenResty.
+OpenSSL 1.1.1 series
+--------------------
+
+For OpenSSL 1.1.1c or later, apply [this patch](https://raw.githubusercontent.com/openresty/openresty/master/patches/openssl-1.1.1c-sess_set_get_cb_yield.patch)
 
 OpenSSL 1.1.0 series
 --------------------
