@@ -4,6 +4,10 @@
     @created       2018-11-14 01:32 GMT
 --->
 
+# Version 1.15.8.2 - 14 August 2019
+
+* bugfix: applied the [nginx](nginx.html) core patch for new HTTP/2 security advisories (CVE-2019-9511 CVE-2019-9513 CVE-2019-9516).
+
 # Version 1.15.8.1 - 16 May 2019
 
 * upgraded the [nginx](nginx.html) core to 1.15.8.

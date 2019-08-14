@@ -16,7 +16,7 @@ Debian, Fedora, CentOS, RHEL, Amazon Linux are provided on this
 
 This is the first OpenResty release based on the nginx [% major_ver %] core.
 
-# Acknowledgment
+# Acknowledgments
 
 Special thanks go to all our developers, sponsors, and contributors! Also thanks Thibault Charbonnier
 for his great help in preparing this release.
@@ -76,11 +76,7 @@ latest open source version of OpenResty in our own global CDN network
 (dubbed "mini CDN") powering our openresty.org and openresty.com
 websites. See https://openresty.com/ for more details.
 
-[Back to TOC](#table-of-contents)
-
 # Feedback
 
 Feedback on this release is more than welcome. Feel free to create new
 [GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](community.html).
-
-[Back to TOC](#table-of-contents)
