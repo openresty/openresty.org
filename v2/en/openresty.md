@@ -4,7 +4,7 @@
     @created       2011-06-21 04:03 GMT
 --->
 
-***New!*** [OpenResty 1.15.8.1](ann-1015008001.html) is now released!
+***New!*** [OpenResty 1.15.8.2](ann-1015008002.html) security release available!
 
 OpenResty<sup>&reg;</sup> is a full-fledged web platform that integrates our
 enhanced version of the
