@@ -22,7 +22,7 @@ need to explicitly specify the `--with-luajit` option (which is the default for
 1.5.8.1+) to use [LuaJIT](luajit.html) 2.x.
 
 Since the 1.15.8.1 release, the standard Lua 5.1 interpreter is not supported
-anymore. It is recommended to use [OpenResty's branch of
+anymore. It is vividly recommended to use [OpenResty's branch of
 LuaJIT](https://github.com/openresty/luajit2) (already bundled and enabled by
 default in [OpenResty](openresty.html) releases since 1.5.8.1). This fork is
 regularly synchronized with the upstream LuaJIT repository, receives timely
