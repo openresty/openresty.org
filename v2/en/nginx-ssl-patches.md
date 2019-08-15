@@ -17,8 +17,6 @@ Additionally, if you are not using the OpenResty `openresty-openssl` [RPM/DEB
 packages](linux-packages.html), you must also apply our [OpenSSL
 patches](openssl-patches.html) to support these directives.
 
-Our `openresty-openssl` pre-built packages already include these patches.
-
 Nginx 1.17.x series
 -------------------
 
