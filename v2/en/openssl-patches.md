@@ -19,20 +19,16 @@ apply our [NGINX core patches](nginx-ssl-patches.html) yourself.
 OpenSSL 1.1.1 series
 --------------------
 
-For OpenSSL 1.1.1c or later, apply [this patch](https://raw.githubusercontent.com/openresty/openresty/master/patches/openssl-1.1.1c-sess_set_get_cb_yield.patch)
+For OpenSSL 1.1.1c or later, apply [this patch](https://raw.githubusercontent.com/openresty/openresty/master/patches/openssl-1.1.1c-sess_set_get_cb_yield.patch).
 
 OpenSSL 1.1.0 series
 --------------------
 
-For OpenSSL 1.1.0c or earlier, apply [this patch](https://raw.githubusercontent.com/openresty/openresty/master/patches/openssl-1.1.0c-sess_set_get_cb_yield.patch)
+For OpenSSL 1.1.0c or earlier, apply [this patch](https://raw.githubusercontent.com/openresty/openresty/master/patches/openssl-1.1.0c-sess_set_get_cb_yield.patch).
 
-For OpenSSL 1.1.0d or later, apply [this patch](https://raw.githubusercontent.com/openresty/openresty/master/patches/openssl-1.1.0d-sess_set_get_cb_yield.patch)
-
-Note that you also need to apply [Nginx core patches](nginx-ssl-patches.html) if you are *not* using OpenResty.
+For OpenSSL 1.1.0d or later, apply [this patch](https://raw.githubusercontent.com/openresty/openresty/master/patches/openssl-1.1.0d-sess_set_get_cb_yield.patch).
 
 OpenSSL 1.0.2 series
 --------------------
 
-Apply [this patch](https://raw.githubusercontent.com/openresty/openresty/master/patches/openssl-1.0.2h-sess_set_get_cb_yield.patch).
-
-Note that you also need to apply [Nginx core patches](nginx-ssl-patches.html) if you are *not* using OpenResty.
+For OpenSSL 1.0.2, apply [this patch](https://raw.githubusercontent.com/openresty/openresty/master/patches/openssl-1.0.2h-sess_set_get_cb_yield.patch).
