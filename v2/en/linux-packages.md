@@ -159,47 +159,6 @@ sudo apt-get install --no-install-recommends openresty
 See the [OpenResty Deb Packages](deb-packages.html) page for more details on all available packages in this
 repository.
 
-## Debian Wheezy
-
-You can add the `openresty` repository to your Deian Wheezy system so as to easily install
-our packages and receive updates in the future (via the `apt-get update` command). To add the repository, just
-run the following commands (only need to run once for each system):
-
-```bash
-# import our GPG key:
-wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
-
-# for installing the add-apt-repository command
-# (you can remove this package and its dependencies later):
-sudo apt-get -y install python-software-properties
-
-# enable the wheezy-backports repository:
-sudo add-apt-repository -y "deb http://ftp.debian.org/debian wheezy-backports main"
-
-# add the our official APT repository:
-sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
-
-# to update the APT index:
-sudo apt-get update
-```
-
-Then you can install a package, say, `openresty`, like this:
-
-```bash
-sudo apt-get install openresty
-```
-
-This package also recommends the `openresty-opm` and `openresty-restydoc` packages so the latter two will
-also automatically get installed by default. If that is not what you want, you can disable the automatic
-installation of recommended packages like this:
-
-```bash
-sudo apt-get install --no-install-recommends openresty
-```
-
-See the [OpenResty Deb Packages](deb-packages.html) page for more details on all available packages in this
-repository.
-
 # CentOS
 
 You can add the `openresty` repository to your CentOS system so as to easily install

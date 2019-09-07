@@ -130,44 +130,6 @@ sudo apt-get install --no-install-recommends openresty
 
 参阅 [OpenResty Deb 包](deb-packages.html) 页面获取这个仓库里头更多可用包的信息。
 
-## Debian Wheezy
-
-你可以在你的 Debian 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `apt-get update` 命令）。
-运行下面的命令就可以添加我们的仓库（每个系统只需要运行一次）：
-
-```bash
-# 导入我们 GPG 密钥：
-wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
-
-# 安装 add-apt-repository 命令：
-# （之后你可以删除这个包以及对应的关联包）
-sudo apt-get -y install python-software-properties
-
-# 打开 wheezy-backports 仓库：
-sudo add-apt-repository -y "deb http://ftp.debian.org/debian wheezy-backports main"
-
-# 添加我们官方 APT 仓库
-sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
-
-# 更新 APT 索引：
-sudo apt-get update
-```
-
-然后就可以像下面这样安装包了，比如装 `openresty`：
-
-```bash
-sudo apt-get install openresty
-```
-
-这个包同时也推荐安装 `openresty-opm` 和 `openresty-restydoc` 包，所以后面两个包会缺省安装上。
-如果你不想自动关联安装，可以用下面方法关闭自动关联安装：
-
-```bash
-sudo apt-get install --no-install-recommends openresty
-```
-
-参阅 [OpenResty Deb 包](deb-packages.html) 页面获取这个仓库里头更多可用包的信息。
-
 # CentOS
 
 你可以在你的 CentOS 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum update` 命令）。运行下面的命令就可以添加我们的仓库：
