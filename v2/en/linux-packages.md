@@ -8,11 +8,11 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Codename        Supported Architectures
-    14.04           Trusty          amd64, i386
-    16.04           Xenial          amd64, i386
-    18.04           Bionic          amd64, i386
-    18.10           Cosmic          amd64, i386
-    19.04           Disco           amd64, i386
+    14.04           Trusty          amd64
+    16.04           Xenial          amd64
+    18.04           Bionic          amd64
+    18.10           Cosmic          amd64
+    19.04           Disco           amd64
 ```
 
 * Debian
@@ -21,6 +21,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     Version         Codename        Supported Architectures
     8.x             Jessie          amd64
     9.x             Stretch         amd64
+    10.x            Buster          amd64
 ```
 
 * CentOS
@@ -37,21 +38,30 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     Version         Supported Architectures
     6.x             x86_64
     7.x             x86_64
+    8.x             x86_64
 ```
 
 * Fedora
 
 ```
     Version         Supported Architectures
-    28              x86_64
     29              x86_64
+    30              x86_64
 ```
 
 * Amazon Linux
 
 ```
     Version         Supported Architectures
-    2018.03         x86_64
+    1 (2018.03)     x86_64
+    2               x86_64
+```
+
+* OpenSUSE Leap
+
+```
+    Version         Supported Architectures
+    15.1            x86_64
 ```
 
 All our repositories' metadata (and rpm binary packages) are signed by the following GPG key, `0xD5EDEB74`:
@@ -79,12 +89,15 @@ our packages and receive updates in the future (via the `apt-get update` command
 run the following commands (only need to run once for each system):
 
 ```bash
+# install some prerequisites needed by adding GPG public keys (could be removed later)
+sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
+
 # import our GPG key:
-wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
 # for installing the add-apt-repository command
 # (you can remove this package and its dependencies later):
-sudo apt-get -y install software-properties-common
+sudo apt-get -y install --no-install-recommends software-properties-common
 
 # add the our official APT repository:
 sudo add-apt-repository -y "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main"
@@ -96,7 +109,7 @@ sudo apt-get update
 Then you can install a package, say, `openresty`, like this:
 
 ```bash
-sudo apt-get install openresty
+sudo apt-get -y install openresty
 ```
 
 This package also recommends the `openresty-opm` and `openresty-restydoc` packages so the latter two will
@@ -104,7 +117,7 @@ also automatically get installed by default. If that is not what you want, you c
 installation of recommended packages like this:
 
 ```bash
-sudo apt-get install --no-install-recommends openresty
+sudo apt-get -y install --no-install-recommends openresty
 ```
 
 See the [OpenResty Deb Packages](deb-packages.html) page for more details on all available packages in this
@@ -121,19 +134,20 @@ sudo systemctl stop nginx
 
 Otherwise the installation might fail.
 
-## Debian Jessie or Later
-
 You can add the `openresty` repository to your Debian system so as to easily install
 our packages and receive updates in the future (via the `apt-get update` command). To add the repository, just
 run the following commands (only need to run once for each system):
 
 ```bash
+# install some prerequisites needed by adding GPG public keys (could be removed later)
+sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
+
 # import our GPG key:
-wget -qO - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
 # for installing the add-apt-repository command
 # (you can remove this package and its dependencies later):
-sudo apt-get -y install software-properties-common
+sudo apt-get -y install --no-install-recommends software-properties-common
 
 # add the our official APT repository:
 sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
@@ -145,7 +159,7 @@ sudo apt-get update
 Then you can install a package, say, `openresty`, like this:
 
 ```bash
-sudo apt-get install openresty
+sudo apt-get -y install openresty
 ```
 
 This package also recommends the `openresty-opm` and `openresty-restydoc` packages so the latter two will
@@ -153,7 +167,7 @@ also automatically get installed by default. If that is not what you want, you c
 installation of recommended packages like this:
 
 ```bash
-sudo apt-get install --no-install-recommends openresty
+sudo apt-get -y install --no-install-recommends openresty
 ```
 
 See the [OpenResty Deb Packages](deb-packages.html) page for more details on all available packages in this
@@ -200,7 +214,7 @@ our packages and receive updates in the future (via the `yum update` command). T
 run the following commands:
 
 ```bash
-sudo yum install yum-utils
+sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://openresty.org/package/rhel/openresty.repo
 ```
 
@@ -239,29 +253,52 @@ To list all the packages in the `openresty` repository:
 sudo yum --disablerepo="*" --enablerepo="openresty" list available
 ```
 
+Some packages in this repository, like `perl-Test-Nginx` and `perl-Lemplate` do require
+some extra optional RHEL official repositories to be enabled.
+On RHEL 7 and 6, you need to enable the "optional" rpm repository, for example, for RHEL 7:
+
+```bash
+sudo subscription-manager repos --enable rhel-7-server-optional-rpms
+```
+
+and for RHEL 6:
+
+```bash
+sudo subscription-manager repos --enable rhel-6-server-optional-rpms
+```
+
+And for RHEL 8, you need to enable the "CodeReady" Linux Builder repository like this:
+
+```bash
+sudo subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+```
+
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
+
+Please note that the `perl-Lemplate` RPM package is currently unvailable on RHEL 8 since its official repositories
+removes some dependency Perl module packages like `perl-Template-Toolkit` (as compared to RHEL 7).
 
 # Fedora
 
 You can enable the `openresty` repository on your Fedora system like this:
 
 ```bash
-sudo dnf install dnf-plugins-core
+sudo dnf install -y dnf-plugins-core
 sudo dnf config-manager --add-repo https://openresty.org/package/fedora/openresty.repo
 ```
 
 Then you can easily install packages from the `openresty-openresty` repository and receive updates
-in the future (through the `dnf update` command). For example, to install the `openresty` package, we can just run the
+in the future (through the `dnf check-update` command). For example, to install the `openresty` package, we can just run the
 following command:
 
 ```bash
-sudo dnf install openresty
+sudo dnf install -y openresty
 ```
 
 If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
 
 ```bash
-sudo dnf install openresty-resty
+sudo dnf install -y openresty-resty
 ```
 
 The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
@@ -280,20 +317,20 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on the
 You can enable the `openresty` repository on your Amazon Linux system like this:
 
 ```bash
-sudo yum install yum-utils
+sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://openresty.org/package/amazon/openresty.repo
 ```
 
 Then you can install a package, say, `openresty`, like this:
 
 ```bash
-sudo yum install openresty
+sudo yum install -y openresty
 ```
 
 If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
 
 ```bash
-sudo yum install openresty-resty
+sudo yum install -y openresty-resty
 ```
 
 The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
@@ -307,11 +344,48 @@ sudo yum --disablerepo="*" --enablerepo="openresty" list available
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
 
+Please note that the `*-asan` RPM packages are currently unavailable for Amazon Linux 2 due to a bug in Amazon Linux's
+official clang packages (missing the `libclang_rt.a` library file).
+
+# OpenSUSE Leap
+
+You can enable the `openresty` repository on your OpenSUSE Leap system like below:
+
+```bash
+sudo zypper ar -g --refresh --check https://openresty.org/package/opensuse/openresty.repo
+```
+
+Then you can install a package, say, `openresty`, like this:
+
+```bash
+sudo zypper install -y openresty
+```
+
+If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
+
+```bash
+sudo zypper install -y openresty-resty
+```
+
+The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
+`openresty-doc` package.
+
+To list all the packages in the `openresty` repository:
+
+```bash
+sudo zypper pa -r openresty
+```
+
+Note that we currently do not provide separate `*-debuginfo` packages in this repository for OpenSUSE Leap. Instead, the
+binaries directly contain the DWARF symbols and are not stripped.
+
+See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
+
 # Support for More Linux Distributions
 
-We welcome community contributions of packaging sources targeting more Linux distributions like OpenSUSE, SLES, Arch Linux, and Slackware.
+We welcome community contributions of packaging sources targeting more Linux distributions like Gentoo, SLES, Arch, Slackware, and Oracle Linux.
 Please ensure the resulting packages resemble our existing [RPM Packages](rpm-packages.html)
-wherever possible. Thank you very much!
+wherever possible. Thank you!
 
 # Packages for Non-Linux systems
 
