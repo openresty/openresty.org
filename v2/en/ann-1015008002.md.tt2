@@ -74,3 +74,9 @@ websites. See https://openresty.com/ for more details.
 Feedback on this release is more than welcome. Feel free to create new [GitHub
 issues](https://github.com/openresty/openresty/issues) or send emails to one of
 our [mailing lists](community.html).
+
+# The Next Release
+
+The next release will be based on the nginx 1.17.x core and is already near the
+corner. We have been working hard on this next release for several months now.
+Stay tuned!
