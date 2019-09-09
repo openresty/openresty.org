@@ -20,6 +20,6 @@ fi
 outfile=email.md
 printf "Hi folks!\n\n" > $outfile || exit 1
 cat $infile >> $outfile || exit 1
-printf "\nBest regards,\n$name\n" >> $outfile || exit 1
+printf "\nBest regards,\n\n$name\n" >> $outfile || exit 1
 
 exec md2pod.pl $outfile | pod2text -u -i 1 -w 69 --nourls -
