@@ -16,13 +16,13 @@ my ($out, $outfile) = tempfile("mdXXXXXXX", TMPDIR => 1);
 
 my $c = 0;
 while (<$in>) {
-    $c += s! (\s) (balancer|ssl_certificate|ssl_session_(?:fetch|store))_by_lua(_block|\*) ( [\s,.:;?] )
-           !$1\[${2}_by_lua${3}](https://github.com/openresty/lua-nginx-module#${2}_by_lua_block)$4!xgs;
+    $c += s! (\s) (set|balancer|ssl_certificate|ssl_session_(?:fetch|store))_by_lua(_block|_file|\*) ( [\s,.:;?] )
+           !$1\[${2}_by_lua${3}](https://github.com/openresty/lua-nginx-module#${2}_by_lua${3})$4!xgs;
 
     $c += s! (\s) set_(md5|quote_pgsql_str) ( [\s,.:;?] )
            !$1\[set_$2](https://github.com/openresty/set-misc-nginx-module#set_$2)$3!xgs;
 
-    $c += s! (\s) (init(?:_worker)?|content|rewrite|access|log|(?:header|body)_filter)_by_lua\*
+    $c += s! (\s) (init(?:_worker)?|set|content|rewrite|access|log|(?:header|body)_filter)_by_lua\*
              ( [\s,.:;?] )
            !$1\[${2}_by_lua*](https://github.com/openresty/lua-nginx-module#${2}_by_lua)$3!xgs;
 

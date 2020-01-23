@@ -4,9 +4,9 @@
     @created       2011-06-21 04:03 GMT
 --->
 
-***最新！*** 新博客文章[OpenResty 和 Nginx 如何分配和管理内存](https://blog.openresty.com.cn/cn/how-or-alloc-mem/) 已发布。
+***最新！*** [OpenResty 1.17.8.1 RC1](ann-1017008001rc1.html) 已经发布供测试。
 
-***最新！*** [OpenResty 1.15.8.2](ann-1015008002.html) 已经发布！
+***最新！*** 新博客文章[OpenResty 和 Nginx 如何分配和管理内存](https://blog.openresty.com.cn/cn/how-or-alloc-mem/) 已发布。
 
 OpenResty<sup>&reg;</sup> 是一个基于 [Nginx](nginx.html) 与 Lua 的高性能 Web 平台，其内部集成了大量精良的
 Lua 库、第三方模块以及大多数的依赖项。用于方便地搭建能够处理超高并发、扩展性极高的动态
