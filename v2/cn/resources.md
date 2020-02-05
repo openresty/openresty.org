@@ -2,14 +2,19 @@
     @title         Resources
     @creator       Yichun Zhang
     @created       2011-10-24 05:51 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2012-12-11 19:53 GMT
-    @changes       11
 --->
 
 
 #  English Articles
+
+* OpenResty 和 Nginx 如何分配和管理内存
+
+    https://blog.openresty.com.cn/cn/how-or-alloc-mem/
+
+* LuaJIT GC64 模式
+
+    https://blog.openresty.com.cn/cn/luajit-gc64-mode/
+
 * Pushing [Nginx](nginx.html) to its limit with Lua
 
      http://blog.cloudflare.com/pushing-nginx-to-its-limit-with-lua

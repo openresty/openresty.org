@@ -2,14 +2,18 @@
     @title         Resources
     @creator       Yichun Zhang
     @created       2011-10-24 05:51 GMT
-    @modifier      Yichun Zhang
-    @modifier_link yichun-zhang
-    @modified      2015-12-27 05:46 GMT
-    @changes       41
 --->
 
 
 #  English Articles
+
+* How OpenResty and Nginx Allocate and Manage Memory
+
+    https://blog.openresty.com/en/how-or-alloc-mem/
+
+* The LuaJIT GC64 Mode
+
+    https://blog.openresty.com/en/luajit-gc64-mode/
 
 * An Introduction To OpenResty (nginx + lua) - Part 1, by Karl Seguin
 
