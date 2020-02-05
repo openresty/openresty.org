@@ -4,7 +4,9 @@
     @created       2011-06-21 04:03 GMT
 --->
 
-***New!*** [OpenResty 1.15.8.2](ann-1015008002.html) security release available!
+***New!*** New blog post "[How OpenResty and Nginx Allocate and Manage Memory](https://blog.openresty.com/en/how-or-alloc-mem/)" is published.
+
+***New!*** [OpenResty 1.15.8.2](ann-1015008002.html) is now released.
 
 OpenResty<sup>&reg;</sup> is a full-fledged web platform that integrates our
 enhanced version of the
