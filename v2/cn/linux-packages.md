@@ -13,6 +13,7 @@
     18.04           Bionic          amd64
     18.10           Cosmic          amd64
     19.04           Disco           amd64
+    19.10           Eoan            amd64
 ```
 
 * Debian
@@ -30,6 +31,7 @@
     版本号         支持的体系结构
     6.x             x86_64
     7.x             x86_64, aarch64 (arm64)
+    8.x             x86_64
 ```
 
 * Red Hat 企业版 Linux (RHEL)
@@ -45,8 +47,10 @@
 
 ```
     版本号          支持的体系结构
+    28              x86_64
     29              x86_64
     30              x86_64
+    31              x86_64
 ```
 
 * Amazon Linux

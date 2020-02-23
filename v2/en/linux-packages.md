@@ -13,6 +13,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     18.04           Bionic          amd64
     18.10           Cosmic          amd64
     19.04           Disco           amd64
+    19.10           Eoan            amd64
 ```
 
 * Debian
@@ -30,6 +31,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     Version         Supported Architectures
     6.x             x86_64
     7.x             x86_64, aarch64 (arm64)
+    8.x             x86_64
 ```
 
 * Red Hat Enterprise Linux (RHEL)
@@ -45,8 +47,10 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Supported Architectures
+    28              x86_64
     29              x86_64
     30              x86_64
+    31              x86_64
 ```
 
 * Amazon Linux
