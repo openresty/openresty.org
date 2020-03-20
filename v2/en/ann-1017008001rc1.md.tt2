@@ -1,4 +1,5 @@
 [% VER = "1.17.8.1"; RC = 1 -%]
+[% major_ver = '1.17.8' -%]
 <!---
     @title         OpenResty [% VER %] RC[% RC %] is out
 --->
