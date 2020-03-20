@@ -4,6 +4,8 @@
     @created       2011-06-21 04:03 GMT
 --->
 
+***New!*** [OpenResty 1.15.8.3](download.html) formal version is now released!
+
 ***New!*** [OpenResty 1.17.8.1 RC1](ann-1017008001rc1.html) is available for testing!
 
 ***New!*** New blog post "[How OpenResty and Nginx Allocate and Manage Memory](https://blog.openresty.com/en/how-or-alloc-mem/)" is published.
