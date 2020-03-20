@@ -4,6 +4,13 @@
     @created       2018-11-14 01:32 GMT
 --->
 
+# Version 1.15.8.3 - 20 March 2020
+
+* Applied the safe_map_uri_to_path patch to the 1.15.8 version of the [nginx](nginx.html) core.
+* Applied the init_cycle_pool_release patch to the 1.15.8 version of the [nginx](nginx.html) core.
+* [ngx_lua](https://github.com/openresty/lua-nginx-module#readme)
+    * bugfix: ensured arguments of APIs mutating URI or request/response headers do not contain unsafe characters. _Thanks Dejiang Zhu for the patch._ 
+
 # Version 1.15.8.2 - 8 September 2019
 
 * bugfix: applied the [nginx](nginx.html) core patch for new HTTP/2 security advisories (CVE-2019-9511 CVE-2019-9513 CVE-2019-9516).
