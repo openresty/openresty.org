@@ -4,6 +4,10 @@
     @created       2011-06-21 04:40 GMT
 --->
 
+***最新！*** [OpenResty 1.17.8.1 RC1](ann-1017008001rc1.html) 已经发布供测试。
+
+***最新！*** 新博客文章[OpenResty 和 Nginx 如何分配和管理内存](https://blog.openresty.com.cn/cn/how-or-alloc-mem/) 已发布。
+
 对于一些常见的 Linux 发行版本，OpenResty<sup>&reg;</sup> 提供 [官方预编译包](linux-packages.html)。确保你首先用这种方式来安装。
 
 对于 Mac OS X 或 macOS 用户，强烈推荐您使用 [homebrew](https://brew.sh/) 包管理工具安装 OpenResty。可以直接使用下面

@@ -4,6 +4,10 @@
     @created       2011-06-21 04:40 GMT
 --->
 
+***New!*** [OpenResty 1.17.8.1 RC1](ann-1017008001rc1.html) is now available for testing!
+
+***New!*** New blog post "[How OpenResty and Nginx Allocate and Manage Memory](https://blog.openresty.com/en/how-or-alloc-mem/)" is published.
+
 # Binary Packages
 
 OpenResty<sup>&reg;</sup> provides [official pre-built packages](linux-packages.html) for some of the common
