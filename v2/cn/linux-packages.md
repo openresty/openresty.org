@@ -8,11 +8,8 @@
 
 ```
     版本            版本名         支持的体系结构
-    14.04           Trusty          amd64
     16.04           Xenial          amd64
     18.04           Bionic          amd64
-    18.10           Cosmic          amd64
-    19.04           Disco           amd64
     19.10           Eoan            amd64
 ```
 
@@ -20,7 +17,6 @@
 
 ```
     版本           版本名        支持的体系结构
-    8.x             Jessie          amd64
     9.x             Stretch         amd64
     10.x            Buster          amd64
 ```
@@ -47,8 +43,6 @@
 
 ```
     版本号          支持的体系结构
-    28              x86_64
-    29              x86_64
     30              x86_64
     31              x86_64
 ```

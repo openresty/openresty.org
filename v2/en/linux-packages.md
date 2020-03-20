@@ -8,11 +8,8 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Codename        Supported Architectures
-    14.04           Trusty          amd64
     16.04           Xenial          amd64
     18.04           Bionic          amd64
-    18.10           Cosmic          amd64
-    19.04           Disco           amd64
     19.10           Eoan            amd64
 ```
 
@@ -20,7 +17,6 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Codename        Supported Architectures
-    8.x             Jessie          amd64
     9.x             Stretch         amd64
     10.x            Buster          amd64
 ```
@@ -47,8 +43,6 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Supported Architectures
-    28              x86_64
-    29              x86_64
     30              x86_64
     31              x86_64
 ```
