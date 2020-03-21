@@ -11,6 +11,8 @@
 * [ngx_lua](https://github.com/openresty/lua-nginx-module#readme)
     * bugfix: ensured arguments of APIs mutating URI or request/response headers do not contain unsafe characters. _Thanks Dejiang Zhu for the patch._
 
+See the [HackerOne report](https://hackerone.com/reports/513236) for more details about the security vulnerabilities.
+
 # Version 1.15.8.2 - 8 September 2019
 
 * bugfix: applied the [nginx](nginx.html) core patch for new HTTP/2 security advisories (CVE-2019-9511 CVE-2019-9513 CVE-2019-9516).
