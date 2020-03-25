@@ -1,0 +1,39 @@
+<!---
+    @title         OpenResty 1.15.8.4 Released
+    @creator       Thibault Charbonnier
+--->
+
+[% major_ver = "1.15.8"; version = major_ver _ ".4" %]
+OpenResty [% version %] is a patch release addressing a recent security
+vulnerability the ngx_http_lua module.
+
+The (portable) source code distribution, the Win32/Win64 binary
+distributions, and the pre-built binary Linux packages for Ubuntu,
+Debian, Fedora, CentOS, RHEL, OpenSUSE, Amazon Linux are provided on this
+page:
+
+https://openresty.org/en/download.html
+
+This is the fourth OpenResty release based on the nginx [% major_ver %] core.
+
+# Acknowledgments
+
+Thanks Thibault Charbonnier and Dejiang Zhu for helping this release.
+
+# Full Changelog
+
+Complete change logs since the last (formal) release, 1.15.8.3, can be browsed
+in the page [Change Log for [% major_ver %].x](changelog-1015008.html).
+
+# Feedback
+
+Feedback on this release is more than welcome. Feel free to create new [GitHub
+issues](https://github.com/openresty/openresty/issues) or send emails to one of
+our [mailing lists](community.html).
+
+# The Next Release
+
+The next release will be OpenResty 1.17.8.1 based on the recent nginx 1.17.8
+core and its RC1 version is already out for community testing. See
+
+https://openresty.org/en/ann-1017008001rc1.html

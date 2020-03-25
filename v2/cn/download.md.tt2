@@ -4,7 +4,7 @@
     @created       2011-06-21 04:25 GMT
 --->
 
-***最新！*** [OpenResty 1.15.8.3](ann-1015008003.html) 正式版已发布。
+***最新！*** [OpenResty 1.15.8.4](ann-1015008004.html) 正式版已发布。
 
 ***最新！*** [OpenResty 1.17.8.1 RC1](ann-1017008001rc1.html) 已经发布供测试。
 
@@ -21,7 +21,7 @@ OpenResty<sup>&reg;</sup> 给常见 Linux 发布提供[官方预编译安装包]
 
 所有版本都是用 Yichun Zhang 的 PGP 公钥 `A0E98066` 签发的。
 
-[% ver = "1.15.8.3" -%]
+[% ver = "1.15.8.4" -%]
 * 32 位 Windows: [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 12MB &nbsp;
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 2020年3月20日
 * 64 位 Windows: [openresty-[% ver %]-win64.zip](https://openresty.org/download/openresty-[% ver %]-win64.zip) &nbsp; 12MB &nbsp;
@@ -58,15 +58,19 @@ brew install openresty-debug
 
 ##  最新版
 
-[% ver = "1.15.8.3" -%]
+[% ver = "1.15.8.4" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.7MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
-[变更列表](changelog-1015008.html) - 2020年3月20日
+[变更列表](changelog-1015008.html) - 2020年3月25日
 
 ##  历史版
 
 有时候我们可能会需要较老的版本：
 
+[% ver = "1.15.8.3" -%]
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.7MB
+&nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
+[变更列表](changelog-1015008.html) - 2020年3月20日
 [% ver = "1.15.8.2" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.7MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;

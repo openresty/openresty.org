@@ -4,7 +4,7 @@
     @created       2011-06-21 04:25 GMT
 --->
 
-***New!*** [OpenResty 1.15.8.3](ann-1015008003.html) formal version is now released!
+***New!*** [OpenResty 1.15.8.4](ann-1015008004.html) formal version is now released!
 
 ***New!*** [OpenResty 1.17.8.1 RC1](ann-1017008001rc1.html) is now available for testing!
 
@@ -26,7 +26,7 @@ installing package updates can be trivial.
 
 All the releases are signed by the public PGP key `A0E98066` of Yichun Zhang.
 
-[% ver = "1.15.8.3" -%]
+[% ver = "1.15.8.4" -%]
 * For 32-bit Windows: [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 12MB &nbsp;
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 20 March 2020
 * For 64-bit Windows: [openresty-[% ver %]-win64.zip](https://openresty.org/download/openresty-[% ver %]-win64.zip) &nbsp; 12MB &nbsp;
@@ -64,13 +64,17 @@ the instructions on the [Installation](installation.html) page to build and
 install it.
 
 ##  Lastest release
+[% ver = "1.15.8.4" -%]
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.7MB
+&nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
+[Changes](changelog-1015008.html) - 25 March 2020
+
+##  Legacy releases
+Sometimes, users may want to download old releases.
 [% ver = "1.15.8.3" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.7MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 [Changes](changelog-1015008.html) - 20 March 2020
-
-##  Legacy releases
-Sometimes, users may want to download old releases.
 [% ver = "1.15.8.2" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.7MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;

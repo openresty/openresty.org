@@ -4,7 +4,7 @@
     @created       2011-06-21 04:40 GMT
 --->
 
-***New!*** [OpenResty 1.15.8.3](ann-1015008003.html) formal version is now released!
+***New!*** [OpenResty 1.15.8.4](ann-1015008004.html) formal version is now released!
 
 ***New!*** [OpenResty 1.17.8.1 RC1](ann-1017008001rc1.html) is now available for testing!
 
