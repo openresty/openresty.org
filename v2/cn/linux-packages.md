@@ -17,6 +17,7 @@
 
 ```
     版本           版本名        支持的体系结构
+    8.x             Jessie          amd64
     9.x             Stretch         amd64
     10.x            Buster          amd64
 ```

@@ -17,6 +17,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Codename        Supported Architectures
+    8.x             Jessie          amd64
     9.x             Stretch         amd64
     10.x            Buster          amd64
 ```
