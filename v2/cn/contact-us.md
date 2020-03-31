@@ -8,18 +8,15 @@
     @changes       6
 --->
 
-You're encouraged to send general questions regarding [OpenResty](openresty.html) and
-[Nginx](nginx.html) to the [nginx mailing list](http://nginx.org/mailman/listinfo/nginx).
+官方论坛
+--------
 
-Reporting bugs are encouraged to file tickets for the ngx_openresty project
-on [GitHub](github.html):
+我们建立了官方论坛，欢迎访问：
 
-https://github.com/agentzh/ngx_openresty/issues
+[https://forum.openresty.us/](https://forum.openresty.us/)
 
-Alternatively you can send mails privately to [agentzh](http://agentzh.org):
-agentzh at gmail dot com.
-
-强烈建议:"去邮件列表沟通令众人受益;-)"
+邮件列表
+--------
 
 + 订阅: 请发邮件至 openresty+subscribe@googlegroups.com
 + 发言: 请发邮件到 openresty@googlegroups.com

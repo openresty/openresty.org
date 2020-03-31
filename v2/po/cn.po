@@ -61,6 +61,10 @@ msgstr "在 GitHub 上贡献你的力量"
 msgid  "Commercial Offering"
 msgstr "商业支持"
 
+#: templates/header.tt2:21
+msgid  "Official Forum"
+msgstr "官方论坛"
+
 #: templates/index.tt2:5
 msgid  "OpenResty&reg; - Official Site"
 msgstr "OpenResty&reg; - 中文官方站"

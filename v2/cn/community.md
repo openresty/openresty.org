@@ -4,6 +4,13 @@
     @created       2012-08-04 23:04 GMT
 --->
 
+官方论坛
+--------
+
+我们建立了官方论坛，欢迎访问：
+
+[https://forum.openresty.us/](https://forum.openresty.us/)
+
 #  Mailing Lists
 
 ##  English Mailing List
