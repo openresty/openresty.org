@@ -4,6 +4,13 @@
     @created       2012-08-04 23:04 GMT
 --->
 
+官方论坛
+--------
+
+我们建立了官方论坛，并且导入了之前邮件列表的内容（截止到2020-03-28），欢迎访问：
+
+[https://forum.openresty.us/](https://forum.openresty.us/)
+
 #  Mailing Lists
 
 ##  English Mailing List

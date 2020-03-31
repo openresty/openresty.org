@@ -8,8 +8,21 @@
     @changes       23
 --->
 
+Official forum
+--------
+
+We have established an official forum and imported the contents from mailing list (as of 2020-03-28). Welcome to visit:
+
+[https://forum.openresty.us/](https://forum.openresty.us/)
+
+Mailing list
+--------
+
 You can join the English or Chinese mailing lists shown on the page [OpenResty Community](community.html).
 This is usually the preferred communication channel.
+
+Other Contact
+--------
 
 If you need private communication, please contact us by emails via `info@openresty.org`.
 
