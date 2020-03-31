@@ -19,7 +19,7 @@
                         <span class="link-title">[% c.l("Commercial Offering") %]</span>
                 </a>
                 <a href="https://forum.openresty.us/" title="[% c.l("Official Forum") %]">
-                        <img src="images/flarum.png">
+                        <img src="/images/flarum.png">
                         <span class="link-title">[% c.l("Official Forum") %]</span>
                 </a>
         </p><!-- / links -->
