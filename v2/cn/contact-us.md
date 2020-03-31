@@ -11,7 +11,7 @@
 官方论坛
 --------
 
-我们建立了官方论坛，并且导入了之前邮件列表的内容（截止到2020-03-28），欢迎访问：
+我们建立了官方论坛，欢迎访问：
 
 [https://forum.openresty.us/](https://forum.openresty.us/)
 
@@ -29,10 +29,13 @@
 其它联系方式
 --------
 
-我们鼓励您将有关 [OpenResty](openresty.html) 和 [Nginx](nginx.html) 的通用问题发送到 [Nginx 邮件列表](http://nginx.org/mailman/listinfo/nginx)。
+You're encouraged to send general questions regarding [OpenResty](openresty.html) and
+[Nginx](nginx.html) to the [nginx mailing list](http://nginx.org/mailman/listinfo/nginx).
 
-我们也欢迎您报告错误，请提交到 [GitHub](github.html) 的 ngx_openresty 项目：
+Reporting bugs are encouraged to file tickets for the ngx_openresty project
+on [GitHub](github.html):
 
 https://github.com/agentzh/ngx_openresty/issues
 
-或者，也可以私下发邮件给 [agentzh](http://agentzh.org)：agentzh [at] gmail.com。
+Alternatively you can send mails privately to [agentzh](http://agentzh.org):
+agentzh at gmail dot com.
