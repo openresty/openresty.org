@@ -1,0 +1,58 @@
+[% VER = "1.17.8.1"; RC = 2 -%]
+[% major_ver = '1.17.8' -%]
+<!---
+    @title         OpenResty [% VER %] RC[% RC %] is out
+--->
+
+We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],
+for the community to test out.
+
+# Source package
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz
+
+PGP for this source tarball:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz.asc
+
+# Windows binary packages
+
+## Win64 version:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip
+
+PGP for the Win64 zip file:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip.asc
+
+## Win32 version:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip
+
+PGP for the Win32 zip file:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip.asc
+
+# Acknowledgments
+
+Special thanks go to all our developers and contributors! Also thanks Thibault
+Charbonnier for his great help in preparing this release.
+
+# Version highlights
+
+This release candidate includes all changes from the 1.17.8.1rc1 release plus a
+few minor other ones.
+
+# Full Changelog
+
+* upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) to 0.10.16.
+    * bugfix: prevented request smuggling in the [ngx.location.capture](https://github.com/openresty/lua-nginx-module#ngxlocationcapture) API. _Thanks UltramanGaia for the report and Thibault Charbonnier for the patch._
+    * bugfix: [ngx.req.set_header](https://github.com/openresty/lua-nginx-module#ngxreqset_header): only override the input header once. _Thanks spacewander for the patch._
+* upgraded [lua-cjson](https://github.com/openresty/lua-cjson) to 2.1.0.8.
+    * feature: added an option to disable forward slash escaping. _Thanks exjesper for the patch._
+
+# Feedback
+
+Feedback on this new release candidate is most welcome. Feel free to create new
+[GitHub issues](https://github.com/openresty/openresty/issues) or contact us
+via one of our [mailing lists](community.html).
