@@ -25,17 +25,3 @@
 + 仓库: https://github.com/agentzh/ngx_openresty
 + 提案: https://github.com/agentzh/ngx_openresty/issues
 + 中文版维基: https://openresty.org/cn/
-
-其它联系方式
---------
-
-You're encouraged to send general questions regarding [OpenResty](openresty.html) and
-[Nginx](nginx.html) to the [nginx mailing list](http://nginx.org/mailman/listinfo/nginx).
-
-Reporting bugs are encouraged to file tickets for the ngx_openresty project
-on [GitHub](github.html):
-
-https://github.com/agentzh/ngx_openresty/issues
-
-Alternatively you can send mails privately to [agentzh](http://agentzh.org):
-agentzh at gmail dot com.
