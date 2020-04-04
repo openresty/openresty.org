@@ -6,7 +6,7 @@
 
 # Official Forum
 
-We have established an official forum and imported the contents from mailing list (as of 2020-03-28). Welcome to visit:
+We have set up an official forum. Welcome to join us there:
 
 [https://forum.openresty.us/](https://forum.openresty.us/)
 
