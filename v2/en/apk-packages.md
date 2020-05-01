@@ -173,7 +173,7 @@ For example, to install the debuginfo package for the `openresty` package, just 
 
 The source files used to build these packages can be found in the `openresty-packaging` GitHub repository:
 
-https://github.com/openresty/openresty-packaging/tree/master/rpm/
+https://github.com/openresty/openresty-packaging/tree/master/alpine/
 
 # See Also
 

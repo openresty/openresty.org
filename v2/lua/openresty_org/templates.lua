@@ -280,6 +280,12 @@ i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Contribute on GitHub' }}
 i = i + 1 output[i] = '</span>\n                </a>\n                <a href="https://openresty.com/" title="OpenResty.com">\n                        <img src="/images/money.png">\n                        <span class="link-title">'
 -- line 19 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Commercial Offering' }})
+i = i + 1 output[i] = '</span>\n                </a>\n                <a href="https://forum.openresty.us/" title="'
+-- line 21 "header.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Official Forum' }})
+i = i + 1 output[i] = '">\n                        <img src="/images/flarum.png">\n                        <span class="link-title">'
+-- line 23 "header.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Official Forum' }})
 i = i + 1 output[i] = '</span>\n                </a>\n        </p><!-- / links -->\n</header>\n'
 
     return output

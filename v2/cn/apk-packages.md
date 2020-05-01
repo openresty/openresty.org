@@ -126,7 +126,7 @@ https://openresty.gitbooks.io/programming-openresty/content/testing/
 
 build 这些包的源文件都放在 `openresty-packaging` GitHub 仓库中:
 
-https://github.com/openresty/openresty-packaging/tree/master/rpm/
+https://github.com/openresty/openresty-packaging/tree/master/alpine/
 
 # 更多
 
