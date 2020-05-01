@@ -18,10 +18,10 @@ system.
 You can also start the default OpenResty server via the command
 
 ```bash
-sudo service openresty start
+sudo systemctl start openresty
 ```
 
-Other service actions supported are `stop`, `restart`, and `reload`.
+Other systemctl actions supported are `stop`, `restart`, and `reload`.
 
 The default server prefix is `/usr/local/openresty/`. For your own OpenResty applications, it is highly
 recommended to specify your own server prefix and point it to your own application directories, like this:

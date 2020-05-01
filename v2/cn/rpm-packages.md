@@ -12,8 +12,14 @@ OpenResty 官方 Yum 资源库提供下面的 RPM 包。
 
 你可以使用这个命令来启动默认的 OpenResty 服务
 
-```
+```bash
 sudo /sbin/service openresty start
+```
+
+或者
+
+```bash
+sudo systemctl start openresty
 ```
 
  `stop`, `restart`, 和 `reload` 这些指令也是支持的。

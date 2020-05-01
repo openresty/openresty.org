@@ -33,7 +33,9 @@ sudo openresty -p /opt/my-fancy-app/
 Then you have sub-directories like `conf/`, `html/` and `logs/` under the `/opt/my-fancy-app/` directory.
 This way, we can avoid polluting the OpenResty installation trees under `/usr/local/openresty/` and allow
 multiple different OpenResty applications sharing the same OpenResty server installation. You will need
-to edit the `/etc/conf.d/openresty` file to point to your new nginx configuration file and server prefix path if you want to reuse the OpenRC services.
+to edit the `/etc/conf.d/openresty` file to point to your new nginx configuration file and server prefix
+path if you want to reuse the OpenRC services. Or you can make separate init scripts for each of your
+OpenResty application yourself using the files `/etc/init.d/openresty` and `/etc/conf.d/openresty` as templates.
 
 # openresty-resty
 

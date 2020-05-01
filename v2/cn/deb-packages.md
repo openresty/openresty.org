@@ -16,11 +16,11 @@ OpenResty 官方 [APT 包仓库](linux-packages.html)提供下面的 deb 包 (�
 你可以使用这个命令来启动默认的 OpenResty 服务
 
 ```
-sudo service openresty start
+sudo systemctl start openresty
 ```
 
 `stop`, `restart`, 和 `reload` 这些指令也是支持的。
- 
+
 默认的服务前缀是 `/usr/local/openresty/`。对于你自己的 OpenResty 应用，强烈推荐指定你自己的前缀，并指向你自己应用的目录，像这样：
 
 ```
