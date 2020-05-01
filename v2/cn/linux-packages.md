@@ -11,6 +11,7 @@
     16.04           Xenial          amd64
     18.04           Bionic          amd64
     19.10           Eoan            amd64
+    20.04           Focal           amd64
 ```
 
 * Debian
@@ -46,6 +47,7 @@
     版本号          支持的体系结构
     30              x86_64
     31              x86_64
+    32              x86_64
 ```
 
 * Amazon Linux
@@ -63,6 +65,16 @@
     15.1            x86_64
 ```
 
+* Alpine
+
+```
+    版本号          支持的体系结构
+    3.7             x86_64
+    3.8             x86_64
+    3.9             x86_64
+    3.10            x86_64
+    3.11            x86_64
+```
 
 我们仓库的所有元数据（以及 rpm 二进制包）都是用下面的 GPG 密钥， `0xD5EDEB74` 签名的：
 
@@ -80,12 +92,9 @@ sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
 # 导入我们的 GPG 密钥：
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
-# 安装 add-apt-repository 命令
-# （之后你可以删除这个包以及对应的关联包）
-sudo apt-get -y install --no-install-recommends software-properties-common
-
-# 添加我们官方 official APT 仓库：
-sudo add-apt-repository -y "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main"
+# 添加我们官方 APT 仓库：
+echo "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main" \
+    | sudo tee /etc/apt/sources.list.d/openresty.list
 
 # 更新 APT 索引：
 sudo apt-get update
@@ -122,8 +131,12 @@ wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 # （之后你可以删除这个包以及对应的关联包）
 sudo apt-get -y install --no-install-recommends software-properties-common
 
-# 添加我们官方 official APT 仓库：
-sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
+# 添加我们官方 APT 仓库：
+
+codename=`grep -Po 'VERSION="[0-9]+ \(\K[^)]+' /etc/os-release`
+
+echo "deb http://openresty.org/package/debian $codename openresty" \
+    | sudo tee /etc/apt/sources.list.d/openresty.list
 
 # 更新 APT 索引：
 sudo apt-get update
@@ -146,11 +159,16 @@ sudo apt-get -y install --no-install-recommends openresty
 
 # CentOS
 
-你可以在你的 CentOS 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum check-update` 命令）。运行下面的命令就可以添加我们的仓库：
+你可以在你的 CentOS 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum check-update` 命令）。
+运行下面的命令就可以添加我们的仓库（对于 CentOS 8 或以上版本，应将下面的 `yum` 都替换成 `dnf`）：
 
 ```bash
-sudo yum install -y yum-utils
-sudo yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo
+# add the yum repo:
+wget https://openresty.org/package/centos/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
+
+# update the yum index:
+sudo yum check-update
 ```
 
 然后就可以像下面这样安装软件包，比如 `openresty`：
@@ -178,24 +196,15 @@ sudo yum --disablerepo="*" --enablerepo="openresty" list available
 
 # RHEL
 
-你可以在你的 RHEL 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum check-update` 命令）。添加仓库，运行下面的命令：
+你可以在你的 RHEL 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum check-update` 命令）。添加仓库，运行下面的命令（对于 RHEL 8 或以上版本，应将下面的 `yum` 都替换成 `dnf`）：
 
 ```bash
-sudo yum install -y yum-utils
-sudo yum-config-manager --add-repo https://openresty.org/package/rhel/openresty.repo
-```
+# add the yum repo:
+wget https://openresty.org/package/rhel/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
 
-在想 RHEL 6.x 这样的老系统上，最后那条命令可能因为 `yum-config-manager` 命令的内部问题，生成下面的错误：
-
-```
-[Errno 14] Peer cert cannot be verified or peer cert invalid
-```
-
-如果出现上述问题，你可以用下面的命令添加仓库：
-
-
-```bash
-sudo yum-config-manager --add-repo http://openresty.org/package/rhel/openresty.repo
+# update the yum index:
+sudo yum check-update
 ```
 
 添加了包仓库之后就可以像下面这样安装软件包，比如 `openresty`：
@@ -342,6 +351,57 @@ sudo zypper pa -r openresty
 DWARF 调试符号。
 
 在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
+
+# Alpine
+
+首先，请确保你本地已经启用了 Alpine 官方的 community 仓库。方法是，确保你本地的 `/etc/apk/repositories` 文件里的类似下面这一行没有被注释掉：
+
+```
+http://mirror.leaseweb.com/alpine/v3.11/community
+```
+
+你实际看到的行可能与上面这一行略有区别，当你使用了不同的源镜像网站或者不同的 Alpine 版本。
+
+你可以通过下面的命令在你的 Alpine 系统上启用 `openresty` 仓库：
+
+```bash
+# first, let's add the public key used to sign the repo:
+wget 'http://openresty.org/package/admin@openresty.com-5ea678a6.rsa.pub'
+sudo mv 'admin@openresty.com-5ea678a6.rsa.pub' /etc/apk/keys/
+
+# then, add the repo:
+. /etc/os-release
+MAJOR_VER=`echo $VERSION_ID | sed 's/\.[0-9]\+$//'`
+
+echo "http://openresty.org/package/alpine/v$MAJOR_VER/main" \
+    | sudo tee -a /etc/apk/repositories
+
+# update the local index cache:
+sudo apk update
+```
+
+然后你就可以像下面这样安装包了，比如说安装 `openresty`：
+
+```bash
+sudo apk add openresty
+```
+
+如果想安装 `resty` 命令行工具，则像下面这样安装 `openresty-resty` 软件包：
+
+```bash
+sudo apk add openresty-resty
+```
+
+命令行工具 `opm` 在 `openresty-opm` 包里，而 `restydoc` 工具在
+`openresty-restydoc` 包里头。
+
+列出在 `openresty` 仓库中所有可用的包, 可以这样做：
+
+```bash
+apk list | grep 'openresty\|lemplate'
+```
+
+在 [OpenResty Alpine APK 包](apk-packages.html) 页面能看到这些包更多的细节。
 
 # 更多 Linux 发行版的支持
 

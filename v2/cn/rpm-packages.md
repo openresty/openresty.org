@@ -27,9 +27,7 @@ sudo openresty -p /opt/my-fancy-app/
 然后在 `/opt/my-fancy-app/` 目录下会有一些 `conf/`, `html/` 和 `logs/` 这样的子目录。
 用这种方法，我们可以避免污染 `/usr/local/openresty/` 下的 OpenResty 安装目录树，并且允许多个不同的 OpenResty 应用共享同一个 OpenResty 服务程序。但是你需要为每一个自己的 OpenResty 应用写一份启动脚本。你可以使用默认的 `/etc/init.d/openresty` 启动脚本作为参考模板。
 
-这个包在 NGINX 内核和一些 NGINX C 模块(比如 `ngx_http_lua_module`)中开启了 dtrace 静态探针，这样 SystemTap 之类的动跟踪工具就可以来使用。
-
-我们使用了我们自己的 OpenSSL（通过 `openresty-openssl` 包）,PCRE, zlib 和 LuaJIT 版本，来保证这些关键组件是最新的并且在一起工作正常。
+我们使用了我们自己的 OpenSSL（通过 `openresty-openssl` 包）,PCRE, zlib 和 LuaJIT 版本，来保证这些关键组件是最新版 并且可以一起工作。
 
 # openresty-resty
 
@@ -119,12 +117,12 @@ https://openresty.gitbooks.io/programming-openresty/content/testing/
 
 对于 RHEL 5.x 和 CentOS 5.x 系统，我们不提供这个包。因为这些系统太古老，在它们标准的 yum 仓库中缺少 Perl CPAN 模块的依赖 (比如 `perl-Test-Base` 和 `perl-Test-LongString`)。
 
-# Debuginfo Packages
+# 调试符号包
 
-我们为那些包含二进制组件的包，比如 `openresty` 和 `openresty-openssl` 提供 debuginfo 包。
-debuginfo 包和其他的标准的 RPM 包一样，只是加了 `-debuginfo` 的后缀。
+我们为那些包含二进制组件的包，比如 `openresty` 和 `openresty-openssl` 提供调试符号包。
+调试符号包和其他标准的 RPM 包一样，只是包名加了 `-debuginfo` 后缀。
 
-# Source
+# 打包源码
 
 build 这些包的源文件都放在 `openresty-packaging` GitHub 仓库中:
 

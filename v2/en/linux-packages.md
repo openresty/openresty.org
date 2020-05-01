@@ -1,5 +1,5 @@
 <!---
-    @title         OpenResty® Linux Packages
+    @title         OpenResty®  Linux Packages
 --->
 
 OpenResty<sup>&reg;</sup> provides official pre-built packages for the following Linux distributions and versions.
@@ -11,6 +11,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     16.04           Xenial          amd64
     18.04           Bionic          amd64
     19.10           Eoan            amd64
+    20.04           Focal           amd64
 ```
 
 * Debian
@@ -46,6 +47,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     Version         Supported Architectures
     30              x86_64
     31              x86_64
+    32              x86_64
 ```
 
 * Amazon Linux
@@ -61,6 +63,17 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 ```
     Version         Supported Architectures
     15.1            x86_64
+```
+
+* Alpine
+
+```
+    Version         Supported Architectures
+    3.7             x86_64
+    3.8             x86_64
+    3.9             x86_64
+    3.10            x86_64
+    3.11            x86_64
 ```
 
 All our repositories' metadata (and rpm binary packages) are signed by the following GPG key, `0xD5EDEB74`:
@@ -94,12 +107,9 @@ sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
 # import our GPG key:
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
-# for installing the add-apt-repository command
-# (you can remove this package and its dependencies later):
-sudo apt-get -y install --no-install-recommends software-properties-common
-
 # add the our official APT repository:
-sudo add-apt-repository -y "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main"
+echo "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main" \
+    | sudo tee /etc/apt/sources.list.d/openresty.list
 
 # to update the APT index:
 sudo apt-get update
@@ -144,12 +154,12 @@ sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
 # import our GPG key:
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 
-# for installing the add-apt-repository command
-# (you can remove this package and its dependencies later):
-sudo apt-get -y install --no-install-recommends software-properties-common
-
 # add the our official APT repository:
-sudo add-apt-repository -y "deb http://openresty.org/package/debian $(lsb_release -sc) openresty"
+
+codename=`grep -Po 'VERSION="[0-9]+ \(\K[^)]+' /etc/os-release`
+
+echo "deb http://openresty.org/package/debian $codename openresty" \
+    | sudo tee /etc/apt/sources.list.d/openresty.list
 
 # to update the APT index:
 sudo apt-get update
@@ -176,11 +186,15 @@ repository.
 
 You can add the `openresty` repository to your CentOS system so as to easily install
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
-run the following commands:
+run the following commands (replace `yum` with `dnf` below if you are using CentOS 8+):
 
 ```bash
-sudo yum install yum-utils
-sudo yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo
+# add the yum repo:
+wget https://openresty.org/package/centos/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
+
+# update the yum index:
+sudo yum check-update
 ```
 
 Then you can install a package, say, `openresty`, like this:
@@ -210,25 +224,15 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all
 
 You can add the `openresty` repository to your Red Hat Enterprise Linux (RHEL) system so as to easily install
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
-run the following commands:
+run the following commands (replace `yum` with `dnf` below if you are using RHEL 8+):
 
 ```bash
-sudo yum install -y yum-utils
-sudo yum-config-manager --add-repo https://openresty.org/package/rhel/openresty.repo
-```
+# add the yum repo:
+wget https://openresty.org/package/rhel/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
 
-On older systems like RHEL 6.x, the last command may yield the following error due to a problem in its
-`yum-config-manager` command:
-
-```
-[Errno 14] Peer cert cannot be verified or peer cert invalid
-```
-
-If this error happens, then you can just use the following command instead to enable the repository:
-
-
-```bash
-sudo yum-config-manager --add-repo http://openresty.org/package/rhel/openresty.repo
+# update the yum index:
+sudo yum check-update
 ```
 
 After adding the package repository, you can now install a package, say, `openresty`, like this:
@@ -282,8 +286,12 @@ removes some dependency Perl module packages like `perl-Template-Toolkit` (as co
 You can enable the `openresty` repository on your Fedora system like this:
 
 ```bash
-sudo dnf install -y dnf-plugins-core
-sudo dnf config-manager --add-repo https://openresty.org/package/fedora/openresty.repo
+# add the repo:
+wget https://openresty.org/package/fedora/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
+
+# update the index:
+sudo dnf check-update
 ```
 
 Then you can easily install packages from the `openresty-openresty` repository and receive updates
@@ -316,8 +324,12 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on the
 You can enable the `openresty` repository on your Amazon Linux system like this:
 
 ```bash
-sudo yum install -y yum-utils
-sudo yum-config-manager --add-repo https://openresty.org/package/amazon/openresty.repo
+# add the repo:
+wget https://openresty.org/package/amazon/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
+
+# update the index:
+sudo yum check-update
 ```
 
 Then you can install a package, say, `openresty`, like this:
@@ -379,6 +391,60 @@ Note that we currently do not provide separate `*-debuginfo` packages in this re
 binaries directly contain the DWARF symbols and are not stripped.
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
+
+# Alpine
+
+First of all, please make sure you have enabled the Alpine's official community repository.
+Basically, you can just open the file `/etc/apk/repositories` and uncomment a line looks
+like this:
+
+```
+http://mirror.leaseweb.com/alpine/v3.11/community
+```
+
+Your actual line could be slightly different when you are using a different mirror site
+or a differnt Alpine version.
+
+You can enable the `openresty` repository on your Alpine system like below:
+
+```bash
+# first, let's add the public key used to sign the repo:
+wget 'http://openresty.org/package/admin@openresty.com-5ea678a6.rsa.pub'
+sudo mv 'admin@openresty.com-5ea678a6.rsa.pub' /etc/apk/keys/
+
+# then, add the repo:
+. /etc/os-release
+MAJOR_VER=`echo $VERSION_ID | sed 's/\.[0-9]\+$//'`
+
+echo "http://openresty.org/package/alpine/v$MAJOR_VER/main" \
+    | sudo tee -a /etc/apk/repositories
+
+# update the local index cache:
+sudo apk update
+```
+
+Then we can install the `openresty` package like this:
+
+```bash
+sudo apk add openresty
+```
+
+If you want to install the `resty` command-line utility, then just install the `openresty-resty` package below:
+
+```bash
+sudo apk add openresty-resty
+```
+
+The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
+`openresty-restydoc` package.
+
+To view all the packages provided by our repos, type the following command:
+
+```bash
+apk list | grep 'openresty\|lemplate'
+```
+
+See the [OpenResty Alpine APK Packages](apk-packages.html) page for more details on all these packages.
 
 # Support for More Linux Distributions
 

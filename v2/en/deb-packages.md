@@ -1,5 +1,5 @@
 <!---
-    @title         OpenResty® Deb Packages
+    @title         OpenResty®  Deb Packages
 --->
 
 The OpenResty official [APT repositories](linux-packages.html) provide the following deb packages (for Ubuntu and Debian).
@@ -17,7 +17,7 @@ system.
 
 You can also start the default OpenResty server via the command
 
-```
+```bash
 sudo service openresty start
 ```
 
@@ -26,7 +26,7 @@ Other service actions supported are `stop`, `restart`, and `reload`.
 The default server prefix is `/usr/local/openresty/`. For your own OpenResty applications, it is highly
 recommended to specify your own server prefix and point it to your own application directories, like this:
 
-```
+```bash
 sudo openresty -p /opt/my-fancy-app/
 ```
 
@@ -35,9 +35,6 @@ This way, we can avoid polluting the OpenResty installation trees under `/usr/lo
 multiple different OpenResty applications sharing the same OpenResty server installation. You will need
 to draft up a init script for each of your OpenResty application yourself, however. You can use the default
 `/etc/init.d/openresty` init script as a template.
-
-This package enables the dtrace static probes in the NGINX core and some NGINX C modules (like `ngx_http_lua_module`),
-which can be consumed by dynamic tracing tools like SystemTap.
 
 We use our own builds of OpenSSL (through the `openresty-openssl` package), PCRE, zlib, and LuaJIT to ensure these
 critical components are up to date and well formed.
@@ -185,7 +182,7 @@ https://openresty.gitbooks.io/programming-openresty/content/testing/
 
 We provide development packages for our binary library packages `openresty-zlib`, `openresty-pcre`, `openresty-openssl`,
 and `openresty-openssl-debug`. These packages contain header files and static library archive files for the corresponding
-binary package. Their name all have a `-dev` suffix as compared to their binary counterpart. For example, we have
+binary package. Their names all have a `-dev` suffix as compared to their binary counterpart. For example, we have
 `openresty-zlib-dev` for `openresty-zlib`, `openresty-pcre-dev` for `openresty-pcre`, `openresty-openssl-dev` for
 `openresty-opnessl`, and also `openresty-openssl-debug-dev` for `openresty-openssl-debug`.
 

@@ -1,8 +1,8 @@
 <!---
-    @title         OpenResty®  RPM Packages
+    @title         OpenResty®  Alpine APK Packages
 --->
 
-The OpenResty official Yum repositories provide the following RPM packages.
+The OpenResty official APK repositories provide the following Alpine APK packages.
 
 # openresty
 
@@ -18,10 +18,10 @@ system.
 You can also start the default OpenResty server via the command
 
 ```bash
-sudo service openresty start
+sudo rc-service openresty start
 ```
 
-Other service actions supported are `stop`, `restart`, and `reload`.
+Other service actions supported are 'checkconfig`, `stop`, `reopen`, `reload`, and `upgrade`.
 
 The default server prefix is `/usr/local/openresty/`. For your own OpenResty applications, it is highly
 recommended to specify your own server prefix and point it to your own application directories, like this:
@@ -33,11 +33,7 @@ sudo openresty -p /opt/my-fancy-app/
 Then you have sub-directories like `conf/`, `html/` and `logs/` under the `/opt/my-fancy-app/` directory.
 This way, we can avoid polluting the OpenResty installation trees under `/usr/local/openresty/` and allow
 multiple different OpenResty applications sharing the same OpenResty server installation. You will need
-to draft up a init script for each of your OpenResty application yourself, however. You can use the default
-`/etc/init.d/openresty` init script as a template.
-
-We use our own builds of OpenSSL (through the `openresty-openssl` package), PCRE, zlib, and LuaJIT to ensure these
-critical components are up to date and well formed.
+to edit the `/etc/conf.d/openresty` file to point to your new nginx configuration file and server prefix path if you want to reuse the OpenRC services.
 
 # openresty-resty
 
@@ -53,7 +49,7 @@ This package depends on the standard `perl` package and our `openresty` package 
 
 See the [resty-cli](https://github.com/openresty/resty-cli) project for more details.
 
-# openresty-doc
+# openresty-restydoc
 
 This package contains the OpenResty documentation tool chain and documentation data. The most useful tool
 is the `restydoc` command-line utility, which should be visible to your `PATH` environment by default (as
@@ -103,59 +99,11 @@ the current worker process).
 
 You should never use this package in production. This package is for development only.
 
-# openresty-valgrind
-
-This is a special debug version of OpenResty targeting the Valgrind tool chain. Valgrind is a powerful tool
-to check various kinds of memory issues, like memory leaks and memory invalid accesses. To maximize the
-possibilities of catching memory bugs via Valgrind, this build does the following in addition to those
-done in the `openresty-debug` package:
-
-* It disables the memory pools used in the NGINX by applying the "[no-pool](https://github.com/openresty/no-pool-nginx)" patch.
-* It enforces LuaJIT to use the system allocator instead of its own.
-* It enables the internal Valgrind co-operations in the LuaJIT build through the `-DLUAJIT_USE_VALGRIND` C compiler flag.
-* The default server prefix of its NGINX is `/usr/local/openresty-valgrind/`.
-* The entry point visible to your `PATH` environment is `openresty-valgrind` instead of `openresty-debug`.
-
-See the following tutorials on more details on Valgrind-based testing in the context of OpenResty:
-
-https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.html#_valgrind_mode
-
-To use this special build of OpenResty on `x86_64` systems, you must use Valgrind to run, otherwise the LuaJIT
-VM cannot even do allocations properly.
-
-Also, it is important to configure the following at the beginning of your `nginx.conf` file for the best
-result:
-
-```nginx
-daemon off;
-master_process off;
-worker_processes 1;
-```
-
-# openresty-asan
-
-This is the clang AddressSanitizer build of OpenResty. As compared to the `openresty-debug`
-package, it has the following changes:
-
-* It uses the command `clang -fsanitize=address` to compile and link.
-* It uses the C compiler options `-O1 -fno-omit-frame-pointer` in the build.
-* It disables the memory pools used in the NGINX by applying the "[no-pool](https://github.com/openresty/no-pool-nginx)" patch.
-* It enables the internal Valgrind co-operations in the LuaJIT build through the `-DLUAJIT_USE_VALGRIND` C compiler flag.
-* The default server prefix of its NGINX is `/usr/local/openresty-asan/`.
-* The entry point visible to your `PATH` environment is `openresty-asan` instead of `openresty-debug`.
-* It uses the `openresty-zlib-asan`, `openresty-pcre-asan`, and `openresty-openssl-asan` packages as runtime dependencies.
-
-It is important to specify the following system environment before starting this special build of openresty
-to avoid known false positives of memory leaks:
+This package also comes with an OpenRC init scripts, as in
 
 ```bash
-export ASAN_OPTIONS=detect_leaks=0
+sudo rc-service openresty-debug start
 ```
-
-You may also need to specify some suppression rules to silence other false positives. See the following
-clang ASAN document for more details:
-
-https://clang.llvm.org/docs/AddressSanitizer.html#suppressing-reports-in-external-libraries
 
 # openresty-openssl
 
@@ -177,45 +125,17 @@ This is the debug build of the OpenSSL library. As compared to `openresty-openss
 * Assembly code is disabled so we always have perfect C-land backtraces and etc.
 * It is installed into the prefix `/usr/local/openresty-debug/openssl/`.
 
-# openresty-openssl-asan
-
-This is the clang AddressSanitizer build of the OpenSSL library. As compared to the `openresty-openssl-debug`
-package, it has the following changes:
-
-* It uses the command `clang -fsanitize=address` to compile and link.
-* It uses the `openresty-zlib-asan` package instead of `openresty-zlib` as the runtime dependency.
-* It uses the C compiler options `-O1 -fno-omit-frame-pointer` in the build.
-* It is installed into the prefix `/usr/local/openresty-asan/openssl/`.
-
 # openresty-zlib
 
 This is our own build of the zlib library for gzip compression. We ship our own zlib package to ensure the latest
 mainstream version of zlib is used in OpenResty even on old systems.
-
-# openresty-zlib-asan
-
-This is the clang AddressSanitizer build of the Zlib library. As compared to the `openresty-zlib-debug`
-package, it has the following changes:
-
-* It uses the command `clang -fsanitize=address` to compile and link.
-* It uses the C compiler options `-O1 -fno-omit-frame-pointer` in the build.
-* It is installed into the prefix `/usr/local/openresty-asan/zlib/`.
 
 # openresty-pcre
 
 This is our own build of the PCRE library for gzip compression. We ship our own PCRE package to ensure the latest
 mainstream version of PCRE is used in OpenResty even on older systems.
 
-# openresty-pcre-asan
-
-This is the clang AddressSanitizer build of the PCRE library. As compared to the `openresty-pcre-debug`
-package, it has the following changes:
-
-* It uses the command `clang -fsanitize=address` to compile and link.
-* It uses the C compiler options `-O1 -fno-omit-frame-pointer` in the build.
-* It is installed into the prefix `/usr/local/openresty-asan/pcre/`.
-
-# perl-Lemplate
+# perl-lemplate
 
 This package provides the command-line utility, [lemplate](https://metacpan.org/pod/Lemplate),
 that can compile template files in perl's TT2 templating language syntax to standalone
@@ -224,27 +144,30 @@ Lua modules for OpenResty.
 The OpenResty official site, openresty.org, [uses](https://github.com/openresty/openresty.org)
 Lemplate as the HTML page template compiler, for example.
 
-# perl-Test-Nginx
+# perl-test-nginx
 
 This is our [Test::Nginx](https://github.com/openresty/test-nginx) test framework. Read the following book chapter on a complete
 introduction to this test scaffold:
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/
 
+This package is already shipped by the official Alpine community repository so we do not bother
+packaging it ourselves.
+
 # Development Packages
 
 We provide development packages for our binary library packages `openresty-zlib`, `openresty-pcre`, `openresty-openssl`,
-and `openresty-openssl-debug`. These packages contain header files and static library archive files for the corresponding
-binary package. Their names all have a `-devel` suffix as compared to their binary counterpart. For example, we have
-`openresty-zlib-devel` for `openresty-zlib`, `openresty-pcre-devel` for `openresty-pcre`, `openresty-openssl-devel` for
-`openresty-opnessl`, and also `openresty-openssl-debug-devel` for `openresty-openssl-debug`.
+and `openresty-openssl-debug`. These packages contain header files or the corresponding
+binary package. Their names all have a `-dev` suffix as compared to their binary counterpart. For example, we have
+`openresty-zlib-dev` for `openresty-zlib`, `openresty-pcre-dev` for `openresty-pcre`, `openresty-openssl-dev` for
+`openresty-opnessl`, and also `openresty-openssl-debug-dev` for `openresty-openssl-debug`.
 
 # Debuginfo Packages
 
 We provide debuginfo (or debug symbol) packages for those containing binary components like the `openresty` and `openresty-openssl` packages. Their
-debuginfo packages just have the `-debuginfo` suffix in their package names, just like other standard RPM packages.
+debuginfo packages just have the `-dbg` suffix in their package names, just like other standard APK packages.
 
-For example, to install the debuginfo package for the `openresty` package, just install the `openresty-debuginfo` package. Similarly, the debuginfo package for the `openresty-debug` package is `openresty-debug-debuginfo`.
+For example, to install the debuginfo package for the `openresty` package, just install the `openresty-dbg` package. Similarly, the debuginfo package for the `openresty-debug` package is `openresty-debug-dbg`.
 
 # Source
 
