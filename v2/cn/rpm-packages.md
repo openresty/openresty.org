@@ -1,5 +1,5 @@
 <!---
-    @title         RPM 包
+    @title         OpenResty®  RPM 包
 --->
 
 OpenResty 官方 Yum 资源库提供下面的 RPM 包。
