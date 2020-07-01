@@ -8,7 +8,7 @@
 
 * upgraded the [nginx](nginx.html) core to 1.17.8.
     * see the changes here: https://nginx.org/en/CHANGES
-* bugfix: nginx would crash when receiving SIGHUP in the single process mode. _Thanks root for the patch._
+* bugfix: [nginx](nginx.html) would crash when receiving SIGHUP in the single process mode. _Thanks root for the patch._
 * bugfix: ngx_http_static_module: the 'Locatoin' response header value was not properly encoded by URI rules. _Thanks lijunlong for the patch._
 * feature: passed C compiler option `-g` by default for statically linked openssl, pcre, and zlib libraries to enable debuginfo. _Thanks lijunlong for the patch._
 * feature: added support for OpenSSL 1.1.1 by upgrading the OpenSSL patches. _Thanks spacewander for the patch._
@@ -211,5 +211,5 @@
 * upgraded [lua-cjson](https://github.com/openresty/lua-cjson) to 2.1.0.8.
     * feature: added an option to disable forward slash escaping. _Thanks exjesper for the patch._
 
-* upgraded lua-resty-memcached to v0.15.
+* upgraded [lua-resty-memcached](https://github.com/openresty/lua-resty-memcached#readme) to v0.15.
     * bugfix: `gets()` did not return socket send errors at the correct index. _Thanks Justin Li for the patch._
