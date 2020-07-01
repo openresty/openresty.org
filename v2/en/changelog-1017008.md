@@ -8,10 +8,13 @@
 
 * upgraded the [nginx](nginx.html) core to 1.17.8.
     * see the changes here: https://nginx.org/en/CHANGES
+* bugfix: nginx would crash when receiving SIGHUP in the single process mode. _Thanks root for the patch._
+* bugfix: ngx_http_static_module: the 'Locatoin' response header value was not properly encoded by URI rules. _Thanks lijunlong for the patch._
+* feature: passed C compiler option `-g` by default for statically linked openssl, pcre, and zlib libraries to enable debuginfo. _Thanks lijunlong for the patch._
 * feature: added support for OpenSSL 1.1.1 by upgrading the OpenSSL patches. _Thanks spacewander for the patch._
 * feature: added a new `--with-luajit-ldflags=OPTS` option for specifying custom [LuaJIT](https://github.com/openresty/luajit2#readme) linker flags.
 * feature: ensured all OpenSSL patches are now included in the release tarball. _Thanks Thibault Charbonnier for the patch._
-* optimize: added an [NGINX](nginx.html) core patch to ensure unused listening fds are closed when `reuseport` is used. _Thanks spacewander for the patch_.
+* optimize: added an [NGINX](nginx.html) core patch to ensure unused listening fds are closed when `reuseport` is used. _Thanks spacewander for the patch._
 * optimize: removed many non-source files from the release tarball to reduce its final size. _Thanks Thibault Charbonnier for the patch._
 * change: renamed the `ssl_pending_session` patch to `ssl_sess_cb_yield` for [NGINX](nginx.html) cores 1.17.1 and above. _Thanks spacewander for the patch._
 * change: removed the `gcc-maybe-uninitialized-warning` patch which is now obsolete. _Thanks Thibault Charbonnier for the patch._
@@ -22,6 +25,17 @@
 * tweak: updated the `./configure --help` usage text output for recent [NGINX](nginx.html) cores.
 * win32/win64: upgraded PCRE to 8.44 and OpenSSL to 1.1.1d.
 * upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) to 0.10.16.
+    * feature: `ngx.escape_uri()`: added new optional `type` argument `not_component` argument for pure URI escaping. _Thanks lijunlong for the patch._
+    * feature: `ngx.req.set_uri()`: added the 'binary' optional boolean arg to allow arbitrary binary data in the unencoded URI. _Thanks lijunlong for the patch._
+    * security: `ngx.req.set_header()`: now we always escape bytes in headernames and header values which are prohibited by RFC 7230. _Thanks lijunlong for the patch._
+    * feature: `ngx.req.set_uri_args()` now automatically escapes control and whitespace characters if the query-string is provided directly. _Thanks lijunlong for the patch._
+    * bugfix: `ngx.req.set_uri_args()` threw an exception with wrong argument info. _Thanks lijunlong for the patch._
+    * bugfix: `set_by_lua_block` allowed more than one arg (in addition to the block). _Thanks lijunlong for the patch._
+    * bugfix: allow the use of spaces in `ngx.req.set_uri()`. _Thanks Dejiang Zhu for the patch._
+
+    * bugfix: prevented request smuggling in the `ngx.location.capture()` API. _Thanks UltramanGaia for the report and Thibault Charbonnier for the patch._
+    * bugfix: `ngx.req.set_header()`: only override the input header once. _Thanks spacewander for the patch._
+
     * change: [lua-resty-core](https://github.com/openresty/lua-resty-core#readme) is now mandatorily loaded, and the [lua_load_resty_core](https://github.com/openresty/lua-nginx-module#lua_load_resty_core) directive is deprecated. _Thanks Thibault Charbonnier for the patch._
     * change: given the above change, old CFunction APIs have been retired when newer [FFI](https://luajit.org/ext_ffi.html) implementations are available via `resty.core`. _Thanks Thibault Charbonnier for the patch._
     * change: given the above changes, we now prevent compilation with PUC-Rio Lua; only [LuaJIT](https://github.com/openresty/luajit2#readme) 2.x is supported going forward. _Thanks Thibault Charbonnier for the patch._
@@ -65,6 +79,8 @@
     * style: fixed a minor alignment issue in `ngx_http_lua_ssl_certby.c`. _Thanks Thibault Charbonnier for the patch._
     * style: updated `nginx_version` guard macros and assume it is always defined. _Thanks Thibault Charbonnier for the patch._
 * upgraded [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module#readme) to 0.0.8.
+    * feature: `ngx.escape_uri()`: added new optional `type` argument `not_component` argument for pure URI escaping (still defauls to URI component escaping). _Thanks lijunlong for the patch._
+
     * feature: this module can now be compiled as a dynamic module with via the `--with-dynamic-module=PATH` option of `./configure`.
     * bugfix: config: fixed an issue preventing compiliation with dynamic modules; we now avoid specifying `-DLUA_DEFAULT_PATH` and `-DLUA_DEFAULT_CPATH` via `CFLAGS`.
     * Ported many features from ngx_http_lua 0.10.16. _Thanks Thibault Charbonnier for the ports._
@@ -91,6 +107,8 @@
         * bugfix: config: ensured the `pcre_version` symbol is always preserved when PCRE is statically linked.
         * bugfix: config: ensured the `pcre_version` symbol is always preserved on Darwin platforms as well.
 * upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core#readme) to 0.1.18.
+    * bugfix: `ngx.req.get_headers()` might return an empty table without the metatable set. _Thanks chengjie.zhou for the patch._
+    * feature: `resty.core.uri`: `ngx.escape_uri()`: add optional argument `type`. _Thanks lijunlong for the patch._
     * change: we now require [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) v0.10.16 and [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module#readme) v0.0.8.
     * change: updated to support the ngx_http_lua module without the now removed CFunction APIs. _Thanks Thibault Charbonnier for the patch._
     * feature: updated the `ngx_ssl.get_tls1_version_str()` API to recognize TLS 1.3 connections. _Thanks Thibault Charbonnier for the patch._
@@ -171,6 +189,7 @@
 * upgraded [lua-resty-string](https://github.com/openresty/lua-resty-string#readme) to 0.12.
     * optimize: removed a duplicate string length lookup in `to_hex()`. _Thanks Robert Paprocki for the patch._
 * upgraded [lua-resty-redis](https://github.com/openresty/lua-resty-redis#readme) to 0.28.
+    * bugfix: handle mixture of `read_reply()` and other commands.  _Thanks spacewander for the patch._
     * feature: added new options `ssl` and `ssl_verify` to the `red:connect()` API for connecting to Redis over TLS. _Thanks Vinayak Hulawale for the patch._
     * feature: implemented the `red:set_timeouts()` API. _Thanks zouyi for the patch._
 * upgraded [lua-resty-shell](https://github.com/openresty/lua-resty-shell#readme) to 0.03.
@@ -188,8 +207,9 @@
     * bugfix: config: avoided an error with [NGINX](nginx.html) 1.17.0 and above. _Thanks Thibault Charbonnier for the patch._
     * style: fixed minor coding style issues found by `ngx-releng`.
     * doc: documented a tip to make memcached store objects bigger than 1MB.
-* upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) to 0.10.16.
-    * bugfix: prevented request smuggling in the [ngx.location.capture](https://github.com/openresty/lua-nginx-module#ngxlocationcapture) API. _Thanks UltramanGaia for the report and Thibault Charbonnier for the patch._
-    * bugfix: [ngx.req.set_header](https://github.com/openresty/lua-nginx-module#ngxreqset_header): only override the input header once. _Thanks spacewander for the patch._
+
 * upgraded [lua-cjson](https://github.com/openresty/lua-cjson) to 2.1.0.8.
     * feature: added an option to disable forward slash escaping. _Thanks exjesper for the patch._
+
+* upgraded lua-resty-memcached to v0.15.
+    * bugfix: `gets()` did not return socket send errors at the correct index. _Thanks Justin Li for the patch._
