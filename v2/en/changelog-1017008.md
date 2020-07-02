@@ -196,6 +196,8 @@
     * optimize: removed an unused function argument. _Thanks Dejiang Zhu for the patch._
     * doc: clarified return values and behavior upon reaching a timeout threshold. _Thanks Dejiang Zhu for the patch._
 * upgraded [resty-cli](https://github.com/openresty/resty-cli#readme) to 0.25.
+    * security: restydoc-index: we did not quote doc file paths properly when interpolating them into shell commands, which was a security vulnerability. _Thanks xlibor for the patch._
+    * feature: resty: added new `--user-runner` option.
     * feature: set the `ngx.config.is_console` field to `true` to detect the [resty-cli](https://github.com/openresty/resty-cli#readme) environment from Lua scripts.
     * bugfix: we do not forward `SIGHUP` to [NGINX](nginx.html) processes anymore since [resty-cli](https://github.com/openresty/resty-cli#readme) is usually run as non-daemon and `SIGHUP` should be converted to `SIGQUIT`.
 * upgraded [ngx_echo](https://github.com/openresty/echo-nginx-module#readme) to 0.62.
