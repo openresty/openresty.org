@@ -202,7 +202,7 @@
     * feature: set the `ngx.config.is_console` field to `true` to detect the [resty-cli](https://github.com/openresty/resty-cli#readme) environment from Lua scripts.
     * bugfix: we do not forward `SIGHUP` to [NGINX](nginx.html) processes anymore since [resty-cli](https://github.com/openresty/resty-cli#readme) is usually run as non-daemon and `SIGHUP` should be converted to `SIGQUIT`.
 * upgraded [ngx_echo](https://github.com/openresty/echo-nginx-module#readme) to 0.62.
-    * bugfix: config: we now always use fouble quotes in `[...]` conditionals.
+    * bugfix: config: we now always use double quotes in `[...]` conditionals.
     * bugfix: config: avoided an error with [NGINX](nginx.html) 1.17.0 and above. _Thanks Thibault Charbonnier for the patch._
     * style: fixed a coding style issue found by `ngx-releng`.
 * upgraded [ngx_srcache](https://github.com/openresty/srcache-nginx-module#readme) to 0.32.
@@ -212,7 +212,7 @@
     * doc: documented a tip to make memcached store objects bigger than 1MB.
 
 * upgraded [lua-cjson](https://github.com/openresty/lua-cjson) to 2.1.0.8.
-    * feature: added an option to disable forward slash escaping. _Thanks exjesper for the patch._
+    * feature: added an option to disable forward slash escaping. _Thanks Jesper Lundgren for the patch._
 
 * upgraded [lua-resty-memcached](https://github.com/openresty/lua-resty-memcached#readme) to v0.15.
     * bugfix: `gets()` did not return socket send errors at the correct index. _Thanks Justin Li for the patch._
