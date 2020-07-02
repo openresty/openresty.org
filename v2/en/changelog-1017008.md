@@ -179,7 +179,8 @@
         * ARM: Fix condition code check fusion.
         * ARM64: Avoid side-effects of constant rematerialization.
 * upgraded [lua-resty-lrucache](https://github.com/openresty/lua-resty-lrucache#readme) to 0.10.
-    * feature: implemented the `cache:get_keys()` API. _Thanks Datong Sun for the patch._
+    * feature: implemented a user flags attribute similar to that of the 'shdict' API. _Thanks Thibault Charbonnier for the patch._
+    * feature: implemented the `cache:get_keys()` API. _Thanks Thibault Charbonnier for the patch._
     * feature: implemented the `cache:count()` and `cache:capacity()` APIs. _Thanks Datong Sun for the patch._
     * feature: implemented a user `flags` attribute similar to that of the `ngx.shared` API. _Thanks Thibault Charbonnier for the patch._
     * makefile: added a `lint` target to detect invalid test cases which we now use in Travis CI. _Thanks Thibault Charbonnier for the patch._
