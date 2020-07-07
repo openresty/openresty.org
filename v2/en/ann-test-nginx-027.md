@@ -117,6 +117,9 @@ or OpenResty-based Lua library development.
 This class inherits from `Test::Base`, thus bringing all its declarative
 power to the Nginx C module testing practices.
 
+All of our OpenResty projects are using this test scaffold for
+automated regression testing.
+
 Please check out the full documentation on CPAN:
 
 https://metacpan.org/pod/Test::Nginx::Socket
