@@ -14,6 +14,9 @@ distributions, and the pre-built binary Linux packages for Ubuntu,
 Debian, Fedora, CentOS, RHEL, Alpine, Amazon Linux are provided on this
 [Download page](download.html).
 
+We added new binary package repositories
+for Ubuntu 14.04, Alpine 3.12, OpenSUSE 15.2, and Fedora 28.
+
 This is the first OpenResty release based on the nginx [% major_ver %] core.
 
 # Acknowledgments
