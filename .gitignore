@@ -13,5 +13,5 @@ v2/[ce]n/download.md
 *.md.fixed
 node_modules
 package-lock.json
-ann-*.md
+ann-[1-9]*.md
 .idea
