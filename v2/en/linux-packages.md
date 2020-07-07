@@ -8,6 +8,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Codename        Supported Architectures
+    14.04           Trusty          amd64
     16.04           Xenial          amd64
     18.04           Bionic          amd64
     19.10           Eoan            amd64
@@ -45,6 +46,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Supported Architectures
+    28              x86_64
     30              x86_64
     31              x86_64
     32              x86_64
@@ -63,6 +65,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 ```
     Version         Supported Architectures
     15.1            x86_64
+    15.2            x86_64
 ```
 
 * Alpine
@@ -74,6 +77,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     3.9             x86_64
     3.10            x86_64
     3.11            x86_64
+    3.12            x86_64
 ```
 
 All our repositories' metadata (and rpm binary packages) are signed by the following GPG key, `0xD5EDEB74`:
