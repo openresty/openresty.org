@@ -11,7 +11,6 @@
     14.04           Trusty          amd64
     16.04           Xenial          amd64
     18.04           Bionic          amd64
-    19.10           Eoan            amd64
     20.04           Focal           amd64
 ```
 
