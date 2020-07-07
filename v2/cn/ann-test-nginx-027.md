@@ -111,11 +111,10 @@ time.
 
 # About Test::Nginx
 
-This Perl module provides a test scaffold based on IO::Socket
-for automated testing in Nginx C module or ngx_lua-based Lua library
-development.
+This Perl module provides a test scaffold for automated testing in Nginx C module
+or OpenResty-based Lua library development.
 
-This class inherits from Test::Base, thus bringing all its declarative
+This class inherits from `Test::Base`, thus bringing all its declarative
 power to the Nginx C module testing practices.
 
 Please check out the full documentation on CPAN:
