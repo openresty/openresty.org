@@ -6,6 +6,7 @@ faq.html
 v2/logs/
 v2/html/
 v2/text/
+v2/templates/posts-slide-*.tt2
 *.tsv
 v2/upload-data
 v2/old-permlinks.js

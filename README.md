@@ -54,6 +54,7 @@ psql -Upostgres    # or "psql postgres", depending on your Pg installation
 # postgres=# grant all privileges on database openresty_org to openresty;
 
 make initdb   # create the database and load the data files
+make gentemp  # generate additional template files
 make run      # starting the test nginx server listened on localhost:8080
 make reload   # for reloading the test nginx server
 ```

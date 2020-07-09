@@ -147,6 +147,7 @@ function _M.run()
                                     title = home.title,
                                     body = home.html_body,
                                     timeline = timeline,
+                                    lang = lang,
                                   },
                                   i18n)
         ngx.print(html)
@@ -198,6 +199,7 @@ function _M.run()
                                     search_query = query,
                                     body = concat(result_html),
                                     timeline = timeline,
+                                    lang = lang,
                                   },
                                   i18n)
         ngx.print(html)

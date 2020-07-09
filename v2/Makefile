@@ -115,3 +115,7 @@ msgfmt: $(i18n_lua)
 
 $(i18n_lua): $(po_files) $(msgfmt_pl)
 	$(msgfmt_pl) -o $(i18n_lua) $(po_files)
+
+.PHONY: gentemp
+gentemp:
+	./util/gen-templates.js

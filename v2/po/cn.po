@@ -1,27 +1,27 @@
 #. TRANSLATORS: Please leave %s, %d, and etc as is, because it is needed by the program.
 #. Thank you for contributing to this project.
 
-#: lua/openresty_org/controller.lua:163
+#: lua/openresty_org/controller.lua:164
 msgid  "Bad search query"
 msgstr "非法的搜索查询"
 
-#: lua/openresty_org/controller.lua:164
+#: lua/openresty_org/controller.lua:165
 msgid  "No query provided."
 msgstr "没有提供任何搜索词。"
 
-#: lua/openresty_org/controller.lua:169
+#: lua/openresty_org/controller.lua:170
 msgid  "Query too long (more than %d bytes)."
 msgstr "查词太长了（已经超出 %d 字节）。"
 
-#: lua/openresty_org/controller.lua:178
+#: lua/openresty_org/controller.lua:179
 msgid  "No search results found"
 msgstr "没有找到任何匹配的记录"
 
-#: lua/openresty_org/controller.lua:179
+#: lua/openresty_org/controller.lua:180
 msgid  "Please adjust your search query and try again."
 msgstr "请调整您的搜索查询并重试。"
 
-#: lua/openresty_org/controller.lua:190
+#: lua/openresty_org/controller.lua:191
 msgid  "Search Result"
 msgstr "搜索结果"
 
@@ -76,6 +76,10 @@ msgstr "OpenResty<sup>&reg;</sup> 是一款基于 NGINX 和 LuaJIT 的 Web 平�
 #: templates/index.tt2:32
 msgid  "Search OpenResty.org"
 msgstr "搜索 OpenResty.org 中文站"
+
+#: templates/posts-slide-cn.tt2:2
+msgid  "More Interesting Topics"
+msgstr "更多有趣的文章"
 
 #: templates/sidebar.tt2:19
 msgid  "Timeline"
