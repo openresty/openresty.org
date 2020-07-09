@@ -46,7 +46,7 @@ local function gen_cache_control_headers(ts)
     resp_header["Cache-Control"] = "max-age=3600"
 end
 
-local function search_error(i18n, main_menu, timeline, query, title, msg)
+local function search_error(i18n, main_menu, timeline, query, title, msg, lang)
     local html = view.process("page.tt2",
                               { main_menu = main_menu,
                                 skip_meta = true,
@@ -54,6 +54,7 @@ local function search_error(i18n, main_menu, timeline, query, title, msg)
                                 search_query = query,
                                 body = "<p>" .. msg .. "</p>",
                                 timeline = timeline,
+                                lang = assert(lang),
                               },
                               i18n)
     ngx.print(html)
@@ -118,7 +119,7 @@ function _M.run()
     end
 
     local lang = m[1]
-    print("lang: ", lang)
+    -- print("lang: ", lang)
 
     local i18n = i18n_objs[lang]
     if not i18n then
@@ -147,6 +148,7 @@ function _M.run()
                                     title = home.title,
                                     body = home.html_body,
                                     timeline = timeline,
+                                    lang = assert(lang),
                                   },
                                   i18n)
         ngx.print(html)
@@ -168,14 +170,14 @@ function _M.run()
         if not query or #query == 0 then
             return search_error(i18n, main_menu, timeline, query,
                                 _("Bad search query"),
-                                _("No query provided."))
+                                _("No query provided."), lang)
         end
 
         if #query > MAX_SEARCH_QUERY_LEN then
             local title = _("Bad search query")
             local msg = format(_("Query too long (more than %d bytes)."),
                                MAX_SEARCH_QUERY_LEN)
-            return search_error(i18n, main_menu, timeline, query, title, msg)
+            return search_error(i18n, main_menu, timeline, query, title, msg, lang)
         end
 
         local res = model.get_search_results(lang, query)
@@ -183,7 +185,7 @@ function _M.run()
         if #res == 0 then
             return search_error(i18n, main_menu, timeline, query,
                                 _("No search results found"),
-                            _("Please adjust your search query and try again."))
+                            _("Please adjust your search query and try again."), lang)
         end
 
         -- print("search result: ", cjson.encode(res))
@@ -198,6 +200,7 @@ function _M.run()
                                     search_query = query,
                                     body = concat(result_html),
                                     timeline = timeline,
+                                    lang = assert(lang),
                                   },
                                   i18n)
         ngx.print(html)
@@ -225,6 +228,7 @@ function _M.run()
                                 title = rec.title,
                                 body = rec.html_body,
                                 timeline = timeline,
+                                lang = assert(lang),
                                },
                                i18n)
 

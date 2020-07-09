@@ -11,7 +11,8 @@ i18n_lua = lua/openresty_org/i18n.lua
 templates_lua = lua/openresty_org/templates.lua
 
 lua_files := $(sort $(filter-out $(i18n_lua) $(templates_lua),$(wildcard lua/*.lua lua/openresty_org/*.lua)))
-tt2_files := $(sort $(wildcard templates/*.tt2))
+auto_tt2_files := templates/posts-slide-cn.tt2 templates/posts-slide-en.tt2
+tt2_files := $(sort $(wildcard templates/*.tt2)) $(auto_tt2_files)
 
 less_file = css/main.less
 css_file = $(patsubst %.less, %.css, $(less_file))
@@ -31,9 +32,15 @@ tpage = tpage
 .PHONY: all
 all: templates css msgfmt
 
+$(auto_tt2_files):
+	./util/gen-templates.js
+
 .PHONY: check
 check:
 	@echo $(md_files)
+
+.PHONY: auto-templates
+auto-templates: $(auto_tt2_files)
 
 .PHONY: templates
 templates: $(templates_lua)
@@ -61,6 +68,7 @@ stop: logs/nginx.pid
 
 .PHONY: clean
 clean:
+	rm -f templates/posts-slide-*.tt2
 	rm -rf html text *.tsv
 	rm -f $(templates_lua)
 

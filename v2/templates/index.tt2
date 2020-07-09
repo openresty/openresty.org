@@ -47,6 +47,13 @@
 
 		<section id="main">
 [% PROCESS 'post.tt2' %]
+
+[%- IF lang == 'cn';
+        PROCESS 'posts-slide-cn.tt2';
+    ELSE;
+        PROCESS 'posts-slide-en.tt2';
+    END;
+%]
 		</section><!-- / main -->
 
 [% PROCESS 'sidebar.tt2' %]

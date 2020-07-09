@@ -18,6 +18,7 @@ local trans_cn = {
     ["Commercial Offering"] = "商业支持",
     ["Contribute on GitHub"] = "在 GitHub 上贡献你的力量",
     ["Copyright © 2017, 2018, 2019, 2020 by Yichun Zhang (agentzh)"] = "版权所有 © 2017, 2018, 2019, 2020 章亦春 (agentzh)",
+    ["More Interesting Topics"] = "更多有趣的文章",
     ["No query provided."] = "没有提供任何搜索词。",
     ["No search results found"] = "没有找到任何匹配的记录",
     ["Official Forum"] = "官方论坛",
