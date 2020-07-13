@@ -4,9 +4,9 @@
     @created       2011-06-21 04:40 GMT
 --->
 
-***最新！*** [Test::Nginx 0.27](ann-test-nginx-027.html) 发布。
+***最新！*** [Test::Nginx 0.28](ann-test-nginx-028.html) 发布。
 
-***最新！*** [OpenResty 1.17.8.1](ann-1017008001.html) 正式版发布。
+***最新！*** [OpenResty 1.17.8.2](ann-1017008002.html) 正式版发布。
 
 ***最新！*** 新博客文章[OpenResty 和 Nginx 如何分配和管理内存](https://blog.openresty.com.cn/cn/how-or-alloc-mem/) 已发布。
 

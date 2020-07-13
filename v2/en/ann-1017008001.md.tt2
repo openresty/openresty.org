@@ -1,9 +1,9 @@
+[% major_ver = "1.17.8"; version = major_ver _ ".1" -%]
 <!---
     @title         OpenResty 1.17.8.1 Released
     @creator       Yichun Zhang
 --->
 
-[% major_ver = "1.17.8"; version = major_ver _ ".1" %]
 We are happy to announce the new formal release, [% version %], of the
 OpenResty web platform based on NGINX and LuaJIT.
 
@@ -80,7 +80,7 @@ The highlights of this release candidate are:
 
 # Full Change logs
 
-Complete change logs since the last (formal) release, [% version %], can be browsed
+Complete change logs since the last (formal) release, [1.15.8.3](ann-1015008003.html), can be browsed
 in the page [Change Log for [% major_ver %].x](changelog-1017008.html).
 
 # Testing

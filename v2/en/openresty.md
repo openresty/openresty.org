@@ -4,9 +4,9 @@
     @created       2011-06-21 04:03 GMT
 --->
 
-***New!*** [Test::Nginx 0.27](ann-test-nginx-027.html) is now released!
+***New!*** [Test::Nginx 0.28](ann-test-nginx-028.html) is now released!
 
-***New!*** Formal version [OpenResty 1.17.8.1](ann-1017008001.html) is now released!
+***New!*** Formal version [OpenResty 1.17.8.2](ann-1017008002.html) is now released!
 
 ***New!*** New official blog post series "[The Wonderland of Dynamic Tracing](https://blog.openresty.com/en/dynamic-tracing-part-1/)" is published.
 

@@ -4,6 +4,11 @@
     @created       2020-06-30 21:32 GMT
 --->
 
+# Version 1.17.8.2 - 13 July 2020
+
+* bugfix: builds with http_perl_module was broken. this regression had appeared in 1.17.8.1.
+* change: we no longer remove a lot of files (docs, perl modules, tests, and etc.) in our tarball.
+
 # Version 1.17.8.1 - 4 July 2020
 
 * upgraded the [nginx](nginx.html) core to 1.17.8.
