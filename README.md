@@ -30,12 +30,14 @@ Building
 
 You need to install both OpenResty and [PostgreSQL](http://www.postgresql.org/) 9.x, obviously.
 
-You need to install [pandoc](http://pandoc.org/) and [marked](https://marked.js.org/) to your system.
+You need to install [pandoc](http://pandoc.org/), [marked](https://marked.js.org/), [cheerio](http://www.npmjs.com/package/cheerio) and [axios](https://www.axios.com/) to your system.
 On Mac OS X, for example, it's as simple as
 
 ```bash
 brew install pandoc
 npm install marked
+npm install cheerio
+npm install axios
 ```
 
 You'll also need `perl` installed in your system for building the web site (not needed for serivce deployment though).
@@ -54,7 +56,6 @@ psql -Upostgres    # or "psql postgres", depending on your Pg installation
 # postgres=# grant all privileges on database openresty_org to openresty;
 
 make initdb   # create the database and load the data files
-make gentemp  # generate additional template files
 make run      # starting the test nginx server listened on localhost:8080
 make reload   # for reloading the test nginx server
 ```

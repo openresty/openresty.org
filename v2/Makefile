@@ -11,7 +11,10 @@ i18n_lua = lua/openresty_org/i18n.lua
 templates_lua = lua/openresty_org/templates.lua
 
 lua_files := $(sort $(filter-out $(i18n_lua) $(templates_lua),$(wildcard lua/*.lua lua/openresty_org/*.lua)))
-tt2_files := $(sort $(wildcard templates/*.tt2))
+tt2_files := $(sort $(wildcard templates/*.tt2)) templates/posts-slide-*.tt2
+
+templates/posts-slide-*.tt2:
+	./util/gen-templates.js
 
 less_file = css/main.less
 css_file = $(patsubst %.less, %.css, $(less_file))
@@ -61,6 +64,7 @@ stop: logs/nginx.pid
 
 .PHONY: clean
 clean:
+	rm -f templates/posts-slide-*.tt2
 	rm -rf html text *.tsv
 	rm -f $(templates_lua)
 
@@ -116,6 +120,3 @@ msgfmt: $(i18n_lua)
 $(i18n_lua): $(po_files) $(msgfmt_pl)
 	$(msgfmt_pl) -o $(i18n_lua) $(po_files)
 
-.PHONY: gentemp
-gentemp:
-	./util/gen-templates.js
