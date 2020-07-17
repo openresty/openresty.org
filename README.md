@@ -35,9 +35,7 @@ On Mac OS X, for example, it's as simple as
 
 ```bash
 brew install pandoc
-npm install marked
-npm install cheerio
-npm install axios
+npm install marked cheerio axios
 ```
 
 You'll also need `perl` installed in your system for building the web site (not needed for serivce deployment though).

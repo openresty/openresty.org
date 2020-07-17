@@ -11,9 +11,9 @@ i18n_lua = lua/openresty_org/i18n.lua
 templates_lua = lua/openresty_org/templates.lua
 
 lua_files := $(sort $(filter-out $(i18n_lua) $(templates_lua),$(wildcard lua/*.lua lua/openresty_org/*.lua)))
-tt2_files := $(sort $(wildcard templates/*.tt2)) templates/posts-slide-*.tt2
+tt2_files := $(sort $(wildcard templates/*.tt2)) templates/posts-slide-cn.tt2 templates/posts-slide-en.tt2
 
-templates/posts-slide-*.tt2:
+templates/posts-slide-cn.tt2 templates/posts-slide-en.tt2:
 	./util/gen-templates.js
 
 less_file = css/main.less
