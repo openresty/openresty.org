@@ -5,7 +5,7 @@
 
 We have uploaded Test::Nginx 0.28 to CPAN:
 
-    https://metacpan.org/release/Test-Nginx
+https://metacpan.org/release/Test-Nginx
 
 It will appear on the CPAN mirror near you in the next few hours or
 so. After that, you can install the module like below
@@ -25,7 +25,7 @@ Special thanks go to all our contributors and developers!
 # Full Change logs
 
 Here's the complete change log for this release (compared to the last
-CPAN release, 0.27):
+CPAN release, [0.27](ann-test-nginx-027.html)):
 
 * bugfix: we downgraded the bundled version of Test::Builder to avoid the
 extra dependency Test2::Util.

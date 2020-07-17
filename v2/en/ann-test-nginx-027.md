@@ -5,7 +5,7 @@
 
 We have uploaded Test::Nginx 0.27 to CPAN:
 
-    https://metacpan.org/release/Test-Nginx
+https://metacpan.org/release/Test-Nginx
 
 It will appear on the CPAN mirror near you in the next few hours or
 so. After that, you can install the module like below
