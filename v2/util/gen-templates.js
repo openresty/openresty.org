@@ -34,11 +34,14 @@ async function genSlideTemplate(lang) {
     const imgContainer = $Template(`<div class="blog-img" data-pic="${pic}"></div>`);
     imgContainer.append(picture);
 
-    const link = $Template(`<a class="article-item swiper-slide" href="${base}${id}" target="_blank">`);
+    const link = $Template(`<a class="article-item" href="${base}${id}" target="_blank">`);
     link.append(imgContainer);
     link.append(textContainer);
 
-    $Template('.swiper-wrapper').append(link);
+    const slide = $Template('<div class="swiper-slide"></div>');
+    slide.append(link);
+
+    $Template('.swiper-wrapper').append(slide);
 
     fs.writeFileSync(`./templates/posts-slide-${lang}.tt2`, $Template.html());
   });

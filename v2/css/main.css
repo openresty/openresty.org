@@ -232,6 +232,9 @@ header[role="header"] .site-name img {
   margin-left: -20px;
   margin-right: 12px;
 }
+.dark-img {
+  filter: brightness(2);
+}
 #wrapper {
   display: flex;
   align-items: stretch;
@@ -365,7 +368,7 @@ header[role="header"] .link .link-title {
     margin-bottom: 10px;
   }
   header[role="header"] .link a {
-    width: 49%;
+    width: 30%;
     margin-right: unset;
     display: inline-flex;
     flex-direction: column;
@@ -374,6 +377,9 @@ header[role="header"] .link .link-title {
   }
   header[role="header"] .link .link-title {
     margin-top: 5px;
+  }
+  header[role="header"] .site-name small {
+    font-size: 10px;
   }
 }
 /*=====================================================================================
