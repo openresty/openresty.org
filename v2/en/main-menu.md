@@ -4,6 +4,7 @@
     @created       2011-06-21 03:57 GMT
 --->
 
+* <big>**[Donate Online](donate-online.html)**</big>
 * <big>**[Download](download.html)**</big>
 * [Installation](installation.html)
 * [Getting Started](getting-started.html)
@@ -15,7 +16,6 @@
 * [Benchmark](benchmark.html)
 * [Contact us](contact-us.html)
 * [Debugging](debugging.html)
-* [Donate Online](donate-online.html)
 * [Donors](donors.html)
 * [eBooks](ebooks.html)
 * [FAQ](faq.html)

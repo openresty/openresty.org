@@ -23,6 +23,8 @@
 
 <script>
   window.onload = function () {
+    setMaxWidth();
+
     document.getElementById('swiper-parent').style.display = 'block';
     document.getElementById('loading-wrapper').style.display = 'none';
 
@@ -36,16 +38,50 @@
         clickable: true,
       },
       spaceBetween: 32,
-      slidesPerView: document.body.clientWidth > 575 ? 7 : 1,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+        },
+        1000: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+        },
+        1300: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+        },
+        1600: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+        },
+        1800: {
+          slidesPerView: 5,
+          slidesPerGroup: 5,
+        },
+        2000: {
+          slidesPerView: 6,
+          slidesPerGroup: 6,
+        },
+        2200: {
+          slidesPerView: 7,
+          slidesPerGroup: 7,
+        },
+      }
     });
+  }
+
+  window.addEventListener('resize', function() {
+    setMaxWidth();
+  });
+
+  function setMaxWidth() {
+    const width = document.body.clientWidth > 990 ? document.body.clientWidth - 600 : document.body.clientWidth - 40;
+    document.getElementById('articles').style.setProperty('max-width', width + 'px', 'important');
   }
 </script>
 
 <style>
-  #swiper-parent {
-    display: none;
-  }
-
   #article-carousel {
     width: 100%;
   }
@@ -72,33 +108,23 @@
   }
 
   .swiper-pagination-bullet-active {
-    background-color: black;
-  }
-
-  .blog-abstract {
-    text-align: left;
+    background-color: #497149;
   }
 
   .swiper-parent {
+    display: none;
     position: relative;
     padding-left: 70px;
     padding-right: 70px;
-    max-width: 1400px;
     margin: 0 auto;
   }
 
-  .swiper-button-next:after {
-    font-size: 32px;
-  }
-
+  .swiper-button-next:after,
   .swiper-button-prev:after {
     font-size: 32px;
   }
 
-  .swiper-button-next:focus {
-    outline: none;
-  }
-
+  .swiper-button-next:focus,
   .swiper-button-prev:focus {
     outline: none;
   }
@@ -133,8 +159,7 @@
   }
 
   #articles {
-    background-color: 'dark-gray';
-    color: black;
+    margin: 0 auto;
   }
 
   #articles h2 {
@@ -155,14 +180,14 @@
   }
 
   .blog-img[data-pic*=hiring] {
-    border: 1px solid #3D9AFF;
+    border: 1px solid #497149;
   }
 
   .blog-img[data-pic*=logo],
   .blog-img[data-pic*=report] {
     object-fit: contain;
     padding: 0 10px;
-    border: 1px solid #3D9AFF;
+    border: 1px solid #497149;
   }
 
   .article-img[src*=logo],
@@ -200,6 +225,19 @@
 
   .sk-three-bounce .sk-bounce2 {
     animation-delay: -0.16s;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #497149;
+  }
+
+  .article-text:hover {
+    color: #003300;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    top: 30%;
   }
 
   @keyframes sk-three-bounce {
