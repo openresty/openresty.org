@@ -34,7 +34,7 @@ async function genSlideTemplate(lang) {
     const imgContainer = $Template(`<div class="blog-img" data-pic="${pic}"></div>`);
     imgContainer.append(picture);
 
-    const link = $Template(`<a class="article-item" href="${base}${id}" target="_blank">`);
+    const link = $Template(`<a class="article-item" href="${base}${id}/#src=org" target="_blank">`);
     link.append(imgContainer);
     link.append(textContainer);
 
@@ -43,7 +43,7 @@ async function genSlideTemplate(lang) {
 
     $Template('.swiper-wrapper').append(slide);
 
-    fs.writeFileSync(`./templates/posts-slide-${lang}.tt2`, $Template.html());
+    fs.writeFileSync(`./templates/posts-slide-${lang}.tt2`, $Template.html() + '\n');
   });
 };
 
