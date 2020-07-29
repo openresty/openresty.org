@@ -34,7 +34,7 @@ async function genSlideTemplate(lang) {
     const imgContainer = $Template(`<div class="blog-img" data-pic="${pic}"></div>`);
     imgContainer.append(picture);
 
-    const link = $Template(`<a class="article-item" href="${base}${id}/#src=org" target="_blank">`);
+    const link = $Template(`<a class="article-item" href="${base}${id}/?src=org" target="_blank">`);
     link.append(imgContainer);
     link.append(textContainer);
 
