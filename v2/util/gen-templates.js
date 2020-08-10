@@ -13,8 +13,10 @@ async function genSlideTemplate(lang) {
   const $ = cheerio.load(rss.data, { decodeEntities: false });
   const html = fs.readFileSync('./util/posts-slide.html', 'utf-8');
   const $Template = cheerio.load(html, { decodeEntities: false });
+  const length = 10;
 
-  $('entry').slice(0, 10).each((index, entry) => {
+  $Template('.swiper-wrapper').append('  ');
+  $('entry').slice(0, length).each((index, entry) => {
     const title = $(entry).children('title').text();
     const array = $(entry).children('id').text().split('/');
     const id = array[array.length - 2];
@@ -42,9 +44,10 @@ async function genSlideTemplate(lang) {
     slide.append(link);
 
     $Template('.swiper-wrapper').append(slide);
-
-    fs.writeFileSync(`./templates/posts-slide-${lang}.tt2`, $Template.html() + '\n');
+    $Template('.swiper-wrapper').append(index === length - 1 ? '\n      ' : '\n        ');
   });
+
+  fs.writeFileSync(`./templates/posts-slide-${lang}.tt2`, $Template.html() + '\n');
 };
 
 genSlideTemplate('en');

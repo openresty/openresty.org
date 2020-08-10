@@ -4,14 +4,6 @@
     @created       2011-06-21 04:03 GMT
 --->
 
-***New!*** [Test::Nginx 0.28](ann-test-nginx-028.html) is now released!
-
-***New!*** Formal version [OpenResty 1.17.8.2](ann-1017008002.html) is now released!
-
-***New!*** New official blog post series "[The Wonderland of Dynamic Tracing](https://blog.openresty.com/en/dynamic-tracing-part-1/)" is published.
-
-***New!*** New blog post "[How OpenResty and Nginx Allocate and Manage Memory](https://blog.openresty.com/en/how-or-alloc-mem/)" is published.
-
 OpenResty<sup>&reg;</sup> is a full-fledged web platform that integrates our
 enhanced version of the
 [Nginx](nginx.html) core, our enhanced version of [LuaJIT](https://github.com/openresty/luajit2), many carefully written Lua
