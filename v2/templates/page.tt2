@@ -28,6 +28,14 @@
 		</div><!-- / sidebar left -->
 
 		<section id="main">
+
+[%- IF lang == 'cn';
+        PROCESS 'news-cn.tt2';
+    ELSE;
+        PROCESS 'news-en.tt2';
+    END;
+%]
+
 [% PROCESS post.tt2 %]
 
 [%- IF lang == 'cn';

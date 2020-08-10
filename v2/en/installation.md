@@ -4,14 +4,6 @@
     @created       2011-06-21 04:40 GMT
 --->
 
-***New!*** [Test::Nginx 0.28](ann-test-nginx-028.html) is now released!
-
-***New!*** Formal version [OpenResty 1.17.8.2](ann-1017008002.html) is now released!
-
-***New!*** New official blog post series "[The Wonderland of Dynamic Tracing](https://blog.openresty.com/en/dynamic-tracing-part-1/)" is published.
-
-***New!*** New blog post "[How OpenResty and Nginx Allocate and Manage Memory](https://blog.openresty.com/en/how-or-alloc-mem/)" is published.
-
 # Binary Packages
 
 OpenResty<sup>&reg;</sup> provides [official pre-built packages](linux-packages.html) for some of the common
