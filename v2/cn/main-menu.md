@@ -4,7 +4,7 @@
     @created       2011-06-21 03:57 GMT
 --->
 
-* <big>**[捐助](donate-online.html)**</big>
+* <big>**[博客](https://blog.openresty.com.cn/cn/?src=org_side)**</big>
 * <big>**[下载](download.html)**</big>
 * [安装](installation.html)
 * [新手上路](getting-started.html)
@@ -20,6 +20,7 @@
 * [测试](quality-assurance.html)
 * [联系我们](contact-us.html)
 * [用户问卷调查](https://openresty.org/survey/cn)
+* [捐助](donate-online.html)
 * [捐款者](donors.html)
 * [关于](about.html)
 * [English Site](/en/)
