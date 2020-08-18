@@ -30,12 +30,12 @@ Building
 
 You need to install both OpenResty and [PostgreSQL](http://www.postgresql.org/) 9.x, obviously.
 
-You need to install [pandoc](http://pandoc.org/), [marked](https://marked.js.org/), [cheerio](http://www.npmjs.com/package/cheerio) and [axios](https://www.axios.com/) to your system.
+You need to install [pandoc](http://pandoc.org/), [marked](https://marked.js.org/), [cheerio](http://www.npmjs.com/package/cheerio), [axios](https://www.axios.com/), [pug](https://pugjs.org) and [sharp](https://www.npmjs.com/package/sharp) to your system.
 On Mac OS X, for example, it's as simple as
 
 ```bash
 brew install pandoc
-npm install marked cheerio axios
+npm install marked cheerio axios pug sharp
 ```
 
 You'll also need `perl` installed in your system for building the web site (not needed for serivce deployment though).
@@ -85,6 +85,14 @@ These files are similar to the `.po` files used by the classic [GNU gettext](htt
 but we do not use `GNU gettext` at all.  Our `.po` files would be automatically updated according to the latest Lua source
 and TT2 template files with this command as well. If you make any edits to the `.po` files, then remember to re-run the
 `make` command to make your changes take effect (by updating the `openresty_org.i18n` Lua module file from the `.po` files).
+
+If you want to update the list of blog posts, then you need to run:
+
+```bash
+make auto-templates
+```
+
+This command also downloads images from our blog site, compress these images and save them to /v2/images/header-images.
 
 TODO
 ====

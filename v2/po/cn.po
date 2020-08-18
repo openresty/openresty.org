@@ -77,7 +77,7 @@ msgstr "OpenResty<sup>&reg;</sup> 是一款基于 NGINX 和 LuaJIT 的 Web 平�
 msgid  "Search OpenResty.org"
 msgstr "搜索 OpenResty.org 中文站"
 
-#: templates/posts-slide-cn.tt2:2
+#: templates/posts-slide-cn.tt2:3
 msgid  "More Interesting Topics"
 msgstr "更多有趣的文章"
 

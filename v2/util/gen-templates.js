@@ -1,54 +1,83 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
+const {writeFile, readdir} = fs.promises;
+const sharp = require('sharp');
 const cheerio = require('cheerio');
 const axios = require('axios');
+const pug = require('pug');
 
 const http = axios.create();
+const enBase = 'https://blog.openresty.com/en/';
+const cnBase = 'https://blog.openresty.com.cn/cn/';
+const staticBaseUrl = 'https://static.openresty.com';
+const height = 260;
+let pics = new Set();
+let picsExists;
 
 async function genSlideTemplate(lang) {
-  const base = lang === 'en' ? 'https://blog.openresty.com/en/' : 'https://blog.openresty.com.cn/cn/';
+  let postInfos = [];
+  const base = lang === 'en' ? enBase : cnBase;
   const source = `${base}atom.xml`;
   let rss = await http.get(source);
   const $ = cheerio.load(rss.data, { decodeEntities: false });
-  const html = fs.readFileSync('./util/posts-slide.html', 'utf-8');
-  const $Template = cheerio.load(html, { decodeEntities: false });
   const length = 10;
 
-  $Template('.swiper-wrapper').append('  ');
+  if (!picsExists) {
+    picsExists = await readdir('./images/header-images');
+  }
+
   $('entry').slice(0, length).each((index, entry) => {
     const title = $(entry).children('title').text();
     const array = $(entry).children('id').text().split('/');
     const id = array[array.length - 2];
     const pic = $(entry).children('pic').text();
-    const picName = pic.split('.')[0];
-    const webp = `${picName}.webp`;
 
-    const text = $Template(`<p class="blog-title">${title}</p>`);
-    const textContainer = $Template('<div class="article-text"></div>');
-    textContainer.append(text);
+    // images will be downloaded and compressed only when they do not exist yet
+    if (!picsExists.includes(pic.split('/header-images/')[1])) {
+      pics.add(pic);
+    }
 
-    const source = $Template(`<source srcset="${base}${webp}" type="image/webp" />`);
-    const img = $Template(`<img class="article-img" src="${base}${pic}" />`);
-    const picture = $Template(`<picture></picture>`);
-    picture.append(source).append(img);
-
-    const imgContainer = $Template(`<div class="blog-img" data-pic="${pic}"></div>`);
-    imgContainer.append(picture);
-
-    const link = $Template(`<a class="article-item" href="${base}${id}/?src=org" target="_blank">`);
-    link.append(imgContainer);
-    link.append(textContainer);
-
-    const slide = $Template('<div class="swiper-slide"></div>');
-    slide.append(link);
-
-    $Template('.swiper-wrapper').append(slide);
-    $Template('.swiper-wrapper').append(index === length - 1 ? '\n      ' : '\n        ');
+    postInfos.push({href: `${base}${id}`, pic, title})
   });
 
-  fs.writeFileSync(`./templates/posts-slide-${lang}.tt2`, $Template.html() + '\n');
+  const compileFunction = pug.compileFile('./util/posts-slide.pug', {pretty: true});
+  const swiperCss = lang == 'en' ? `${staticBaseUrl}/swiper/5.2.1/css/swiper.min.css` : `${staticBaseUrl}.cn/swiper/5.2.1/css/swiper.min.css`;
+  const swiperJs = lang == 'en' ? `${staticBaseUrl}/swiper/5.2.1/js/swiper.min.js` : `${staticBaseUrl}.cn/swiper/5.2.1/js/swiper.min.js`;
+  writeFile(`./templates/posts-slide-${lang}.tt2`, compileFunction({postInfos, swiperCss, swiperJs}));
 };
 
-genSlideTemplate('en');
-genSlideTemplate('cn');
+Promise.all([
+  genSlideTemplate('en'),
+  genSlideTemplate('cn'),
+]).then(() => {
+  for(pic of pics) {
+    optimizeImg(pic);
+  }
+})
+
+async function optimizeImg(pic) {
+  const response = await axios({
+    url: `${cnBase}${pic}`,
+    method: "GET",
+    responseEncoding: "binary",
+  });
+
+  await writeFile(`./images${pic}`, response.data, 'binary');
+  compressImg(`./images${pic}`);
+};
+
+async function compressImg(filePath) {
+  try {
+    const data = await sharp(filePath).resize({
+      height,
+      fit: 'contain',
+      withoutEnlargement: true,
+    })
+    .toBuffer();
+
+    return writeFile(filePath, data);
+  } catch (err) {
+    console.error(filePath, err);
+  }
+}

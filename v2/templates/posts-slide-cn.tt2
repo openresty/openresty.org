@@ -1,4 +1,5 @@
-<html><head></head><body><div id="articles">
+
+<div id="articles">
   <h2 class="area-title">[% c.l("More Interesting Topics") %]</h2>
   <div id="loading-wrapper">
     <div class="sk-three-bounce">
@@ -8,18 +9,58 @@
     </div>
   </div>
   <div class="swiper-parent" id="swiper-parent">
-    <div id="article-carousel" class="swiper-container">
+    <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/how-nginx-shm-consume-ram/?src=org" target="_blank"><div class="blog-img" data-pic="/header-images/shared-mem.jpg"><picture><source srcset="https://blog.openresty.com.cn/cn//header-images/shared-mem.webp" type="image/webp"><img class="article-img" src="https://blog.openresty.com.cn/cn//header-images/shared-mem.jpg"></picture></div><div class="article-text"><p class="blog-title">OpenResty 和 Nginx 的共享内存区是如何消耗物理内存的</p></div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-ann-1.17.8.1/?src=org" target="_blank"><div class="blog-img" data-pic="/header-images/openresty-logo.png"><picture><source srcset="https://blog.openresty.com.cn/cn//header-images/openresty-logo.webp" type="image/webp"><img class="article-img" src="https://blog.openresty.com.cn/cn//header-images/openresty-logo.png"></picture></div><div class="article-text"><p class="blog-title">OpenResty 1.17.8.1 released</p></div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-serials-a-round/?src=org" target="_blank"><div class="blog-img" data-pic="/header-images/chicago-city.jpg"><picture><source srcset="https://blog.openresty.com.cn/cn//header-images/chicago-city.webp" type="image/webp"><img class="article-img" src="https://blog.openresty.com.cn/cn//header-images/chicago-city.jpg"></picture></div><div class="article-text"><p class="blog-title">OpenResty Inc. 锁定四百万融资，领先流量管理软件同时发布实时诊断新品</p></div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/opm-site-refactor-2020-0505/?src=org" target="_blank"><div class="blog-img" data-pic="/header-images/openresty-logo.png"><picture><source srcset="https://blog.openresty.com.cn/cn//header-images/openresty-logo.webp" type="image/webp"><img class="article-img" src="https://blog.openresty.com.cn/cn//header-images/openresty-logo.png"></picture></div><div class="article-text"><p class="blog-title">OPM 网站优化发布</p></div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-pre-built-packages-2020-0502/?src=org" target="_blank"><div class="blog-img" data-pic="/header-images/openresty-logo.png"><picture><source srcset="https://blog.openresty.com.cn/cn//header-images/openresty-logo.webp" type="image/webp"><img class="article-img" src="https://blog.openresty.com.cn/cn//header-images/openresty-logo.png"></picture></div><div class="article-text"><p class="blog-title">Fedora 32, Ubuntu 20.04 Focal 和 Alpine 3.7 ~ 3.11 的 OpenResty 官方二进制仓库</p></div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-ann-1.15.8.3/?src=org" target="_blank"><div class="blog-img" data-pic="/header-images/openresty-logo.png"><picture><source srcset="https://blog.openresty.com.cn/cn//header-images/openresty-logo.webp" type="image/webp"><img class="article-img" src="https://blog.openresty.com.cn/cn//header-images/openresty-logo.png"></picture></div><div class="article-text"><p class="blog-title">OpenResty 1.15.8.3 正式版 + 1.17.8.1 RC1 版</p></div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/how-or-alloc-mem/?src=org" target="_blank"><div class="blog-img" data-pic="/header-images/green-ram-stick.jpg"><picture><source srcset="https://blog.openresty.com.cn/cn//header-images/green-ram-stick.webp" type="image/webp"><img class="article-img" src="https://blog.openresty.com.cn/cn//header-images/green-ram-stick.jpg"></picture></div><div class="article-text"><p class="blog-title">OpenResty 和 Nginx 如何分配和管理内存</p></div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/2019-openresty-inc-con-review/?src=org" target="_blank"><div class="blog-img" data-pic="/header-images/2019-shenzhen-end.jpg"><picture><source srcset="https://blog.openresty.com.cn/cn//header-images/2019-shenzhen-end.webp" type="image/webp"><img class="article-img" src="https://blog.openresty.com.cn/cn//header-images/2019-shenzhen-end.jpg"></picture></div><div class="article-text"><p class="blog-title">OpenResty Inc. 2019 技术沙龙及商业产品交流会回顾</p></div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/2019-openresty-inc-con/?src=org" target="_blank"><div class="blog-img" data-pic="/header-images/2019-con.jpg"><picture><source srcset="https://blog.openresty.com.cn/cn//header-images/2019-con.webp" type="image/webp"><img class="article-img" src="https://blog.openresty.com.cn/cn//header-images/2019-con.jpg"></picture></div><div class="article-text"><p class="blog-title">OpenResty Inc. 2019 技术沙龙及商业产品交流会</p></div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/talents/?src=org" target="_blank"><div class="blog-img" data-pic="/header-images/hiring.png"><picture><source srcset="https://blog.openresty.com.cn/cn//header-images/hiring.webp" type="image/webp"><img class="article-img" src="https://blog.openresty.com.cn/cn//header-images/hiring.png"></picture></div><div class="article-text"><p class="blog-title">长期招聘优秀人才</p></div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/how-nginx-shm-consume-ram?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/shared-mem.jpg"><img class="article-img" src="../images/header-images/shared-mem.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty 和 Nginx 的共享内存区是如何消耗物理内存的</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-ann-1.17.8.1?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/openresty-logo.png"><img class="article-img" src="../images/header-images/openresty-logo.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty 1.17.8.1 released</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-serials-a-round?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/chicago-city.jpg"><img class="article-img" src="../images/header-images/chicago-city.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty Inc. 锁定四百万融资，领先流量管理软件同时发布实时诊断新品</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/opm-site-refactor-2020-0505?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/openresty-logo.png"><img class="article-img" src="../images/header-images/openresty-logo.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OPM 网站优化发布</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-pre-built-packages-2020-0502?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/openresty-logo.png"><img class="article-img" src="../images/header-images/openresty-logo.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Fedora 32, Ubuntu 20.04 Focal 和 Alpine 3.7 ~ 3.11 的 OpenResty 官方二进制仓库</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-ann-1.15.8.3?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/openresty-logo.png"><img class="article-img" src="../images/header-images/openresty-logo.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty 1.15.8.3 正式版 + 1.17.8.1 RC1 版</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/how-or-alloc-mem?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/green-ram-stick.jpg"><img class="article-img" src="../images/header-images/green-ram-stick.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty 和 Nginx 如何分配和管理内存</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/2019-openresty-inc-con-review?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/2019-shenzhen-end.jpg"><img class="article-img" src="../images/header-images/2019-shenzhen-end.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty Inc. 2019 技术沙龙及商业产品交流会回顾</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/2019-openresty-inc-con?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/2019-con.jpg"><img class="article-img" src="../images/header-images/2019-con.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty Inc. 2019 技术沙龙及商业产品交流会</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/talents?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/hiring.png"><img class="article-img" src="../images/header-images/hiring.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">长期招聘优秀人才</p>
+            </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -27,17 +68,15 @@
     <div class="swiper-button-prev"></div>
   </div>
 </div>
-
-<link rel="stylesheet" href="/css/swiper.min.css">
-<script src="/js/swiper.min.js"></script>
-
+<link rel="stylesheet" href="https://static.openresty.com.cn/swiper/5.2.1/css/swiper.min.css"/>
+<script src="https://static.openresty.com.cn/swiper/5.2.1/js/swiper.min.js"></script>
 <script>
   window.onload = function () {
     setMaxWidth();
-
+  
     document.getElementById('swiper-parent').style.display = 'block';
     document.getElementById('loading-wrapper').style.display = 'none';
-
+  
     const swiper = new Swiper('#article-carousel', {
       navigation: {
         nextEl: '.swiper-button-next',
@@ -80,183 +119,182 @@
       }
     });
   }
-
+  
   window.addEventListener('resize', function() {
     setMaxWidth();
   });
-
+  
   function setMaxWidth() {
     const width = document.body.clientWidth > 990 ? document.body.clientWidth - 600 : document.body.clientWidth - 40;
     document.getElementById('articles').style.setProperty('max-width', width + 'px', 'important');
   }
+  
 </script>
-
 <style>
   #article-carousel {
-    width: 100%;
-  }
-
-  #article-carousel .article-item {
-    text-align: center;
-    outline: none;
-    color: #a1a1a1;
-    vertical-align: top;
-  }
-
-  #article-carousel .article-item .article-img {
-    width: 100%;
-    height: 130px;
-  }
-
-  #article-carousel .article-item .article_text {
-    margin-top: 8px;
-  }
-
-  .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-  }
-
-  .swiper-pagination-bullet-active {
-    background-color: #497149;
-  }
-
-  .swiper-parent {
-    display: none;
-    position: relative;
-    padding-left: 70px;
-    padding-right: 70px;
-    margin: 0 auto;
-  }
-
-  .swiper-button-next:after,
-  .swiper-button-prev:after {
-    font-size: 32px;
-  }
-
-  .swiper-button-next:focus,
-  .swiper-button-prev:focus {
-    outline: none;
-  }
-
-  .swiper-wrapper {
-    min-height: 290px;
-  }
-
-  .blog-title {
-    min-height: 50px;
-  }
-
-  @media (min-width: 575px) {
-    .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
-      margin: 0 10px;
+      width: 100%;
     }
-  }
-
-  @media (max-width: 575px) {
+  
+    #article-carousel .article-item {
+      text-align: center;
+      outline: none;
+      color: #a1a1a1;
+      vertical-align: top;
+    }
+  
+    #article-carousel .article-item .article-img {
+      width: 100%;
+      height: 130px;
+    }
+  
+    #article-carousel .article-item .article_text {
+      margin-top: 8px;
+    }
+  
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+    }
+  
+    .swiper-pagination-bullet-active {
+      background-color: #497149;
+    }
+  
+    .swiper-parent {
+      display: none;
+      position: relative;
+      padding-left: 70px;
+      padding-right: 70px;
+      margin: 0 auto;
+    }
+  
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 32px;
+    }
+  
+    .swiper-button-next:focus,
+    .swiper-button-prev:focus {
+      outline: none;
+    }
+  
     .swiper-wrapper {
-      min-height: 240px;
+      min-height: 290px;
     }
-  }
-
-  #article-carousel .article-item {
-    height: 290px;
-  }
-
-  .img-container {
-    padding: 0 5px;
-    border: 1px solid #578C57;
-  }
-
-  #articles {
-    margin: 0 auto;
-  }
-
-  #articles h2 {
-    color: black;
-    text-align: center;
-    margin-bottom: 36px;
-    font-weight: bold;
-    font-size: 120%;
-  }
-
-  .article-text {
-    color: #4d8d89;
-    margin-top: 8px;
-  }
-
-  .blog-img {
-    object-fit: cover;
-  }
-
-  .blog-img[data-pic*=hiring] {
-    border: 1px solid #497149;
-  }
-
-  .blog-img[data-pic*=logo],
-  .blog-img[data-pic*=report] {
-    object-fit: contain;
-    padding: 0 10px;
-    border: 1px solid #497149;
-  }
-
-  .article-img[src*=logo],
-  .article-img[src*=report] {
-    object-fit: contain;
-  }
-
-  #loading-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 260px;
-  }
-
-  .sk-three-bounce {
-    margin: 40px auto;
-    width: 80px;
-    text-align: center;
-    transform: scale(.75);
-  }
-
-  .sk-three-bounce .sk-child {
-    width: 20px;
-    height: 20px;
-    background-color: #333;
-    border-radius: 100%;
-    display: inline-block;
-    animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
-  }
-
-  .sk-three-bounce .sk-bounce1 {
-    animation-delay: -0.32s;
-  }
-
-  .sk-three-bounce .sk-bounce2 {
-    animation-delay: -0.16s;
-  }
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: #497149;
-  }
-
-  .article-text:hover {
-    color: #003300;
-  }
-
-  .swiper-button-next, .swiper-button-prev {
-    top: 30%;
-  }
-
-  @keyframes sk-three-bounce {
-    0%, 80%, 100% {
-      transform: scale(0);
+  
+    .blog-title {
+      min-height: 50px;
     }
-    40% {
-      transform: scale(1)
+  
+    @media (min-width: 575px) {
+      .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 10px;
+      }
     }
-  }
+  
+    @media (max-width: 575px) {
+      .swiper-wrapper {
+        min-height: 240px;
+      }
+    }
+  
+    #article-carousel .article-item {
+      height: 290px;
+    }
+  
+    .img-container {
+      padding: 0 5px;
+      border: 1px solid #578C57;
+    }
+  
+    #articles {
+      margin: 0 auto;
+    }
+  
+    #articles h2 {
+      color: black;
+      text-align: center;
+      margin-bottom: 36px;
+      font-weight: bold;
+      font-size: 120%;
+    }
+  
+    .article-text {
+      color: #4d8d89;
+      margin-top: 8px;
+    }
+  
+    .blog-img {
+      object-fit: cover;
+    }
+  
+    .blog-img[data-pic*=hiring] {
+      border: 1px solid #497149;
+    }
+  
+    .blog-img[data-pic*=logo],
+    .blog-img[data-pic*=report] {
+      object-fit: contain;
+      padding: 0 10px;
+      border: 1px solid #497149;
+    }
+  
+    .article-img[src*=logo],
+    .article-img[src*=report] {
+      object-fit: contain;
+    }
+  
+    #loading-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 260px;
+    }
+  
+    .sk-three-bounce {
+      margin: 40px auto;
+      width: 80px;
+      text-align: center;
+      transform: scale(.75);
+    }
+  
+    .sk-three-bounce .sk-child {
+      width: 20px;
+      height: 20px;
+      background-color: #333;
+      border-radius: 100%;
+      display: inline-block;
+      animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
+    }
+  
+    .sk-three-bounce .sk-bounce1 {
+      animation-delay: -0.32s;
+    }
+  
+    .sk-three-bounce .sk-bounce2 {
+      animation-delay: -0.16s;
+    }
+  
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #497149;
+    }
+  
+    .article-text:hover {
+      color: #003300;
+    }
+  
+    .swiper-button-next, .swiper-button-prev {
+      top: 30%;
+    }
+  
+    @keyframes sk-three-bounce {
+      0%, 80%, 100% {
+        transform: scale(0);
+      }
+      40% {
+        transform: scale(1)
+      }
+    }
 </style>
-</body></html>
