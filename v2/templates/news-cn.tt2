@@ -1,10 +1,7 @@
 <div class="news">
   <div class="news-item">
     <a href="https://blog.openresty.com.cn/cn/how-nginx-shm-consume-ram/?src=org_news" target="_blank">
-      <picture>
-        <source srcset="https://blog.openresty.com.cn/cn/header-images/shared-mem.webp" type="image/webp">
-        <img class="news-img" src="https://blog.openresty.com.cn/cn/header-images/shared-mem.jpg">
-      </picture>
+      <img class="news-img" src="../images/header-images/shared-mem.jpg">
     </a>
     <div>
       <strong class="news-hint">最新！</strong>
