@@ -4,8 +4,10 @@
     @created       2011-10-24 05:51 GMT
 --->
 
+#  官方博客
+* https://blog.openresty.com.cn/cn/
 
-#  English Articles
+#  英文文章
 
 * OpenResty 和 Nginx 如何分配和管理内存
 
@@ -18,14 +20,11 @@
 * Pushing [Nginx](nginx.html) to its limit with Lua
 
      http://blog.cloudflare.com/pushing-nginx-to-its-limit-with-lua
-* My beautiful dark twisted reverse-proxy LRU cache
-
-     http://mikeferrier.com/2011/05/14/my-beautiful-dark-twisted-reverse-proxy-LRU-cache/
 * Day 41 - Setting up ngx_openresty (WAS: testing Test::[Nginx](nginx.html))
 
      http://www.nginx-discovery.com/2011/03/day-41-setting-up-ngxopenresty-was.html
 
-#  Chinese Articles
+#  中文文章
 * An introduction to [OpenResty](openresty.html)
 
      http://wdicc.com/intro-openresty/
@@ -36,7 +35,3 @@
 with Fully Capable Addons
 
      http://wendal.net/338.html
-* Constructing Efficient and Transparent Caching Mechanism with [Memc Nginx Module](memc-nginx-module.html) and
-[Srcache Nginx Module](srcache-nginx-module.html)
-
-     http://www.codinglabs.org/html/nginx-memc-and-srcache.html
