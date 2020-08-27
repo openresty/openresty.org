@@ -50,4 +50,12 @@ just scan the following QR code in your AliPay cellphone app:
 <img src="/images/alipay-qrcode.png" width="150">
 </html>
 
+# Donate with Purchase
+
+You can also support us by buying stuff on [The OpenResty Shop](https://openresty.threadless.com/designs/open-source-openresty/).
+
+<html>
+<img src="/images/t-shirt.png" width="150">
+</html>
+
 Any amounts will be highly appreciated!
