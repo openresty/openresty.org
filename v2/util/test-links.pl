@@ -3,10 +3,16 @@
 use strict;
 use warnings;
 
+my %seen_links;
+
 my $i = 0;
 
 sub test_link ($) {
     my $link = shift;
+
+    return if $seen_links{$link};
+    $seen_links{$link} = 1;
+
     return if $link =~ /\b(?:foo|example|blah)\.com\b/ || /\bmybackend\b/;
     my $out = `curl -I -sS '$link'`;
     #print "$link\n";
