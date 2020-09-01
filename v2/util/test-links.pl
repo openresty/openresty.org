@@ -10,6 +10,8 @@ my $i = 0;
 sub test_link ($) {
     my $link = shift;
 
+    $link =~ s/\#.*//;
+
     return if $seen_links{$link};
     $seen_links{$link} = 1;
 
