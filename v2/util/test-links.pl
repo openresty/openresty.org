@@ -7,6 +7,7 @@ my $i = 0;
 
 sub test_link ($) {
     my $link = shift;
+    return if $link =~ /\b(?:foo|example|blah)\.com\b/ || /\bmybackend\b/;
     my $out = `curl -I -sS '$link'`;
     #print "$link\n";
     #my $out = "HTTP/1.1 200 OK";
@@ -18,8 +19,14 @@ sub test_link ($) {
     }
 }
 
+my $seen_code;
 while (<>) {
-    while (m{ \b ( https?:// [^\)\s\]]+ ) }xmg) {
+    if (/^\`\`\`\w*\s*$/) {
+        $seen_code = !$seen_code;
+    }
+
+    next if $seen_code;
+    while (m{ \b ( https?:// [^\)\s\]'">]+ ) }xmg) {
         test_link $1;
     }
 }
