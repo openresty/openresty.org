@@ -1,5 +1,17 @@
 <div class="news">
   <div class="news-item">
+    <a href="https://blog.openresty.com/en/lua-cpu-flame-graph/?src=org_news" target="_blank">
+      <img class="news-img" src="../images/header-images/guido-flame.jpg">
+    </a>
+    <div>
+      <strong class="news-hint">New!</strong>
+      <span>New blog post </span>
+      <a href="https://blog.openresty.com/en/lua-cpu-flame-graph/?src=org_news" target="_blank">Introduction to Lua-Land CPU Flame Graphs</a>
+      <span> is published.</span>
+    </div>
+  </div>
+
+  <div class="news-item">
     <a href="https://blog.openresty.com/en/nginx-shm-frag/?src=org_news" target="_blank">
       <img class="news-img" src="../images/header-images/nginx-shm-frag.jpg">
     </a>
@@ -33,23 +45,6 @@
     <div>
       <strong class="news-hint">New!</strong>
       <a href="http://openresty.org/en/ann-test-nginx-028.html">Test::Nginx 0.28</a>
-      <span> is now released!</span>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <a href="http://openresty.org/en/ann-1017008002.html">
-      <div class="news-img-container">
-        <picture>
-          <source srcset="../images/logo.webp" type="image/webp">
-          <img src="../images/logo.png">
-        </picture>
-      </div>
-    </a>
-    <div>
-      <strong class="news-hint">New!</strong>
-      <span>Formal version </span>
-      <a href="http://openresty.org/en/ann-1017008002.html">OpenResty 1.17.8.2</a>
       <span> is now released!</span>
     </div>
   </div>

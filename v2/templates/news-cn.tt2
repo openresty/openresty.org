@@ -1,5 +1,17 @@
 <div class="news">
   <div class="news-item">
+    <a href="https://blog.openresty.com.cn/cn/nginx-shm-frag/?src=org_news" target="_blank">
+      <img class="news-img" src="../images/header-images/nginx-shm-frag.jpg">
+    </a>
+    <div>
+      <strong class="news-hint">最新！</strong>
+      <span>新博客文章</span>
+      <a href="https://blog.openresty.com.cn/cn/nginx-shm-frag/?src=org_news" target="_blank">OpenResty 与 Nginx 共享内存区的内存碎片问题</a>
+      <span> 已发布。</span>
+    </div>
+  </div>
+
+  <div class="news-item">
     <a href="https://blog.openresty.com.cn/cn/how-nginx-shm-consume-ram/?src=org_news" target="_blank">
       <img class="news-img" src="../images/header-images/shared-mem.jpg">
     </a>
