@@ -8,6 +8,10 @@
     @changes       20
 --->
 
+**WARNING** Building and using open source systemtap can be a daunting and painful process.
+It is strongly recommended to use our [OpenResty XRay](https://openresty.com/en/xray/) product
+intead. It is much more powerful and also much easier to use.
+
 1. Install the prerequisites on your Linux distribution, for example:
 * Fedora:
 
