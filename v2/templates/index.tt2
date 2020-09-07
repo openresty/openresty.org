@@ -70,5 +70,7 @@
 
 [% PROCESS 'footer.tt2' %]
 
+[% PROCESS 'heat-map.tt2' %]
+
 </body>
 </html>
