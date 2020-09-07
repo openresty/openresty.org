@@ -1,0 +1,29 @@
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    let script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          startClickHeat();
+        }
+      };
+    } else { //Others: Firefox, Safari, Chrome, and Opera
+      script.onload = () => {
+        startClickHeat();
+      };
+    }
+    script.src = 'https://heatmap.openresty.com/clickheat/js/clickheat.js';
+    document.body.appendChild(script);
+  });
+
+  function startClickHeat() {
+    clickHeatSite = 'openresty.org';
+    clickHeatGroup = window.location.pathname;
+    clickHeatServer = 'https://heatmap.openresty.com/clickheat/click.php';
+    initClickHeat();
+  }
+</script>

@@ -291,6 +291,20 @@ i = i + 1 output[i] = '</span>\n                </a>\n        </p><!-- / links -
     return output
 end
 
+-- heat-map.tt2
+template_map['heat-map.tt2'] = function (context)
+    if not context then
+        return error("Lemplate function called without context\n")
+    end
+    local stash = context.stash
+    local output = {}
+    local i = 0
+
+i = i + 1 output[i] = '<script type="text/javascript">\r\n  document.addEventListener(\'DOMContentLoaded\', () => {\r\n    let script = document.createElement(\'script\');\r\n    script.type = \'text/javascript\';\r\n    script.async = true;\r\n    if (script.readyState) { //IE\r\n      script.onreadystatechange = function() {\r\n        if (script.readyState == \'loaded\' ||\r\n          script.readyState == \'complete\') {\r\n          script.onreadystatechange = null;\r\n          startClickHeat();\r\n        }\r\n      };\r\n    } else { //Others: Firefox, Safari, Chrome, and Opera\r\n      script.onload = () => {\r\n        startClickHeat();\r\n      };\r\n    }\r\n    script.src = \'https://heatmap.openresty.com/clickheat/js/clickheat.js\';\r\n    document.body.appendChild(script);\r\n  });\r\n\r\n  function startClickHeat() {\r\n    clickHeatSite = \'openresty.org\';\r\n    clickHeatGroup = window.location.pathname;\r\n    clickHeatServer = \'https://heatmap.openresty.com/clickheat/click.php\';\r\n    initClickHeat();\r\n  }\r\n</script>\r\n'
+
+    return output
+end
+
 -- index.tt2
 template_map['index.tt2'] = function (context)
     if not context then
@@ -373,6 +387,9 @@ i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
 i = i + 1 output[i] = '\n\n	</div><!-- / wrapper -->\n\n'
 -- line 71 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'footer.tt2')
+i = i + 1 output[i] = '\n\n'
+-- line 73 "index.tt2"
+i = i + 1 output[i] = context.process(context, 'heat-map.tt2')
 i = i + 1 output[i] = '\n\n</body>\n</html>\n'
 
     return output
