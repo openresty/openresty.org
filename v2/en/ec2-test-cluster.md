@@ -280,8 +280,7 @@ will be run for that particular project. For example,
 is equivalent to
 
 ```bash
-./dispatcher -r -f -t 230 -a 'linux x86_64' t-ngx_lua tr-ngx_lua tw-ngx_lua
-\
+./dispatcher -r -f -t 230 -a 'linux x86_64' t-ngx_lua tr-ngx_lua tw-ngx_lua \
     tv-ngx_lua trv-ngx_lua twv-ngx_lua th-ngx_lua thv-ngx_lua tl-ngx_lua to-ngx_lua
 ```
 
