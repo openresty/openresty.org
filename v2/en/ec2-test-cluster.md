@@ -318,11 +318,9 @@ way is to check how existing projects were specified:
 
 ```bash
 $ grep websocket `ls -p |grep -v /|grep -v \~|grep -v json`
-gen-report:    'lua-resty-websocket' => ['openresty', 'lua-resty-websocket'
-],
+gen-report:    'lua-resty-websocket' => ['openresty', 'lua-resty-websocket'],
 gen-user-data:    'resty-websocket', 'resty-lock',
-index.tt:        'lua-resty-websocket' => 'github.com/openresty/lua-resty-websocket'
-,
+index.tt:        'lua-resty-websocket' => 'github.com/openresty/lua-resty-websocket',
 parse-logs:    'lua-resty-websocket' => [
 ```
 
