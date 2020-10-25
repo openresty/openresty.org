@@ -56,7 +56,7 @@ The highlights of this release candidate are:
 # Full Changelog
 
 - upgraded the nginx core to 1.19.3.
-	- see the changes here: https://nginx.org/en/CHANGES
+    - see the changes here: https://nginx.org/en/CHANGES
 - upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) to 0.10.18rc4.
     - feature: implemented the new `tcpsock:setoption()` function for setting options for the TCP socket. _Thanks poorsea for the patch._
     - feature: added undocumented API for attaching arbitrary key-value pair data to a cosocket TCP connecton, which can survive connection pool reuse.
