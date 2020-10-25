@@ -65,7 +65,6 @@ The highlights of this release candidate are:
     - optimize: added the "ev" to `ngx_posted_delayed_events` instead of the rbtree for 0 delay timer, so that we can save an epoll wait in such case. _Thanks syz for the patch._
     - feature: implemented the new `ngx.ssl.server_port()` API to get server port. _Thanks Yan Zhu for the patch._
     - bugfix: build error with nginx 1.7.4 or older version. _Thanks timebug for the patch._
-    - bugfix: we now only recycle light threads which are "entry threads" otherwise it is not safe to recycle user created threads since we have no idea whether the user may still hold refs to them.
     - optimize: now we make use of the new `lua_getexdata2` and `lua_setexdata2` to attach coctx to the Lua thread objects directly which save the lookup overhead which can become the bottleneck when there are many Lua light threads around in a single request handler.
     - feature: now we recycle lua thread GC objects for our "light threads" and added `lua_thread_cache_max_entries` directive to configure the cache size.
     - feature: added new C API `ngx_http_lua_pcre_version` to wrap the `pcre_version()` C API in libpcre.
