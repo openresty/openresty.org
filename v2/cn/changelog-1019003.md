@@ -4,7 +4,7 @@
     @created       2020-10-25 05:04 GMT
 --->
 
-# Version 1.19.3.1rc1 - 25 Oct 2020
+# Version 1.19.3.1 - 25 Oct 2020
 
 - upgraded the nginx core to 1.19.3.
 	- see the changes here: https://nginx.org/en/CHANGES
