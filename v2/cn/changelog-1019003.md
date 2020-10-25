@@ -9,8 +9,7 @@
 - upgraded the nginx core to 1.19.3.
 	- see the changes here: https://nginx.org/en/CHANGES
 - upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) to 0.10.18rc4.
-      - feature: implemented the new tcpsok:setoption() function for setting options for the TCP socket. *Thanks poorsea for the patch.*
-      - bugfix: entry threads would leak when exceeding the lua_max_running_timers limit. this regression had appeared in commit 4de59f5da or v0.10.18rc2.
+    - feature: implemented the new tcpsok:setoption() function for setting options for the TCP socket. *Thanks poorsea for the patch.*
     - feature: added undocumented API for attaching arbitrary key-value pair data to a cosocket TCP connecton, which can survive connection pool reuse.
     - bugfix: `ngx.resp.get_headers()`: may return a wrong (like: negative) value of the Content-Length field when it is larger than 2^32. *Thanks LubinLew for the patch*.
     - bugfix: should still use timer instead of `delayed_events` when worker process is exiting, otherwise the new created 0 delay timer may have no chance to run. *Thanks Dejiang Zhu for the patch*.
