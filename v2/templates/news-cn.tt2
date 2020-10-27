@@ -1,5 +1,19 @@
 <div class="news">
   <div class="news-item">
+    <a href="http://openresty.org/cn/ann-1019003001rc1.html">
+      <picture>
+        <source srcset="../images/logo.webp" type="image/webp">
+        <img class="news-img" src="../images/logo.png">
+      </picture>
+    </a>
+    <div>
+      <strong class="news-hint">最新！</strong>
+      <a href="http://openresty.org/cn/ann-1019003001rc1.html">OpenResty 1.19.3.1rc1</a>
+      <span>发布。</span>
+    </div>
+  </div>
+
+  <div class="news-item">
     <a href="https://blog.openresty.com.cn/cn/lua-cpu-flame-graph/?src=org_news" target="_blank">
       <img class="news-img" src="../images/header-images/guido-flame.jpg">
     </a>
@@ -32,20 +46,6 @@
       <span>新博客文章</span>
       <a href="https://blog.openresty.com.cn/cn/how-nginx-shm-consume-ram/?src=org_news" target="_blank">OpenResty 和 Nginx 的共享内存区是如何消耗物理内存的</a>
       <span> 已发布。</span>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <a href="http://openresty.org/cn/ann-test-nginx-028.html">
-      <picture>
-        <source srcset="../images/test.webp" type="image/webp">
-        <img class="news-img" src="../images/test.png">
-      </picture>
-    </a>
-    <div>
-      <strong class="news-hint">最新！</strong>
-      <a href="http://openresty.org/cn/ann-test-nginx-028.html">Test::Nginx 0.28</a>
-      <span>发布。</span>
     </div>
   </div>
 </div>
