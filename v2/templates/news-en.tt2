@@ -11,7 +11,7 @@
     <div>
       <strong class="news-hint">New!</strong>
       <span>Formal version </span>
-      <a href="http://openresty.org/en/ann-1019003001rc1.html">OpenResty 1.19.3.1rc1</a>
+      <a href="/en/ann-1019003001rc1.html">OpenResty 1.19.3.1rc1</a>
       <span> is now released!</span>
     </div>
   </div>
