@@ -111,14 +111,9 @@ The highlights of this release candidate are:
     - bugfix: resty: the tmp directory has not been deleted. _Thanks Johnny for the patch._
     - feature: resty: now we cache the original `ngx.say`/`ngx.print` functions into `ngx.orig_say` and `ngx.orig_print` since some times the user would need them.
 - upgraded [LuaJIT](https://github.com/openresty/luajit2) to 2.1-20201008.
-    - bugfix: fixed compatibility regression with MinGW gcc.
-    - bugfix: `lua_resetthread`: we forgot to reset the "exdata2" field.
+    - Detect SSE4.2 support dynamically.
     - feature: added new Lua API functions `thread.exdata2` as well as C API funcs `lua_getexdata2` and `lua_setexdata2`.
     - feature: added new LuaJIT C API `lua_resetthread`.
-    - Move all luajit2-specific elements to the end of state structs.
-    - bugfix: compilation error "for’ loop initial declarations are only allowed in C99 mode" would happen with older gcc versions like 4.8.
-    - Adjust SSE4.1 `str_hash` to replace `hash_sparse` and `hash_dense`.
-    - Make `jit.prngstate` use the new PRNG code.
     - Patch for PPC64 support.
     - imported Mike Pall's latest changes:
         - Fix snapshot PC when linking to BC_JLOOP that was a BC_RET*.
