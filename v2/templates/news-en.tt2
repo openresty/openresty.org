@@ -1,6 +1,6 @@
 <div class="news">
   <div class="news-item">
-    <a href="http://openresty.org/en/ann-1019003001rc1.html">
+    <a href="/en/ann-1019003001rc1.html">
       <div class="news-img-container">
         <picture>
           <source srcset="../images/logo.webp" type="image/webp">
