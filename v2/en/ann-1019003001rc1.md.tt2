@@ -73,7 +73,7 @@ The highlights of this release candidate are:
     - bugfix: the body size may overflow since the size_t is only int32 in 32-bit system. _Thanks syz for the patch._
     - feature: added the `ngx_http_lua_ffi_balancer_recreate_request` FFI function to allow recreation of request buffer in balancer phase. _Thanks Datong Sun for the patch._
     - feature: add FFI interface to verify SSL client certificate. _Thanks ArchangelSDY for the patch._
-    - feature: added `exit_worker_by*` to run Lua code upon nginx worker process exit. _Thanks letian && Jinhua Tan for the patch._
+    - feature: added `exit_worker_by*` to run Lua code upon nginx worker process exit. _Thanks letian & Jinhua Tan for the patch._
     - optimize: avoided use of `lua_tolstring` in `ngx_http_lua_calc_strlen_in_table`, `ngx_http_lua_copy_str_in_table`, `ngx_http_lua_socket_udp_send`, `log_wrapper` and `ngx_http_lua_ngx_echo`. _Thanks lijunlong for the patch._
     - feature: supported receiveany on `ngx.req.socket(true?)` socks. _Thanks Guy Lewin for the patch._
 - upgraded [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module#readme) to 0.0.9rc2.
@@ -93,7 +93,7 @@ The highlights of this release candidate are:
     - bugfix: added the missing 'ngx.req.start_time' to the stream subsystem. _Thanks Thibault Charbonnier for the patch._
     - feature: add the `balancer.recreate_request` function, which allows user to recreate request buffer in balancer phase. _Thanks Datong Sun for the patch._
     - feature: implemented the new `ssl.verify_client()` API to require a client certificate during TLS handshake. _Thanks ArchangelSDY for the patch._
-    - feature: add `exit_worker` as new phase. _Thanks letian && Jinhua Tan for the patch._
+    - feature: add `exit_worker` as new phase. _Thanks letian & Jinhua Tan for the patch._
 - upgraded [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql#readme) to 0.23rc1.
     - feature: support sha256 plugin to auth. _Thanks Jinhua Tan for the patch._
     - feature: add connection backlog support. _Thanks syz for the patch._
@@ -111,14 +111,9 @@ The highlights of this release candidate are:
     - bugfix: resty: the tmp directory has not been deleted. _Thanks Johnny for the patch._
     - feature: resty: now we cache the original `ngx.say`/`ngx.print` functions into `ngx.orig_say` and `ngx.orig_print` since some times the user would need them.
 - upgraded [LuaJIT](https://github.com/openresty/luajit2) to 2.1-20201008.
-    - bugfix: fixed compatibility regression with MinGW gcc.
-    - bugfix: `lua_resetthread`: we forgot to reset the "exdata2" field.
+    - Detect SSE4.2 support dynamically.
     - feature: added new Lua API functions `thread.exdata2` as well as C API funcs `lua_getexdata2` and `lua_setexdata2`.
     - feature: added new LuaJIT C API `lua_resetthread`.
-    - Move all luajit2-specific elements to the end of state structs.
-    - bugfix: compilation error "for’ loop initial declarations are only allowed in C99 mode" would happen with older gcc versions like 4.8.
-    - Adjust SSE4.1 `str_hash` to replace `hash_sparse` and `hash_dense`.
-    - Make `jit.prngstate` use the new PRNG code.
     - Patch for PPC64 support.
     - imported Mike Pall's latest changes:
         - Fix snapshot PC when linking to BC_JLOOP that was a BC_RET*.
