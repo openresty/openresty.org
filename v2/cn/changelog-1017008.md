@@ -8,6 +8,8 @@
 
 * bugfix: builds with http_perl_module was broken. this regression had appeared in 1.17.8.1.
 * change: we no longer remove a lot of files (docs, perl modules, tests, and etc.) in our tarball.
+* upgraded [lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic) to v0.07.
+    * bugfix: miss to uncommit the last limiter in resty.limit.traffic's list. _Thanks Jiteng Wang for the patch._
 
 # Version 1.17.8.1 - 4 July 2020
 
