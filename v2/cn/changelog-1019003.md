@@ -9,7 +9,8 @@
 * upgraded the nginx core to 1.19.3.
     * see the changes here: https://nginx.org/en/CHANGES
 
-* upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) to 0.10.18.
+* upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) to 0.10.19.
+    * optimize: post zombie thread: avoided the linear search.
     * bugfix: `ngx.resp.set_headers()`: may cause an error when Content-Length field is larger than 2^32. _Thanks Johnny Wang for the patch._
     * bugfix: process may crash when a timer run failed and a function with arguments run inside this timer. _Thanks lijunlong for the patch._
     * bugfix: wrong pipelined request body length when request body is parent's request body. _Thanks lijunlong for the patch._
@@ -43,7 +44,7 @@
     * bugfix: hide get_request API in stream subsystem. _Thanks spacewander for the patch._
     * feature: add FFI interface to verify SSL client certificate. _Thanks ArchangelSDY for the patch._
 
-* upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core#readme) to v0.1.20.
+* upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core#readme) to v0.1.21.
     * bugfix: invalid write in `ffi.copy` since we missed the len argument, it is caught by the valgrind mode in ec2 testing. _Thanks lijunlong for the patch._
     * feature: implemented the new `tcpsock:setoption()` function for setting options for the TCP socket. _Thanks poorsea for the patch._
     * feature: implemented the new `ngx.ssl.server_port()` API to get server port. _Thanks Yan Zhu for the patch._
