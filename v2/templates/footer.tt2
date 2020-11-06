@@ -7,7 +7,7 @@
      [% c.l("(") %]<a href="https://github.com/openresty/openresty.org/">
      [% c.l("view the source code of this site") %]</a>[% c.l(")") %]</p>
   <br/>
-  <p>京ICP备16021991号</p>
+  [% IF lang == 'cn' %]<p>京ICP备16021991号</p>[% END %]
 </div>
 </div>
 
