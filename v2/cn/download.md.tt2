@@ -17,9 +17,9 @@ OpenResty<sup>&reg;</sup> 给常见 Linux 发布提供[官方预编译安装包]
 
 [% ver = "1.19.3.1" -%]
 * 32 位 Windows: [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 16MB &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 2020年10月30日
+[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 2020年11月6日
 * 64 位 Windows: [openresty-[% ver %]-win64.zip](https://openresty.org/download/openresty-[% ver %]-win64.zip) &nbsp; 16MB &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win64.zip.asc) - 2020年10月30日
+[PGP](https://openresty.org/download/openresty-[% ver %]-win64.zip.asc) - 2020年11月6日
 
 参见针对 Windows 版 OpenResty 的[用法文档](https://github.com/openresty/openresty/blob/master/doc/README-windows.md)。
 
@@ -55,7 +55,7 @@ brew install openresty-debug
 [% ver = "1.19.3.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.9MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
-[变更列表](changelog-1019003.html) - 2020年10月30日
+[变更列表](changelog-1019003.html) - 2020年11月6日
 
 ##  历史版
 

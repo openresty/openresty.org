@@ -1,10 +1,10 @@
 <!---
     @title         ChangeLog for 1.19.3.x
     @creator       Johnny Wang
-    @created       2020-10-30 09:36 GMT
+    @created       2020-11-06 01:04 GMT
 --->
 
-# Version 1.19.3.1 - 30 Oct 2020
+# Version 1.19.3.1 - 6 Nov 2020
 
 * upgraded the nginx core to 1.19.3.
     * see the changes here: https://nginx.org/en/CHANGES
