@@ -13,7 +13,7 @@ distributions, and the pre-built binary Linux packages for Ubuntu,
 Debian, Fedora, CentOS, RHEL, Alpine, Amazon Linux are provided on this
 [Download page](download.html).
 
-# Full Change logs
+# Version Highlight
 
 A brife overview of the most noteable changes:
 
@@ -28,6 +28,8 @@ A brife overview of the most noteable changes:
   recreate request buffer in balancer phase.
 * feature: supported receiveany on `ngx.req.socket(true?)` socks.
 * feature: implemented the new `ngx.ssl.server_port()` API to get server port.
+
+# Full Change logs
 
 Complete change logs since the last (formal) release, [1.17.8.2](ann-1017008002.html), can be browsed
 in the page [Change Log for [% major_ver %].x](changelog-1019003.html).
