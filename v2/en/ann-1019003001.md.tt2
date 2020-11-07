@@ -18,6 +18,7 @@ Debian, Fedora, CentOS, RHEL, Alpine, Amazon Linux are provided on this
 A brife overview of the most noteable changes:
 
 * upgraded the nginx core to 1.19.3.
+* optimize: post zombie thread: avoided the linear search.
 * feature: now we recycle lua thread GC objects for our "light threads".
 * optimize: avoided use of `lua_tolstring` in `ngx_http_lua_calc_strlen_in_table`
   and other APIs which may result in the creation of unnecessary gc objects.
