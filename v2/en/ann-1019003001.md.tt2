@@ -15,11 +15,18 @@ Debian, Fedora, CentOS, RHEL, Alpine, Amazon Linux are provided on this
 
 # Version Highlights
 
-A brife overview of the most noteable changes:
+On the i9-9900K test environment, with the simple Lua Hello world interface,
+we can increase the QPS of a single worker from 221,939 rps to 269,423 rps,
+with a 20%+ improvement.
+
+And here's the brife overview of the most noteable changes:
 
 * upgraded the nginx core to 1.19.3.
-* optimize: post zombie thread: avoided the linear search.
-* feature: now we recycle lua thread GC objects for our "light threads".
+* upgraded the LuaJIT, synced code from the Mike Pall maintained branch.
+* optimize: now we recycle lua thread GC objects for our "light threads".
+* optimize: added new Lua API functions `thread.exdata2` as well as C API funcs `
+  lua_getexdata2` and `lua_setexdata2`, and reduce the time complexity of lookup
+  meta info within a single request concatenation from O(n) to O(1).
 * optimize: avoided use of `lua_tolstring` in `ngx_http_lua_calc_strlen_in_table`
   and other APIs which may result in the creation of unnecessary gc objects.
 * feature: shared `ngx.ctx` among SSL_* phases and the following phases.
@@ -28,6 +35,8 @@ A brife overview of the most noteable changes:
   recreate request buffer in balancer phase.
 * feature: supported receiveany on `ngx.req.socket(true?)` socks.
 * feature: implemented the new `ngx.ssl.server_port()` API to get server port.
+* Detect SSE4.2 support dynamically.
+* bugfix: ngx.flush never blocks on http v2.
 
 # Full Change logs
 
