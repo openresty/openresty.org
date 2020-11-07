@@ -19,7 +19,7 @@ On the i9-9900K test environment, with the simple Lua Hello world interface,
 we can increase the QPS of a single worker from 221,939 rps to 269,423 rps,
 with a 20%+ improvement.
 
-And here's the brife overview of the most noteable changes:
+And here's a brife overview of the most noteable changes:
 
 * upgraded the nginx core to 1.19.3.
 * upgraded the LuaJIT, synced code from the Mike Pall maintained branch.
