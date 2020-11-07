@@ -1,6 +1,6 @@
 <div class="news">
   <div class="news-item">
-    <a href="/cn/ann-1019003001rc1.html">
+    <a href="/cn/ann-1019003001.html">
       <picture>
         <source srcset="../images/logo.webp" type="image/webp">
         <img class="news-img" src="../images/logo.png">
@@ -8,8 +8,8 @@
     </a>
     <div>
       <strong class="news-hint">最新！</strong>
-      <a href="/cn/ann-1019003001rc1.html">OpenResty 1.19.3.1rc1</a>
-      <span>发布。</span>
+      <a href="/cn/ann-1019003001.html">OpenResty 1.19.3.1</a>
+      <span>正式版发布。</span>
     </div>
   </div>
 
