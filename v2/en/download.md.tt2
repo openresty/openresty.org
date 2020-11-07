@@ -11,7 +11,7 @@
 OpenResty<sup>&reg;</sup> provides [official pre-built packages](linux-packages.html) for common
 Linux distributions.
 
-We currently support Ubuntu, Debian, RHEL, CentOS, Fedora, OpenSUSE, and Amazon Linux.
+We currently support Ubuntu, Debian, RHEL, CentOS, Fedora, OpenSUSE, Alpine, and Amazon Linux.
 
 We also provide official package repositories for our users so that receiving and
 installing package updates can be trivial.
