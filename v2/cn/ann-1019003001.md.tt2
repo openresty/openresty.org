@@ -15,14 +15,12 @@ on this [Download page](download.html).
 
 # Version Highlights
 
-On the i9-9900K test environment, with the simple Lua Hello world interface,
-we can increase the QPS of a single worker from 221,939 rps to 269,423 rps,
-with a 20%+ improvement.
-
-And here's a brife overview of the most noteable changes:
+On the Intel Core i9-9900K CPU test environment, with the simple Lua Hello
+world interface, we can increase the QPS of a single worker from 221,939 rps
+to 269,423 rps, with a 20%+ improvement.
 
 * upgraded the nginx core to 1.19.3.
-* upgraded the LuaJIT, synced code from the Mike Pall maintained branch.
+* upgraded the LuaJIT, synchronized code from the official LuaJIT repository.
 * optimize: now we recycle lua thread GC objects for our "light threads".
 * optimize: added new Lua API functions `thread.exdata2` as well as C API funcs `
   lua_getexdata2` and `lua_setexdata2`, and reduce the time complexity of lookup
@@ -35,8 +33,12 @@ And here's a brife overview of the most noteable changes:
   recreate request buffer in balancer phase.
 * feature: supported receiveany on `ngx.req.socket(true?)` socks.
 * feature: implemented the new `ngx.ssl.server_port()` API to get server port.
-* Detect SSE4.2 support dynamically.
-* bugfix: ngx.flush never blocks on http v2.
+* Now we detect SSE 4.2 instruction set support at runtime in our LuaJIT to
+  support older Intel and AMD CPUs without this instruction set with the same
+  LuaJIT binary, otherwise binaries built on newer hardware would not work on
+  older CPUs due to the "Invalid instruction" CPU exception.
+* bugfix: The ngx.flush(true) Lua API can now work properly for HTTP 2.0
+  requests.
 
 # Full Change logs
 
