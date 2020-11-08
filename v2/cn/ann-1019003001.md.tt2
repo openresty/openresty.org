@@ -19,20 +19,20 @@ On the Intel Core i9-9900K CPU test environment, with the simple Lua Hello
 world interface, we can increase the QPS of a single worker from 221,939 rps
 to 269,423 rps, with a 20%+ improvement.
 
-* upgraded the nginx core to 1.19.3.
-* upgraded the LuaJIT, synchronized code from the official LuaJIT repository.
-* now we recycle lua thread GC objects for our "light threads".
-* added new Lua API functions `thread.exdata2` as well as C API funcs
+* Upgraded the nginx core to 1.19.3.
+* Upgraded the LuaJIT, synchronized code from the official LuaJIT repository.
+* Now we recycle lua thread GC objects for our "light threads".
+* Added new Lua API functions `thread.exdata2` as well as C API funcs
   `lua_getexdata2` and `lua_setexdata2`, and reduced the time complexity of
   lookup meta info within a single request concatenation from O(n) to O(1).
-* avoided use of `lua_tolstring` in `ngx_http_lua_calc_strlen_in_table`
+* Avoided use of `lua_tolstring` in `ngx_http_lua_calc_strlen_in_table`
   and other APIs which may result in the creation of unnecessary gc objects.
-* shared `ngx.ctx` among SSL_* phases and the following phases.
-* added `exit_worker_by*` to run Lua code upon nginx worker process exit.
-* added the `balancer.recreate_request` function, which allows user to
+* Shared `ngx.ctx` among SSL_* phases and the following phases.
+* Added `exit_worker_by*` to run Lua code upon nginx worker process exit.
+* Added the `balancer.recreate_request` function, which allows user to
   recreate request buffer in balancer phase.
-* supported `receiveany` on `ngx.req.socket(true?)` socks.
-* implemented the new `ngx.ssl.server_port()` API to get server port.
+* Supported `receiveany` on `ngx.req.socket(true?)` socks.
+* Implemented the new `ngx.ssl.server_port()` API to get server port.
 * Now we detect SSE 4.2 instruction set support at runtime in our LuaJIT to
   support older Intel and AMD CPUs without this instruction set with the same
   LuaJIT binary, otherwise binaries built on newer hardware would not work on
