@@ -23,13 +23,13 @@ to 269,423 rps, with a 20%+ improvement.
 * upgraded the LuaJIT, synchronized code from the official LuaJIT repository.
 * optimize: now we recycle lua thread GC objects for our "light threads".
 * optimize: added new Lua API functions `thread.exdata2` as well as C API funcs
-  `lua_getexdata2` and `lua_setexdata2`, and reduce the time complexity of
+  `lua_getexdata2` and `lua_setexdata2`, and reduced the time complexity of
   lookup meta info within a single request concatenation from O(n) to O(1).
 * optimize: avoided use of `lua_tolstring` in `ngx_http_lua_calc_strlen_in_table`
   and other APIs which may result in the creation of unnecessary gc objects.
 * feature: shared `ngx.ctx` among SSL_* phases and the following phases.
 * feature: added `exit_worker_by*` to run Lua code upon nginx worker process exit.
-* feature: add the `balancer.recreate_request` function, which allows user to
+* feature: added the `balancer.recreate_request` function, which allows user to
   recreate request buffer in balancer phase.
 * feature: supported `receiveany` on `ngx.req.socket(true?)` socks.
 * feature: implemented the new `ngx.ssl.server_port()` API to get server port.
