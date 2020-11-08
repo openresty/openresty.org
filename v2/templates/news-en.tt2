@@ -1,5 +1,19 @@
 <div class="news">
   <div class="news-item">
+    <a href="/en/ann-test-nginx-029.html">
+      <picture>
+        <source srcset="../images/test.webp" type="image/webp">
+        <img class="news-img" src="../images/test.png">
+      </picture>
+    </a>
+    <div>
+      <strong class="news-hint">New!</strong>
+      <a href="/en/ann-test-nginx-029.html">Test::Nginx 0.29</a>
+      <span> is now released!</span>
+    </div>
+  </div>
+
+  <div class="news-item">
     <a href="/en/ann-1019003001.html">
       <picture>
         <source srcset="../images/logo.webp" type="image/webp">
@@ -34,18 +48,6 @@
       <strong class="news-hint">New!</strong>
       <span>New blog post </span>
       <a href="https://blog.openresty.com/en/nginx-shm-frag/?src=org_news" target="_blank">Memory Fragmentation in OpenResty and Nginx's Shared Memory Zones</a>
-      <span> is published.</span>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <a href="https://blog.openresty.com/en/how-nginx-shm-consume-ram/?src=org_news" target="_blank">
-      <img class="news-img" src="../images/header-images/shared-mem.jpg">
-    </a>
-    <div>
-      <strong class="news-hint">New!</strong>
-      <span>New blog post </span>
-      <a href="https://blog.openresty.com/en/how-nginx-shm-consume-ram/?src=org_news" target="_blank">How OpenResty and Nginx Shared Memory Zones Consume RAM</a>
       <span> is published.</span>
     </div>
   </div>
