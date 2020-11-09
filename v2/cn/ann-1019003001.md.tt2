@@ -18,16 +18,23 @@ Debian, Fedora, CentOS, RHEL, Alpine, Amazon Linux are provided on this
 A brife overview of the most noteable changes:
 
 * upgraded the nginx core to 1.19.3.
+* upgraded LuaJIT to 2.1-20201008, imported many changes from the upstream branch that maintained by Mike Pall.
 * optimize: post zombie thread: avoided the linear search.
 * feature: now we recycle lua thread GC objects for our "light threads".
+* optimize: now we make use of the new lua_getexdata2 and lua_setexdata2 to
+  attach coctx to the Lua thread objects directly which save the lookup overhead
+  which can become the bottleneck when there are many Lua light threads around
+  in a single request handler.
 * optimize: avoided use of `lua_tolstring` in `ngx_http_lua_calc_strlen_in_table`
   and other APIs which may result in the creation of unnecessary gc objects.
 * feature: shared `ngx.ctx` among SSL_* phases and the following phases.
 * feature: added `exit_worker_by*` to run Lua code upon nginx worker process exit.
-* feature: add the `balancer.recreate_request` function, which allows user to
-  recreate request buffer in balancer phase.
+* feature: added the `recreate_request()` function in the `ngx.balancer` module,
+  which allows user to recreate request buffer in balancer phase.
 * feature: supported receiveany on `ngx.req.socket(true?)` socks.
-* feature: implemented the new `ngx.ssl.server_port()` API to get server port.
+* feature: implemented the new `server_port()` API the `ngx.ssl` module to get
+  server port.
+* feature: support detecting SSE4.2 dynamically.
 
 # Full Change logs
 
