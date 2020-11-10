@@ -9,7 +9,7 @@
 ## Linux
 
 OpenResty<sup>&reg;</sup> 给常见 Linux 发布提供[官方预编译安装包](linux-packages.html)。
-目前我们为 Ubuntu, Debian, RHEL, CentOS, Fedora, OpenSUSE, 和 Amazon Linux 提供官方的二进制包仓库。
+目前我们为 Ubuntu、Debian、RHEL、CentOS、Fedora、OpenSUSE、Alpine 和 Amazon Linux 提供官方的二进制包仓库。
 
 ## Windows
 

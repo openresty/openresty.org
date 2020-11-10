@@ -10,24 +10,34 @@ OpenResty web platform based on NGINX and LuaJIT.
 
 The (portable) source code distribution, the Win32/Win64 binary
 distributions, and the pre-built binary Linux packages for Ubuntu,
-Debian, Fedora, CentOS, RHEL, Alpine, Amazon Linux are provided on this
-[Download page](download.html).
+Debian, Fedora, CentOS, RHEL, Alpine, OpenSUSE, Amazon Linux are provided
+on this [Download page](download.html).
 
 # Version Highlights
 
-A brife overview of the most noteable changes:
+On the Intel Core i9-9900K CPU test environment, with the simple Lua Hello
+world interface, we can increase the QPS of a single worker from 221,939 rps
+to 269,423 rps, with a 20%+ improvement.
 
-* upgraded the nginx core to 1.19.3.
-* optimize: post zombie thread: avoided the linear search.
-* feature: now we recycle lua thread GC objects for our "light threads".
-* optimize: avoided use of `lua_tolstring` in `ngx_http_lua_calc_strlen_in_table`
-  and other APIs which may result in the creation of unnecessary gc objects.
-* feature: shared `ngx.ctx` among SSL_* phases and the following phases.
-* feature: added `exit_worker_by*` to run Lua code upon nginx worker process exit.
-* feature: add the `balancer.recreate_request` function, which allows user to
-  recreate request buffer in balancer phase.
-* feature: supported receiveany on `ngx.req.socket(true?)` socks.
-* feature: implemented the new `ngx.ssl.server_port()` API to get server port.
+* Upgraded the nginx core to 1.19.3.
+* Upgraded the LuaJIT, synchronized code from the official LuaJIT repository.
+* Now we recycle lua thread GC objects for our "light threads".
+* Added new Lua API functions `thread.exdata2` as well as C API funcs
+`lua_getexdata2` and `lua_setexdata2`, and reduced the time complexity of
+lookup meta info within a single request concatenation from O(n) to O(1).
+* Avoided use of `lua_tolstring` in `ngx_http_lua_calc_strlen_in_table`
+and other APIs which may result in the creation of unnecessary gc objects.
+* Shared `ngx.ctx` among SSL_* phases and the following phases.
+* Added `exit_worker_by*` to run Lua code upon nginx worker process exit.
+* Added the `balancer.recreate_request` function, which allows user to
+recreate request buffer in balancer phase.
+* Supported `receiveany` on `ngx.req.socket(true?)` socks.
+* Implemented the new `ngx.ssl.server_port()` API to get server port.
+* Now we detect SSE 4.2 instruction set support at runtime in our LuaJIT to
+support older Intel and AMD CPUs without this instruction set with the same
+LuaJIT binary, otherwise binaries built on newer hardware would not work on
+older CPUs due to the "Invalid instruction" CPU exception.
+* The `ngx.flush(true)` Lua API can now work properly for HTTP 2.0 requests.
 
 # Full Change logs
 
