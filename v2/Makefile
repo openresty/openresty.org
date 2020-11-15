@@ -1,4 +1,4 @@
-nginx = nginx
+nginx = /usr/local/openresty/nginx/sbin/nginx
 
 md2html = ./util/fmtMd.js
 md2text = pandoc --from markdown_github-hard_line_breaks --to plain
