@@ -19,6 +19,8 @@ local trans_cn = {
     ["Contribute on GitHub"] = "贡献力量",
     ["Copyright © 2017, 2018, 2019, 2020 by Yichun Zhang (agentzh)"] = "版权所有 © 2017, 2018, 2019, 2020 章亦春 (agentzh)",
     ["More Interesting Topics"] = "更多有趣的文章",
+    ["New blog post"] = "新博客文章",
+    ["New!"] = "最新！",
     ["No query provided."] = "没有提供任何搜索词。",
     ["No search results found"] = "没有找到任何匹配的记录",
     ["Official Forum"] = "官方论坛",
@@ -31,6 +33,8 @@ local trans_cn = {
     ["Search OpenResty.org"] = "搜索 OpenResty.org 中文站",
     ["Search Result"] = "搜索结果",
     ["Timeline"] = "最近更新",
+    ["is now released!"] = "已发布。",
+    ["is published."] = "已发布。",
     ["view the source code of this site"] = "查看本站的源代码",
 }
 local translators = {
