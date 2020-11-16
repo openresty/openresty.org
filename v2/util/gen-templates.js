@@ -17,6 +17,7 @@ let picsExists;
 
 async function genSlideTemplate(lang) {
   let postInfos = [];
+  let news = [];
   const base = lang === 'en' ? enBase : cnBase;
   const source = `${base}atom.xml`;
   let rss = await http.get(source);
@@ -39,12 +40,19 @@ async function genSlideTemplate(lang) {
     }
 
     postInfos.push({href: `${base}${id}`, pic, title})
+
+    if (index <= 2) {
+      news.push({href: `${base}${id}`, pic, title})
+    }
   });
 
   const compileFunction = pug.compileFile('./util/posts-slide.pug', {pretty: true});
   const swiperCss = lang == 'en' ? `${staticBaseUrl}/swiper/5.2.1/css/swiper.min.css` : `${staticBaseUrl}.cn/swiper/5.2.1/css/swiper.min.css`;
   const swiperJs = lang == 'en' ? `${staticBaseUrl}/swiper/5.2.1/js/swiper.min.js` : `${staticBaseUrl}.cn/swiper/5.2.1/js/swiper.min.js`;
   writeFile(`./templates/posts-slide-${lang}.tt2`, compileFunction({postInfos, swiperCss, swiperJs}));
+
+  const newsCompileFunction = pug.compileFile('./util/news.pug', {pretty: true});
+  writeFile(`./templates/news-${lang}.tt2`, newsCompileFunction({news}));
 };
 
 Promise.all([
