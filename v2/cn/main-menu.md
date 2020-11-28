@@ -6,8 +6,9 @@
 
 * <big>**[博客](https://blog.openresty.com.cn/cn/?src=org_side)**</big>
 * <big>**[下载](download.html)**</big>
-* [Bilibily 视频号](https://space.bilibili.com/457424101)
 * [安装](installation.html)
+* [Bilibily 视频号](https://space.bilibili.com/457424101)
+* [商业产品](commercial.html)
 * [新手上路](getting-started.html)
 * [概览](openresty.html)
 * [组件](components.html)

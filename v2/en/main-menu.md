@@ -7,8 +7,9 @@
 * <big>**[Blog](https://blog.openresty.com/en/?src=org_side)**</big>
 * <big>**[Download](download.html)**</big>
 * [Installation](installation.html)
-* [Getting Started](getting-started.html)
 * [YouTube Channel](https://www.youtube.com/channel/UCXVmwF-UCScv2ftsGoMqxhw/)
+* [Commercial Products](commercial.html)
+* [Getting Started](getting-started.html)
 * [Upgrading](upgrading.html)
 * [Changes](changes.html)
 * [Events](events.html)
