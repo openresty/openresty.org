@@ -8,6 +8,7 @@
 * <big>**[Download](download.html)**</big>
 * [Installation](installation.html)
 * [Getting Started](getting-started.html)
+* [YouTube Channel](https://www.youtube.com/channel/UCXVmwF-UCScv2ftsGoMqxhw/)
 * [Upgrading](upgrading.html)
 * [Changes](changes.html)
 * [Events](events.html)
