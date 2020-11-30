@@ -197,6 +197,8 @@ sudo yum --disablerepo="*" --enablerepo="openresty" list available
 
 参考 [OpenResty RPM 包](rpm-packages.html)页面获取这些包更多的细节。
 
+对于 CentOS 8 及更新版本，我们只需要将上面的 `yum` 命令都替换成 `dnf` 即可。
+
 # RHEL
 
 你可以在你的 RHEL 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum check-update` 命令）。添加仓库，运行下面的命令（对于 RHEL 8 或以上版本，应将下面的 `yum` 都替换成 `dnf`）：
@@ -254,6 +256,8 @@ sudo subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpm
 
 请注意在 RHEL 8 上面缺少 `perl-Lemplate` 这个 RPM 包，这是因为 RHEL 8 相比 RHEL 7 从其标准仓库中移除了 `perl-Template-Toolkit`
 这样的 Perl 模块包。
+
+对于 RHEL 8 及更新版本，我们只需要将上面的 `yum` 命令都替换成 `dnf` 即可。
 
 # Fedora
 

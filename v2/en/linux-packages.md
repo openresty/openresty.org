@@ -223,6 +223,8 @@ sudo yum --disablerepo="*" --enablerepo="openresty" list available
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
 
+For CentOS 8 and beyond, we just need to replace the `yum` commands above with `dnf`.
+
 # RHEL
 
 You can add the `openresty` repository to your Red Hat Enterprise Linux (RHEL) system so as to easily install
@@ -283,6 +285,8 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all
 
 Please note that the `perl-Lemplate` RPM package is currently unvailable on RHEL 8 since its official repositories
 removes some dependency Perl module packages like `perl-Template-Toolkit` (as compared to RHEL 7).
+
+For RHEL 8 and beyond, we just need to replace the `yum` commands above with `dnf`.
 
 # Fedora
 
