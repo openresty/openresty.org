@@ -11,6 +11,21 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/resty-cmd?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/resty-utility.jpg"><img class="article-img" src="../images/header-images/resty-utility.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">resty 命令行工具演示</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-contributor-T-shirt?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/openresty-contributor-T.jpg"><img class="article-img" src="../images/header-images/openresty-contributor-T.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty Contributor T 恤来了</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-xray-case-yundun?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/xray-slogan.jpg"><img class="article-img" src="../images/header-images/xray-slogan.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">内存减少 60%，OpenResty XRay 精准定位问题代码，快速完成修复上线</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/or-lua-module?src=org" target="_blank">
             <div class="blog-img" data-pic="/header-images/module-cells.jpg"><img class="article-img" src="../images/header-images/module-cells.jpg" loading="lazy"/></div>
             <div class="article-text">
@@ -45,21 +60,6 @@
             <div class="blog-img" data-pic="/header-images/nginx-shm-frag.jpg"><img class="article-img" src="../images/header-images/nginx-shm-frag.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty 与 Nginx 共享内存区的内存碎片问题</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/how-nginx-shm-consume-ram?src=org" target="_blank">
-            <div class="blog-img" data-pic="/header-images/shared-mem.jpg"><img class="article-img" src="../images/header-images/shared-mem.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">OpenResty 和 Nginx 的共享内存区是如何消耗物理内存的</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-ann-1.17.8.1?src=org" target="_blank">
-            <div class="blog-img" data-pic="/header-images/openresty-logo.png"><img class="article-img" src="../images/header-images/openresty-logo.png" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">OpenResty 1.17.8.1 新版发布</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-serials-a-round?src=org" target="_blank">
-            <div class="blog-img" data-pic="/header-images/chicago-city.jpg"><img class="article-img" src="../images/header-images/chicago-city.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">OpenResty Inc. 锁定四百万融资，领先流量管理软件同时发布实时诊断新品</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
