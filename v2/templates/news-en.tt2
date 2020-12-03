@@ -1,13 +1,13 @@
 
 <div class="news">
+  <div class="news-item"><a href="https://blog.openresty.com/en/restydoc?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/restydoc.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/restydoc?src=org_news" target="_blank">Lookup OpenResty Documentation on Terminal with restydoc</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/data-share?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/data-share.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/data-share?src=org_news" target="_blank">Share Data Across Requests Served by OpenResty</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/centos8-or-install?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/centos8-or-install.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/centos8-or-install?src=org_news" target="_blank">Install OpenResty on CentOS 8 via dnf</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/resty-cmd?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/resty-utility.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/resty-cmd?src=org_news" target="_blank">The resty Command-Line Utility Demo</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="/en/ann-test-nginx-029.html">
       <picture>

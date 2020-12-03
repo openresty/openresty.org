@@ -11,6 +11,11 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/restydoc?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/restydoc.jpg"><img class="article-img" src="../images/header-images/restydoc.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Lookup OpenResty Documentation on Terminal with restydoc</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/data-share?src=org" target="_blank">
             <div class="blog-img" data-pic="/header-images/data-share.jpg"><img class="article-img" src="../images/header-images/data-share.jpg" loading="lazy"/></div>
             <div class="article-text">
@@ -55,11 +60,6 @@
             <div class="blog-img" data-pic="/header-images/shared-mem.jpg"><img class="article-img" src="../images/header-images/shared-mem.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">How OpenResty and Nginx Shared Memory Zones Consume RAM</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/openresty-ann-1.17.8.1?src=org" target="_blank">
-            <div class="blog-img" data-pic="/header-images/openresty-logo.png"><img class="article-img" src="../images/header-images/openresty-logo.png" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">OpenResty 1.17.8.1 released</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>

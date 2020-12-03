@@ -1,13 +1,13 @@
 
 <div class="news">
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/restydoc?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/restydoc.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/restydoc?src=org_news" target="_blank">在终端上用 restydoc 查看 OpenResty 文档</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/data-share?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/data-share.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/data-share?src=org_news" target="_blank">在OpenResty服务的请求中共享数据</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/data-share?src=org_news" target="_blank">在 OpenResty 中跨请求共享数据</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/centos8-or-install?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/centos8-or-install.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/centos8-or-install?src=org_news" target="_blank">在 CentOS 8 上通过 dnf 安装 OpenResty</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/resty-cmd?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/resty-utility.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/resty-cmd?src=org_news" target="_blank">resty 命令行工具演示</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="/en/ann-test-nginx-029.html">
       <picture>
