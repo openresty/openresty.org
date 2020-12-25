@@ -4,7 +4,7 @@
 
 对于下列 Linux 发行版的种类和版本号，OpenResty<sup>&reg;</sup> 提供官方的预编译包。
 
-* Ubuntu
+* [Ubuntu](#ubuntu)
 
 ```
     版本            版本名         支持的体系结构
@@ -14,7 +14,7 @@
     20.04           Focal           amd64
 ```
 
-* Debian
+* [Debian](#debian)
 
 ```
     版本           版本名        支持的体系结构
@@ -23,7 +23,7 @@
     10.x            Buster          amd64
 ```
 
-* CentOS
+* [CentOS](#centos)
 
 ```
     版本号         支持的体系结构
@@ -32,7 +32,7 @@
     8.x             x86_64
 ```
 
-* Red Hat 企业版 Linux (RHEL)
+* [Red Hat 企业版 Linux (RHEL)](#rhel)
 
 ```
     版本号          支持的体系结构
@@ -41,7 +41,7 @@
     8.x             x86_64
 ```
 
-* Fedora
+* [Fedora](#fedora)
 
 ```
     版本号          支持的体系结构
@@ -50,7 +50,7 @@
     33              x86_64
 ```
 
-* Amazon Linux
+* [Amazon Linux](#amazon-linux)
 
 ```
     版本号         支持的体系结构
@@ -58,14 +58,14 @@
     2              x86_64
 ```
 
-* OpenSUSE Leap
+* [OpenSUSE Leap](#opensuse-leap)
 
 ```
     版本号          支持的体系结构
     15.x            x86_64
 ```
 
-* Alpine
+* [Alpine](#alpine)
 
 ```
     版本号          支持的体系结构

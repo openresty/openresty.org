@@ -4,7 +4,7 @@
 
 OpenResty<sup>&reg;</sup> provides official pre-built packages for the following Linux distributions and versions.
 
-* Ubuntu
+* [Ubuntu](#ubuntu)
 
 ```
     Version         Codename        Supported Architectures
@@ -14,7 +14,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     20.04           Focal           amd64
 ```
 
-* Debian
+* [Debian](#debian)
 
 ```
     Version         Codename        Supported Architectures
@@ -23,7 +23,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     10.x            Buster          amd64
 ```
 
-* CentOS
+* [CentOS](#centos)
 
 ```
     Version         Supported Architectures
@@ -32,7 +32,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     8.x             x86_64
 ```
 
-* Red Hat Enterprise Linux (RHEL)
+* [Red Hat Enterprise Linux (RHEL)](#rhel)
 
 ```
     Version         Supported Architectures
@@ -41,7 +41,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     8.x             x86_64
 ```
 
-* Fedora
+* [Fedora](#fedora)
 
 ```
     Version         Supported Architectures
@@ -50,7 +50,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     33              x86_64
 ```
 
-* Amazon Linux
+* [Amazon Linux](#amazon-linux)
 
 ```
     Version         Supported Architectures
@@ -58,14 +58,14 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     2               x86_64
 ```
 
-* OpenSUSE Leap
+* [OpenSUSE Leap](#opensuse-leap)
 
 ```
     Version         Supported Architectures
     15.x            x86_64
 ```
 
-* Alpine
+* [Alpine](#alpine)
 
 ```
     Version         Supported Architectures

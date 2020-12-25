@@ -271,7 +271,18 @@ header[role="header"] {
             p { margin-top: 20px; margin-bottom: 20px; margin-right: 10px; }
             ul { text-align: left; width: 95%; margin-left: 2em; margin-top: 0.6em; margin-bottom: 0.6em; list-style: circle; }
 
-            h1, h2, h3, h4, h5, h6 {line-height: 1.25; padding-top: 0.75em; padding-bottom: 0.1em; }
+            h1, h2, h3, h4, h5, h6 {
+                line-height: 1.25;
+                padding-top: 0.75em;
+                padding-bottom: 0.1em;
+
+                &:hover {
+                    .header-anchor
+                        .icon {
+                            visibility: visible;
+                        }
+                }
+            }
             h1 { font-size: 150%; padding-top: 1em; }
             h2 { font-size: 120%; padding-top: 1em; }
             .icon {
@@ -284,9 +295,6 @@ header[role="header"] {
                 float: left;
                 margin-left: -20px;
                 padding-right: 4px;
-                &:hover {
-                    .icon {visibility: visible;}
-                }
             }
 
         }

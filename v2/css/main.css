@@ -654,6 +654,14 @@ header[role="header"] .dark-img {
   padding-top: 0.75em;
   padding-bottom: 0.1em;
 }
+#main .item .body h1:hover .header-anchor .icon,
+#main .item .body h2:hover .header-anchor .icon,
+#main .item .body h3:hover .header-anchor .icon,
+#main .item .body h4:hover .header-anchor .icon,
+#main .item .body h5:hover .header-anchor .icon,
+#main .item .body h6:hover .header-anchor .icon {
+  visibility: visible;
+}
 #main .item .body h1 {
   font-size: 150%;
   padding-top: 1em;
@@ -672,9 +680,6 @@ header[role="header"] .dark-img {
   float: left;
   margin-left: -20px;
   padding-right: 4px;
-}
-#main .item .body .header-anchor:hover .icon {
-  visibility: visible;
 }
 #main .news {
   padding: 0 40px 20px 40px;
