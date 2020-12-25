@@ -62,8 +62,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Supported Architectures
-    15.1            x86_64
-    15.2            x86_64
+    15.x            x86_64
 ```
 
 * Alpine
