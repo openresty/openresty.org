@@ -372,10 +372,16 @@ You can enable the `openresty` repository on your OpenSUSE Leap system like belo
 sudo zypper ar -g --refresh --check https://openresty.org/package/opensuse/openresty.repo
 ```
 
+Then import our PGP key:
+
+```bash
+sudo zypper --gpg-auto-import-keys refresh
+```
+
 Then you can install a package, say, `openresty`, like this:
 
 ```bash
-sudo zypper install -y openresty
+sudo zypper install openresty
 ```
 
 If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:

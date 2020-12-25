@@ -332,6 +332,12 @@ sudo yum repo-pkgs openresty-openresty list available
 sudo zypper ar -g --refresh --check https://openresty.org/package/opensuse/openresty.repo
 ```
 
+接着导入我们的 PGP 公钥：
+
+```bash
+sudo zypper --gpg-auto-import-keys refresh
+```
+
 然后你就可以像下面这样安装包了，比如说安装 `openresty`：
 
 ```bash
