@@ -260,7 +260,7 @@ i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { ')' }})
 i = i + 1 output[i] = '</p>\n  <br/>\n  '
 -- line 10 "footer.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
-i = i + 1 output[i] = '<p>京ICP备16021991号</p>'
+i = i + 1 output[i] = '<a href="https://beian.miit.gov.cn/", target="_blank">京ICP备16021991号-1</a>'
 end
 
 i = i + 1 output[i] = '\n</div>\n</div>\n\n<script src="/js/jquery.min.js"></script>\n<script src="/js/highlight.pack.js"></script>\n<script src="/js/main.js"></script>\n<!-- Google analytics -->\n<script type="text/javascript">\n\n  var _gaq = _gaq || [];\n  _gaq.push([\'_setAccount\', \'UA-24724965-1\']);\n  //_gaq.push([\'_setDomainName\', \'openresty.org\']);\n  _gaq.push([\'_trackPageview\']);\n\n  var ga_f = function() {\n    var ga = document.createElement(\'script\'); ga.type = \'text/javascript\'; ga.async = true;\n    ga.src = (\'https:\' == document.location.protocol ? \'https://ssl\' : \'http://www\') + \'.google-analytics.com/ga.js\';\n    var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(ga, s);\n  };\n  setTimeout(ga_f, 0);\n\n</script>\n'
