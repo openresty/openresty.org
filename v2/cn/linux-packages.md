@@ -58,6 +58,14 @@
     2              x86_64
 ```
 
+* [SUSE Linux Enterprise](#suse-linux-enterprise)
+
+```
+    版本号          支持的体系结构
+    12.x            x86_64
+    15.x            x86_64
+```
+
 * [OpenSUSE Leap](#opensuse-leap)
 
 ```
@@ -323,6 +331,39 @@ sudo yum repo-pkgs openresty-openresty list available
 
 请注意在 Amazon Linux 2 系统上缺少那些 `*-asan` RPM 包，因为 Amazon Linux 2 官方的 clang 包里缺少 `libclang_rt.a` 这个库文件）。
 
+# SUSE Linux Enterprise
+
+你可以在你的 SUSE Linux Enterprise Server/Desktop/Workstation (SLES) 系统中如下所示启用 openresty 包仓库：
+
+```bash
+sudo rpm --import https://openresty.org/package/pubkey.gpg
+sudo zypper ar -g --refresh --check "https://openresty.org/package/sles/openresty.repo"
+sudo zypper mr --gpgcheck-allow-unsigned-repo openresty
+```
+
+然后你就可以像下面这样安装包了，比如说安装 `openresty`：
+
+```bash
+sudo zypper install -y openresty
+```
+
+如果想安装 `resty` 命令行工具，则像下面这样安装 `openresty-resty` 软件包：
+
+```bash
+sudo zypper install -y openresty-resty
+```
+
+命令行工具 `opm` 在 `openresty-opm` 包里，而 `restydoc` 工具在
+`openresty-doc` 包里头。
+
+列出在 `openresty-openresty` 仓库中所有可用的包, 可以这样
+
+```bash
+sudo zypper pa -r openresty
+```
+
+在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
+
 # OpenSUSE Leap
 
 你可以在你的 OpenSUSE Leap 系统中如下所示启用 openresty 包仓库：
@@ -357,9 +398,6 @@ sudo zypper install -y openresty-resty
 ```bash
 sudo zypper pa -r openresty
 ```
-
-请注意我们的 OpenSUSE Leap 仓库目前并没有提供独立的 `*-debuginfo` 包。我们直接在二进制程序文件中包含了
-DWARF 调试符号。
 
 在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
 

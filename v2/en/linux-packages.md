@@ -58,6 +58,14 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     2               x86_64
 ```
 
+* [SUSE Linux Enterprise](#suse-linux-enterprise)
+
+```
+    Version         Supported Architectures
+    12.x            x86_64
+    15.x            x86_64
+```
+
 * [OpenSUSE Leap](#opensuse-leap)
 
 ```
@@ -363,12 +371,47 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all
 Please note that the `*-asan` RPM packages are currently unavailable for Amazon Linux 2 due to a bug in Amazon Linux's
 official clang packages (missing the `libclang_rt.a` library file).
 
+# SUSE Linux Enterprise
+
+You can enable the `openresty` repository on your SUSE Linux Enterprise Server/Desktop/Workstation (SLES) system like below:
+
+```bash
+sudo rpm --import https://openresty.org/package/pubkey.gpg
+sudo zypper ar -g --refresh --check "https://openresty.org/package/sles/openresty.repo"
+sudo zypper mr --gpgcheck-allow-unsigned-repo openresty
+```
+
+Then you can install a package, say, `openresty`, like this:
+
+```bash
+sudo zypper install openresty
+```
+
+If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
+
+```bash
+sudo zypper install -y openresty-resty
+```
+
+The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
+`openresty-doc` package.
+
+To list all the packages in the `openresty` repository:
+
+```bash
+sudo zypper pa -r openresty
+```
+
+See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
+
 # OpenSUSE Leap
 
 You can enable the `openresty` repository on your OpenSUSE Leap system like below:
 
 ```bash
+sudo rpm --import https://openresty.org/package/pubkey.gpg
 sudo zypper ar -g --refresh --check https://openresty.org/package/opensuse/openresty.repo
+sudo zypper mr --gpgcheck-allow-unsigned-repo openresty
 ```
 
 Then import our PGP key:
@@ -397,9 +440,6 @@ To list all the packages in the `openresty` repository:
 ```bash
 sudo zypper pa -r openresty
 ```
-
-Note that we currently do not provide separate `*-debuginfo` packages in this repository for OpenSUSE Leap. Instead, the
-binaries directly contain the DWARF symbols and are not stripped.
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
 
