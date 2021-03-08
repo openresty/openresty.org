@@ -10,8 +10,8 @@
     版本            版本名         支持的体系结构
     14.04           Trusty          amd64
     16.04           Xenial          amd64
-    18.04           Bionic          amd64
-    20.04           Focal           amd64
+    18.04           Bionic          amd64, arm64
+    20.04           Focal           amd64, arm64
 ```
 
 * [Debian](#debian)
@@ -19,8 +19,8 @@
 ```
     版本           版本名        支持的体系结构
     8.x             Jessie          amd64
-    9.x             Stretch         amd64
-    10.x            Buster          amd64
+    9.x             Stretch         amd64, arm64
+    10.x            Buster          amd64, arm64
 ```
 
 * [CentOS](#centos)
@@ -28,8 +28,8 @@
 ```
     版本号         支持的体系结构
     6.x             x86_64
-    7.x             x86_64, aarch64 (arm64)
-    8.x             x86_64
+    7.x             x86_64, aarch64
+    8.x             x86_64, aarch64
 ```
 
 * [Red Hat 企业版 Linux (RHEL)](#rhel)
@@ -37,8 +37,8 @@
 ```
     版本号          支持的体系结构
     6.x             x86_64
-    7.x             x86_64
-    8.x             x86_64
+    7.x             x86_64, aarch64
+    8.x             x86_64, aarch64
 ```
 
 * [Fedora](#fedora)
@@ -46,8 +46,8 @@
 ```
     版本号          支持的体系结构
     31              x86_64
-    32              x86_64
-    33              x86_64
+    32              x86_64, aarch64
+    33              x86_64, aarch64
 ```
 
 * [Amazon Linux](#amazon-linux)
@@ -94,18 +94,37 @@ https://openresty.org/package/pubkey.gpg
 你可以在你的 Ubuntu 系统中添加我们的 APT 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `apt-get update` 命令）。
 运行下面的命令就可以添加仓库（每个系统只需要运行一次）：
 
+步骤一：安装导入 GPG 公钥时所需的几个依赖包（整个安装过程完成后可以随时删除它们）：
+
 ```bash
-# 安装导入 GPG 公钥时所需的几个依赖包（整个安装过程完成后可以随时删除它们）：
 sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
+```
 
-# 导入我们的 GPG 密钥：
+步骤二：导入我们的 GPG 密钥：
+
+```bash
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+```
 
-# 添加我们官方 APT 仓库：
+步骤三：添加我们官方 APT 仓库。
+
+对于 `x86_64` 或 `amd64` 系统，可以使用下面的命令：
+
+```bash
 echo "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
+```
 
-# 更新 APT 索引：
+而对于 `arm64` 或 `aarch64` 系统，则可以使用下面的命令:
+
+```bash
+echo "deb http://openresty.org/package/arm64/ubuntu $(lsb_release -sc) main" \
+    | sudo tee /etc/apt/sources.list.d/openresty.list
+```
+
+步骤四：更新 APT 索引：
+
+```bash
 sudo apt-get update
 ```
 
@@ -129,25 +148,40 @@ sudo apt-get -y install --no-install-recommends openresty
 你可以在你的 Debian 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `apt-get update` 命令）。
 运行下面的命令就可以添加我们的仓库（每个系统只需要运行一次）：
 
+步骤一：安装导入 GPG 公钥时所需的几个依赖包（整个安装过程完成后可以随时删除它们）：
+
 ```bash
-# 安装导入 GPG 公钥时所需的几个依赖包（整个安装过程完成后可以随时删除它们）：
 sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
 
-# 导入我们的 GPG 密钥：
+步骤二：导入我们的 GPG 密钥：
+
+```bash
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+```
 
-# 安装 add-apt-repository 命令
-# （之后你可以删除这个包以及对应的关联包）
-sudo apt-get -y install --no-install-recommends software-properties-common
+步骤三：添加我们官方 APT 仓库。
 
-# 添加我们官方 APT 仓库：
+对于 `x86_64` 或 `amd64` 系统，可以使用下面的命令：
 
+```bash
 codename=`grep -Po 'VERSION="[0-9]+ \(\K[^)]+' /etc/os-release`
 
 echo "deb http://openresty.org/package/debian $codename openresty" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
+```
 
-# 更新 APT 索引：
+而对于 `arm64` 或 `aarch64` 系统，则可以使用下面的命令:
+
+```bash
+codename=`grep -Po 'VERSION="[0-9]+ \(\K[^)]+' /etc/os-release`
+
+echo "deb http://openresty.org/package/arm64/debian $codename openresty" \
+    | sudo tee /etc/apt/sources.list.d/openresty.list
+```
+
+步骤四：更新 APT 索引：
+
+```bash
 sudo apt-get update
 ```
 

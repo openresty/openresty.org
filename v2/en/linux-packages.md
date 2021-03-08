@@ -10,8 +10,8 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     Version         Codename        Supported Architectures
     14.04           Trusty          amd64
     16.04           Xenial          amd64
-    18.04           Bionic          amd64
-    20.04           Focal           amd64
+    18.04           Bionic          amd64, arm64
+    20.04           Focal           amd64, arm64
 ```
 
 * [Debian](#debian)
@@ -19,8 +19,8 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 ```
     Version         Codename        Supported Architectures
     8.x             Jessie          amd64
-    9.x             Stretch         amd64
-    10.x            Buster          amd64
+    9.x             Stretch         amd64, arm64
+    10.x            Buster          amd64, arm64
 ```
 
 * [CentOS](#centos)
@@ -28,8 +28,8 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 ```
     Version         Supported Architectures
     6.x             x86_64
-    7.x             x86_64, aarch64 (arm64)
-    8.x             x86_64
+    7.x             x86_64, aarch64
+    8.x             x86_64, aarch64
 ```
 
 * [Red Hat Enterprise Linux (RHEL)](#rhel)
@@ -37,8 +37,8 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 ```
     Version         Supported Architectures
     6.x             x86_64
-    7.x             x86_64
-    8.x             x86_64
+    7.x             x86_64, aarch64
+    8.x             x86_64, aarch64
 ```
 
 * [Fedora](#fedora)
@@ -46,8 +46,8 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 ```
     Version         Supported Architectures
     31              x86_64
-    32              x86_64
-    33              x86_64
+    32              x86_64, aarch64
+    33              x86_64, aarch64
 ```
 
 * [Amazon Linux](#amazon-linux)
@@ -109,18 +109,37 @@ You can add our APT repository to your Ubuntu system so as to easily install
 our packages and receive updates in the future (via the `apt-get update` command). To add the repository, just
 run the following commands (only need to run once for each system):
 
+Step 1: we should install some prerequisites needed by adding GPG public keys (could be removed later):
+
 ```bash
-# install some prerequisites needed by adding GPG public keys (could be removed later)
 sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
+```
 
-# import our GPG key:
+Step 2: import our GPG key:
+
+```bash
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+```
 
-# add the our official APT repository:
+Step 3: then add the our official APT repository.
+
+For `x86_64` or `amd64` systems:
+
+```bash
 echo "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
+```
 
-# to update the APT index:
+And for `arm64` or `aarch64` systems:
+
+```bash
+echo "deb http://openresty.org/package/arm64/ubuntu $(lsb_release -sc) main" \
+    | sudo tee /etc/apt/sources.list.d/openresty.list
+```
+
+Step 4: update the APT index:
+
+```bash
 sudo apt-get update
 ```
 
@@ -153,24 +172,46 @@ sudo systemctl stop nginx
 Otherwise the installation might fail.
 
 You can add the `openresty` repository to your Debian system so as to easily install
-our packages and receive updates in the future (via the `apt-get update` command). To add the repository, just
+our packages and receive updates in the future (via the `apt-get update` command).
+
+To add the repository, just
 run the following commands (only need to run once for each system):
 
+Step 1: install some prerequisites needed by adding GPG public keys (could be removed later):
+
 ```bash
-# install some prerequisites needed by adding GPG public keys (could be removed later)
 sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
+```
 
-# import our GPG key:
+Step 2: import our GPG key:
+
+```bash
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+```
 
-# add the our official APT repository:
+Step 3: add the our official APT repository.
 
+For `x86_64` or `amd64` systems:
+
+```bash
 codename=`grep -Po 'VERSION="[0-9]+ \(\K[^)]+' /etc/os-release`
 
 echo "deb http://openresty.org/package/debian $codename openresty" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
+```
 
-# to update the APT index:
+And for `arm64` or `aarch64` systems:
+
+```bash
+codename=`grep -Po 'VERSION="[0-9]+ \(\K[^)]+' /etc/os-release`
+
+echo "deb http://openresty.org/package/arm64/debian $codename openresty" \
+    | sudo tee /etc/apt/sources.list.d/openresty.list
+```
+
+Step 4: update the APT index:
+
+```bash
 sudo apt-get update
 ```
 
