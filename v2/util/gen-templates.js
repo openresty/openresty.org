@@ -15,31 +15,24 @@ const height = 260;
 let pics = new Set();
 let picsExists;
 
-async function genSlideTemplate(lang, enPostInfos) {
+async function genSlideTemplate(lang) {
   let postInfos = [];
-  if (!enPostInfos) {
-    enPostInfos = [];
-  }
   let news = [];
   const base = lang === 'en' ? enBase : cnBase;
   const source = `${base}atom.xml`;
   let rss = await http.get(source);
   const $ = cheerio.load(rss.data, { decodeEntities: false });
-  const length = 10 - enPostInfos.length;
+  const length = 10;
 
   if (!picsExists) {
     picsExists = await readdir('./images/header-images');
   }
-
-  postInfos = postInfos.concat(enPostInfos);
-  news = news.concat(enPostInfos);
 
   $('entry').slice(0, length).each((index, entry) => {
     const title = $(entry).children('title').text();
     const array = $(entry).children('id').text().split('/');
     const id = array[array.length - 2];
     const pic = $(entry).children('pic').text();
-    const published = $(entry).children('published').text();
 
     // images will be downloaded and compressed only when they do not exist yet
     if (!picsExists.includes(pic.split('/header-images/')[1])) {
@@ -48,13 +41,8 @@ async function genSlideTemplate(lang, enPostInfos) {
 
     postInfos.push({href: `${base}${id}`, pic, title})
 
-    if (lang === 'en') {
-      if (published > '2021-02-07') {
-        enPostInfos.push({href: `${base}${id}`, pic, title});
-      }
-      if (index <= 2) {
-        news.push({href: `${base}${id}`, pic, title})
-      }
+    if (index <= 2) {
+      news.push({href: `${base}${id}`, pic, title})
     }
   });
 
@@ -65,19 +53,16 @@ async function genSlideTemplate(lang, enPostInfos) {
 
   const newsCompileFunction = pug.compileFile('./util/news.pug', {pretty: true});
   writeFile(`./templates/news-${lang}.tt2`, newsCompileFunction({news}));
-
-  return enPostInfos;
 };
 
-genSlideTemplate('en')
-  .then(data => {
-    genSlideTemplate('cn', data)
-      .then(() => {
-        for(pic of pics) {
-          optimizeImg(pic);
-        }
-      })
-  })
+Promise.all([
+  genSlideTemplate('en'),
+  genSlideTemplate('cn'),
+]).then(() => {
+  for(pic of pics) {
+    optimizeImg(pic);
+  }
+})
 
 async function optimizeImg(pic) {
   const response = await axios({
