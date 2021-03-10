@@ -1,10 +1,13 @@
 
 <div class="news">
-  <div class="news-item"><a href="https://blog.openresty.com/en/ordemo?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ordemo.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/ordemo?src=org_news" target="_blank">How We Generate Videos from Screenplay Files</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/ordemo?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ordemo.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/ordemo?src=org_news" target="_blank">我们如何从剧本文件中生成视频</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/stream-resp?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/stream-resp.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/stream-resp?src=org_news" target="_blank">Streaming HTTP Response Output in OpenResty</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/stream-resp?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/stream-resp.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/stream-resp?src=org_news" target="_blank">OpenResty 中的流式 HTTP 响应输出</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/luajit-bytecode?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/luajit-bytecode2.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/luajit-bytecode?src=org_news" target="_blank">预编译 Lua 模块到 LuaJIT 字节码中以加快 OpenResty 启动速度</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="/en/ann-test-nginx-029.html">
       <picture>
