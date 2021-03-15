@@ -41,10 +41,10 @@ local i18n_objs = {
 
 local MAX_SEARCH_QUERY_LEN = 128
 
-local function gen_cache_control_headers(ts)
-    resp_header["Last-Modified"] = http_time(tonumber(ts))
-    resp_header["Cache-Control"] = "max-age=3600"
-end
+-- local function gen_cache_control_headers(ts)
+--     resp_header["Last-Modified"] = http_time(tonumber(ts))
+--     resp_header["Cache-Control"] = "max-age=3600"
+-- end
 
 local function search_error(i18n, main_menu, timeline, query, title, msg, lang)
     local html = view.process("page.tt2",
@@ -63,12 +63,12 @@ end
 function _M.run()
     local uri = ngx_var.uri
     if uri == "/" then
-        resp_header["Cache-Control"] = "max-age=3600"
+        -- resp_header["Cache-Control"] = "max-age=3600"
         return ngx.redirect("/en/", 302)
     end
 
     if (re_find(uri, [[ ^ / (?: [a-z]{2} ) $ ]], 'jox')) then
-        resp_header["Cache-Control"] = "max-age=3600"
+        -- resp_header["Cache-Control"] = "max-age=3600"
         return ngx.redirect(uri .. "/", 301)
     end
 
@@ -77,7 +77,7 @@ function _M.run()
                        'jox', nil, match_table)
     if m then
         resp_header["Content-Type"] = "text/plain"
-        gen_cache_control_headers(ngx_time())
+        -- gen_cache_control_headers(ngx_time())
 
         if m[1] == 'cn/' then
             repo_file[2] = 'openresty.org/yum/openresty/openresty/epel-'
@@ -140,7 +140,7 @@ function _M.run()
         -- print("home data: ", cjson.encode(home))
         -- print(cjson.encode(home_html))
 
-        gen_cache_control_headers(home.last_modified)
+        -- gen_cache_control_headers(home.last_modified)
 
         local html = view.process("index.tt2",
                                   { main_menu = main_menu,
@@ -158,7 +158,7 @@ function _M.run()
     -- print("tag: ", tag, ", fr: ", fr, ", to: ", to)
 
     if tag == "openresty" then
-        resp_header["Cache-Control"] = "max-age=3600"
+        -- resp_header["Cache-Control"] = "max-age=3600"
         return ngx.redirect("/" .. lang .. "/", 301)
     end
 
@@ -217,7 +217,7 @@ function _M.run()
 
     local rec = model.get_post(lang, id)
 
-    gen_cache_control_headers(rec.last_modified)
+    -- gen_cache_control_headers(rec.last_modified)
 
     local html = view.process("page.tt2",
                               { main_menu = main_menu,
