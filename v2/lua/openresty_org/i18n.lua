@@ -34,7 +34,7 @@ local trans_cn = {
     ["Search Result"] = "搜索结果",
     ["Timeline"] = "最近更新",
     ["is now released!"] = "已发布。",
-    ["is published."] = "已发布。",
+    ["is published."] = "已发表。",
     ["view the source code of this site"] = "查看本站的源代码",
 }
 local translators = {
