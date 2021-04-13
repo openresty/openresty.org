@@ -1,13 +1,13 @@
 
 <div class="news">
+  <div class="news-item"><a href="https://blog.openresty.com/en/edge-cache-purge?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-cache-purge.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-cache-purge?src=org_news" target="_blank">Purge HTTP Cache in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/edge-cache-rules?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-cache-rules.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-cache-rules?src=org_news" target="_blank">Enable HTTP Cache in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/edge-new-proxy?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-new-proxy.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-new-proxy?src=org_news" target="_blank">Set up a Simplest Reverse Proxy and Load Balancer with OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/openresty-pre-build-for-aarch64-arm64?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/aarch-arm.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/openresty-pre-build-for-aarch64-arm64?src=org_news" target="_blank">Official OpenResty Aarch64/ARM64 pkg repo</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="/en/ann-test-nginx-029.html">
       <picture>
