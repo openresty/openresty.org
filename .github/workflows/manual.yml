@@ -25,12 +25,19 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: actions/checkout@v2
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
         node-version: '14.x'
     # Runs a single command using the runners shell
+    - run: cd v1
     - run: npm i sharp cheerio axios pug
     - run: make templates
     - run: make auto-templates -B
+    - uses: EndBug/add-and-commit@v1
+      with:
+        add: '.'
+        message: 'update blog articles.'
+        push: true
+        author_name: github-actions
+        author_email: 41898282+github-actions[bot]@users.noreply.github.com
