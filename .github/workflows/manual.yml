@@ -1,47 +1,37 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Manually update blog articles in templates
 
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
+# workflow_dispatch event means manually trigger
 on:
   workflow_dispatch:
-    # Inputs the workflow accepts.
-    #inputs:
-      #name:
-        # Friendly description to be shown in the UI instead of 'name'
-        #description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        #default: 'World'
-        # Input has to be provided for the workflow to run
-        #required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
-  update-blogs:
+  # This workflow contains a single job called "update-templates"
+  update-templates:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: v2 # run following command in this v2 dir
+        working-directory: v2 # run following command in ./v2 dir
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: Checkout repo  # seems that checkout is needed
       uses: actions/checkout@v2
-    - name: Use Node.js
+    - name: Use Node.js # set up nodejs and npm command
       uses: actions/setup-node@v1
       with:
-        node-version: '14.x'
+        node-version: '14.x' # require only 14 is enough
     # Runs a single command using the runners shell
     - run: npm i sharp cheerio axios pug
-    - run: make templates
-    - run: make auto-templates -B
+    - run: make templates -B
     - uses: EndBug/add-and-commit@v7
       with:
         add: '.'
-        message: 'update blog articles.'
+        message: 'change: update blog articles.'
         push: true
+        # the following configs the committer is the official github-actions bot user
         author_name: github-actions
         author_email: 41898282+github-actions[bot]@users.noreply.github.com
