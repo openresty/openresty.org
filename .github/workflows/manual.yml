@@ -29,9 +29,9 @@ jobs:
       with:
         perl-version: '5.30'
     - name: install Lemplate
-        uses: perl-actions/install-with-cpanm@v1
-        with:
-          install: Lemplate
+      uses: perl-actions/install-with-cpanm@v1
+      with:
+        install: Lemplate
     # Runs a single command using the runners shell
     - run: npm i sharp cheerio axios pug
     - run: make templates -B
