@@ -34,7 +34,7 @@ jobs:
     - run: npm i sharp cheerio axios pug
     - run: make templates
     - run: make auto-templates -B
-    - uses: EndBug/add-and-commit@v1
+    - uses: EndBug/add-and-commit@v7
       with:
         add: '.'
         message: 'update blog articles.'
