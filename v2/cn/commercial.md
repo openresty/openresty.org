@@ -19,7 +19,7 @@
 
 # OpenResty Edge
 
-OpenResty Edge](https://openresty.com/en/edge/)是一款分布式流量管理软件产品，它可以实现可用于以下用例。
+[OpenResty Edge](https://openresty.com/en/edge/)是一款分布式流量管理软件产品，它可以实现可用于以下用例。
 
 1. 替代 Nginx、F5 或开源的 OpenResty 作为分布式负载均衡器。
 Web应用防火墙，以及请求/响应重写层。
