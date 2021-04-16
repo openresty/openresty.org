@@ -30,7 +30,7 @@ jobs:
       with:
         node-version: '14.x'
     # Runs a single command using the runners shell
-    - run: cd v1
+    - run: cd ./v1
     - run: npm i sharp cheerio axios pug
     - run: make templates
     - run: make auto-templates -B
