@@ -1,0 +1,45 @@
+# This is a basic workflow that is manually triggered
+
+name: Manually update blog articles in templates
+
+# workflow_dispatch event means manually trigger
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "update-templates"
+  update-templates:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: v2 # run following command in ./v2 dir
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - name: Checkout repo  # seems that checkout is needed
+      uses: actions/checkout@v2
+    - name: Set up Node.js # set up nodejs and npm command
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x' # require only 14 is enough
+    - name: Set up Perl
+      uses: shogo82148/actions-setup-perl@v1
+      with:
+        perl-version: '5.30'
+    - name: install Lemplate
+      uses: perl-actions/install-with-cpanm@v1
+      with:
+        install: Lemplate
+    # Runs a single command using the runners shell
+    - run: npm i sharp cheerio axios pug
+    - run: make templates -B
+    - uses: EndBug/add-and-commit@v7
+      with:
+        add: '.'
+        message: 'change: update blog articles.'
+        push: true
+        # the following configs the committer is the official github-actions bot user
+        author_name: github-actions
+        author_email: 41898282+github-actions[bot]@users.noreply.github.com
