@@ -8,6 +8,8 @@
     @changes       44
 --->
 
+**请注意！LuaRocks 并不是 OpenResty 官方推荐的装包方式。LuaRocks 上绝大部分的 Lua 库都可能会阻塞 OpenResty 的事件循环，而让性能急剧下降。推荐使用 OPM**
+
 使用 LuaRocks
 
 这个示例中展示了在 [OpenResty](openresty.html) 中使用 [LuaRocks](http://www.luarocks.org/) 。这个示例已经在
