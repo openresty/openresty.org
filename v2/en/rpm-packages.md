@@ -140,10 +140,10 @@ worker_processes 1;
 
 # openresty-asan
 
-This is the clang AddressSanitizer build of OpenResty. As compared to the `openresty-debug`
+This is the gcc AddressSanitizer build of OpenResty. As compared to the `openresty-debug`
 package, it has the following changes:
 
-* It uses the command `clang -fsanitize=address` to compile and link.
+* It uses the command `gcc -fsanitize=address` to compile and link.
 * It uses the C compiler options `-O1 -fno-omit-frame-pointer` in the build.
 * It disables the memory pools used in the NGINX by applying the "[no-pool](https://github.com/openresty/no-pool-nginx)" patch.
 * It enables the internal Valgrind co-operations in the LuaJIT build through the `-DLUAJIT_USE_VALGRIND` C compiler flag.
@@ -159,9 +159,10 @@ export ASAN_OPTIONS=detect_leaks=0
 ```
 
 You may also need to specify some suppression rules to silence other false positives. See the following
-clang ASAN document for more details:
+ASAN document for more details:
 
-https://clang.llvm.org/docs/AddressSanitizer.html#suppressing-reports-in-external-libraries
+https://github.com/google/sanitizers/wiki/AddressSanitizerLeakSanitizer
+
 
 # openresty-openssl
 
@@ -185,10 +186,10 @@ This is the debug build of the OpenSSL library. As compared to `openresty-openss
 
 # openresty-openssl-asan
 
-This is the clang AddressSanitizer build of the OpenSSL library. As compared to the `openresty-openssl-debug`
+This is the gcc AddressSanitizer build of the OpenSSL library. As compared to the `openresty-openssl-debug`
 package, it has the following changes:
 
-* It uses the command `clang -fsanitize=address` to compile and link.
+* It uses the command `gcc -fsanitize=address` to compile and link.
 * It uses the `openresty-zlib-asan` package instead of `openresty-zlib` as the runtime dependency.
 * It uses the C compiler options `-O1 -fno-omit-frame-pointer` in the build.
 * It is installed into the prefix `/usr/local/openresty-asan/openssl/`.
@@ -200,10 +201,10 @@ mainstream version of zlib is used in OpenResty even on old systems.
 
 # openresty-zlib-asan
 
-This is the clang AddressSanitizer build of the Zlib library. As compared to the `openresty-zlib-debug`
+This is the gcc AddressSanitizer build of the Zlib library. As compared to the `openresty-zlib-debug`
 package, it has the following changes:
 
-* It uses the command `clang -fsanitize=address` to compile and link.
+* It uses the command `gcc -fsanitize=address` to compile and link.
 * It uses the C compiler options `-O1 -fno-omit-frame-pointer` in the build.
 * It is installed into the prefix `/usr/local/openresty-asan/zlib/`.
 
@@ -214,10 +215,10 @@ mainstream version of PCRE is used in OpenResty even on older systems.
 
 # openresty-pcre-asan
 
-This is the clang AddressSanitizer build of the PCRE library. As compared to the `openresty-pcre-debug`
+This is the gcc AddressSanitizer build of the PCRE library. As compared to the `openresty-pcre-debug`
 package, it has the following changes:
 
-* It uses the command `clang -fsanitize=address` to compile and link.
+* It uses the command `gcc -fsanitize=address` to compile and link.
 * It uses the C compiler options `-O1 -fno-omit-frame-pointer` in the build.
 * It is installed into the prefix `/usr/local/openresty-asan/pcre/`.
 

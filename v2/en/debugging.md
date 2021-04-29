@@ -99,7 +99,7 @@ For example, you can build OpenResty with ASAN this way:
 ```bash
 export ASAN_OPTIONS=detect_leaks=0
 
-./configure --with-cc="clang -fsanitize=address" \
+./configure --with-cc="gcc -fsanitize=address" \
     --with-cc-opt="-O1 -fno-omit-frame-pointer" --with-debug -j9 \
     --prefix=/usr/local/openresty-asan --with-luajit-xcflags="-DLUAJIT_USE_VALGRIND" \
     --with-no-pool-patch
