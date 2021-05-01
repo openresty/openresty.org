@@ -48,6 +48,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     31              x86_64
     32              x86_64, aarch64
     33              x86_64, aarch64
+    34              x86_64
 ```
 
 * [Amazon Linux](#amazon-linux)
@@ -83,6 +84,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     3.10            x86_64
     3.11            x86_64
     3.12            x86_64
+    3.13            x86_64
 ```
 
 All our repositories' metadata (and rpm binary packages) are signed by the following GPG key, `0xD5EDEB74`:
