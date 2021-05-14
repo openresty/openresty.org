@@ -44,7 +44,7 @@ The highlights of this release candidate are:
 
 * Based on a very recent mainline [NGINX](nginx.html) core [% major_ver %].
 * Many fixes imported from Mike Pall's upstream [LuaJIT](https://github.com/openresty/luajit2#readme) repository.
-* Introduce a new macro LUAJIT_TEST_FIXED_ORDER for fixed-order traversal of lua tables.
+* Introduce a new macro `LUAJIT_TEST_FIXED_ORDER` for fixed-order traversal of lua tables.
 * When lua failed in requesting memory, instead of graceful shutdown, `abort()` is called.
 * Now the `get_ctx_table` supports using the ctx table from caller, and that will reduce the cost of creating a new ctx table.
 * Fixed the bug that the metatable was not cleared when clearing the content of lua table when using [lua-tablepool](https://github.com/openresty/lua-tablepool).
@@ -68,7 +68,7 @@ The highlights of this release candidate are:
     * bugfix: fixed memory leak in debug log. _Thanks Hawker for the patch._
     * bugfix: ignore the `raw` argument when acquiring UDP request socket. _Thanks Datong Sun for the patch._
 * upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core) to v0.1.22rc1
-    * feature: expose the `get_ctx_table` API to get the ctx table & support using ctx table from caller when the ctx table does not exists. _Thanks doujiang24 for the patch._
+    * feature: expose the `get_ctx_table` API to get the ctx table, and support using ctx table from caller when the ctx table does not exists. _Thanks doujiang24 for the patch._
     * feature: implemented ngx.process API for stream subsystem. _Thanks WANG HUI for the patch._
     * bugfix: should compare to nil to check if a cdata is NULL. _Thanks lijunlong for the patch._
     * change: it is harmful to set ngx.ctx to a non-table value. _Thanks spacewander for the patch._
@@ -91,13 +91,13 @@ The highlights of this release candidate are:
 * upgraded [lua-resty-lrucache](https://github.com/openresty/lua-resty-lrucache) to v0.11rc1
     * bugfix: set `num_items` to zero when `flushall`. _Thanks hnlq715 for the patch._
 * upgraded [lua-resty-string](https://github.com/openresty/lua-resty-string) to v0.14rc1
-    * feature: added parameter check for `aes.lua`. _Thanks lijunlong for the patch._
+    * change: added parameter check for `aes.lua`. _Thanks lijunlong for the patch._
     * feature: added aes gcm encryption/decryption algorithm. _Thanks lijunlong for the patch._
     * bugfix: segmentation fault while decoding because the wrong output size buffer.  _Thanks Miroslav Nový for the patch._
 * upgraded [lua-resty-signal](https://github.com/openresty/lua-resty-signal) 0.03rc1
     * change: the signum method return correct value on different system now, not only for linux. _Thanks xiaobiaozhao for the patch._
 * upgraded [LuaJIT](https://github.com/openresty/luajit2) to 2.1-20210510.
-    * change: Introduce a new macro LUAJIT_TEST_FIXED_ORDER for testing so that lua table would have predictable key iteration order.
+    * change: Introduce a new macro `LUAJIT_TEST_FIXED_ORDER` for testing so that lua table would have predictable key iteration order.
     * bugfix: Fix trace exit register dump for some archs.
     * bugfix: FFI: Fix recording of union initialization.
     * bugfix: x64: Fix `__call` metamethod return dispatch.
