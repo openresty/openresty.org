@@ -1,4 +1,14 @@
 .news
+  .news-item
+    a(href="/en/ann-1019009001rc1.html")
+      picture
+        source(srcset="../images/logo.webp" type="image/webp")
+        img.news-img(src="../images/logo.png")
+    .news-description
+      strong.news-hint [% c.l("New!") %]&nbsp;
+      a(href="/en/ann-1019009001rc1.html") OpenResty 1.19.9.1rc1
+      span &nbsp;[% c.l("is now released!") %]
+
   each val in news
     .news-item
       a(href=`${val.href}?src=org_news` target="_blank")
@@ -17,14 +27,4 @@
     .news-description
       strong.news-hint [% c.l("New!") %]&nbsp;
       a(href="/en/ann-test-nginx-029.html") Test::Nginx 0.29
-      span &nbsp;[% c.l("is now released!") %]
-
-  .news-item
-    a(href="/en/ann-1019003001.html")
-      picture
-        source(srcset="../images/logo.webp" type="image/webp")
-        img.news-img(src="../images/logo.png")
-    .news-description
-      strong.news-hint [% c.l("New!") %]&nbsp;
-      a(href="/en/ann-1019003001.html") OpenResty 1.19.3.1
       span &nbsp;[% c.l("is now released!") %]

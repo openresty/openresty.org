@@ -424,7 +424,7 @@ template_map['news-cn.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '\n<div class="news">\n  <div class="news-item"><a href="/en/ann-1019009001rc1.html">\n    <picture>\n      <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n    </picture></a>\n    <div class="news-description"><strong class="news-hint">'
+i = i + 1 output[i] = '\n<div class="news">\n  <div class="news-item"><a href="/en/ann-1019009001rc1.html">\n      <picture>\n        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
 -- line 7 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '&nbsp;</strong><a href="/en/ann-1019009001rc1.html">OpenResty 1.19.9.1rc1</a><span>&nbsp;'
@@ -463,7 +463,7 @@ i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '&nbsp;</strong><a href="/en/ann-test-nginx-029.html">Test::Nginx 0.29</a><span>&nbsp;'
 -- line 22 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
-i = i + 1 output[i] = '</span></div>\n  </div>\n</div>\n'
+i = i + 1 output[i] = '</span></div>\n  </div>\n</div>'
 
     return output
 end
@@ -477,7 +477,7 @@ template_map['news-en.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '\n<div class="news">\n  <div class="news-item"><a href="/en/ann-1019009001rc1.html">\n    <picture>\n      <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n    </picture></a>\n    <div class="news-description"><strong class="news-hint">'
+i = i + 1 output[i] = '\n<div class="news">\n  <div class="news-item"><a href="/en/ann-1019009001rc1.html">\n      <picture>\n        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
 -- line 7 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '&nbsp;</strong><a href="/en/ann-1019009001rc1.html">OpenResty 1.19.9.1rc1</a><span>&nbsp;'
@@ -516,7 +516,7 @@ i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '&nbsp;</strong><a href="/en/ann-test-nginx-029.html">Test::Nginx 0.29</a><span>&nbsp;'
 -- line 22 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
-i = i + 1 output[i] = '</span></div>\n  </div>\n</div>\n'
+i = i + 1 output[i] = '</span></div>\n  </div>\n</div>'
 
     return output
 end
