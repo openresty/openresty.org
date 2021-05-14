@@ -61,7 +61,7 @@ The highlights of this release candidate are:
     * bugfix: fix possible null pointer dereference found by Coverity. _Thanks Ilya Shipitsin for the patch._
     * bugfix: fixed memory leak in debug log. _Thanks Hawker for the patch._
     * bugfix: we closed listener's fd which was closed. _Thanks spacewander for the patch._
-* upgraded [ngx_stream_lua](https://github.com/openresty/stream-lua-resty-module) to 0.0.10rc2.
+* upgraded [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module) to 0.0.10rc2.
     * bugfix: changed from graceful shutdown to abort when `lua_resume` return `LUA_ERRMEM`. _Thanks lijunlong for the patch._
     * bugfix: wrong source address for the replying packet when received udp packet via req.socket on secondary address. _Thanks lijunlong for the patch._
     * bugfix: fix possible null pointer dereference found by Coverity. _Thanks Ilya Shipitsin for the patch._
