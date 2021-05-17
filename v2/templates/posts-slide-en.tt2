@@ -14,7 +14,7 @@
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-cache-purge?src=org" target="_blank">
             <div class="blog-img" data-pic="/header-images/edge-cache-purge.jpg"><img class="article-img" src="../images/header-images/edge-cache-purge.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">Purge HTTP Cache in OpenResty Edge</p>
+              <p class="blog-title">Real-Time Purge HTTP Cache in OpenResty Edge</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-cache-rules?src=org" target="_blank">
             <div class="blog-img" data-pic="/header-images/edge-cache-rules.png"><img class="article-img" src="../images/header-images/edge-cache-rules.png" loading="lazy"/></div>
