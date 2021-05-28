@@ -9,7 +9,7 @@ packets from the specified DNS server to cause a 1-byte memory overwrite,
 resulting in a worker process crash or other unspecified impact. (CVE-2021-23017)
 
 NGINX cores from 0.6.18 to 1.20.0 (included) are affected by this issue.
-If you are using internal resolver with _any_ previous OpenResty release, upgrade
+If you are using `resolver` directive with _any_ previous OpenResty release, upgrade
 to [% version %].
 
 [Download this version here](download.html).
