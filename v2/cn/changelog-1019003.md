@@ -4,8 +4,9 @@
     @created       2020-11-06 01:04 GMT
 --->
 
-# Version 1.19.3.2 - 28 May 2021
+# Version 1.19.3.2 - 31 May 2021
 
+* build-win32.sh: upgraded openssl to 1.1.1k.
 * bugfix: applied the patch for security advisory to NGINX cores >= 0.6.18 and <= 1.20.0 (CVE-2021-23017).
 
 # Version 1.19.3.1 - 6 Nov 2020

@@ -23,7 +23,8 @@ This is the second OpenResty release based on the nginx [% major_ver %] core.
 
 # Version highlights
 
-* bugfix: applied the patch for security advisory to NGINX cores >= 0.6.18
+* Upgraded openssl to 1.1.1k for Win32/Win64.
+* Applied the patch for security advisory to NGINX cores >= 0.6.18
 and <= 1.20.0 (CVE-2021-23017).
 
 # Full Change logs
