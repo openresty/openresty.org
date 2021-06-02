@@ -424,45 +424,45 @@ template_map['news-cn.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '\n<div class="news">\n  <div class="news-item"><a href="/en/ann-1019009001rc1.html">\n      <picture>\n        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
+i = i + 1 output[i] = '\n<div class="news">\n  <div class="news-item"><a href="ann-1019003002.html">\n      <picture>\n        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
 -- line 7 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
-i = i + 1 output[i] = '&nbsp;</strong><a href="/en/ann-1019009001rc1.html">OpenResty 1.19.9.1rc1</a><span>&nbsp;'
+i = i + 1 output[i] = '&nbsp;</strong><a href="ann-1019003002.html">OpenResty 1.19.3.2</a><span>&nbsp;'
 -- line 7 "news-cn.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
+i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="ann-1019009001rc1.html">\n      <picture>\n        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
+-- line 13 "news-cn.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
+i = i + 1 output[i] = '&nbsp;</strong><a href="ann-1019009001rc1.html">OpenResty 1.19.9.1rc1</a><span>&nbsp;'
+-- line 13 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-upload-ssl-certs?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ssl-cover.jpg" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 10 "news-cn.tt2"
+-- line 16 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '</strong><span>&nbsp;'
--- line 10 "news-cn.tt2"
+-- line 16 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New blog post' }})
 i = i + 1 output[i] = '&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-upload-ssl-certs?src=org_news" target="_blank">在 OpenResty Edge 中为 HTTPS 网站上传 SSL 证书</a><span>&nbsp;'
--- line 10 "news-cn.tt2"
+-- line 16 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is published.' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/openresty-pre-build-for-fedora-34-alpine-3-13?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/fedora34-alpine-3.13.jpg" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 13 "news-cn.tt2"
+-- line 19 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '</strong><span>&nbsp;'
--- line 13 "news-cn.tt2"
+-- line 19 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New blog post' }})
 i = i + 1 output[i] = '&nbsp;</span><a href="https://blog.openresty.com.cn/cn/openresty-pre-build-for-fedora-34-alpine-3-13?src=org_news" target="_blank">Fedora 34 和 Alpine 3.13 的 OpenResty 官方二进制仓库</a><span>&nbsp;'
--- line 13 "news-cn.tt2"
+-- line 19 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is published.' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-cache-purge?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-cache-purge.jpg" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 16 "news-cn.tt2"
+-- line 22 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '</strong><span>&nbsp;'
--- line 16 "news-cn.tt2"
+-- line 22 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New blog post' }})
 i = i + 1 output[i] = '&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-cache-purge?src=org_news" target="_blank">在 OpenResty Edge 中实时清除 HTTP 缓存</a><span>&nbsp;'
--- line 16 "news-cn.tt2"
+-- line 22 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is published.' }})
-i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="/en/ann-test-nginx-029.html">\n      <picture>\n        <source srcset="../images/test.webp" type="image/webp"/><img class="news-img" src="../images/test.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 22 "news-cn.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
-i = i + 1 output[i] = '&nbsp;</strong><a href="/en/ann-test-nginx-029.html">Test::Nginx 0.29</a><span>&nbsp;'
--- line 22 "news-cn.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n</div>'
 
     return output
@@ -477,45 +477,45 @@ template_map['news-en.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '\n<div class="news">\n  <div class="news-item"><a href="/en/ann-1019009001rc1.html">\n      <picture>\n        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
+i = i + 1 output[i] = '\n<div class="news">\n  <div class="news-item"><a href="ann-1019003002.html">\n      <picture>\n        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
 -- line 7 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
-i = i + 1 output[i] = '&nbsp;</strong><a href="/en/ann-1019009001rc1.html">OpenResty 1.19.9.1rc1</a><span>&nbsp;'
+i = i + 1 output[i] = '&nbsp;</strong><a href="ann-1019003002.html">OpenResty 1.19.3.2</a><span>&nbsp;'
 -- line 7 "news-en.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
+i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="ann-1019009001rc1.html">\n      <picture>\n        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
+-- line 13 "news-en.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
+i = i + 1 output[i] = '&nbsp;</strong><a href="ann-1019009001rc1.html">OpenResty 1.19.9.1rc1</a><span>&nbsp;'
+-- line 13 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com/en/edge-upload-ssl-certs?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ssl-cover.jpg" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 10 "news-en.tt2"
+-- line 16 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '</strong><span>&nbsp;'
--- line 10 "news-en.tt2"
+-- line 16 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New blog post' }})
 i = i + 1 output[i] = '&nbsp;</span><a href="https://blog.openresty.com/en/edge-upload-ssl-certs?src=org_news" target="_blank">Upload SSL Certificates for HTTPS Sites in OpenResty Edge</a><span>&nbsp;'
--- line 10 "news-en.tt2"
+-- line 16 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is published.' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com/en/openresty-pre-build-for-fedora-34-alpine-3-13?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/fedora34-alpine-3.13.jpg" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 13 "news-en.tt2"
+-- line 19 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '</strong><span>&nbsp;'
--- line 13 "news-en.tt2"
+-- line 19 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New blog post' }})
 i = i + 1 output[i] = '&nbsp;</span><a href="https://blog.openresty.com/en/openresty-pre-build-for-fedora-34-alpine-3-13?src=org_news" target="_blank">Official OpenResty Fedora 34 &amp; Alpine 3.13 pkg repo</a><span>&nbsp;'
--- line 13 "news-en.tt2"
+-- line 19 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is published.' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com/en/edge-cache-purge?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-cache-purge.jpg" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 16 "news-en.tt2"
+-- line 22 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '</strong><span>&nbsp;'
--- line 16 "news-en.tt2"
+-- line 22 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New blog post' }})
 i = i + 1 output[i] = '&nbsp;</span><a href="https://blog.openresty.com/en/edge-cache-purge?src=org_news" target="_blank">Real-Time Purge HTTP Cache in OpenResty Edge</a><span>&nbsp;'
--- line 16 "news-en.tt2"
+-- line 22 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is published.' }})
-i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="/en/ann-test-nginx-029.html">\n      <picture>\n        <source srcset="../images/test.webp" type="image/webp"/><img class="news-img" src="../images/test.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 22 "news-en.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
-i = i + 1 output[i] = '&nbsp;</strong><a href="/en/ann-test-nginx-029.html">Test::Nginx 0.29</a><span>&nbsp;'
--- line 22 "news-en.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n</div>'
 
     return output
