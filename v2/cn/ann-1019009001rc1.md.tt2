@@ -53,6 +53,8 @@ The highlights of this release candidate are:
 
 # Full Changelog
 
+Complete change logs since the last (formal) release, 1.19.3.2:
+
 - upgraded the nginx core to 1.19.9.
     - see the changes here: https://nginx.org/en/CHANGES
 * upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module) to 0.10.20rc1.
