@@ -9,7 +9,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 ```
     Version         Codename        Supported Architectures
     14.04           Trusty          amd64
-    16.04           Xenial          amd64
+    16.04           Xenial          amd64, arm64
     18.04           Bionic          amd64, arm64
     20.04           Focal           amd64, arm64
 ```
@@ -48,7 +48,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     31              x86_64
     32              x86_64, aarch64
     33              x86_64, aarch64
-    34              x86_64
+    34              x86_64, aarch64
 ```
 
 * [Amazon Linux](#amazon-linux)
@@ -64,27 +64,27 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 ```
     Version         Supported Architectures
     12.x            x86_64
-    15.x            x86_64
+    15.x            x86_64, aarch64
 ```
 
 * [OpenSUSE Leap](#opensuse-leap)
 
 ```
     Version         Supported Architectures
-    15.x            x86_64
+    15.x            x86_64, aarch64
 ```
 
 * [Alpine](#alpine)
 
 ```
     Version         Supported Architectures
-    3.7             x86_64
-    3.8             x86_64
-    3.9             x86_64
-    3.10            x86_64
-    3.11            x86_64
-    3.12            x86_64
-    3.13            x86_64
+    3.7             x86_64, aarch64
+    3.8             x86_64, aarch64
+    3.9             x86_64, aarch64
+    3.10            x86_64, aarch64
+    3.11            x86_64, aarch64
+    3.12            x86_64, aarch64
+    3.13            x86_64, aarch64
 ```
 
 All our repositories' metadata (and rpm binary packages) are signed by the following GPG key, `0xD5EDEB74`:

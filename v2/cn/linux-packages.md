@@ -9,7 +9,7 @@
 ```
     版本            版本名         支持的体系结构
     14.04           Trusty          amd64
-    16.04           Xenial          amd64
+    16.04           Xenial          amd64, arm64
     18.04           Bionic          amd64, arm64
     20.04           Focal           amd64, arm64
 ```
@@ -64,27 +64,27 @@
 ```
     版本号          支持的体系结构
     12.x            x86_64
-    15.x            x86_64
+    15.x            x86_64, aarch64
 ```
 
 * [OpenSUSE Leap](#opensuse-leap)
 
 ```
     版本号          支持的体系结构
-    15.x            x86_64
+    15.x            x86_64, aarch64
 ```
 
 * [Alpine](#alpine)
 
 ```
     版本号          支持的体系结构
-    3.7             x86_64
-    3.8             x86_64
-    3.9             x86_64
-    3.10            x86_64
-    3.11            x86_64
-    3.12            x86_64
-    3.13            x86_64
+    3.7             x86_64, aarch64
+    3.8             x86_64, aarch64
+    3.9             x86_64, aarch64
+    3.10            x86_64, aarch64
+    3.11            x86_64, aarch64
+    3.12            x86_64, aarch64
+    3.13            x86_64, aarch64
 ```
 
 我们仓库的所有元数据（以及 rpm 二进制包）都是用下面的 GPG 密钥， `0xD5EDEB74` 签名的：
