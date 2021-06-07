@@ -48,7 +48,7 @@
     31              x86_64
     32              x86_64, aarch64
     33              x86_64, aarch64
-    34              x86_64
+    34              x86_64, aarch64
 ```
 
 * [Amazon Linux](#amazon-linux)
