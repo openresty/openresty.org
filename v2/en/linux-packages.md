@@ -56,7 +56,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 ```
     Version         Supported Architectures
     1 (2018.03)     x86_64
-    2               x86_64
+    2               x86_64, aarch64
 ```
 
 * [SUSE Linux Enterprise](#suse-linux-enterprise)
