@@ -132,6 +132,31 @@ master_process off;
 worker_processes 1;
 ```
 
+# openresty-asan
+
+This is the gcc AddressSanitizer build of OpenResty. As compared to the `openresty-debug`
+package, it has the following changes:
+
+* It uses the command `gcc -fsanitize=address` to compile and link.
+* It uses the C compiler options `-O1 -fno-omit-frame-pointer` in the build.
+* It disables the memory pools used in the NGINX by applying the "[no-pool](https://github.com/openresty/no-pool-nginx)" patch.
+* It enables the internal Valgrind co-operations in the LuaJIT build through the `-DLUAJIT_USE_VALGRIND` C compiler flag.
+* The default server prefix of its NGINX is `/usr/local/openresty-asan/`.
+* The entry point visible to your `PATH` environment is `openresty-asan` instead of `openresty-debug`.
+* It uses the `openresty-zlib-asan`, `openresty-pcre-asan`, and `openresty-openssl-asan` packages as runtime dependencies.
+
+It is important to specify the following system environment before starting this special build of openresty
+to avoid known false positives of memory leaks:
+
+```bash
+export ASAN_OPTIONS=detect_leaks=0
+```
+
+You may also need to specify some suppression rules to silence other false positives. See the following
+ASAN document for more details:
+
+https://github.com/google/sanitizers/wiki/AddressSanitizerLeakSanitizer
+
 # openresty-openssl
 
 This is our own build of the OpenSSL library. In particular, we have disabled the threads support in the build

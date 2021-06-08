@@ -97,6 +97,29 @@ restydoc -s proxy_pass
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.html#_valgrind_mode
 
+# openresty-asan
+
+这是OpenResty的gcc AddressSanitizer编译版本. 和 `openresty-debug` 版本相比，该版本有
+如下变化:
+
+* 它使用 `gcc -fsanitize=address` 来编译和链接。
+* 它启用C编译选项 `-O1 -fno-omit-frame-pointer`。
+* 它禁用了NGINX的内存池，通过应用如下patch实现："[no-pool](https://github.com/openresty/no-pool-nginx)" patch。
+* 它在 LuaJIT 版本中打开内部 Valgrind 协作。
+* NGINX 默认的服务前缀是 `/usr/local/openresty-asan/`。
+* 你在 `PATH` 环境变量里面看到的入口点是 `openresty-asan` 而不是 `openresty-debug`。
+* 它依赖 `openresty-zlib-asan`, `openresty-pcre-asan` 和 `openresty-openssl-asan` 这些包.
+
+为了避免已知的内存泄漏的误报，在开始这个openresty的特殊构建之前，一定要指定以下系统环境:
+
+```bash
+export ASAN_OPTIONS=detect_leaks=0
+```
+
+您可能还需要指定一些抑制规则来抑制其他误报。 可以查看下面的ASAN链接获取详细内容:
+
+https://github.com/google/sanitizers/wiki/AddressSanitizerLeakSanitizer
+
 # openresty-openssl
 
 这是我们自己维护的 OpenSSL 库。特别的，我们为了节省一些开销，在这个版本中已经禁用了对线程的支持。
