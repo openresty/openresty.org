@@ -12,13 +12,13 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1019003002.html">OpenResty 1.19.3.2</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/openresty-ann-1.19.9.1-rc1?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/openresty-logo.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/openresty-ann-1.19.9.1-rc1?src=org_news" target="_blank">OpenResty 1.19.9.1 预览版 RC1 发布</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/openresty-ann-1.19.3.2?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/openresty-logo.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/openresty-ann-1.19.3.2?src=org_news" target="_blank">OpenResty 1.19.3.2 正式版发布</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-upload-ssl-certs?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ssl-cover.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-upload-ssl-certs?src=org_news" target="_blank">在 OpenResty Edge 中为 HTTPS 网站上传 SSL 证书</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/openresty-pre-build-for-fedora-34-alpine-3-13?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/fedora34-alpine-3.13.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/openresty-pre-build-for-fedora-34-alpine-3-13?src=org_news" target="_blank">Fedora 34 和 Alpine 3.13 的 OpenResty 官方二进制仓库</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-cache-purge?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-cache-purge.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-cache-purge?src=org_news" target="_blank">在 OpenResty Edge 中实时清除 HTTP 缓存</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
