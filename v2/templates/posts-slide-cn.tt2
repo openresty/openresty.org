@@ -11,25 +11,10 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-ann-1.19.9.1-rc1?src=org" target="_blank">
-            <div class="blog-img" data-pic="/header-images/openresty-logo.png"><img class="article-img" src="../images/header-images/openresty-logo.png" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">OpenResty 1.19.9.1 预览版 RC1 发布</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-ann-1.19.3.2?src=org" target="_blank">
-            <div class="blog-img" data-pic="/header-images/openresty-logo.png"><img class="article-img" src="../images/header-images/openresty-logo.png" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">OpenResty 1.19.3.2 正式版发布</p>
-            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-upload-ssl-certs?src=org" target="_blank">
             <div class="blog-img" data-pic="/header-images/ssl-cover.jpg"><img class="article-img" src="../images/header-images/ssl-cover.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">在 OpenResty Edge 中为 HTTPS 网站上传 SSL 证书</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-pre-build-for-fedora-34-alpine-3-13?src=org" target="_blank">
-            <div class="blog-img" data-pic="/header-images/fedora34-alpine-3.13.jpg"><img class="article-img" src="../images/header-images/fedora34-alpine-3.13.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Fedora 34 和 Alpine 3.13 的 OpenResty 官方二进制仓库</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-cache-purge?src=org" target="_blank">
             <div class="blog-img" data-pic="/header-images/edge-cache-purge.jpg"><img class="article-img" src="../images/header-images/edge-cache-purge.jpg" loading="lazy"/></div>
@@ -46,20 +31,25 @@
             <div class="article-text">
               <p class="blog-title">使用 OpenResty Edge 配置一个最简单的反向代理和负载均衡器</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-pre-build-for-aarch64-arm64?src=org" target="_blank">
-            <div class="blog-img" data-pic="/header-images/aarch-arm.png"><img class="article-img" src="../images/header-images/aarch-arm.png" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-xray-case-yundun?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/xray-slogan.jpg"><img class="article-img" src="../images/header-images/xray-slogan.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">Aarch64/ARM64 的 OpenResty 官方二进制仓库</p>
+              <p class="blog-title">内存减少 60%，OpenResty XRay 精准定位问题代码，快速完成修复上线</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/ubuntu20-or-install?src=org" target="_blank">
-            <div class="blog-img" data-pic="/header-images/ubuntu2.jpg"><img class="article-img" src="../images/header-images/ubuntu2.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/lua-cpu-flame-graph?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/guido-flame.jpg"><img class="article-img" src="../images/header-images/guido-flame.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">在 Ubuntu 20.04 上通过 apt-get 安装 OpenResty</p>
+              <p class="blog-title">Lua 级别 CPU 火焰图简介</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/ordemo?src=org" target="_blank">
-            <div class="blog-img" data-pic="/header-images/ordemo.jpg"><img class="article-img" src="../images/header-images/ordemo.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/nginx-shm-frag?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/nginx-shm-frag.jpg"><img class="article-img" src="../images/header-images/nginx-shm-frag.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">我们如何从剧本文件中生成视频</p>
+              <p class="blog-title">OpenResty 与 Nginx 共享内存区的内存碎片问题</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/how-nginx-shm-consume-ram?src=org" target="_blank">
+            <div class="blog-img" data-pic="/header-images/shared-mem.jpg"><img class="article-img" src="../images/header-images/shared-mem.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty 和 Nginx 的共享内存区是如何消耗物理内存的</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
