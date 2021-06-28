@@ -28,7 +28,10 @@ async function genSlideTemplate(lang) {
     picsExists = await readdir('./images/header-images');
   }
 
-  $('entry').slice(0, length).each((index, entry) => {
+  $('entry').filter((index, entry) => {
+    const tags = $(entry).children('tags').text();
+    return tags && (tags.includes('xray') || tags.includes('openresty-edge'));
+  }).slice(0, length).each((index, entry) => {
     const title = $(entry).children('title').text();
     const array = $(entry).children('id').text().split('/');
     const id = array[array.length - 2];

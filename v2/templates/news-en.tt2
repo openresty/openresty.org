@@ -15,10 +15,10 @@
   <div class="news-item"><a href="https://blog.openresty.com/en/edge-lets-encrypt?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/lets-encrypt-thumb.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-lets-encrypt?src=org_news" target="_blank">Issue Free SSL Certificates via Let's Encrypt in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/openresty-ann-1.19.9.1-rc1?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/openresty-logo.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/openresty-ann-1.19.9.1-rc1?src=org_news" target="_blank">OpenResty 1.19.9.1 RC1 is out</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/edge-upload-ssl-certs?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ssl-cover.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-upload-ssl-certs?src=org_news" target="_blank">Upload SSL Certificates for HTTPS Sites in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/openresty-ann-1.19.3.2?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/openresty-logo.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/openresty-ann-1.19.3.2?src=org_news" target="_blank">OpenResty 1.19.3.2 released</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/edge-cache-purge?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-cache-purge.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-cache-purge?src=org_news" target="_blank">Real-Time Purge HTTP Cache in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
