@@ -43,7 +43,7 @@ local MAX_SEARCH_QUERY_LEN = 128
 
 local function gen_cache_control_headers(ts)
     resp_header["Last-Modified"] = http_time(tonumber(ts))
-    resp_header["Cache-Control"] = "max-age=3600"
+    resp_header["Cache-Control"] = "max-age=300"
 end
 
 local function search_error(i18n, main_menu, timeline, query, title, msg, lang)
@@ -140,7 +140,7 @@ function _M.run()
         -- print("home data: ", cjson.encode(home))
         -- print(cjson.encode(home_html))
 
-        gen_cache_control_headers(home.last_modified)
+        gen_cache_control_headers(ngx_time())
 
         local html = view.process("index.tt2",
                                   { main_menu = main_menu,
@@ -217,7 +217,7 @@ function _M.run()
 
     local rec = model.get_post(lang, id)
 
-    gen_cache_control_headers(rec.last_modified)
+    gen_cache_control_headers(ngx_time())
 
     local html = view.process("page.tt2",
                               { main_menu = main_menu,
