@@ -68,6 +68,22 @@
     <div class="swiper-button-prev"></div>
   </div>
 </div>
+<div class="modal fade" id="blog-modal" tabindex="-1" role="dialog" aria-labelledby="checkout-modal" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content report-modal-content"><span class="close-report-modal" data-dismiss="modal">&times;</span>
+      <div class="loading-wrapper">
+        <div class="sk-three-bounce">
+          <div class="sk-child sk-bounce1"></div>
+          <div class="sk-child sk-bounce2"></div>
+          <div class="sk-child sk-bounce3"></div>
+        </div>
+      </div>
+      <div class="iframe-container">
+        <iframe class="blog-iframe" id="blog-iframe"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
 <link rel="stylesheet" href="https://static.openresty.com/swiper/5.2.1/css/swiper.min.css"/>
 <script src="https://static.openresty.com/swiper/5.2.1/js/swiper.min.js"></script>
 <script>
