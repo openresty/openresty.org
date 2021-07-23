@@ -10,7 +10,7 @@
       .swiper-wrapper
         each val in postInfos
           .swiper-slide
-            a.article-item(href=`${val.href}?src=org` target="_blank")
+            a.article-item(href=`${val.href}?src=org` data-modal)
               .blog-img(data-pic=`${val.pic}`)
                 img.article-img(src=`../images${val.pic}` loading="lazy")
               .article-text
@@ -19,17 +19,8 @@
     .swiper-button-next
     .swiper-button-prev
 
-#blog-modal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="checkout-modal", aria-hidden="true")
-  .modal-dialog.modal-lg.modal-dialog-centered
-    .modal-content.report-modal-content
-      span.close-report-modal(data-dismiss="modal") &times;
-      .loading-wrapper
-        .sk-three-bounce
-          .sk-child.sk-bounce1
-          .sk-child.sk-bounce2
-          .sk-child.sk-bounce3
-      .iframe-container
-        iframe#blog-iframe.blog-iframe
+#blog-modal.modal
+  iframe#blog-iframe.blog-iframe
 
 link(rel="stylesheet" href=`${swiperCss}`)
 script(src=`${swiperJs}`)

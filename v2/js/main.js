@@ -35,17 +35,17 @@ $(document).ready(function() {
 		}
 	})
 
-	var blogUrl = '';
-	$('.article-item').on('click', function (event) {
-		blogUrl = event.target.getAttribute('href');
-		$('#blog-modal').modal('show');
-	});
-
-	$('#blog-modal').on('shown.bs.modal', function () {
+	$('.article-item').on('click', function () {
+		var blogUrl = $(this).attr('href');
 		$('#blog-iframe').attr('src', blogUrl);
+		$('#blog-modal').modal({
+			fadeDuration: 500,
+			fadeDelay: 0.8,
+		});
+		return false;
 	});
 
-	$('#blog-modal').on('hide.bs.modal', function () {
+	$('#blog-modal').on($.modal.CLOSE, function () {
 		$('#blog-iframe').attr('src', '');
 	});
 
