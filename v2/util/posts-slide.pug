@@ -10,7 +10,7 @@
       .swiper-wrapper
         each val in postInfos
           .swiper-slide
-            a.article-item(href=`${val.href}?src=org` target="_blank")
+            a.article-item(href=`${val.href}?src=org` data-modal)
               .blog-img(data-pic=`${val.pic}`)
                 img.article-img(src=`../images${val.pic}` loading="lazy")
               .article-text
@@ -18,6 +18,9 @@
       .swiper-pagination
     .swiper-button-next
     .swiper-button-prev
+
+#blog-modal.modal
+  iframe#blog-iframe.blog-iframe
 
 link(rel="stylesheet" href=`${swiperCss}`)
 script(src=`${swiperJs}`)

@@ -11,52 +11,52 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-http-to-https?src=org" target="_blank">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-http-to-https?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/http2https.png"><img class="article-img" src="../images/header-images/http2https.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Enforce the use of SSL in websites via OpenResty Edge</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-lets-encrypt?src=org" target="_blank">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-lets-encrypt?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/lets-encrypt-thumb.png"><img class="article-img" src="../images/header-images/lets-encrypt-thumb.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Issue Free SSL Certificates via Let's Encrypt in OpenResty Edge</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-upload-ssl-certs?src=org" target="_blank">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-upload-ssl-certs?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/ssl-cover.jpg"><img class="article-img" src="../images/header-images/ssl-cover.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Upload SSL Certificates for HTTPS Sites in OpenResty Edge</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-cache-purge?src=org" target="_blank">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-cache-purge?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-cache-purge.jpg"><img class="article-img" src="../images/header-images/edge-cache-purge.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Real-Time Purge HTTP Cache in OpenResty Edge</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-cache-rules?src=org" target="_blank">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-cache-rules?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-cache-rules.png"><img class="article-img" src="../images/header-images/edge-cache-rules.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Enable HTTP Cache in OpenResty Edge</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-new-proxy?src=org" target="_blank">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-new-proxy?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-new-proxy.jpg"><img class="article-img" src="../images/header-images/edge-new-proxy.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Set up a Simplest Reverse Proxy and Load Balancer with OpenResty Edge</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/lua-cpu-flame-graph?src=org" target="_blank">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/lua-cpu-flame-graph?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/guido-flame.jpg"><img class="article-img" src="../images/header-images/guido-flame.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Introduction to Lua-Land CPU Flame Graphs</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/nginx-shm-frag?src=org" target="_blank">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/nginx-shm-frag?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/nginx-shm-frag.jpg"><img class="article-img" src="../images/header-images/nginx-shm-frag.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Memory Fragmentation in OpenResty and Nginx's Shared Memory Zones</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/how-nginx-shm-consume-ram?src=org" target="_blank">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/how-nginx-shm-consume-ram?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/shared-mem.jpg"><img class="article-img" src="../images/header-images/shared-mem.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">How OpenResty and Nginx Shared Memory Zones Consume RAM</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/dynamic-tracing-part-4?src=org" target="_blank">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/dynamic-tracing-part-4?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/trace_4.png"><img class="article-img" src="../images/header-images/trace_4.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">The Wonderland of Dynamic Tracing (Part 4 of 7)</p>
@@ -67,6 +67,9 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
+</div>
+<div class="modal" id="blog-modal">
+  <iframe class="blog-iframe" id="blog-iframe"></iframe>
 </div>
 <link rel="stylesheet" href="https://static.openresty.com/swiper/5.2.1/css/swiper.min.css"/>
 <script src="https://static.openresty.com/swiper/5.2.1/js/swiper.min.js"></script>

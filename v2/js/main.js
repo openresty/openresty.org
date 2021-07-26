@@ -35,6 +35,20 @@ $(document).ready(function() {
 		}
 	})
 
+	$('.article-item').on('click', function () {
+		var blogUrl = $(this).attr('href');
+		$('#blog-iframe').attr('src', blogUrl);
+		$('#blog-modal').modal({
+			fadeDuration: 500,
+			fadeDelay: 0.8,
+		});
+		return false;
+	});
+
+	$('#blog-modal').on($.modal.CLOSE, function () {
+		$('#blog-iframe').attr('src', '');
+	});
+
 });
 
 document.querySelectorAll('pre code:not([class])').forEach(function ($) {
