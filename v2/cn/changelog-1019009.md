@@ -4,7 +4,7 @@
     @created       2021-08-04 02:59 GMT
 --->
 
-# Version 1.19.9.1 - 4 Aug 2021
+# Version 1.19.9.1 - 6 Aug 2021
 
 - upgraded the nginx core to 1.19.9.
     - see the changes here: https://nginx.org/en/CHANGES
