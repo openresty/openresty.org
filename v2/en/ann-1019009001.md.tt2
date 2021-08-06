@@ -1,6 +1,8 @@
 [% major_ver = "1.19.9"; version = major_ver _ ".1" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @creator       Johnny Wang
+    @created       2021-08-06 06:49 GMT
 --->
 
 We are happy to announce the new formal release, [% version %], of the
