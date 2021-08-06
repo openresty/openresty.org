@@ -53,7 +53,7 @@ brew install openresty-debug
 ##  最新版
 
 [% ver = "1.19.9.1" -%]
-* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 4.9MB
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.0MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 [变更列表](changelog-1019009.html) - 2021年8月6日
 
