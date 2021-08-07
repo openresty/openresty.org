@@ -85,6 +85,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     3.11            x86_64, aarch64
     3.12            x86_64, aarch64
     3.13            x86_64, aarch64
+    3.14            x86_64, aarch64
 ```
 
 All our repositories' metadata (and rpm binary packages) are signed by the following GPG key, `0xD5EDEB74`:
