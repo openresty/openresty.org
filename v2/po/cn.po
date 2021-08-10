@@ -85,11 +85,11 @@ msgstr "最新！"
 msgid  "is now released!"
 msgstr "已发布。"
 
-#: templates/news-cn.tt2:16
+#: templates/news-cn.tt2:10
 msgid  "New blog post"
 msgstr "新博客文章"
 
-#: templates/news-cn.tt2:16
+#: templates/news-cn.tt2:10
 msgid  "is published."
 msgstr "已发表。"
 
