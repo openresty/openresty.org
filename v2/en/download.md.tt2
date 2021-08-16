@@ -28,6 +28,10 @@ All the releases are signed by the public PGP key `A0E98066` of Yichun Zhang.
 
 See [Windows-specific documentation](https://github.com/openresty/openresty/blob/master/doc/README-windows.md) for basic usage on Windows.
 
+## Docker
+
+We provide docker images for users with containerization, you can get the official maintained images from [Docker Hub](https://hub.docker.com/r/openresty/openresty).
+
 ## macOS/Mac OS X
 
 It is highly recommended to install OpenResty on our Mac OS X or macOS systems via [homebrew](https://brew.sh/) package manager, like this:
