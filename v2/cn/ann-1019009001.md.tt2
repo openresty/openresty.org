@@ -20,6 +20,8 @@ on this [Download page](download.html).
 * Based on a very recent mainline [NGINX](nginx.html) core [% major_ver %].
 * Many fixes imported from Mike Pall's upstream [LuaJIT](https://github.com/openresty/luajit2#readme) repository.
 * Introduce a new macro `LUAJIT_TEST_FIXED_ORDER` for fixed-order traversal of lua tables.
+It can be turned on by appending `LUAJIT_TEST_FIXED_ORDER=1` to `XCFLAGS` when compiling luajit,
+which is disabled by default, and it's mainly for predictable results during regression testing.
 * When lua failed in requesting memory, instead of graceful shutdown, `abort()` is called.
 * Now the `get_ctx_table` supports using the ctx table from caller, and that will reduce the cost of creating a new ctx table.
 * Fixed the bug that the metatable was not cleared when clearing the content of lua table when using [lua-tablepool](https://github.com/openresty/lua-tablepool).
