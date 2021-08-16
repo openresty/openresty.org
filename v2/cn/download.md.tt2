@@ -25,7 +25,7 @@ OpenResty<sup>&reg;</sup> 给常见 Linux 发布提供[官方预编译安装包]
 
 ## Docker
 
-我们为使用容器的用户提供了 docker 镜像，你可以通过 [Docker Hub](https://hub.docker.com/r/openresty/openresty) 来获取官方维护的 docker 镜像。
+我们为使用容器的用户提供了 docker 镜像。你可以通过 [Docker Hub](https://hub.docker.com/r/openresty/openresty) 来获取官方维护的 docker 镜像。
 
 ## macOS/Mac OS X
 

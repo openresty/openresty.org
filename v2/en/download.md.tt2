@@ -30,7 +30,7 @@ See [Windows-specific documentation](https://github.com/openresty/openresty/blob
 
 ## Docker
 
-We provide docker images for users with containerization, you can get the official maintained images from [Docker Hub](https://hub.docker.com/r/openresty/openresty).
+We provide docker images for users with containerization. You can get the official maintained images from [Docker Hub](https://hub.docker.com/r/openresty/openresty).
 
 ## macOS/Mac OS X
 
