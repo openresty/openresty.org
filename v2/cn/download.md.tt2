@@ -48,6 +48,8 @@ brew untap homebrew/nginx
 brew install openresty-debug
 ```
 
+注：你可以在 `$HOMEBREW_PREFIX/etc/openresty/` 目录下找到 openresty 的配置文件（`$HOMEBREW_PREFIX` 的默认值是 `/usr/local`，可以使用 `brew --config` 命令查看 `$HOMEBREW_PREFIX` 的值）。
+
 # 源码发布
 
 所有版本都是用 Yichun Zhang 的 PGP 公钥 `A0E98066` 签发的。
