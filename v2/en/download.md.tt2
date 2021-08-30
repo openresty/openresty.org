@@ -53,7 +53,7 @@ Hard-core developers may also want to try out the `openresty-debug` package:
 brew install openresty-debug
 ```
 
-Note: You can find the configuration files for openresty under `$HOMEBREW_PREFIX/etc/openresty/` (The default value of `$HOMEBREW_PREFIX` is `/usr/local` and you can check the value of `$HOMEBREW_PREFIX` with `brew --config` command).
+Please note that you can find the configuration files for openresty under `$HOMEBREW_PREFIX/etc/openresty/` (The default value of `$HOMEBREW_PREFIX` is `/usr/local` and you can check the value of `$HOMEBREW_PREFIX` with `brew --config` command).
 
 # Source Code Releases
 
