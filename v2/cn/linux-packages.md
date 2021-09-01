@@ -18,9 +18,9 @@
 
 ```
     版本           版本名        支持的体系结构
-    8.x             Jessie          amd64
     9.x             Stretch         amd64, arm64
     10.x            Buster          amd64, arm64
+    11.x            Bullseye        amd64, arm64
 ```
 
 * [CentOS](#centos)
