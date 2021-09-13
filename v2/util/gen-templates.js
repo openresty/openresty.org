@@ -30,7 +30,7 @@ async function genSlideTemplate(lang) {
 
   $('entry').filter((index, entry) => {
     const tags = $(entry).children('tags').text();
-    return tags && (tags.includes('xray') || tags.includes('openresty-edge') || tags.includes('openresty-showman'));
+    return tags && (tags.includes('xray') || tags.includes('openresty-edge') || tags.includes('openresty-showman') || tags.includes('packages'));
   }).slice(0, length).each((index, entry) => {
     const title = $(entry).children('title').text();
     const array = $(entry).children('id').text().split('/');
