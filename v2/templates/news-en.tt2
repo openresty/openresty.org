@@ -6,13 +6,13 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1019009001.html">OpenResty 1.19.9.1</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/showman-google?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/showman-arch.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/showman-google?src=org_news" target="_blank">Generate Demo Videos for Google Search from Screenplay Documents</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/edge-upstream-host?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-upstream-host-cover.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-upstream-host?src=org_news" target="_blank">Set Different Host Headers for Upstream Requests in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/openresty-pre-built-for-debian-11?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/debian-11.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/openresty-pre-built-for-debian-11?src=org_news" target="_blank">Official OpenResty Debian 11 package repo</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/edge-lang-redirect?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/lang-redirect.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-lang-redirect?src=org_news" target="_blank">Redirect to different URIs Based on Clients' Language Settings (OpenResty Edge)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
