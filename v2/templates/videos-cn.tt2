@@ -1,0 +1,54 @@
+
+<div id="video-tutorials">
+  <h2>OpenResty Edge</h2>
+  <p>在 OpenResty Edge 中为上游请求设置不同的 Host 请求头</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=805585129&amp;bvid=BV1i34y1S7xG&amp;cid=409497323&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>根据客户端的语言设置重定向到不同的 URI（OpenResty Edge）</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=805265564&amp;bvid=BV1Sy4y1G78N&amp;cid=403548426&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>通过 OpenResty Edge 在网站中强制使用 SSL</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=248928941&amp;bvid=BV1bv411H7Rb&amp;cid=362026184&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>在 OpenResty Edge 中通过 Let's Encrypt 签发免费的 SSL 证书</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=888794465&amp;bvid=BV1ZK4y1u7nC&amp;cid=359794702&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>在 OpenResty Edge 中为 HTTPS 网站上传 SSL 证书</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=205794940&amp;bvid=BV1eh411Y7Du&amp;cid=344772442&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>在 OpenResty Edge 中实时清除 HTTP 缓存</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=460066608&amp;bvid=BV155411c7Mt&amp;cid=323477850&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>（中文解说）使用 OpenResty Edge 配置一个最简单的反向代理和负载均衡器</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=544956395&amp;bvid=BV1Gi4y1N7tg&amp;cid=321651057&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>在 OpenResty Edge 中启用 HTTP 缓存</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=459973798&amp;bvid=BV1t5411A7Yx&amp;cid=320538601&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>使用 OpenResty Edge 配置一个最简单的反向代理和负载均衡器</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=757141496&amp;bvid=BV1H64y1D7ZT&amp;cid=320816846&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <h2>OpenResty 教程</h2>
+  <p>通过 apt-get 在 Ubuntu 20.04 上安装 OpenResty</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=417064545&amp;bvid=BV1DV411v7Uj&amp;cid=308675356&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>在 OpenResty 中流式传输 HTTP 响应输出</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=204058488&amp;bvid=BV1bh411C7qt&amp;cid=295192619&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>预编译 Lua 模块到 LuaJIT 字节码以提高 OpenResty 的启动速度</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=330604843&amp;bvid=BV1KA411s7D5&amp;cid=264856934&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>在 OpenResty 中测量 Lua 代码执行时间的正确方法</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=330571714&amp;bvid=BV1RA411W7AU&amp;cid=264137480&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>在终端上用 restydoc 查看 OpenResty 文档</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=885490510&amp;bvid=BV1sK4y177xi&amp;cid=262279945&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>在 OpenResty 中跨请求共享数据</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=330399423&amp;bvid=BV1aA411x7fK&amp;cid=262021966&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>通过 dnf 在 CentOS 8 上安装 OpenResty</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=372989544&amp;bvid=BV1aZ4y1G73x&amp;cid=261563110&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>OpenResty 的 resty 命令行工具演示</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=500379732&amp;bvid=BV1aK411V7yV&amp;cid=261199000&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>为 OpenResty 应用编写你自己的 Lua 模块</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=842847923&amp;bvid=BV1k54y1z7L5&amp;cid=256140688&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>OpenResty 实现的“你好世界”HTTP示例</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=542820825&amp;bvid=BV12i4y1L7As&amp;cid=255956255&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <h2>OpenResty Showman</h2>
+  <p>OpenResty Showman 生成的谷歌搜索的样例视频</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=975730084&amp;bvid=BV1444y147HN&amp;cid=415381104&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>如何从剧本文档自动生成演示谷歌搜索的视频（使用 OpenResty Showman）</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=463140305&amp;bvid=BV1cL41147h4&amp;cid=415297323&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>OpenResty Showman 生成的百度搜索的样例视频</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=675015703&amp;bvid=BV1mU4y1E7EY&amp;cid=396824893&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>让机器从电影剧本自动生成百度搜索的演示视频（使用 OpenResty Showman）</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=377599228&amp;bvid=BV1Gf4y1N7XD&amp;cid=395130175&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>我们如何从剧本文件自动生成视频</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=459052788&amp;bvid=BV1Y541177rW&amp;cid=295649691&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+</div>

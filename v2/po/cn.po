@@ -1,29 +1,33 @@
 #. TRANSLATORS: Please leave %s, %d, and etc as is, because it is needed by the program.
 #. Thank you for contributing to this project.
 
-#: lua/openresty_org/controller.lua:165
+#: lua/openresty_org/controller.lua:172
 msgid  "Bad search query"
 msgstr "非法的搜索查询"
 
-#: lua/openresty_org/controller.lua:166
+#: lua/openresty_org/controller.lua:173
 msgid  "No query provided."
 msgstr "没有提供任何搜索词。"
 
-#: lua/openresty_org/controller.lua:171
+#: lua/openresty_org/controller.lua:178
 msgid  "Query too long (more than %d bytes)."
 msgstr "查词太长了（已经超出 %d 字节）。"
 
-#: lua/openresty_org/controller.lua:180
+#: lua/openresty_org/controller.lua:187
 msgid  "No search results found"
 msgstr "没有找到任何匹配的记录"
 
-#: lua/openresty_org/controller.lua:181
+#: lua/openresty_org/controller.lua:188
 msgid  "Please adjust your search query and try again."
 msgstr "请调整您的搜索查询并重试。"
 
-#: lua/openresty_org/controller.lua:192
+#: lua/openresty_org/controller.lua:199
 msgid  "Search Result"
 msgstr "搜索结果"
+
+#: lua/openresty_org/controller.lua:219
+msgid  "Video Tutorials"
+msgstr "视频教程"
 
 #: templates/footer.tt2:4
 msgid  "OpenResty<sup>&reg;</sup> is a registered trademark owned by <a href=\"https://openresty.com/\">OpenResty Inc</a>."

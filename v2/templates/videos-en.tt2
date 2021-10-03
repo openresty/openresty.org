@@ -1,0 +1,48 @@
+
+<div id="video-tutorials">
+  <h2>OpenResty Edge</h2>
+  <p>Set up a Simplest Reverse Proxy and Load Balancer with OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/fgtiOYrdsE4" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Enable HTTP Cache in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/g8H0HYM3AdM" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Purge HTTP Cache in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/9Dy43JXaxKQ" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Upload SSL Certificates for HTTPS Sites in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/DV-uPZ-I5og" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Issue Free SSL Certificates via Let's Encrypt in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/OBrJlaAPv1k" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Enforce the use of SSL in websites via OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/H1T-019IK2k" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Redirect to different URIs Based on Clients' Language Settings (OpenResty Edge)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/Z7zeYz2zDbQ" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Set Different Host Headers for Upstream Requests in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/NIlOrqi-I8U" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <h2>OpenResty Tutorials</h2>
+  <p>Install OpenResty on Ubuntu 20.04 via apt-get</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/Hu68mQDKXCo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Streaming HTTP Response Output in OpenResty</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/4VQP7eKq4oA" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Precompile Lua Modules into LuaJIT Bytecode to Speedup OpenResty Startup</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/EP7c0BM2yNo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Measure Execution Time of Lua Code Correctly in OpenResty</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/VkRYW_qLoME" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Lookup OpenResty Documentation on Terminal with restydoc</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/_PjpdUEeKeM" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Share Data Across Requests Served by OpenResty</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/AVR5Ft6FXTo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Install OpenResty on CentOS 8 via dnf</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/B5lfAZunxfc" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>OpenResty's resty Command-Line Utility Demo</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/L1c7aw4mSOo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Write Your Own Lua Modules in OpenResty/Nginx Applications</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/vfYxOMl5LVY" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Hello World HTTP Example in OpenResty/Nginx</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <h2>OpenResty Showman</h2>
+  <p>How We Generate Videos from Screenplay Files</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/oew5RYUPMYY" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Auto-Generate Demo Videos for Baidu Search from Screenplay Documents (in Chinese)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/y_g6B4aRc5o" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>How to Auto-Generate Demo Videos for Google Search from Screenplay Docs (via OpenResty Showman)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/i_n53z_zE3A" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+</div>
