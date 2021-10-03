@@ -48,7 +48,8 @@ end
 
 local function search_error(i18n, main_menu, timeline, query, title, msg, lang)
     local html = view.process("page.tt2",
-                              { main_menu = main_menu,
+                              {
+                                main_menu = main_menu,
                                 skip_meta = true,
                                 title = title,
                                 search_query = query,
@@ -58,6 +59,13 @@ local function search_error(i18n, main_menu, timeline, query, title, msg, lang)
                               },
                               i18n)
     ngx.print(html)
+end
+
+local function get_videos_html(lang, i18n)
+    if lang == 'en' then
+        return view.process("videos-en.tt2", {}, i18n);
+    end
+    return view.process("videos-cn.tt2", {}, i18n);
 end
 
 function _M.run()
@@ -143,7 +151,8 @@ function _M.run()
         gen_cache_control_headers(ngx_time())
 
         local html = view.process("index.tt2",
-                                  { main_menu = main_menu,
+                                  {
+                                    main_menu = main_menu,
                                     skip_meta = true,
                                     title = home.title,
                                     body = home.html_body,
@@ -194,11 +203,32 @@ function _M.run()
                                          i18n)
 
         local html = view.process("page.tt2",
-                                  { main_menu = main_menu,
+                                  {
+                                    main_menu = main_menu,
                                     skip_meta = true,
                                     title = _("Search Result"),
                                     search_query = query,
                                     body = concat(result_html),
+                                    timeline = timeline,
+                                    lang = assert(lang),
+                                  },
+                                  i18n)
+        ngx.print(html)
+        return
+    end
+
+    if tag == "videos" then
+        local main_menu = model.get_main_menu(lang)
+        local timeline = model.get_timeline(lang)
+
+        local videos_html = get_videos_html(lang, i18n);
+
+        local html = view.process("page.tt2",
+                                  {
+                                    main_menu = main_menu,
+                                    skip_meta = true,
+                                    title = _("Video Tutorials"),
+                                    body = videos_html,
                                     timeline = timeline,
                                     lang = assert(lang),
                                   },
@@ -220,7 +250,8 @@ function _M.run()
     gen_cache_control_headers(ngx_time())
 
     local html = view.process("page.tt2",
-                              { main_menu = main_menu,
+                              {
+                                main_menu = main_menu,
                                 modified = rec.modified,
                                 modifier = rec.modifier,
                                 modifier_link = rec.modifier_link,
@@ -229,8 +260,8 @@ function _M.run()
                                 body = rec.html_body,
                                 timeline = timeline,
                                 lang = assert(lang),
-                               },
-                               i18n)
+                              },
+                              i18n)
 
     ngx.print(html)
 end

@@ -58,9 +58,68 @@ async function genSlideTemplate(lang) {
   writeFile(`./templates/news-${lang}.tt2`, newsCompileFunction({news}));
 };
 
+async function genEnVideos() {
+  const playlists = [];
+  const data = await http.get('https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyCY3g5fUPF7POB1KxfBfBBc3jpCbj0xVFE&channelId=UCXVmwF-UCScv2ftsGoMqxhw&part=snippet');
+  const allLists = data.data.items;
+  const shownList = allLists.filter(list => list.snippet.title !== 'OpenResty Con 2018');
+  const sortedList = ['OpenResty Edge', 'OpenResty Tutorials', 'OpenResty Showman']
+
+  let index = 0;
+  shownList.forEach(async function(item) {
+    const {snippet, id} = item;
+    const {title} = snippet;
+    const videos = [];
+    const videosData = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyCY3g5fUPF7POB1KxfBfBBc3jpCbj0xVFE&playlistId=${id}&maxResults=100&part=snippet`);
+    videosData.data.items.forEach(video => {
+      const {snippet} = video;
+      videos.push({title: snippet.title, src: `https://www.youtube.com/embed/${snippet.resourceId.videoId}`})
+    })
+    playlists.push({title, videos});
+    index++;
+    if (index === shownList.length) {
+      playlists.sort((list1, list2) => {
+        return sortedList.indexOf(list1.title) - sortedList.indexOf(list2.title);
+      })
+      const videosCompileFunction = pug.compileFile('./util/videos.pug', {pretty: true});
+      writeFile(`./templates/videos-en.tt2`, videosCompileFunction({playlists}));
+    }
+  })
+}
+
+async function genCnVideos() {
+  const playlists = [];
+  const data = await http.get('https://api.bilibili.com/x/space/channel/list?mid=457424101');
+  const allLists = data.data.data.list;
+  const shownList = allLists.filter(list => list.name !== 'OpenResty 分享活动');
+  const sortedList = ['OpenResty Edge', 'OpenResty 教程', 'OpenResty Showman']
+
+  let index = 0;
+  shownList.forEach(async function(item) {
+    const {name, cid} = item;
+    const videos = [];
+    const videosData = await axios.get(`https://api.bilibili.com/x/space/channel/video?mid=457424101&cid=${cid}`);
+    videosData.data.data.list.archives.forEach(video => {
+      const {aid, bvid, cid, title} = video;
+      videos.push({title, src: `https://player.bilibili.com/player.html?aid=${aid}&bvid=${bvid}&cid=${cid}&page=1`})
+    })
+    playlists.push({title: name, videos});
+    index++;
+    if (index === shownList.length) {
+      playlists.sort((list1, list2) => {
+        return sortedList.indexOf(list1.title) - sortedList.indexOf(list2.title);
+      })
+      const videosCompileFunction = pug.compileFile('./util/videos.pug', {pretty: true});
+      writeFile(`./templates/videos-cn.tt2`, videosCompileFunction({playlists}));
+    }
+  })
+}
+
 Promise.all([
   genSlideTemplate('en'),
   genSlideTemplate('cn'),
+  genEnVideos(),
+  genCnVideos(),
 ]).then(() => {
   for(pic of pics) {
     optimizeImg(pic);

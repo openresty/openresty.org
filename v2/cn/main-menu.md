@@ -8,6 +8,7 @@
 * <big>**[下载](download.html)**</big>
 * [安装](installation.html)
 * [Bilibili 视频号](https://space.bilibili.com/457424101)
+* [视频教程](videos.html)
 * [商业产品](commercial.html)
 * [新手上路](getting-started.html)
 * [概览](openresty.html)

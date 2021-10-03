@@ -1,0 +1,6 @@
+#video-tutorials
+  each playlist in playlists
+    h2= playlist.title
+    each video in playlist.videos
+      p= video.title
+      iframe(width="645" height="360" src=`${video.src}` allowfullscreen loading="lazy" frameborder="0")

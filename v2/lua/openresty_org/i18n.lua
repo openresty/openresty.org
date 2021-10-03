@@ -33,6 +33,7 @@ local trans_cn = {
     ["Search OpenResty.org"] = "搜索 OpenResty.org 中文站",
     ["Search Result"] = "搜索结果",
     ["Timeline"] = "最近更新",
+    ["Video Tutorials"] = "视频教程",
     ["is now released!"] = "已发布。",
     ["is published."] = "已发表。",
     ["view the source code of this site"] = "查看本站的源代码",
