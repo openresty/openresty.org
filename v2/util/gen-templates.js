@@ -63,7 +63,7 @@ async function genEnVideos() {
   const data = await http.get('https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyCY3g5fUPF7POB1KxfBfBBc3jpCbj0xVFE&channelId=UCXVmwF-UCScv2ftsGoMqxhw&part=snippet');
   const allLists = data.data.items;
   const shownList = allLists.filter(list => list.snippet.title !== 'OpenResty Con 2018');
-  const sortedList = ['OpenResty Edge', 'OpenResty Tutorials', 'OpenResty Showman']
+  const sortedList = ['OpenResty Tutorials', 'OpenResty Edge', 'OpenResty Showman']
 
   let index = 0;
   shownList.forEach(async function(item) {
@@ -92,7 +92,7 @@ async function genCnVideos() {
   const data = await http.get('https://api.bilibili.com/x/space/channel/list?mid=457424101');
   const allLists = data.data.data.list;
   const shownList = allLists.filter(list => list.name !== 'OpenResty 分享活动');
-  const sortedList = ['OpenResty Edge', 'OpenResty 教程', 'OpenResty Showman']
+  const sortedList = ['OpenResty 教程', 'OpenResty Edge', 'OpenResty Showman']
 
   let index = 0;
   shownList.forEach(async function(item) {

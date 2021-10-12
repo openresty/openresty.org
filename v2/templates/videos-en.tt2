@@ -1,22 +1,5 @@
 
 <div id="video-tutorials">
-  <h2>OpenResty Edge</h2>
-  <p>Set up a Simplest Reverse Proxy and Load Balancer with OpenResty Edge</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/fgtiOYrdsE4" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p>Enable HTTP Cache in OpenResty Edge</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/g8H0HYM3AdM" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p>Purge HTTP Cache in OpenResty Edge</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/9Dy43JXaxKQ" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p>Upload SSL Certificates for HTTPS Sites in OpenResty Edge</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/DV-uPZ-I5og" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p>Issue Free SSL Certificates via Let's Encrypt in OpenResty Edge</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/OBrJlaAPv1k" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p>Enforce the use of SSL in websites via OpenResty Edge</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/H1T-019IK2k" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p>Redirect to different URIs Based on Clients' Language Settings (OpenResty Edge)</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/Z7zeYz2zDbQ" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p>Set Different Host Headers for Upstream Requests in OpenResty Edge</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/NIlOrqi-I8U" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2>OpenResty Tutorials</h2>
   <p>Install OpenResty on Ubuntu 20.04 via apt-get</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/Hu68mQDKXCo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
@@ -38,6 +21,23 @@
   <iframe width="645" height="360" src="https://www.youtube.com/embed/vfYxOMl5LVY" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p>Hello World HTTP Example in OpenResty/Nginx</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <h2>OpenResty Edge</h2>
+  <p>Set up a Simplest Reverse Proxy and Load Balancer with OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/fgtiOYrdsE4" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Enable HTTP Cache in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/g8H0HYM3AdM" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Purge HTTP Cache in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/9Dy43JXaxKQ" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Upload SSL Certificates for HTTPS Sites in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/DV-uPZ-I5og" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Issue Free SSL Certificates via Let's Encrypt in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/OBrJlaAPv1k" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Enforce the use of SSL in websites via OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/H1T-019IK2k" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Redirect to different URIs Based on Clients' Language Settings (OpenResty Edge)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/Z7zeYz2zDbQ" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p>Set Different Host Headers for Upstream Requests in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/NIlOrqi-I8U" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2>OpenResty Showman</h2>
   <p>How We Generate Videos from Screenplay Files</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/oew5RYUPMYY" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
