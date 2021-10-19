@@ -22,6 +22,8 @@
   <p>OpenResty 实现的“你好世界”HTTP示例</p>
   <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=542820825&amp;bvid=BV12i4y1L7As&amp;cid=255956255&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2>OpenResty Edge</h2>
+  <p>网关配置的版本控制和发布管理（OpenResty Edge）</p>
+  <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=633644144&amp;bvid=BV1Lb4y1h7Tk&amp;cid=427543354&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p>在 OpenResty Edge 中为上游请求设置不同的 Host 请求头</p>
   <iframe width="645" height="360" src="https://player.bilibili.com/player.html?aid=805585129&amp;bvid=BV1i34y1S7xG&amp;cid=409497323&amp;page=1" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p>根据客户端的语言设置重定向到不同的 URI（OpenResty Edge）</p>
