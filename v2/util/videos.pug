@@ -1,6 +1,14 @@
 #video-tutorials
   each playlist in playlists
-    h2= playlist.title
+    .play-list
+      h2
+        a(href=`#${playlist.id}`, style="cursor: pointer")= playlist.title
+      ul
+        each video in playlist.videos
+          li
+            a(href=`#${video.id}`, style="cursor: pointer")= video.title
+  each playlist in playlists
+    h2(id=`${playlist.id}`)= playlist.title
     each video in playlist.videos
-      p= video.title
+      p(id=`${video.id}`)= video.title
       iframe(width="645" height="360" src=`${video.src}` allowfullscreen loading="lazy" frameborder="0")
