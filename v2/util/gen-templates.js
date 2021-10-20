@@ -74,12 +74,12 @@ async function genEnVideos() {
 
     videosData.data.items.forEach(video => {
       const {title, resourceId, publishedAt} = video.snippet;
-      videos.push({publishedAt, title, src: `https://www.youtube.com/embed/${resourceId.videoId}`})
+      videos.push({id: resourceId.videoId, publishedAt, title, src: `https://www.youtube.com/embed/${resourceId.videoId}`})
     })
     videos.sort((v1, v2) => {
       return (new Date(v2.publishedAt)).getTime() - (new Date(v1.publishedAt)).getTime();
     })
-    playlists.push({title, videos});
+    playlists.push({id, title, videos});
     index++;
     if (index === shownList.length) {
       playlists.sort((list1, list2) => {
@@ -105,12 +105,12 @@ async function genCnVideos() {
     const videosData = await axios.get(`https://api.bilibili.com/x/space/channel/video?mid=457424101&cid=${cid}`);
     videosData.data.data.list.archives.forEach(video => {
       const {aid, bvid, cid, title, pubdate} = video;
-      videos.push({pubdate, title, src: `https://player.bilibili.com/player.html?aid=${aid}&bvid=${bvid}&cid=${cid}&page=1`})
+      videos.push({id: bvid, pubdate, title, src: `https://player.bilibili.com/player.html?aid=${aid}&bvid=${bvid}&cid=${cid}&page=1`})
     })
     videos.sort((v1, v2) => {
       return v2.pubdate - v1.pubdate;
     })
-    playlists.push({title: name, videos});
+    playlists.push({id: cid, title: name, videos});
     index++;
     if (index === shownList.length) {
       playlists.sort((list1, list2) => {
