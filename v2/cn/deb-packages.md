@@ -27,7 +27,7 @@ sudo systemctl start openresty
 sudo openresty -p /opt/my-fancy-app/
 ```
 
-然后在 `/opt/my-fancy-app/` 目录下会有一些 `conf/`, `html/` 和 `logs/` 这样的子目录。
+然后在 `/opt/my-fancy-app/` 目录下需要有 `conf/`, `html/` 和 `logs/` 这样的子目录。
 用这种方法，我们可以避免污染 `/usr/local/openresty/` 下的 OpenResty 安装目录树，
 并且允许多个不同的 OpenResty 应用共享同一个 OpenResty 服务程序。
 但是你需要为每一个自己的 OpenResty 应用写一份启动脚本。你可以使用默认的 `/etc/init.d/openresty` 启动脚本作为参考模板。
