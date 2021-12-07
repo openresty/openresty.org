@@ -45,10 +45,10 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Supported Architectures
-    31              x86_64
     32              x86_64, aarch64
     33              x86_64, aarch64
     34              x86_64, aarch64
+    35              x86_64
 ```
 
 * [Amazon Linux](#amazon-linux)

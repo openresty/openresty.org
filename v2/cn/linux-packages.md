@@ -45,10 +45,10 @@
 
 ```
     版本号          支持的体系结构
-    31              x86_64
     32              x86_64, aarch64
     33              x86_64, aarch64
     34              x86_64, aarch64
+    35              x86_64
 ```
 
 * [Amazon Linux](#amazon-linux)
