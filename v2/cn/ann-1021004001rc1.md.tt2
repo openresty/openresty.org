@@ -44,10 +44,13 @@ The highlights of this release candidate are:
 * Based on the very recent mainline [nginx](nginx.html) core 1.21.4.
 * [LuaJIT](https://github.com/openresty/luajit2#readme)
     * Implemented a new string.buffer API.
-    * Many fixes imported from Mike Pall's upstream [LuaJIT](https://github.com/luajit/luajit) repository.
+    * Many fixes imported from Mike Pall's upstream https://github.com/luajit/luajit repository.
 * Implemented the new [ngx.run_worker_thread](https://github.com/openresty/lua-nginx-module#ngxrun_worker_thread) API to run Lua function in a seperated worker thread.
 * Added [lua_ssl_conf_command](https://github.com/openresty/lua-nginx-module#lua_ssl_conf_command) directive for setting arbitrary OpenSSL configuration parameter particularly the TLSv1.3 ciphersuites.
 * Added [ssl_client_hello_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_client_hello_by_lua_block) api for controlling the [NGINX](nginx.html) downstream SSL handshake dynamically with Lua.
+* Make compatible with boringssl.
+* [lua-resty-redis](https://github.com/openresty/lua-resty-redis#readme) module
+    * Added a surface to support redis module.
 
 # Full Change logs
 
@@ -61,7 +64,7 @@ Complete change logs since the last (formal) release, 1.19.9.1:
 * feature: the number connections of privileged agent can be set by [enable_privileged_agent(connections)](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#enable_privileged_agent). _Thanks wangyao for the patch._
 * feature: implemented the new [ngx.run_worker_thread](https://github.com/openresty/lua-nginx-module#ngxrun_worker_thread) API to run Lua function in a seperated worker thread. _Thanks kingluo for the patch._
 * upgraded [lua-nginx-module](https://github.com/openresty/lua-nginx-module) to 0.10.21rc1
-    * bugfix: prevent illegal memory access in ngx_http_lua_util.c. _Thanks Johnny Wang for the patch._
+    * bugfix: prevent illegal memory access in ngx_http_lua_util.c. _Thanks Jiahao Wang for the patch._
     * optimize: removed superfluous code from shdict_store. _Thanks Odin Hultgren Van Der Horst for the patch._
     * bugfix: fix [nginx](nginx.html) crash caused by a bad format specifier. _Thanks balus for the patch._
     * bugfix: fixed memcpy param overlap detected by asan. _Thanks pengyanfeng for the patch._
@@ -73,7 +76,7 @@ Complete change logs since the last (formal) release, 1.19.9.1:
     * change: do not need to create the Lua request ctx data table from C. _Thanks doujiang for the patch._
     * bugfix: we should ignore match limit in DFA mode. _Thanks Jianyong Chen for the patch._
     * bugfix: buffer bloat and CPU 100% when download large file was filtered by body_filter_by_lua. _Thanks lijunlong for the patch._
-    * bugfix: fixed missing 'const' qualifier causing compilation failure on freebsd. _Thanks Johnny Wang for the patch._
+    * bugfix: fixed missing 'const' qualifier causing compilation failure on freebsd. _Thanks Jiahao Wang for the patch._
     * bugfix: should not allow to create timer in the exit process phase.  _Thanks Jinhua Tan for the patch._
     * feature: support environ in [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme) on mac.  _Thanks tzssangglass for the patch._
 * upgraded stream-lua-nginx-module to 0.0.11rc1
@@ -92,7 +95,7 @@ Complete change logs since the last (formal) release, 1.19.9.1:
 * upgraded [lua-resty-websocket](https://github.com/openresty/lua-resty-websocket#readme) to 0.09rc1
     * bugfix: should abort when status code is invalid in [wb:send_close(server)](https://github.com/openresty/lua-resty-websocket#send_close). _Thanks Gerrard-YNWA for the patch._
 * upgraded [lua-resty-redis](https://github.com/openresty/lua-resty-redis#readme) to 0.30rc1
-    * feature: add a surface to support Redis module. _Thanks spacewander for the patch._
+    * feature: add a surface to support redis module. _Thanks spacewander for the patch._
 * upgraded [lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic#readme) to 0.08rc1
     * optimize: [resty.limit.conn](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/resty/limit/conn.md#readme) call dict:incr with init_ttl argument. _Thanks WindMGC for the patch._
 * upgraded [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql#readme) to v0.25rc1
@@ -108,8 +111,8 @@ Complete change logs since the last (formal) release, 1.19.9.1:
     * feature: add 'enable_padding' option for aes. _Thanks beimingfish for the patch._
     * optimize: speed up string.to_hex by reusing hex buf. _Thanks jinjiezhao for the patch._
 * upgraded [lua-cjson](https://github.com/openresty/lua-cjson#readme) to v2.1.0.10rc1
-    * bugfix: fixed bugs suspected by cppcheck: shift signed 32-bit value by 31 bits and uninitialized variable. _Thanks Johnny Wang for the patch._
-    * bugfix: fixed a possible division by zero bugs found by cppcheck. _Thanks Johnny Wang for the patch._
+    * bugfix: fixed bugs suspected by cppcheck: shift signed 32-bit value by 31 bits and uninitialized variable. _Thanks Jiahao Wang for the patch._
+    * bugfix: fixed a possible division by zero bugs found by cppcheck. _Thanks Jiahao Wang for the patch._
     * feature: support lua 5.2+.
 * upgraded luajit2 to 2.1-20211210
     * ARM64: Fix pcall() error case.
