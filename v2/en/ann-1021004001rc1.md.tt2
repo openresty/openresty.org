@@ -98,7 +98,7 @@ Complete change logs since the last (formal) release, 1.19.9.1:
     * feature: add a surface to support redis module. _Thanks spacewander for the patch._
 * upgraded [lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic#readme) to 0.08rc1
     * optimize: [resty.limit.conn](https://github.com/openresty/lua-resty-limit-traffic/blob/master/lib/resty/limit/conn.md#readme) call dict:incr with init_ttl argument. _Thanks WindMGC for the patch._
-* upgraded [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql#readme) to v0.25rc1
+* upgraded [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql#readme) to 0.25rc1
     * bugfix: fallback to default auth plugin if server doesn't have CLIENT_PLUGIN_AUTH capability. _Thanks Wangchong Zhou for the patch._
 * upgraded [set-misc-nginx-module](https://github.com/openresty/set-misc-nginx-module) to 0.33
     * feature: added url safe base64 encoding/decoding. _Thanks Pavel for the patch._
@@ -110,7 +110,7 @@ Complete change logs since the last (formal) release, 1.19.9.1:
     * feature: added an optional len parameter for resty.md5.update(). _Thanks lijunlong for the patch._
     * feature: add 'enable_padding' option for aes. _Thanks beimingfish for the patch._
     * optimize: speed up string.to_hex by reusing hex buf. _Thanks jinjiezhao for the patch._
-* upgraded [lua-cjson](https://github.com/openresty/lua-cjson#readme) to v2.1.0.10rc1
+* upgraded [lua-cjson](https://github.com/openresty/lua-cjson#readme) to 2.1.0.10rc1
     * bugfix: fixed bugs suspected by cppcheck: shift signed 32-bit value by 31 bits and uninitialized variable. _Thanks Jiahao Wang for the patch._
     * bugfix: fixed a possible division by zero bugs found by cppcheck. _Thanks Jiahao Wang for the patch._
     * feature: support lua 5.2+.
