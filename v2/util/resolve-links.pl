@@ -16,7 +16,7 @@ my ($out, $outfile) = tempfile("mdXXXXXXX", TMPDIR => 1);
 
 my $c = 0;
 while (<$in>) {
-    $c += s! (\s) (set|balancer|ssl_certificate|ssl_session_(?:fetch|store))_by_lua(_block|_file|\*) ( [\s,.:;?] )
+    $c += s! (\s) (set|balancer|ssl_certificate|ssl_client_hello|ssl_session_(?:fetch|store))_by_lua(_block|_file|\*) ( [\s,.:;?] )
            !$1\[${2}_by_lua${3}](https://github.com/openresty/lua-nginx-module#${2}_by_lua${3})$4!xgs;
 
     $c += s! (\s) set_(md5|quote_pgsql_str) ( [\s,.:;?] )
@@ -68,6 +68,8 @@ while (<$in>) {
                             | exec
                             | redirect
                             | get_phase
+                            | run_worker_thread
+                            | thread\.spawn
                             )
                   | tcpsock:(?:sslhandshake|setkeepalive|connect|settimeout|settimeouts|receiveany)
                   | lua_ssl_verify_depth
@@ -79,6 +81,8 @@ while (<$in>) {
                   | lua_shared_dict
                   | lua_sa_restart
                   | lua_load_resty_core
+                  | lua_ssl_conf_command
+                  | lua_ssl_trusted_certificate
                    ) ( (?: \( [^)]* \) )? ) ( [\s,.:;?)(] ) !
             my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
             my $anchor = gen_anchor($txt);
@@ -109,7 +113,7 @@ while (<$in>) {
             "$pre\[$txt$parens](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#$anchor)$post"
             !egx;
 
-    $c += s! (\s) process\.(signal_graceful_exit|type|enable_privileged_agent) ( (?:\(\))? ) ( [\s,.:;?] ) !
+    $c += s! (\s) process\.(signal_graceful_exit|type|enable_privileged_agent) ( (?:\( [^\)]* \))? ) ( [\s,.:;?] ) !
             my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
             my $anchor = gen_anchor($txt);
             "$pre\[$txt$parens](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#$anchor)$post"
@@ -176,6 +180,15 @@ while (<$in>) {
             my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
             my $anchor = gen_anchor($txt);
             "$pre\[$txt$parens](https://github.com/openresty/luajit2#$anchor)$post"
+            !egx;
+
+    $c += s! (\s) ( wb:send_(?:text|binary|ping|pong|close|frame) )
+                ( (?:\( [^)]* \))? )!
+            my ($pre, $txt, $parens) = ($1, $2, $3);
+            my $txt2 = $txt;
+            $txt2 =~ s/^wb://g;
+            my $anchor = gen_anchor($txt2);
+            "$pre\[$txt$parens](https://github.com/openresty/lua-resty-websocket#$anchor)"
             !egx;
 
     $c += s! (\s) ([Nn]ginx) ( [\s,.:;?] ) !$1\[$2](nginx.html)$3!gxsi;
