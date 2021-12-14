@@ -48,7 +48,7 @@ The highlights of this release candidate are:
 * Implemented the new [ngx.run_worker_thread](https://github.com/openresty/lua-nginx-module#ngxrun_worker_thread) API to run Lua function in a seperated worker thread.
 * Added [lua_ssl_conf_command](https://github.com/openresty/lua-nginx-module#lua_ssl_conf_command) directive for setting arbitrary OpenSSL configuration parameter particularly the TLSv1.3 ciphersuites.
 * Added [ssl_client_hello_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_client_hello_by_lua_block) api for controlling the [NGINX](nginx.html) downstream SSL handshake dynamically with Lua.
-* Make compatible with boringssl.
+* Made to work with boringssl.
 * [lua-resty-redis](https://github.com/openresty/lua-resty-redis#readme) module
     * Added a surface to support redis module.
 
