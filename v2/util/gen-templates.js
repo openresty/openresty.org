@@ -10,6 +10,7 @@ const pug = require('pug');
 const http = axios.create();
 const enBase = 'https://blog.openresty.com/en/';
 const cnBase = 'https://blog.openresty.com.cn/cn/';
+const picBase = 'https://blog.openresty.com/';
 const staticBaseUrl = 'https://static.openresty.com';
 const height = 260;
 let pics = new Set();
@@ -19,7 +20,7 @@ async function genSlideTemplate(lang) {
   let postInfos = [];
   let news = [];
   const base = lang === 'en' ? enBase : cnBase;
-  const source = `${base}atom.xml`;
+  const source = `${base}index.xml`;
   let rss = await http.get(source);
   const $ = cheerio.load(rss.data, { decodeEntities: false });
   const length = 10;
@@ -28,13 +29,12 @@ async function genSlideTemplate(lang) {
     picsExists = await readdir('./images/header-images');
   }
 
-  $('entry').filter((index, entry) => {
+  $('item').filter((index, entry) => {
     const tags = $(entry).children('tags').text();
-    return tags && (tags.includes('xray') || tags.includes('openresty-edge') || tags.includes('openresty-showman') || tags.includes('packages'));
+    return tags && (tags.includes('xray') || tags.includes('openresty-edge') || tags.includes('openresty-showman') || tags.includes('packages') || tags.includes('openresty-xray'));
   }).slice(0, length).each((index, entry) => {
     const title = $(entry).children('title').text();
-    const array = $(entry).children('id').text().split('/');
-    const id = array[array.length - 2];
+    const id = $(entry).children('guid').text();
     const pic = $(entry).children('pic').text();
 
     // images will be downloaded and compressed only when they do not exist yet
@@ -42,10 +42,10 @@ async function genSlideTemplate(lang) {
       pics.add(pic);
     }
 
-    postInfos.push({href: `${base}${id}`, pic, title})
+    postInfos.push({href: id, pic, title})
 
     if (index <= 2) {
-      news.push({href: `${base}${id}`, pic, title})
+      news.push({href: id, pic, title})
     }
   });
 
@@ -135,7 +135,7 @@ Promise.all([
 
 async function optimizeImg(pic) {
   const response = await axios({
-    url: `${cnBase}${pic}`,
+    url: `${picBase}${pic}`,
     method: "GET",
     responseEncoding: "binary",
   });
