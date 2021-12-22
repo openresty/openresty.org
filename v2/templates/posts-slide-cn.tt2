@@ -11,52 +11,52 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-config-release?src=org" data-modal="data-modal">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-config-release/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-releases.png"><img class="article-img" src="../images/header-images/edge-releases.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty Edge 中 Gateway Config 的版本控制和发布管理</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/showman-google?src=org" data-modal="data-modal">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/showman-google/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/showman-arch.png"><img class="article-img" src="../images/header-images/showman-arch.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">如何从剧本文档自动生成演示谷歌搜索的视频（使用 OpenResty Showman）</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-upstream-host?src=org" data-modal="data-modal">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-upstream-host/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-upstream-host-cover.png"><img class="article-img" src="../images/header-images/edge-upstream-host-cover.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">在 OpenResty Edge 中为上游请求设置不同的主机头信息</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-pre-built-for-debian-11?src=org" data-modal="data-modal">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-pre-built-for-debian-11/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/debian-11.png"><img class="article-img" src="../images/header-images/debian-11.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">新增针对 Debian 11 的 OpenResty 官方安装包仓库</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-lang-redirect?src=org" data-modal="data-modal">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-lang-redirect/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/lang-redirect.png"><img class="article-img" src="../images/header-images/lang-redirect.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">根据客户的语言设置重定向到不同的 URI (OpenResty Edge)</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/showman-baidu?src=org" data-modal="data-modal">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/showman-baidu/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/Showman.jpg"><img class="article-img" src="../images/header-images/Showman.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">让机器从电影剧本自动生成百度搜索的演示视频</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-http-to-https?src=org" data-modal="data-modal">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-http-to-https/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/http2https.png"><img class="article-img" src="../images/header-images/http2https.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">通过 OpenResty Edge 在网站中强制使用 SSL</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-lets-encrypt?src=org" data-modal="data-modal">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-lets-encrypt/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/lets-encrypt-thumb.png"><img class="article-img" src="../images/header-images/lets-encrypt-thumb.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">在 OpenResty Edge 中通过 Let's Encrypt 签发免费 SSL 证书</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-upload-ssl-certs?src=org" data-modal="data-modal">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-upload-ssl-certs/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/ssl-cover.jpg"><img class="article-img" src="../images/header-images/ssl-cover.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">在 OpenResty Edge 中为 HTTPS 网站上传 SSL 证书</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-pre-build-for-fedora-34-alpine-3-13?src=org" data-modal="data-modal">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-pre-build-for-fedora-34-alpine-3-13/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/fedora34-alpine-3.13.jpg"><img class="article-img" src="../images/header-images/fedora34-alpine-3.13.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Fedora 34 和 Alpine 3.13 的 OpenResty 官方二进制仓库</p>
