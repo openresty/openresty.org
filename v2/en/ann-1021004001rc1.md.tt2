@@ -14,24 +14,6 @@ PGP for this source tar ball:
 
 https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz.asc
 
-# Windows binary packages
-
-## Win64 version:
-
-https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip
-
-PGP for the Win64 zip file:
-
-https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip.asc
-
-## Win32 version:
-
-https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip
-
-PGP for the Win32 zip file:
-
-https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip.asc
-
 # Acknowledgment
 
 Special thanks go to all our developers and contributors! Also thanks Junlong Li,
