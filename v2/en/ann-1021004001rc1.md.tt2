@@ -1,6 +1,7 @@
 [% VER = "1.21.4.1"; RC = 1 -%]
 <!---
     @title         OpenResty [% VER %] RC[% RC %] is out
+    @created       2022-01-27 00:00 GMT
 --->
 
 We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],
@@ -45,6 +46,7 @@ The highlights of this release candidate are:
 
 * Based on the very recent mainline [nginx](nginx.html) core 1.21.4.
 * [LuaJIT](https://github.com/openresty/luajit2#readme)
+    * Compile table traversals: next(), pairs(), BC_ISNEXT/BC_ITERN. This work sponsored by OpenResty INC.
     * Implemented a new string.buffer API.
     * Many fixes imported from Mike Pall's upstream https://github.com/luajit/luajit repository.
 * Implemented the new [ngx.run_worker_thread](https://github.com/openresty/lua-nginx-module#ngxrun_worker_thread) API to run Lua function in a seperated worker thread.
@@ -137,7 +139,7 @@ Complete change logs since the last (formal) release, 1.19.9.1:
     * [FFI](http://luajit.org/ext_ffi.html): Don't load PC from non-function object in [FFI](http://luajit.org/ext_ffi.html) continuation.
     * [FFI](http://luajit.org/ext_ffi.html): Fix missing cts->L initialization in argv2ctype().
     * OSX/ARM64: Disable external unwinding for now.
-    * Compile table traversals: next(), pairs(), BC_ISNEXT/BC_ITERN.
+    * Compile table traversals: next(), pairs(), BC_ISNEXT/BC_ITERN. This work sponsored by OpenResty INC.
     * Use IR_HIOP for generalized two-register returns.
     * Refactor table traversal.
     * ARM: Fix symbol display in trace disassembly.
