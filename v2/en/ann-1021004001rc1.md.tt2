@@ -54,7 +54,7 @@ The highlights of this release candidate are:
 * Added support for BoringSSL.
 * [lua-resty-redis](https://github.com/openresty/lua-resty-redis#readme) module
     * Added a surface to support redis module.
-* Upgraded OpenSSL to 1.1.1m and PCRE to 8.45 for Win32/Win64.
+* Upgraded OpenSSL to 1.1.1m for Win32/Win64.
 
 # Full Change logs
 
@@ -62,7 +62,7 @@ Complete change logs since the last (formal) release, 1.19.9.1:
 
 * upgraded the [nginx](nginx.html) core to 1.21.4.
     * see the changes here: http://nginx.org/en/CHANGES
-* win32/win64: upgraded OpenSSL to 1.1.1m and PCRE to 8.45.
+* win32/win64: upgraded OpenSSL to 1.1.1m.
 * feature: allow to be compiled with LibreSSL 3.0+.  _Thanks spacewander for the patch._
 * feature: add [lua_ssl_conf_command](https://github.com/openresty/lua-nginx-module#lua_ssl_conf_command) directive for setting arbitrary OpenSSL configuration parameter particularly the TLSv1.3 ciphersuites. _Thanks Zhefeng Chen for the patch._
 * feature: implemented the [ssl_client_hello_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_client_hello_by_lua) api for controlling the [NGINX](nginx.html) downstream SSL handshake dynamically with Lua. _Thanks Zhefeng Chen for the patch._
