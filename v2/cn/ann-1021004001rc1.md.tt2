@@ -45,7 +45,7 @@ The highlights of this release candidate are:
 
 * Based on the very recent mainline [nginx](nginx.html) core 1.21.4.
 * [LuaJIT](https://github.com/openresty/luajit2#readme)
-    * Compile table traversals: next(), pairs(), BC_ISNEXT/BC_ITERN. This work sponsored by OpenResty INC.
+    * Now we can fully JIT compile Lua loops for iterating through Lua hash tables, i.e., for k, v in pairs(tb) do … end and other related forms. This work sponsored by OpenResty INC.
     * Implemented a new string.buffer API.
     * Many fixes imported from Mike Pall's upstream https://github.com/luajit/luajit repository.
 * Implemented the new [ngx.run_worker_thread](https://github.com/openresty/lua-nginx-module#ngxrun_worker_thread) API to run Lua function in a seperated worker thread.
