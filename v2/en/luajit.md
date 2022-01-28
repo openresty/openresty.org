@@ -16,5 +16,5 @@ Homepage: http://luajit.org/luajit.html
 Please explicitly specify the `--with-luajit` option while configuring [OpenResty](openresty.html) older
 than 1.5.8.1. See [Installation](installation.html) for details.
 
-Mordern OpenResty uses its [own branch of LuaJIT](https://github.com/openresty/luajit2) with
+Modern OpenResty uses its [own branch of LuaJIT](https://github.com/openresty/luajit2) with
 various important bug fixes and optimizations for OpenResty's use cases.
