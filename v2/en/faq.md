@@ -21,6 +21,15 @@ upgrading the NGINX core.
 The first part of the OpenResty release version numbers is the version of the bundled NGINX core. For instance, OpenResty 1.7.10.2 bundles
 NGINX 1.7.10 while OpenResty 1.9.1.1 bundles NGINX 1.9.1.
 
+Why doesn't OpenResty follow NGINX's stable releases?
+-----------------------------------------------------
+
+NGINX's stable releases only mean that the NGINX ABI is stable. The code of both the mainline releases and the stable releases are solid and production-ready. Thinking Nginx stable releases are more stable than mainline versions is a common misconception.
+
+The NGINX's stable releases update slowly. In order to get new features from mainline releases early, we need to follow the mainline releases.
+
+Furthermore, many of the important bug fixes are also committed to mainline releases first and merged into stable releases at a later date.
+
 How often does OpenResty make a new release?
 --------------------------------------------
 
