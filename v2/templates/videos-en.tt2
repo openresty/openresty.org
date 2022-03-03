@@ -18,6 +18,7 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK" style="cursor: pointer">OpenResty Edge</a></h2>
     <ul>
+      <li><a href="#YKP091Y7sU0" style="cursor: pointer">Limit Request Rate by Custom Keys in OpenResty Edge</a></li>
       <li><a href="#XkPlx9If6sI" style="cursor: pointer">Gateway Config's Version Control &amp; Release Management in OpenResty Edge</a></li>
       <li><a href="#NIlOrqi-I8U" style="cursor: pointer">Set Different Host Headers for Upstream Requests in OpenResty Edge</a></li>
       <li><a href="#Z7zeYz2zDbQ" style="cursor: pointer">Redirect to different URIs Based on Clients' Language Settings (OpenResty Edge)</a></li>
@@ -59,6 +60,8 @@
   <p id="eSfYLvVQMxw">Hello World HTTP Example in OpenResty/Nginx</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2 id="PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK">OpenResty Edge</h2>
+  <p id="YKP091Y7sU0">Limit Request Rate by Custom Keys in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/YKP091Y7sU0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="XkPlx9If6sI">Gateway Config's Version Control &amp; Release Management in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/XkPlx9If6sI" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="NIlOrqi-I8U">Set Different Host Headers for Upstream Requests in OpenResty Edge</p>
