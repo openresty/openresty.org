@@ -43,7 +43,7 @@ and Jiahao Wang for their help in preparing this release.
 
 The highlights of this release candidate are:
 
-* Fixed invalid read event of semaphore after gc was called.
+* Fixed invalid event of semaphore after gc was called.
 * Fixed pending [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme) until timeout caused by pipe that forgot to close in child process.
 
 # Full Change logs
