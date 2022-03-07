@@ -43,7 +43,7 @@ and Jiahao Wang for their help in preparing this release.
 
 The highlights of this release candidate are:
 
-* Fixed the bug that posted event handler is called after the event struct is freed.
+* Fixed the bug that posted event handler is called after the event is freed.
 * Fixed pending [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme) until timeout caused by pipe that forgot to close in child process.
 
 # Full Change logs
