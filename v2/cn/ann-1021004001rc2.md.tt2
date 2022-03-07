@@ -1,0 +1,61 @@
+[% VER = "1.21.4.1"; RC = 2 -%]
+<!---
+    @title         OpenResty [% VER %] RC[% RC %] is out
+    @created       2022-03-07 00:00 GMT
+    @modified      2022-03-07 00:00 GMT
+--->
+
+We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],
+for the community to test out.
+
+# Source package
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz
+
+PGP for this source tar ball:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz.asc
+
+# Windows binary packages
+
+## Win64 version:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip
+
+PGP for the Win64 zip file:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip.asc
+
+## Win32 version:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip
+
+PGP for the Win32 zip file:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip.asc
+
+# Acknowledgment
+
+Special thanks go to all our developers and contributors! Also thanks Junlong Li,
+and Jiahao Wang for their help in preparing this release.
+
+# Version highlights
+
+The highlights of this release candidate are:
+
+* Fixed invalid read event of semaphore after gc was called.
+* Fixed pending [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme) until timeout caused by pipe that forgot to close in child process.
+
+# Full Change logs
+
+Complete change logs since the last release candidate, [1.21.4.1 RC1](ann-1021004001rc1.html):
+
+* upgraded [lua-nginx-module](https://github.com/openresty/lua-nginx-module) to 0.10.21rc2
+    * bugfix: [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme) waits until timeout because child process forgot to close pipe after dup2. _Thanks Junlong Li for the patch._
+    * bugfix: posted event handler was called after event memory was freed. _Thanks Junlong Li for the patch._
+
+# Feedback
+
+Feedback on this new release candidate is most welcome. Feel free to create new
+[GitHub issues](https://github.com/openresty/openresty/issues) or contact us
+via one of our [mailing lists](community.html).
