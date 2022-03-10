@@ -56,10 +56,8 @@ Complete change logs since the last release candidate, [1.21.4.1 RC1](ann-102100
     * bugfix: [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme) waits until timeout because child process forgot to close pipe after dup2. _Thanks Junlong Li for the patch._
     * bugfix: posted event handler was called after event memory was freed. _Thanks Junlong Li for the patch._
 * upgraded luajit2 to 2.1-20220310
-    * Revert to trival pow() optimizations to prevent inaccuracies.
     * Fix string buffer COW handling.
     * Fix command-line argv handling.
-    * Fix pow() optimization inconsistencies.
     * Always exit after machine code page protection change fails.
     * Fix FOLD rule for BUFHDR append with intervening buffer use.
     * Fix compiled error handling for buffer methods.
@@ -70,7 +68,6 @@ Complete change logs since the last release candidate, [1.21.4.1 RC1](ann-102100
     * Limit work done in SINK pass.
     * Fix ABC FOLD rule with constants.
     * Windows: Fix binary output of jit.bcsave to stdout.
-    * Fix FOLD rule for x-0.
     * Fix FOLD rule for x-0.
 
 # Feedback
