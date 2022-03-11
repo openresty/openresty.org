@@ -1,10 +1,10 @@
 
 <div class="news">
-  <div class="news-item"><a href="ann-1021004001rc1.html">
+  <div class="news-item"><a href="ann-1021004001rc2.html">
       <picture>
         <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>
       </picture></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1021004001rc1.html">OpenResty 1.21.4.1rc1</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1021004001rc2.html">OpenResty 1.21.4.1rc2</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/edge-rate-limit/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-rate-limit.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-rate-limit/?src=org_news" target="_blank">Limit Request Rate by Custom Keys in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
