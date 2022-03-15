@@ -34,8 +34,8 @@ msgid  "OpenResty<sup>&reg;</sup> is a registered trademark owned by <a href=\"h
 msgstr "OpenResty<sup>&reg;</sup> 是 <a href=\"https://openresty.com/\">OpenResty Inc</a> 公司所有的注册商标。"
 
 #: templates/footer.tt2:5
-msgid  "Copyright © 2017, 2018, 2019, 2020, 2021 by Yichun Zhang (agentzh)"
-msgstr "版权所有 © 2017, 2018, 2019, 2020, 2021 章亦春 (agentzh)"
+msgid  "Copyright © 2017, 2018, 2019, 2020, 2021, 2022 by Yichun Zhang (agentzh)"
+msgstr "版权所有 © 2017, 2018, 2019, 2020, 2021, 2022 章亦春 (agentzh)"
 
 #: templates/footer.tt2:6
 msgid  "100% Powered by OpenResty and PostgreSQL"
@@ -97,10 +97,10 @@ msgstr "新博客文章"
 msgid  "is published."
 msgstr "已发表。"
 
-#: templates/sidebar.tt2:19
-msgid  "Timeline"
-msgstr "最近更新"
-
 #: templates/posts-slide-cn.tt2:3
 msgid  "More Interesting Topics"
 msgstr "更多有趣的文章"
+
+#: templates/sidebar.tt2:19
+msgid  "Timeline"
+msgstr "最近更新"
