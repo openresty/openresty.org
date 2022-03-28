@@ -61,13 +61,13 @@ msgstr "通过 Lua 扩展 NGINX 实现的可伸缩的 Web 平台"
 msgid  "Contribute on GitHub"
 msgstr "贡献力量"
 
-#: templates/header.tt2:19
-msgid  "Commercial Offering"
-msgstr "商业支持"
-
-#: templates/header.tt2:21
+#: templates/header.tt2:17
 msgid  "Official Forum"
 msgstr "官方论坛"
+
+#: templates/header.tt2:21
+msgid  "OpenResty Enterprise"
+msgstr "OpenResty 商业版"
 
 #: templates/index.tt2:5
 msgid  "OpenResty&reg; - Official Site"

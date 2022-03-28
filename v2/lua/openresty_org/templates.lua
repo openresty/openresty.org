@@ -283,15 +283,18 @@ i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Scalable Web Platform by
 i = i + 1 output[i] = '</small>\n        </p><!-- / site-name -->\n        <p class="right link">\n                <a href="https://github.com/openresty/" title="Contribute on GitHub">\n                        <img src="/images/ico-github.png">\n                        <span class="link-title">'
 -- line 15 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Contribute on GitHub' }})
-i = i + 1 output[i] = '</span>\n                </a>\n                <a href="https://openresty.com/" title="OpenResty.com">\n                        <img src="/images/money.png">\n                        <span class="link-title">'
--- line 19 "header.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Commercial Offering' }})
 i = i + 1 output[i] = '</span>\n                </a>\n                <a href="https://forum.openresty.us/" title="'
--- line 21 "header.tt2"
+-- line 17 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Official Forum' }})
 i = i + 1 output[i] = '">\n                        <img class="dark-img" src="/images/flarum.png">\n                        <span class="link-title">'
--- line 23 "header.tt2"
+-- line 19 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Official Forum' }})
+i = i + 1 output[i] = '</span>\n                </a>\n                <a role="button" href="https://openresty.com" class="enterprise-button" type="button" title="'
+-- line 21 "header.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty Enterprise' }})
+i = i + 1 output[i] = '">\n                        <img src="/images/rocket.svg">\n                        <span class="link-title">'
+-- line 23 "header.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty Enterprise' }})
 i = i + 1 output[i] = '</span>\n                </a>\n        </p><!-- / links -->\n</header>\n'
 
     return output

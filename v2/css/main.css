@@ -382,6 +382,21 @@ header[role="header"] .link .link-title {
 header[role="header"] .dark-img {
   filter: brightness(2);
 }
+header[role="header"] .enterprise-button {
+  border-radius: 8px;
+  padding: 6px 16px;
+  background: #FDFDFD;
+  box-shadow: inset 0px -1px 0.5px rgba(14, 14, 44, 0.4);
+  border: none;
+}
+header[role="header"] .enterprise-button .link-title {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'Open Sans';
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: #3E3E3F;
+}
 /*=====================================================================================
   FOOTER
 =======================================================================================*/
@@ -623,7 +638,7 @@ header[role="header"] .dark-img {
 @media (min-width: 480px) and (max-width: 991px) {
   #main .item .body {
     /* tablets */
-    margin: .5em;
+    margin: 0.5em;
   }
 }
 #main .item .body pre {
