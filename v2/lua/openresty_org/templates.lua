@@ -365,39 +365,45 @@ i = i + 1 output[i] = stash_get(stash, 'main_menu')
 i = i + 1 output[i] = '\n			</nav><!-- / nav -->\n\n'
 -- line 45 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'main-menu-buttons.tt2')
-i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n\n		<section id="main">\n'
--- line 51 "index.tt2"
+i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n\n		<section id="main">\n		<!-- enterprise banner -->\n		<div class="banner">\n			<div class="banner-left">\n				<div class="edge-title">\n					<div class="edge-icon"><img src="/images/white-rocket.svg"/></div>\n					<div class="edge-title-text">OpenResty Edge</div>\n				</div>\n				<p class="slogan">'
+-- line 56 "index.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Next generation gateway management platform for multi-cloud and microservices' }})
+i = i + 1 output[i] = '</p>\n				<button class="edge-demo" type="button">'
+-- line 57 "index.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Request Demo' }})
+i = i + 1 output[i] = '</button>\n			</div>\n			<div class="banner-right">\n				<div class="screenshot-bar"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>\n				<div class="screenshot-img"><img src="/images/edge-screenshot.png"/></div>\n			</div>\n		</div>\n'
+-- line 65 "index.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
--- line 51 "index.tt2"
+-- line 65 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'news-cn.tt2')
 else
--- line 51 "index.tt2"
+-- line 65 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'news-en.tt2')
 end
 
 
 i = i + 1 output[i] = '\n\n'
--- line 58 "index.tt2"
+-- line 72 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'post.tt2')
 i = i + 1 output[i] = '\n'
--- line 60 "index.tt2"
+-- line 74 "index.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
--- line 60 "index.tt2"
+-- line 74 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'posts-slide-cn.tt2')
 else
--- line 60 "index.tt2"
+-- line 74 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'posts-slide-en.tt2')
 end
 
 
 i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n'
--- line 68 "index.tt2"
+-- line 82 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
 i = i + 1 output[i] = '\n\n	</div><!-- / wrapper -->\n\n'
--- line 72 "index.tt2"
+-- line 86 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'footer.tt2')
 i = i + 1 output[i] = '\n\n'
--- line 74 "index.tt2"
+-- line 88 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'heat-map.tt2')
 i = i + 1 output[i] = '\n\n</body>\n</html>\n'
 
