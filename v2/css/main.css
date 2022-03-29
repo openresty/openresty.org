@@ -232,6 +232,34 @@ header[role="header"] .site-name img {
   margin-left: -20px;
   margin-right: 12px;
 }
+header[role="banner"] {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 36px;
+  padding-right: 36px;
+  background-color: #fff;
+}
+header[role="banner"] .ann {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header[role="banner"] .edge-title-text {
+  color: #333;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+}
+header[role="banner"] .edge-phrase {
+  margin-left: 32px;
+}
+header[role="banner"] .edge-demo {
+  background: #1A48A5;
+  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
+  color: #fff;
+}
 #wrapper {
   display: flex;
   align-items: stretch;
@@ -483,6 +511,40 @@ header[role="header"] .enterprise-button .link-title {
 #intro form input[type=search]:active {
   background-color: #fff;
   outline: none;
+}
+.banner .edge-icon {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background: #1A48A5;
+  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
+  border-radius: 4px;
+}
+.banner .edge-title-text {
+  text-transform: uppercase;
+  color: #FDFDFD;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  margin-left: 8px;
+}
+.banner .edge-demo {
+  padding: 10px 16px;
+  background: #FFFFFF;
+  box-shadow: inset 0px -1px 0.5px rgba(14, 14, 44, 0.4);
+  border-radius: 8px;
+  color: #1A48A5;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  border: none;
+  width: max-content;
 }
 /*=====================================================================================
   MAIN
@@ -745,46 +807,12 @@ header[role="header"] .enterprise-button .link-title {
   align-items: center;
   margin-bottom: 11px;
 }
-#main .banner .edge-icon {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 24px;
-  background: #1A48A5;
-  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
-  border-radius: 4px;
-}
-#main .banner .edge-title-text {
-  text-transform: uppercase;
-  color: #FDFDFD;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  margin-left: 8px;
-}
 #main .banner .slogan {
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
   color: #FDFDFD;
   margin-bottom: 11px;
-}
-#main .banner .edge-demo {
-  padding: 10px 16px;
-  background: #FFFFFF;
-  box-shadow: inset 0px -1px 0.5px rgba(14, 14, 44, 0.4);
-  border-radius: 8px;
-  color: #1A48A5;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.04em;
-  text-align: center;
-  border: none;
-  width: max-content;
 }
 #main .news {
   padding: 0 40px 20px 40px;

@@ -51,6 +51,38 @@ header[role="header"] .site-name img {
   margin-left: -20px;
   margin-right: 12px;
 }
+header[role="banner"] {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 36px;
+    padding-right: 36px;
+    background-color: #fff;
+
+    .ann {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .edge-title-text {
+        color: #333;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.03em;
+    }
+
+    .edge-phrase {
+        margin-left: 32px;
+    }
+
+    .edge-demo {
+        background: #1A48A5;
+        box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
+        color: #fff;
+    }
+}
 
 #intro {}
 #wrapper {
@@ -217,6 +249,43 @@ header[role="header"] {
 
 }
 
+.banner {
+    .edge-icon {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        background: #1A48A5;
+        box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
+        border-radius: 4px;
+    }
+    .edge-title-text {
+        text-transform: uppercase;
+        color: #FDFDFD;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        margin-left: 8px;
+    }
+    .edge-demo {
+        padding: 10px 16px;
+        background: #FFFFFF;
+        box-shadow: inset 0px -1px 0.5px rgba(14, 14, 44, 0.4);
+        border-radius: 8px;
+        color: #1A48A5;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.04em;
+        text-align: center;
+        border: none;
+        width: max-content;
+    }
+}
+
 
 /*=====================================================================================
   MAIN
@@ -365,46 +434,12 @@ header[role="header"] {
             align-items: center;
             margin-bottom: 11px;
         }
-        .edge-icon {
-            display: inline-flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            width: 24px;
-            height: 24px;
-            background: #1A48A5;
-            box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
-            border-radius: 4px;
-        }
-        .edge-title-text {
-            text-transform: uppercase;
-            color: #FDFDFD;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 14px;
-            margin-left: 8px;
-        }
         .slogan {
             font-weight: 500;
             font-size: 24px;
             line-height: 28px;
             color: #FDFDFD;
             margin-bottom: 11px;
-        }
-        .edge-demo {
-            padding: 10px 16px;
-            background: #FFFFFF;
-            box-shadow: inset 0px -1px 0.5px rgba(14, 14, 44, 0.4);
-            border-radius: 8px;
-            color: #1A48A5;
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 12px;
-            line-height: 16px;
-            letter-spacing: 0.04em;
-            text-align: center;
-            border: none;
-            width: max-content;
         }
     }
 

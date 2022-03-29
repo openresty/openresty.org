@@ -39,6 +39,7 @@ local trans_cn = {
     ["is now released!"] = "已发布。",
     ["is published."] = "已发表。",
     ["view the source code of this site"] = "查看本站的源代码",
+    ["️📣  Your next generation gateway management platform for multi-cloud and microservices"] = "️📣  Your next generation gateway management platform for multi-cloud and microservices",
 }
 local translators = {
     ['en'] = function (s) return s end,
