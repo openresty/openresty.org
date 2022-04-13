@@ -28,7 +28,7 @@ be used for the following use cases:
 web application firewall, and request/response rewrite layer.
 2. Build a global or regional private content distribution network (CDN) with advanced features like page rules, WAF, Let's Encrypt free SSL certificate integration, and etc.
 
-With OpenResty Edge, one does not need to mess up with Lua or nginx.conf configurations, just with web UI configruations in a central web console.
+With OpenResty Edge, one does not need to mess up with Lua or nginx.conf configurations, just with web UI configurations in a central web console.
 
 # OpenResty Showman
 
