@@ -1,0 +1,62 @@
+[% VER = "1.21.4.1"; RC = 3 -%]
+<!---
+    @title         OpenResty [% VER %] RC[% RC %] is out
+    @created       2022-04-18 00:00 GMT
+    @modified      2022-04-18 00:00 GMT
+--->
+
+We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],
+for the community to test out.
+
+# Source package
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz
+
+PGP for this source tar ball:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz.asc
+
+# Windows binary packages
+
+## Win64 version:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip
+
+PGP for the Win64 zip file:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip.asc
+
+## Win32 version:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip
+
+PGP for the Win32 zip file:
+
+https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip.asc
+
+# Acknowledgment
+
+Special thanks go to all our developers and contributors!
+
+# Version highlights
+
+The highlights of this release candidate are:
+
+* [LuaJIT](https://github.com/openresty/luajit2#readme)
+    * Fixed the bug that Lua table iteration terminates early.
+
+# Full Change logs
+
+Complete change logs since the last release candidate, [1.21.4.1 RC2](ann-1021004001rc2.html):
+
+* upgraded luajit2 to 2.1-20220411
+    * Add missing check for LJ_KEYINDEX in ITERN recording.
+    * DynASM/ARM64: Fix NOP instruction for aligment.
+    * Fix soft-float IR_POW splitting.
+    * Fix BC_UCLO insertion for returns.
+
+# Feedback
+
+Feedback on this new release candidate is most welcome. Feel free to create new
+[GitHub issues](https://github.com/openresty/openresty/issues) or contact us
+via one of our [mailing lists](community.html).
