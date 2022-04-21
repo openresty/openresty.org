@@ -1,3 +1,11 @@
+<header role="banner" class="banner">
+        <div class="ann">
+                <div class="edge-icon"><img src="/images/white-rocket.svg"/></div>
+                <div class="edge-title-text">OpenResty Edge</div>
+                <div class="edge-phrase">[% c.l("️📣  Your next generation gateway management platform for multi-cloud and microservices") %]</div>
+        </div>
+        <button class="edge-demo" type="button">[% c.l("Request Demo") %]</button>
+</header>
 <header role="header">
         <p class="site-name left">
             <a href=".">
@@ -14,13 +22,13 @@
                         <img src="/images/ico-github.png">
                         <span class="link-title">[% c.l("Contribute on GitHub") %]</span>
                 </a>
-                <a href="https://openresty.com/" title="OpenResty.com">
-                        <img src="/images/money.png">
-                        <span class="link-title">[% c.l("Commercial Offering") %]</span>
-                </a>
                 <a href="https://forum.openresty.us/" title="[% c.l("Official Forum") %]">
                         <img class="dark-img" src="/images/flarum.png">
                         <span class="link-title">[% c.l("Official Forum") %]</span>
+                </a>
+                <a role="button" href="https://openresty.com" class="enterprise-button" type="button" title="[% c.l("OpenResty Enterprise") %]">
+                        <img src="/images/rocket.svg">
+                        <span class="link-title">[% c.l("OpenResty Enterprise") %]</span>
                 </a>
         </p><!-- / links -->
 </header>

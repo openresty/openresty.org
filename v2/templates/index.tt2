@@ -47,6 +47,21 @@
 		</div><!-- / sidebar left -->
 
 		<section id="main">
+		<!-- enterprise banner -->
+		<div class="banner">
+			<div class="banner-left">
+				<div class="edge-title">
+					<div class="edge-icon"><img src="/images/white-rocket.svg"/></div>
+					<div class="edge-title-text">OpenResty Edge</div>
+				</div>
+				<p class="slogan">[% c.l("Next generation gateway management platform for multi-cloud and microservices") %]</p>
+				<button class="edge-demo" type="button">[% c.l("Request Demo") %]</button>
+			</div>
+			<div class="banner-right">
+				<div class="screenshot-bar"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+				<div class="screenshot-img"><img src="/images/edge-screenshot.png"/></div>
+			</div>
+		</div>
 
 [%- IF lang == 'cn';
         PROCESS 'news-cn.tt2';
