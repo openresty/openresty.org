@@ -256,6 +256,11 @@ header[role="banner"] .edge-title-text {
 header[role="banner"] .edge-phrase {
   margin-left: 32px;
 }
+@media (max-width: 992px) {
+  header[role="banner"] .edge-phrase {
+    display: none;
+  }
+}
 header[role="banner"] .edge-demo {
   background: #1A48A5;
   box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
@@ -388,12 +393,13 @@ header[role="header"] .link .link-title {
 }
 @media (max-width: 768px) {
   header[role="header"] .link {
-    display: block;
-    width: 100%;
+    display: flex;
+    margin-left: -10px;
+    margin-right: -10px;
     margin-bottom: 10px;
   }
   header[role="header"] .link a {
-    width: 30%;
+    width: 33%;
     margin-right: unset;
     display: inline-flex;
     flex-direction: column;
@@ -533,6 +539,7 @@ header[role="header"] .enterprise-button .link-title {
   margin-left: 8px;
 }
 .banner .edge-demo {
+  text-decoration: none;
   font-family: 'Open Sans';
   padding: 10px 16px;
   background: #FFFFFF;
@@ -772,16 +779,32 @@ header[role="header"] .enterprise-button .link-title {
   overflow: hidden;
   position: relative;
 }
+@media (max-width: 992px) {
+  #main .banner {
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+}
 #main .banner .banner-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: calc(100% - 303px);
 }
+@media (max-width: 1200px) {
+  #main .banner .banner-left {
+    width: 100%;
+  }
+}
 #main .banner .banner-right {
   max-width: 300px;
   position: absolute;
   right: -7px;
+}
+@media (max-width: 1200px) {
+  #main .banner .banner-right {
+    display: none;
+  }
 }
 #main .banner .screenshot-bar {
   height: 1.15rem;
@@ -815,6 +838,11 @@ header[role="header"] .enterprise-button .link-title {
   line-height: 27px;
   color: #FDFDFD;
   margin-bottom: 12px;
+}
+@media (max-width: 992px) {
+  #main .banner .slogan {
+    font-size: 16px;
+  }
 }
 #main .news {
   padding: 0 40px 20px 40px;

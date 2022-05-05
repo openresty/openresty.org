@@ -76,6 +76,9 @@ header[role="banner"] {
 
     .edge-phrase {
         margin-left: 32px;
+        @media (max-width: @screen-md) {
+            display: none;
+        }
     }
 
     .edge-demo {
@@ -170,10 +173,11 @@ header[role="header"] {
     }
     @media (max-width: @screen-sm) {
         .link {
-            display: block;
-            width: 100%;
+            display: flex;
+            margin-left: -10px;
+            margin-right: -10px;
             margin-bottom: 10px;
-            a { width: 30%; margin-right: unset; display: inline-flex; flex-direction: column; justify-content: center; align-items: center; }
+            a { width: 33%; margin-right: unset; display: inline-flex; flex-direction: column; justify-content: center; align-items: center; }
             .link-title {margin-top: 5px;}
         }
         .site-name {
@@ -271,6 +275,7 @@ header[role="header"] {
         margin-left: 8px;
     }
     .edge-demo {
+        text-decoration: none;
         font-family: 'Open Sans';
         padding: 10px 16px;
         background: #FFFFFF;
@@ -393,17 +398,27 @@ header[role="header"] {
         height: 189px;
         overflow: hidden;
         position: relative;
+        @media (max-width: @screen-md) {
+            padding-left: 20px;
+            padding-right: 10px;
+        }
 
         .banner-left {
             display: flex;
             flex-direction: column;
             justify-content: center;
             width: calc(100% - 303px);
+            @media (max-width: @screen-lg) {
+                width: 100%;
+            }
         }
         .banner-right {
             max-width: 300px;
             position: absolute;
             right: -7px;
+            @media (max-width: @screen-lg) {
+                display: none;
+            }
         }
 
         .screenshot-bar {
@@ -442,6 +457,9 @@ header[role="header"] {
             line-height: 27px;
             color: #FDFDFD;
             margin-bottom: 12px;
+            @media (max-width: @screen-md) {
+                font-size: 16px;
+            }
         }
     }
 

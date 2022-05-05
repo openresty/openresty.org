@@ -55,7 +55,9 @@
 					<div class="edge-title-text">OpenResty Edge</div>
 				</div>
 				<p class="slogan">[% c.l("Next generation gateway management platform for multi-cloud and microservices") %]</p>
-				<button class="edge-demo" type="button">[% c.l("Request Demo") %]</button>
+				[% IF lang == 'cn' %]<a role="button" class="edge-demo" href="https://openresty.com.cn/cn/edge/request-demo">[% c.l("Request Demo") %]</a>
+				[% ELSE; %]<a role="button" class="edge-demo" href="https://openresty.com/en/edge/request-demo">[% c.l("Request Demo") %]</a>
+				[% END %]
 			</div>
 			<div class="banner-right">
 				<div class="screenshot-bar"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
