@@ -93,6 +93,10 @@ msgstr "搜索 OpenResty.org 中文站"
 msgid  "Next generation gateway management platform for multi-cloud and microservices"
 msgstr "Next generation gateway management platform for multi-cloud and microservices"
 
+#: templates/index.tt2:59
+msgid  "View more >>"
+msgstr "查看更多 >>"
+
 #: templates/news-cn.tt2:7
 msgid  "New!"
 msgstr "最新！"

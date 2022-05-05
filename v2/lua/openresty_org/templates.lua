@@ -387,53 +387,59 @@ i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n\n		<section id="mai
 -- line 57 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Next generation gateway management platform for multi-cloud and microservices' }})
 i = i + 1 output[i] = '</p>\n				'
--- line 60 "index.tt2"
+-- line 62 "index.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
-i = i + 1 output[i] = '<a role="button" class="edge-demo" href="https://openresty.com.cn/cn/edge/request-demo">'
+i = i + 1 output[i] = '<div><a role="button" class="edge-demo" href="https://openresty.com.cn/cn/edge/request-demo">'
 -- line 58 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Request Demo' }})
-i = i + 1 output[i] = '</a>\n				'
+i = i + 1 output[i] = '</a>\n					<a role="button" class="edge-viewmore" href="https://openresty.com.cn/cn/edge/">'
+-- line 59 "index.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'View more >>' }})
+i = i + 1 output[i] = '</a></div>\n				'
 else
 
-i = i + 1 output[i] = '<a role="button" class="edge-demo" href="https://openresty.com/en/edge/request-demo">'
--- line 59 "index.tt2"
+i = i + 1 output[i] = '<div><a role="button" class="edge-demo" href="https://openresty.com/en/edge/request-demo">'
+-- line 60 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Request Demo' }})
-i = i + 1 output[i] = '</a>\n				'
+i = i + 1 output[i] = '</a>\n					<a role="button" class="edge-viewmore" href="https://openresty.com.cn/cn/edge/">'
+-- line 61 "index.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'View more >>' }})
+i = i + 1 output[i] = '</a></div>\n				'
 end
 
 i = i + 1 output[i] = '\n			</div>\n			<div class="banner-right">\n				<div class="screenshot-bar"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>\n				<div class="screenshot-img"><img src="/images/edge-screenshot.png"/></div>\n			</div>\n		</div>\n'
--- line 68 "index.tt2"
+-- line 70 "index.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
--- line 68 "index.tt2"
+-- line 70 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'news-cn.tt2')
 else
--- line 68 "index.tt2"
+-- line 70 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'news-en.tt2')
 end
 
 
 i = i + 1 output[i] = '\n\n'
--- line 75 "index.tt2"
+-- line 77 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'post.tt2')
 i = i + 1 output[i] = '\n'
--- line 77 "index.tt2"
+-- line 79 "index.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
--- line 77 "index.tt2"
+-- line 79 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'posts-slide-cn.tt2')
 else
--- line 77 "index.tt2"
+-- line 79 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'posts-slide-en.tt2')
 end
 
 
 i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n'
--- line 85 "index.tt2"
+-- line 87 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
 i = i + 1 output[i] = '\n\n	</div><!-- / wrapper -->\n\n'
--- line 89 "index.tt2"
+-- line 91 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'footer.tt2')
 i = i + 1 output[i] = '\n\n'
--- line 91 "index.tt2"
+-- line 93 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'heat-map.tt2')
 i = i + 1 output[i] = '\n\n</body>\n</html>\n'
 
