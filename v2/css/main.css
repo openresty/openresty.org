@@ -848,14 +848,12 @@ header[role="header"] .enterprise-button .link-title {
   #main .banner .slogan {
     font-size: 17px;
     line-height: 22px;
-    margin-bottom: 8px;
   }
 }
 @media (max-width: 992px) {
   #main .banner .slogan {
     font-size: 16px;
     line-height: 24px;
-    margin-bottom: 12px;
   }
 }
 #main .news {

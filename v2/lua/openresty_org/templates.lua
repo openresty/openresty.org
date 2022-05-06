@@ -394,16 +394,16 @@ i = i + 1 output[i] = '<div><a role="button" class="edge-demo" href="https://ope
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Request Demo' }})
 i = i + 1 output[i] = '</a>\n					<a role="button" class="edge-viewmore" href="https://openresty.com.cn/cn/edge/">'
 -- line 59 "index.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'View more >>' }})
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'View more' }})
 i = i + 1 output[i] = '</a></div>\n				'
 else
 
 i = i + 1 output[i] = '<div><a role="button" class="edge-demo" href="https://openresty.com/en/edge/request-demo">'
 -- line 60 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Request Demo' }})
-i = i + 1 output[i] = '</a>\n					<a role="button" class="edge-viewmore" href="https://openresty.com.cn/cn/edge/">'
+i = i + 1 output[i] = '</a>\n					<a role="button" class="edge-viewmore" href="https://openresty.com/en/edge/">'
 -- line 61 "index.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'View more >>' }})
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'View more' }})
 i = i + 1 output[i] = '</a></div>\n				'
 end
 

@@ -94,8 +94,8 @@ msgid  "Next generation gateway management platform for multi-cloud and microser
 msgstr "Next generation gateway management platform for multi-cloud and microservices"
 
 #: templates/index.tt2:59
-msgid  "View more >>"
-msgstr "查看更多 >>"
+msgid  "View more"
+msgstr "查看更多"
 
 #: templates/news-cn.tt2:7
 msgid  "New!"
