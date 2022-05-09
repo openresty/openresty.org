@@ -5,11 +5,10 @@
   "dependencies": {
     "axios": "^0.26.1",
     "cheerio": "^1.0.0-rc.10",
-    "marked": "^4.0.12",
+    "marked": "^4.0.15",
     "pug": "^3.0.2",
-    "sharp": "^0.28.1"
+    "sharp": "^0.28.3"
   },
-  "devDependencies": {},
   "author": "",
   "license": "ISC"
 }

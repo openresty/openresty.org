@@ -4,6 +4,10 @@
     @created       2012-08-04 23:04 GMT
 --->
 
+# Slack Community
+
+Please [join us here](https://join.slack.com/t/openresty-community/shared_invite/zt-17jehfrkg-3~HyIrFLN2Z0KH7tL_sJxQ) and share your thoughts and questions with us, we can't wait to see you there!
+
 #  Mailing Lists
 
 ##  English Mailing List
