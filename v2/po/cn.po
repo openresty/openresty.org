@@ -61,19 +61,19 @@ msgstr "️📣  Your next generation gateway management platform for multi-clou
 msgid  "Request Demo"
 msgstr "Request Demo"
 
-#: templates/header.tt2:18
+#: templates/header.tt2:20
 msgid  "Scalable Web Platform by Extending NGINX with Lua"
 msgstr "通过 Lua 扩展 NGINX 实现的可伸缩的 Web 平台"
 
-#: templates/header.tt2:23
+#: templates/header.tt2:25
 msgid  "Contribute on GitHub"
 msgstr "贡献力量"
 
-#: templates/header.tt2:17
+#: templates/header.tt2:27
 msgid  "Official Forum"
 msgstr "官方论坛"
 
-#: templates/header.tt2:21
+#: templates/header.tt2:31
 msgid  "OpenResty Enterprise"
 msgstr "OpenResty 商业版"
 
@@ -89,11 +89,15 @@ msgstr "OpenResty<sup>&reg;</sup> 是一款基于 NGINX 和 LuaJIT 的 Web 平�
 msgid  "Search OpenResty.org"
 msgstr "搜索 OpenResty.org 中文站"
 
-#: templates/index.tt2:56
+#: templates/index.tt2:57
 msgid  "Next generation gateway management platform for multi-cloud and microservices"
 msgstr "Next generation gateway management platform for multi-cloud and microservices"
 
-#: templates/news-cn.tt2:4
+#: templates/index.tt2:59
+msgid  "View more"
+msgstr "查看更多"
+
+#: templates/news-cn.tt2:7
 msgid  "New!"
 msgstr "最新！"
 
@@ -109,10 +113,10 @@ msgstr "新博客文章"
 msgid  "is published."
 msgstr "已发表。"
 
-#: templates/sidebar.tt2:19
-msgid  "Timeline"
-msgstr "最近更新"
-
 #: templates/posts-slide-cn.tt2:3
 msgid  "More Interesting Topics"
 msgstr "更多有趣的文章"
+
+#: templates/sidebar.tt2:19
+msgid  "Timeline"
+msgstr "最近更新"
