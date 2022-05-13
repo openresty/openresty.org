@@ -31,7 +31,7 @@ on this [Download page](download.html).
 * Fixed pending [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme) until timeout caused by pipe that forgot to close in child process.
 * [lua-resty-redis](https://github.com/openresty/lua-resty-redis#readme) module
     * Added a surface to support redis module.
-* Upgraded OpenSSL to 1.1.1m for Win32/Win64.
+* Upgraded OpenSSL to 1.1.1n for Win32/Win64.
 
 # Full Change logs
 
