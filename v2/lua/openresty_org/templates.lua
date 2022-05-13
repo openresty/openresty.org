@@ -469,10 +469,10 @@ template_map['news-cn.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '\n<div class="news">\n  <div class="news-item"><a href="ann-1021004001rc3.html">\n      <picture>\n        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
+i = i + 1 output[i] = '\n<div class="news">\n  <div class="news-item"><a href="ann-1021004001.html">\n      <picture>\n        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
 -- line 7 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
-i = i + 1 output[i] = '&nbsp;</strong><a href="ann-1021004001rc3.html">OpenResty 1.21.4.1rc3</a><span>&nbsp;'
+i = i + 1 output[i] = '&nbsp;</strong><a href="ann-1021004001.html">OpenResty 1.21.4.1</a><span>&nbsp;'
 -- line 7 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-rate-limit/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-rate-limit.png" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
@@ -516,10 +516,10 @@ template_map['news-en.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '\n<div class="news">\n  <div class="news-item"><a href="ann-1021004001rc3.html">\n      <picture>\n        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
+i = i + 1 output[i] = '\n<div class="news">\n  <div class="news-item"><a href="ann-1021004001.html">\n      <picture>\n        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
 -- line 7 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
-i = i + 1 output[i] = '&nbsp;</strong><a href="ann-1021004001rc3.html">OpenResty 1.21.4.1rc3</a><span>&nbsp;'
+i = i + 1 output[i] = '&nbsp;</strong><a href="ann-1021004001.html">OpenResty 1.21.4.1</a><span>&nbsp;'
 -- line 7 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com/en/edge-rate-limit/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-rate-limit.png" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
