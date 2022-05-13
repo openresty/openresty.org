@@ -12,8 +12,8 @@ OpenResty web platform based on NGINX and LuaJIT.
 
 The (portable) source code distribution, the Win32/Win64 binary
 distributions, and the pre-built binary Linux packages for Ubuntu,
-Debian, Fedora, CentOS, RHEL, Alpine, OpenSUSE, Amazon Linux are provided
-on this [Download page](download.html).
+Debian, Fedora, CentOS, RHEL, Alpine, OpenSUSE, Amazon Linux, Rocky Linux,
+and Oracle Linux are provided on this [Download page](download.html).
 
 # Version Highlights
 

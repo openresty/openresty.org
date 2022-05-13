@@ -59,6 +59,22 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     2               x86_64, aarch64
 ```
 
+* [Rocky Linux](#rocky-linux)
+
+```
+    Version         Supported Architectures
+    8.x             x86_64, aarch64
+```
+
+* [Oracle Linux](#oracle-linux)
+
+```
+    Version         Supported Architectures
+    6.x             x86_64
+    7.x             x86_64, aarch64
+    8.x             x86_64, aarch64
+```
+
 * [SUSE Linux Enterprise](#suse-linux-enterprise)
 
 ```
@@ -415,6 +431,78 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all
 
 Please note that the `*-asan` RPM packages are currently unavailable for Amazon Linux 2 due to a bug in Amazon Linux's
 official clang packages (missing the `libclang_rt.a` library file).
+
+# Rocky Linux
+
+You can enable the `openresty` repository on your Rocky Linux system like this:
+
+```bash
+# add the repo:
+wget https://openresty.org/package/rocky/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
+
+# update the index:
+sudo yum check-update
+```
+
+Then you can install a package, say, `openresty`, like this:
+
+```bash
+sudo yum install -y openresty
+```
+
+If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
+
+```bash
+sudo yum install -y openresty-resty
+```
+
+The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
+`openresty-doc` package.
+
+To list all the packages in the `openresty` repository:
+
+```bash
+sudo yum --disablerepo="*" --enablerepo="openresty" list available
+```
+
+See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
+
+# Oracle Linux
+
+You can enable the `openresty` repository on your Oracle Linux system like this:
+
+```bash
+# add the repo:
+wget https://openresty.org/package/oracle/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
+
+# update the index:
+sudo yum check-update
+```
+
+Then you can install a package, say, `openresty`, like this:
+
+```bash
+sudo yum install -y openresty
+```
+
+If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
+
+```bash
+sudo yum install -y openresty-resty
+```
+
+The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
+`openresty-doc` package.
+
+To list all the packages in the `openresty` repository:
+
+```bash
+sudo yum --disablerepo="*" --enablerepo="openresty" list available
+```
+
+See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
 
 # SUSE Linux Enterprise
 
