@@ -539,7 +539,6 @@ header[role="header"] .enterprise-button .link-title {
   margin-left: 8px;
 }
 .banner .edge-demo {
-  text-decoration: none;
   font-family: 'Open Sans';
   padding: 10px 16px;
   background: #FFFFFF;
@@ -554,6 +553,7 @@ header[role="header"] .enterprise-button .link-title {
   text-align: center;
   border: none;
   width: max-content;
+  text-decoration: none;
 }
 .banner .edge-viewmore {
   margin-left: 12px;

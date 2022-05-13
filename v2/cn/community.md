@@ -7,7 +7,10 @@
 官方论坛
 --------
 
-我们建立了官方论坛，欢迎访问：
+我们建立了 [Slack 频道](https://join.slack.com/t/openresty-community/shared_invite/zt-17jehfrkg-3~HyIrFLN2Z0KH7tL_sJxQ),
+欢迎大家加入与我们分享您的想法和问题。
+
+另外，我们还建立了官方论坛，欢迎访问：
 
 [https://forum.openresty.us/](https://forum.openresty.us/)
 
