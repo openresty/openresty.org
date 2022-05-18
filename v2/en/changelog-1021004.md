@@ -4,7 +4,7 @@
     @created       2022-05-13 06:49 GMT
 --->
 
-# Version 1.21.4.1 - 13 May 2022
+# Version 1.21.4.1 - 18 May 2022
 
 * upgraded the [nginx](nginx.html) core to 1.21.4.
     * see the changes here: http://nginx.org/en/CHANGES

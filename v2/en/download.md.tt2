@@ -22,9 +22,9 @@ All the releases are signed by the public PGP key `A0E98066` of Yichun Zhang.
 
 [% ver = "1.21.4.1" -%]
 * For 32-bit Windows: [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 16MB &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 13 May 2022
+[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 18 May 2022
 * For 64-bit Windows: [openresty-[% ver %]-win64.zip](https://openresty.org/download/openresty-[% ver %]-win64.zip) &nbsp; 16MB &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win64.zip.asc) - 13 May 2022
+[PGP](https://openresty.org/download/openresty-[% ver %]-win64.zip.asc) - 18 May 2022
 
 See [Windows-specific documentation](https://github.com/openresty/openresty/blob/master/doc/README-windows.md) for basic usage on Windows.
 
@@ -67,7 +67,7 @@ install it.
 [% ver = "1.21.4.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.0MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
-[Changes](changelog-1021004.html) - 13 May 2022
+[Changes](changelog-1021004.html) - 18 May 2022
 
 ##  Legacy releases
 Sometimes, users may want to download old releases.
