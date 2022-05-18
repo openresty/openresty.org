@@ -59,6 +59,22 @@
     2              x86_64, aarch64
 ```
 
+* [Rocky Linux](#rocky-linux)
+
+```
+    版本号         支持的体系结构
+    8.x            x86_64, aarch64
+```
+
+* [Oracle Linux](#oracle-linux)
+
+```
+    版本号         支持的体系结构
+    6.x            x86_64
+    7.x            x86_64, aarch64
+    8.x            x86_64, aarch64
+```
+
 * [SUSE Linux Enterprise](#suse-linux-enterprise)
 
 ```
@@ -368,6 +384,70 @@ sudo yum repo-pkgs openresty-openresty list available
 在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
 
 请注意在 Amazon Linux 2 系统上缺少那些 `*-asan` RPM 包，因为 Amazon Linux 2 官方的 clang 包里缺少 `libclang_rt.a` 这个库文件）。
+
+# Rocky Linux
+
+你可以在你的 Rocky Linux 系统里用下面命令添加 `openresty` 仓库：
+
+```bash
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://openresty.org/package/rocky/openresty.repo
+```
+
+然后你就可以像下面这样安装包了，比如说安装 `openresty`：
+
+```bash
+sudo yum install -y openresty
+```
+
+如果想安装 `resty` 命令行工具，则像下面这样安装 `openresty-resty` 软件包：
+
+```bash
+sudo yum install -y openresty-resty
+```
+
+命令行工具 `opm` 在 `openresty-opm` 包里，而 `restydoc` 工具在
+`openresty-doc` 包里头。
+
+列出在 `openresty-openresty` 仓库中所有可用的包, 可以这样
+
+```bash
+sudo yum repo-pkgs openresty-openresty list available
+```
+
+在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
+
+# Oracle Linux
+
+你可以在你的 Oracle Linux 统里用下面命令添加 `openresty` 仓库：
+
+```bash
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://openresty.org/package/oracle/openresty.repo
+```
+
+然后你就可以像下面这样安装包了，比如说安装 `openresty`：
+
+```bash
+sudo yum install -y openresty
+```
+
+如果想安装 `resty` 命令行工具，则像下面这样安装 `openresty-resty` 软件包：
+
+```bash
+sudo yum install -y openresty-resty
+```
+
+命令行工具 `opm` 在 `openresty-opm` 包里，而 `restydoc` 工具在
+`openresty-doc` 包里头。
+
+列出在 `openresty-openresty` 仓库中所有可用的包, 可以这样
+
+```bash
+sudo yum repo-pkgs openresty-openresty list available
+```
+
+在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
 
 # SUSE Linux Enterprise
 

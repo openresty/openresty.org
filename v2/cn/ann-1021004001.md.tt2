@@ -1,0 +1,67 @@
+[% major_ver = "1.21.4"; version = major_ver _ ".1" -%]
+<!---
+    @title         OpenResty [% version %] Released
+    @creator       Jiahao Wang
+    @created       2022-05-18 07:16 GMT
+--->
+
+We are happy to announce the new formal release, [% version %], of the
+OpenResty web platform based on NGINX and LuaJIT.
+
+[Download this version here](download.html).
+
+The (portable) source code distribution, the Win32/Win64 binary
+distributions, and the pre-built binary Linux packages for Ubuntu,
+Debian, Fedora, CentOS, RHEL, Alpine, OpenSUSE, Amazon Linux, Rocky Linux,
+and Oracle Linux are provided on this [Download page](download.html).
+
+# Version Highlights
+
+* Based on a very recent mainline [NGINX](nginx.html) core [% major_ver %].
+* [LuaJIT](https://github.com/openresty/luajit2#readme)
+    * Now we can fully JIT compile Lua loops for iterating through Lua hash tables, i.e., for k, v in pairs(tb) do … end and other related forms. This work sponsored by OpenResty INC.
+    * Implemented a new string.buffer API.
+    * Fixed the bug that Lua table iteration terminates early.
+    * Many fixes imported from Mike Pall's upstream https://github.com/luajit/luajit repository.
+* Implemented the new [ngx.run_worker_thread](https://github.com/openresty/lua-nginx-module#ngxrun_worker_thread) API to run Lua function in a seperated worker thread.
+* Added [lua_ssl_conf_command](https://github.com/openresty/lua-nginx-module#lua_ssl_conf_command) directive for setting arbitrary OpenSSL configuration parameter particularly the TLSv1.3 ciphersuites.
+* Added [ssl_client_hello_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_client_hello_by_lua_block) api for controlling the [NGINX](nginx.html) downstream SSL handshake dynamically with Lua.
+* Added support for BoringSSL.
+* Fixed the bug that posted event handler is called after the event is freed.
+* Fixed pending [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme) until timeout caused by pipe that forgot to close in child process.
+* [lua-resty-redis](https://github.com/openresty/lua-resty-redis#readme) module
+    * Added a surface to support redis module.
+* Upgraded OpenSSL to 1.1.1n for Win32/Win64.
+
+# Full Change logs
+
+Complete change logs since the last (formal) release, [1.19.9.1](ann-1019009001.html), can be browsed
+in the page [Change Log for [% major_ver %].x](changelog-1021004.html).
+
+# Testing
+
+We have run extensive testing on our Amazon EC2 test cluster and
+ensured that all the components (including the Nginx core) play well
+together. The latest test report can always be found here:
+
+https://qa.openresty.org/
+
+We also always run our OpenResty Edge commercial software based on the
+latest open source version of OpenResty in our own global CDN network
+(dubbed "mini CDN") powering our openresty.org and openresty.com
+websites. See https://openresty.com/ for more details.
+
+# Community Support
+
+See the [Community Page](community.html).
+
+# Commercial Support
+
+Commercial technical support and real-time noninvasive online monitoring and profiling
+solution is provided through the official [OpenResty XRay](https://openresty.com/en/xray/)
+product.
+
+# Feedback
+
+Feedback on this release is more than welcome. Feel free to create new
+[GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](community.html).
