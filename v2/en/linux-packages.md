@@ -12,6 +12,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     16.04           Xenial          amd64, arm64
     18.04           Bionic          amd64, arm64
     20.04           Focal           amd64, arm64
+    22.04           Jammy           amd64, arm64
 ```
 
 * [Debian](#debian)
@@ -49,6 +50,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     33              x86_64, aarch64
     34              x86_64, aarch64
     35              x86_64
+    36              x86_64
 ```
 
 * [Amazon Linux](#amazon-linux)
@@ -57,6 +59,22 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     Version         Supported Architectures
     1 (2018.03)     x86_64
     2               x86_64, aarch64
+```
+
+* [Alibaba Cloud Linux](#alibaba-cloud-linux)
+
+```
+    Version         Supported Architectures
+    2               x86_64, aarch64
+    3               x86_64, aarch64
+```
+
+* [TencentOS Linux](#tencentos-linux)
+
+```
+    Version         Supported Architectures
+    2               x86_64, aarch64
+    3               x86_64, aarch64
 ```
 
 * [Rocky Linux](#rocky-linux)
@@ -432,6 +450,78 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all
 Please note that the `*-asan` RPM packages are currently unavailable for Amazon Linux 2 due to a bug in Amazon Linux's
 official clang packages (missing the `libclang_rt.a` library file).
 
+# Alibaba Cloud Linux
+
+You can enable the `openresty` repository on your Alibaba Cloud Linux system like this:
+
+```bash
+# add the repo:
+wget https://openresty.org/package/alinux/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
+
+# update the index:
+sudo yum check-update
+```
+
+Then you can install a package, say, `openresty`, like this:
+
+```bash
+sudo yum install -y openresty
+```
+
+If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
+
+```bash
+sudo yum install -y openresty-resty
+```
+
+The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
+`openresty-doc` package.
+
+To list all the packages in the `openresty` repository:
+
+```bash
+sudo yum --disablerepo="*" --enablerepo="openresty" list
+```
+
+See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
+
+# TencentOS Linux
+
+You can enable the `openresty` repository on your TencentOS Linux system like this:
+
+```bash
+# add the repo:
+wget https://openresty.org/package/tlinux/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
+
+# update the index:
+sudo yum check-update
+```
+
+Then you can install a package, say, `openresty`, like this:
+
+```bash
+sudo yum install -y openresty
+```
+
+If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
+
+```bash
+sudo yum install -y openresty-resty
+```
+
+The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
+`openresty-doc` package.
+
+To list all the packages in the `openresty` repository:
+
+```bash
+sudo yum --disablerepo="*" --enablerepo="openresty" list
+```
+
+See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
+
 # Rocky Linux
 
 You can enable the `openresty` repository on your Rocky Linux system like this:
@@ -463,7 +553,7 @@ The `opm` command-line utility is in the `openresty-opm` package while the `rest
 To list all the packages in the `openresty` repository:
 
 ```bash
-sudo yum --disablerepo="*" --enablerepo="openresty" list available
+sudo yum --disablerepo="*" --enablerepo="openresty" list
 ```
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
@@ -499,7 +589,7 @@ The `opm` command-line utility is in the `openresty-opm` package while the `rest
 To list all the packages in the `openresty` repository:
 
 ```bash
-sudo yum --disablerepo="*" --enablerepo="openresty" list available
+sudo yum --disablerepo="*" --enablerepo="openresty" list
 ```
 
 See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
