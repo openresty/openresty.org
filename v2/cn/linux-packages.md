@@ -12,6 +12,7 @@
     16.04           Xenial          amd64, arm64
     18.04           Bionic          amd64, arm64
     20.04           Focal           amd64, arm64
+    22.04           Jammy           amd64, arm64
 ```
 
 * [Debian](#debian)
@@ -49,6 +50,7 @@
     33              x86_64, aarch64
     34              x86_64, aarch64
     35              x86_64
+    36              x86_64
 ```
 
 * [Amazon Linux](#amazon-linux)
@@ -57,6 +59,22 @@
     版本号         支持的体系结构
     1 (2018.03)    x86_64
     2              x86_64, aarch64
+```
+
+* [Alibaba Cloud Linux](#alibaba-cloud-linux)
+
+```
+    版本号         支持的体系结构
+    2              x86_64, aarch64
+    3              x86_64, aarch64
+```
+
+* [TencentOS Linux](#tencentos-linux)
+
+```
+    版本号         支持的体系结构
+    2              x86_64, aarch64
+    3              x86_64, aarch64
 ```
 
 * [Rocky Linux](#rocky-linux)
@@ -385,6 +403,78 @@ sudo yum repo-pkgs openresty-openresty list available
 
 请注意在 Amazon Linux 2 系统上缺少那些 `*-asan` RPM 包，因为 Amazon Linux 2 官方的 clang 包里缺少 `libclang_rt.a` 这个库文件）。
 
+# Alibaba Cloud Linux
+
+你可以在你的 Alibaba Cloud Linux （阿里云 Linux）系统里用下面命令添加 `openresty` 仓库：
+
+```bash
+# 新增仓库
+wget https://openresty.org/package/alinux/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
+
+# 更新索引
+sudo yum check-update
+```
+
+然后你就可以像下面这样安装包了，比如说安装 `openresty`：
+
+```bash
+sudo yum install -y openresty
+```
+
+如果想安装 `resty` 命令行工具，则像下面这样安装 `openresty-resty` 软件包：
+
+```bash
+sudo yum install -y openresty-resty
+```
+
+命令行工具 `opm` 在 `openresty-opm` 包里，而 `restydoc` 工具在
+`openresty-doc` 包里头。
+
+列出在 `openresty-openresty` 仓库中所有可用的包, 可以这样
+
+```bash
+sudo yum --disablerepo="*" --enablerepo="openresty" list
+```
+
+在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
+
+# TencentOS Linux
+
+你可以在你的 TencentOS Linux （腾讯云 Linux）系统里用下面命令添加 `openresty` 仓库：
+
+```bash
+# 新增仓库
+wget https://openresty.org/package/tlinux/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
+
+# 更新索引
+sudo yum check-update
+```
+
+然后你就可以像下面这样安装包了，比如说安装 `openresty`：
+
+```bash
+sudo yum install -y openresty
+```
+
+如果想安装 `resty` 命令行工具，则像下面这样安装 `openresty-resty` 软件包：
+
+```bash
+sudo yum install -y openresty-resty
+```
+
+命令行工具 `opm` 在 `openresty-opm` 包里，而 `restydoc` 工具在
+`openresty-doc` 包里头。
+
+列出在 `openresty-openresty` 仓库中所有可用的包, 可以这样
+
+```bash
+sudo yum --disablerepo="*" --enablerepo="openresty" list
+```
+
+在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
+
 # Rocky Linux
 
 你可以在你的 Rocky Linux 系统里用下面命令添加 `openresty` 仓库：
@@ -412,7 +502,7 @@ sudo yum install -y openresty-resty
 列出在 `openresty-openresty` 仓库中所有可用的包, 可以这样
 
 ```bash
-sudo yum repo-pkgs openresty-openresty list available
+sudo yum --disablerepo="*" --enablerepo="openresty" list
 ```
 
 在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
@@ -444,7 +534,7 @@ sudo yum install -y openresty-resty
 列出在 `openresty-openresty` 仓库中所有可用的包, 可以这样
 
 ```bash
-sudo yum repo-pkgs openresty-openresty list available
+sudo yum repo-pkgs openresty-openresty list
 ```
 
 在 [OpenResty RPM 包](rpm-packages.html) 页面能看到这些包更多的细节。
