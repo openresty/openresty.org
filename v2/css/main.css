@@ -721,6 +721,7 @@ header[role="header"] .enterprise-button .link-title {
   max-width: 100%;
   overflow-x: auto;
   position: relative;
+  white-space: pre-wrap;
 }
 #main .item .body p {
   margin-top: 20px;
