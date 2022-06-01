@@ -475,32 +475,38 @@ i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '&nbsp;</strong><a href="ann-1021004001.html">OpenResty 1.21.4.1</a><span>&nbsp;'
 -- line 7 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
+i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="ann-test-nginx-030.html">\n      <picture>\n        <source srcset="../images/test.webp" type="image/webp"/><img class="news-img" src="../images/test.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
+-- line 13 "news-cn.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
+i = i + 1 output[i] = '&nbsp;</strong><a href="ann-test-nginx-030.html">Test::Nginx 0.30</a><span>&nbsp;'
+-- line 13 "news-cn.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-rate-limit/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-rate-limit.png" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 10 "news-cn.tt2"
+-- line 16 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '</strong><span>&nbsp;'
--- line 10 "news-cn.tt2"
+-- line 16 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New blog post' }})
 i = i + 1 output[i] = '&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-rate-limit/?src=org_news" target="_blank">在 OpenResty Edge 中限制请求速率（使用自定义键）</a><span>&nbsp;'
--- line 10 "news-cn.tt2"
+-- line 16 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is published.' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-config-release/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-releases.png" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 13 "news-cn.tt2"
+-- line 19 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '</strong><span>&nbsp;'
--- line 13 "news-cn.tt2"
+-- line 19 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New blog post' }})
 i = i + 1 output[i] = '&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-config-release/?src=org_news" target="_blank">OpenResty Edge 中 Gateway Config 的版本控制和发布管理</a><span>&nbsp;'
--- line 13 "news-cn.tt2"
+-- line 19 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is published.' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/showman-google/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/showman-arch.png" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 16 "news-cn.tt2"
+-- line 22 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '</strong><span>&nbsp;'
--- line 16 "news-cn.tt2"
+-- line 22 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New blog post' }})
 i = i + 1 output[i] = '&nbsp;</span><a href="https://blog.openresty.com.cn/cn/showman-google/?src=org_news" target="_blank">如何从剧本文档自动生成演示谷歌搜索的视频（使用 OpenResty Showman）</a><span>&nbsp;'
--- line 16 "news-cn.tt2"
+-- line 22 "news-cn.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is published.' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n</div>'
 
@@ -522,32 +528,38 @@ i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '&nbsp;</strong><a href="ann-1021004001.html">OpenResty 1.21.4.1</a><span>&nbsp;'
 -- line 7 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
+i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="ann-test-nginx-030.html">\n      <picture>\n        <source srcset="../images/test.webp" type="image/webp"/><img class="news-img" src="../images/test.png"/>\n      </picture></a>\n    <div class="news-description"><strong class="news-hint">'
+-- line 13 "news-en.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
+i = i + 1 output[i] = '&nbsp;</strong><a href="ann-test-nginx-030.html">Test::Nginx 0.30</a><span>&nbsp;'
+-- line 13 "news-en.tt2"
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is now released!' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com/en/edge-rate-limit/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-rate-limit.png" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 10 "news-en.tt2"
+-- line 16 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '</strong><span>&nbsp;'
--- line 10 "news-en.tt2"
+-- line 16 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New blog post' }})
 i = i + 1 output[i] = '&nbsp;</span><a href="https://blog.openresty.com/en/edge-rate-limit/?src=org_news" target="_blank">Limit Request Rate by Custom Keys in OpenResty Edge</a><span>&nbsp;'
--- line 10 "news-en.tt2"
+-- line 16 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is published.' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com/en/ylang-intro-part4/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ylang-part4.png" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 13 "news-en.tt2"
+-- line 19 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '</strong><span>&nbsp;'
--- line 13 "news-en.tt2"
+-- line 19 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New blog post' }})
 i = i + 1 output[i] = '&nbsp;</span><a href="https://blog.openresty.com/en/ylang-intro-part4/?src=org_news" target="_blank">Ylang: Universal Language for eBPF, Stap+, GDB, and More (Part 4)</a><span>&nbsp;'
--- line 13 "news-en.tt2"
+-- line 19 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is published.' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n  <div class="news-item"><a href="https://blog.openresty.com/en/ylang-intro-part3/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ylang-part3.png" loading="lazy"/></a>\n    <div class="news-description"><strong class="news-hint">'
--- line 16 "news-en.tt2"
+-- line 22 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New!' }})
 i = i + 1 output[i] = '</strong><span>&nbsp;'
--- line 16 "news-en.tt2"
+-- line 22 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'New blog post' }})
 i = i + 1 output[i] = '&nbsp;</span><a href="https://blog.openresty.com/en/ylang-intro-part3/?src=org_news" target="_blank">Ylang: Universal Language for eBPF, Stap+, GDB, and More (Part 3)</a><span>&nbsp;'
--- line 16 "news-en.tt2"
+-- line 22 "news-en.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'is published.' }})
 i = i + 1 output[i] = '</span></div>\n  </div>\n</div>'
 
