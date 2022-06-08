@@ -18,6 +18,9 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK" style="cursor: pointer">OpenResty Edge</a></h2>
     <ul>
+      <li><a href="#-Pq4IUQTMrc" style="cursor: pointer">Configure HTTP basic auth in OpenResty Edge</a></li>
+      <li><a href="#Gn79prUXkE0" style="cursor: pointer">Create Custom Dynamic Metrics in OpenResty Edge</a></li>
+      <li><a href="#ps0KEUyQJrA" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#YKP091Y7sU0" style="cursor: pointer">Limit Request Rate by Custom Keys in OpenResty Edge</a></li>
       <li><a href="#XkPlx9If6sI" style="cursor: pointer">Gateway Config's Version Control &amp; Release Management in OpenResty Edge</a></li>
       <li><a href="#NIlOrqi-I8U" style="cursor: pointer">Set Different Host Headers for Upstream Requests in OpenResty Edge</a></li>
@@ -60,6 +63,12 @@
   <p id="eSfYLvVQMxw">Hello World HTTP Example in OpenResty/Nginx</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2 id="PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK">OpenResty Edge</h2>
+  <p id="-Pq4IUQTMrc">Configure HTTP basic auth in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/-Pq4IUQTMrc" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="Gn79prUXkE0">Create Custom Dynamic Metrics in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/Gn79prUXkE0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="ps0KEUyQJrA">Deleted video</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/ps0KEUyQJrA" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="YKP091Y7sU0">Limit Request Rate by Custom Keys in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/YKP091Y7sU0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="XkPlx9If6sI">Gateway Config's Version Control &amp; Release Management in OpenResty Edge</p>
