@@ -11,6 +11,6 @@
 This is a keepalive balancer module for nginx that implements cache for backend
 connections.
 
-Documentation: http://wiki.nginx.org/HttpUpstreamKeepaliveModule
+Documentation: https://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive
 
 Project page: http://mdounin.ru/hg/ngx_http_upstream_keepalive/

@@ -61,5 +61,5 @@ Percentage of the requests served within a certain time (ms)
 
 So on my laptop, for a single nginx worker, we've got 20k+ r/s. For comparison,
 HelloWorld servers using nginx + php-fpm 5.2.8 gives 4k r/s, Erlang R14B2 raw
-gen_tcp server gives 8k r/s, and [[node.js|http://nodejs.org/] v0.4.8 yields 5.7k
+gen_tcp server gives 8k r/s, and [node.js](http://nodejs.org/) v0.4.8 yields 5.7k
 r/s.
