@@ -49,8 +49,8 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     32              x86_64, aarch64
     33              x86_64, aarch64
     34              x86_64, aarch64
-    35              x86_64
-    36              x86_64
+    35              x86_64, aarch64
+    36              x86_64, aarch64
 ```
 
 * [Amazon Linux](#amazon-linux)
