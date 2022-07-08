@@ -51,42 +51,6 @@ header[role="header"] .site-name img {
   margin-left: -20px;
   margin-right: 12px;
 }
-header[role="banner"] {
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 36px;
-    padding-right: 36px;
-    background-color: #fff;
-
-    .ann {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .edge-title-text {
-        color: #333;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 16px;
-        letter-spacing: 0.03em;
-    }
-
-    .edge-phrase {
-        margin-left: 32px;
-        @media (max-width: @screen-md) {
-            display: none;
-        }
-    }
-
-    .edge-demo {
-        background: #1A48A5;
-        box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
-        color: #fff;
-    }
-}
 
 #intro {}
 #wrapper {
@@ -253,53 +217,6 @@ header[role="header"] {
 
 }
 
-.banner {
-    .edge-icon {
-        display: inline-flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 24px;
-        height: 24px;
-        background: #1A48A5;
-        box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
-        border-radius: 4px;
-    }
-    .edge-title-text {
-        text-transform: uppercase;
-        color: #FDFDFD;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 16px;
-        letter-spacing: 0.03em;
-        margin-left: 8px;
-    }
-    .edge-demo {
-        text-decoration: none;
-        font-family: 'Open Sans';
-        padding: 10px 16px;
-        background: #FFFFFF;
-        box-shadow: inset 0px -1px 0.5px rgba(14, 14, 44, 0.4);
-        border-radius: 8px;
-        color: #1A48A5;
-        text-transform: uppercase;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 16px;
-        letter-spacing: 0.04em;
-        text-align: center;
-        border: none;
-        width: max-content;
-        text-decoration: none;
-    }
-    .edge-viewmore {
-        margin-left: 12px;
-        font-family: 'Open Sans';
-        color: #fff;
-    }
-}
-
-
 /*=====================================================================================
   MAIN
 =======================================================================================*/
@@ -392,87 +309,6 @@ header[role="header"] {
 
         }
 
-    }
-
-    .banner {
-        background: linear-gradient(89.96deg, rgba(26, 72, 165, 0) 0.04%, #437BED 0.05%, #1A48A5 99.95%);
-        border: 1px solid #F2F2F2;
-        box-sizing: border-box;
-        border-radius: 8px;
-        padding: 25px 0 25px 32px;
-        display: flex;
-        margin: 0 40px 20px 40px;
-        height: 189px;
-        overflow: hidden;
-        position: relative;
-        @media (max-width: @screen-md) {
-            padding-left: 20px;
-            padding-right: 10px;
-        }
-
-        .banner-left {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: calc(100% - 303px);
-            @media (max-width: @screen-lg) {
-                width: 100%;
-            }
-        }
-        .banner-right {
-            max-width: 300px;
-            position: absolute;
-            right: -7px;
-            @media (max-width: @screen-lg) {
-                display: none;
-            }
-        }
-
-        .screenshot-bar {
-            height: 1.15rem;
-            border-radius: 8px 8px 0 0;
-            margin-bottom: -1px;
-            display: flex;
-            align-items: center;
-            padding-left: 11px;
-            background: #1A48A5;
-
-            .dot {
-                width: 7px;
-                height: 7px;
-                border-radius: 50%;
-                background-color: #8fb5e7;
-
-                ~.dot {
-                    margin-left: 6px;
-                }
-            }
-        }
-
-        .screenshot-img img {
-            width: 100%;
-        }
-
-        .edge-title {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-        .slogan {
-            font-weight: 600;
-            font-size: 20px;
-            line-height: 27px;
-            color: #FDFDFD;
-            margin-bottom: 12px;
-            @media (max-width: 1300px) {
-                font-size: 17px;
-                line-height: 22px;
-            }
-            @media (max-width: @screen-md) {
-                font-size: 16px;
-                line-height: 24px;
-            }
-        }
     }
 
     .news {

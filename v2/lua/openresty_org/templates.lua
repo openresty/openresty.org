@@ -277,41 +277,23 @@ template_map['header.tt2'] = function (context)
     local output = {}
     local i = 0
 
-i = i + 1 output[i] = '<header role="banner" class="banner">\n        <div class="ann">\n                <div class="edge-icon"><img src="/images/white-rocket.svg"/></div>\n                <div class="edge-title-text">OpenResty Edge</div>\n                <div class="edge-phrase">'
--- line 5 "header.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { '️📣  Your next generation gateway management platform for multi-cloud and microservices' }})
-i = i + 1 output[i] = '</div>\n        </div>\n        '
--- line 9 "header.tt2"
-if tt2_true(stash_get(stash, 'lang') == 'cn') then
-i = i + 1 output[i] = '<a role="button" class="edge-demo" href="https://openresty.com.cn/cn/edge/request-demo">'
--- line 7 "header.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Request Demo' }})
-i = i + 1 output[i] = '</a>\n        '
-else
-
-i = i + 1 output[i] = '<a role="button" class="edge-demo" href="https://openresty.com/en/edge/request-demo">'
--- line 8 "header.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Request Demo' }})
-i = i + 1 output[i] = '</a>\n        '
-end
-
-i = i + 1 output[i] = '\n</header>\n<header role="header">\n        <p class="site-name left">\n            <a href=".">\n                <img src="/images/logo.png" width="64">\n            </a>\n        </p>\n\n        <p class="site-name left">\n                <a href=".">OpenResty<span class="trade">&reg;</span></a>\n                <small>'
--- line 20 "header.tt2"
+i = i + 1 output[i] = '<header role="header">\n        <p class="site-name left">\n            <a href=".">\n                <img src="/images/logo.png" width="64">\n            </a>\n        </p>\n\n        <p class="site-name left">\n                <a href=".">OpenResty<span class="trade">&reg;</span></a>\n                <small>'
+-- line 10 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Scalable Web Platform by Extending NGINX with Lua' }})
 i = i + 1 output[i] = '</small>\n        </p><!-- / site-name -->\n        <p class="right link">\n                <a href="https://github.com/openresty/" title="Contribute on GitHub">\n                        <img src="/images/ico-github.png">\n                        <span class="link-title">'
--- line 25 "header.tt2"
+-- line 15 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Contribute on GitHub' }})
 i = i + 1 output[i] = '</span>\n                </a>\n                <a href="https://forum.openresty.us/" title="'
--- line 27 "header.tt2"
+-- line 17 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Official Forum' }})
 i = i + 1 output[i] = '">\n                        <img class="dark-img" src="/images/flarum.png">\n                        <span class="link-title">'
--- line 29 "header.tt2"
+-- line 19 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Official Forum' }})
 i = i + 1 output[i] = '</span>\n                </a>\n                <a role="button" href="https://openresty.com" class="enterprise-button" type="button" title="'
--- line 31 "header.tt2"
+-- line 21 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty Enterprise' }})
 i = i + 1 output[i] = '">\n                        <img src="/images/rocket.svg">\n                        <span class="link-title">'
--- line 33 "header.tt2"
+-- line 23 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty Enterprise' }})
 i = i + 1 output[i] = '</span>\n                </a>\n        </p><!-- / links -->\n</header>\n'
 
@@ -383,63 +365,39 @@ i = i + 1 output[i] = stash_get(stash, 'main_menu')
 i = i + 1 output[i] = '\n			</nav><!-- / nav -->\n\n'
 -- line 45 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'main-menu-buttons.tt2')
-i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n\n		<section id="main">\n		<!-- enterprise banner -->\n		<div class="banner">\n			<div class="banner-left">\n				<div class="edge-title">\n					<div class="edge-icon"><img src="/images/white-rocket.svg"/></div>\n					<div class="edge-title-text">OpenResty Edge</div>\n				</div>\n				<p class="slogan">'
--- line 57 "index.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Next generation gateway management platform for multi-cloud and microservices' }})
-i = i + 1 output[i] = '</p>\n				'
--- line 62 "index.tt2"
+i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n\n		<section id="main">\n'
+-- line 51 "index.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
-i = i + 1 output[i] = '<div><a role="button" class="edge-demo" href="https://openresty.com.cn/cn/edge/request-demo">'
--- line 58 "index.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Request Demo' }})
-i = i + 1 output[i] = '</a>\n					<a role="button" class="edge-viewmore" href="https://openresty.com.cn/cn/edge/">'
--- line 59 "index.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'View more' }})
-i = i + 1 output[i] = '</a></div>\n				'
-else
-
-i = i + 1 output[i] = '<div><a role="button" class="edge-demo" href="https://openresty.com/en/edge/request-demo">'
--- line 60 "index.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Request Demo' }})
-i = i + 1 output[i] = '</a>\n					<a role="button" class="edge-viewmore" href="https://openresty.com/en/edge/">'
--- line 61 "index.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'View more' }})
-i = i + 1 output[i] = '</a></div>\n				'
-end
-
-i = i + 1 output[i] = '\n			</div>\n			<div class="banner-right">\n				<div class="screenshot-bar"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>\n				<div class="screenshot-img"><img src="/images/edge-screenshot.png"/></div>\n			</div>\n		</div>\n'
--- line 70 "index.tt2"
-if tt2_true(stash_get(stash, 'lang') == 'cn') then
--- line 70 "index.tt2"
+-- line 51 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'news-cn.tt2')
 else
--- line 70 "index.tt2"
+-- line 51 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'news-en.tt2')
 end
 
 
 i = i + 1 output[i] = '\n\n'
--- line 77 "index.tt2"
+-- line 58 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'post.tt2')
 i = i + 1 output[i] = '\n'
--- line 79 "index.tt2"
+-- line 60 "index.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
--- line 79 "index.tt2"
+-- line 60 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'posts-slide-cn.tt2')
 else
--- line 79 "index.tt2"
+-- line 60 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'posts-slide-en.tt2')
 end
 
 
 i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n'
--- line 87 "index.tt2"
+-- line 68 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
 i = i + 1 output[i] = '\n\n	</div><!-- / wrapper -->\n\n'
--- line 91 "index.tt2"
+-- line 72 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'footer.tt2')
 i = i + 1 output[i] = '\n\n'
--- line 93 "index.tt2"
+-- line 74 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'heat-map.tt2')
 i = i + 1 output[i] = '\n\n</body>\n</html>\n'
 

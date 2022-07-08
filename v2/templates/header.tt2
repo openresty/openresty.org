@@ -1,13 +1,3 @@
-<header role="banner" class="banner">
-        <div class="ann">
-                <div class="edge-icon"><img src="/images/white-rocket.svg"/></div>
-                <div class="edge-title-text">OpenResty Edge</div>
-                <div class="edge-phrase">[% c.l("️📣  Your next generation gateway management platform for multi-cloud and microservices") %]</div>
-        </div>
-        [% IF lang == 'cn' %]<a role="button" class="edge-demo" href="https://openresty.com.cn/cn/edge/request-demo">[% c.l("Request Demo") %]</a>
-        [% ELSE; %]<a role="button" class="edge-demo" href="https://openresty.com/en/edge/request-demo">[% c.l("Request Demo") %]</a>
-        [% END %]
-</header>
 <header role="header">
         <p class="site-name left">
             <a href=".">
