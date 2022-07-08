@@ -47,25 +47,6 @@
 		</div><!-- / sidebar left -->
 
 		<section id="main">
-		<!-- enterprise banner -->
-		<div class="banner">
-			<div class="banner-left">
-				<div class="edge-title">
-					<div class="edge-icon"><img src="/images/white-rocket.svg"/></div>
-					<div class="edge-title-text">OpenResty Edge</div>
-				</div>
-				<p class="slogan">[% c.l("Next generation gateway management platform for multi-cloud and microservices") %]</p>
-				[% IF lang == 'cn' %]<div><a role="button" class="edge-demo" href="https://openresty.com.cn/cn/edge/request-demo">[% c.l("Request Demo") %]</a>
-					<a role="button" class="edge-viewmore" href="https://openresty.com.cn/cn/edge/">[% c.l("View more") %]</a></div>
-				[% ELSE; %]<div><a role="button" class="edge-demo" href="https://openresty.com/en/edge/request-demo">[% c.l("Request Demo") %]</a>
-					<a role="button" class="edge-viewmore" href="https://openresty.com/en/edge/">[% c.l("View more") %]</a></div>
-				[% END %]
-			</div>
-			<div class="banner-right">
-				<div class="screenshot-bar"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-				<div class="screenshot-img"><img src="/images/edge-screenshot.png"/></div>
-			</div>
-		</div>
 
 [%- IF lang == 'cn';
         PROCESS 'news-cn.tt2';

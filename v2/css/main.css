@@ -232,40 +232,6 @@ header[role="header"] .site-name img {
   margin-left: -20px;
   margin-right: 12px;
 }
-header[role="banner"] {
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 36px;
-  padding-right: 36px;
-  background-color: #fff;
-}
-header[role="banner"] .ann {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-header[role="banner"] .edge-title-text {
-  color: #333;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16px;
-  letter-spacing: 0.03em;
-}
-header[role="banner"] .edge-phrase {
-  margin-left: 32px;
-}
-@media (max-width: 992px) {
-  header[role="banner"] .edge-phrase {
-    display: none;
-  }
-}
-header[role="banner"] .edge-demo {
-  background: #1A48A5;
-  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
-  color: #fff;
-}
 #wrapper {
   display: flex;
   align-items: stretch;
@@ -518,48 +484,6 @@ header[role="header"] .enterprise-button .link-title {
   background-color: #fff;
   outline: none;
 }
-.banner .edge-icon {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 24px;
-  background: #1A48A5;
-  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
-  border-radius: 4px;
-}
-.banner .edge-title-text {
-  text-transform: uppercase;
-  color: #FDFDFD;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.03em;
-  margin-left: 8px;
-}
-.banner .edge-demo {
-  font-family: 'Open Sans';
-  padding: 10px 16px;
-  background: #FFFFFF;
-  box-shadow: inset 0px -1px 0.5px rgba(14, 14, 44, 0.4);
-  border-radius: 8px;
-  color: #1A48A5;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.04em;
-  text-align: center;
-  border: none;
-  width: max-content;
-  text-decoration: none;
-}
-.banner .edge-viewmore {
-  margin-left: 12px;
-  font-family: 'Open Sans';
-  color: #fff;
-}
 /*=====================================================================================
   MAIN
 =======================================================================================*/
@@ -714,7 +638,7 @@ header[role="header"] .enterprise-button .link-title {
 @media (min-width: 480px) and (max-width: 991px) {
   #main .item .body {
     /* tablets */
-    margin: 0.5em;
+    margin: .5em;
   }
 }
 #main .item .body pre {
@@ -772,90 +696,6 @@ header[role="header"] .enterprise-button .link-title {
   float: left;
   margin-left: -20px;
   padding-right: 4px;
-}
-#main .banner {
-  background: linear-gradient(89.96deg, rgba(26, 72, 165, 0) 0.04%, #437BED 0.05%, #1A48A5 99.95%);
-  border: 1px solid #F2F2F2;
-  box-sizing: border-box;
-  border-radius: 8px;
-  padding: 25px 0 25px 32px;
-  display: flex;
-  margin: 0 40px 20px 40px;
-  height: 189px;
-  overflow: hidden;
-  position: relative;
-}
-@media (max-width: 992px) {
-  #main .banner {
-    padding-left: 20px;
-    padding-right: 10px;
-  }
-}
-#main .banner .banner-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: calc(100% - 303px);
-}
-@media (max-width: 1200px) {
-  #main .banner .banner-left {
-    width: 100%;
-  }
-}
-#main .banner .banner-right {
-  max-width: 300px;
-  position: absolute;
-  right: -7px;
-}
-@media (max-width: 1200px) {
-  #main .banner .banner-right {
-    display: none;
-  }
-}
-#main .banner .screenshot-bar {
-  height: 1.15rem;
-  border-radius: 8px 8px 0 0;
-  margin-bottom: -1px;
-  display: flex;
-  align-items: center;
-  padding-left: 11px;
-  background: #1A48A5;
-}
-#main .banner .screenshot-bar .dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #8fb5e7;
-}
-#main .banner .screenshot-bar .dot ~ .dot {
-  margin-left: 6px;
-}
-#main .banner .screenshot-img img {
-  width: 100%;
-}
-#main .banner .edge-title {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-}
-#main .banner .slogan {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 27px;
-  color: #FDFDFD;
-  margin-bottom: 12px;
-}
-@media (max-width: 1300px) {
-  #main .banner .slogan {
-    font-size: 17px;
-    line-height: 22px;
-  }
-}
-@media (max-width: 992px) {
-  #main .banner .slogan {
-    font-size: 16px;
-    line-height: 24px;
-  }
 }
 #main .news {
   padding: 0 40px 20px 40px;
