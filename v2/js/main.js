@@ -49,6 +49,29 @@ $(document).ready(function() {
 		$('#blog-iframe').attr('src', '');
 	});
 
+	const path = location.pathname;
+	const isIndexOrDownload = path.endsWith('/cn/') || path.endsWith('/en/') || path.endsWith('/download.html');
+
+	if (isIndexOrDownload) {
+		$('.xray-modal').removeClass('hide');
+	}
+
+	$('.xray-modal .btn-close').on('click', () => {
+    $('.xray-modal').addClass('hide');
+  });
+
+	$('.form-xray-request-demo').on('submit', function(event) {
+    event.preventDefault();
+    const urlPrefix = location.pathname.startsWith('/en/') ? 'https://openresty.com/en' : 'https://openresty.com.cn/cn';
+    window.location.href = `${urlPrefix}/xray/request-demo/?${$(this).serialize()}`;
+  });
+
+	$('.form-xray-request-demo input').on('keydown', (event) => {
+		if (event.keyCode == 13) {
+			event.preventDefault();
+			$('.form-xray-request-demo').submit();
+		}
+  });
 });
 
 document.querySelectorAll('pre code:not([class])').forEach(function ($) {

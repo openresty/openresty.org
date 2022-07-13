@@ -332,14 +332,17 @@ i = i + 1 output[i] = context.process(context, 'old-permlink-js.tt2')
 i = i + 1 output[i] = '\n        </script>\n</head>\n<body>\n\n'
 -- line 22 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'header.tt2')
+i = i + 1 output[i] = '\n\n'
+-- line 24 "index.tt2"
+i = i + 1 output[i] = context.process(context, 'xray-modal.tt2')
 i = i + 1 output[i] = '\n\n	<section id="intro">\n		<div class="text">\n			<p>'
--- line 26 "index.tt2"
+-- line 28 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT.' }})
 i = i + 1 output[i] = '</p>\n			<form action="search.html">\n			  <fieldset>\n			    <input type="search" name="query" id="search"'
--- line 32 "index.tt2"
+-- line 34 "index.tt2"
 if tt2_true(stash_get(stash, 'search_query')) then
 i = i + 1 output[i] = '\n			        value="'
--- line 31 "index.tt2"
+-- line 33 "index.tt2"
 
 -- FILTER
 local value
@@ -357,47 +360,47 @@ i = i + 1 output[i] = '"'
 end
 
 i = i + 1 output[i] = '\n			        placeholder="'
--- line 33 "index.tt2"
+-- line 35 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Search OpenResty.org' }})
 i = i + 1 output[i] = '" required>\n			  </fieldset>\n			</form>\n		</div><!-- / text -->\n	</section><!-- / intro -->\n\n	<div id="wrapper">\n		<div class="sidebar sleft">\n			<nav id="nav">\n'
--- line 42 "index.tt2"
+-- line 44 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, 'main_menu')
 i = i + 1 output[i] = '\n			</nav><!-- / nav -->\n\n'
--- line 45 "index.tt2"
+-- line 47 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'main-menu-buttons.tt2')
 i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n\n		<section id="main">\n'
--- line 51 "index.tt2"
+-- line 53 "index.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
--- line 51 "index.tt2"
+-- line 53 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'news-cn.tt2')
 else
--- line 51 "index.tt2"
+-- line 53 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'news-en.tt2')
 end
 
 
 i = i + 1 output[i] = '\n\n'
--- line 58 "index.tt2"
+-- line 60 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'post.tt2')
 i = i + 1 output[i] = '\n'
--- line 60 "index.tt2"
+-- line 62 "index.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
--- line 60 "index.tt2"
+-- line 62 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'posts-slide-cn.tt2')
 else
--- line 60 "index.tt2"
+-- line 62 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'posts-slide-en.tt2')
 end
 
 
 i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n'
--- line 68 "index.tt2"
+-- line 70 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
 i = i + 1 output[i] = '\n\n	</div><!-- / wrapper -->\n\n'
--- line 72 "index.tt2"
+-- line 74 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'footer.tt2')
 i = i + 1 output[i] = '\n\n'
--- line 74 "index.tt2"
+-- line 76 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'heat-map.tt2')
 i = i + 1 output[i] = '\n\n</body>\n</html>\n'
 
@@ -553,42 +556,45 @@ i = i + 1 output[i] = stash_get(stash, 'title')
 i = i + 1 output[i] = '</title>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">\n	<link href=\'https://openresty.org/css/fonts.css\' rel=\'stylesheet\' type=\'text/css\'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel="stylesheet" type="text/less" href="/css/main.less">\n	<script src="/js/less.js"></script>\n	-->\n	<link rel="stylesheet" type="text/css" href="/css/main.css">\n	<link rel="stylesheet" type="text/css" href="/css/github.css">\n	<link rel="stylesheet" type="text/css" href="/css/jquery.modal.css">\n</head>\n<body>\n\n'
 -- line 19 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'header.tt2')
+i = i + 1 output[i] = '\n\n'
+-- line 21 "page.tt2"
+i = i + 1 output[i] = context.process(context, 'xray-modal.tt2')
 i = i + 1 output[i] = '\n\n	<div id="wrapper">\n		<div class="sidebar sleft">\n			<nav id="nav">\n'
--- line 24 "page.tt2"
+-- line 26 "page.tt2"
 i = i + 1 output[i] = stash_get(stash, 'main_menu')
 i = i + 1 output[i] = '\n			</nav><!-- / nav -->\n\n'
--- line 27 "page.tt2"
+-- line 29 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'main-menu-buttons.tt2')
 i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n\n		<section id="main">\n'
--- line 33 "page.tt2"
+-- line 35 "page.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
--- line 33 "page.tt2"
+-- line 35 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'news-cn.tt2')
 else
--- line 33 "page.tt2"
+-- line 35 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'news-en.tt2')
 end
 
 
 i = i + 1 output[i] = '\n\n'
--- line 40 "page.tt2"
+-- line 42 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'post.tt2')
 i = i + 1 output[i] = '\n'
--- line 42 "page.tt2"
+-- line 44 "page.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
--- line 42 "page.tt2"
+-- line 44 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'posts-slide-cn.tt2')
 else
--- line 42 "page.tt2"
+-- line 44 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'posts-slide-en.tt2')
 end
 
 
 i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n'
--- line 50 "page.tt2"
+-- line 52 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
 i = i + 1 output[i] = '\n	</div><!-- / wrapper -->\n\n'
--- line 53 "page.tt2"
+-- line 55 "page.tt2"
 i = i + 1 output[i] = context.process(context, 'footer.tt2')
 i = i + 1 output[i] = '\n\n</body>\n</html>\n'
 
@@ -884,6 +890,20 @@ template_map['videos-en.tt2'] = function (context)
     local i = 0
 
 i = i + 1 output[i] = '\n<div id="video-tutorials">\n  <div class="play-list">\n    <h2><a href="#PLlR4WakbzQp0iUvHwJeBcG5MKWgGa_ahU" style="cursor: pointer">OpenResty Tutorials</a></h2>\n    <ul>\n      <li><a href="#Hu68mQDKXCo" style="cursor: pointer">Install OpenResty on Ubuntu 20.04 via apt-get</a></li>\n      <li><a href="#4VQP7eKq4oA" style="cursor: pointer">Streaming HTTP Response Output in OpenResty</a></li>\n      <li><a href="#EP7c0BM2yNo" style="cursor: pointer">Precompile Lua Modules into LuaJIT Bytecode to Speedup OpenResty Startup</a></li>\n      <li><a href="#VkRYW_qLoME" style="cursor: pointer">Measure Execution Time of Lua Code Correctly in OpenResty</a></li>\n      <li><a href="#_PjpdUEeKeM" style="cursor: pointer">Lookup OpenResty Documentation on Terminal with restydoc</a></li>\n      <li><a href="#AVR5Ft6FXTo" style="cursor: pointer">Share Data Across Requests Served by OpenResty</a></li>\n      <li><a href="#B5lfAZunxfc" style="cursor: pointer">Install OpenResty on CentOS 8 via dnf</a></li>\n      <li><a href="#L1c7aw4mSOo" style="cursor: pointer">OpenResty\'s resty Command-Line Utility Demo</a></li>\n      <li><a href="#vfYxOMl5LVY" style="cursor: pointer">Write Your Own Lua Modules in OpenResty/Nginx Applications</a></li>\n      <li><a href="#eSfYLvVQMxw" style="cursor: pointer">Hello World HTTP Example in OpenResty/Nginx</a></li>\n    </ul>\n  </div>\n  <div class="play-list">\n    <h2><a href="#PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK" style="cursor: pointer">OpenResty Edge</a></h2>\n    <ul>\n      <li><a href="#-Pq4IUQTMrc" style="cursor: pointer">Configure HTTP basic auth in OpenResty Edge</a></li>\n      <li><a href="#Gn79prUXkE0" style="cursor: pointer">Create Custom Dynamic Metrics in OpenResty Edge</a></li>\n      <li><a href="#YKP091Y7sU0" style="cursor: pointer">Limit Request Rate by Custom Keys in OpenResty Edge</a></li>\n      <li><a href="#XkPlx9If6sI" style="cursor: pointer">Gateway Config\'s Version Control &amp; Release Management in OpenResty Edge</a></li>\n      <li><a href="#NIlOrqi-I8U" style="cursor: pointer">Set Different Host Headers for Upstream Requests in OpenResty Edge</a></li>\n      <li><a href="#Z7zeYz2zDbQ" style="cursor: pointer">Redirect to different URIs Based on Clients\' Language Settings (OpenResty Edge)</a></li>\n      <li><a href="#H1T-019IK2k" style="cursor: pointer">Enforce the use of SSL in websites via OpenResty Edge</a></li>\n      <li><a href="#OBrJlaAPv1k" style="cursor: pointer">Issue Free SSL Certificates via Let\'s Encrypt in OpenResty Edge</a></li>\n      <li><a href="#DV-uPZ-I5og" style="cursor: pointer">Upload SSL Certificates for HTTPS Sites in OpenResty Edge</a></li>\n      <li><a href="#9Dy43JXaxKQ" style="cursor: pointer">Purge HTTP Cache in OpenResty Edge</a></li>\n      <li><a href="#g8H0HYM3AdM" style="cursor: pointer">Enable HTTP Cache in OpenResty Edge</a></li>\n      <li><a href="#fgtiOYrdsE4" style="cursor: pointer">Set up a Simplest Reverse Proxy and Load Balancer with OpenResty Edge</a></li>\n    </ul>\n  </div>\n  <div class="play-list">\n    <h2><a href="#PLlR4WakbzQp14ovGVZCtTKdfX3u4u7PNR" style="cursor: pointer">OpenResty Showman</a></h2>\n    <ul>\n      <li><a href="#i_n53z_zE3A" style="cursor: pointer">How to Auto-Generate Demo Videos for Google Search from Screenplay Docs (via OpenResty Showman)</a></li>\n      <li><a href="#y_g6B4aRc5o" style="cursor: pointer">Auto-Generate Demo Videos for Baidu Search from Screenplay Documents (in Chinese)</a></li>\n      <li><a href="#oew5RYUPMYY" style="cursor: pointer">How We Generate Videos from Screenplay Files</a></li>\n    </ul>\n  </div>\n  <h2 id="PLlR4WakbzQp0iUvHwJeBcG5MKWgGa_ahU">OpenResty Tutorials</h2>\n  <p id="Hu68mQDKXCo">Install OpenResty on Ubuntu 20.04 via apt-get</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/Hu68mQDKXCo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="4VQP7eKq4oA">Streaming HTTP Response Output in OpenResty</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/4VQP7eKq4oA" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="EP7c0BM2yNo">Precompile Lua Modules into LuaJIT Bytecode to Speedup OpenResty Startup</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/EP7c0BM2yNo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="VkRYW_qLoME">Measure Execution Time of Lua Code Correctly in OpenResty</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/VkRYW_qLoME" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="_PjpdUEeKeM">Lookup OpenResty Documentation on Terminal with restydoc</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/_PjpdUEeKeM" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="AVR5Ft6FXTo">Share Data Across Requests Served by OpenResty</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/AVR5Ft6FXTo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="B5lfAZunxfc">Install OpenResty on CentOS 8 via dnf</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/B5lfAZunxfc" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="L1c7aw4mSOo">OpenResty\'s resty Command-Line Utility Demo</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/L1c7aw4mSOo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="vfYxOMl5LVY">Write Your Own Lua Modules in OpenResty/Nginx Applications</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/vfYxOMl5LVY" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="eSfYLvVQMxw">Hello World HTTP Example in OpenResty/Nginx</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <h2 id="PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK">OpenResty Edge</h2>\n  <p id="-Pq4IUQTMrc">Configure HTTP basic auth in OpenResty Edge</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/-Pq4IUQTMrc" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="Gn79prUXkE0">Create Custom Dynamic Metrics in OpenResty Edge</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/Gn79prUXkE0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="YKP091Y7sU0">Limit Request Rate by Custom Keys in OpenResty Edge</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/YKP091Y7sU0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="XkPlx9If6sI">Gateway Config\'s Version Control &amp; Release Management in OpenResty Edge</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/XkPlx9If6sI" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="NIlOrqi-I8U">Set Different Host Headers for Upstream Requests in OpenResty Edge</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/NIlOrqi-I8U" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="Z7zeYz2zDbQ">Redirect to different URIs Based on Clients\' Language Settings (OpenResty Edge)</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/Z7zeYz2zDbQ" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="H1T-019IK2k">Enforce the use of SSL in websites via OpenResty Edge</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/H1T-019IK2k" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="OBrJlaAPv1k">Issue Free SSL Certificates via Let\'s Encrypt in OpenResty Edge</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/OBrJlaAPv1k" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="DV-uPZ-I5og">Upload SSL Certificates for HTTPS Sites in OpenResty Edge</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/DV-uPZ-I5og" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="9Dy43JXaxKQ">Purge HTTP Cache in OpenResty Edge</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/9Dy43JXaxKQ" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="g8H0HYM3AdM">Enable HTTP Cache in OpenResty Edge</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/g8H0HYM3AdM" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="fgtiOYrdsE4">Set up a Simplest Reverse Proxy and Load Balancer with OpenResty Edge</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/fgtiOYrdsE4" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <h2 id="PLlR4WakbzQp14ovGVZCtTKdfX3u4u7PNR">OpenResty Showman</h2>\n  <p id="i_n53z_zE3A">How to Auto-Generate Demo Videos for Google Search from Screenplay Docs (via OpenResty Showman)</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/i_n53z_zE3A" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="y_g6B4aRc5o">Auto-Generate Demo Videos for Baidu Search from Screenplay Documents (in Chinese)</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/y_g6B4aRc5o" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n  <p id="oew5RYUPMYY">How We Generate Videos from Screenplay Files</p>\n  <iframe width="645" height="360" src="https://www.youtube.com/embed/oew5RYUPMYY" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>\n</div>'
+
+    return output
+end
+
+-- xray-modal.tt2
+template_map['xray-modal.tt2'] = function (context)
+    if not context then
+        return error("Lemplate function called without context\n")
+    end
+    local stash = context.stash
+    local output = {}
+    local i = 0
+
+i = i + 1 output[i] = '<div class="xray-modal hide">\n  <div class="xray-modal-content">\n    <div class="header">\n      <div class="header-icon">\n        <div class="btn-violet">\n          <img src="/images/search.svg"/>\n        </div>\n        <div class="product-name">OpenResty XRay</div>\n      </div>\n      <div class="header-title">Advanced observability built for OpenResty and more</div>\n      <div class="btn-close">\n        <span>&times;</span>\n      </div>\n    </div>\n    <div class="content">\n      <div class="seperator">\n        <hr/>\n        <div class="seperator-text">limited time offer</div>\n        <hr/>\n      </div>\n      <div class="form-title">\n        <span>Request </span>\n        <span class="text-violet">TRIAL</span>\n        <span> today and receive a diagnostic </span>\n        <span class="text-violet">REPORT</span>\n      </div>\n      <form class="form-xray-request-demo">\n        <div class="form-field-item">\n          <input class="input-name" name="name" type="text" placeholder=\'Enter your full name\'>\n        </div>\n        <div class="form-field-item">\n          <input name="email" type="email" placeholder=\'Enter your business email\'>\n        </div>\n        <button class="form-next-button" type="submit">Submit</button>\n      </form>\n    </div>\n  </div>\n</div>\n'
 
     return output
 end

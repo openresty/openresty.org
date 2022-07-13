@@ -21,6 +21,8 @@
 
 [% PROCESS 'header.tt2' %]
 
+[% PROCESS 'xray-modal.tt2' %]
+
 	<section id="intro">
 		<div class="text">
 			<p>[% c.l("OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT.") %]</p>

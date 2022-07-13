@@ -941,3 +941,192 @@ hr.footer-sep {
   width: 100%;
   height: 100%;
 }
+/*=====================================================================================
+  XRAY MODAL
+=======================================================================================*/
+.hide {
+  display: none;
+}
+.xray-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+.xray-modal-content {
+  border-radius: 8px;
+  max-width: 540px;
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  margin: 88px auto 60px auto;
+}
+.xray-modal-content .header {
+  border-radius: 0.3rem 0.3rem 0 0;
+  height: 270px;
+  background-image: url('../images/background.png');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.xray-modal-content .header .header-icon {
+  display: flex;
+  align-items: center;
+}
+.xray-modal-content .header .header-icon .btn-violet {
+  border: none;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 0.25rem;
+  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
+  background: #481AA5;
+  color: #fff;
+  padding: 10px;
+}
+.xray-modal-content .header .header-icon .btn-violet img {
+  width: 14px;
+  height: 14px;
+}
+.xray-modal-content .header .product-name {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+.xray-modal-content .header .header-title {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  line-height: 130%;
+  max-width: 360px;
+  font-weight: bold;
+  text-align: center;
+}
+.xray-modal-content .header .btn-close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 1.5rem;
+  right: 1.5rem;
+  cursor: pointer;
+  box-shadow: -2px -4px 4px rgba(0, 0, 0, 0.1), 4px 6px 20px rgba(0, 0, 0, 0.15);
+  padding: 18px;
+  border-radius: .5rem;
+}
+.xray-modal-content .header .btn-close span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+}
+@media (max-width: 767px) {
+  .xray-modal-content .header {
+    height: 10rem;
+  }
+  .xray-modal-content .header .button-violet img {
+    width: 10px;
+    height: 10px;
+  }
+  .xray-modal-content .header .header-title {
+    font-size: 1.125rem;
+    max-width: 270px;
+  }
+  .xray-modal-content .header .btn-close {
+    padding: 0.5rem;
+  }
+}
+.xray-modal-content .content {
+  padding: 2.25rem 0 3.75rem 0;
+  max-width: 360px;
+  margin: 0 auto;
+}
+.xray-modal-content .content .seperator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.xray-modal-content .content .seperator hr {
+  width: 120px;
+  margin: 0;
+  display: block;
+}
+.xray-modal-content .content .seperator .seperator-text {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  color: #481AA5;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+.xray-modal-content .content .form-title {
+  text-align: center;
+  padding: 2.25rem 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.xray-modal-content .content .form-title .text-violet {
+  color: #481AA5;
+}
+.xray-modal-content .content .form-field-item {
+  margin-bottom: 24px;
+}
+.xray-modal-content .content .form-field-item input {
+  width: 100%;
+  max-width: 310px;
+  outline: none;
+  border: 1px solid #f6f6f6;
+  padding: 14px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 140%;
+  background: #f6f6f6;
+  transition: all 0.2s ease;
+}
+.xray-modal-content .content .form-field-item input:focus {
+  background: #FFFFFF;
+  border: 1px solid #1A48A5;
+  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+}
+.xray-modal-content .content .form-next-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 30px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  line-height: 180%;
+  background: #481AA5;
+  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
+  border-radius: 8px;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .xray-modal-content .content {
+    padding: 1.5rem 1.5rem 2.25rem 1.5rem;
+  }
+  .xray-modal-content .content .form-title {
+    padding: 1.5rem 0;
+    font-size: 1.125rem;
+    line-height: 150%;
+  }
+  .xray-modal-content .content form input {
+    padding: 1rem 1.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .xray-modal-content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
