@@ -18,6 +18,8 @@
 
 [% PROCESS 'header.tt2' %]
 
+[% PROCESS 'xray-modal.tt2' %]
+
 	<div id="wrapper">
 		<div class="sidebar sleft">
 			<nav id="nav">

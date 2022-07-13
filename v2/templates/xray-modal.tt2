@@ -1,0 +1,38 @@
+<div class="xray-modal hide">
+  <div class="xray-modal-content">
+    <div class="header">
+      <div class="header-icon">
+        <div class="btn-violet">
+          <img src="/images/search.svg"/>
+        </div>
+        <div class="product-name">OpenResty XRay</div>
+      </div>
+      <div class="header-title">Advanced observability built for OpenResty and more</div>
+      <div class="btn-close">
+        <span>&times;</span>
+      </div>
+    </div>
+    <div class="content">
+      <div class="seperator">
+        <hr/>
+        <div class="seperator-text">limited time offer</div>
+        <hr/>
+      </div>
+      <div class="form-title">
+        <span>Request </span>
+        <span class="text-violet">TRIAL</span>
+        <span> today and receive a diagnostic </span>
+        <span class="text-violet">REPORT</span>
+      </div>
+      <form class="form-xray-request-demo">
+        <div class="form-field-item">
+          <input class="input-name" name="name" type="text" placeholder='Enter your full name'>
+        </div>
+        <div class="form-field-item">
+          <input name="email" type="email" placeholder='Enter your business email'>
+        </div>
+        <button class="form-next-button" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
