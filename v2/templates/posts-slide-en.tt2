@@ -11,6 +11,11 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/ngx-cpu-hottest-reqs/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/ngx-cpu-hottest-reqs.jpg"><img class="article-img" src="../images/header-images/ngx-cpu-hottest-reqs.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Analyzing the Most CPU-Consuming Requests in OpenResty or Nginx</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-basic-auth/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-basic-auth.jpg"><img class="article-img" src="../images/header-images/edge-basic-auth.jpg" loading="lazy"/></div>
             <div class="article-text">
@@ -55,11 +60,6 @@
             <div class="blog-img" data-pic="/header-images/showman-arch.png"><img class="article-img" src="../images/header-images/showman-arch.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Auto-Generate Demo Videos for Google Search from Screenplay Docs (via OpenResty Showman)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-upstream-host/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-upstream-host-cover.png"><img class="article-img" src="../images/header-images/edge-upstream-host-cover.png" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Set Different Host Headers for Upstream Requests in OpenResty Edge</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>

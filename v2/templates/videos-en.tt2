@@ -20,7 +20,6 @@
     <ul>
       <li><a href="#-Pq4IUQTMrc" style="cursor: pointer">Configure HTTP basic auth in OpenResty Edge</a></li>
       <li><a href="#Gn79prUXkE0" style="cursor: pointer">Create Custom Dynamic Metrics in OpenResty Edge</a></li>
-      <li><a href="#ps0KEUyQJrA" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#YKP091Y7sU0" style="cursor: pointer">Limit Request Rate by Custom Keys in OpenResty Edge</a></li>
       <li><a href="#XkPlx9If6sI" style="cursor: pointer">Gateway Config's Version Control &amp; Release Management in OpenResty Edge</a></li>
       <li><a href="#NIlOrqi-I8U" style="cursor: pointer">Set Different Host Headers for Upstream Requests in OpenResty Edge</a></li>
@@ -67,8 +66,6 @@
   <iframe width="645" height="360" src="https://www.youtube.com/embed/-Pq4IUQTMrc" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="Gn79prUXkE0">Create Custom Dynamic Metrics in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/Gn79prUXkE0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="ps0KEUyQJrA">Deleted video</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/ps0KEUyQJrA" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="YKP091Y7sU0">Limit Request Rate by Custom Keys in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/YKP091Y7sU0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="XkPlx9If6sI">Gateway Config's Version Control &amp; Release Management in OpenResty Edge</p>
