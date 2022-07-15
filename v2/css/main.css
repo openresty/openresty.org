@@ -1078,10 +1078,10 @@ hr.footer-sep {
 }
 .xray-modal-content .content .form-field-item {
   margin-bottom: 24px;
+  display: flex;
 }
 .xray-modal-content .content .form-field-item input {
   width: 100%;
-  max-width: 310px;
   outline: none;
   border: 1px solid #f6f6f6;
   padding: 14px 24px;
