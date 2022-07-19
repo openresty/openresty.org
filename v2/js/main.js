@@ -52,18 +52,24 @@ $(document).ready(function() {
 	const path = location.pathname;
 	const isIndexOrDownload = path.endsWith('/cn/') || path.endsWith('/en/') || path.endsWith('/download.html');
 
-	if (isIndexOrDownload) {
+	const XRAY_MODAL_LOCAL = 'xray_modal';
+	let xrayModalLocal = localStorage.getItem(XRAY_MODAL_LOCAL);
+
+	if (isIndexOrDownload && Number(xrayModalLocal) !== 1 && Number(xrayModalLocal) !== -3) {
 		$('.xray-modal').removeClass('hide');
 	}
 
 	$('.xray-modal .btn-close').on('click', () => {
-    $('.xray-modal').addClass('hide');
+		xrayModalLocal = xrayModalLocal === null ? -1 : Number(xrayModalLocal) - 1;
+		localStorage.setItem(XRAY_MODAL_LOCAL, xrayModalLocal);
+		$('.xray-modal').addClass('hide');
   });
 
 	$('.form-xray-request-demo').on('submit', function(event) {
-    event.preventDefault();
-    const urlPrefix = location.pathname.startsWith('/en/') ? 'https://openresty.com/en' : 'https://openresty.com.cn/cn';
-    window.location.href = `${urlPrefix}/xray/request-demo/?${$(this).serialize()}`;
+		event.preventDefault();
+		localStorage.setItem(XRAY_MODAL_LOCAL, 1);
+		const urlPrefix = location.pathname.startsWith('/en/') ? 'https://openresty.com/en' : 'https://openresty.com.cn/cn';
+		window.location.href = `${urlPrefix}/xray/request-demo/?${$(this).serialize()}`;
   });
 
 	$('.form-xray-request-demo input').on('keydown', (event) => {
