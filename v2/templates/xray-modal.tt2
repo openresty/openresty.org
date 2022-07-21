@@ -32,6 +32,7 @@
           <input name="email" type="email" placeholder='Enter your business email'>
         </div>
         <button class="form-next-button" type="submit">Submit</button>
+        <div class="btn-learn-more">Learn more</div>
       </form>
     </div>
   </div>

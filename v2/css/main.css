@@ -1111,6 +1111,16 @@ hr.footer-sep {
   border-radius: 8px;
   color: #fff;
 }
+.xray-modal-content .content .btn-learn-more {
+  font-size: 14px;
+  color: #481AA5;
+  margin-top: 12px;
+  cursor: pointer;
+  text-align: center;
+}
+.xray-modal-content .content .btn-learn-more:hover {
+  text-decoration: underline;
+}
 @media (max-width: 767px) {
   .xray-modal-content .content {
     padding: 1.5rem 1.5rem 2.25rem 1.5rem;
