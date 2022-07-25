@@ -1,10 +1,10 @@
 <!---
-    @title         Commercial Products
+    @title         Enterprise Solutions
     @creator       Yichun Zhang
     @created       2013-08-03 04:25 GMT
 --->
 
-[OpenResty Inc.](https://openresty.com) provides commercial products for OpenResty. The products are also
+[OpenResty Inc.](https://openresty.com) provides enterprise solutions for OpenResty. The solutions are also
 mostly powered by OpenResty itself:
 
 # OpenResty XRay

@@ -48,5 +48,5 @@ to grab OpenResty<sup>&reg;</sup>'s source code tarball directly.
 We provide free technical support through the community on the openresty and openresty-en mailing
 lists. See [Community](community.html).
 
-Our [OpenResty Inc.](https://openresty.com/) company offers commercial products based on OpenResty
+Our [OpenResty Inc.](https://openresty.com/) company offers enterprise solutions based on OpenResty
 to its global customers, with commercial support.
