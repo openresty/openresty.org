@@ -1,10 +1,10 @@
 <!---
-    @title         商业产品
+    @title         企业级解决方案
     @creator       Yichun Zhang
     @created       2013-08-03 04:25 GMT
 --->
 
-[OpenResty Inc.](https://openresty.com) 公司为 OpenResty 提供多款商业产品。这些产品本身也
+[OpenResty Inc.](https://openresty.com) 公司为 OpenResty 提供多种企业级解决方案。这些方案产品本身也
 主要由OpenResty来驱动。
 
 # OpenResty XRay

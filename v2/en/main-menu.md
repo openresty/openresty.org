@@ -9,7 +9,7 @@
 * [Installation](installation.html)
 * [YouTube Channel](https://www.youtube.com/channel/UCXVmwF-UCScv2ftsGoMqxhw/)
 * [Video Tutorials](videos.html)
-* [Commercial Products](commercial.html)
+* [Enterprise Solutions](commercial.html)
 * [Getting Started](getting-started.html)
 * [Upgrading](upgrading.html)
 * [Changes](changes.html)
