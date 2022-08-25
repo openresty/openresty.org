@@ -66,8 +66,8 @@ msgid  "Official Forum"
 msgstr "官方论坛"
 
 #: templates/header.tt2:21
-msgid  "OpenResty Enterprise"
-msgstr "OpenResty 商业版"
+msgid  "Try OpenResty XRay"
+msgstr "试用 OpenResty XRay"
 
 #: templates/index.tt2:5
 msgid  "OpenResty&reg; - Official Site"
