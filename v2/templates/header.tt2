@@ -18,9 +18,9 @@
                         <img class="dark-img" src="/images/flarum.png">
                         <span class="link-title">[% c.l("Official Forum") %]</span>
                 </a>
-                <a role="button" href="https://openresty.com" class="enterprise-button" type="button" title="[% c.l("OpenResty Enterprise") %]">
+                <a role="button" href="https://openresty.com/en/xray/request-demo/?src=org_top" class="enterprise-button" type="button" title="[% c.l("Try OpenResty XRay") %]">
                         <img src="/images/rocket.svg">
-                        <span class="link-title">[% c.l("OpenResty Enterprise") %]</span>
+                        <span class="link-title">[% c.l("Try OpenResty XRay") %]</span>
                 </a>
         </p><!-- / links -->
 </header>

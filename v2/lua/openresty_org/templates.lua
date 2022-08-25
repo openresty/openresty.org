@@ -289,12 +289,12 @@ i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Official Forum' }})
 i = i + 1 output[i] = '">\n                        <img class="dark-img" src="/images/flarum.png">\n                        <span class="link-title">'
 -- line 19 "header.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Official Forum' }})
-i = i + 1 output[i] = '</span>\n                </a>\n                <a role="button" href="https://openresty.com" class="enterprise-button" type="button" title="'
+i = i + 1 output[i] = '</span>\n                </a>\n                <a role="button" href="https://openresty.com/en/xray/request-demo/?src=org_top" class="enterprise-button" type="button" title="'
 -- line 21 "header.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty Enterprise' }})
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Try OpenResty XRay' }})
 i = i + 1 output[i] = '">\n                        <img src="/images/rocket.svg">\n                        <span class="link-title">'
 -- line 23 "header.tt2"
-i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty Enterprise' }})
+i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Try OpenResty XRay' }})
 i = i + 1 output[i] = '</span>\n                </a>\n        </p><!-- / links -->\n</header>\n'
 
     return output
