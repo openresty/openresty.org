@@ -7,7 +7,14 @@
         </div>
         <div class="product-name">OpenResty XRay</div>
       </div>
-      <div class="header-title">Advanced observability built for OpenResty and more</div>
+      <div class="header-title">
+        <p>Advanced observability built for OpenResty and more</p>
+        <p class="small xray-live-demo-link">
+          <span class="icon-pc-display-horizontal"></span>
+          [% IF lang == 'cn' %]<a href="https://demo.xray.openresty.com.cn/targets/", target="_blank">OpenResty XRay Live Demo →</a>[% END %]
+          [% IF lang != 'cn' %]<a href="https://demo.xray.openresty.com/targets/", target="_blank">OpenResty XRay Live Demo →</a>[% END %]
+        </p>
+      </div>
       <div class="btn-close">
         <span>&times;</span>
       </div>

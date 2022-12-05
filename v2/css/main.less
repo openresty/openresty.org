@@ -544,7 +544,7 @@ hr.footer-sep {
     }
 
     @media (max-width: 767px) {
-      height: 10rem;
+      height: 14rem;
 
       .button-violet {
         img {
@@ -555,7 +555,7 @@ hr.footer-sep {
 
       .header-title {
         font-size: 1.125rem;
-        max-width: 270px;
+        max-width: 100%;
       }
 
       .btn-close {
@@ -675,5 +675,37 @@ hr.footer-sep {
   @media (max-width: 767px) {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+}
+
+.xray-modal .xray-live-demo-link {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+
+  .icon-pc-display-horizontal {
+    background-color: currentColor;
+    -webkit-mask-size: 16px 16px;
+    mask-size: 16px 16px;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    mask-image: url("../images/pc-display-horizontal.svg");
+    -webkit-mask-image: url("../images/pc-display-horizontal.svg");
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    color: #481aa5;
+  }
+
+  a {
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: #481aa5;
+    font-weight: bold;
   }
 }
