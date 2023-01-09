@@ -70,8 +70,8 @@ msgid  "Try OpenResty XRay"
 msgstr "试用 OpenResty XRay"
 
 #: templates/index.tt2:5
-msgid  "OpenResty&reg; - Official Site"
-msgstr "OpenResty&reg; - 中文官方站"
+msgid  "OpenResty&reg; - Open source"
+msgstr "OpenResty&reg; - 开源官方站"
 
 #: templates/index.tt2:28
 msgid  "OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT."
