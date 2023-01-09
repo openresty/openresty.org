@@ -23,7 +23,7 @@ local trans_cn = {
     ["No query provided."] = "没有提供任何搜索词。",
     ["No search results found"] = "没有找到任何匹配的记录",
     ["Official Forum"] = "官方论坛",
-    ["OpenResty&reg; - Official Site"] = "OpenResty&reg; - 中文官方站",
+    ["OpenResty&reg; - Open source"] = "OpenResty&reg; - 开源官方站",
     ["OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT."] = "OpenResty<sup>&reg;</sup> 是一款基于 NGINX 和 LuaJIT 的 Web 平台。",
     ["OpenResty<sup>&reg;</sup> is a registered trademark owned by <a href=\"https://openresty.com/\">OpenResty Inc</a>."] = "OpenResty<sup>&reg;</sup> 是 <a href=\"https://openresty.com/\">OpenResty Inc</a> 公司所有的注册商标。",
     ["Please adjust your search query and try again."] = "请调整您的搜索查询并重试。",
