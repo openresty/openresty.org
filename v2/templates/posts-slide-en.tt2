@@ -11,6 +11,11 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-faq/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/faq-small.jpeg"><img class="article-img" src="../images/header-images/faq-small.jpeg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">New FAQ Doc for OpenResty XRay</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-auto-reports/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/diagnose-xray.jpeg"><img class="article-img" src="../images/header-images/diagnose-xray.jpeg" loading="lazy"/></div>
             <div class="article-text">
@@ -55,11 +60,6 @@
             <div class="blog-img" data-pic="/header-images/ylang-part4.png"><img class="article-img" src="../images/header-images/ylang-part4.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Ylang: Universal Language for eBPF, Stap+, GDB, and More (Part 4)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/ylang-intro-part3/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/ylang-part3.png"><img class="article-img" src="../images/header-images/ylang-part3.png" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Ylang: Universal Language for eBPF, Stap+, GDB, and More (Part 3)</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>

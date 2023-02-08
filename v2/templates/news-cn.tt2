@@ -15,10 +15,10 @@
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/qcon-2023-xray-talk/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/qcon1.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/qcon-2023-xray-talk/?src=org_news" target="_blank">QCon 北京 2023 大会上关于深度分析和诊断 K8s 容器应用的演讲</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-faq/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/faq-small.jpeg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-faq/?src=org_news" target="_blank">新的关于 OpenResty XRay 的常见问答</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-auto-reports/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/diagnose-xray.jpeg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-auto-reports/?src=org_news" target="_blank">OpenResty XRay 的自动分析报告</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/bilibili-xray-incident/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/openresty-xray-robots.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/bilibili-xray-incident/?src=org_news" target="_blank">OpenResty XRay 分析和解决 B 站重大线上事故</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
