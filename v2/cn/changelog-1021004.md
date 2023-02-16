@@ -195,7 +195,7 @@
     * bugfix: did not wakeup coroutine when worker thread finished. _Thanks kingluo for the patch._
     * feature: add `ngx_http_lua_ffi_worker_pids` to get all workers pid map. _Thanks attenuation for the patch._
     * bugfix: `run_worker_thread` arg is self-reference. _Thanks fesily for the patch._
-    * feature: introduced new API `tcpsock:bind()`. _Thanks lijunlong for the patch._
+    * feature: introduced new API `tcpsock:bind()`. _Thanks doujiang24 for the patch._
     * feature: add `shdict` APIs into worker thread. _Thanks jinhua luo for the patch._
     * bugfix: set flags for Darwin arm64. _Thanks lijunlong for the patch._
     * bugfix: improved handling of multiple headers changed in nginx 1.23.0. _Thanks Hiroaki Nakamura for the patch._
@@ -220,8 +220,8 @@
     * change: remove useless code for get old_cpath. _Thanks Tinglong Yang for the patch._
     * bugfix: `ngx.run_worker_thread` injected API into the wrong table. _Thanks jinhua luo for the patch._
     * feature: add API to fetch raw nginx SSL pointer of the downstream request. _Thanks James Callahan for the patch._
-    * feature: SSL/TLS: support for passphrase protected key. _Thanks lijunlong for the patch._
-    * feature: expose the 'Last-Modified' response header as `ngx.header["Last-Modified"]`. _Thanks lijunlong for the patch._
+    * feature: SSL/TLS: support for passphrase protected key. _Thanks guanglinlv for the patch._
+    * feature: expose the 'Last-Modified' response header as `ngx.header["Last-Modified"]`. _Thanks cbeckr for the patch._
     * bugfix: posted event handler was called after event memory was freed. _Thanks lijunlong for the patch._
     * optimize: don't calculate hash when clearing the request header. _Thanks spacewander for the patch._
     * feature: check the number of parameters for `ngx.thread.wait`. _Thanks tan jinhua for the patch._
@@ -236,7 +236,7 @@
     * bugfix: wrong size for the pending timers. _Thanks lijunlong for the patch._
     * feature: add `ngx_stream_lua_ffi_worker_pids` to get all workers pid map. _Thanks attenuation for the patch._
     * bugfix: Apple Silicon FFI ABI limitation workaround. _Thanks Chrono for the patch._
-    * feature: SSL/TLS supports passphrase protected private key. _Thanks lijunlong for the patch._
+    * feature: SSL/TLS supports passphrase protected private key. _Thanks guanglinlv for the patch._
     * bugfix: posted event handler was called after event memory was freed. _Thanks lijunlong for the patch._
 
 * upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core) to v0.1.25
@@ -255,7 +255,7 @@
     * feature: add FFI implementation for `ngx.arg` getter. _Thanks 罗泽轩 for the patch._
     * optimize: localize `bit.bor` in `clienthello.lua` to improve performance. _Thanks Chrono for the patch._
     * optimize: reimplemented the coroutine wrapper using the FFI API. _Thanks lijunlong for the patch._
-    * feature: support passphrase protected private key. _Thanks lijunlong for the patch._
+    * feature: support passphrase protected private key. _Thanks guanglinlv for the patch._
     * feature: reimplemented `ngx.req.is_internal` with LuaJIT FFI. _Thanks chronolaw for the patch._
     * optimize: removed the extra return. _Thanks lijunlong for the patch._
 
