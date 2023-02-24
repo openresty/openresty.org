@@ -12,13 +12,13 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-test-nginx-030.html">Test::Nginx 0.30</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/ngx-off-cpu-lua-pipes/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/off-cpu-block-roads.jpeg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/ngx-off-cpu-lua-pipes/?src=org_news" target="_blank">当 Lua IPC 管道阻塞 OpenResty 或 Nginx 的事件循环</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/ngx-cycle-pool-frag/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/mmap-before-free-old.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/ngx-cycle-pool-frag/?src=org_news" target="_blank">优化超大 Nginx 配置导致的内存碎片</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/qcon-2023-xray-talk/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/qcon1.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/qcon-2023-xray-talk/?src=org_news" target="_blank">QCon 北京 2023 大会上关于深度分析和诊断 K8s 容器应用的演讲</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-faq/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/faq-small.jpeg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-faq/?src=org_news" target="_blank">新的关于 OpenResty XRay 的常见问答</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>

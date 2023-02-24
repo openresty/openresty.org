@@ -3,6 +3,7 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp0iUvHwJeBcG5MKWgGa_ahU" style="cursor: pointer">OpenResty Tutorials</a></h2>
     <ul>
+      <li><a href="#XxL6Frvv4TM" style="cursor: pointer">Domain-Specific Languages (Implementation Strategies and Technologies)</a></li>
       <li><a href="#Hu68mQDKXCo" style="cursor: pointer">Install OpenResty on Ubuntu 20.04 via apt-get</a></li>
       <li><a href="#4VQP7eKq4oA" style="cursor: pointer">Streaming HTTP Response Output in OpenResty</a></li>
       <li><a href="#EP7c0BM2yNo" style="cursor: pointer">Precompile Lua Modules into LuaJIT Bytecode to Speedup OpenResty Startup</a></li>
@@ -41,6 +42,8 @@
     </ul>
   </div>
   <h2 id="PLlR4WakbzQp0iUvHwJeBcG5MKWgGa_ahU">OpenResty Tutorials</h2>
+  <p id="XxL6Frvv4TM">Domain-Specific Languages (Implementation Strategies and Technologies)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/XxL6Frvv4TM" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="Hu68mQDKXCo">Install OpenResty on Ubuntu 20.04 via apt-get</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/Hu68mQDKXCo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="4VQP7eKq4oA">Streaming HTTP Response Output in OpenResty</p>
