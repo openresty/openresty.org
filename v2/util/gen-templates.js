@@ -31,7 +31,8 @@ async function genSlideTemplate(lang) {
 
   $('item').filter((index, entry) => {
     const tags = $(entry).children('tags').text();
-    return tags && (tags.includes('xray') || tags.includes('openresty-edge') || tags.includes('openresty-showman') || tags.includes('packages') || tags.includes('openresty-xray'));
+    const priv = $(entry).children('private').text();
+    return tags && (tags.includes('xray') || tags.includes('openresty-edge') || tags.includes('openresty-showman') || tags.includes('packages') || tags.includes('openresty-xray')) && priv !== 'true';
   }).slice(0, length).each((index, entry) => {
     const title = $(entry).children('title').text();
     const id = $(entry).children('guid').text();
