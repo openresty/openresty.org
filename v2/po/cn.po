@@ -86,6 +86,10 @@ msgid  "New!"
 msgstr "最新！"
 
 #: templates/news-cn.tt2:7
+msgid  "is out!"
+msgstr "发布"
+
+#: templates/news-cn.tt2:13
 msgid  "is now released!"
 msgstr "已发布。"
 
