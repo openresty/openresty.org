@@ -19,6 +19,8 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK" style="cursor: pointer">OpenResty Edge</a></h2>
     <ul>
+      <li><a href="#X6fhRn8YDK8" style="cursor: pointer">Passing client IP addresses to origin servers in OpenResty Edge</a></li>
+      <li><a href="#QbR4JZMCUss" style="cursor: pointer">Private video</a></li>
       <li><a href="#-Pq4IUQTMrc" style="cursor: pointer">Configure HTTP basic auth in OpenResty Edge</a></li>
       <li><a href="#Gn79prUXkE0" style="cursor: pointer">Create Custom Dynamic Metrics in OpenResty Edge</a></li>
       <li><a href="#YKP091Y7sU0" style="cursor: pointer">Limit Request Rate by Custom Keys in OpenResty Edge</a></li>
@@ -65,6 +67,10 @@
   <p id="eSfYLvVQMxw">Hello World HTTP Example in OpenResty/Nginx</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2 id="PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK">OpenResty Edge</h2>
+  <p id="X6fhRn8YDK8">Passing client IP addresses to origin servers in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/X6fhRn8YDK8" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="QbR4JZMCUss">Private video</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/QbR4JZMCUss" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="-Pq4IUQTMrc">Configure HTTP basic auth in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/-Pq4IUQTMrc" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="Gn79prUXkE0">Create Custom Dynamic Metrics in OpenResty Edge</p>
