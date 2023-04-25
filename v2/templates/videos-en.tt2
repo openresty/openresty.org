@@ -19,6 +19,9 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK" style="cursor: pointer">OpenResty Edge</a></h2>
     <ul>
+      <li><a href="#udrFa0HVlww" style="cursor: pointer">Configure gRPC proxy in OpenResty Edge</a></li>
+      <li><a href="#5tFQHdCf1yo" style="cursor: pointer">WAF in OpenResty Edge</a></li>
+      <li><a href="#6Ml_ivH8hA4" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#a1kMd_ppMpo" style="cursor: pointer">Edgelang in OpenResty Edge</a></li>
       <li><a href="#X6fhRn8YDK8" style="cursor: pointer">Passing client IP addresses to origin servers in OpenResty Edge</a></li>
       <li><a href="#QbR4JZMCUss" style="cursor: pointer">Private video</a></li>
@@ -68,6 +71,12 @@
   <p id="eSfYLvVQMxw">Hello World HTTP Example in OpenResty/Nginx</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2 id="PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK">OpenResty Edge</h2>
+  <p id="udrFa0HVlww">Configure gRPC proxy in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/udrFa0HVlww" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="5tFQHdCf1yo">WAF in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/5tFQHdCf1yo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="6Ml_ivH8hA4">Deleted video</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/6Ml_ivH8hA4" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="a1kMd_ppMpo">Edgelang in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/a1kMd_ppMpo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="X6fhRn8YDK8">Passing client IP addresses to origin servers in OpenResty Edge</p>

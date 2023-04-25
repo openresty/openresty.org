@@ -12,13 +12,13 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-test-nginx-030.html">Test::Nginx 0.30</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-grpc-proxy/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/grpc.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-grpc-proxy/?src=org_news" target="_blank">在 OpenResty Edge 中配置 gRPC 代理</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-enable-waf/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/waf.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-enable-waf/?src=org_news" target="_blank">OpenResty Edge 中的 WAF</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-edgelang/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-edgelang.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-edgelang/?src=org_news" target="_blank">在 OpenResty Edge 中如何使用 EdgeLang</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-upstream-real-ip/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-upstream-real-ip.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-upstream-real-ip/?src=org_news" target="_blank">如何通过特殊的请求头传递真实的客户端 IP 地址到后端服务器</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/ngx-off-cpu-lua-pipes/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/off-cpu-block-roads.jpeg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/ngx-off-cpu-lua-pipes/?src=org_news" target="_blank">当 Lua IPC 管道阻塞 OpenResty 或 Nginx 事件循环的时候</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>

@@ -11,6 +11,16 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-grpc-proxy/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/grpc.jpg"><img class="article-img" src="../images/header-images/grpc.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">在 OpenResty Edge 中配置 gRPC 代理</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-enable-waf/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/waf.jpg"><img class="article-img" src="../images/header-images/waf.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty Edge 中的 WAF</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-edgelang/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-edgelang.jpg"><img class="article-img" src="../images/header-images/edge-edgelang.jpg" loading="lazy"/></div>
             <div class="article-text">
@@ -50,16 +60,6 @@
             <div class="blog-img" data-pic="/header-images/openresty-xray-robots.jpg"><img class="article-img" src="../images/header-images/openresty-xray-robots.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty XRay 分析和解决 B 站重大线上事故</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-basic-auth/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-basic-auth.jpg"><img class="article-img" src="../images/header-images/edge-basic-auth.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">在 OpenResty Edge 中配置 HTTP 基本认证</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-custom-dynamic-metrics/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-custom-metrics.jpg"><img class="article-img" src="../images/header-images/edge-custom-metrics.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">如何在 OpenResty Edge 中使用自定义动态指标</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
