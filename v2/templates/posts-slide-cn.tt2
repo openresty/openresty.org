@@ -11,6 +11,16 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-k8s-upstream/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/k8s.png"><img class="article-img" src="../images/header-images/k8s.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">如何代理 Kubernetes 上游</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-azure/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/azure.png"><img class="article-img" src="../images/header-images/azure.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">在微软的 Azure 云上部署自主部署版的 OpenResty XRay</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-grpc-proxy/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/grpc.jpg"><img class="article-img" src="../images/header-images/grpc.jpg" loading="lazy"/></div>
             <div class="article-text">
@@ -50,16 +60,6 @@
             <div class="blog-img" data-pic="/header-images/faq-small.jpeg"><img class="article-img" src="../images/header-images/faq-small.jpeg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">新的关于 OpenResty XRay 的常见问答</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-auto-reports/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/diagnose-xray.jpeg"><img class="article-img" src="../images/header-images/diagnose-xray.jpeg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">OpenResty XRay 的自动分析报告</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/bilibili-xray-incident/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/openresty-xray-robots.jpg"><img class="article-img" src="../images/header-images/openresty-xray-robots.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">OpenResty XRay 分析和解决 B 站重大线上事故</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>

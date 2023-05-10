@@ -3,6 +3,7 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp0iUvHwJeBcG5MKWgGa_ahU" style="cursor: pointer">OpenResty Tutorials</a></h2>
     <ul>
+      <li><a href="#-asOidukUw8" style="cursor: pointer">How to deploy OpenResty XRay on Azure cloud</a></li>
       <li><a href="#XxL6Frvv4TM" style="cursor: pointer">Domain-Specific Languages (Implementation Strategies and Technologies)</a></li>
       <li><a href="#Hu68mQDKXCo" style="cursor: pointer">Install OpenResty on Ubuntu 20.04 via apt-get</a></li>
       <li><a href="#4VQP7eKq4oA" style="cursor: pointer">Streaming HTTP Response Output in OpenResty</a></li>
@@ -19,6 +20,7 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK" style="cursor: pointer">OpenResty Edge</a></h2>
     <ul>
+      <li><a href="#pmlQiQZq91M" style="cursor: pointer">Proxy Kubernetes upstream in OpenResty Edge</a></li>
       <li><a href="#udrFa0HVlww" style="cursor: pointer">Configure gRPC proxy in OpenResty Edge</a></li>
       <li><a href="#5tFQHdCf1yo" style="cursor: pointer">WAF in OpenResty Edge</a></li>
       <li><a href="#6Ml_ivH8hA4" style="cursor: pointer">Deleted video</a></li>
@@ -48,6 +50,8 @@
     </ul>
   </div>
   <h2 id="PLlR4WakbzQp0iUvHwJeBcG5MKWgGa_ahU">OpenResty Tutorials</h2>
+  <p id="-asOidukUw8">How to deploy OpenResty XRay on Azure cloud</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/-asOidukUw8" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="XxL6Frvv4TM">Domain-Specific Languages (Implementation Strategies and Technologies)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/XxL6Frvv4TM" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="Hu68mQDKXCo">Install OpenResty on Ubuntu 20.04 via apt-get</p>
@@ -71,6 +75,8 @@
   <p id="eSfYLvVQMxw">Hello World HTTP Example in OpenResty/Nginx</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2 id="PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK">OpenResty Edge</h2>
+  <p id="pmlQiQZq91M">Proxy Kubernetes upstream in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/pmlQiQZq91M" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="udrFa0HVlww">Configure gRPC proxy in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/udrFa0HVlww" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="5tFQHdCf1yo">WAF in OpenResty Edge</p>

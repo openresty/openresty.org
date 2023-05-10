@@ -12,13 +12,13 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-test-nginx-030.html">Test::Nginx 0.30</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/edge-k8s-upstream/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/k8s.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-k8s-upstream/?src=org_news" target="_blank">How to proxy kubernetes upstream</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/xray-azure/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/azure.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/xray-azure/?src=org_news" target="_blank">&quot;How to deploy the on-premises version of OpenResty XRay on Microsoft's Azure cloud&quot;</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/edge-grpc-proxy/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/grpc.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-grpc-proxy/?src=org_news" target="_blank">Configure gRPC proxy in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/edge-enable-waf/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/waf.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-enable-waf/?src=org_news" target="_blank">How to use WAF in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/edge-edgelang/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-edgelang.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-edgelang/?src=org_news" target="_blank">How to use EdgeLang in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
