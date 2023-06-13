@@ -12,13 +12,13 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-test-nginx-030.html">Test::Nginx 0.30</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-k8s-upstream/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/k8s.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-k8s-upstream/?src=org_news" target="_blank">如何代理 Kubernetes 上游</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-request-id/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-request-id.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-request-id/?src=org_news" target="_blank">OpenResty Edge 中的请求 ID</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-azure/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/azure.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-azure/?src=org_news" target="_blank">在微软的 Azure 云上部署自主部署版的 OpenResty XRay</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-hcaptcha/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-hcaptcha.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-hcaptcha/?src=org_news" target="_blank">在 OpenResty Edge 中启用 hCaptcha</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-grpc-proxy/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/grpc.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-grpc-proxy/?src=org_news" target="_blank">在 OpenResty Edge 中配置 gRPC 代理</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-sni-proxy-application/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-sni-proxy-application.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-sni-proxy-application/?src=org_news" target="_blank">OpenResty Edge 中 SNI Proxy 类型的应用</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
