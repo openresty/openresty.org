@@ -23,7 +23,7 @@
       <li><a href="#PgMdFHfeE08" style="cursor: pointer">Private video</a></li>
       <li><a href="#MPoj5a1pzxA" style="cursor: pointer">Private video</a></li>
       <li><a href="#el2nlbLSof0" style="cursor: pointer">Request ID in OpenResty Edge</a></li>
-      <li><a href="#IsrwpfuZFAs" style="cursor: pointer">Enable hCaptcha in OpenResty Edge</a></li>
+      <li><a href="#IsrwpfuZFAs" style="cursor: pointer">Enabling the anti-bot solution hCaptcha in OpenResty Edge</a></li>
       <li><a href="#Tq-_Kq7eq2Y" style="cursor: pointer">Serve Static Resouces in OpenResty Edge</a></li>
       <li><a href="#hY0-XH_Svc0" style="cursor: pointer">SNI Proxy applications in OpenResty Edge</a></li>
       <li><a href="#qbH92BISUuY" style="cursor: pointer">Access Logs in OpenResty Edge</a></li>
@@ -90,7 +90,7 @@
   <iframe width="645" height="360" src="https://www.youtube.com/embed/MPoj5a1pzxA" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="el2nlbLSof0">Request ID in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/el2nlbLSof0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="IsrwpfuZFAs">Enable hCaptcha in OpenResty Edge</p>
+  <p id="IsrwpfuZFAs">Enabling the anti-bot solution hCaptcha in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/IsrwpfuZFAs" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="Tq-_Kq7eq2Y">Serve Static Resouces in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/Tq-_Kq7eq2Y" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
