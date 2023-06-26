@@ -23,7 +23,7 @@ async function genSlideTemplate(lang) {
   const source = `${base}index.xml`;
   let rss = await http.get(source);
   const $ = cheerio.load(rss.data, { decodeEntities: false });
-  const length = 10;
+  const length = 20;
 
   if (!picsExists) {
     picsExists = await readdir('./images/header-images');
@@ -45,7 +45,7 @@ async function genSlideTemplate(lang) {
 
     postInfos.push({href: id, pic, title})
 
-    if (index <= 2) {
+    if (index <= 5) {
       news.push({href: id, pic, title})
     }
   });
