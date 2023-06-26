@@ -61,6 +61,56 @@
             <div class="article-text">
               <p class="blog-title">How standard dynamic metrics work in OpenResty Edge</p>
             </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-k8s-upstream/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/k8s.png"><img class="article-img" src="../images/header-images/k8s.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Managing traffic to Kubernetes (K8s) upstreams in OpenResty Edge</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-azure/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/azure.png"><img class="article-img" src="../images/header-images/azure.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">How to deploy the on-premises version of OpenResty XRay on Microsoft's Azure cloud</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-grpc-proxy/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/grpc.jpg"><img class="article-img" src="../images/header-images/grpc.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Configure distributed gRPC proxy in OpenResty Edge</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-enable-waf/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/waf.jpg"><img class="article-img" src="../images/header-images/waf.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">High-Performance Web Application Firewall (WAF) in OpenResty Edge</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-edgelang/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-edgelang.jpg"><img class="article-img" src="../images/header-images/edge-edgelang.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">The EdgeLang DSL in OpenResty Edge</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-upstream-real-ip/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-upstream-real-ip.jpg"><img class="article-img" src="../images/header-images/edge-upstream-real-ip.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">How to pass the real client IP addresses to backend servers via special request headers</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/ngx-off-cpu-lua-pipes/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/off-cpu-block-roads.jpeg"><img class="article-img" src="../images/header-images/off-cpu-block-roads.jpeg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">When Lua IPC Pipes Block OpenResty or Nginx's Event Loops</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/ngx-cycle-pool-frag/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/mmap-before-free-old.png"><img class="article-img" src="../images/header-images/mmap-before-free-old.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Optimize Memory Fragmentation due to Huge Nginx Configuration</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-faq/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/faq-small.jpeg"><img class="article-img" src="../images/header-images/faq-small.jpeg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">New FAQ Doc for OpenResty XRay</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-auto-reports/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/diagnose-xray.jpeg"><img class="article-img" src="../images/header-images/diagnose-xray.jpeg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Automatic Analysis Reports in OpenResty XRay</p>
+            </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
