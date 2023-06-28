@@ -30,7 +30,7 @@
       <li><a href="#MnoI48k_ZRo" style="cursor: pointer">TCP Applications in OpenResty Edge</a></li>
       <li><a href="#yWcYDZWm5V0" style="cursor: pointer">Error Logs in OpenResty Edge</a></li>
       <li><a href="#FQteUX-oPwE" style="cursor: pointer">Sticky Cookie in OpenResty Edge</a></li>
-      <li><a href="#Uz2FxYQI6yk" style="cursor: pointer">Standard Dynamic Metrics in OpenResty Edge</a></li>
+      <li><a href="#Uz2FxYQI6yk" style="cursor: pointer">How to use Standard Dynamic Metrics in OpenResty Edge</a></li>
       <li><a href="#pmlQiQZq91M" style="cursor: pointer">Managing traffic to Kubernetes (K8s) upstreams in OpenResty Edge</a></li>
       <li><a href="#udrFa0HVlww" style="cursor: pointer">Configure distributed gRPC proxy in OpenResty Edge</a></li>
       <li><a href="#5tFQHdCf1yo" style="cursor: pointer">Web Application Firewall (WAF) in OpenResty Edge</a></li>
@@ -104,7 +104,7 @@
   <iframe width="645" height="360" src="https://www.youtube.com/embed/yWcYDZWm5V0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="FQteUX-oPwE">Sticky Cookie in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/FQteUX-oPwE" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="Uz2FxYQI6yk">Standard Dynamic Metrics in OpenResty Edge</p>
+  <p id="Uz2FxYQI6yk">How to use Standard Dynamic Metrics in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/Uz2FxYQI6yk" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="pmlQiQZq91M">Managing traffic to Kubernetes (K8s) upstreams in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/pmlQiQZq91M" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
