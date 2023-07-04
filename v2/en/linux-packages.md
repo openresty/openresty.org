@@ -31,6 +31,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     6.x             x86_64
     7.x             x86_64, aarch64
     8.x             x86_64, aarch64
+    9.x             x86_64, aarch64
 ```
 
 * [Red Hat Enterprise Linux (RHEL)](#rhel)
@@ -40,6 +41,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     6.x             x86_64
     7.x             x86_64, aarch64
     8.x             x86_64, aarch64
+    9.x             x86_64, aarch64
 ```
 
 * [Fedora](#fedora)
@@ -82,6 +84,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 ```
     Version         Supported Architectures
     8.x             x86_64, aarch64
+    9.x             x86_64, aarch64
 ```
 
 * [Oracle Linux](#oracle-linux)
@@ -121,6 +124,13 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     3.13            x86_64, aarch64
     3.14            x86_64, aarch64
     3.15            x86_64, aarch64
+```
+
+* [CBL-Mariner](#mbl-mariner)
+
+```
+    Version         Supported Architectures
+    2.x             x86_64
 ```
 
 All our repositories' metadata (and rpm binary packages) are signed by the following GPG key, `0xD5EDEB74`:
@@ -738,9 +748,45 @@ apk list | grep 'openresty\|lemplate'
 
 See the [OpenResty Alpine APK Packages](apk-packages.html) page for more details on all these packages.
 
+# CBL-Mariner
+
+You can enable the `openresty` repository on your CBL-Mariner system like this:
+
+```bash
+# add the repo:
+wget https://openresty.org/package/mariner/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
+
+# update the index:
+sudo yum makecache
+```
+
+Then you can install a package, say, `openresty`, like this:
+
+```bash
+sudo yum install -y openresty
+```
+
+If you want to install the `resty` command-line utility, then install the `openresty-resty` package like below:
+
+```bash
+sudo yum install -y openresty-resty
+```
+
+The `opm` command-line utility is in the `openresty-opm` package while the `restydoc` utility is in the
+`openresty-doc` package.
+
+To list all the packages in the `openresty` repository:
+
+```bash
+sudo yum --disablerepo="*" --enablerepo="openresty" list
+```
+
+See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all these packages.
+
 # Support for More Linux Distributions
 
-We welcome community contributions of packaging sources targeting more Linux distributions like Gentoo, SLES, Arch, Slackware, and Oracle Linux.
+We welcome community contributions of packaging sources targeting more Linux distributions like Gentoo, Arch, and Slackware.
 Please ensure the resulting packages resemble our existing [RPM Packages](rpm-packages.html)
 wherever possible. Thank you!
 

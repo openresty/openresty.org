@@ -31,6 +31,7 @@
     6.x             x86_64
     7.x             x86_64, aarch64
     8.x             x86_64, aarch64
+    9.x             x86_64, aarch64
 ```
 
 * [Red Hat 企业版 Linux (RHEL)](#rhel)
@@ -40,6 +41,7 @@
     6.x             x86_64
     7.x             x86_64, aarch64
     8.x             x86_64, aarch64
+    9.x             x86_64, aarch64
 ```
 
 * [Fedora](#fedora)
@@ -82,6 +84,7 @@
 ```
     版本号         支持的体系结构
     8.x            x86_64, aarch64
+    9.x            x86_64, aarch64
 ```
 
 * [Oracle Linux](#oracle-linux)
@@ -121,6 +124,13 @@
     3.13            x86_64, aarch64
     3.14            x86_64, aarch64
     3.15            x86_64, aarch64
+```
+
+* [CBL-Mariner](#mbl-mariner)
+
+```
+    版本号          支持的体系结构
+    2.x             x86_64
 ```
 
 我们仓库的所有元数据（以及 rpm 二进制包）都是用下面的 GPG 密钥， `0xD5EDEB74` 签名的：
@@ -677,9 +687,45 @@ apk list | grep 'openresty\|lemplate'
 
 在 [OpenResty Alpine APK 包](apk-packages.html) 页面能看到这些包更多的细节。
 
+# CBL-Mariner
+
+你可以在你的 CBL-Mariner 系统中添加 openresty 包仓库，如下所示：
+
+```bash
+# add the repo:
+wget https://openresty.org/package/mariner/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/
+
+# update the index:
+sudo yum makecache
+```
+
+然后就可以像下面这样安装软件包，如安装 `openresty`:
+
+```bash
+sudo yum install -y openresty
+```
+
+如果你想安装命令行工具 `resty`，那么可以像下面这样安装 `openresty-resty` 包：
+
+```bash
+sudo yum install -y openresty-resty
+```
+
+命令行工具 `opm` 在 `openresty-opm` 包里，而 `restydoc` 工具在
+`openresty-doc` 包里头。
+
+列出所有 `openresty` 仓库里头的软件包：
+
+```bash
+sudo yum --disablerepo="*" --enablerepo="openresty" list
+```
+
+参考 [OpenResty RPM 包](rpm-packages.html)页面获取这些包更多的细节。
+
 # 更多 Linux 发行版的支持
 
-我们欢迎社区贡献更多的 Linux 发行版，比如 SLES, Arch, Slackware 和 Oracle Linux 的包仓库。请确保新的安装包尽可能地接近我们现有的 [RPM 安装包](rpm-packages.html)。非常感谢！
+我们欢迎社区贡献更多的 Linux 发行版，比如 Gentoo, Arch, Slackware 的包仓库。请确保新的安装包尽可能地接近我们现有的 [RPM 安装包](rpm-packages.html)。非常感谢！
 
 # 非 Linux 系统的安装包
 
