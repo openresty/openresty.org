@@ -1,0 +1,73 @@
+[% major_ver = "1.21.4"; version = major_ver _ ".2" -%]
+<!---
+    @title         OpenResty [% version %] Released
+    @creator       Jiahao Wang
+    @created       2023-07-04 17:33 GMT
+--->
+
+We are happy to announce the new formal release, [% version %], of the
+OpenResty web platform based on NGINX and LuaJIT.
+
+[Download this version here](download.html).
+
+The (portable) source code distribution, the Win32/Win64 binary
+distributions, and the pre-built binary Linux packages for Ubuntu,
+Debian, Fedora, CentOS, RHEL, Alpine, OpenSUSE, Amazon Linux, Rocky Linux,
+and Oracle Linux are provided on this [Download page](download.html).
+
+# Version Highlights
+
+* [LuaJIT](https://github.com/openresty/luajit2#readme)
+    * Avoid negation of signed integers in C that may hold INT*_MIN, since recent C compilers 'take advantage' of the undefined behavior, this completely changes the meaning of expressions like `(k == -k)`.
+    * Correct fix for stack check when recording `BC_VARG`.
+    * Fix trace join to `BC_JLOOP` originating from `BC_ITERN`.
+    * Fix `math.floor()` and `math.ceil()`.
+    * Many fixes imported from Mike Pall's upstream https://github.com/luajit/luajit repository.
+* Fixed a bug that uses memory after free when encountering an invalid `IF-Match` request header.
+* Implemented `monotonic_msec()` and `monotonic_time()` in `resty.core.time`.
+* Apple Silicon FFI ABI limitation workaround.
+* Reimplemented `tcpsock:sslhandshake`, coroutine wrapper, and `ngx.req.is_internal` with FFI.
+* SSL/TLS supports passphrase protected private key.
+* Fixed a segmentation fault when get headers via `ngx.req.raw_header` with malformed requests.
+* Fixed potential null pointer dereference.
+* [lua-cjson](https://github.com/openresty/lua-cjson) module
+    * `empty_array` can not work on Apple because cjson did not compare light userdata address with masked address. Since we used `json_lightudata_mask` when creating lightuserdata, same mask should be applied when comparing the return of `touserdata`.
+* [headers-more-nginx-module](https://github.com/openresty/headers-more-nginx-module) module
+    * Fixed crash while accessing uninitialized pointer.
+* [lua-resty-websocket](https://github.com/openresty/lua-resty-websocket) module
+    * Added mtls client cert support.
+* [lua-resty-memcached](https://github.com/openresty/lua-resty-memcached) module
+    * Implemented `init_pipeline()`, `commit_pipeline()`, and `cancel_pipeline()`.
+
+# Full Change logs
+
+Complete change logs since the last (formal) release, [1.21.4.1](ann-1021004001.html), can be browsed
+in the page [Change Log for [% major_ver %].x](changelog-1021004.html).
+
+# Testing
+
+We have run extensive testing on our Amazon EC2 test cluster and
+ensured that all the components (including the Nginx core) play well
+together. The latest test report can always be found here:
+
+https://qa.openresty.org/
+
+We also always run our OpenResty Edge commercial software based on the
+latest open source version of OpenResty in our own global CDN network
+(dubbed "mini CDN") powering our openresty.org and openresty.com
+websites. See https://openresty.com/ for more details.
+
+# Community Support
+
+See the [Community Page](community.html).
+
+# Commercial Support
+
+Commercial technical support and real-time noninvasive online monitoring and profiling
+solution is provided through the official [OpenResty XRay](https://openresty.com/en/xray/)
+product.
+
+# Feedback
+
+Feedback on this release is more than welcome. Feel free to create new
+[GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](community.html).
