@@ -183,3 +183,183 @@
     * Remove specific version numbers from the docs.
     * iOS: Don't use getentropy() since it's disallowed in the App Store.
     * Linux/ARM64: Make mremap() non-moving due to VA space woes.
+
+
+# Version 1.21.4.2 - 04 Jul 2023
+
+* win32/win64: upgraded zlib to 1.2.13.
+* win32/win64: upgraded OpenSSL to 1.1.1t.
+
+* upgraded [lua-nginx-module](https://github.com/openresty/lua-nginx-module) to v0.10.25
+    * bugfix: used after free when encountering invalid http IF-Match header. _Thanks lijunlong for the patch._
+    * bugfix: ssl_client_hello_by_lua generating chunk cache key and chunk name. _Thanks willmafh for the patch._
+    * bugfix: cosocket did not exit when `worker_shutdown_timeout` handler is called. _Thanks lijunlong for the patch._
+    * feature: implement HTTP 3.0 support for `ngx.req.http_version()`. _Thanks Yu.Zhu for the patch._
+    * bugfix: fix receiveuntil rest bytes count. _Thanks ZongRun for the patch._
+    * bugfix: add a timed recycling child process as a last resort. _Thanks lijunlong for the patch._
+    * feature: add new FFI API `ngx_http_lua_ffi_msec`. _Thanks lijunlong for the patch._
+    * bugfix: did not wakeup coroutine when worker thread finished. _Thanks kingluo for the patch._
+    * feature: add `ngx_http_lua_ffi_worker_pids` to get all workers pid map. _Thanks attenuation for the patch._
+    * bugfix: `run_worker_thread` arg is self-reference. _Thanks fesily for the patch._
+    * feature: introduced new API `tcpsock:bind()`. _Thanks lijunlong for the patch._
+    * feature: add `shdict` APIs into worker thread. _Thanks jinhua luo for the patch._
+    * bugfix: set flags for Darwin arm64. _Thanks lijunlong for the patch._
+    * bugfix: improved handling of multiple headers changed in nginx 1.23.0. _Thanks Hiroaki Nakamura for the patch._
+    * change: increased the maximum size to 65536 for the udp datagram. _Thanks lijunlong for the patch._
+    * optimize: destroy pipe proc when freeing the request. _Thanks lijunlong for the patch._
+    * optimize: add error log when closing the pipe failed. _Thanks lijunlong for the patch._
+    * bugfix: fix potential null pointer dereference found by Coverity. _Thanks Ilya Shipitsin for the patch._
+    * optimize: fixed dead code found by Coverity. _Thanks Ilya Shipitsin for the patch._
+    * feature: in `content_by_lua_file`, return 503 for file read error. _Thanks jizhuozhi for the patch._
+    * bugfix: Apple Silicon FFI ABI limitation workaround. _Thanks Chrono for the patch._
+    * bugfix: failed to compile when nginx https is disabled. _Thanks lijunlong for the patch._
+    * feature: add `server_rewrite_by_lua*`. _Thanks xiaobiaozhao for the patch._
+    * cosocket: add function `tcpsock:setclientcert`, reimplemented `tcpsock:sslhandshake` with FFI. _Thanks Datong Sun for the patch._
+    * optimize: use `ngx_hash_t` to optimize the built-in header look-up process for `ngx.header.HEADER`. _Thanks lijunlong for the patch._
+    * feature: add FFI implementation for `ngx.arg` getter. _Thanks 罗泽轩 for the patch._
+    * bugfix: fixed size of the array when initialized in the `init_worker_by*` phase. _Thanks Jiahao Wang for the patch._
+    * bugfix: ambiguous error message 'connection in dubious state' when connection is closed. _Thanks lijunlong for the patch._
+    * bugfix: passing the wrong chunkname argument to `luaL_loadbuffer`. _Thanks lijunlong for the patch._
+    * optimize: change lua chunkname to config filename and line number for `{init,header_filter,body_filter}_by_lua_block` and so on. _Thanks lijunlong for the patch._
+    * change: the error message should use the first line rather than the last line of the code block when loading lua code block fails. _Thanks lijunlong for the patch._
+    * bugfix: segment fault when get header via `ngx.req.raw_header` with malformed requests. _Thanks Gordon McKinney for the patch._
+    * change: remove useless code for get old_cpath. _Thanks Tinglong Yang for the patch._
+    * bugfix: `ngx.run_worker_thread` injected API into the wrong table. _Thanks jinhua luo for the patch._
+    * feature: add API to fetch raw nginx SSL pointer of the downstream request. _Thanks James Callahan for the patch._
+    * feature: SSL/TLS: support for passphrase protected key. _Thanks lijunlong for the patch._
+    * feature: expose the 'Last-Modified' response header as `ngx.header["Last-Modified"]`. _Thanks lijunlong for the patch._
+    * bugfix: posted event handler was called after event memory was freed. _Thanks lijunlong for the patch._
+    * optimize: don't calculate hash when clearing the request header. _Thanks spacewander for the patch._
+    * feature: check the number of parameters for `ngx.thread.wait`. _Thanks tan jinhua for the patch._
+    * change: use `nil` instead of `false` when `lpush` & `rpush` overflow. _Thanks yang.yang for the patch._
+    * feature: prevent calling `ngx.exit()` with invalid values. _Thanks Thibault Charbonnier for the patch._
+    * feature: added FFI-based function `ngx_http_lua_ffi_req_is_internal`. _Thanks chronolaw for the patch._
+    * feature: added http const `HTTP_NOT_IMPLEMENTED`. _Thanks Landon Manning for the patch._
+
+* upgraded [stream-lua-nginx-module](https://github.com/openresty/stream-lua-nginx-module) to v0.0.12
+    * feature: introduced new API `ngx_stream_lua_ffi_monotonic_msec`. _Thanks lijunlong for the patch._
+    * feature: add `CONTEXT_YIELDABLE` constant to stream subsys. _Thanks 罗泽轩 for the patch._
+    * bugfix: wrong size for the pending timers. _Thanks lijunlong for the patch._
+    * feature: add `ngx_stream_lua_ffi_worker_pids` to get all workers pid map. _Thanks attenuation for the patch._
+    * bugfix: Apple Silicon FFI ABI limitation workaround. _Thanks Chrono for the patch._
+    * feature: SSL/TLS supports passphrase protected private key. _Thanks lijunlong for the patch._
+    * bugfix: posted event handler was called after event memory was freed. _Thanks lijunlong for the patch._
+
+* upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core) to v0.1.27
+    * optimize: avoid NYI in the `get_string_buf` function. _Thanks Jiahao Wang for the patch._
+    * feature: implemented `monotonic_msec()` and `monotonic_time()` in `resty.core.time`. _Thanks lijunlong for the patch._
+    * bugfix: get `ngx_lua_version` before 'not ngx.config'. _Thanks willmafh for the patch._
+    * feature: add `ngx.worker.pids` to get all workers pid map. _Thanks attenuation for the patch._
+    * optimize: destroy pipe when freeing request. _Thanks lijunlong for the patch._
+    * optimize: localize `pcall` function in `base.lua` to improve performance. _Thanks Chrono for the patch._
+    * feature: implemented `get_supported_versions()` in `clienthello` phase. _Thanks Attenuation for the patch._
+    * bugfix: Apple Silicon FFI ABI limitation workaround. _Thanks Chrono for the patch._
+    * bugfix: did not get the correct error message for when require module. _Thanks lijunlong for the patch._
+    * feature: added support for `ssl_server_rewrite_by_lua`. _Thanks lijunlong for the patch._
+    * cosocket: add function `tcpsock:setclientcert`, reimplemented `tcpsock:sslhandshake` with FFI. _Thanks Datong Sun for the patch._
+    * feature: provide a way to reuse table in `ngx.req.get_uri_args`. _Thanks 罗泽轩 for the patch._
+    * feature: add FFI implementation for `ngx.arg` getter. _Thanks 罗泽轩 for the patch._
+    * optimize: localize `bit.bor` in `clienthello.lua` to improve performance. _Thanks Chrono for the patch._
+    * optimize: reimplemented the coroutine wrapper using the FFI API. _Thanks lijunlong for the patch._
+    * feature: support passphrase protected private key. _Thanks lijunlong for the patch._
+    * feature: reimplemented `ngx.req.is_internal` with LuaJIT FFI. _Thanks chronolaw for the patch._
+    * optimize: removed the extra return. _Thanks lijunlong for the patch._
+
+* upgraded [luajit2](https://github.com/openresty/luajit2) to v2.1-20230119
+    * Avoid negation of signed integers in C that may hold INT*_MIN.
+    * Correct fix for stack check when recording BC_VARG.
+    * Disable FMA by default. Use -Ofma or jit.opt.start("+fma") to enable.
+    * FFI: Fix dangling reference to CType. Improve checks.
+    * ARM64: Fix code generation for IR_SLOAD with typecheck + conversion.
+    * Avoid assertion in case of stack overflow from stitched trace.
+    * Ensure correct stack top for OOM error message.
+    * ARM64: Fix IR_SLOAD assembly.
+    * Fix trace join to BC_JLOOP originating from BC_ITERN.
+    * bugfix: fix `math.floor()` and `math.ceil()`. _Thanks Aditya Bisht for the patch._
+    * Add -F option to override filename in jit.bcsave (luajit -b).
+    * Patch luajit.pc with INSTALL_INC, if customized.
+    * LJ_GC64: Fix `lua_concat()`.
+    * Prevent use of RTLD_DEFAULT when NO_RTLD_DEFAULT is defined.
+    * Improve GC estimation for userdata with attached managed memory.
+    * Add missing GC steps to string buffer methods.
+    * x86/x64: Limit VLOAD fusion to simple cases.
+    * OSX/iOS/ARM64: Fix generation of Mach-O object files.
+    * Prevent trace start at BC_ITERL after compiled BC_ITERN.
+    * ARM64: Allow building with unwinding disabled.
+    * FFI: Fix sizeof expression in C parser for reference types.
+    * FFI: Fix ffi.alignof() for reference types.
+    * FFI: Allow ffi.metatype() for typedefs with attributes.
+    * OSX/iOS/ARM64: Fix bytecode embedding in Mach-O object file.
+    * LJ_GC64: Fix IR_VARG offset for fixed number of results.
+    * x86/x64: Fix math.ceil(-0.9) result sign.
+    * Make embedded bytecode readable and forward-compatible.
+    * Update console build instructions.
+    * Avoid zero-sized arrays in jit_State.
+    * Don't use jit_State during build with JIT disabled.
+    * DynASM/ARM64: Fix LSL/BFI* encoding with variable registers.
+    * Fix ITERN loop detection when hook checks are enabled.
+    * Prevent C compiler undefined-behavior optimization.
+    * Fix alias analysis for table length forwarding.
+    * Fix loop initialization in table.foreach().
+    * LJ_GC64: Fix HREFK optimization.
+    * Fix recording of __concat metamethod.
+    * Cleanup of system and architecture support docs.
+
+* upgraded [resty-cli](https://github.com/openresty/resty-cli) to v0.29
+    * change: save the original `ngx.exit` to `ngx.orig_exit`. _Thanks lijunlong for the patch._
+
+* upgraded [lua-cjson](https://github.com/openresty/lua-cjson) to 2.1.0.11
+    * bugfix: empty_array can not work on Apple because cjson did not compare light userdata address with masked address. _Thanks Datong Sun for the patch._
+    * bugfix: windows luarocks doesn't export `cjson.safe`. _Thanks momoterraw for the patch._
+
+* upgraded [headers-more-nginx-module](https://github.com/openresty/headers-more-nginx-module) to v0.34
+    * bugfix: nginx crash when accessing uninitialized pointer. _Thanks lijunlong for the patch._
+    * bugfix: update handling of multiple headers changed in nginx 1.23.0. _Thanks Hiroaki Nakamura for the patch._
+    * bugfix: fixed build error with nginx >= 1.23.0. _Thanks somni for the patch._
+
+* upgraded [lua-resty-upstream-healthcheck](https://github.com/openresty/lua-resty-upstream-healthcheck) to v0.07
+    * change: improved healthcheck status for prometheus. _Thanks Jonas Badstübner for the patch._
+    * bugfix: `opts.host` has not been assigned to ctx. _Thanks yueziii for the patch._
+    * feature: allowing check on different port. _Thanks Franck Lombardi for the patch._
+    * feature: add HTTPS health check. _Thanks Yannic Rieger for the patch._
+    * feature: add prometheus metrics format status. _Thanks Yannic Bastian Rieger for the patch._
+
+* upgraded [opm](https://github.com/openresty/opm) to v0.0.7
+    * change: web: show the package installation command in the package details page. _Thanks guisheng zhou for the patch._
+    * bugfix: 'install_dir' should not be `/usr/local/openresty/site` but `/usr/local/openresty/bin`. _Thanks lijunlong for the patch._
+    * feature: web: support github login and deferred deletion. _Thanks xlibor for the patch._
+
+* upgraded [ngx_devel_kit](https://github.com/simplresty/ngx_devel_kit) to v0.3.2
+    * change: fixed a typo in `ndk_upstream_list.c`. _Thanks lijunlong for the patch._
+
+* upgraded [lua-resty-lock](https://github.com/openresty/lua-resty-lock) to v0.09
+    * optimize: return setmetatable is NYI. _Thanks lijunlong for the patch._
+
+* upgraded [srcache-nginx-module](https://github.com/openresty/srcache-nginx-module) to v0.33
+    * bugfix: update handling of cache_control changed in nginx 1.23.0. _Thanks Hiroaki Nakamura for the patch._
+    * change: add status code 307, 308 to the default value of `srcache_store_statuses`. _Thanks Jérémy Lal for the patch._
+
+* upgraded [lua-resty-websocket](https://github.com/openresty/lua-resty-websocket) to v0.10
+    * feature: add mtls client cert support. _Thanks Qi for the patch._
+    * optimize: localize some `ngx.*` API to improve performance. _Thanks Chrono for the patch._
+    * bugfix: default to port 443 for wss urls. _Thanks John Regan for the patch._
+
+* upgraded [lua-resty-lrucache](https://github.com/openresty/lua-resty-lrucache) to v0.13
+    * optimize: remove NYI call in lurcache. _Thanks lijunlong for the patch._
+
+* upgraded [lua-resty-upload](https://github.com/openresty/lua-resty-upload) to v0.11
+    * feature: add an option to preserve body. _Thanks Suika for the patch._
+
+* upgraded [lua-resty-memcached](https://github.com/openresty/lua-resty-memcached) to v0.17
+    * optimize: return `setmetatable` is NYI which can not be jit compiled. _Thanks lijunlong for the patch._
+    * optimize: reuse the `cmd_tab` to minimize the gc. _Thanks lijunlong for the patch._
+    * feature: implemented `{init,commit,cancel}_pipeline()`. _Thanks syz for the patch._
+    * feature: add support for connecting over TLS. _Thanks Alessandro Ghedini for the patch._
+
+* upgraded [echo-nginx-module](https://github.com/openresty/echo-nginx-module) to v0.63
+    * optimize: fix potential null pointer dereference found by Coverity. _Thanks Ilya Shipitsin for the patch._
+    * bugfix: fix potential null pointer dereference found by Coverity. _Thanks Ilya Shipitsin for the patch._
+    * bugfix: fix minor issue found by Coverity in `src/ngx_http_echo_subrequest.c`. _Thanks Ilya Shipitsin for the patch._
+
+* upgraded [drizzle-nginx-module](https://github.com/openresty/drizzle-nginx-module) to v0.1.12
+    * bugfix: fix potential null pointer dereference found by Coverity. _Thanks Ilya Shipitsin for the patch._

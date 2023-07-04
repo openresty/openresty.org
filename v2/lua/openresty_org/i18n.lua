@@ -35,7 +35,6 @@ local trans_cn = {
     ["Try OpenResty XRay"] = "试用 OpenResty XRay",
     ["Video Tutorials"] = "视频教程",
     ["is now released!"] = "已发布。",
-    ["is out!"] = "发布",
     ["is published."] = "已发表。",
     ["view the source code of this site"] = "查看本站的源代码",
 }
