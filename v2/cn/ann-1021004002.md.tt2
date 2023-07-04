@@ -23,7 +23,7 @@ and Oracle Linux are provided on this [Download page](download.html).
     * Fix trace join to `BC_JLOOP` originating from `BC_ITERN`.
     * Fix `math.floor()` and `math.ceil()`.
     * Many fixes imported from Mike Pall's upstream https://github.com/luajit/luajit repository.
-* Fixed a bug that uses memory after free when encountering an invalid `IF-Match` request header.
+* Fixed a bug that uses memory after free when encountering an invalid `IF-Match` request header. Thanks to Michal Jeczalik Jr, Nishant Hooda and Kong Inc for reporting this issue.
 * Implemented `monotonic_msec()` and `monotonic_time()` in `resty.core.time`.
 * Apple Silicon FFI ABI limitation workaround.
 * Reimplemented `tcpsock:sslhandshake`, coroutine wrapper, and `ngx.req.is_internal` with FFI.
