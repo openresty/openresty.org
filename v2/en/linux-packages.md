@@ -126,7 +126,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     3.15            x86_64, aarch64
 ```
 
-* [CBL-Mariner](#mbl-mariner)
+* [CBL-Mariner](#cbl-mariner)
 
 ```
     Version         Supported Architectures

@@ -126,7 +126,7 @@
     3.15            x86_64, aarch64
 ```
 
-* [CBL-Mariner](#mbl-mariner)
+* [CBL-Mariner](#cbl-mariner)
 
 ```
     版本号          支持的体系结构
