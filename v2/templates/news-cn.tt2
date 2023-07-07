@@ -16,7 +16,7 @@
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/ylang-intro-part1/?src=org_news" target="_blank">Ylang: 适用于 eBPF、Stap+、GDB 等框架的通用语言（第一部分）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/ngx-req-body-latency/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ngx-req-body-latency.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/ngx-req-body-latency/?src=org_news" target="_blank">解决额外的 200ms 请求延迟的问题</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/ngx-req-body-latency/?src=org_news" target="_blank">自动诊断线上请求的 200 毫秒额外延时</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edgelang-intro/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edgelang-intro.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edgelang-intro/?src=org_news" target="_blank">EdgeLang：一种强大而高效的网关逻辑小语言</a><span>&nbsp;[% c.l("is published.") %]</span></div>
