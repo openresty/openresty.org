@@ -39,47 +39,47 @@
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-request-id/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-request-id.png"><img class="article-img" src="../images/header-images/edge-request-id.png" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">OpenResty Edge 中的请求 ID</p>
+              <p class="blog-title">使用请求 ID 来调试网关问题（使用 OpenResty Edge）</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-hcaptcha/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-hcaptcha.png"><img class="article-img" src="../images/header-images/edge-hcaptcha.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">在 OpenResty Edge 中启用 hCaptcha 验证码图片</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-sni-proxy-application/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-sni-proxy-application.jpg"><img class="article-img" src="../images/header-images/edge-sni-proxy-application.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">OpenResty Edge 中 SNI Proxy 类型的应用</p>
-            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-serve-static-resource/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-serve-static-resource.jpg"><img class="article-img" src="../images/header-images/edge-serve-static-resource.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">在 OpenResty Edge 中使用静态资源</p>
+              <p class="blog-title">向 OpenResty Edge 网关推送静态资源</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-sni-proxy-application/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-sni-proxy-application.jpg"><img class="article-img" src="../images/header-images/edge-sni-proxy-application.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">在 OpenResty Edge 中配置 SNI 代理</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-captcha/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-captcha.png"><img class="article-img" src="../images/header-images/edge-captcha.png" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">OpenResty Edge 内置的验证码</p>
+              <p class="blog-title">使用 OpenResty 内建的验证码页面</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-access-log/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-access-log.jpg"><img class="article-img" src="../images/header-images/edge-access-log.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">OpenResty Edge 中的访问日志</p>
+              <p class="blog-title">在 OpenResty Edge 中配置网关的访问日志文件</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-tcp-application/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-tcp-application.jpg"><img class="article-img" src="../images/header-images/edge-tcp-application.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">OpenResty Edge 中的 TCP 应用</p>
+              <p class="blog-title">使用 OpenResty Edge 对 TCP 应用进行负载均衡</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-error-log/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-error-log.png"><img class="article-img" src="../images/header-images/edge-error-log.png" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">OpenResty Edge 中的错误日志</p>
+              <p class="blog-title">在 OpenResty Edge 中配置错误日志文件</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-sticky-cookie/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/sticky-cookie.jpg"><img class="article-img" src="../images/header-images/sticky-cookie.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">OpenResty Edge 中的 Sticky Cookie</p>
+              <p class="blog-title">在 OpenResty Edge 网关中配置上游的粘性 Cookie</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-standard-dynamic-metrics/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/measure.jpg"><img class="article-img" src="../images/header-images/measure.jpg" loading="lazy"/></div>
