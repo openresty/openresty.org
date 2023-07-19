@@ -132,7 +132,7 @@ Promise.all([
   }
 })
 
-genEnVideos(),
+// genEnVideos(),
 genCnVideos(),
 
 async function optimizeImg(pic) {
