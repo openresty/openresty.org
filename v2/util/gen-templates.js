@@ -126,7 +126,7 @@ async function genCnVideos() {
 Promise.all([
   genSlideTemplate('en'),
   genSlideTemplate('cn'),
-  genEnVideos(),
+  // genEnVideos(),
   genCnVideos(),
 ]).then(() => {
   for(pic of pics) {
