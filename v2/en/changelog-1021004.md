@@ -185,7 +185,7 @@
     * Linux/ARM64: Make mremap() non-moving due to VA space woes.
 
 
-# Version 1.21.4.2 - 04 Jul 2023
+# Version 1.21.4.2 - 19 Jul 2023
 
 * win32/win64: upgraded zlib to 1.2.13.
 * win32/win64: upgraded OpenSSL to 1.1.1t.
