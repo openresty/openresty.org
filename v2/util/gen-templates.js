@@ -126,13 +126,14 @@ async function genCnVideos() {
 Promise.all([
   genSlideTemplate('en'),
   genSlideTemplate('cn'),
-  genEnVideos(),
-  genCnVideos(),
 ]).then(() => {
   for(pic of pics) {
     optimizeImg(pic);
   }
 })
+
+genEnVideos(),
+genCnVideos(),
 
 async function optimizeImg(pic) {
   const response = await axios({
