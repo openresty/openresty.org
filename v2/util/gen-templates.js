@@ -8,9 +8,9 @@ const axios = require('axios');
 const pug = require('pug');
 
 const http = axios.create();
-const enBase = 'https://blog.openresty.com/en/';
-const cnBase = 'https://blog.openresty.com.cn/cn/';
-const picBase = 'https://blog.openresty.com/';
+const enBase = 'https://stage2.blog.openresty.com/cn/';
+const cnBase = 'https://stage2.blog.openresty.com/cn/';
+const picBase = 'https://stage2.blog.openresty.com/';
 const staticBaseUrl = 'https://static.openresty.com';
 const height = 260;
 let pics = new Set();
