@@ -11,6 +11,11 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/lua-str-lower-excep/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/software-errors.jpeg"><img class="article-img" src="../images/header-images/software-errors.jpeg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">我们是如何解决了一个自定义 Kong 插件中的 Lua 异常所引起的 CPU 瓶颈的（使用 OpenResty XRay）</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/ylang-intro-part1/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/ylang-part1.png"><img class="article-img" src="../images/header-images/ylang-part1.png" loading="lazy"/></div>
             <div class="article-text">
@@ -105,11 +110,6 @@
             <div class="blog-img" data-pic="/header-images/waf.jpg"><img class="article-img" src="../images/header-images/waf.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty Edge 的高性能 Web 应用防火墙（WAF）</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-edgelang/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-edgelang.jpg"><img class="article-img" src="../images/header-images/edge-edgelang.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">OpenResty Edge 中的网关小语言 EdgeLang</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
