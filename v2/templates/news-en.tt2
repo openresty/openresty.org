@@ -15,6 +15,9 @@
   <div class="news-item"><a href="https://blog.openresty.com/en/lua-str-lower-excep/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/software-errors.jpeg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/lua-str-lower-excep/?src=org_news" target="_blank">How we solved a CPU bottleneck caused by Lua exceptions in a custom Kong plugin (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/kong-plugin-mem-cpu-stats/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cpu-mem-stats.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/kong-plugin-mem-cpu-stats/?src=org_news" target="_blank">Memory and CPU usage statistics among Kong plugins online (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/ngx-req-body-latency/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ngx-req-body-latency.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/ngx-req-body-latency/?src=org_news" target="_blank">Troubleshooting the extra 200-ms request latency online</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
@@ -26,8 +29,5 @@
   </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/ysql-count-ngx-reqs/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ysql-count-ngx-reqs.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/ysql-count-ngx-reqs/?src=org_news" target="_blank">Real-Time Request Counting against Nginx Processes via YSQL</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/edge-request-id/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-request-id.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-request-id/?src=org_news" target="_blank">Using request IDs to troubleshoot problematic requests in OpenResty Edge gateways</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>

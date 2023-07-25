@@ -15,6 +15,9 @@
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/lua-str-lower-excep/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/software-errors.jpeg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/lua-str-lower-excep/?src=org_news" target="_blank">我们是如何解决了一个自定义 Kong 插件中的 Lua 异常所引起的 CPU 瓶颈的（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/kong-plugin-mem-cpu-stats/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cpu-mem-stats.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/kong-plugin-mem-cpu-stats/?src=org_news" target="_blank">在线上 Kong 服务进程中实时统计 CPU 和内存用量最高的那些插件（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/ylang-intro-part1/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ylang-part1.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/ylang-intro-part1/?src=org_news" target="_blank">Ylang: 适用于 eBPF、Stap+、GDB 等框架的通用语言（第一集，全四集）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
@@ -26,8 +29,5 @@
   </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-cli-lua-table-leaks/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/lua-ram.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-cli-lua-table-leaks/?src=org_news" target="_blank">使用 OpenResty XRay 的命令行工具定位泄漏的 Lua table</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/ysql-count-ngx-reqs/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ysql-count-ngx-reqs.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/ysql-count-ngx-reqs/?src=org_news" target="_blank">使用 YSQL 语言对 Nginx 进程进行实时请求计数</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
