@@ -272,8 +272,12 @@ sudo apt-get -y install --no-install-recommends openresty
 
 ```bash
 # add the yum repo:
-wget https://openresty.org/package/centos/openresty.repo
-sudo mv openresty.repo /etc/yum.repos.d/
+repo=openresty.repo
+if egrep "PLATFORM.*el9" /etc/os-release; then
+    repo=openresty2.repo
+fi
+wget https://openresty.org/package/centos/$repo
+sudo mv $repo /etc/yum.repos.d/openresty.repo
 
 # update the yum index:
 sudo yum check-update
@@ -310,8 +314,12 @@ sudo yum --disablerepo="*" --enablerepo="openresty" list available
 
 ```bash
 # add the yum repo:
-wget https://openresty.org/package/rhel/openresty.repo
-sudo mv openresty.repo /etc/yum.repos.d/
+repo=openresty.repo
+if egrep "PLATFORM.*el9" /etc/os-release; then
+    repo=openresty2.repo
+fi
+wget https://openresty.org/package/rhel/$repo
+sudo mv $repo /etc/yum.repos.d/openresty.repo
 
 # update the yum index:
 sudo yum check-update
@@ -507,8 +515,12 @@ sudo yum --disablerepo="*" --enablerepo="openresty" list
 你可以在你的 Rocky Linux 系统里用下面命令添加 `openresty` 仓库：
 
 ```bash
-sudo yum install -y yum-utils
-sudo yum-config-manager --add-repo https://openresty.org/package/rocky/openresty.repo
+repo=openresty.repo
+if egrep "PLATFORM.*el9" /etc/os-release; then
+    repo=openresty2.repo
+fi
+wget https://openresty.org/package/rocky/$repo
+sudo mv $repo /etc/yum.repos.d/openresty.repo
 ```
 
 然后你就可以像下面这样安装包了，比如说安装 `openresty`：

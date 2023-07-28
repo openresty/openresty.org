@@ -306,8 +306,12 @@ run the following commands (replace `yum` with `dnf` below if you are using Cent
 
 ```bash
 # add the yum repo:
-wget https://openresty.org/package/centos/openresty.repo
-sudo mv openresty.repo /etc/yum.repos.d/
+repo=openresty.repo
+if egrep "PLATFORM.*el9" /etc/os-release; then
+    repo=openresty2.repo
+fi
+wget https://openresty.org/package/centos/$repo
+sudo mv $repo /etc/yum.repos.d/openresty.repo
 
 # update the yum index:
 sudo yum check-update
@@ -346,8 +350,12 @@ run the following commands (replace `yum` with `dnf` below if you are using RHEL
 
 ```bash
 # add the yum repo:
-wget https://openresty.org/package/rhel/openresty.repo
-sudo mv openresty.repo /etc/yum.repos.d/
+repo=openresty.repo
+if egrep "PLATFORM.*el9" /etc/os-release; then
+    repo=openresty2.repo
+fi
+wget https://openresty.org/package/rhel/$repo
+sudo mv $repo /etc/yum.repos.d/openresty.repo
 
 # update the yum index:
 sudo yum check-update
@@ -556,8 +564,12 @@ You can enable the `openresty` repository on your Rocky Linux system like this:
 
 ```bash
 # add the repo:
-wget https://openresty.org/package/rocky/openresty.repo
-sudo mv openresty.repo /etc/yum.repos.d/
+repo=openresty.repo
+if egrep "PLATFORM.*el9" /etc/os-release; then
+    repo=openresty2.repo
+fi
+wget https://openresty.org/package/rocky/$repo
+sudo mv $repo /etc/yum.repos.d/openresty.repo
 
 # update the index:
 sudo yum check-update
