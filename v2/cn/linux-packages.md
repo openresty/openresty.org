@@ -270,23 +270,23 @@ sudo apt-get -y install --no-install-recommends openresty
 你可以在你的 CentOS 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum check-update` 命令）。
 运行下面的命令就可以添加我们的仓库（对于 CentOS 8 或以上版本，应将下面的 `yum` 都替换成 `dnf`）：
 
-## CentOS 8 或者更老版本
-
-```bash
-# add the yum repo:
-wget https://openresty.org/package/centos/openresty.repo
-sudo mv openresty.repo /etc/yum.repos.d/openresty.repo
-
-# update the yum index:
-sudo yum check-update
-```
-
 ## CentOS 9 或者更新版本
 
 ```bash
 # add the yum repo:
 wget https://openresty.org/package/centos/openresty2.repo
 sudo mv openresty2.repo /etc/yum.repos.d/openresty.repo
+
+# update the yum index:
+sudo yum check-update
+```
+
+## CentOS 8 或者更老版本
+
+```bash
+# add the yum repo:
+wget https://openresty.org/package/centos/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/openresty.repo
 
 # update the yum index:
 sudo yum check-update
@@ -321,23 +321,23 @@ sudo yum --disablerepo="*" --enablerepo="openresty" list available
 
 你可以在你的 RHEL 系统中添加 `openresty` 仓库，这样就可以便于未来安装或更新我们的软件包（通过 `yum check-update` 命令）。添加仓库，运行下面的命令（对于 RHEL 8 或以上版本，应将下面的 `yum` 都替换成 `dnf`）：
 
-## RHEL 8 或者更老的版本
-
-```bash
-# add the yum repo:
-wget https://openresty.org/package/rhel/openresty.repo
-sudo mv openresty.repo /etc/yum.repos.d/openresty.repo
-
-# update the yum index:
-sudo yum check-update
-```
-
 ## RHEL 9 或者更新的版本
 
 ```bash
 # add the yum repo:
 wget https://openresty.org/package/rhel/openresty2.repo
 sudo mv openresty2.repo /etc/yum.repos.d/openresty.repo
+
+# update the yum index:
+sudo yum check-update
+```
+
+## RHEL 8 或者更老的版本
+
+```bash
+# add the yum repo:
+wget https://openresty.org/package/rhel/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/openresty.repo
 
 # update the yum index:
 sudo yum check-update
@@ -532,6 +532,17 @@ sudo yum --disablerepo="*" --enablerepo="openresty" list
 
 你可以在你的 Rocky Linux 系统里用下面命令添加 `openresty` 仓库：
 
+## Rocky 9 或者更新版本
+
+```bash
+# add the repo:
+wget https://openresty.org/package/rocky/openresty2.repo
+sudo mv openresty2.repo /etc/yum.repos.d/openresty.repo
+
+# update the index:
+sudo yum check-update
+```
+
 ## Rocky 8
 
 ```bash
@@ -539,17 +550,6 @@ sudo yum --disablerepo="*" --enablerepo="openresty" list
 repo=openresty.repo
 wget https://openresty.org/package/rocky/openersty.repo
 sudo mv openresty.repo /etc/yum.repos.d/openresty.repo
-
-# update the index:
-sudo yum check-update
-```
-
-## Rocky 9 或者更新版本
-
-```bash
-# add the repo:
-wget https://openresty.org/package/rocky/openresty2.repo
-sudo mv openresty2.repo /etc/yum.repos.d/openresty.repo
 
 # update the index:
 sudo yum check-update
