@@ -298,20 +298,29 @@ sudo apt-get -y install --no-install-recommends openresty
 See the [OpenResty Deb Packages](deb-packages.html) page for more details on all available packages in this
 repository.
 
-# CentOS
+# CentOS 8
 
 You can add the `openresty` repository to your CentOS system so as to easily install
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
 run the following commands (replace `yum` with `dnf` below if you are using CentOS 8+):
 
+## CentOS 9 or later
+
 ```bash
 # add the yum repo:
-repo=openresty.repo
-if egrep "PLATFORM.*el9" /etc/os-release; then
-    repo=openresty2.repo
-fi
-wget https://openresty.org/package/centos/$repo
-sudo mv $repo /etc/yum.repos.d/openresty.repo
+wget https://openresty.org/package/centos/openresty2.repo
+sudo mv openresty2.repo /etc/yum.repos.d/openresty.repo
+
+# update the yum index:
+sudo yum check-update
+```
+
+## CentOS 8 or older
+
+```bash
+# add the yum repo:
+wget https://openresty.org/package/centos/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/openresty.repo
 
 # update the yum index:
 sudo yum check-update
@@ -348,14 +357,23 @@ You can add the `openresty` repository to your Red Hat Enterprise Linux (RHEL) s
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
 run the following commands (replace `yum` with `dnf` below if you are using RHEL 8+):
 
+## RHEL 9 or later
+
 ```bash
 # add the yum repo:
-repo=openresty.repo
-if egrep "PLATFORM.*el9" /etc/os-release; then
-    repo=openresty2.repo
-fi
-wget https://openresty.org/package/rhel/$repo
-sudo mv $repo /etc/yum.repos.d/openresty.repo
+wget https://openresty.org/package/rhel/openresty2.repo
+sudo mv openresty2.repo /etc/yum.repos.d/openresty.repo
+
+# update the yum index:
+sudo yum check-update
+```
+
+## RHEL 8 or older
+
+```bash
+# add the yum repo:
+wget https://openresty.org/package/rhel/openresty.repo
+sudo mv openresty.repo /etc/yum.repos.d/openresty.repo
 
 # update the yum index:
 sudo yum check-update
@@ -562,14 +580,24 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all
 
 You can enable the `openresty` repository on your Rocky Linux system like this:
 
+## Rocky 9 or later
+
+```bash
+# add the repo:
+wget https://openresty.org/package/rocky/openresty2.repo
+sudo mv openresty2.repo /etc/yum.repos.d/openresty.repo
+
+# update the index:
+sudo yum check-update
+```
+
+## Rocky 8
+
 ```bash
 # add the repo:
 repo=openresty.repo
-if egrep "PLATFORM.*el9" /etc/os-release; then
-    repo=openresty2.repo
-fi
-wget https://openresty.org/package/rocky/$repo
-sudo mv $repo /etc/yum.repos.d/openresty.repo
+wget https://openresty.org/package/rocky/openersty.repo
+sudo mv openresty.repo /etc/yum.repos.d/openresty.repo
 
 # update the index:
 sudo yum check-update
