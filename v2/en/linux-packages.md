@@ -304,7 +304,7 @@ You can add the `openresty` repository to your CentOS system so as to easily ins
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
 run the following commands (replace `yum` with `dnf` below if you are using CentOS 8+):
 
-- CentOS 8 or older
+## CentOS 8 or older
 
 ```bash
 # add the yum repo:
@@ -315,7 +315,7 @@ sudo mv openresty.repo /etc/yum.repos.d/openresty.repo
 sudo yum check-update
 ```
 
-- CentOS 9 or newer
+## CentOS 9 or later
 
 ```bash
 # add the yum repo:
@@ -357,7 +357,7 @@ You can add the `openresty` repository to your Red Hat Enterprise Linux (RHEL) s
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
 run the following commands (replace `yum` with `dnf` below if you are using RHEL 8+):
 
-- RHEL 8 or older
+## RHEL 8 or older
 
 ```bash
 # add the yum repo:
@@ -368,7 +368,7 @@ sudo mv openresty.repo /etc/yum.repos.d/openresty.repo
 sudo yum check-update
 ```
 
-- RHEL 9 or newer
+## RHEL 9 or later
 
 ```bash
 # add the yum repo:
@@ -580,7 +580,7 @@ See the [OpenResty RPM Packages](rpm-packages.html) page for more details on all
 
 You can enable the `openresty` repository on your Rocky Linux system like this:
 
-- Rocky 8
+## Rocky 8
 
 ```bash
 # add the repo:
@@ -592,7 +592,7 @@ sudo mv openresty.repo /etc/yum.repos.d/openresty.repo
 sudo yum check-update
 ```
 
-- Rocky 9 or newer
+## Rocky 9 or later
 
 ```bash
 # add the repo:
