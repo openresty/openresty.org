@@ -298,7 +298,7 @@ sudo apt-get -y install --no-install-recommends openresty
 See the [OpenResty Deb Packages](deb-packages.html) page for more details on all available packages in this
 repository.
 
-# CentOS 8
+# CentOS
 
 You can add the `openresty` repository to your CentOS system so as to easily install
 our packages and receive updates in the future (via the `yum update` command). To add the repository, just
