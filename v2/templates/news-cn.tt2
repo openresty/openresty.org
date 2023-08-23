@@ -12,22 +12,22 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-test-nginx-030.html">Test::Nginx 0.30</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/ylang-intro-part2/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ylang-part2.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/ylang-intro-part2/?src=org_news" target="_blank">Ylang：适用于 eBPF、Stap+、GDB 等框架的通用语言（第二集，全四集）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/ylang-intro-part3/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/ylang-part3.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/ylang-intro-part3/?src=org_news" target="_blank">Ylang: 适用于 eBPF、Stap+、GDB 等框架的通用语言（第三集，全四集）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/python-low-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/python-low-cpu-cn.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/python-low-cpu/?src=org_news" target="_blank">线上快速定位导致 CPU 上不去的 Python 代码路径（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/kernel-tracing-bugs-found-by-xray/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/penguin-jump-fire-hole.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/kernel-tracing-bugs-found-by-xray/?src=org_news" target="_blank">捕捉 Linux 内核追踪子系统中的两个 bug（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/perl-high-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/perl-high-cpu.png" loading="lazy"/></a>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/perl-high-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/perl-high-cpu-cn.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/perl-high-cpu/?src=org_news" target="_blank">线上快速定位 CPU 最热的 Perl 代码路径（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-lua-hot-code/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-lua-hot-code.png" loading="lazy"/></a>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-lua-hot-code/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-lua-hot-code-cn.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-lua-hot-code/?src=org_news" target="_blank">线上快速定位 CPU 最热的 Lua 代码路径（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/lua-str-lower-excep/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/software-errors.jpeg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/lua-str-lower-excep/?src=org_news" target="_blank">我们是如何解决了一个自定义 Kong 插件中的 Lua 异常所引起的 CPU 瓶颈的（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/kong-plugin-mem-cpu-stats/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cpu-mem-stats.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/kong-plugin-mem-cpu-stats/?src=org_news" target="_blank">在线上 Kong 服务进程中实时统计 CPU 和内存用量最高的插件（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>

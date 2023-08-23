@@ -11,6 +11,16 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/ylang-intro-part2/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/ylang-part2.png"><img class="article-img" src="../images/header-images/ylang-part2.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Ylang：适用于 eBPF、Stap+、GDB 等框架的通用语言（第二集，全四集）</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/ylang-intro-part3/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/ylang-part3.png"><img class="article-img" src="../images/header-images/ylang-part3.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Ylang: 适用于 eBPF、Stap+、GDB 等框架的通用语言（第三集，全四集）</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/python-low-cpu/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/python-low-cpu-cn.png"><img class="article-img" src="../images/header-images/python-low-cpu-cn.png" loading="lazy"/></div>
             <div class="article-text">
@@ -22,12 +32,12 @@
               <p class="blog-title">捕捉 Linux 内核追踪子系统中的两个 bug（使用 OpenResty XRay）</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/perl-high-cpu/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/perl-high-cpu.png"><img class="article-img" src="../images/header-images/perl-high-cpu.png" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/perl-high-cpu-cn.png"><img class="article-img" src="../images/header-images/perl-high-cpu-cn.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">线上快速定位 CPU 最热的 Perl 代码路径（使用 OpenResty XRay）</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-lua-hot-code/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-lua-hot-code.png"><img class="article-img" src="../images/header-images/xray-lua-hot-code.png" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/xray-lua-hot-code-cn.png"><img class="article-img" src="../images/header-images/xray-lua-hot-code-cn.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">线上快速定位 CPU 最热的 Lua 代码路径（使用 OpenResty XRay）</p>
             </div></a></div>
@@ -100,16 +110,6 @@
             <div class="blog-img" data-pic="/header-images/edge-tcp-application.jpg"><img class="article-img" src="../images/header-images/edge-tcp-application.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">使用 OpenResty Edge 对 TCP 应用进行负载均衡</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-error-log/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-error-log.png"><img class="article-img" src="../images/header-images/edge-error-log.png" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">在 OpenResty Edge 中配置错误日志文件</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-sticky-cookie/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/sticky-cookie.jpg"><img class="article-img" src="../images/header-images/sticky-cookie.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">在 OpenResty Edge 网关中配置上游的粘性 Cookie</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
