@@ -6,7 +6,7 @@
 
 # Slack Community
 
-Please [join us here](https://join.slack.com/t/openresty-community/shared_invite/zt-17jehfrkg-3~HyIrFLN2Z0KH7tL_sJxQ) and share your thoughts and questions with us, we can't wait to see you there!
+Please [join us here](https://join.slack.com/t/openresty-community/shared_invite/zt-197i6wodx-fgXxfrWsVB5O9qRu4L~v8A) and share your thoughts and questions with us, we can't wait to see you there!
 
 #  Mailing Lists
 
