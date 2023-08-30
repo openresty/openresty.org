@@ -548,7 +548,7 @@ sudo yum check-update
 ```bash
 # add the repo:
 repo=openresty.repo
-wget https://openresty.org/package/rocky/openersty.repo
+wget https://openresty.org/package/rocky/openresty.repo
 sudo mv openresty.repo /etc/yum.repos.d/openresty.repo
 
 # update the index:
