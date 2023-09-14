@@ -1,9 +1,22 @@
 
 <div id="video-tutorials">
   <div class="play-list">
+    <h2><a href="#PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ" style="cursor: pointer">OpenResty XRay</a></h2>
+    <ul>
+      <li><a href="#yH2OxDTgNNc" style="cursor: pointer">Pinpoint hottest Perl code paths (using OpenResty XRay)</a></li>
+      <li><a href="#zKg6CizGP0Q" style="cursor: pointer">Discover the blocking/sleeping Python code paths (using OpenResty XRay)</a></li>
+      <li><a href="#1R7FsVJbm4s" style="cursor: pointer">Find Blocking Go Code Paths Holding back CPU Usage (Using OpenResty XRay)</a></li>
+      <li><a href="#2fAXn2144lw" style="cursor: pointer">Pinpoint CPU-hottest Go code paths online (using OpenResty XRay)</a></li>
+      <li><a href="#7OkwoBUxbxI" style="cursor: pointer">Locate the hottest Lua code paths in online OpenResty/Nginx servers (using OpenResty XRay)</a></li>
+      <li><a href="#CiftezUPuaI" style="cursor: pointer">Pinpoint leaked Lua tables with OpenResty XRay's command-line tools</a></li>
+      <li><a href="#YPUGJBbSwIk" style="cursor: pointer">Real-Time Request Counting against Nginx Processes via YSQL</a></li>
+      <li><a href="#Y53mElQgfpo" style="cursor: pointer">Troubleshoot the extra 200-ms request latency online</a></li>
+      <li><a href="#-asOidukUw8" style="cursor: pointer">How to deploy the on-premises version of OpenResty XRay on Microsoft's Azure cloud</a></li>
+    </ul>
+  </div>
+  <div class="play-list">
     <h2><a href="#PLlR4WakbzQp0iUvHwJeBcG5MKWgGa_ahU" style="cursor: pointer">OpenResty Tutorials</a></h2>
     <ul>
-      <li><a href="#-asOidukUw8" style="cursor: pointer">How to deploy the on-premises version of OpenResty XRay on Microsoft's Azure cloud</a></li>
       <li><a href="#XxL6Frvv4TM" style="cursor: pointer">Domain-Specific Languages (Implementation Strategies and Technologies)</a></li>
       <li><a href="#Hu68mQDKXCo" style="cursor: pointer">Install OpenResty on Ubuntu 20.04 via apt-get</a></li>
       <li><a href="#4VQP7eKq4oA" style="cursor: pointer">Streaming HTTP Response Output in OpenResty</a></li>
@@ -20,16 +33,14 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK" style="cursor: pointer">OpenResty Edge</a></h2>
     <ul>
-      <li><a href="#PgMdFHfeE08" style="cursor: pointer">Private video</a></li>
-      <li><a href="#MPoj5a1pzxA" style="cursor: pointer">Private video</a></li>
-      <li><a href="#el2nlbLSof0" style="cursor: pointer">Request ID in OpenResty Edge</a></li>
-      <li><a href="#IsrwpfuZFAs" style="cursor: pointer">Enabling the anti-bot solution hCaptcha in OpenResty Edge</a></li>
-      <li><a href="#Tq-_Kq7eq2Y" style="cursor: pointer">Serve Static Resouces in OpenResty Edge</a></li>
-      <li><a href="#hY0-XH_Svc0" style="cursor: pointer">SNI Proxy applications in OpenResty Edge</a></li>
-      <li><a href="#qbH92BISUuY" style="cursor: pointer">Access Logs in OpenResty Edge</a></li>
-      <li><a href="#MnoI48k_ZRo" style="cursor: pointer">TCP Applications in OpenResty Edge</a></li>
-      <li><a href="#yWcYDZWm5V0" style="cursor: pointer">Error Logs in OpenResty Edge</a></li>
-      <li><a href="#FQteUX-oPwE" style="cursor: pointer">Sticky Cookie in OpenResty Edge</a></li>
+      <li><a href="#el2nlbLSof0" style="cursor: pointer">Use request IDs to troubleshoot problematic requests in OpenResty Edge gateways</a></li>
+      <li><a href="#IsrwpfuZFAs" style="cursor: pointer">Configure hCaptcha’s captcha webpages in OpenResty Edge</a></li>
+      <li><a href="#Tq-_Kq7eq2Y" style="cursor: pointer">Pushing static resources to OpenResty Edge gateways</a></li>
+      <li><a href="#hY0-XH_Svc0" style="cursor: pointer">Configuring SNI proxies in OpenResty Edge</a></li>
+      <li><a href="#qbH92BISUuY" style="cursor: pointer">Configuring gateway access log files in OpenResty Edge</a></li>
+      <li><a href="#MnoI48k_ZRo" style="cursor: pointer">Load-balancing TCP applications via OpenResty Edge</a></li>
+      <li><a href="#yWcYDZWm5V0" style="cursor: pointer">Configuring error log files in OpenResty Edge</a></li>
+      <li><a href="#FQteUX-oPwE" style="cursor: pointer">Configuring sticky cookies in OpenResty Edge gateways</a></li>
       <li><a href="#Uz2FxYQI6yk" style="cursor: pointer">How to use Standard Dynamic Metrics in OpenResty Edge</a></li>
       <li><a href="#pmlQiQZq91M" style="cursor: pointer">Managing traffic to Kubernetes (K8s) upstreams in OpenResty Edge</a></li>
       <li><a href="#udrFa0HVlww" style="cursor: pointer">Configure distributed gRPC proxy in OpenResty Edge</a></li>
@@ -58,9 +69,26 @@
       <li><a href="#oew5RYUPMYY" style="cursor: pointer">How We Generate Videos from Screenplay Files</a></li>
     </ul>
   </div>
-  <h2 id="PLlR4WakbzQp0iUvHwJeBcG5MKWgGa_ahU">OpenResty Tutorials</h2>
+  <h2 id="PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ">OpenResty XRay</h2>
+  <p id="yH2OxDTgNNc">Pinpoint hottest Perl code paths (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/yH2OxDTgNNc" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="zKg6CizGP0Q">Discover the blocking/sleeping Python code paths (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/zKg6CizGP0Q" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="1R7FsVJbm4s">Find Blocking Go Code Paths Holding back CPU Usage (Using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/1R7FsVJbm4s" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="2fAXn2144lw">Pinpoint CPU-hottest Go code paths online (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/2fAXn2144lw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="7OkwoBUxbxI">Locate the hottest Lua code paths in online OpenResty/Nginx servers (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/7OkwoBUxbxI" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="CiftezUPuaI">Pinpoint leaked Lua tables with OpenResty XRay's command-line tools</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/CiftezUPuaI" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="YPUGJBbSwIk">Real-Time Request Counting against Nginx Processes via YSQL</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/YPUGJBbSwIk" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="Y53mElQgfpo">Troubleshoot the extra 200-ms request latency online</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/Y53mElQgfpo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="-asOidukUw8">How to deploy the on-premises version of OpenResty XRay on Microsoft's Azure cloud</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/-asOidukUw8" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <h2 id="PLlR4WakbzQp0iUvHwJeBcG5MKWgGa_ahU">OpenResty Tutorials</h2>
   <p id="XxL6Frvv4TM">Domain-Specific Languages (Implementation Strategies and Technologies)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/XxL6Frvv4TM" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="Hu68mQDKXCo">Install OpenResty on Ubuntu 20.04 via apt-get</p>
@@ -84,25 +112,21 @@
   <p id="eSfYLvVQMxw">Hello World HTTP Example in OpenResty/Nginx</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2 id="PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK">OpenResty Edge</h2>
-  <p id="PgMdFHfeE08">Private video</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/PgMdFHfeE08" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="MPoj5a1pzxA">Private video</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/MPoj5a1pzxA" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="el2nlbLSof0">Request ID in OpenResty Edge</p>
+  <p id="el2nlbLSof0">Use request IDs to troubleshoot problematic requests in OpenResty Edge gateways</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/el2nlbLSof0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="IsrwpfuZFAs">Enabling the anti-bot solution hCaptcha in OpenResty Edge</p>
+  <p id="IsrwpfuZFAs">Configure hCaptcha’s captcha webpages in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/IsrwpfuZFAs" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="Tq-_Kq7eq2Y">Serve Static Resouces in OpenResty Edge</p>
+  <p id="Tq-_Kq7eq2Y">Pushing static resources to OpenResty Edge gateways</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/Tq-_Kq7eq2Y" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="hY0-XH_Svc0">SNI Proxy applications in OpenResty Edge</p>
+  <p id="hY0-XH_Svc0">Configuring SNI proxies in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/hY0-XH_Svc0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="qbH92BISUuY">Access Logs in OpenResty Edge</p>
+  <p id="qbH92BISUuY">Configuring gateway access log files in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/qbH92BISUuY" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="MnoI48k_ZRo">TCP Applications in OpenResty Edge</p>
+  <p id="MnoI48k_ZRo">Load-balancing TCP applications via OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/MnoI48k_ZRo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="yWcYDZWm5V0">Error Logs in OpenResty Edge</p>
+  <p id="yWcYDZWm5V0">Configuring error log files in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/yWcYDZWm5V0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="FQteUX-oPwE">Sticky Cookie in OpenResty Edge</p>
+  <p id="FQteUX-oPwE">Configuring sticky cookies in OpenResty Edge gateways</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/FQteUX-oPwE" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="Uz2FxYQI6yk">How to use Standard Dynamic Metrics in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/Uz2FxYQI6yk" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
