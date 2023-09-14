@@ -75,7 +75,9 @@ async function genEnVideos() {
 
     videosData.data.items.forEach(video => {
       const {title, resourceId, publishedAt} = video.snippet;
-      videos.push({id: resourceId.videoId, publishedAt, title, src: `https://www.youtube.com/embed/${resourceId.videoId}`})
+      if (title !== 'Private video') {
+        videos.push({id: resourceId.videoId, publishedAt, title, src: `https://www.youtube.com/embed/${resourceId.videoId}`})
+      }
     })
     videos.sort((v1, v2) => {
       return (new Date(v2.publishedAt)).getTime() - (new Date(v1.publishedAt)).getTime();
