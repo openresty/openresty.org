@@ -11,6 +11,11 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/llama-high-cpu/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/llama-high-cpu-en.png"><img class="article-img" src="../images/header-images/llama-high-cpu-en.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Find out how CPU time is spent inside llama.cpp with LlaMA2 models (using OpenResty XRay)</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/go-low-cpu/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/go-low-cpu.jpg"><img class="article-img" src="../images/header-images/go-low-cpu.jpg" loading="lazy"/></div>
             <div class="article-text">
@@ -105,11 +110,6 @@
             <div class="blog-img" data-pic="/header-images/edge-tcp-application-en.jpg"><img class="article-img" src="../images/header-images/edge-tcp-application-en.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Load-balancing TCP applications via OpenResty Edge</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-error-log/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-error-log.png"><img class="article-img" src="../images/header-images/edge-error-log.png" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Configuring error log files in OpenResty Edge</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
