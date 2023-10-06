@@ -11,10 +11,25 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/sled-high-cpu/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/cn-sled-high-cpu.png"><img class="article-img" src="../images/header-images/cn-sled-high-cpu.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">CPU 时间是如何耗费在 Rust 的 Sled 库内部的（使用OpenResty Xray）</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/etcd-cpu-distr/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/etcd-cpu-distr-cn.jpg"><img class="article-img" src="../images/header-images/etcd-cpu-distr-cn.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Go 的 etcd 服务器把 CPU 时间都花哪儿了（使用 OpenResty XRay）</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/llama-high-cpu/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/llama-high-cpu-cn.png"><img class="article-img" src="../images/header-images/llama-high-cpu-cn.png" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">找出 CPU 时间是如何耗费在使用 LlaMA2 模型的 llama.cpp 程序内部的（使用 OpenResty XRay）</p>
+              <p class="blog-title">CPU 时间是如何耗费在 llama.cpp 程序和 LLaMA2 模型内部的（使用 OpenResty XRay）</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/ylang-intro-part4/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/ylang-part4.png"><img class="article-img" src="../images/header-images/ylang-part4.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Ylang：适用于 eBPF、Stap+、GDB 等框架的通用语言（第四集，全四集）</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/go-low-cpu/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/cn-go-low-cpu-cover.png"><img class="article-img" src="../images/header-images/cn-go-low-cpu-cover.png" loading="lazy"/></div>
@@ -95,21 +110,6 @@
             <div class="blog-img" data-pic="/header-images/edge-request-id.png"><img class="article-img" src="../images/header-images/edge-request-id.png" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">使用请求 ID 来调试网关问题（使用 OpenResty Edge）</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-hcaptcha/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-hcaptcha-cn.jpg"><img class="article-img" src="../images/header-images/edge-hcaptcha-cn.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">在 OpenResty Edge 中配置 hCaptcha 的验证码页面</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-serve-static-resource/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-static-resource-cn.jpg"><img class="article-img" src="../images/header-images/edge-static-resource-cn.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">向 OpenResty Edge 网关推送静态资源</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-sni-proxy-application/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-sni-proxy-application-cn.jpg"><img class="article-img" src="../images/header-images/edge-sni-proxy-application-cn.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">在 OpenResty Edge 中配置 SNI 代理</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>

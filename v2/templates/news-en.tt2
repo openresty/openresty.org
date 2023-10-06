@@ -12,22 +12,22 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-test-nginx-030.html">Test::Nginx 0.30</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/python-high-mem/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-python-high-mem.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/python-high-mem/?src=org_news" target="_blank">Find the largest Python objects or values taking the most RAM (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/sled-high-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-sled-high-cpu.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/sled-high-cpu/?src=org_news" target="_blank">How CPU time is spent inside Rust’s Sled library</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/etcd-cpu-distr/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/etcd-cpu-distr-en.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/etcd-cpu-distr/?src=org_news" target="_blank">How CPU time is spent inside Go's etcd server (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/llama-high-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/llama-high-cpu-en.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/llama-high-cpu/?src=org_news" target="_blank">Find out how CPU time is spent inside llama.cpp with LlaMA2 models (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/llama-high-cpu/?src=org_news" target="_blank">How CPU time is spent inside llama.cpp + LLaMA2 (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/go-low-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/go-low-cpu.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/go-low-cpu/?src=org_news" target="_blank">Find Blocking Go Code Paths Holding back CPU Usage (Using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/go-high-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/go-high-cpu.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/go-high-cpu/?src=org_news" target="_blank">Pinpointing the hottest Go code paths with high CPU usage (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/python-low-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/python-low-cpu-en.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/python-low-cpu/?src=org_news" target="_blank">Pinpointing the blocking Python code paths (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/kernel-tracing-bugs-found-by-xray/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/penguin-jump-fire-hole.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/kernel-tracing-bugs-found-by-xray/?src=org_news" target="_blank">Two bugs in Linux kernels' tracing subsystem (found by OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/perl-high-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/perl-high-cpu.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/perl-high-cpu/?src=org_news" target="_blank">Pinpointing hottest Perl code paths (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
