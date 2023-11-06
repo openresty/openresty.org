@@ -16,7 +16,7 @@ OpenResty 官方 [APK 包仓库](linux-packages.html)提供下面的 apk 包 (�
 sudo rc-service openresty start
 ```
 
- `stop`、`reload`、`upgrade`、`reopen` 和 `checkconfig` 这些指令也是支持的。
+`stop`、`reload`、`upgrade`、`reopen` 和 `checkconfig` 这些指令也是支持的。
 
 默认的服务前缀是 `/usr/local/openresty/`。对于你自己的 OpenResty 应用，强烈推荐指定你自己的前缀，并指向你自己应用的目录，像这样：
 
