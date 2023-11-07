@@ -3,11 +3,11 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ" style="cursor: pointer">OpenResty XRay</a></h2>
     <ul>
-      <li><a href="#Odu2tTZyDU0" style="cursor: pointer">How CPU time is spent inside Rust’s sled library</a></li>
+      <li><a href="#irBruMTl05o" style="cursor: pointer">How Python Django’s Application Uses Memory Internally (Using OpenResty XRay)</a></li>
+      <li><a href="#Odu2tTZyDU0" style="cursor: pointer">How CPU time is spent inside Rust’s sled library (Using OpenResty XRay)</a></li>
       <li><a href="#7LHVmehTxWc" style="cursor: pointer">How CPU time is spent inside Go's etcd server (using OpenResty XRay)</a></li>
       <li><a href="#ZqmaTXECu78" style="cursor: pointer">Find the largest Python objects or values taking the most RAM (using OpenResty XRay)</a></li>
-      <li><a href="#lM3IJRcCmvc" style="cursor: pointer">Install OpenResty XRay’s Agents on CentOS 8 via RPM Packages</a></li>
-      <li><a href="#-ZcizJB33j8" style="cursor: pointer">Deleted video</a></li>
+      <li><a href="#lM3IJRcCmvc" style="cursor: pointer">Install OpenResty XRay’s Agents on CentOS via RPM Packages</a></li>
       <li><a href="#dXTCdUb5AGk" style="cursor: pointer">How CPU time is spent inside llama.cpp + LLaMA2 (using OpenResty XRay)</a></li>
       <li><a href="#yH2OxDTgNNc" style="cursor: pointer">Pinpoint hottest Perl code paths (using OpenResty XRay)</a></li>
       <li><a href="#zKg6CizGP0Q" style="cursor: pointer">Discover the blocking/sleeping Python code paths (using OpenResty XRay)</a></li>
@@ -76,16 +76,16 @@
     </ul>
   </div>
   <h2 id="PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ">OpenResty XRay</h2>
-  <p id="Odu2tTZyDU0">How CPU time is spent inside Rust’s sled library</p>
+  <p id="irBruMTl05o">How Python Django’s Application Uses Memory Internally (Using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/irBruMTl05o" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="Odu2tTZyDU0">How CPU time is spent inside Rust’s sled library (Using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/Odu2tTZyDU0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="7LHVmehTxWc">How CPU time is spent inside Go's etcd server (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/7LHVmehTxWc" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="ZqmaTXECu78">Find the largest Python objects or values taking the most RAM (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/ZqmaTXECu78" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="lM3IJRcCmvc">Install OpenResty XRay’s Agents on CentOS 8 via RPM Packages</p>
+  <p id="lM3IJRcCmvc">Install OpenResty XRay’s Agents on CentOS via RPM Packages</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/lM3IJRcCmvc" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="-ZcizJB33j8">Deleted video</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/-ZcizJB33j8" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="dXTCdUb5AGk">How CPU time is spent inside llama.cpp + LLaMA2 (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/dXTCdUb5AGk" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="yH2OxDTgNNc">Pinpoint hottest Perl code paths (using OpenResty XRay)</p>
