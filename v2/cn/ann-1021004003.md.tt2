@@ -8,8 +8,7 @@ in the NGINX HTTP/2 processing that could be exploited by an attacker by rapidly
 creating and cancelling a large number of HTTP/2 streams. This vulnerability, referred
 to as the HTTP/2 Rapid Reset Attack, bypasses the server's limits on concurrent
 streams because reset streams are processed faster than new ones can be established,
-thus potentially allowing an attacker to overload the server. This issue has been
-assigned CVE-2023-4487.
+thus potentially allowing an attacker to overload the server. (CVE-2023-4487)
 
 [Download this version here](download.html).
 
