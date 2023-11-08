@@ -21,7 +21,7 @@ installing package updates can be trivial.
 
 All the releases are signed by the public PGP key `A0E98066` of Yichun Zhang.
 
-[% ver = "1.21.4.2" -%]
+[% ver = "1.21.4.3" -%]
 * For 32-bit Windows: [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 16MB &nbsp;
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 19 Jul 2023
 * For 64-bit Windows: [openresty-[% ver %]-win64.zip](https://openresty.org/download/openresty-[% ver %]-win64.zip) &nbsp; 16MB &nbsp;
@@ -65,13 +65,17 @@ the instructions on the [Installation](installation.html) page to build and
 install it.
 
 ##  Lastest release
+[% ver = "1.21.4.3" -%]
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
+&nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
+[Changes](changelog-1021004.html) - 7 Nov 2023
+
+##  Legacy releases
+Sometimes, users may want to download old releases.
 [% ver = "1.21.4.2" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.3MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 [Changes](changelog-1021004.html) - 19 Jul 2023
-
-##  Legacy releases
-Sometimes, users may want to download old releases.
 [% ver = "1.21.4.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.0MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
