@@ -11,6 +11,41 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/python-xray-overhead/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/en-python-xray-overhead.png"><img class="article-img" src="../images/header-images/en-python-xray-overhead.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Performance Impact of OpenResty XRay when Tracing Python Apps (using OpenResty XRay)</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/rust-xray-overhead/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/en-rust-xray-overhead.png"><img class="article-img" src="../images/header-images/en-rust-xray-overhead.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Performance Impact of OpenResty XRay when Tracing Rust Apps (using OpenResty XRay)</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/ylang-dump-go-val/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/en-ylang-dump-go-val.png"><img class="article-img" src="../images/header-images/en-ylang-dump-go-val.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Dynamic-Tracing Custom Go Programs with Custom Ylang (using OpenResty XRay)</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-dns/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-dns-en.png"><img class="article-img" src="../images/header-images/edge-dns-en.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Configure DNS Records in OpenResty Edge</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-resp-header/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/en-edge-resp-header.png"><img class="article-img" src="../images/header-images/en-edge-resp-header.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Adding Custom Response Headers in OpenResty Edge</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-gslb/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-gslb-en.png"><img class="article-img" src="../images/header-images/edge-gslb-en.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">How to Use OpenResty Edge's Global Server Load Balancing (GSLB) Feature</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-user-mgt/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/en-edge-user-mgt.png"><img class="article-img" src="../images/header-images/en-edge-user-mgt.png" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">User Management and Access Control in OpenResty Edge’s Web Console</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/django-mem-distr/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/django-mem-distr-en.jpg"><img class="article-img" src="../images/header-images/django-mem-distr-en.jpg" loading="lazy"/></div>
             <div class="article-text">
@@ -75,41 +110,6 @@
             <div class="blog-img" data-pic="/header-images/software-errors.jpg"><img class="article-img" src="../images/header-images/software-errors.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">How we solved a CPU bottleneck caused by Lua exceptions in a custom Kong plugin (using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/kong-plugin-mem-cpu-stats/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cpu-mem-stats.jpg"><img class="article-img" src="../images/header-images/cpu-mem-stats.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Memory and CPU usage statistics among Kong plugins online (using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/ngx-req-body-latency/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/ngx-req-body-latency.jpg"><img class="article-img" src="../images/header-images/ngx-req-body-latency.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Troubleshooting the extra 200-ms request latency online</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edgelang-intro/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edgelang-intro.png"><img class="article-img" src="../images/header-images/edgelang-intro.png" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">EdgeLang: A Powerful and Efficient Language for Gateway Logic</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-cli-lua-table-leaks/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/lua-ram.jpg"><img class="article-img" src="../images/header-images/lua-ram.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Pinpointing leaked Lua tables with OpenResty XRay's command-line tools</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/ysql-count-ngx-reqs/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/ysql-count-ngx-reqs.png"><img class="article-img" src="../images/header-images/ysql-count-ngx-reqs.png" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Real-Time Request Counting against Nginx Processes via YSQL</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-request-id/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-request-id.png"><img class="article-img" src="../images/header-images/edge-request-id.png" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Using request IDs to troubleshoot problematic requests in OpenResty Edge gateways</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-hcaptcha/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-hcaptcha-en.jpg"><img class="article-img" src="../images/header-images/edge-hcaptcha-en.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Configuring hCaptcha’s captcha webpages in OpenResty Edge</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
