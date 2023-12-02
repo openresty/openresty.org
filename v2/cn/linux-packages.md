@@ -22,7 +22,7 @@
     9.x             Stretch         amd64, arm64
     10.x            Buster          amd64, arm64
     11.x            Bullseye        amd64, arm64
-    11.x            Bookworm        amd64, arm64
+    12.x            Bookworm        amd64, arm64
 ```
 
 * [CentOS](#centos)
