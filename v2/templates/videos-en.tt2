@@ -3,6 +3,7 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ" style="cursor: pointer">OpenResty XRay</a></h2>
     <ul>
+      <li><a href="#HyrI2p5fE1M" style="cursor: pointer">Install OpenResty XRay’s Agents on Ubuntu via Deb Packages</a></li>
       <li><a href="#v1Nw_HTtf60" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing PHP Apps (using OpenResty XRay)</a></li>
       <li><a href="#HO0N6aLHFiE" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing Python Apps (using OpenResty XRay)</a></li>
       <li><a href="#hx8nwGy3FJI" style="cursor: pointer">Performance Overhead of OpenResty XRay when Tracing Go Apps</a></li>
@@ -46,7 +47,8 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK" style="cursor: pointer">OpenResty Edge</a></h2>
     <ul>
-      <li><a href="#ay0RjPErUnE" style="cursor: pointer">Configuring Webhooks in OpenResty Edge</a></li>
+      <li><a href="#WB0Rt8ghm44" style="cursor: pointer">Configuring Webhooks in OpenResty Edge</a></li>
+      <li><a href="#ay0RjPErUnE" style="cursor: pointer">(old) Configuring Webhooks in OpenResty Edge</a></li>
       <li><a href="#K0lslt13REk" style="cursor: pointer">Configure Custom Error Pages in OpenResty Edge</a></li>
       <li><a href="#aR196yVBkFk" style="cursor: pointer">Configure DNS Records in OpenResty Edge</a></li>
       <li><a href="#02nlPUdclvQ" style="cursor: pointer">User Management and Access Control in OpenResty Edge’s Web Console</a></li>
@@ -93,6 +95,8 @@
     </ul>
   </div>
   <h2 id="PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ">OpenResty XRay</h2>
+  <p id="HyrI2p5fE1M">Install OpenResty XRay’s Agents on Ubuntu via Deb Packages</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/HyrI2p5fE1M" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="v1Nw_HTtf60">Performance Impact of OpenResty XRay when Tracing PHP Apps (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/v1Nw_HTtf60" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="HO0N6aLHFiE">Performance Impact of OpenResty XRay when Tracing Python Apps (using OpenResty XRay)</p>
@@ -161,7 +165,9 @@
   <p id="eSfYLvVQMxw">Hello World HTTP Example in OpenResty/Nginx</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2 id="PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK">OpenResty Edge</h2>
-  <p id="ay0RjPErUnE">Configuring Webhooks in OpenResty Edge</p>
+  <p id="WB0Rt8ghm44">Configuring Webhooks in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/WB0Rt8ghm44" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="ay0RjPErUnE">(old) Configuring Webhooks in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/ay0RjPErUnE" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="K0lslt13REk">Configure Custom Error Pages in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/K0lslt13REk" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>

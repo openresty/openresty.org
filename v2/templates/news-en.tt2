@@ -12,6 +12,15 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-test-nginx-030.html">Test::Nginx 0.30</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/xray-go-overhead/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-xray-go-overhead.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/xray-go-overhead/?src=org_news" target="_blank">Performance Overhead of OpenResty XRay when Tracing Go Apps (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/ubuntu-xray-agent-install/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-ubuntu-xray-agent-install.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/ubuntu-xray-agent-install/?src=org_news" target="_blank">Install OpenResty XRay’s Agents on Ubuntu via Deb Packages</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/edge-webhook/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-webhook-en.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-webhook/?src=org_news" target="_blank">Configuring Webhooks in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/php-xray-overhead/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-php-xray-overhead.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/php-xray-overhead/?src=org_news" target="_blank">Performance Impact of OpenResty XRay when Tracing PHP Apps (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
@@ -20,14 +29,5 @@
   </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/rust-xray-overhead/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-rust-xray-overhead.png" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/rust-xray-overhead/?src=org_news" target="_blank">Performance Impact of OpenResty XRay when Tracing Rust Apps (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/ylang-dump-go-val/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-ylang-dump-go-val.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/ylang-dump-go-val/?src=org_news" target="_blank">Dynamic-Tracing Custom Go Programs with Custom Ylang (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/edge-custom-error-page-template/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-edge-custom-error-page-template.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-custom-error-page-template/?src=org_news" target="_blank">Configure Custom Error Pages in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/edge-dns/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-dns-en.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-dns/?src=org_news" target="_blank">Configure DNS Records in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
