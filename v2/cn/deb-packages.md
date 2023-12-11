@@ -51,7 +51,7 @@ hello
 
 这个包包含 OpenResty 文档工具链和文档数据。最有用的工具是 `restydoc` 命令行程序，默认应该能在你的 `PATH` 环境变量（做为 `/usr/bin/restydoc`）里面看到。
 
-这样尝试:
+这样尝试：
 
 ```bash
 restydoc ngx_lua
@@ -70,7 +70,7 @@ restydoc -s proxy_pass
 
 这个包包含 OpenResty 包管理器的命令行程序 [opm](https://github.com/openresty/opm#readme)。
 
-它可以用来从中心 OPM 包服务器上面安装社区贡献的 OpenResty 包:
+它可以用来从中心 OPM 包服务器上面安装社区贡献的 OpenResty 包：
 
 https://opm.openresty.org/
 
@@ -101,14 +101,14 @@ https://opm.openresty.org/
 * NGINX 默认的服务前缀是 `/usr/local/openresty-valgrind/`。
 * 你在 `PATH` 环境变量里面看到的入口点是 `openresty-valgrind` 而不是 `openresty-debug`。
 
-想了解更多在 OpenResty 中基于 Valgrind 的测试细节，可以看下面的教程:
+想了解更多在 OpenResty 中基于 Valgrind 的测试细节，可以看下面的教程：
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.html#_valgrind_mode
 
 # openresty-asan
 
-这是 OpenResty 的 gcc AddressSanitizer 编译版本. 和 `openresty-debug` 版本相比，该版本有
-如下变化:
+这是 OpenResty 的 gcc AddressSanitizer 编译版本。和 `openresty-debug` 版本相比，该版本有
+如下变化：
 
 * 它使用 `gcc -fsanitize=address` 来编译和链接。
 * 它启用 C 编译选项 `-O1 -fno-omit-frame-pointer` 。
@@ -116,15 +116,15 @@ https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.h
 * 它在 LuaJIT 版本中打开内部 Valgrind 协作。
 * NGINX 默认的服务前缀是 `/usr/local/openresty-asan/`。
 * 你在 `PATH` 环境变量里面看到的入口点是 `openresty-asan` 而不是 `openresty-debug` 。
-* 它依赖 `openresty-zlib-asan`, `openresty-pcre-asan` 和 `openresty-openssl-asan` 这些包.
+* 它依赖 `openresty-zlib-asan`, `openresty-pcre-asan` 和 `openresty-openssl-asan` 这些包。
 
-为了避免已知的内存泄漏的误报，在开始这个openresty的特殊构建之前，一定要指定以下系统环境:
+为了避免已知的内存泄漏的误报，在开始这个 openresty 的特殊构建之前，一定要指定以下系统环境：
 
 ```bash
 export ASAN_OPTIONS=detect_leaks=0
 ```
 
-您可能还需要指定一些抑制规则来抑制其他误报。 可以查看下面的 ASAN 链接获取详细内容:
+您可能还需要指定一些抑制规则来抑制其他误报。可以查看下面的 ASAN 链接获取详细内容：
 
 https://github.com/google/sanitizers/wiki/AddressSanitizerLeakSanitizer
 
@@ -145,6 +145,34 @@ https://github.com/google/sanitizers/wiki/AddressSanitizerLeakSanitizer
 * 它没有 Valgrind 错误也没有任何 Valgrind 误报。
 * 汇编代码被禁止，所以我们总是有完美的基于 C 的回溯以及类似的。
 
+# openresty-openssl111
+
+这是我们自己维护的 OpenSSL v1.1.1 库。
+
+我们在 OpenResty 中加入了自己的（小型）补丁，以支持高级 SSL 功能，例如
+[ssl_session_fetch_by_lua](https://github.com/openresty/lua-nginx-module/#ssl_session_fetch_by_lua_block)。
+
+此外，我们还提供了自己的 OpenSSL 软件包，以确保在 OpenResty 上使用最新的
+的主流版本。
+
+# openresty-openssl111-debug
+
+这是 OpenSSL v1.1.1 库的调试构建版本。与 `openresty-openssl111` 相比，它有以下变化：
+
+* 禁用了任何 C 编译器优化。
+* 它在 Valgrind 中无误报，没有任何 Valgrind 假阳性。
+* 禁用了汇编代码，以便始终获得完美的 C 调用栈等。
+* 安装到前缀路径 `/usr/local/openresty-debug/openssl111/`。
+
+# openresty-openssl111-asan
+
+这是 OpenSSL v1.1.1 库的 gcc AddressSanitizer 构建版本。与 `openresty-openssl111-debug` 包相比，它有以下变化：
+
+* 使用命令 `gcc -fsanitize=address` 进行编译和链接。
+* 使用 `openresty-zlib-asan` 包而不是 `openresty-zlib` 作为运行时依赖项。
+* 在构建过程中使用 C 编译器选项 `-O1 -fno-omit-frame-pointer`。
+* 安装到前缀路径 `/usr/local/openresty-asan/openssl111/`。
+
 # openresty-zlib
 
 这是我们自己编译的 zlib 库，用作 gzip 压缩。
@@ -152,22 +180,34 @@ https://github.com/google/sanitizers/wiki/AddressSanitizerLeakSanitizer
 
 # openresty-pcre
 
-这是我们自己编译的 PCRE 库，用作 gzip 压缩。
+这是我们自己编译的 PCRE 库。
 我们维护自己的 PCRE 包来保证即使在陈旧的系统中，OpenResty 使用的也是 PCRE 最新的主流版本。
+
+# openresty-pcre-asan
+
+这是 PCRE 库的 gcc AddressSanitizer 构建版本。与 `openresty-pcre-debug` 包相比，它有以下变化：
+
+- 使用命令 `gcc -fsanitize=address` 进行编译和链接。
+- 在构建过程中使用 C 编译器选项 `-O1 -fno-omit-frame-pointer`。
+- 安装到前缀路径 `/usr/local/openresty-asan/pcre/`。
+
+# openresty-pcre2
+
+这是我们自己构建的 PCRE2 库。我们提供自己的 PCRE2 包，以确保在旧系统上使用 OpenResty (>= 1.25) 时使用最新的主流 PCRE2 版本。
 
 # liblemplate-perl
 
 这个包提供命令行工具 [lemplate](https://metacpan.org/pod/Lemplate),
 它可以把使用 perl TT2 模板语言编写的文件，编译成可供 OpenResty 使用的单独 Lua 模块。
 
-比如 OpenResty 的官方网站, openresty.org, [使用](https://github.com/openresty/openresty.org)
+比如 OpenResty 的官方网站，openresty.org, [使用](https://github.com/openresty/openresty.org)
 Lemplate 作为 HTML 页面的模板编译器。page template compiler。
 
 # libtest-nginx-perl
 
 这是我们 [Test::Nginx](https://github.com/openresty/test-nginx) 的测试框架。
 
-阅读如下章节获取此测试框架的完整介绍:
+阅读如下章节获取此测试框架的完整介绍：
 
 https://openresty.gitbooks.io/programming-openresty/content/testing/
 
@@ -181,7 +221,7 @@ https://openresty.gitbooks.io/programming-openresty/content/testing/
 
 # 打包源码
 
-build 这些包的源文件都放在 `openresty-packaging` GitHub 仓库中:
+build 这些包的源文件都放在 `openresty-packaging` GitHub 仓库中：
 
 https://github.com/openresty/openresty-packaging/tree/master/deb/
 
