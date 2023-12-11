@@ -107,6 +107,11 @@ https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.h
 
 这是我们自己维护的 OpenSSL v1.1.1 库。
 
+我们在 OpenResty 中加入了自己的（小型）补丁，以支持高级 SSL 功能，例如
+[ssl_session_fetch_by_lua](https://github.com/openresty/lua-nginx-module/#ssl_session_fetch_by_lua_block)。
+
+此外，我们还提供了自己的 OpenSSL 软件包，以确保在 OpenResty 上使用最新的的主流版本。
+
 # openresty-openssl111-debug
 
 这是 OpenSSL 库的调试版本。和 `openresty-openssl111` 相比，有这些不同：
