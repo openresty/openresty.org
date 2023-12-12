@@ -103,6 +103,33 @@ https://openresty.gitbooks.io/programming-openresty/content/testing/test-modes.h
 * 它没有 Valgrind 错误也没有任何 Valgrind 误报。
 * 汇编代码被禁止，所以我们总是有完美的基于 C 的回溯以及类似的。
 
+# openresty-openssl111
+
+这是我们自己维护的 OpenSSL v1.1.1 库。
+
+我们在 OpenResty 中加入了自己的（小型）补丁，以支持高级 SSL 功能，例如
+[ssl_session_fetch_by_lua](https://github.com/openresty/lua-nginx-module/#ssl_session_fetch_by_lua_block)。
+
+此外，我们还提供了自己的 OpenSSL 软件包，以确保在 OpenResty 上使用最新的的主流版本。
+
+# openresty-openssl111-debug
+
+这是 OpenSSL 库的调试版本。和 `openresty-openssl111` 相比，有这些不同：
+
+* 禁止了所有 C 编译器优化。
+* 它没有 Valgrind 错误也没有任何 Valgrind 误报。
+* 汇编代码被禁止，所以我们总是有完美的基于 C 的回溯以及类似的。
+
+# openresty-pcre
+
+这是我们自己编译的 PCRE 库。
+我们维护自己的 PCRE 包来保证即使在陈旧的系统中，OpenResty 使用的也是 PCRE 最新的主流版本。
+
+# openresty-pcre2
+
+这是我们自己编译的 PCRE2 库。
+我们维护自己的 PCRE2 包来保证即使在陈旧的系统中，OpenResty (>= v1.25) 使用的也是 PCRE2 最新的主流版本。
+
 # perl-lemplate
 
 这个包提供了 [lemplate](https://metacpan.org/pod/Lemplate) 这个命令行程序，它可以把使用 perl TT2 模板语言语法的模板文件编译成 OpenResty 的独立 Lua 模块。

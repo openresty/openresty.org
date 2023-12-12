@@ -127,6 +127,26 @@ This is the debug build of the OpenSSL library. As compared to `openresty-openss
 * Assembly code is disabled so we always have perfect C-land backtraces and etc.
 * It is installed into the prefix `/usr/local/openresty-debug/openssl/`.
 
+# openresty-openssl111
+
+This is our own build of the OpenSSL v1.1.1 library. In particular, we have disabled the threads support in the build
+to save some overhead.
+
+We include our own (small) patches to support advanced SSL features in OpenResty like
+[ssl_session_fetch_by_lua](https://github.com/openresty/lua-nginx-module/#ssl_session_fetch_by_lua_block).
+
+Also, we ship our own OpenSSL package to ensure the latest
+mainstream version of OpenSSL is used in OpenResty even on older systems.
+
+# openresty-openssl111-debug
+
+This is the debug build of the OpenSSL v1.1.1 library. As compared to `openresty-openssl`, it has the following changes:
+
+* It disables any C compiler optimizations.
+* It is Valgrind clean and free of any Valgrind false positives.
+* Assembly code is disabled so we always have perfect C-land backtraces and etc.
+* It is installed into the prefix `/usr/local/openresty-debug/openssl111/`.
+
 # openresty-zlib
 
 This is our own build of the zlib library for gzip compression. We ship our own zlib package to ensure the latest
@@ -134,8 +154,13 @@ mainstream version of zlib is used in OpenResty even on old systems.
 
 # openresty-pcre
 
-This is our own build of the PCRE library for gzip compression. We ship our own PCRE package to ensure the latest
+This is our own build of the PCRE library. We ship our own PCRE package to ensure the latest
 mainstream version of PCRE is used in OpenResty even on older systems.
+
+# openresty-pcre2
+
+This is our own build of the PCRE2 library. We ship our own PCRE package to ensure the latest
+mainstream version of PCRE2 is used in OpenResty (>= v1.25) even on older systems.
 
 # perl-lemplate
 
