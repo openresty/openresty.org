@@ -3,6 +3,7 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ" style="cursor: pointer">OpenResty XRay</a></h2>
     <ul>
+      <li><a href="#pOXXj4u1Oag" style="cursor: pointer">Locate Large Memory Objects inside Perl Processes (using OpenResty XRay)</a></li>
       <li><a href="#HyrI2p5fE1M" style="cursor: pointer">Install OpenResty XRay’s Agents on Ubuntu via Deb Packages</a></li>
       <li><a href="#v1Nw_HTtf60" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing PHP Apps (using OpenResty XRay)</a></li>
       <li><a href="#HO0N6aLHFiE" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing Python Apps (using OpenResty XRay)</a></li>
@@ -56,8 +57,6 @@
       <li><a href="#EtWMHdd77T8" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#Gj5wibhAy5E" style="cursor: pointer">How to Use OpenResty Edge's Global Server Load Balancing (GSLB) Feature</a></li>
       <li><a href="#S2xmxSPYy88" style="cursor: pointer">Deleted video</a></li>
-      <li><a href="#4jJhzeL4vx8" style="cursor: pointer">Deleted video</a></li>
-      <li><a href="#vb006-g1VAw" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#el2nlbLSof0" style="cursor: pointer">Use request IDs to troubleshoot problematic requests in OpenResty Edge gateways</a></li>
       <li><a href="#IsrwpfuZFAs" style="cursor: pointer">Configure hCaptcha’s captcha webpages in OpenResty Edge</a></li>
       <li><a href="#Tq-_Kq7eq2Y" style="cursor: pointer">Pushing static resources to OpenResty Edge gateways</a></li>
@@ -95,6 +94,8 @@
     </ul>
   </div>
   <h2 id="PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ">OpenResty XRay</h2>
+  <p id="pOXXj4u1Oag">Locate Large Memory Objects inside Perl Processes (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/pOXXj4u1Oag" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="HyrI2p5fE1M">Install OpenResty XRay’s Agents on Ubuntu via Deb Packages</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/HyrI2p5fE1M" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="v1Nw_HTtf60">Performance Impact of OpenResty XRay when Tracing PHP Apps (using OpenResty XRay)</p>
@@ -183,10 +184,6 @@
   <iframe width="645" height="360" src="https://www.youtube.com/embed/Gj5wibhAy5E" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="S2xmxSPYy88">Deleted video</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/S2xmxSPYy88" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="4jJhzeL4vx8">Deleted video</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/4jJhzeL4vx8" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="vb006-g1VAw">Deleted video</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/vb006-g1VAw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="el2nlbLSof0">Use request IDs to troubleshoot problematic requests in OpenResty Edge gateways</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/el2nlbLSof0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="IsrwpfuZFAs">Configure hCaptcha’s captcha webpages in OpenResty Edge</p>
