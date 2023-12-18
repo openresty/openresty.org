@@ -10,7 +10,7 @@ mostly powered by OpenResty itself:
 # OpenResty XRay
 
 [OpenResty XRay](https://openresty.com/en/xray/) is a next generation application
-performance maanagement (APM) product for OpenResty and other open source software using
+performance management (APM) product for OpenResty and other open source software using
 100% noninvasive dynamic tracing technologies.
 
 It can automatically monitor, discover, troubleshoot, and suggest fixes for a wide
