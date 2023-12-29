@@ -149,7 +149,7 @@ https://openresty.org/package/pubkey.gpg
 步骤一：安装导入 GPG 公钥时所需的几个依赖包（整个安装过程完成后可以随时删除它们）：
 
 ```bash
-sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
+sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates lsb-release
 ```
 
 步骤二：导入我们的 GPG 密钥：
@@ -224,8 +224,14 @@ sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
 
 步骤二：导入我们的 GPG 密钥：
 
+  - debian <= 11 的版本
 ```bash
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+```
+
+  - debian >= 12 的版本
+```bash
+wget -O - https://openresty.org/package/pubkey.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/openresty.gpg
 ```
 
 步骤三：添加我们官方 APT 仓库。
