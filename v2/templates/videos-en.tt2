@@ -3,6 +3,8 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ" style="cursor: pointer">OpenResty XRay</a></h2>
     <ul>
+      <li><a href="#T2fe9-AjKEE" style="cursor: pointer">How CPU Time is Spent inside Go’s CockroachDB (using OpenResty XRay)</a></li>
+      <li><a href="#f-LL2P-Gu8c" style="cursor: pointer">Performance Overhead of OpenResty XRay when Tracing Perl Apps</a></li>
       <li><a href="#pOXXj4u1Oag" style="cursor: pointer">Locate Large Memory Objects inside Perl Processes (using OpenResty XRay)</a></li>
       <li><a href="#HyrI2p5fE1M" style="cursor: pointer">Install OpenResty XRay’s Agents on Ubuntu via Deb Packages</a></li>
       <li><a href="#v1Nw_HTtf60" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing PHP Apps (using OpenResty XRay)</a></li>
@@ -11,7 +13,6 @@
       <li><a href="#QJ8qJcjWqpM" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#bjmLEtwvIZI" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing Rust Apps (using OpenResty XRay)</a></li>
       <li><a href="#WUdzsp9WMcU" style="cursor: pointer">Dynamic-Tracing Custom Go Programs with Custom Ylang (using OpenResty XRay)</a></li>
-      <li><a href="#CQSRHGqsJYs" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#irBruMTl05o" style="cursor: pointer">How Python Django’s Application Uses Memory Internally (Using OpenResty XRay)</a></li>
       <li><a href="#Odu2tTZyDU0" style="cursor: pointer">How CPU time is spent inside Rust’s sled library (Using OpenResty XRay)</a></li>
       <li><a href="#7LHVmehTxWc" style="cursor: pointer">How CPU time is spent inside Go's etcd server (using OpenResty XRay)</a></li>
@@ -48,15 +49,14 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK" style="cursor: pointer">OpenResty Edge</a></h2>
     <ul>
+      <li><a href="#ZcMqWGuFS1Q" style="cursor: pointer">How to Use Gateway Staging Servers in OpenResty Edge</a></li>
       <li><a href="#WB0Rt8ghm44" style="cursor: pointer">Configuring Webhooks in OpenResty Edge</a></li>
       <li><a href="#ay0RjPErUnE" style="cursor: pointer">(old) Configuring Webhooks in OpenResty Edge</a></li>
       <li><a href="#K0lslt13REk" style="cursor: pointer">Configure Custom Error Pages in OpenResty Edge</a></li>
       <li><a href="#aR196yVBkFk" style="cursor: pointer">Configure DNS Records in OpenResty Edge</a></li>
       <li><a href="#02nlPUdclvQ" style="cursor: pointer">User Management and Access Control in OpenResty Edge’s Web Console</a></li>
       <li><a href="#5WrUqkhzsXo" style="cursor: pointer">Adding Custom Response Headers in OpenResty Edge</a></li>
-      <li><a href="#EtWMHdd77T8" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#Gj5wibhAy5E" style="cursor: pointer">How to Use OpenResty Edge's Global Server Load Balancing (GSLB) Feature</a></li>
-      <li><a href="#S2xmxSPYy88" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#el2nlbLSof0" style="cursor: pointer">Use request IDs to troubleshoot problematic requests in OpenResty Edge gateways</a></li>
       <li><a href="#IsrwpfuZFAs" style="cursor: pointer">Configure hCaptcha’s captcha webpages in OpenResty Edge</a></li>
       <li><a href="#Tq-_Kq7eq2Y" style="cursor: pointer">Pushing static resources to OpenResty Edge gateways</a></li>
@@ -94,6 +94,10 @@
     </ul>
   </div>
   <h2 id="PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ">OpenResty XRay</h2>
+  <p id="T2fe9-AjKEE">How CPU Time is Spent inside Go’s CockroachDB (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/T2fe9-AjKEE" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="f-LL2P-Gu8c">Performance Overhead of OpenResty XRay when Tracing Perl Apps</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/f-LL2P-Gu8c" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="pOXXj4u1Oag">Locate Large Memory Objects inside Perl Processes (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/pOXXj4u1Oag" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="HyrI2p5fE1M">Install OpenResty XRay’s Agents on Ubuntu via Deb Packages</p>
@@ -110,8 +114,6 @@
   <iframe width="645" height="360" src="https://www.youtube.com/embed/bjmLEtwvIZI" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="WUdzsp9WMcU">Dynamic-Tracing Custom Go Programs with Custom Ylang (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/WUdzsp9WMcU" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="CQSRHGqsJYs">Deleted video</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/CQSRHGqsJYs" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="irBruMTl05o">How Python Django’s Application Uses Memory Internally (Using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/irBruMTl05o" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="Odu2tTZyDU0">How CPU time is spent inside Rust’s sled library (Using OpenResty XRay)</p>
@@ -166,6 +168,8 @@
   <p id="eSfYLvVQMxw">Hello World HTTP Example in OpenResty/Nginx</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2 id="PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK">OpenResty Edge</h2>
+  <p id="ZcMqWGuFS1Q">How to Use Gateway Staging Servers in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/ZcMqWGuFS1Q" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="WB0Rt8ghm44">Configuring Webhooks in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/WB0Rt8ghm44" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="ay0RjPErUnE">(old) Configuring Webhooks in OpenResty Edge</p>
@@ -178,12 +182,8 @@
   <iframe width="645" height="360" src="https://www.youtube.com/embed/02nlPUdclvQ" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="5WrUqkhzsXo">Adding Custom Response Headers in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/5WrUqkhzsXo" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="EtWMHdd77T8">Deleted video</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/EtWMHdd77T8" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="Gj5wibhAy5E">How to Use OpenResty Edge's Global Server Load Balancing (GSLB) Feature</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/Gj5wibhAy5E" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="S2xmxSPYy88">Deleted video</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/S2xmxSPYy88" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="el2nlbLSof0">Use request IDs to troubleshoot problematic requests in OpenResty Edge gateways</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/el2nlbLSof0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="IsrwpfuZFAs">Configure hCaptcha’s captcha webpages in OpenResty Edge</p>
