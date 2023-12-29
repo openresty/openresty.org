@@ -164,7 +164,7 @@ run the following commands (only need to run once for each system):
 Step 1: we should install some prerequisites needed by adding GPG public keys (could be removed later):
 
 ```bash
-sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
+sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates lsb-release
 ```
 
 Step 2: import our GPG key:
@@ -255,8 +255,14 @@ sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
 
 Step 2: import our GPG key:
 
+  - For debian <= 11
 ```bash
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
+```
+
+  - For debian >= 12
+```
+wget -O - https://openresty.org/package/pubkey.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/openresty.gpg
 ```
 
 Step 3: add the our official APT repository.
