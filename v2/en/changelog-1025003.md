@@ -12,7 +12,7 @@
     * upgraded OpenSSL to 1.1.1w.
     * upgraded Zlib to 1.3.
 * Added support for PCRE2. _Thanks swananan for the patch._
-* upgraded [lua-nginx-module](https://github.com/openresty/lua-nginx-module#readme)	to 0.10.26rc2
+* upgraded [lua-nginx-module](https://github.com/openresty/lua-nginx-module#readme)	to 0.10.26
     * optimize: prevent moving the expired item to the LRU queue head during lookup. _Thanks lijunlong for the patch._
     * bugfix: fixed a memory leak in the case of dubious connections. _Thanks Johnny Wang for the patch._
     * feature: set the HTTP/3 authority as the `http_host` header. _Thanks lijunlong for the patch._
@@ -32,10 +32,10 @@
     * change: in lua-ssl-protocols, disabled SSLv3 and enabled TLSv1.3 by default. _Thanks lijunlong for the patch._
     * bugfix: disabled HTTP/2 during body reads due to an http2 stream processing bug. _Thanks Jun Ouyang for the patch._
     * bugfix: improved handling of new list elements. _Thanks A compound of Fe and O for the patch._
-* upgraded [stream-lua-nginx-module](https://github.com/openresty/stream-lua-nginx-module#readme) to 0.0.14rc1
+* upgraded [stream-lua-nginx-module](https://github.com/openresty/stream-lua-nginx-module#readme) to 0.0.14
     * bugfix: stream server block didn't inherit the [log_by_lua*](https://github.com/openresty/lua-nginx-module#log_by_lua) directives configured in stream block. _Thanks willmafh for the patch._
     * optimize: now we make use of the new lua_getexdata2 and lua_setexdata2 to attach coctx to the Lua thread objects directly which save the lookup overhead which can become the bottleneck when there are many Lua light threads around in a single request handler. _Thanks lijunlong for the patch._
-* upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core) to v0.1.28rc1
+* upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core) to v0.1.28
     * optimize: small optimization of `ngx.worker.pids()` . _Thanks Chrono for the patch._
     * feature: support lua_ssl_certificate and lua_ssl_certificate_key. _Thanks zhangjie for the patch._
 * upgraded [lua-cjson](https://github.com/openresty/lua-cjson) to 2.1.0.13
@@ -45,17 +45,17 @@
     * optimization: add void to functions with no arguments to prevent compiler warning. _Thanks lijunlong for the patch._
 * upgraded [lua-resty-websocket](https://github.com/openresty/lua-resty-websocket) to 0.11
     * bugfix: support socket connection pool and fix repeated ssl_handshake(). _Thanks Nathan for the patch._
-* upgraded [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql) to 0.27rc1
+* upgraded [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql) to 0.27
     * bugfix: ensure packet_no is not nil before proceeding. _Thanks AccidentallyTheCable for the patch._
 * upgraded [lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic) to v0.09
     * refactor: remove unused var. _Thanks Abhishek Choudhary for the patch._
-* upgraded [memc-nginx-module](https://github.com/openresty/memc-nginx-module) to 0.20rc1
+* upgraded [memc-nginx-module](https://github.com/openresty/memc-nginx-module) to 0.20
     * bugfix: corrected overallocations due to sizeof('c') being 4 instead of 1. _Thanks наб for the patch._
-* upgraded [opm](https://github.com/openresty/opm) to 0.0.8rc1
+* upgraded [opm](https://github.com/openresty/opm) to 0.0.8
     * bugfix: Made compatible with [LuaJIT](https://github.com/openresty/luajit2) x.y.ROLLING version. _Thanks Johnny Wang for the patch._
 * upgraded [lua-resty-dns](https://github.com/openresty/lua-resty-dns) to v0.23
     * feature: Add a cleanup method for destroying the cosocket resources within the resolver object explicitly. _Thanks Robin Xiang for the patch._
-* upgraded [headers-more-nginx-module](https://github.com/openresty/headers-more-nginx-module#readme) to 0.37rc1
+* upgraded [headers-more-nginx-module](https://github.com/openresty/headers-more-nginx-module#readme) to 0.37
     * bugfix: initialized previously uninitialized field `h[i]->append`. _Thanks Johnny Wang for the patch._
     * change: remove the Set-Cookie restriction of `-a` option. _Thanks menglei for the patch._
     * optimize: set `r->keepalive` 0 to close connection. _Thanks Masahiro Nagano for the patch._
