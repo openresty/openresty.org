@@ -21,11 +21,11 @@ installing package updates can be trivial.
 
 All the releases are signed by the public PGP key `A0E98066` of Yichun Zhang.
 
-[% ver = "1.21.4.3" -%]
+[% ver = "1.25.3.1" -%]
 * For 32-bit Windows: [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 16MB &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 19 Jul 2023
+[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 04 Jan 2024
 * For 64-bit Windows: [openresty-[% ver %]-win64.zip](https://openresty.org/download/openresty-[% ver %]-win64.zip) &nbsp; 16MB &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win64.zip.asc) - 19 Jul 2023
+[PGP](https://openresty.org/download/openresty-[% ver %]-win64.zip.asc) - 04 Jan 2024
 
 See [Windows-specific documentation](https://github.com/openresty/openresty/blob/master/doc/README-windows.md) for basic usage on Windows.
 
@@ -64,14 +64,18 @@ You can download the source release tarballs below. After that, you can follow
 the instructions on the [Installation](installation.html) page to build and
 install it.
 
-##  Latest release
+##  Lastest release
+[% ver = "1.25.3.1" -%]
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
+&nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
+[Changes](changelog-1025003.html) - 4 Jan 2024
+
+##  Legacy releases
+Sometimes, users may want to download old releases.
 [% ver = "1.21.4.3" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 [Changes](changelog-1021004.html) - 7 Nov 2023
-
-##  Legacy releases
-Sometimes, users may want to download old releases.
 [% ver = "1.21.4.2" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.3MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;

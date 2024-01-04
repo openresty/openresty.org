@@ -83,24 +83,24 @@ msgstr "搜索 OpenResty.org 中文站"
 
 #: templates/news-cn.tt2:7
 msgid  "New!"
-msgstr "最新！"
+msgstr "New!"
 
 #: templates/news-cn.tt2:7
 msgid  "is now released!"
-msgstr "已发布。"
+msgstr "is now released!"
 
 #: templates/news-cn.tt2:16
 msgid  "New blog post"
-msgstr "新博客文章"
+msgstr "New blog post"
 
 #: templates/news-cn.tt2:16
 msgid  "is published."
-msgstr "已发表。"
-
-#: templates/posts-slide-cn.tt2:3
-msgid  "More Interesting Topics"
-msgstr "更多有趣的文章"
+msgstr "is published."
 
 #: templates/sidebar.tt2:19
 msgid  "Timeline"
 msgstr "最近更新"
+
+#: templates/posts-slide-cn.tt2:3
+msgid  "More Interesting Topics"
+msgstr "更多有趣的文章"
