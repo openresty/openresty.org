@@ -3,6 +3,9 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ" style="cursor: pointer">OpenResty XRay</a></h2>
     <ul>
+      <li><a href="#Crw7P8h-WVg" style="cursor: pointer">How to Locate Exceptions inside Go Applications  (using OpenResty XRay)</a></li>
+      <li><a href="#A8xxK7eiNvw" style="cursor: pointer">How to Locate Exceptions inside Rust Applications (using OpenResty XRay)</a></li>
+      <li><a href="#3ORg4SkYcJg" style="cursor: pointer">How to Diagnose HTTP 504 Timeout Errors using OpenResty XRay</a></li>
       <li><a href="#T2fe9-AjKEE" style="cursor: pointer">How CPU Time is Spent inside Go’s CockroachDB (using OpenResty XRay)</a></li>
       <li><a href="#f-LL2P-Gu8c" style="cursor: pointer">Performance Overhead of OpenResty XRay when Tracing Perl Apps</a></li>
       <li><a href="#pOXXj4u1Oag" style="cursor: pointer">Locate Large Memory Objects inside Perl Processes (using OpenResty XRay)</a></li>
@@ -10,7 +13,6 @@
       <li><a href="#v1Nw_HTtf60" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing PHP Apps (using OpenResty XRay)</a></li>
       <li><a href="#HO0N6aLHFiE" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing Python Apps (using OpenResty XRay)</a></li>
       <li><a href="#hx8nwGy3FJI" style="cursor: pointer">Performance Overhead of OpenResty XRay when Tracing Go Apps</a></li>
-      <li><a href="#QJ8qJcjWqpM" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#bjmLEtwvIZI" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing Rust Apps (using OpenResty XRay)</a></li>
       <li><a href="#WUdzsp9WMcU" style="cursor: pointer">Dynamic-Tracing Custom Go Programs with Custom Ylang (using OpenResty XRay)</a></li>
       <li><a href="#irBruMTl05o" style="cursor: pointer">How Python Django’s Application Uses Memory Internally (Using OpenResty XRay)</a></li>
@@ -94,6 +96,12 @@
     </ul>
   </div>
   <h2 id="PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ">OpenResty XRay</h2>
+  <p id="Crw7P8h-WVg">How to Locate Exceptions inside Go Applications  (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/Crw7P8h-WVg" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="A8xxK7eiNvw">How to Locate Exceptions inside Rust Applications (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/A8xxK7eiNvw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="3ORg4SkYcJg">How to Diagnose HTTP 504 Timeout Errors using OpenResty XRay</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/3ORg4SkYcJg" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="T2fe9-AjKEE">How CPU Time is Spent inside Go’s CockroachDB (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/T2fe9-AjKEE" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="f-LL2P-Gu8c">Performance Overhead of OpenResty XRay when Tracing Perl Apps</p>
@@ -108,8 +116,6 @@
   <iframe width="645" height="360" src="https://www.youtube.com/embed/HO0N6aLHFiE" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="hx8nwGy3FJI">Performance Overhead of OpenResty XRay when Tracing Go Apps</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/hx8nwGy3FJI" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="QJ8qJcjWqpM">Deleted video</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/QJ8qJcjWqpM" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="bjmLEtwvIZI">Performance Impact of OpenResty XRay when Tracing Rust Apps (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/bjmLEtwvIZI" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="WUdzsp9WMcU">Dynamic-Tracing Custom Go Programs with Custom Ylang (using OpenResty XRay)</p>
