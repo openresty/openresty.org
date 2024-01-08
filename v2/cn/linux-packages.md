@@ -62,6 +62,7 @@
     版本号         支持的体系结构
     1 (2018.03)    x86_64
     2              x86_64, aarch64
+    2023           x86_64, aarch64
 ```
 
 * [Alibaba Cloud Linux](#alibaba-cloud-linux)

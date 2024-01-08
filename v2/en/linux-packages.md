@@ -62,6 +62,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     Version         Supported Architectures
     1 (2018.03)     x86_64
     2               x86_64, aarch64
+    2023            x86_64, aarch64
 ```
 
 * [Alibaba Cloud Linux](#alibaba-cloud-linux)
