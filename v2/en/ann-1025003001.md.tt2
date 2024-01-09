@@ -1,0 +1,64 @@
+[% major_ver = "1.25.3"; version = major_ver _ ".1" -%]
+<!---
+    @title         OpenResty [% version %] Released
+--->
+
+We are happy to announce the new formal release, [% version %], of the
+OpenResty web platform based on NGINX and LuaJIT.
+
+[Download this version here](download.html).
+
+The (portable) source code distribution, the Win32/Win64 binary
+distributions, and the pre-built binary Linux packages for Ubuntu,
+Debian, Fedora, CentOS, RHEL, OpenSUSE, Amazon Linux are provided on this
+[Download page](download.html).
+
+# Version highlights
+
+* Based on the very recent mainline [nginx](nginx.html) core 1.25.3.
+* [LuaJIT](https://github.com/openresty/luajit2)
+    * Many fixes imported from Mike Pall's upstream https://github.com/luajit/luajit repository.
+* Added support for HTTP/3.
+* Added support for PCRE2.
+* Upgraded OpenSSL to 1.1.1w for Win32/Win64.
+* [lua-nginx-module](https://github.com/openresty/lua-nginx-module)
+    * Added support for lua_ssl_certificate and lua_ssl_certificate_key.
+    * Removed `ngx.re` from `ngx.run_worker_thread`.
+    * Disabled SSLv3 and enabled TLSv1.3 by default in the lua-ssl-protocols.
+* [lua-resty-core](https://github.com/openresty/lua-resty-core)
+    * Refined `ngx.worker.pids()` for better performance.
+* [lua-resty-dns](https://github.com/openresty/lua-resty-dns)
+    * Introduced a cleanup method for explicit destruction of cosocket resources within the resolver object.
+
+# Full Change logs
+
+Complete change logs since the last (formal) release, [1.21.4.3](ann-1021004003.html),
+can be browsed in the page [Change Log for [% major_ver %].x](changelog-1025003.html).
+
+# Testing
+
+We have run extensive testing on our Amazon EC2 test cluster and
+ensured that all the components (including the Nginx core) play well
+together. The latest test report can always be found here:
+
+https://qa.openresty.org/
+
+We also always run our OpenResty Edge commercial software based on the
+latest open source version of OpenResty in our own global CDN network
+(dubbed "mini CDN") powering our openresty.org and openresty.com
+websites. See https://openresty.com/ for more details.
+
+# Community Support
+
+See the [Community Page](community.html).
+
+# Commercial Support
+
+Commercial technical support and real-time noninvasive online monitoring and profiling
+solution is provided through the official [OpenResty XRay](https://openresty.com/en/xray/)
+product.
+
+# Feedback
+
+Feedback on this release is more than welcome. Feel free to create new
+[GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](community.html).
