@@ -9,6 +9,7 @@
       <li><a href="#T2fe9-AjKEE" style="cursor: pointer">How CPU Time is Spent inside Go’s CockroachDB (using OpenResty XRay)</a></li>
       <li><a href="#f-LL2P-Gu8c" style="cursor: pointer">Performance Overhead of OpenResty XRay when Tracing Perl Apps</a></li>
       <li><a href="#pOXXj4u1Oag" style="cursor: pointer">Locate Large Memory Objects inside Perl Processes (using OpenResty XRay)</a></li>
+      <li><a href="#O9MqhZEA2mA" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#HyrI2p5fE1M" style="cursor: pointer">Install OpenResty XRay’s Agents on Ubuntu via Deb Packages</a></li>
       <li><a href="#v1Nw_HTtf60" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing PHP Apps (using OpenResty XRay)</a></li>
       <li><a href="#HO0N6aLHFiE" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing Python Apps (using OpenResty XRay)</a></li>
@@ -51,6 +52,7 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK" style="cursor: pointer">OpenResty Edge</a></h2>
     <ul>
+      <li><a href="#6R6_Qe_ONW0" style="cursor: pointer">How to Use Global Search in OpenResty Edge's Admin Console</a></li>
       <li><a href="#ZcMqWGuFS1Q" style="cursor: pointer">How to Use Gateway Staging Servers in OpenResty Edge</a></li>
       <li><a href="#WB0Rt8ghm44" style="cursor: pointer">Configuring Webhooks in OpenResty Edge</a></li>
       <li><a href="#ay0RjPErUnE" style="cursor: pointer">(old) Configuring Webhooks in OpenResty Edge</a></li>
@@ -108,6 +110,8 @@
   <iframe width="645" height="360" src="https://www.youtube.com/embed/f-LL2P-Gu8c" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="pOXXj4u1Oag">Locate Large Memory Objects inside Perl Processes (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/pOXXj4u1Oag" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="O9MqhZEA2mA">Deleted video</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/O9MqhZEA2mA" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="HyrI2p5fE1M">Install OpenResty XRay’s Agents on Ubuntu via Deb Packages</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/HyrI2p5fE1M" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="v1Nw_HTtf60">Performance Impact of OpenResty XRay when Tracing PHP Apps (using OpenResty XRay)</p>
@@ -174,6 +178,8 @@
   <p id="eSfYLvVQMxw">Hello World HTTP Example in OpenResty/Nginx</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2 id="PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK">OpenResty Edge</h2>
+  <p id="6R6_Qe_ONW0">How to Use Global Search in OpenResty Edge's Admin Console</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/6R6_Qe_ONW0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="ZcMqWGuFS1Q">How to Use Gateway Staging Servers in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/ZcMqWGuFS1Q" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="WB0Rt8ghm44">Configuring Webhooks in OpenResty Edge</p>
