@@ -12,6 +12,7 @@
     * upgraded OpenSSL to 1.1.1w.
     * upgraded Zlib to 1.3.
 * Added support for PCRE2. _Thanks swananan for the patch._
+* Added support for lua_ssl_certificate and lua_ssl_certificate_key. _Thanks zhangjie for the patch._
 * upgraded [lua-nginx-module](https://github.com/openresty/lua-nginx-module#readme)	to 0.10.26
     * optimize: prevent moving the expired item to the LRU queue head during lookup. _Thanks lijunlong for the patch._
     * bugfix: fixed a memory leak in the case of dubious connections. _Thanks Johnny Wang for the patch._
@@ -22,7 +23,6 @@
     * bugfix: resolved a compilation failure with Clang. _Thanks lijunlong for the patch._
     * bugfix: fixed compilation error: variable 'nelts' set but not used. _Thanks lijunlong for the patch._
     * change: remove `ngx.re` from `ngx.run_worker_thread`. _Thanks lijunlong for the patch._
-    * feature: added support for `lua_ssl_certificate` and `lua_ssl_certificate_key`. _Thanks zhangjie for the patch._
     * bugfix: addressed a use-after-free issue when encountering an invalid HTTP If-Match header. _Thanks lijunlong for the patch._
     * optimize: Optimized use of SSL contexts. _Thanks Jan Prachař for the patch._
     * bugfix: permitted ngx_http_lua_socket_tcp_bind in ssl_session_fetch_by and ssl_client_hello_by contexts. _Thanks willmafh for the patch._
@@ -37,7 +37,6 @@
     * optimize: now we make use of the new lua_getexdata2 and lua_setexdata2 to attach coctx to the Lua thread objects directly which save the lookup overhead which can become the bottleneck when there are many Lua light threads around in a single request handler. _Thanks lijunlong for the patch._
 * upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core) to v0.1.28
     * optimize: small optimization of `ngx.worker.pids()` . _Thanks Chrono for the patch._
-    * feature: support lua_ssl_certificate and lua_ssl_certificate_key. _Thanks zhangjie for the patch._
 * upgraded [lua-cjson](https://github.com/openresty/lua-cjson) to 2.1.0.13
     * bugfix: Lua cjson integer overflow issues (CVE-2022-24834). _Thanks lijunlong for the patch._
     * feature: updated netlib `dtoa.c` from https://netlib.sandia.gov/fp/dtoa.c. _Thanks lijunlong for the patch._
