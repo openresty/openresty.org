@@ -10,9 +10,6 @@ Written by Yichun Zhang.
 
 * English Edition
     * [HTML Format](https://openresty.gitbooks.io/programming-openresty/content/) (Web browser users)
-    * [PDF Format](https://www.gitbook.com/download/pdf/book/openresty/programming-openresty)
-    * [EPUB Format](https://www.gitbook.com/download/epub/book/openresty/programming-openresty)
-    * [Mobi Format](https://www.gitbook.com/download/mobi/book/openresty/programming-openresty)
 
 # agentzh's Nginx Tutorials
 
