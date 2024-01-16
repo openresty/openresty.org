@@ -8,8 +8,15 @@
     @changes       2
 --->
 
+# Programming OpenResty
 
-#  eBook "agentzh's Nginx Tutorials" (version 2012.04.18)
+Written by Yichun Zhang.
+
+* English Edition
+    * [HTML Format](https://openresty.gitbooks.io/programming-openresty/content/) (Web browser users)
+
+#  agentzh's Nginx Tutorials
+
 * English Edition
     * [HTML Single-Page Format](https://openresty.org/download/agentzh-nginx-tutorials-enuk.html) (Web browser users)
     * [MOBI Format](https://openresty.org/download/agentzh-nginx-tutorials-enuk.mobi) (Kindle users)
