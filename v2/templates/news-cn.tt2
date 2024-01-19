@@ -12,6 +12,9 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1021004003.html">OpenResty 1.21.4.3</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/prometheus-high-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/prometheus-high-cpu-cn.png" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/prometheus-high-cpu/?src=org_news" target="_blank">使用 OpenResty XRay 定位普罗米修斯应用内部 CPU 最热的 Go 代码路径</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-global-search/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-global-search-cn.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-global-search/?src=org_news" target="_blank">在 OpenResty Edge 的 Admin 控制台中如何使用全局搜索</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
@@ -26,8 +29,5 @@
   </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-staging-server/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-staging-server-cn.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-staging-server/?src=org_news" target="_blank">在 OpenResty Edge 中如何使用灰度网关服务器</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/perl-high-mem/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cn-perl-high-mem.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/perl-high-mem/?src=org_news" target="_blank">线上定位 Perl 进程中的大内存对象（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>

@@ -3,19 +3,20 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ" style="cursor: pointer">OpenResty XRay</a></h2>
     <ul>
+      <li><a href="#n9cCqz0wxn8" style="cursor: pointer">How to Locate Exceptions inside Rust Applications (using OpenResty XRay)</a></li>
+      <li><a href="#3OS7gIfuGig" style="cursor: pointer">Pinpointing CPU-Hottest Go Code Paths Inside Prometheus</a></li>
       <li><a href="#Crw7P8h-WVg" style="cursor: pointer">How to Locate Exceptions inside Go Applications  (using OpenResty XRay)</a></li>
-      <li><a href="#A8xxK7eiNvw" style="cursor: pointer">How to Locate Exceptions inside Rust Applications (using OpenResty XRay)</a></li>
+      <li><a href="#A8xxK7eiNvw" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#3ORg4SkYcJg" style="cursor: pointer">How to Diagnose HTTP 504 Timeout Errors using OpenResty XRay</a></li>
       <li><a href="#T2fe9-AjKEE" style="cursor: pointer">How CPU Time is Spent inside Go’s CockroachDB (using OpenResty XRay)</a></li>
       <li><a href="#f-LL2P-Gu8c" style="cursor: pointer">Performance Overhead of OpenResty XRay when Tracing Perl Apps</a></li>
       <li><a href="#pOXXj4u1Oag" style="cursor: pointer">Locate Large Memory Objects inside Perl Processes (using OpenResty XRay)</a></li>
-      <li><a href="#O9MqhZEA2mA" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#HyrI2p5fE1M" style="cursor: pointer">Install OpenResty XRay’s Agents on Ubuntu via Deb Packages</a></li>
       <li><a href="#v1Nw_HTtf60" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing PHP Apps (using OpenResty XRay)</a></li>
       <li><a href="#HO0N6aLHFiE" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing Python Apps (using OpenResty XRay)</a></li>
       <li><a href="#hx8nwGy3FJI" style="cursor: pointer">Performance Overhead of OpenResty XRay when Tracing Go Apps</a></li>
       <li><a href="#bjmLEtwvIZI" style="cursor: pointer">Performance Impact of OpenResty XRay when Tracing Rust Apps (using OpenResty XRay)</a></li>
-      <li><a href="#WUdzsp9WMcU" style="cursor: pointer">Dynamic-Tracing Custom Go Programs with Custom Ylang (using OpenResty XRay)</a></li>
+      <li><a href="#WUdzsp9WMcU" style="cursor: pointer">Dynamic-Tracing Custom Go Programs with Custom Ylang Analyzers (using OpenResty XRay)</a></li>
       <li><a href="#irBruMTl05o" style="cursor: pointer">How Python Django’s Application Uses Memory Internally (Using OpenResty XRay)</a></li>
       <li><a href="#Odu2tTZyDU0" style="cursor: pointer">How CPU time is spent inside Rust’s sled library (Using OpenResty XRay)</a></li>
       <li><a href="#7LHVmehTxWc" style="cursor: pointer">How CPU time is spent inside Go's etcd server (using OpenResty XRay)</a></li>
@@ -98,9 +99,13 @@
     </ul>
   </div>
   <h2 id="PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ">OpenResty XRay</h2>
+  <p id="n9cCqz0wxn8">How to Locate Exceptions inside Rust Applications (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/n9cCqz0wxn8" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="3OS7gIfuGig">Pinpointing CPU-Hottest Go Code Paths Inside Prometheus</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/3OS7gIfuGig" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="Crw7P8h-WVg">How to Locate Exceptions inside Go Applications  (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/Crw7P8h-WVg" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="A8xxK7eiNvw">How to Locate Exceptions inside Rust Applications (using OpenResty XRay)</p>
+  <p id="A8xxK7eiNvw">Deleted video</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/A8xxK7eiNvw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="3ORg4SkYcJg">How to Diagnose HTTP 504 Timeout Errors using OpenResty XRay</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/3ORg4SkYcJg" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
@@ -110,8 +115,6 @@
   <iframe width="645" height="360" src="https://www.youtube.com/embed/f-LL2P-Gu8c" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="pOXXj4u1Oag">Locate Large Memory Objects inside Perl Processes (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/pOXXj4u1Oag" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="O9MqhZEA2mA">Deleted video</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/O9MqhZEA2mA" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="HyrI2p5fE1M">Install OpenResty XRay’s Agents on Ubuntu via Deb Packages</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/HyrI2p5fE1M" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="v1Nw_HTtf60">Performance Impact of OpenResty XRay when Tracing PHP Apps (using OpenResty XRay)</p>
@@ -122,7 +125,7 @@
   <iframe width="645" height="360" src="https://www.youtube.com/embed/hx8nwGy3FJI" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="bjmLEtwvIZI">Performance Impact of OpenResty XRay when Tracing Rust Apps (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/bjmLEtwvIZI" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="WUdzsp9WMcU">Dynamic-Tracing Custom Go Programs with Custom Ylang (using OpenResty XRay)</p>
+  <p id="WUdzsp9WMcU">Dynamic-Tracing Custom Go Programs with Custom Ylang Analyzers (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/WUdzsp9WMcU" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="irBruMTl05o">How Python Django’s Application Uses Memory Internally (Using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/irBruMTl05o" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
