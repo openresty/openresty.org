@@ -3,6 +3,7 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ" style="cursor: pointer">OpenResty XRay</a></h2>
     <ul>
+      <li><a href="#xhoDJMau39E" style="cursor: pointer">Find Blocking Perl Code Paths Holding back CPU Usage (Using OpenResty XRay)</a></li>
       <li><a href="#n9cCqz0wxn8" style="cursor: pointer">How to Locate Exceptions inside Rust Applications (using OpenResty XRay)</a></li>
       <li><a href="#3OS7gIfuGig" style="cursor: pointer">Pinpointing CPU-Hottest Go Code Paths Inside Prometheus</a></li>
       <li><a href="#Crw7P8h-WVg" style="cursor: pointer">How to Locate Exceptions inside Go Applications  (using OpenResty XRay)</a></li>
@@ -99,6 +100,8 @@
     </ul>
   </div>
   <h2 id="PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ">OpenResty XRay</h2>
+  <p id="xhoDJMau39E">Find Blocking Perl Code Paths Holding back CPU Usage (Using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/xhoDJMau39E" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="n9cCqz0wxn8">How to Locate Exceptions inside Rust Applications (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/n9cCqz0wxn8" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="3OS7gIfuGig">Pinpointing CPU-Hottest Go Code Paths Inside Prometheus</p>
