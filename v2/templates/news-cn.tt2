@@ -12,6 +12,15 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1021004003.html">OpenResty 1.21.4.3</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-dns-permission/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-dns-permission-cn.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-dns-permission/?src=org_news" target="_blank">在 OpenResty Edge 的 Admin 控制台中管理 DNS 应用的访问权限</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/envoy-cpu-distr/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cn-envoy-cpu-distr.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/envoy-cpu-distr/?src=org_news" target="_blank">CPU 时间是如何耗费在 Envoy 服务器内部的（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/php-high-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cn-php-high-cpu.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/php-high-cpu/?src=org_news" target="_blank">线上快速定位 CPU 最热的 PHP 代码路径（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/go-exception/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cn-go-exception.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/go-exception/?src=org_news" target="_blank">线上监控 Go 应用中的程序异常（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
@@ -20,14 +29,5 @@
   </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/laravel-hello-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cn-laravel-hello-cpu.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/laravel-hello-cpu/?src=org_news" target="_blank">CPU 时间是如何耗费在 PHP Laravel 应用中的（使用OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/perl-low-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cn-perl-low-cpu.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/perl-low-cpu/?src=org_news" target="_blank">线上快速定位阻塞线程的 Perl 代码路径（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/rust-exception/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cn-rust-exception.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/rust-exception/?src=org_news" target="_blank">线上监控 Rust 应用中的程序异常（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/prometheus-high-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/prometheus-high-cpu-cn.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/prometheus-high-cpu/?src=org_news" target="_blank">使用 OpenResty XRay 定位普罗米修斯应用内部 CPU 最热的 Go 代码路径</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
