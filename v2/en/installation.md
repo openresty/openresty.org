@@ -106,7 +106,7 @@ apt-get install libpcre3-dev \
 You're recommended to install the following packages using yum:
 
 ```bash
-yum install pcre-devel openssl-devel gcc curl
+yum install pcre-devel openssl-devel gcc curl zlib-devel
 ```
 
 ### Mac OS X (macOS) users
