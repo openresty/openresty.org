@@ -12,6 +12,15 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1021004003.html">OpenResty 1.21.4.3</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/xray-or-core-dump/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-or-core-dump-en.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/xray-or-core-dump/?src=org_news" target="_blank">Automatic Core Dump Analysis (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/xray-agent-install-amazon-linux2/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-xray-agent-install-amazon-linux2.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/xray-agent-install-amazon-linux2/?src=org_news" target="_blank">Install OpenResty XRay’s Agents on Amazon Linux via Package Bundles</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/go-high-disk/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/go-high-disk-en.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/go-high-disk/?src=org_news" target="_blank">Pinpointing the Hottest Go Code Paths with High Disk I/O (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/edge-dns-permission/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-dns-permission-en.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-dns-permission/?src=org_news" target="_blank">Control Access to DNS Applications in OpenResty Edge's Admin Console</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
@@ -20,14 +29,5 @@
   </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/php-high-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-php-high-cpu.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/php-high-cpu/?src=org_news" target="_blank">Pinpointing the hottest PHP code paths with high CPU usage (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/go-exception/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-go-exception.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/go-exception/?src=org_news" target="_blank">How to Locate Exceptions inside Go Applications (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/edge-lua-module/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-lua-module-en.png" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-lua-module/?src=org_news" target="_blank">Call Lua modules by Edgelang in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/laravel-hello-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-laravel-hello-cpu.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/laravel-hello-cpu/?src=org_news" target="_blank">How CPU Time is Spent inside PHP Laravel Apps (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
