@@ -55,7 +55,7 @@ apt-get install libpcre3-dev \
 推荐您使用yum安装以下的开发库:
 
 ```bash
-yum install pcre-devel openssl-devel gcc curl
+yum install pcre-devel openssl-devel gcc curl zlib-devel
 ```
 
 ## Mac OS X (macOS) 用户
