@@ -12,6 +12,9 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1021004003.html">OpenResty 1.21.4.3</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/nodwarf/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-nodwarf.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/nodwarf/?src=org_news" target="_blank">Analyze OpenResty/Nginx Applications without Debug Symbols (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/xray-or-core-dump/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-or-core-dump-en.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/xray-or-core-dump/?src=org_news" target="_blank">Automatic Core Dump Analysis (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
@@ -26,8 +29,5 @@
   </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/envoy-cpu-distr/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-envoy-cpu-distr.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/envoy-cpu-distr/?src=org_news" target="_blank">How CPU Time is Spent inside Envoy Servers (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/php-high-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-php-high-cpu.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/php-high-cpu/?src=org_news" target="_blank">Pinpointing the hottest PHP code paths with high CPU usage (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
