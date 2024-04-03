@@ -12,6 +12,12 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1021004003.html">OpenResty 1.21.4.3</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/erlang-high-cpu/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-erlang-high-cpu.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/erlang-high-cpu/?src=org_news" target="_blank">Pinpointing the hottest Erlang code paths with high CPU usage (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/perl-exceptions/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-perl-exceptions.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/perl-exceptions/?src=org_news" target="_blank">How to Trace Exceptions inside Perl Applications (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/nodwarf/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-nodwarf.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/nodwarf/?src=org_news" target="_blank">Analyze OpenResty/Nginx Applications without Debug Symbols (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
@@ -23,11 +29,5 @@
   </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/go-high-disk/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/go-high-disk-en.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/go-high-disk/?src=org_news" target="_blank">Pinpointing the Hottest Go Code Paths with High Disk I/O (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/edge-dns-permission/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-dns-permission-en.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-dns-permission/?src=org_news" target="_blank">Control Access to DNS Applications in OpenResty Edge's Admin Console</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/envoy-cpu-distr/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-envoy-cpu-distr.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/envoy-cpu-distr/?src=org_news" target="_blank">How CPU Time is Spent inside Envoy Servers (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
