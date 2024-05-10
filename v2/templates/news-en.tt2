@@ -12,6 +12,12 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1021004003.html">OpenResty 1.21.4.3</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/edge-gateway-healthcheck/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-edge-gateway-healthcheck.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-gateway-healthcheck/?src=org_news" target="_blank">Enable Automatic Healthcheck for Gateway Servers in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
+  <div class="news-item"><a href="https://blog.openresty.com/en/edge-gateway-partition/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-gateway-partition-en.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-gateway-partition/?src=org_news" target="_blank">How to Use Gateway Partitions in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/edge-restore-client-addr/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-restore-client-addr-en.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-restore-client-addr/?src=org_news" target="_blank">Accurately Restore the Real Client IP Address in OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
@@ -23,11 +29,5 @@
   </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/perl-exceptions/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-perl-exceptions.jpg" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/perl-exceptions/?src=org_news" target="_blank">How to Trace Exceptions inside Perl Applications (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/nodwarf/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/en-nodwarf.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/nodwarf/?src=org_news" target="_blank">Analyze OpenResty/Nginx Applications without Debug Symbols (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/xray-or-core-dump/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-or-core-dump-en.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/xray-or-core-dump/?src=org_news" target="_blank">Automatic Core Dump Analysis (using OpenResty XRay)</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
