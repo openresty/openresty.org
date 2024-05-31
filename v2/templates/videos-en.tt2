@@ -3,12 +3,20 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ" style="cursor: pointer">OpenResty XRay</a></h2>
     <ul>
+      <li><a href="#jjS3ACty7kI" style="cursor: pointer">Pinpointing the Hottest Rust Code Paths with High Disk I/O (using OpenResty XRay)</a></li>
+      <li><a href="#Jd5Rvt2lhMY" style="cursor: pointer">Locate Large Memory Objects inside PHP Processes (using OpenResty XRay)</a></li>
+      <li><a href="#sqB5fGHahYU" style="cursor: pointer">Pinpointing the hottest Erlang code paths with high CPU usage (using OpenResty XRay)</a></li>
+      <li><a href="#3eNlV2lqcOU" style="cursor: pointer">How to Trace Exceptions inside Perl Applications (using OpenResty XRay)</a></li>
+      <li><a href="#swUwT3sEtUI" style="cursor: pointer">Analyze OpenResty/Nginx Applications without Debug Symbols (using OpenResty XRay)</a></li>
+      <li><a href="#N2NSqjgcuJA" style="cursor: pointer">Automatic Core Dump Analysis (using OpenResty XRay)</a></li>
+      <li><a href="#b_6L6ljzm1s" style="cursor: pointer">Pinpointing the Hottest Go Code Paths with High Disk I/O</a></li>
+      <li><a href="#JRoWMVBNoGw" style="cursor: pointer">Install OpenResty XRay’s Agents on Amazon Linux via Package Bundles</a></li>
+      <li><a href="#xBb2T7zK4IE" style="cursor: pointer">Pinpointing the hottest PHP code paths with high CPU usage (using OpenResty XRay)</a></li>
+      <li><a href="#L_Qp2kZPAkY" style="cursor: pointer">How CPU Time is Spent inside Envoy Servers (using OpenResty XRay)</a></li>
       <li><a href="#pW5hUFVD-d4" style="cursor: pointer">How CPU Time is Spent inside PHP Laravel Apps (using OpenResty XRay)</a></li>
       <li><a href="#xhoDJMau39E" style="cursor: pointer">Find Blocking Perl Code Paths Holding back CPU Usage (Using OpenResty XRay)</a></li>
       <li><a href="#n9cCqz0wxn8" style="cursor: pointer">How to Locate Exceptions inside Rust Applications (using OpenResty XRay)</a></li>
       <li><a href="#3OS7gIfuGig" style="cursor: pointer">Pinpointing CPU-Hottest Go Code Paths Inside Prometheus</a></li>
-      <li><a href="#Crw7P8h-WVg" style="cursor: pointer">How to Locate Exceptions inside Go Applications  (using OpenResty XRay)</a></li>
-      <li><a href="#A8xxK7eiNvw" style="cursor: pointer">Deleted video</a></li>
       <li><a href="#3ORg4SkYcJg" style="cursor: pointer">How to Diagnose HTTP 504 Timeout Errors using OpenResty XRay</a></li>
       <li><a href="#T2fe9-AjKEE" style="cursor: pointer">How CPU Time is Spent inside Go’s CockroachDB (using OpenResty XRay)</a></li>
       <li><a href="#f-LL2P-Gu8c" style="cursor: pointer">Performance Overhead of OpenResty XRay when Tracing Perl Apps</a></li>
@@ -55,6 +63,9 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK" style="cursor: pointer">OpenResty Edge</a></h2>
     <ul>
+      <li><a href="#rFaCVJPON3g" style="cursor: pointer">How to Use Gateway Partitions in OpenResty Edge</a></li>
+      <li><a href="#k522TIbqxQc" style="cursor: pointer">Control Access to DNS Applications in OpenResty Edge's Admin Console</a></li>
+      <li><a href="#c-Kf62KqK4c" style="cursor: pointer">Call Lua modules by Edgelang in OpenResty Edge</a></li>
       <li><a href="#6R6_Qe_ONW0" style="cursor: pointer">How to Use Global Search in OpenResty Edge's Admin Console</a></li>
       <li><a href="#ZcMqWGuFS1Q" style="cursor: pointer">How to Use Gateway Staging Servers in OpenResty Edge</a></li>
       <li><a href="#WB0Rt8ghm44" style="cursor: pointer">Configuring Webhooks in OpenResty Edge</a></li>
@@ -101,6 +112,26 @@
     </ul>
   </div>
   <h2 id="PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ">OpenResty XRay</h2>
+  <p id="jjS3ACty7kI">Pinpointing the Hottest Rust Code Paths with High Disk I/O (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/jjS3ACty7kI" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="Jd5Rvt2lhMY">Locate Large Memory Objects inside PHP Processes (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/Jd5Rvt2lhMY" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="sqB5fGHahYU">Pinpointing the hottest Erlang code paths with high CPU usage (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/sqB5fGHahYU" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="3eNlV2lqcOU">How to Trace Exceptions inside Perl Applications (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/3eNlV2lqcOU" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="swUwT3sEtUI">Analyze OpenResty/Nginx Applications without Debug Symbols (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/swUwT3sEtUI" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="N2NSqjgcuJA">Automatic Core Dump Analysis (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/N2NSqjgcuJA" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="b_6L6ljzm1s">Pinpointing the Hottest Go Code Paths with High Disk I/O</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/b_6L6ljzm1s" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="JRoWMVBNoGw">Install OpenResty XRay’s Agents on Amazon Linux via Package Bundles</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/JRoWMVBNoGw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="xBb2T7zK4IE">Pinpointing the hottest PHP code paths with high CPU usage (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/xBb2T7zK4IE" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="L_Qp2kZPAkY">How CPU Time is Spent inside Envoy Servers (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/L_Qp2kZPAkY" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="pW5hUFVD-d4">How CPU Time is Spent inside PHP Laravel Apps (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/pW5hUFVD-d4" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="xhoDJMau39E">Find Blocking Perl Code Paths Holding back CPU Usage (Using OpenResty XRay)</p>
@@ -109,10 +140,6 @@
   <iframe width="645" height="360" src="https://www.youtube.com/embed/n9cCqz0wxn8" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="3OS7gIfuGig">Pinpointing CPU-Hottest Go Code Paths Inside Prometheus</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/3OS7gIfuGig" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="Crw7P8h-WVg">How to Locate Exceptions inside Go Applications  (using OpenResty XRay)</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/Crw7P8h-WVg" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
-  <p id="A8xxK7eiNvw">Deleted video</p>
-  <iframe width="645" height="360" src="https://www.youtube.com/embed/A8xxK7eiNvw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="3ORg4SkYcJg">How to Diagnose HTTP 504 Timeout Errors using OpenResty XRay</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/3ORg4SkYcJg" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="T2fe9-AjKEE">How CPU Time is Spent inside Go’s CockroachDB (using OpenResty XRay)</p>
@@ -187,6 +214,12 @@
   <p id="eSfYLvVQMxw">Hello World HTTP Example in OpenResty/Nginx</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2 id="PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK">OpenResty Edge</h2>
+  <p id="rFaCVJPON3g">How to Use Gateway Partitions in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/rFaCVJPON3g" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="k522TIbqxQc">Control Access to DNS Applications in OpenResty Edge's Admin Console</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/k522TIbqxQc" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="c-Kf62KqK4c">Call Lua modules by Edgelang in OpenResty Edge</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/c-Kf62KqK4c" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="6R6_Qe_ONW0">How to Use Global Search in OpenResty Edge's Admin Console</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/6R6_Qe_ONW0" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="ZcMqWGuFS1Q">How to Use Gateway Staging Servers in OpenResty Edge</p>

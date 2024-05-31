@@ -11,6 +11,11 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/rust-high-disk/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/cn-rust-high-disk.jpg"><img class="article-img" src="../images/header-images/cn-rust-high-disk.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">线上快速定位硬盘 I/O 高的 Rust 代码路径（使用 OpenResty XRay）</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-mobile-apps/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/xray-mobile-apps-cn.jpg"><img class="article-img" src="../images/header-images/xray-mobile-apps-cn.jpg" loading="lazy"/></div>
             <div class="article-text">
@@ -105,11 +110,6 @@
             <div class="blog-img" data-pic="/header-images/perl-low-cpu-cn.jpg"><img class="article-img" src="../images/header-images/perl-low-cpu-cn.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">线上快速定位阻塞线程的 Perl 代码路径（使用 OpenResty XRay）</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/rust-exception/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-rust-exception.jpg"><img class="article-img" src="../images/header-images/cn-rust-exception.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">线上监控 Rust 应用中的程序异常（使用 OpenResty XRay）</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
