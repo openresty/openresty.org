@@ -4,6 +4,11 @@
     @created       2024-01-04 04:05 GMT
 --->
 
+# Version 1.25.3.2 - 09 Jul 2024
+
+* bugfix: applied the patches for security advisory to NGINX core. (CVE-2024-24989, CVE-2024-24990).
+* win32/win64: upgraded zlib to 1.3.1.
+
 # Version 1.25.3.1 - 04 Jan 2024
 
 * upgraded the [Nginx](nginx.html) core to 1.25.3.
