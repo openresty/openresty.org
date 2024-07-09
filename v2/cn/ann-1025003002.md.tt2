@@ -1,0 +1,57 @@
+[% major_ver = "1.25.3"; version = major_ver _ ".2" -%]
+<!---
+    @title         OpenResty [% version %] Released
+--->
+
+OpenResty [% version %] is a security update addressing critical vulnerabilities:
+
+1. The vulnerability in NGINX's QUIC implementation could allow attackers to exploit key update handling weaknesses, potentially leading to server instability and information leakage through timing side-channel attacks (CVE-2024-24989).
+2. A double-free vulnerability in the NGINX QUIC stream cleanup process. This flaw occurs when a stream shutdown fails, leaving a dangling pointer that could be later used to free already released memory. An attacker could potentially exploit this to cause a denial of service or execute arbitrary code (CVE-2024-24990).
+3. A vulnerability in MiniZip (part of zlib through 1.3) involving an integer overflow and resultant heap-based buffer overflow in zipOpenNewFileInZip4_64, which can be triggered by long filenames, comments, or extra fields. This is addressed by upgrading to zlib 1.3.1 (CVE-2023-45853).
+
+[Download this version here](download.html).
+
+The (portable) source code distribution, the Win32/Win64 binary
+distributions, and the pre-built binary Linux packages for Ubuntu,
+Debian, Fedora, CentOS, RHEL, OpenSUSE, Amazon Linux are provided on this
+[Download page](download.html).
+
+This is the second OpenResty release based on the nginx [% major_ver %] core.
+
+# Version highlights
+
+* Applied the patches for security advisory to NGINX core (CVE-2024-24989, CVE-2024-24990).
+* Upgraded the zlib library to 1.3.1 to address the security vulnerability (CVE-2023-45853).
+
+# Full Change logs
+
+Complete change logs since the last (formal) release, [1.25.3.1](ann-1025003001.html),
+can be browsed in the page [Change Log for [% major_ver %].x](changelog-1025003.html).
+
+# Testing
+
+We have run extensive testing on our Amazon EC2 test cluster and
+ensured that all the components (including the Nginx core) play well
+together. The latest test report can always be found here:
+
+https://qa.openresty.org/
+
+We also always run our OpenResty Edge commercial software based on the
+latest open source version of OpenResty in our own global CDN network
+(dubbed "mini CDN") powering our openresty.org and openresty.com
+websites. See https://openresty.com/ for more details.
+
+# Community Support
+
+See the [Community Page](community.html).
+
+# Commercial Support
+
+Commercial technical support and real-time noninvasive online monitoring and profiling
+solution is provided through the official [OpenResty XRay](https://openresty.com/en/xray/)
+product.
+
+# Feedback
+
+Feedback on this release is more than welcome. Feel free to create new
+[GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](community.html).
