@@ -6,7 +6,7 @@
 OpenResty [% version %] is a security update addressing a performance issue in
 LuaJIT related to hash computation optimization. This update disables a
 specific optimization in LuaJIT that could potentially lead to severe
-performance degradation under certain circumstances [CVE-2024-39702](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-39702).
+performance degradation under certain circumstances ([CVE-2024-39702](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-39702)).
 
 [Download this version here](download.html).
 
