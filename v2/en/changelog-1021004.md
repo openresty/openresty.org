@@ -4,6 +4,11 @@
     @created       2022-05-13 06:49 GMT
 --->
 
+# Version 1.21.4.4 - 9 Jul 2024
+
+* upgraded [LuaJIT](https://github.com/openresty/luajit2) to v2.1-20230410.1.
+    * bugfix: disable hash computation optimization because of the possibility of severe degradation (CVE-2024-39702). _Thanks lijunlong for the patch._
+
 # Version 1.21.4.3 - 7 Nov 2023
 
 * bugfix: applied the patch for security advisory to NGINX cores. (CVE-2023-44487).
