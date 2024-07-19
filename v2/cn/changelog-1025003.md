@@ -4,7 +4,7 @@
     @created       2024-01-04 04:05 GMT
 --->
 
-# Version 1.25.3.2 - 09 Jul 2024
+# Version 1.25.3.2 - 19 Jul 2024
 
 * upgraded [LuaJIT](https://github.com/openresty/luajit2) to v2.1-20231117.1
     * bugfix: disable hash computation optimization because of the possibility of severe degradation (CVE-2024-39702). _Thanks lijunlong for the patch._
