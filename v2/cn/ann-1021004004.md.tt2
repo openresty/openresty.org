@@ -4,9 +4,12 @@
 --->
 
 OpenResty [% version %] is a security update addressing a performance issue in
-LuaJIT related to hash computation optimization. This update disables a
+our OpenResty branch of LuaJIT related to hash computation optimization.
+We sincerely apologize for any confusion and want to clarify that this issue
+originates from our branch, not from upstream LuaJIT. This update disables a
 specific optimization in LuaJIT that could potentially lead to severe
 performance degradation under certain circumstances ([CVE-2024-39702](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-39702)).
+We would like to express our gratitude to Zhongwei Yao from Kong Inc. for reporting this issue.
 
 [Download this version here](download.html).
 
@@ -19,7 +22,8 @@ This is the fourth OpenResty release based on the nginx [% major_ver %] core.
 
 # Version highlights
 
-* Applied a patch to LuaJIT addressing performance issues related to hash computation optimization.
+* Applied a patch to our OpenResty branch of LuaJIT addressing performance
+issues related to hash computation optimization.
 
 # Full Change logs
 
