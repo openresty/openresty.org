@@ -1,8 +1,8 @@
 [% VER = "1.27.0.1"; RC = 1 -%]
 <!---
     @title         OpenResty [% VER %] RC[% RC %] is out
-    @created       2022-01-27 00:00 GMT
-    @modified      2022-01-27 00:00 GMT
+    @created       2024-08-13 07:17 GMT
+    @modified      2024-08-13 07:17 GMT
 --->
 
 We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],
@@ -44,14 +44,32 @@ and Jiahao Wang for their help in preparing this release.
 The highlights of this release candidate are:
 
 * Based on the very recent mainline [nginx](nginx.html) core 1.27.0.
+* [LuaJIT](https://github.com/openresty/luajit2#readme) updated to 2.1-20240626 with various optimizations and bugfixes:
+    * Improved error handling and stack overflow management
+    * Enhanced cross-32/64 bit and deterministic bytecode generation
+    * Disabled hash computation optimization in the OpenResty branch due to potential severe performance degradation ([CVE-2024-39702](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-39702)). This issue only exists in the OpenResty branch (agentzh-v2.1) and not in upstream LuaJIT. We thank Zhongwei Yao from Kong Inc. for reporting this issue.
+* Core modules updates:
+    * Improved keepalive and balancer functionality
+    * New SSL-related features, including support for trusted certificates in client verification
+    * Added support for deriving keys from TLS master secret
+    * Implemented `ngx_http_lua_ffi_ssl_client_random` and related functions
+* [lua-resty-websocket](https://github.com/openresty/lua-resty-websocket#readme) upgraded to 0.12 with new features:
+    * Added `send_continue` method
+    * Support for custom sec-websocket-key in client
+    * Added support for connecting to unix sockets
+* [lua-resty-string](https://github.com/openresty/lua-resty-string) updated to 0.16:
+    * Added AAD support in AES GCM
+    * Made `random.bytes` cryptographically strong by default
+* [lua-resty-redis](https://github.com/openresty/lua-resty-redis#readme) upgraded to v0.31 with performance optimizations
+* [lua-cjson](https://github.com/openresty/lua-cjson#readme) updated to 2.1.0.14 with Lua 5.3 and 5.4 integer support
 
 # Full Change logs
 
 Complete change logs since the last (formal) release, 1.25.3.2.
 
-* upgraded the [nginx](nginx.html) core to 1.27.0.
+* upgraded the [nginx](nginx.html) core to 1.27.0
     * see the changes here: http://nginx.org/en/CHANGES
-* upgraded lua-nginx-module to 0.10.27
+* upgraded [lua-nginx-module](https://github.com/openresty/lua-nginx-module) to 0.10.27
     * bugfix: fixed keepalive error in cosocket. _Thanks lijunlong for the patch._
     * bugfix: ensure compatibility with older nginx versions lacking TLS 1.3 support. _Thanks lijunlong for the patch._
     * bugfix: initialize ASN1_GENERALIZEDTIME pointers in ssl_validate_ocsp_response. _Thanks lijunlong for the patch._
@@ -61,7 +79,7 @@ Complete change logs since the last (formal) release, 1.25.3.2.
     * feature: add support for SSL trusted certificates in client verification. _Thanks xiangwei for the patch._
     * bugfix: respect max retry after using balancer pool. _Thanks kurt for the patch._
     * feature: support ngx.location.capture and ngx.location.capture_multi with `headers` option. _Thanks Tinglong Yang for the patch._
-    * bugfix: undefined symbol `SSL_client_hello_get0_ext    when linking against libressl. _Thanks lijunlong for the patch._
+    * bugfix: undefined symbol `SSL_client_hello_get0_ext` when linking against libressl. _Thanks lijunlong for the patch._
     * bugfix: fixed compilation errors when building without SSL. _Thanks Johnny Wang for the patch._
     * change: should match the local address when get connection from the keepalive pool. _Thanks lijunlong for the patch._
     * feature: implemented keepalive pooling in `balancer_by_lua*`. _Thanks lijunlong for the patch._
@@ -82,7 +100,7 @@ Complete change logs since the last (formal) release, 1.25.3.2.
     * feature: implemented `ngx_http_lua_ffi_ssl_client_random`. _Thanks Ruidong-X for the patch._
     * bugfix: fix memory corruption in consecutive regex calls. _Thanks Zhongwei Yao for the patch._
     * feature: add `ngx_http_lua_ffi_parse_der_cert` and `ngx_http_lua_ffi_parse_der_key` functions. _Thanks Brian Rak for the patch._
-* upgraded stream-lua-nginx-module to 0.0.15
+* upgraded [stream-lua-nginx-module](https://github.com/openresty/stream-lua-nginx-module) to 0.0.15
     * bugfix: fixed keepalive error in cosocket. _Thanks lijunlong for the patch._
     * bugfix: treat shared dict entries with TTL of 0 as expired. _Thanks lijunlong for the patch._
     * feature: add support for SSL trusted certificates in client verification. _Thanks xiangwei for the patch._
@@ -94,7 +112,7 @@ Complete change logs since the last (formal) release, 1.25.3.2.
     * bugfix: wrong argument for `pcre2_match`. _Thanks lijunlong for the patch._
     * feature: add functions to parse DER formatted certificates/keys. _Thanks Brian Rak for the patch._
     * changes: remove the useless pcre config. _Thanks swananan for the patch._
-* upgraded lua-resty-core to 0.1.29
+* upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core) to 0.1.29
     * feature: add ssl_trusted_certificate argument for `ssl.verify_client()`. _Thanks xiangwei for the patch._
     * feature: add `balancer.bind_to_local_addr` for stream module. _Thanks ytlm for the patch._
     * feature: makes outgoing connections to a proxied server originate from the specified local IP address with an optional port. _Thanks lijunlong for the patch._
@@ -108,7 +126,7 @@ Complete change logs since the last (formal) release, 1.25.3.2.
     * feature: add `ssl.get_client_random`. _Thanks Ruidong-X for the patch._
     * optimize: explicit requirement to use bash. _Thanks lynch for the patch._
     * feature: add `parse_der_cert` and `parse_der_priv_key` functions. _Thanks Brian Rak for the patch._
-* upgraded lua-resty-websocke to 0.12.
+* upgraded [lua-resty-websocket](https://github.com/openresty/lua-resty-websocket) to 0.12
     * feature: add `send_continue` method. _Thanks Toru for the patch._
     * feature: `client:connect()` returns HTTP response header. _Thanks Michael Martin for the patch._
     * feature: custom sec-websocket-key in client. _Thanks Michael Martin for the patch._
@@ -118,21 +136,23 @@ Complete change logs since the last (formal) release, 1.25.3.2.
     * optimization: check ssl_support early. _Thanks Michael Martin for the patch._
 * upgraded [lua-resty-redis](https://github.com/openresty/lua-resty-redis) to v0.31
     * optimize: cache the table for sending requests. _Thanks lijunlong for the patch._
-* upgraded lua-resty-string to 0.16
+* upgraded [lua-resty-string](https://github.com/openresty/lua-resty-string) to 0.16
     * feature: add AAD support in aes gcm. _Thanks wzxjohn for the patch._
     * change: make `random.bytes` cryptographically strong by default. _Thanks rfl890 for the patch._
 * upgraded [lua-cjson](https://github.com/openresty/lua-cjson) to 2.1.0.14
     * feature: Lua 5.3 + 5.4 integer support, with CI and conflicts fixed. _Thanks Hisham Muhammad for the patch._
     * bugfix: bus error or SIGSEGV caused by encode not keep buffer. _Thanks hyw0810 for the patch._
-* upgraded lua-resty-signal to 0.04
+* upgraded [lua-resty-signal](https://github.com/openresty/lua-resty-signal) to 0.04
     * bugfix: handle '?.so' in package.cpath. _Thanks Michael Martin for the patch._
-* upgraded lua-resty-lrucache to v0.14
+* upgraded [lua-resty-lrucache](https://github.com/openresty/lua-resty-lrucache) to v0.14
     * optimize: echo warning message when install this library to "/usr/local/lib/lua/" and copy installation guide from lua_resty_core module. _Thanks lynch for the patch._
-* upgraded rds-json-nginx-module to 0.17
+* upgraded [rds-json-nginx-module](https://github.com/openresty/rds-json-nginx-module) to 0.17
     * bugfix: failed to compilation on rockylinux 9. _Thanks lijunlong for the patch._
 * upgraded [luajit2](https://github.com/openresty/luajit2) to 2.1-20240626
-    * change: disable hash computation optimization because of the possibility of severe degradation. _Thanks lijunlong for the patch._
-    * bugfix： Enabled ppc64le arch on travis and fixed one failing test case. _Thanks Alhad Deshpande for the patch._
+    * change: disable hash computation optimization in the OpenResty branch (agentzh-v2.1) due to the possibility of
+      severe performance degradation ([CVE-2024-39702](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-39702)).
+      This issue is specific to our branch and does not affect upstream LuaJIT.  _Thanks to Zhongwei Yao from Kong Inc. for reporting this issue. Thanks lijunlong for the patch._
+    * bugfix: Enabled ppc64le arch on travis and fixed one failing test case. _Thanks Alhad Deshpande for the patch._
     * Prevent sanitizer warning in snap_restoredata().
     * Limit number of string format elements to compile.
     * FFI: Clarify scalar boxing behavior.
