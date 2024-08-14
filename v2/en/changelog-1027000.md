@@ -1,71 +1,10 @@
-[% VER = "1.27.0.1"; RC = 1 -%]
 <!---
-    @title         OpenResty [% VER %] RC[% RC %] is out
-    @created       2024-08-13 07:17 GMT
-    @modified      2024-08-13 07:17 GMT
+    @title         ChangeLog for 1.27.0.x
+    @creator       Johnny Wang
+    @created       2024-08-14 14:33 GMT
 --->
 
-We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],
-for the community to test out.
-
-# Source package
-
-https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz
-
-PGP for this source tar ball:
-
-https://openresty.org/download/openresty-[% VER %]rc[% RC %].tar.gz.asc
-
-# Windows binary packages
-
-## Win64 version:
-
-https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip
-
-PGP for the Win64 zip file:
-
-https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win64.zip.asc
-
-## Win32 version:
-
-https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip
-
-PGP for the Win32 zip file:
-
-https://openresty.org/download/openresty-[% VER %]rc[% RC %]-win32.zip.asc
-
-# Acknowledgment
-
-Special thanks go to all our developers and contributors! Also thanks Junlong Li,
-and Jiahao Wang for their help in preparing this release.
-
-# Version highlights
-
-The highlights of this release candidate are:
-
-* Based on the very recent mainline [nginx](nginx.html) core 1.27.0.
-* [LuaJIT](https://github.com/openresty/luajit2#readme) updated to 2.1-20240626 with various optimizations and bugfixes:
-    * Improved error handling and stack overflow management
-    * Enhanced cross-32/64 bit and deterministic bytecode generation
-    * Disabled hash computation optimization in the OpenResty branch due to potential severe performance degradation ([CVE-2024-39702](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-39702)). This issue only exists in the OpenResty branch (agentzh-v2.1) and not in upstream LuaJIT. We thank Zhongwei Yao from Kong Inc. for reporting this issue.
-* Core modules updates:
-    * Improved keepalive and balancer functionality
-    * New SSL-related features, including support for trusted certificates in client verification
-    * Added support for deriving keys from TLS master secret
-    * Implemented `ngx_http_lua_ffi_ssl_client_random` and related functions
-* [lua-resty-websocket](https://github.com/openresty/lua-resty-websocket#readme) upgraded to 0.12 with new features:
-    * Added `send_continue` method
-    * Support for custom sec-websocket-key in client
-    * Added support for connecting to unix sockets
-* [lua-resty-string](https://github.com/openresty/lua-resty-string) updated to 0.16:
-    * Added AAD support in AES GCM
-    * Made `random.bytes` cryptographically strong by default
-* [lua-resty-redis](https://github.com/openresty/lua-resty-redis#readme) upgraded to v0.31 with performance optimizations
-* [lua-cjson](https://github.com/openresty/lua-cjson#readme) updated to 2.1.0.14 with Lua 5.3 and 5.4 integer support
-
-# Full Change logs
-
-Complete change logs since the last (formal) release, 1.25.3.2.
+# Version 1.27.0.1 - 14 Aug 2024
 
 * upgraded the [nginx](nginx.html) core to 1.27.0
     * see the changes here: http://nginx.org/en/CHANGES
@@ -193,8 +132,3 @@ Complete change logs since the last (formal) release, 1.25.3.2.
     * Optimize table.new() with constant args to (sinkable) IR_TNEW.
     * Emit sunk IR_NEWREF only once per key on snapshot replay.
 
-# Feedback
-
-Feedback on this new release candidate is most welcome. Feel free to create new
-[GitHub issues](https://github.com/openresty/openresty/issues) or contact us
-via one of our [mailing lists](community.html).
