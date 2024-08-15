@@ -16,7 +16,7 @@ Debian, Fedora, CentOS, RHEL, OpenSUSE, Amazon Linux are provided on this
 # Version highlights
 
 * Based on the very recent mainline [nginx](nginx.html) core 1.27.0.
-* [LuaJIT](https://github.com/openresty/luajit2#readme) updated to 2.1-20240626 with various optimizations and bugfixes:
+* [LuaJIT](https://github.com/openresty/luajit2#readme) updated to 2.1-20240815 with various optimizations and bugfixes:
     * Improved error handling and stack overflow management
     * Enhanced cross-32/64 bit and deterministic bytecode generation
     * Disabled hash computation optimization in the OpenResty branch due to potential severe performance degradation ([CVE-2024-39702](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-39702)). This issue only exists in the OpenResty branch (agentzh-v2.1) and not in upstream LuaJIT. We thank Zhongwei Yao from Kong Inc. for reporting this issue.

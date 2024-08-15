@@ -87,7 +87,11 @@
     * optimize: echo warning message when install this library to "/usr/local/lib/lua/" and copy installation guide from lua_resty_core module. _Thanks lynch for the patch._
 * upgraded [rds-json-nginx-module](https://github.com/openresty/rds-json-nginx-module) to 0.17
     * bugfix: failed to compilation on rockylinux 9. _Thanks lijunlong for the patch._
-* upgraded [luajit2](https://github.com/openresty/luajit2) to 2.1-20240626
+* upgraded [luajit2](https://github.com/openresty/luajit2) to 2.1-20240815
+    * Reflect override of INSTALL_LJLIBD in package.path.
+    * ARM64: Use movi to materialize FP constants.
+    * Add more FOLD rules for integer conversions.
+    * Different fix for partial snapshot restore due to stack overflow. Reported by Junlong Li. Fixed by Peter Cawley.
     * change: disable hash computation optimization in the OpenResty branch (agentzh-v2.1) due to the possibility of
       severe performance degradation ([CVE-2024-39702](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-39702)).
       This issue is specific to our branch and does not affect upstream LuaJIT.  _Thanks to Zhongwei Yao from Kong Inc. for reporting this issue. Thanks lijunlong for the patch._
