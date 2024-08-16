@@ -68,7 +68,7 @@ install it.
 [% ver = "1.27.1.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
-[Changes](changelog-1027000.html) - 16 Aug 2024
+[Changes](changelog-1027001.html) - 16 Aug 2024
 
 ##  Legacy releases
 Sometimes, users may want to download old releases.
