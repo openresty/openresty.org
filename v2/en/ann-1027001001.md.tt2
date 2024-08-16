@@ -1,4 +1,4 @@
-[% major_ver = "1.27.0"; version = major_ver _ ".1" -%]
+[% major_ver = "1.27.1"; version = major_ver _ ".1" -%]
 <!---
     @title         OpenResty [% version %] Released
 --->
@@ -15,7 +15,7 @@ Debian, Fedora, CentOS, RHEL, OpenSUSE, Amazon Linux are provided on this
 
 # Version highlights
 
-* Based on the very recent mainline [nginx](nginx.html) core 1.27.0.
+* Based on the very recent mainline [nginx](nginx.html) core 1.27.1.
 * [LuaJIT](https://github.com/openresty/luajit2#readme) updated to 2.1-20240815 with various optimizations and bugfixes:
     * Improved error handling and stack overflow management
     * Enhanced cross-32/64 bit and deterministic bytecode generation
@@ -38,7 +38,7 @@ Debian, Fedora, CentOS, RHEL, OpenSUSE, Amazon Linux are provided on this
 # Full Change logs
 
 Complete change logs since the last (formal) release, [1.25.3.2](ann-1025003002.html),
-can be browsed in the page [Change Log for [% major_ver %].x](changelog-1027000.html).
+can be browsed in the page [Change Log for [% major_ver %].x](changelog-1027001.html).
 
 # Testing
 
