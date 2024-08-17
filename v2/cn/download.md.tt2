@@ -16,11 +16,11 @@ Rocky Linux、Oracle Linux、CBL Mariner 提供官方的二进制包仓库。
 
 所有版本都是用 Yichun Zhang 的 PGP 公钥 `A0E98066` 签发的。
 
-[% ver = "1.25.3.2" -%]
+[% ver = "1.27.1.1" -%]
 * 32 位 Windows: [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 16MB &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 2024年7月19日
+[PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 2024年8月16日
 * 64 位 Windows: [openresty-[% ver %]-win64.zip](https://openresty.org/download/openresty-[% ver %]-win64.zip) &nbsp; 16MB &nbsp;
-[PGP](https://openresty.org/download/openresty-[% ver %]-win64.zip.asc) - 2024年7月19日
+[PGP](https://openresty.org/download/openresty-[% ver %]-win64.zip.asc) - 2024年8月16日
 
 参见针对 Windows 版 OpenResty 的[用法文档](https://github.com/openresty/openresty/blob/master/doc/README-windows.md)。
 
@@ -59,15 +59,19 @@ brew install openresty-debug
 
 ##  最新版
 
-[% ver = "1.25.3.2" -%]
+[% ver = "1.27.1.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
-[变更列表](changelog-1025003.html) - 2024年7月19日
+[变更列表](changelog-1027001.html) - 2024年8月16日
 
 ##  历史版
 
 有时候我们可能会需要较老的版本：
 
+[% ver = "1.25.3.2" -%]
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
+&nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
+[变更列表](changelog-1025003.html) - 2024年7月19日
 [% ver = "1.25.3.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
