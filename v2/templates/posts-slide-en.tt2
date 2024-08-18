@@ -11,21 +11,6 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/python-high-disk/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-python-high-disk.jpg"><img class="article-img" src="../images/header-images/en-python-high-disk.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Pinpointing the Python Code Paths with High Disk I/O (using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/php-exceptions/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-php-exceptions.jpg"><img class="article-img" src="../images/header-images/en-php-exceptions.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">How to Trace Exceptions inside PHP Applications (using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-agent-install-k8s/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-xray-agent-install-k8s.jpg"><img class="article-img" src="../images/header-images/en-xray-agent-install-k8s.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Install OpenResty XRay’s Agents on Kubernetes cluster</p>
-            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-k8s-autoapprove/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/en-edge-k8s-autoapprove.jpg"><img class="article-img" src="../images/header-images/en-edge-k8s-autoapprove.jpg" loading="lazy"/></div>
             <div class="article-text">
@@ -110,6 +95,21 @@
             <div class="blog-img" data-pic="/header-images/en-envoy-cpu-distr.jpg"><img class="article-img" src="../images/header-images/en-envoy-cpu-distr.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">How CPU Time is Spent inside Envoy Servers (using OpenResty XRay)</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/php-high-cpu/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/en-php-high-cpu.jpg"><img class="article-img" src="../images/header-images/en-php-high-cpu.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Pinpointing the hottest PHP code paths with high CPU usage (using OpenResty XRay)</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/go-exception/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/en-go-exception.jpg"><img class="article-img" src="../images/header-images/en-go-exception.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">How to Locate Exceptions inside Go Applications (using OpenResty XRay)</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-lua-module/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-lua-module-en.jpg"><img class="article-img" src="../images/header-images/edge-lua-module-en.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Call Lua modules by Edgelang in OpenResty Edge</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
