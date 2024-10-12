@@ -8,11 +8,10 @@
 
 ```
     版本            版本名         支持的体系结构
-    14.04           Trusty          amd64
-    16.04           Xenial          amd64, arm64
     18.04           Bionic          amd64, arm64
     20.04           Focal           amd64, arm64
     22.04           Jammy           amd64, arm64
+    24.04           Noble           amd64, arm64
 ```
 
 * [Debian](#debian)
@@ -155,7 +154,7 @@ sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates lsb-r
 
 步骤二：导入我们的 GPG 密钥：
 
-  - ubuntu 16 ~ 20 版本
+  - ubuntu 18 ~ 20 版本
 ```bash
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 ```
@@ -168,7 +167,7 @@ wget -O - https://openresty.org/package/pubkey.gpg | sudo gpg --dearmor -o /usr/
 
 对于 `x86_64` 或 `amd64` 系统，可以使用下面的命令：
 
-  - ubuntu 16 ~ 20 版本
+  - ubuntu 18 ~ 20 版本
 ```bash
 echo "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
@@ -181,7 +180,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/openr
 
 而对于 `arm64` 或 `aarch64` 系统，则可以使用下面的命令:
 
-  - ubuntu 16 ~ 20 版本
+  - ubuntu 18 ~ 20 版本
 ```bash
 echo "deb http://openresty.org/package/arm64/ubuntu $(lsb_release -sc) main" \
     | sudo tee /etc/apt/sources.list.d/openresty.list

@@ -8,11 +8,10 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Codename        Supported Architectures
-    14.04           Trusty          amd64
-    16.04           Xenial          amd64, arm64
     18.04           Bionic          amd64, arm64
     20.04           Focal           amd64, arm64
     22.04           Jammy           amd64, arm64
+    24.04           Noble           amd64, arm64
 ```
 
 * [Debian](#debian)
@@ -170,7 +169,7 @@ sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates lsb-r
 
 Step 2: import our GPG key:
 
-  - For ubuntu 16 ~ 20
+  - For ubuntu 18 ~ 20
 ```bash
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 ```
@@ -184,7 +183,7 @@ Step 3: then add the our official APT repository.
 
 For `x86_64` or `amd64` systems:
 
- - For ubuntu 16 ~ 20
+ - For ubuntu 18 ~ 20
 ```bash
 echo "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
@@ -197,7 +196,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/openr
 
 And for `arm64` or `aarch64` systems:
 
- - For ubuntu 16 ~ 20
+ - For ubuntu 18 ~ 20
 ```bash
 echo "deb http://openresty.org/package/arm64/ubuntu $(lsb_release -sc) main" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
