@@ -4,7 +4,7 @@
     @created       2024-08-14 14:33 GMT
 --->
 
-# Version 1.27.1.1 - 16 Aug 2024
+# Version 1.27.1.1 - 16 Oct 2024
 
 * upgraded the [nginx](nginx.html) core to 1.27.1
     * see the changes here: http://nginx.org/en/CHANGES
