@@ -15,7 +15,14 @@ Debian, Fedora, CentOS, RHEL, OpenSUSE, Amazon Linux are provided on this
 
 # Version highlights
 
-* Based on the very recent mainline [nginx](nginx.html) core 1.27.1.
+* Nginx core
+    * Based on the very recent mainline [nginx](nginx.html) core 1.27.1.
+    * Added http_v3_module to official prebuilt packages.
+    * Added http_slice_module to official prebuilt packages.
+* OpenSSL
+    * upgraded from version 1.1.1 to 3.0.15.
+* PCRE
+    * upgraded from version 8.45 to 10.42.
 * [LuaJIT](https://github.com/openresty/luajit2#readme) updated to 2.1-20240815 with various optimizations and bugfixes:
     * Improved error handling and stack overflow management
     * Enhanced cross-32/64 bit and deterministic bytecode generation
