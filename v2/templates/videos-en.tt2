@@ -3,6 +3,10 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ" style="cursor: pointer">OpenResty XRay</a></h2>
     <ul>
+      <li><a href="#H1xmZubCmYA" style="cursor: pointer">Quick Tour to OpenResty XRay's Web console</a></li>
+      <li><a href="#zAmahYdZil8" style="cursor: pointer">Pinpointing the Hottest Python Code Paths with High Disk I/O (using OpenResty XRay)</a></li>
+      <li><a href="#sKuepewwvgQ" style="cursor: pointer">Install OpenResty XRay's Agent on Kubernetes</a></li>
+      <li><a href="#Z_1zY4zXauc" style="cursor: pointer">How to Monitor Exceptions inside PHP Applications (using OpenResty XRay)</a></li>
       <li><a href="#jjS3ACty7kI" style="cursor: pointer">Pinpointing the Hottest Rust Code Paths with High Disk I/O (using OpenResty XRay)</a></li>
       <li><a href="#Jd5Rvt2lhMY" style="cursor: pointer">Locate Large Memory Objects inside PHP Processes (using OpenResty XRay)</a></li>
       <li><a href="#sqB5fGHahYU" style="cursor: pointer">Pinpointing the hottest Erlang code paths with high CPU usage (using OpenResty XRay)</a></li>
@@ -63,6 +67,8 @@
   <div class="play-list">
     <h2><a href="#PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK" style="cursor: pointer">OpenResty Edge</a></h2>
     <ul>
+      <li><a href="#3lO2BOqeVys" style="cursor: pointer">How to Automate Managing Gateway Servers in K8s Environment (using OpenResty Edge)</a></li>
+      <li><a href="#3cdsAbXAnxE" style="cursor: pointer">Use Lua Extensions to Respond to Gateway Server Offline Events (using OpenResty Edge)</a></li>
       <li><a href="#rFaCVJPON3g" style="cursor: pointer">How to Use Gateway Partitions in OpenResty Edge</a></li>
       <li><a href="#k522TIbqxQc" style="cursor: pointer">Control Access to DNS Applications in OpenResty Edge's Admin Console</a></li>
       <li><a href="#c-Kf62KqK4c" style="cursor: pointer">Call Lua modules by Edgelang in OpenResty Edge</a></li>
@@ -112,6 +118,14 @@
     </ul>
   </div>
   <h2 id="PLlR4WakbzQp2avbmDrBcvnKBH3w0bcXPZ">OpenResty XRay</h2>
+  <p id="H1xmZubCmYA">Quick Tour to OpenResty XRay's Web console</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/H1xmZubCmYA" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="zAmahYdZil8">Pinpointing the Hottest Python Code Paths with High Disk I/O (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/zAmahYdZil8" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="sKuepewwvgQ">Install OpenResty XRay's Agent on Kubernetes</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/sKuepewwvgQ" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="Z_1zY4zXauc">How to Monitor Exceptions inside PHP Applications (using OpenResty XRay)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/Z_1zY4zXauc" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="jjS3ACty7kI">Pinpointing the Hottest Rust Code Paths with High Disk I/O (using OpenResty XRay)</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/jjS3ACty7kI" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="Jd5Rvt2lhMY">Locate Large Memory Objects inside PHP Processes (using OpenResty XRay)</p>
@@ -214,6 +228,10 @@
   <p id="eSfYLvVQMxw">Hello World HTTP Example in OpenResty/Nginx</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/eSfYLvVQMxw" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <h2 id="PLlR4WakbzQp3blQY5pLBHhNzR2EsEWiJK">OpenResty Edge</h2>
+  <p id="3lO2BOqeVys">How to Automate Managing Gateway Servers in K8s Environment (using OpenResty Edge)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/3lO2BOqeVys" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
+  <p id="3cdsAbXAnxE">Use Lua Extensions to Respond to Gateway Server Offline Events (using OpenResty Edge)</p>
+  <iframe width="645" height="360" src="https://www.youtube.com/embed/3cdsAbXAnxE" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="rFaCVJPON3g">How to Use Gateway Partitions in OpenResty Edge</p>
   <iframe width="645" height="360" src="https://www.youtube.com/embed/rFaCVJPON3g" allowfullscreen="allowfullscreen" loading="lazy" frameborder="0"></iframe>
   <p id="k522TIbqxQc">Control Access to DNS Applications in OpenResty Edge's Admin Console</p>
