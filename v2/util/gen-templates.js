@@ -129,7 +129,7 @@ Promise.all([
   genSlideTemplate('en'),
   genSlideTemplate('cn'),
   genEnVideos(),
-  genCnVideos(),
+  // genCnVideos(),
 ]).then(() => {
   for(pic of pics) {
     optimizeImg(pic);
