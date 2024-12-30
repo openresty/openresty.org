@@ -61,7 +61,7 @@ async function genSlideTemplate(lang) {
 
 async function genEnVideos() {
   const playlists = [];
-  const data = await http.get('https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyC2Tenfqm3olqBB2o099SHdneXhquIYliM&channelId=UCXVmwF-UCScv2ftsGoMqxhw&part=snippet');
+  const data = await http.get('https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyANu5r1u3Zt6RKS9j9NiYsJEXvo-UBFiww&channelId=UCXVmwF-UCScv2ftsGoMqxhw&part=snippet');
   const allLists = data.data.items;
   const shownList = allLists.filter(list => list.snippet.title !== 'OpenResty Con 2018');
   const sortedList = ['OpenResty Tutorials', 'OpenResty Edge', 'OpenResty Showman']
@@ -71,7 +71,7 @@ async function genEnVideos() {
     const {snippet, id} = item;
     const {title} = snippet;
     const videos = [];
-    const videosData = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyC2Tenfqm3olqBB2o099SHdneXhquIYliM&playlistId=${id}&maxResults=100&part=snippet`);
+    const videosData = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyANu5r1u3Zt6RKS9j9NiYsJEXvo-UBFiww&playlistId=${id}&maxResults=100&part=snippet`);
 
     videosData.data.items.forEach(video => {
       const {title, resourceId, publishedAt} = video.snippet;
