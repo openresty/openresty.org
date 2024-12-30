@@ -23,7 +23,7 @@ jobs:
     - name: Set up Node.js # set up nodejs and npm command
       uses: actions/setup-node@v1
       with:
-        node-version: '15.x' # require only 15 is enough
+        node-version: '16.x' # require only 15 is enough
     - name: Set up Perl
       uses: shogo82148/actions-setup-perl@v1
       with:
