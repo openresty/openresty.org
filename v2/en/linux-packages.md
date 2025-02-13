@@ -168,12 +168,12 @@ sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates lsb-r
 
 Step 2: import our GPG key:
 
-  - For ubuntu 18 ~ 20
+  - For Ubuntu 18 ~ 20
 ```bash
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 ```
 
-  - For ubuntu 22
+  - For Ubuntu 22 or above
 ```
 wget -O - https://openresty.org/package/pubkey.gpg | sudo gpg --dearmor -o /usr/share/keyrings/openresty.gpg
 ```
@@ -182,26 +182,26 @@ Step 3: then add the our official APT repository.
 
 For `x86_64` or `amd64` systems:
 
- - For ubuntu 18 ~ 20
+ - For Ubuntu 18 ~ 20
 ```bash
 echo "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
 ```
 
- - For ubuntu 22 or above
+ - For Ubuntu 22 or above
 ```bash
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/openresty.gpg] http://openresty.org/package/ubuntu $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/openresty.list > /dev/null
 ```
 
 And for `arm64` or `aarch64` systems:
 
- - For ubuntu 18 ~ 20
+ - For Ubuntu 18 ~ 20
 ```bash
 echo "deb http://openresty.org/package/arm64/ubuntu $(lsb_release -sc) main" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
 ```
 
- - For ubuntu 22 or above
+ - For Ubuntu 22 or above
 ```bash
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/openresty.gpg] http://openresty.org/package/arm64/ubuntu $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/openresty.list > /dev/null
 ```
