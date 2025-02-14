@@ -153,11 +153,11 @@ sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates lsb-r
 
 步骤二：导入我们的 GPG 密钥：
 
-  - ubuntu 18 ~ 20 版本
+  - Ubuntu 18 ~ 20 版本
 ```bash
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 ```
-  - ubuntu 22 及以上版本
+  - Ubuntu 22 及以上版本
 ```
 wget -O - https://openresty.org/package/pubkey.gpg | sudo gpg --dearmor -o /usr/share/keyrings/openresty.gpg
 ```
@@ -166,26 +166,26 @@ wget -O - https://openresty.org/package/pubkey.gpg | sudo gpg --dearmor -o /usr/
 
 对于 `x86_64` 或 `amd64` 系统，可以使用下面的命令：
 
-  - ubuntu 18 ~ 20 版本
+  - Ubuntu 18 ~ 20 版本
 ```bash
 echo "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
 ```
 
-  - ubuntu 22 及以上版本
+  - Ubuntu 22 及以上版本
 ```bash
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/openresty.gpg] http://openresty.org/package/ubuntu $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/openresty.list > /dev/null
 ```
 
 而对于 `arm64` 或 `aarch64` 系统，则可以使用下面的命令:
 
-  - ubuntu 18 ~ 20 版本
+  - Ubuntu 18 ~ 20 版本
 ```bash
 echo "deb http://openresty.org/package/arm64/ubuntu $(lsb_release -sc) main" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
 ```
 
-  - ubuntu 22 及以上版本
+  - Ubuntu 22 及以上版本
 ```bash
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/openresty.gpg] http://openresty.org/package/arm64/ubuntu $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/openresty.list > /dev/null
 ```
