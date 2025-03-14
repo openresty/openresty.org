@@ -1,0 +1,80 @@
+[% major_ver = "1.27.1"; version = major_ver _ ".2" -%]
+<!---
+    @title         OpenResty [% version %] Released
+--->
+
+We are happy to announce the new formal release, [% version %], of the
+OpenResty web platform based on NGINX and LuaJIT.
+
+[Download this version here](download.html).
+
+The (portable) source code distribution, the Win32/Win64 binary
+distributions, and the pre-built binary Linux packages for Ubuntu,
+Debian, Fedora, CentOS, RHEL, OpenSUSE, Amazon Linux are provided on this
+[Download page](download.html).
+
+# Version highlights
+
+* Nginx core
+    * backported fix for CVE-2025-23419.
+* OpenResty
+    * fixed nginx-1.27.1-stream_ssl_preread_no_skip.patch.
+    * make HTTP3 server headers also use openresty instead of nginx.
+* OpenSSL
+    * upgraded from version 3.0.15 to 3.4.1.
+* PCRE
+    * upgraded from version 10.42 to 10.44.
+* lua-nginx-module
+    * bugfix: remove http2 hardcode limitation in `ngx.location` subrequest API.
+    * feature: implemented ngx_http_lua_ffi_decode_base64mime.
+    * feature: add ngx.resp.set_status(status, reason).
+    * bugfix: `setkeepalive` failure on TLSv1.3.
+* stream-lua-nginx-module
+    * feature: enable ngx.var at the ssl_certificate_by_lua and ssl_client_hello_by_lua.
+    * bugfix: `setkeepalive` failure on TLSv1.3.
+* lua-resty-core
+    * feature: implemented decode_base64mime.
+    * feature: add ngx.resp.set_status(status, reason).
+* luajit2
+    * Fix recording of BC_VARG.
+    * Reject negative getfenv()/setfenv() levels to prevent compiler warning.
+    * Force fallback source name for stripped bytecode.
+    * Restore state when recording __concat metamethod throws OOM.
+    * MIPS64: Fix pcall() error case.
+    * Fix detection of inconsistent renames due to sunk values.
+    * Always close profiler output file.
+    * Fix override of INSTALL_LJLIBD in the presence of DESTDIR.
+    * Fix bit op coercion for shifts in DUALNUM builds.
+
+# Full Change logs
+
+Complete change logs since the last (formal) release, [1.27.1.1](ann-1027001001.html),
+can be browsed in the page [Change Log for [% major_ver %].x](changelog-1027002.html).
+
+# Testing
+
+We have run extensive testing on our Amazon EC2 test cluster and
+ensured that all the components (including the Nginx core) play well
+together. The latest test report can always be found here:
+
+https://qa.openresty.org/
+
+We also always run our OpenResty Edge commercial software based on the
+latest open source version of OpenResty in our own global CDN network
+(dubbed "mini CDN") powering our openresty.org and openresty.com
+websites. See https://openresty.com/ for more details.
+
+# Community Support
+
+See the [Community Page](community.html).
+
+# Commercial Support
+
+Commercial technical support and real-time noninvasive online monitoring and profiling
+solution is provided through the official [OpenResty XRay](https://openresty.com/en/xray/)
+product.
+
+# Feedback
+
+Feedback on this release is more than welcome. Feel free to create new
+[GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](community.html).

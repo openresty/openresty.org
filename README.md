@@ -94,6 +94,28 @@ make auto-templates
 
 This command also downloads images from our blog site, compress these images and save them to /v2/images/header-images.
 
+OpenResty Release
+=================
+
+When you are ready to release a new version of openresty, then you need to manually update the following files:
+
+  - v2/cn/ann-1027001002.md.tt2
+  - v2/cn/changelog-1027002.md
+  - v2/cn/download.md.tt2
+  - v2/en/ann-1027001002.md.tt2
+  - v2/en/changelog-1027002.md
+  - v2/en/download.md.tt2
+  - v2/templates/news-cn.tt2
+  - v2/templates/news-en.tt2
+  - v2/util/news.pug
+
+After that, run the following commands to generate the new version of the site:
+
+```bash
+make clean
+make
+```
+
 TODO
 ====
 
