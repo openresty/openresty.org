@@ -14,7 +14,7 @@ if [ ! -f "$infile" ]; then
 fi
 
 if [ -z "$name" ]; then
-    name=Yichun
+    name="The OpenResty Team"
 fi
 
 outfile=email.md
