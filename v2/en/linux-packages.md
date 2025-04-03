@@ -18,8 +18,6 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Codename        Supported Architectures
-    9.x             Stretch         amd64, arm64
-    10.x            Buster          amd64, arm64
     11.x            Bullseye        amd64, arm64
     12.x            Bookworm        amd64, arm64
 ```
@@ -37,7 +35,6 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Supported Architectures
-    6.x             x86_64
     7.x             x86_64, aarch64
     8.x             x86_64, aarch64
     9.x             x86_64, aarch64
@@ -91,7 +88,6 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Supported Architectures
-    6.x             x86_64
     7.x             x86_64, aarch64
     8.x             x86_64, aarch64
 ```
@@ -115,9 +111,6 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
 
 ```
     Version         Supported Architectures
-    3.7             x86_64, aarch64
-    3.8             x86_64, aarch64
-    3.9             x86_64, aarch64
     3.10            x86_64, aarch64
     3.11            x86_64, aarch64
     3.12            x86_64, aarch64
