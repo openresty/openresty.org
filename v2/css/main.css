@@ -638,7 +638,7 @@ header[role="header"] .enterprise-button .link-title {
 @media (min-width: 480px) and (max-width: 991px) {
   #main .item .body {
     /* tablets */
-    margin: .5em;
+    margin: 0.5em;
   }
 }
 #main .item .body pre {
@@ -1018,7 +1018,7 @@ hr.footer-sep {
   cursor: pointer;
   box-shadow: -2px -4px 4px rgba(0, 0, 0, 0.1), 4px 6px 20px rgba(0, 0, 0, 0.15);
   padding: 18px;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 .xray-modal-content .header .btn-close span {
   display: flex;
@@ -1110,6 +1110,7 @@ hr.footer-sep {
   box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.1), inset 0px -1px 0px rgba(14, 14, 44, 0.4);
   border-radius: 8px;
   color: #fff;
+  cursor: pointer;
 }
 .xray-modal-content .content .btn-learn-more {
   font-size: 14px;
@@ -1140,7 +1141,6 @@ hr.footer-sep {
     margin-right: 1rem;
   }
 }
-
 .xray-modal .xray-live-demo-link {
   font-size: 16px;
   display: flex;
@@ -1148,8 +1148,7 @@ hr.footer-sep {
   justify-content: center;
   margin-top: 40px;
 }
-
-.xray-modal .icon-pc-display-horizontal {
+.xray-modal .xray-live-demo-link .icon-pc-display-horizontal {
   background-color: currentColor;
   -webkit-mask-size: 16px 16px;
   mask-size: 16px 16px;
@@ -1165,11 +1164,9 @@ hr.footer-sep {
   margin-right: 8px;
   color: #481aa5;
 }
-
 .xray-modal .xray-live-demo-link a {
   text-decoration: underline;
   text-transform: uppercase;
   color: #481aa5;
   font-weight: bold;
 }
-
