@@ -11,6 +11,41 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-llvm-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-LLVM-optimal.jpg"><img class="article-img" src="../images/header-images/xray-LLVM-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty XRay Empowers LLVM clang Performance Optimization Practices</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-self-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-self-optimal.jpg"><img class="article-img" src="../images/header-images/xray-self-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Self-Optimization: The Performance Evolution of OpenResty XRay</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-script-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-script-optimal.jpg"><img class="article-img" src="../images/header-images/xray-script-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty XRay Helps Boost Script Performance by 44 Times</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-data-drift-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-data-drift-optimal.jpg"><img class="article-img" src="../images/header-images/xray-data-drift-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Cross-Media Data Structure Drift: OpenResty XRay Enables 20x Performance Improvement</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-oom-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-oom-optimal.jpg"><img class="article-img" src="../images/header-images/xray-oom-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">From OOM to O(1): The Implementation Path of Streaming JSON Parser</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-shred-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-shred-optimal.jpg"><img class="article-img" src="../images/header-images/xray-shred-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">From Days to Hours: How OpenResty XRay Accelerated the Linux shred Tool by Dozens of Times</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-ylang-analyzer-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-ylang-analyzer-optimal.jpg"><img class="article-img" src="../images/header-images/xray-ylang-analyzer-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Case Study: OpenResty XRay Doubles Ylang Compiler Performance</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/java-req-latency-analysis/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/java-req-latency-analysis.jpg"><img class="article-img" src="../images/header-images/java-req-latency-analysis.jpg" loading="lazy"/></div>
             <div class="article-text">
@@ -75,41 +110,6 @@
             <div class="blog-img" data-pic="/header-images/edge-gateway-partition-en.jpg"><img class="article-img" src="../images/header-images/edge-gateway-partition-en.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">How to Use Gateway Partitions in OpenResty Edge</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-restore-client-addr/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-restore-client-addr-en.jpg"><img class="article-img" src="../images/header-images/edge-restore-client-addr-en.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Accurately Restore the Real Client IP Address in OpenResty Edge</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/cpp-trace-cpp/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cpp-trace-cpp.jpg"><img class="article-img" src="../images/header-images/cpp-trace-cpp.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Use C++ to Dynamic-Trace C++ Applications</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/erlang-high-cpu/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-erlang-high-cpu.jpg"><img class="article-img" src="../images/header-images/en-erlang-high-cpu.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Pinpointing the hottest Erlang code paths with high CPU usage (using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/perl-exceptions/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-perl-exceptions.jpg"><img class="article-img" src="../images/header-images/en-perl-exceptions.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">How to Trace Exceptions inside Perl Applications (using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/nodwarf/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-nodwarf.jpg"><img class="article-img" src="../images/header-images/en-nodwarf.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Analyze OpenResty/Nginx Applications without Debug Symbols (using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-or-core-dump/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-or-core-dump-en.jpg"><img class="article-img" src="../images/header-images/xray-or-core-dump-en.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Automatic Core Dump Analysis (using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-agent-install-amazon-linux2/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-xray-agent-install-amazon-linux2.jpg"><img class="article-img" src="../images/header-images/en-xray-agent-install-amazon-linux2.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Install OpenResty XRay’s Agents on Amazon Linux via Package Bundles</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>

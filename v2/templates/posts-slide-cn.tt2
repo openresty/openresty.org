@@ -11,6 +11,41 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-llvm-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-LLVM-optimal.jpg"><img class="article-img" src="../images/header-images/xray-LLVM-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty XRay 助力 LLVM clang 性能优化实践</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-self-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-self-optimal.jpg"><img class="article-img" src="../images/header-images/xray-self-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">自我优化：OpenResty XRay 的性能蜕变</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-script-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-script-optimal.jpg"><img class="article-img" src="../images/header-images/xray-script-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty XRay 助力脚本性能提升 44 倍</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-data-drift-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-data-drift-optimal.jpg"><img class="article-img" src="../images/header-images/xray-data-drift-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">跨介质数据结构漂移：OpenResty XRay 助力性能提升 20 倍</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-oom-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-oom-optimal.jpg"><img class="article-img" src="../images/header-images/xray-oom-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">从 OOM 到 O(1)：OpenResty 流式 JSON 解析器的实现之道</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-shred-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-shred-optimal.jpg"><img class="article-img" src="../images/header-images/xray-shred-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">从数天到数小时：OpenResty XRay 如何让 Linux shred 工具提速几十倍</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-ylang-analyzer-optimal/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-ylang-analyzer-optimal.jpg"><img class="article-img" src="../images/header-images/xray-ylang-analyzer-optimal.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">实战分享：OpenResty XRay 让 Ylang 编译器性能翻倍</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/java-req-latency-analysis/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/java-req-latency-analysis.jpg"><img class="article-img" src="../images/header-images/java-req-latency-analysis.jpg" loading="lazy"/></div>
             <div class="article-text">
@@ -75,41 +110,6 @@
             <div class="blog-img" data-pic="/header-images/edge-gateway-partition-cn.jpg"><img class="article-img" src="../images/header-images/edge-gateway-partition-cn.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">如何使用 OpenResty Edge 中的网关分区</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-restore-client-addr/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-restore-client-addr-cn.jpg"><img class="article-img" src="../images/header-images/edge-restore-client-addr-cn.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">在 OpenResty Edge 中精准还原真实的客户端 IP 地址</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/cpp-trace-cpp/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cpp-trace-cpp.jpg"><img class="article-img" src="../images/header-images/cpp-trace-cpp.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">使用 C++ 动态追踪 C++ 应用</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/erlang-high-cpu/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-erlang-high-cpu.jpg"><img class="article-img" src="../images/header-images/cn-erlang-high-cpu.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">线上快速定位 CPU 最热的 Erlang 代码路径（使用 OpenResty XRay）</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/perl-exceptions/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-perl-exceptions.jpg"><img class="article-img" src="../images/header-images/cn-perl-exceptions.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">线上监控 Perl 应用中的程序异常（使用 OpenResty XRay）</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/nodwarf/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-nodwarf.jpg"><img class="article-img" src="../images/header-images/cn-nodwarf.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">分析缺失调试符号的 OpenResty/Nginx 应用（使用 OpenResty XRay）</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-or-core-dump/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-or-core-dump-cn.jpg"><img class="article-img" src="../images/header-images/xray-or-core-dump-cn.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">自动分析 Core Dump（使用 OpenResty XRay）</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-agent-install-amazon-linux2/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-xray-agent-install-amazon-linux2.jpg"><img class="article-img" src="../images/header-images/cn-xray-agent-install-amazon-linux2.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">在 Amazon Linux 上安裝 OpenResty XRay 的 Agent（使用 Bundle 包）</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>

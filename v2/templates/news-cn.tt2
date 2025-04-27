@@ -12,22 +12,22 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1027001001.html">OpenResty 1.27.1.1</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/java-req-latency-analysis/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/java-req-latency-analysis.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/java-req-latency-analysis/?src=org_news" target="_blank">分析 Tomcat Java Web 应用请求延时（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-llvm-optimal/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-LLVM-optimal.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-llvm-optimal/?src=org_news" target="_blank">OpenResty XRay 助力 LLVM clang 性能优化实践</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/java-analysis/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/java-analysis.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/java-analysis/?src=org_news" target="_blank">分析线上 Java 应用的 CPU，off-CPU 和硬盘 IO 使用情况（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-self-optimal/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-self-optimal.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-self-optimal/?src=org_news" target="_blank">自我优化：OpenResty XRay 的性能蜕变</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-web-console/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cn-xray-web-console.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-web-console/?src=org_news" target="_blank">OpenResty XRay 的 Web 控制台快速导览</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-script-optimal/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-script-optimal.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-script-optimal/?src=org_news" target="_blank">OpenResty XRay 助力脚本性能提升 44 倍</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/python-high-disk/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cn-python-high-disk.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/python-high-disk/?src=org_news" target="_blank">线上快速定位硬盘 I/O 高的 Python 代码路径（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-data-drift-optimal/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-data-drift-optimal.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-data-drift-optimal/?src=org_news" target="_blank">跨介质数据结构漂移：OpenResty XRay 助力性能提升 20 倍</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/php-exceptions/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cn-php-exceptions.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/php-exceptions/?src=org_news" target="_blank">线上监控 PHP 应用中的程序异常（使用 OpenResty XRay）</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-oom-optimal/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-oom-optimal.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-oom-optimal/?src=org_news" target="_blank">从 OOM 到 O(1)：OpenResty 流式 JSON 解析器的实现之道</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-agent-install-k8s/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/cn-xray-agent-install-k8s.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-agent-install-k8s/?src=org_news" target="_blank">在 Kubernetes 集群上安裝 OpenResty XRay 的 Agent</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-shred-optimal/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-shred-optimal.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-shred-optimal/?src=org_news" target="_blank">从数天到数小时：OpenResty XRay 如何让 Linux shred 工具提速几十倍</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
