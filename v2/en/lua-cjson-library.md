@@ -7,7 +7,7 @@
 Lua CJSON is a Lua C module that provides fast JSON parsing and encoding support
 for Lua.
 
-Project homepage: http://www.kyne.com.au/~mark/software/lua-cjson.php
+Project homepage: https://kyne.au/~mark/software/lua-cjson.php
 
 OpenResty includes its own fork of this library, however. The repository of OpenResty's
 fork is on GitHub:
