@@ -11,6 +11,76 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/undo-perl-bt/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/undo-perl-bt.jpg"><img class="article-img" src="../images/header-images/undo-perl-bt.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">How UDB and OpenResty XRay Let You See Through the Entire Perl Code Execution Process</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/undo-openresty-lua-bt/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/undo-openresty-lua-bt.jpg"><img class="article-img" src="../images/header-images/undo-openresty-lua-bt.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">UDB + OpenResty XRay: Unlocking the Mystery of OpenResty Application Performance</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/undo-java-file-bt/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/undo-java-file-bt.jpg"><img class="article-img" src="../images/header-images/undo-java-file-bt.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">UDB and OpenResty XRay: How to Analyze File Operations in Java Applications</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/undo-python-network-bt/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/undo-python-network-bt.jpg"><img class="article-img" src="../images/header-images/undo-python-network-bt.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Unveiling Python Code Execution with UDB</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-casestudy-lua-lru/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-casestudy-lua-lru.jpg"><img class="article-img" src="../images/header-images/xray-casestudy-lua-lru.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Case Study: How to Trace a Memory Leak Caused by an LRU Cache Using OpenResty XRay</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-customer-casestudy-dns/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-customer-casestudy-dns.jpg"><img class="article-img" src="../images/header-images/xray-customer-casestudy-dns.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Performance Breakthrough: 60% DNS Optimization Success with OpenResty XRay</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/ylang-simple-intro/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/ylang-simple-intro.jpg"><img class="article-img" src="../images/header-images/ylang-simple-intro.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">The Swiss Army Knife for Dynamic Tracing, How Ylang Tames Complexity</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-new-feature-je/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-new-feature-je.jpg"><img class="article-img" src="../images/header-images/xray-new-feature-je.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Major Breakthrough for OpenResty XRay: Non-Intrusive Analysis of Java Application Memory &amp; Envoy Lua Performance</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/dynamic-tracing-future-debug/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/dynamic-tracing-diagnose.jpg"><img class="article-img" src="../images/header-images/dynamic-tracing-diagnose.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Why Dynamic Tracing is the Future of Production Troubleshooting</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/dynamic-tracing-diagnose/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/dynamic-tracing-diagnose.jpg"><img class="article-img" src="../images/header-images/dynamic-tracing-diagnose.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Deep Dive into Dynamic Tracing Technology: How OpenResty XRay Revolutionizes Problem Diagnosis</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/dynamic-tracing-trend/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/dynamic-tracing-trend.jpg"><img class="article-img" src="../images/header-images/dynamic-tracing-trend.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">The Next Stop for Observability: How OpenResty XRay Redefines Problem Troubleshooting</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/dynamic-tracing-compare/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/dynamic-tracing-compare.jpg"><img class="article-img" src="../images/header-images/dynamic-tracing-compare.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Traditional Methods vs. Dynamic Tracing: A Revolution in Efficiency and Control</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/dynamic-tracing-challenge/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/dynamic-tracing-challenge.jpg"><img class="article-img" src="../images/header-images/dynamic-tracing-challenge.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Why is Dynamic Tracing Difficult to Implement? How Does OpenResty XRay Break Through?</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-black-box/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-black-box.jpg"><img class="article-img" src="../images/header-images/xray-black-box.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">From Black Box to White Box: OpenResty XRay Makes System Issues Nowhere to Hide</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-llvm-optimal/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/xray-LLVM-optimal.jpg"><img class="article-img" src="../images/header-images/xray-LLVM-optimal.jpg" loading="lazy"/></div>
             <div class="article-text">
@@ -40,76 +110,6 @@
             <div class="blog-img" data-pic="/header-images/xray-shred-optimal.jpg"><img class="article-img" src="../images/header-images/xray-shred-optimal.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">From Days to Hours: How OpenResty XRay Accelerated the Linux shred Tool by Dozens of Times</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-ylang-analyzer-optimal/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-ylang-analyzer-optimal.jpg"><img class="article-img" src="../images/header-images/xray-ylang-analyzer-optimal.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Case Study: OpenResty XRay Doubles Ylang Compiler Performance</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/java-req-latency-analysis/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/java-req-latency-analysis.jpg"><img class="article-img" src="../images/header-images/java-req-latency-analysis.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Analyzing Tomcat Java Web Application Request Latency (Using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/java-analysis/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/java-analysis.jpg"><img class="article-img" src="../images/header-images/java-analysis.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Analyzing CPU, off-CPU and Disk I/O Usage of Java Applications (Using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-web-console/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-xray-web-console.jpg"><img class="article-img" src="../images/header-images/en-xray-web-console.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">A Quick Tour to OpenResty XRay’s Web Console</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/python-high-disk/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-python-high-disk.jpg"><img class="article-img" src="../images/header-images/en-python-high-disk.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Pinpointing the Python Code Paths with High Disk I/O (using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/php-exceptions/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-php-exceptions.jpg"><img class="article-img" src="../images/header-images/en-php-exceptions.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">How to Trace Exceptions inside PHP Applications (using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-agent-install-k8s/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-xray-agent-install-k8s.jpg"><img class="article-img" src="../images/header-images/en-xray-agent-install-k8s.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Install OpenResty XRay’s Agents on Kubernetes cluster</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-k8s-autoapprove/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-edge-k8s-autoapprove.jpg"><img class="article-img" src="../images/header-images/en-edge-k8s-autoapprove.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">How to Automate Managing Gateway Servers in K8s Environment (using OpenResty Edge)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-lua-ext/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-edge-lua-ext.jpg"><img class="article-img" src="../images/header-images/en-edge-lua-ext.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Use Lua Extensions to Respond to Gateway Server Offline Events in OpenResty Edge</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/rust-high-disk/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-rust-high-disk.jpg"><img class="article-img" src="../images/header-images/en-rust-high-disk.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Pinpointing the Hottest Rust Code Paths with High Disk I/O (using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-mobile-apps/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-mobile-app-android-en.jpg"><img class="article-img" src="../images/header-images/xray-mobile-app-android-en.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Introduction to OpenResty XRay Mobile Apps</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/php-high-mem/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-php-high-mem.jpg"><img class="article-img" src="../images/header-images/en-php-high-mem.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Locate Large Memory Objects inside PHP Processes (using OpenResty XRay)</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-gateway-healthcheck/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/en-edge-gateway-healthcheck.jpg"><img class="article-img" src="../images/header-images/en-edge-gateway-healthcheck.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Enable Automatic Healthcheck for Gateway Servers in OpenResty Edge</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-gateway-partition/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-gateway-partition-en.jpg"><img class="article-img" src="../images/header-images/edge-gateway-partition-en.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">How to Use Gateway Partitions in OpenResty Edge</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>

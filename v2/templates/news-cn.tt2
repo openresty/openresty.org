@@ -1,33 +1,33 @@
 
 <div class="news">
+  <div class="news-item"><a href="ann-1027001003.html">
+      <picture>
+        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>
+      </picture></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1027001003.html">OpenResty 1.27.1.3</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
+  </div>
   <div class="news-item"><a href="ann-1027001002.html">
       <picture>
         <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1027001002.html">OpenResty 1.27.1.2</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
-  <div class="news-item"><a href="ann-1027001001.html">
-      <picture>
-        <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>
-      </picture></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1027001001.html">OpenResty 1.27.1.1</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/undo-openresty-lua-bt/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/undo-openresty-lua-bt.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/undo-openresty-lua-bt/?src=org_news" target="_blank">UDB + OpenResty XRay：解锁 OpenResty 应用性能之谜</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-llvm-optimal/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-LLVM-optimal.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-llvm-optimal/?src=org_news" target="_blank">OpenResty XRay 助力 LLVM clang 性能优化实践</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/undo-perl-bt/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/undo-perl-bt.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/undo-perl-bt/?src=org_news" target="_blank">UDB 与 OpenResty XRay 如何让你看透 Perl 代码执行全过程</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-self-optimal/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-self-optimal.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-self-optimal/?src=org_news" target="_blank">自我优化：OpenResty XRay 的性能蜕变</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/undo-java-file-bt/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/undo-java-file-bt.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/undo-java-file-bt/?src=org_news" target="_blank">UDB 与 OpenResty XRay：如何分析 Java 应用中的文件操作</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-script-optimal/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-script-optimal.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-script-optimal/?src=org_news" target="_blank">OpenResty XRay 助力脚本性能提升 44 倍</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/undo-python-network-bt/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/undo-python-network-bt.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/undo-python-network-bt/?src=org_news" target="_blank">结合 UDB 的时间旅行功能，揭秘 Python 代码执行过程</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-data-drift-optimal/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-data-drift-optimal.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-data-drift-optimal/?src=org_news" target="_blank">跨介质数据结构漂移：OpenResty XRay 助力性能提升 20 倍</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-casestudy-lua-lru/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-casestudy-lua-lru.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-casestudy-lua-lru/?src=org_news" target="_blank">技术案例：如何使用 OpenResty XRay 追踪一个 LRU 缓存引发的内存泄漏</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-oom-optimal/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-oom-optimal.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-oom-optimal/?src=org_news" target="_blank">从 OOM 到 O(1)：OpenResty 流式 JSON 解析器的实现之道</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-shred-optimal/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-shred-optimal.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-shred-optimal/?src=org_news" target="_blank">从数天到数小时：OpenResty XRay 如何让 Linux shred 工具提速几十倍</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-customer-casestudy-dns/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-customer-casestudy-dns.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-customer-casestudy-dns/?src=org_news" target="_blank">技术实战：OpenResty XRay 助力企业 DNS 服务性能优化 60% 案例解析</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>

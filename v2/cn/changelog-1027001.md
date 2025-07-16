@@ -4,6 +4,49 @@
     @created       2024-08-14 14:33 GMT
 --->
 
+# Version 1.27.1.3 - 16 Jul 2025
+
+* upgraded [lua-resty-redis](https://github.com/openresty/lua-resty-redis) to v0.33
+    * bugfix: connection is closed after the blpop and brpop calls time out. _Thanks 冉朋 for the patch._
+    * docs: fix typo in README.markdown. _Thanks hms5232 for the patch._
+    * optimize: return setmetatable is NYI which can not be jit compiled. (#287) _Thanks Zero King for the patch._
+* upgraded [headers-more-nginx-module](https://github.com/openresty/headers-more-nginx-module) to v0.39
+    * bugfix: didn't set next to NULL for the output header. _Thanks lijunlong for the patch._
+    * Move the LICENSE content to a separate file. _Thanks uhliarik for the patch._
+* upgraded [ngx_devel_kit](https://github.com/simplresty/ngx_devel_kit) to v0.3.4
+    * src/ndk.h: Do not #error if 'NDK' is undefined _Thanks Simpl for the patch._
+    * src/ndk.h: do not #error if 'NDK' is undefined _Thanks Zurab Kvachadze for the patch._
+    * src/ndk.h: Update version _Thanks Simpl for the patch._
+* upgraded [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql) to v0.28
+    * bugfix: mysql driver doesn't handle well server side query timeout (Query execution was interrupted). _Thanks Nir Nahum for the patch._
+* upgraded [luajit2](https://github.com/openresty/luajit2) to v2.1-20250529
+    * Add compatibility string coercion for fp:seek() argument. _Thanks Mike Pall for the patch._
+    * ARM64: Fix pass-by-value struct calling conventions. _Thanks Mike Pall for the patch._
+    * ARM: Fix soft-float math.min()/math.max(). _Thanks Mike Pall for the patch._
+    * Avoid out-of-range PC for stack overflow error from snapshot restore. _Thanks Mike Pall for the patch._
+    * Avoid unpatching bytecode twice after a trace flush. _Thanks Mike Pall for the patch._
+    * bugfix: table.clone can't work after commit 538a82133ad. _Thanks lijunlong for the patch._
+    * Change handling of nil value markers in template tables. _Thanks Mike Pall for the patch._
+    * Change handling of nil value markers in template tables. _Thanks Mike Pall for the patch._
+    * FFI: Add pre-declared int128_t, uint128_t, __int128 types. _Thanks Mike Pall for the patch._
+    * FFI: Fix dangling CType references. _Thanks Mike Pall for the patch._
+    * Fix error generation in load*. _Thanks Mike Pall for the patch._
+    * Fix handling of nil value markers in template tables. _Thanks Mike Pall for the patch._
+    * Fix JIT slot overflow during up-recursion. _Thanks Mike Pall for the patch._
+    * Fix state restore when recording __concat metamethod. _Thanks Mike Pall for the patch._
+    * Improve CLI signal handling on POSIX. _Thanks Mike Pall for the patch._
+    * Initialize unused value when specializing to cdata metatable. _Thanks Mike Pall for the patch._
+    * macOS: Add suport for Apple hardened runtime. _Thanks Mike Pall for the patch._
+    * macOS: Fix Apple hardened runtime support and put behind build option. _Thanks Mike Pall for the patch._
+    * macOS: Fix support for Apple hardened runtime. _Thanks Mike Pall for the patch._
+    * Merge from upstream v2.1. _Thanks lijunlong for the patch._
+    * Prevent Clang UB 'optimization' which breaks integerness checks. _Thanks Mike Pall for the patch._
+    * Remove Cygwin from docs, since it's not a supported target. _Thanks Mike Pall for the patch._
+    * REVERT: Change handling of nil value markers in template tables. _Thanks Mike Pall for the patch._
+    * Use dylib extension for iOS installs, too. _Thanks Mike Pall for the patch._
+    * Windows: Allow mixed builds with msvcbuild.bat. _Thanks Mike Pall for the patch._
+    * Windows: Clarify installation directory layout. _Thanks Mike Pall for the patch._
+
 # Version 1.27.1.2 - 14 Mar 2025
 
 * upgraded [lua-nginx-module](https://github.com/openresty/lua-nginx-module) to v0.10.28

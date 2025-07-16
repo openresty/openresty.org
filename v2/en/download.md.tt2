@@ -11,8 +11,8 @@
 OpenResty<sup>&reg;</sup> provides [official pre-built packages](linux-packages.html) for common
 Linux distributions.
 
-We currently support Ubuntu, Debian, RHEL, CentOS, Fedora, OpenSUSE, Alpine,
-Amazon Linux, Rocky Linux, Oracle Linux, and CBL Mariner.
+We currently support Ubuntu, Debian, RHEL, CentOS, RockyLinux, AlmaLinux, Fedora, OpenSUSE, Alpine,
+Amazon Linux, Oracle Linux, and CBL Mariner.
 
 We also provide official package repositories for our users so that receiving and
 installing package updates can be trivial.
@@ -21,7 +21,7 @@ installing package updates can be trivial.
 
 All the releases are signed by the public PGP key `A0E98066` of Yichun Zhang.
 
-[% ver = "1.27.1.2" -%]
+[% ver = "1.27.1.3" -%]
 * For 32-bit Windows: [openresty-[% ver %]-win32.zip](https://openresty.org/download/openresty-[% ver %]-win32.zip) &nbsp; 16MB &nbsp;
 [PGP](https://openresty.org/download/openresty-[% ver %]-win32.zip.asc) - 14 Mar 2025
 * For 64-bit Windows: [openresty-[% ver %]-win64.zip](https://openresty.org/download/openresty-[% ver %]-win64.zip) &nbsp; 16MB &nbsp;
@@ -65,13 +65,17 @@ the instructions on the [Installation](installation.html) page to build and
 install it.
 
 ##  Lastest release
+[% ver = "1.27.1.3" -%]
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
+&nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
+[Changes](changelog-1027001.html) - 16 Jul 2025
+
+##  Legacy releases
+Sometimes, users may want to download old releases.
 [% ver = "1.27.1.2" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 [Changes](changelog-1027001.html) - 14 Mar 2025
-
-##  Legacy releases
-Sometimes, users may want to download old releases.
 [% ver = "1.27.1.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
