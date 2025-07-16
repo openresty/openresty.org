@@ -1,0 +1,83 @@
+[% major_ver = "1.27.1"; version = major_ver _ ".3" -%]
+<!---
+    @title         OpenResty [% version %] Released
+--->
+
+We are happy to announce the new formal release, [% version %], of the
+OpenResty web platform based on NGINX and LuaJIT.
+
+[Download this version here](download.html).
+
+The (portable) source code distribution, the Win32/Win64 binary
+distributions, and the pre-built binary Linux packages for Ubuntu,
+Debian, Fedora, CentOS, RHEL, RockyLinux, AlmaLinux, OpenSUSE, Amazon Linux, Alpine, TecentOS Linux, Alibaba Cloud Linux are provided on this
+[Download page](download.html).
+
+# Version highlights
+
+* OpenSSL
+    * upgraded from version 3.4.1 to 3.5.1.
+* PCRE
+    * upgraded from version 10.44 to 10.45.
+* [lua-resty-redis](https://github.com/openresty/lua-resty-redis)
+    * bugfix: connection is closed after the blpop and brpop calls time out.
+    * optimize: return setmetatable is NYI which can not be jit compiled. (#287)
+* [headers-more-nginx-module](https://github.com/openresty/headers-more-nginx-module)
+    * bugfix: didn't set next to NULL for the output header.
+* [ngx_devel_kit](https://github.com/simplresty/ngx_devel_kit)
+    * src/ndk.h: do not #error if 'NDK' is undefined
+* [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql)
+    * bugfix: mysql driver doesn't handle well server side query timeout (Query execution was interrupted).
+* [luajit2](https://github.com/openresty/luajit2)
+    * ARM64: Fix pass-by-value struct calling conventions.
+    * ARM: Fix soft-float math.min()/math.max().
+    * Add compatibility string coercion for fp:seek() argument.
+    * Avoid out-of-range PC for stack overflow error from snapshot restore.
+    * Avoid unpatching bytecode twice after a trace flush.
+    * Change handling of nil value markers in template tables.
+    * FFI: Add pre-declared int128_t, uint128_t, __int128 types.
+    * FFI: Fix dangling CType references.
+    * Fix JIT slot overflow during up-recursion.
+    * Fix error generation in load*.
+    * Fix handling of nil value markers in template tables.
+    * Fix state restore when recording __concat metamethod.
+    * Improve CLI signal handling on POSIX.
+    * Initialize unused value when specializing to cdata metatable.
+    * Prevent Clang UB 'optimization' which breaks integerness checks.
+    * bugfix: table.clone can't work after commit 538a82133ad.
+    * macOS: Add suport for Apple hardened runtime.
+    * macOS: Fix Apple hardened runtime support and put behind build option.
+    * macOS: Fix support for Apple hardened runtime.
+
+# Full Change logs
+
+Complete change logs since the last (formal) release, [1.27.1.2](ann-1027001002.html),
+can be browsed in the page [Change Log for [% major_ver %].x](changelog-1027002.html).
+
+# Testing
+
+We have run extensive testing on our Amazon EC2 test cluster and
+ensured that all the components (including the Nginx core) play well
+together. The latest test report can always be found here:
+
+https://qa.openresty.org/
+
+We also always run our OpenResty Edge commercial software based on the
+latest open source version of OpenResty in our own global CDN network
+(dubbed "mini CDN") powering our openresty.org and openresty.com
+websites. See https://openresty.com/ for more details.
+
+# Community Support
+
+See the [Community Page](community.html).
+
+# Commercial Support
+
+Commercial technical support and real-time noninvasive online monitoring and profiling
+solution is provided through the official [OpenResty XRay](https://openresty.com/en/xray/)
+product.
+
+# Feedback
+
+Feedback on this release is more than welcome. Feel free to create new
+[GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](community.html).

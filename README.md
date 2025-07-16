@@ -9,6 +9,7 @@ Table of Contents
 * [Name](#name)
 * [Description](#description)
 * [Building](#building)
+* [OpenResty Release](#openresty-release)
 * [TODO](#todo)
 * [Credit](#credit)
 * [Author](#author)
@@ -112,7 +113,22 @@ When you are ready to release a new version of openresty, then you need to manua
 After that, run the following commands to generate the new version of the site:
 
 ```bash
+if [ ! -d ../lemplate ]; then
+    git clone git@github.com:openresty/lemplate ../
+fi
+
+export PATH=$PWD/../lemplate:$PATH
+
+nvm install 23.11.0
+nvm use 23.11.0
+
+# or use the latest version
+# nvm install node --latest-npm
+# nvm use node
+
+cd v2
 make clean
+which lemplate
 make
 ```
 
