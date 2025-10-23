@@ -11,105 +11,105 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-llvm-optimal/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-LLVM-optimal.jpg"><img class="article-img" src="../images/header-images/xray-LLVM-optimal.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-keepalive/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-keepalive.jpg"><img class="article-img" src="../images/header-images/xray-keepalive.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">OpenResty XRay 助力 LLVM clang 性能优化实践</p>
+              <p class="blog-title">从 9万 QPS 到 6千：一次压测暴露的 15 倍性能黑洞，我们如何用 OpenResty XRay 定位根因</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-self-optimal/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-self-optimal.jpg"><img class="article-img" src="../images/header-images/xray-self-optimal.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/why-edge-waf/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/why-edge-waf.jpg"><img class="article-img" src="../images/header-images/why-edge-waf.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">自我优化：OpenResty XRay 的性能蜕变</p>
+              <p class="blog-title">深入了解 OpenResty Edge WAF：入门、进阶到架构</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-script-optimal/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-script-optimal.jpg"><img class="article-img" src="../images/header-images/xray-script-optimal.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/luajit-plus/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/luajit-plus.jpg"><img class="article-img" src="../images/header-images/luajit-plus.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">OpenResty XRay 助力脚本性能提升 44 倍</p>
+              <p class="blog-title">从被动囤积到主动治理：如何破解 LuaJIT“伪内存泄漏”</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-data-drift-optimal/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-data-drift-optimal.jpg"><img class="article-img" src="../images/header-images/xray-data-drift-optimal.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/why-edge-webhook/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/why-edge-webhook.jpg"><img class="article-img" src="../images/header-images/why-edge-webhook.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">跨介质数据结构漂移：OpenResty XRay 助力性能提升 20 倍</p>
+              <p class="blog-title">借助 OpenResty Edge Webhook 构建“少即是多”的事件驱动运维</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-oom-optimal/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-oom-optimal.jpg"><img class="article-img" src="../images/header-images/xray-oom-optimal.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-p99/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-p99.jpg"><img class="article-img" src="../images/header-images/xray-p99.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">从 OOM 到 O(1)：OpenResty 流式 JSON 解析器的实现之道</p>
+              <p class="blog-title">我们如何在一个 500k QPS 的 OpenResty 网关中定位 244 毫秒的性能异常</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-shred-optimal/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-shred-optimal.jpg"><img class="article-img" src="../images/header-images/xray-shred-optimal.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-or-comparison/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-or-comparison.jpg"><img class="article-img" src="../images/header-images/edge-or-comparison.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">从数天到数小时：OpenResty XRay 如何让 Linux shred 工具提速几十倍</p>
+              <p class="blog-title">从开源 OpenResty 到 OpenResty Edge：如何在高性能架构上实现“企业级”进化？</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-ylang-analyzer-optimal/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-ylang-analyzer-optimal.jpg"><img class="article-img" src="../images/header-images/xray-ylang-analyzer-optimal.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-cdn-benefit/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-cdn-benefit.jpg"><img class="article-img" src="../images/header-images/edge-cdn-benefit.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">实战分享：OpenResty XRay 让 Ylang 编译器性能翻倍</p>
+              <p class="blog-title">为什么越来越多企业需要建立私有 CDN</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/java-req-latency-analysis/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/java-req-latency-analysis.jpg"><img class="article-img" src="../images/header-images/java-req-latency-analysis.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-java-mem/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-java-mem.jpg"><img class="article-img" src="../images/header-images/xray-java-mem.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">分析 Tomcat Java Web 应用请求延时（使用 OpenResty XRay）</p>
+              <p class="blog-title">从堆内存异常到精准定位：OpenResty XRay 在 Java 内存问题诊断中的实践</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/java-analysis/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/java-analysis.jpg"><img class="article-img" src="../images/header-images/java-analysis.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-rsa-cpu/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-rsa-cpu.jpg"><img class="article-img" src="../images/header-images/xray-rsa-cpu.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">分析线上 Java 应用的 CPU，off-CPU 和硬盘 IO 使用情况（使用 OpenResty XRay）</p>
+              <p class="blog-title">当“黑盒”插件吃掉 45% CPU，我们如何在无源码情况下定位到 Lua 第 93 行</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-web-console/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-xray-web-console.jpg"><img class="article-img" src="../images/header-images/cn-xray-web-console.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-ann-251011/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-logo.jpg"><img class="article-img" src="../images/header-images/xray-logo.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">OpenResty XRay 的 Web 控制台快速导览</p>
+              <p class="blog-title">OpenResty XRay 25.10.11 版正式发布</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/python-high-disk/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-python-high-disk.jpg"><img class="article-img" src="../images/header-images/cn-python-high-disk.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-gzip-cpu/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-gzip-cpu.jpg"><img class="article-img" src="../images/header-images/xray-gzip-cpu.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">线上快速定位硬盘 I/O 高的 Python 代码路径（使用 OpenResty XRay）</p>
+              <p class="blog-title">OpenResty XRay 如何精准定位 Gzip 配置的隐性成本</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/php-exceptions/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-php-exceptions.jpg"><img class="article-img" src="../images/header-images/cn-php-exceptions.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-zstd/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-zstd.jpg"><img class="article-img" src="../images/header-images/edge-zstd.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">线上监控 PHP 应用中的程序异常（使用 OpenResty XRay）</p>
+              <p class="blog-title">性能再进阶：OpenResty Edge 新增 zstd 压缩支持</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-agent-install-k8s/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-xray-agent-install-k8s.jpg"><img class="article-img" src="../images/header-images/cn-xray-agent-install-k8s.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-acme-module/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-acme-module.jpg"><img class="article-img" src="../images/header-images/edge-acme-module.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">在 Kubernetes 集群上安裝 OpenResty XRay 的 Agent</p>
+              <p class="blog-title">OpenResty Edge 如何通过 ACME 协议全自动管理 SSL/TLS 证书</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-k8s-autoapprove/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-edge-k8s-autoapprove.jpg"><img class="article-img" src="../images/header-images/cn-edge-k8s-autoapprove.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/mem-leak-c-process/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/mem-leak-c-module.jpg"><img class="article-img" src="../images/header-images/mem-leak-c-module.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">如何在 OpenResty Edge 中实现 Kubernetes 环境下网关服务器的自动管理</p>
+              <p class="blog-title">如何使用 OpenResty XRay 快速定位 C++ 进程的内存泄漏</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-lua-ext/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-edge-lua-ext.jpg"><img class="article-img" src="../images/header-images/cn-edge-lua-ext.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/java-func-probe/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/java-func-probe.jpg"><img class="article-img" src="../images/header-images/java-func-probe.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">在 OpenResty Edge 中使用 Lua 扩展响应网关服务器离线事件</p>
+              <p class="blog-title">OpenResty XRay Java 函数探针：无侵入式函数监控实践</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/rust-high-disk/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-rust-high-disk.jpg"><img class="article-img" src="../images/header-images/cn-rust-high-disk.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-agentic-observability/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-agentic-observability.jpg"><img class="article-img" src="../images/header-images/xray-agentic-observability.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">线上快速定位硬盘 I/O 高的 Rust 代码路径（使用 OpenResty XRay）</p>
+              <p class="blog-title">别让“大数据”淹没你：OpenResty XRay 如何用最少数据，定位最棘手问题</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-mobile-apps/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-mobile-apps-cn.jpg"><img class="article-img" src="../images/header-images/xray-mobile-apps-cn.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/perl-mem-leak/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/perl-mem-leak.jpg"><img class="article-img" src="../images/header-images/perl-mem-leak.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">OpenResty XRay 移动端应用介绍</p>
+              <p class="blog-title">金融服务内存飙升：OpenResty XRay 通过一张火焰图，让占用降至 40%</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/php-high-mem/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-php-high-mem.jpg"><img class="article-img" src="../images/header-images/cn-php-high-mem.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/nodejs-func-probe/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/nodejs-func-probe.jpg"><img class="article-img" src="../images/header-images/nodejs-func-probe.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">线上定位 PHP 进程中的大内存对象（使用 OpenResty XRay）</p>
+              <p class="blog-title">OpenResty XRay 如何用 Node.js 函数探针实现监控新范式</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-gateway-healthcheck/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/cn-edge-gateway-healthcheck.jpg"><img class="article-img" src="../images/header-images/cn-edge-gateway-healthcheck.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-mirror-request/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-mirror-request.jpg"><img class="article-img" src="../images/header-images/edge-mirror-request.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">在 OpenResty Edge 中启用网关服务器的自动健康检查</p>
+              <p class="blog-title">OpenResty Edge 镜像请求功能让安全与性能兼得</p>
             </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-gateway-partition/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-gateway-partition-cn.jpg"><img class="article-img" src="../images/header-images/edge-gateway-partition-cn.jpg" loading="lazy"/></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-lua-io/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-lua-io.jpg"><img class="article-img" src="../images/header-images/xray-lua-io.jpg" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">如何使用 OpenResty Edge 中的网关分区</p>
+              <p class="blog-title">应用卡顿？OpenResty XRay 一键揭秘 75 毫秒阻塞背后的真相</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
