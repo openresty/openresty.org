@@ -20,6 +20,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     Version         Codename        Supported Architectures
     11.x            Bullseye        amd64, arm64
     12.x            Bookworm        amd64, arm64
+    13.x            Bookworm        amd64, arm64
 ```
 
 * [CentOS](#centos)
@@ -29,6 +30,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     7.x             x86_64, aarch64
     8.x             x86_64, aarch64
     9.x             x86_64, aarch64
+    10.x            x86_64, aarch64
 ```
 
 * [Red Hat Enterprise Linux (RHEL)](#rhel)
@@ -38,6 +40,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     7.x             x86_64, aarch64
     8.x             x86_64, aarch64
     9.x             x86_64, aarch64
+    10.x            x86_64, aarch64
 ```
 
 * [Fedora](#fedora)
@@ -82,6 +85,7 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     Version         Supported Architectures
     8.x             x86_64, aarch64
     9.x             x86_64, aarch64
+    10.x            x86_64, aarch64
 ```
 
 * [Oracle Linux](#oracle-linux)
@@ -120,6 +124,10 @@ OpenResty<sup>&reg;</sup> provides official pre-built packages for the following
     3.16            x86_64, aarch64
     3.17            x86_64, aarch64
     3.18            x86_64, aarch64
+    3.19            x86_64, aarch64
+    3.20            x86_64, aarch64
+    3.21            x86_64, aarch64
+    3.22            x86_64, aarch64
 ```
 
 * [CBL-Mariner](#cbl-mariner)

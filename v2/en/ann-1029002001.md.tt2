@@ -1,0 +1,125 @@
+[% major_ver = "1.29.2"; version = major_ver _ ".1" -%]
+<!---
+    @title         OpenResty [% version %] Released
+--->
+
+We are happy to announce the new formal release, [% version %], of the
+OpenResty web platform based on NGINX and LuaJIT.
+
+[Download this version here](download.html).
+
+The (portable) source code distribution, the Win32/Win64 binary
+distributions, and the pre-built binary Linux packages for Ubuntu,
+Debian, Fedora, CentOS, RHEL, OpenSUSE, Amazon Linux are provided on this
+[Download page](download.html).
+
+# Version highlights
+
+* Nginx core
+    * Upgrade from nginx 1.27.1 to 1.29.2.
+
+* OpenSSL
+    * upgraded from version 3.4.1 to 3.5.4.
+
+* PCRE
+    * upgraded from version 10.44 to 10.46.
+
+* [lua-nginx-module](https://github.com/openresty/lua-nginx-module)
+    * feature: added ngx_http_lua_ffi_ssl_get_client_hello_ext_present().
+    * feature: add function to bypass HTTP conditional request checks
+    * feature: add lua_ssl_key_log directive.
+    * feature: add ngx_http_lua_ffi_req_shared_ssl_ciphers().
+    * feature: add sock:getfd().
+    * feature: Export three functions for manipulating ngx_http_lua_co_ctx_t structures.
+    * feature: ngx_http_lua_ffi_ssl_get_client_hello_ciphers().
+    * feature: proxy_ssl_verify_by_lua directives.
+    * feature: support tcp binding ip:port or ip of ipv4 or ipv6
+
+* [stream-lua-nginx-module](https://github.com/openresty/stream-lua-nginx-module)
+    * feature: add lua_ssl_key_log directive to log client connection SSL keys in the tcpsock:sslhandshake method. Keys are logged in the SSLKEYLOGFILE format compatible with Wireshark.
+    * feature: add ngx_stream_lua_ffi_get_req_ssl_pointer() for stream subsystem.
+    * feature: add ngx_stream_lua_ffi_req_dst_addr().
+    * feature: add support for nginx-1.29.2.
+    * feature: add support for nginx-1.29.2.
+    * feature: add support for tcp/udp bind.
+    * feature: ngx_stream_lua_ffi_req_shared_ssl_ciphers().
+    * feature: proxy_ssl_verify_by_lua directives.
+
+* [lua-resty-core](https://github.com/openresty/lua-resty-core)
+    * feature: add bind support for the stream subsystem.
+    * feature: add bypass_if_checks method to ngx.resp
+    * feature: add get_req_ssl_pointer() for stream subsystem.
+    * feature: add ngx.req.get_original_addr.
+    * feature: add sock:getfd().
+    * feature: add ssl.get_shared_ssl_ciphers for stream subsystem.
+    * feature: add support for nginx-1.29.2.
+    * feature: add support for  ssl.get_req_shared_ssl_ciphers()
+    * feature: get_client_hello_ciphers()
+    * feature: proxy_ssl_verify_by_lua directives.
+    * feature: add get_client_hello_ext_present
+
+* luajit2
+    * Add compatibility string coercion for fp:seek() argument.
+    * Add GNU/Hurd build support.
+    * ARM64: Fix pass-by-value struct calling conventions.
+    * ARM: Fix soft-float math.min()/math.max().
+    * Avoid out-of-range PC for stack overflow error from snapshot restore.
+    * Avoid out-of-range PC for stack overflow error from snapshot restore.
+    * Avoid unpatching bytecode twice after a trace flush.
+    * bugfix: table.clone can't work after commit 538a82133ad.
+    * Change handling of nil value markers in template tables.
+    * Change handling of nil value markers in template tables.
+    * FFI: Add pre-declared int128_t, uint128_t, __int128 types.
+    * FFI: Fix dangling CType references (again).
+    * FFI: Fix dangling CType references.
+    * Fix error generation in load*.
+    * Fix handling of nil value markers in template tables.
+    * Fix io.write() of newly created buffer.
+    * Fix JIT slot overflow during up-recursion.
+    * Fix reporting of an error during error handling.
+
+* [lua-resty-redis](https://github.com/openresty/lua-resty-redis)
+    * bugfix: connection is closed after the blpop and brpop calls time out.
+    * docs: fix typo in README.markdown.
+    * optimize: return setmetatable is NYI which can not be jit compiled.
+
+* [headers-more-nginx-module](https://github.com/openresty/headers-more-nginx-module)
+    * bugfix: didn't set next to NULL for the output header.
+    * Move the LICENSE content to a separate file.
+
+
+* [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql)
+    * bugfix: mysql driver doesn't handle well server side query timeout (Query execution was interrupted).
+
+# Full Change logs
+
+Complete change logs since the last (formal) release, [1.27.1.2](ann-1027001001.html),
+can be browsed in the page [Change Log for [% major_ver %].x](changelog-1029002.html).
+
+# Testing
+
+We have run extensive testing on our Amazon EC2 test cluster and
+ensured that all the components (including the Nginx core) play well
+together. The latest test report can always be found here:
+
+https://qa.openresty.org/
+
+We also always run our OpenResty Edge commercial software based on the
+latest open source version of OpenResty in our own global CDN network
+(dubbed "mini CDN") powering our openresty.org and openresty.com
+websites. See https://openresty.com/ for more details.
+
+# Community Support
+
+See the [Community Page](https://openresty.org/en/community.html).
+
+# Commercial Support
+
+Commercial technical support and real-time noninvasive online monitoring and profiling
+solution is provided through the official [OpenResty XRay](https://openresty.com/en/xray/)
+product.
+
+# Feedback
+
+Feedback on this release is more than welcome. Feel free to create new
+[GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](https://openresty.org/en/community.html#mailing-lists).

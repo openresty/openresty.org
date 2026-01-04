@@ -112,6 +112,7 @@ When you are ready to release a new version of openresty, then you need to manua
 After that, run the following commands to generate the new version of the site:
 
 ```bash
+export PATH=$PWD/../../lemplate:$PATH
 make clean
 make
 ```
