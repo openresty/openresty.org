@@ -229,9 +229,14 @@ sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 ```
 
-  - debian >= 12 的版本
+  - debian == 12 的版本
 ```bash
 wget -O - https://openresty.org/package/pubkey.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/openresty.gpg
+```
+
+  - debian >= 13 的版本
+```bash
+wget -O - https://openresty.org/package/pubkey2.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/openresty.gpg
 ```
 
 步骤三：添加我们官方 APT 仓库。

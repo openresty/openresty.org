@@ -260,9 +260,13 @@ Step 2: import our GPG key:
 wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
 ```
 
-  - For debian >= 12
+  - For debian == 12
 ```
 wget -O - https://openresty.org/package/pubkey.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/openresty.gpg
+```
+  - For debian >= 13
+```
+wget -O - https://openresty.org/package/pubkey2.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/openresty.gpg
 ```
 
 Step 3: add the our official APT repository.
