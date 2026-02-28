@@ -20,7 +20,6 @@
     版本           版本名        支持的体系结构
     11.x            Bullseye        amd64, arm64
     12.x            Bookworm        amd64, arm64
-    13.x            Bookworm        amd64, arm64
 ```
 
 * [CentOS](#centos)
@@ -30,7 +29,6 @@
     7.x             x86_64, aarch64
     8.x             x86_64, aarch64
     9.x             x86_64, aarch64
-    10.x            x86_64, aarch64
 ```
 
 * [Red Hat 企业版 Linux (RHEL)](#rhel)
@@ -40,7 +38,6 @@
     7.x             x86_64, aarch64
     8.x             x86_64, aarch64
     9.x             x86_64, aarch64
-    10.x            x86_64, aarch64
 ```
 
 * [Fedora](#fedora)
@@ -85,7 +82,6 @@
     版本号         支持的体系结构
     8.x            x86_64, aarch64
     9.x            x86_64, aarch64
-    10.x           x86_64, aarch64
 ```
 
 * [Oracle Linux](#oracle-linux)
@@ -124,10 +120,6 @@
     3.16            x86_64, aarch64
     3.17            x86_64, aarch64
     3.18            x86_64, aarch64
-    3.19            x86_64, aarch64
-    3.20            x86_64, aarch64
-    3.21            x86_64, aarch64
-    3.22            x86_64, aarch64
 ```
 
 * [CBL-Mariner](#cbl-mariner)
