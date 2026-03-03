@@ -8,10 +8,10 @@
     * Upgrade from nginx 1.27.1 to 1.29.2.
 
 * OpenSSL
-    * upgraded from version 3.4.1 to 3.5.4.
+    * upgraded from version 3.4.1 to 3.5.5.
 
 * PCRE
-    * upgraded from version 10.44 to 10.46.
+    * upgraded from version 10.44 to 10.47.
 
 * [lua-nginx-module](https://github.com/openresty/lua-nginx-module) v0.10.29
     * feature: added ngx_http_lua_ffi_ssl_get_client_hello_ext_present(). _Thanks Gabriel Clima for the patch._
@@ -38,8 +38,6 @@
     * feature: add lua_ssl_key_log directive to log client connection SSL keys in the tcpsock:sslhandshake method. Keys are logged in the SSLKEYLOGFILE format compatible with Wireshark. _Thanks willmafh for the patch._
     * feature: add ngx_stream_lua_ffi_get_req_ssl_pointer() for stream subsystem. _Thanks lijunlong for the patch._
     * feature: add ngx_stream_lua_ffi_req_dst_addr(). _Thanks lijunlong for the patch._
-    * feature: add support for nginx-1.29.2. _Thanks lijunlong for the patch._
-    * feature: add support for nginx-1.29.2. _Thanks lijunlong for the patch._
     * feature: add support for tcp/udp bind. _Thanks alonbg for the patch._
     * feature: ngx_stream_lua_ffi_req_shared_ssl_ciphers(). _Thanks Ri Shen Chen for the patch._
     * feature: proxy_ssl_verify_by_lua directives. _Thanks willmafh for the patch._
@@ -47,7 +45,7 @@
     * bugfix: failed to build with openssl < 3.0.2. _Thanks lijunlong for the patch._
     * bugfix: fixed typo. _Thanks willmafh for the patch._
     * bugfix: fixed warning. _Thanks lijunlong for the patch._
-    * bugfix resolve unused function warning in BoringSSL builds. _Thanks swananan for the patch._
+    * bugfix: resolve unused function warning in BoringSSL builds. _Thanks swananan for the patch._
     * optimize: add error checking for SSL_set_tlsext_status_type(). _Thanks Fahnenfluchtige for the patch._
     * optimize:  checked r before using it. _Thanks Fahnenfluchtige for the patch._
     * optimize: fixed build warning. _Thanks lijunlong for the patch._
@@ -69,7 +67,7 @@
     * optimize: remove unused code. _Thanks lijunlong for the patch._
     * optimize: remove unused param. _Thanks Bai Miao for the patch._
     * bugfix: failed to get error message because the input buffer length is not set. _Thanks lijunlong for the patch._
-    * bugfix: fix issue #499，to avoid unexpect assertion when c func return FFI_OK immediately. _Thanks akf00000 for the patch._
+    * bugfix: fix issue #499 to avoid unexpect assertion when c func return FFI_OK immediately. _Thanks akf00000 for the patch._
     * doc: add doc for get_client_hello_ext_present(). _Thanks lijunlong for the patch._
     * doc: fixed typo. _Thanks lijunlong for the patch._
     * style: fixed coding style. _Thanks lijunlong for the patch._
@@ -80,13 +78,10 @@
     * ARM64: Fix pass-by-value struct calling conventions. _Thanks Mike Pall for the patch._
     * ARM: Fix soft-float math.min()/math.max(). _Thanks Mike Pall for the patch._
     * Avoid out-of-range PC for stack overflow error from snapshot restore. _Thanks Mike Pall for the patch._
-    * Avoid out-of-range PC for stack overflow error from snapshot restore. _Thanks Mike Pall for the patch._
     * Avoid unpatching bytecode twice after a trace flush. _Thanks Mike Pall for the patch._
     * bugfix: table.clone can't work after commit 538a82133ad. _Thanks lijunlong for the patch._
     * Change handling of nil value markers in template tables. _Thanks Mike Pall for the patch._
-    * Change handling of nil value markers in template tables. _Thanks Mike Pall for the patch._
     * FFI: Add pre-declared int128_t, uint128_t, __int128 types. _Thanks Mike Pall for the patch._
-    * FFI: Fix dangling CType references (again). _Thanks Mike Pall for the patch._
     * FFI: Fix dangling CType references. _Thanks Mike Pall for the patch._
     * Fix error generation in load*. _Thanks Mike Pall for the patch._
     * Fix handling of nil value markers in template tables. _Thanks Mike Pall for the patch._
@@ -137,7 +132,7 @@
 * [rds-csv-nginx-module](https://github.com/openresty/rds-csv-nginx-module)
     * bugfix: change bit filed member type to unsigned to suppress the warning. _Thanks lijunlong for the patch._
 
-* [lua-resty-shell](https://github.com/openresty/stream-lua-nginx-module)
+* [lua-resty-shell](https://github.com/openresty/lua-resty-shell)
     * doc: add a description of the default value of the max_size parameter. _Thanks lijunlong for the patch._
     * README.md: add info about default timeout (#21) _Thanks Jeffrey 'jf' Lim for the patch._
 

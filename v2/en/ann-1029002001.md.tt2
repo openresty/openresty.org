@@ -19,10 +19,10 @@ Debian, Fedora, CentOS, RHEL, OpenSUSE, Amazon Linux are provided on this
     * Upgrade from nginx 1.27.1 to 1.29.2.
 
 * OpenSSL
-    * upgraded from version 3.4.1 to 3.5.4.
+    * upgraded from version 3.4.1 to 3.5.5.
 
 * PCRE
-    * upgraded from version 10.44 to 10.46.
+    * upgraded from version 10.44 to 10.47.
 
 * [lua-nginx-module](https://github.com/openresty/lua-nginx-module)
     * feature: added ngx_http_lua_ffi_ssl_get_client_hello_ext_present().
@@ -39,8 +39,6 @@ Debian, Fedora, CentOS, RHEL, OpenSUSE, Amazon Linux are provided on this
     * feature: add lua_ssl_key_log directive to log client connection SSL keys in the tcpsock:sslhandshake method. Keys are logged in the SSLKEYLOGFILE format compatible with Wireshark.
     * feature: add ngx_stream_lua_ffi_get_req_ssl_pointer() for stream subsystem.
     * feature: add ngx_stream_lua_ffi_req_dst_addr().
-    * feature: add support for nginx-1.29.2.
-    * feature: add support for nginx-1.29.2.
     * feature: add support for tcp/udp bind.
     * feature: ngx_stream_lua_ffi_req_shared_ssl_ciphers().
     * feature: proxy_ssl_verify_by_lua directives.
@@ -64,13 +62,10 @@ Debian, Fedora, CentOS, RHEL, OpenSUSE, Amazon Linux are provided on this
     * ARM64: Fix pass-by-value struct calling conventions.
     * ARM: Fix soft-float math.min()/math.max().
     * Avoid out-of-range PC for stack overflow error from snapshot restore.
-    * Avoid out-of-range PC for stack overflow error from snapshot restore.
     * Avoid unpatching bytecode twice after a trace flush.
     * bugfix: table.clone can't work after commit 538a82133ad.
     * Change handling of nil value markers in template tables.
-    * Change handling of nil value markers in template tables.
     * FFI: Add pre-declared int128_t, uint128_t, __int128 types.
-    * FFI: Fix dangling CType references (again).
     * FFI: Fix dangling CType references.
     * Fix error generation in load*.
     * Fix handling of nil value markers in template tables.
