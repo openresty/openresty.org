@@ -4,145 +4,145 @@
     @created       2026-02-28 14:33 GMT
 --->
 
-* Nginx core
-    * Upgrade from nginx 1.27.1 to 1.29.2.
+* Nginx 核心
+    * 从 nginx 1.27.1 升级至 1.29.2。
 
 * OpenSSL
-    * upgraded from version 3.4.1 to 3.5.5.
+    * 从版本 3.4.1 升级至 3.5.5。
 
 * PCRE
-    * upgraded from version 10.44 to 10.47.
+    * 从版本 10.44 升级至 10.47。
 
 * [lua-nginx-module](https://github.com/openresty/lua-nginx-module) v0.10.29
-    * feature: added ngx_http_lua_ffi_ssl_get_client_hello_ext_present(). _Thanks Gabriel Clima for the patch._
-    * feature: add function to bypass HTTP conditional request checks (#2401) _Thanks kurt for the patch._
-    * feature: add lua_ssl_key_log directive. _Thanks willmafh for the patch._
-    * feature: add ngx_http_lua_ffi_req_shared_ssl_ciphers(). _Thanks Sunny Chan for the patch._
-    * feature: add sock:getfd(). _Thanks lijunlong for the patch._
-    * feature: Export three functions for manipulating ngx_http_lua_co_ctx_t structures. _Thanks lijunlong for the patch._
-    * feature: ngx_http_lua_ffi_ssl_get_client_hello_ciphers(). _Thanks Gabriel Clima for the patch._
-    * feature: proxy_ssl_verify_by_lua directives. _Thanks willmafh for the patch._
-    * feature: support tcp binding ip:port or ip of ipv4 or ipv6 _Thanks ElvaLiu for the patch._
-    * bugfix: add HTTP/3 QUIC SSL Lua yield patch macro protection. _Thanks swananan for the patch._
-    * bugfix: didn't flush send buffer after lua phase(access/rewrite/server_rewrite) done. _Thanks lijunlong for the patch._
-    * bugfix: didn't use right hostname when the length of hostname is greater than 32. _Thanks lijunlong for the patch._
-    * bugfix: ensure context is restorable on fd writable events. _Thanks Zeping Bai for the patch._
-    * bugfix: improve HTTP/3 SSL Lua callback yield handling. _Thanks swananan for the patch._
-    * bugfix: resume QUIC handshake for OpenSSL external QUIC API builds _Thanks swananan for the patch._
-    * bugfix: the modifications in this PR are to supplement the overlooked changes in the commit e8f65dc53. _Thanks lijunlong for the patch._
-    * optimize: unnecessary to do error check. _Thanks willmafh for the patch._
-    * change: ngx_http_lua_ffi_get_req_ssl_pointer() add err argument. _Thanks lijunlong for the patch._
-    * style: code style consistency. _Thanks willmafh for the patch._
+    * 新功能：新增 ngx_http_lua_ffi_ssl_get_client_hello_ext_present()。_感谢 Gabriel Clima 提供补丁。_
+    * 新功能：新增用于绕过 HTTP 条件请求检查的函数 (#2401)。_感谢 kurt 提供补丁。_
+    * 新功能：新增 lua_ssl_key_log 指令。_感谢 willmafh 提供补丁。_
+    * 新功能：新增 ngx_http_lua_ffi_req_shared_ssl_ciphers()。_感谢 Sunny Chan 提供补丁。_
+    * 新功能：新增 sock:getfd()。_感谢 lijunlong 提供补丁。_
+    * 新功能：导出三个用于操作 ngx_http_lua_co_ctx_t 结构的函数。_感谢 lijunlong 提供补丁。_
+    * 新功能：ngx_http_lua_ffi_ssl_get_client_hello_ciphers()。_感谢 Gabriel Clima 提供补丁。_
+    * 新功能：新增 proxy_ssl_verify_by_lua 指令。_感谢 willmafh 提供补丁。_
+    * 新功能：支持 TCP 绑定 IPv4/IPv6 的 ip 或 ip:port。_感谢 ElvaLiu 提供补丁。_
+    * 缺陷修复：为 HTTP/3 QUIC SSL Lua 协程让出补丁新增宏保护。_感谢 swananan 提供补丁。_
+    * 缺陷修复：修复了 Lua 阶段（access/rewrite/server_rewrite）处理完成后未刷新发送缓冲区的问题。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：修复了主机名长度超过 32 时未正确使用对应主机名的问题。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：确保在 fd 可写事件触发时上下文可正确恢复。_感谢 Zeping Bai 提供补丁。_
+    * 缺陷修复：改进 HTTP/3 SSL Lua 回调中协程让出的处理逻辑。_感谢 swananan 提供补丁。_
+    * 缺陷修复：修复了使用 OpenSSL 外部 QUIC API 编译的版本中 QUIC 握手无法正常恢复的问题。_感谢 swananan 提供补丁。_
+    * 缺陷修复：补充了提交 e8f65dc53 中遗漏的变更。_感谢 lijunlong 提供补丁。_
+    * 优化：移除了不必要的错误检查。_感谢 willmafh 提供补丁。_
+    * 变更：为 ngx_http_lua_ffi_get_req_ssl_pointer() 新增 err 参数。_感谢 lijunlong 提供补丁。_
+    * 代码风格：统一代码风格。_感谢 willmafh 提供补丁。_
 
 * [stream-lua-nginx-module](https://github.com/openresty/stream-lua-nginx-module) v0.0.17
-    * feature: add lua_ssl_key_log directive to log client connection SSL keys in the tcpsock:sslhandshake method. Keys are logged in the SSLKEYLOGFILE format compatible with Wireshark. _Thanks willmafh for the patch._
-    * feature: add ngx_stream_lua_ffi_get_req_ssl_pointer() for stream subsystem. _Thanks lijunlong for the patch._
-    * feature: add ngx_stream_lua_ffi_req_dst_addr(). _Thanks lijunlong for the patch._
-    * feature: add support for tcp/udp bind. _Thanks alonbg for the patch._
-    * feature: ngx_stream_lua_ffi_req_shared_ssl_ciphers(). _Thanks Ri Shen Chen for the patch._
-    * feature: proxy_ssl_verify_by_lua directives. _Thanks willmafh for the patch._
-    * bugfix: failed to build with openssl 1.x.x and boringssl. _Thanks lijunlong for the patch._
-    * bugfix: failed to build with openssl < 3.0.2. _Thanks lijunlong for the patch._
-    * bugfix: fixed typo. _Thanks willmafh for the patch._
-    * bugfix: fixed warning. _Thanks lijunlong for the patch._
-    * bugfix: resolve unused function warning in BoringSSL builds. _Thanks swananan for the patch._
-    * optimize: add error checking for SSL_set_tlsext_status_type(). _Thanks Fahnenfluchtige for the patch._
-    * optimize:  checked r before using it. _Thanks Fahnenfluchtige for the patch._
-    * optimize: fixed build warning. _Thanks lijunlong for the patch._
-    * style: fixed coding style. _Thanks lijunlong for the patch._
-    * style: fixed coding style. _Thanks willmafh for the patch._
+    * 新功能：新增 lua_ssl_key_log 指令，可在 tcpsock:sslhandshake 方法中记录客户端连接的 SSL 密钥，密钥采用与 Wireshark 兼容的 SSLKEYLOGFILE 格式输出。_感谢 willmafh 提供补丁。_
+    * 新功能：为 Stream 子系统新增 ngx_stream_lua_ffi_get_req_ssl_pointer()。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 ngx_stream_lua_ffi_req_dst_addr()。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增对 TCP/UDP 绑定的支持。_感谢 alonbg 提供补丁。_
+    * 新功能：ngx_stream_lua_ffi_req_shared_ssl_ciphers()。_感谢 Ri Shen Chen 提供补丁。_
+    * 新功能：新增 proxy_ssl_verify_by_lua 指令。_感谢 willmafh 提供补丁。_
+    * 缺陷修复：修复了在 OpenSSL 1.x.x 及 BoringSSL 环境下编译失败的问题。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：修复了在 OpenSSL < 3.0.2 环境下编译失败的问题。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：修复了代码中的拼写错误。_感谢 willmafh 提供补丁。_
+    * 缺陷修复：修复了编译警告。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：消除了 BoringSSL 构建版本中未使用函数的编译警告。_感谢 swananan 提供补丁。_
+    * 优化：为 SSL_set_tlsext_status_type() 添加错误检查。_感谢 Fahnenfluchtige 提供补丁。_
+    * 优化：在使用变量 r 之前先进行有效性检查。_感谢 Fahnenfluchtige 提供补丁。_
+    * 优化：消除了构建警告。_感谢 lijunlong 提供补丁。_
+    * 代码风格：规范代码风格。_感谢 lijunlong 提供补丁。_
+    * 代码风格：规范代码风格。_感谢 willmafh 提供补丁。_
 
 * [lua-resty-core](https://github.com/openresty/lua-resty-core) v0.1.32
-    * feature: add bind support for the stream subsystem. _Thanks lijunlong for the patch._
-    * feature: add bypass_if_checks method to ngx.resp (#495) _Thanks kurt for the patch._
-    * feature: add get_req_ssl_pointer() for stream subsystem. _Thanks lijunlong for the patch._
-    * feature: add ngx.req.get_original_addr. _Thanks lijunlong for the patch._
-    * feature: add sock:getfd(). _Thanks lijunlong for the patch._
-    * feature: add ssl.get_shared_ssl_ciphers for stream subsystem. _Thanks Sunny Chan for the patch._
-    * feature: add support for nginx-1.29.2. _Thanks lijunlong for the patch._
-    * feature: add support for  ssl.get_req_shared_ssl_ciphers() _Thanks Sunny Chan for the patch._
-    * feature: get_client_hello_ciphers() (#498) _Thanks Gabriel Clima for the patch._
-    * feature: proxy_ssl_verify_by_lua directives. _Thanks willmafh for the patch._
-    * feature: add get_client_hello_ext_present _Thanks Gabriel Clima for the patch._
-    * optimize: remove unused code. _Thanks lijunlong for the patch._
-    * optimize: remove unused param. _Thanks Bai Miao for the patch._
-    * bugfix: failed to get error message because the input buffer length is not set. _Thanks lijunlong for the patch._
-    * bugfix: fix issue #499 to avoid unexpect assertion when c func return FFI_OK immediately. _Thanks akf00000 for the patch._
-    * doc: add doc for get_client_hello_ext_present(). _Thanks lijunlong for the patch._
-    * doc: fixed typo. _Thanks lijunlong for the patch._
-    * style: fixed coding style. _Thanks lijunlong for the patch._
+    * 新功能：为 Stream 子系统新增地址绑定支持。_感谢 lijunlong 提供补丁。_
+    * 新功能：为 ngx.resp 新增 bypass_if_checks 方法 (#495)。_感谢 kurt 提供补丁。_
+    * 新功能：为 Stream 子系统新增 get_req_ssl_pointer()。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 ngx.req.get_original_addr。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 sock:getfd()。_感谢 lijunlong 提供补丁。_
+    * 新功能：为 Stream 子系统新增 ssl.get_shared_ssl_ciphers。_感谢 Sunny Chan 提供补丁。_
+    * 新功能：新增对 ssl.get_req_shared_ssl_ciphers() 的支持。_感谢 Sunny Chan 提供补丁。_
+    * 新功能：get_client_hello_ciphers() (#498)。_感谢 Gabriel Clima 提供补丁。_
+    * 新功能：新增 proxy_ssl_verify_by_lua 指令。_感谢 willmafh 提供补丁。_
+    * 新功能：新增 get_client_hello_ext_present。_感谢 Gabriel Clima 提供补丁。_
+    * 优化：移除未使用的代码。_感谢 lijunlong 提供补丁。_
+    * 优化：移除未使用的参数。_感谢 Bai Miao 提供补丁。_
+    * 缺陷修复：修复了因未设置输入缓冲区长度导致无法获取错误消息的问题。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：修复问题 #499，避免 C 函数立即返回 FFI_OK 时触发非预期断言。_感谢 akf00000 提供补丁。_
+    * 文档：为 get_client_hello_ext_present() 补充说明文档。_感谢 lijunlong 提供补丁。_
+    * 文档：修复了文档中的拼写错误。_感谢 lijunlong 提供补丁。_
+    * 代码风格：规范代码风格。_感谢 lijunlong 提供补丁。_
 
 * [luajit2](https://github.com/openresty/luajit2) v2.1-20251022
-    * Add compatibility string coercion for fp:seek() argument. _Thanks Mike Pall for the patch._
-    * Add GNU/Hurd build support. _Thanks Mike Pall for the patch._
-    * ARM64: Fix pass-by-value struct calling conventions. _Thanks Mike Pall for the patch._
-    * ARM: Fix soft-float math.min()/math.max(). _Thanks Mike Pall for the patch._
-    * Avoid out-of-range PC for stack overflow error from snapshot restore. _Thanks Mike Pall for the patch._
-    * Avoid unpatching bytecode twice after a trace flush. _Thanks Mike Pall for the patch._
-    * bugfix: table.clone can't work after commit 538a82133ad. _Thanks lijunlong for the patch._
-    * Change handling of nil value markers in template tables. _Thanks Mike Pall for the patch._
-    * FFI: Add pre-declared int128_t, uint128_t, __int128 types. _Thanks Mike Pall for the patch._
-    * FFI: Fix dangling CType references. _Thanks Mike Pall for the patch._
-    * Fix error generation in load*. _Thanks Mike Pall for the patch._
-    * Fix handling of nil value markers in template tables. _Thanks Mike Pall for the patch._
-    * Fix io.write() of newly created buffer. _Thanks Mike Pall for the patch._
-    * Fix JIT slot overflow during up-recursion. _Thanks Mike Pall for the patch._
-    * Fix reporting of an error during error handling. _Thanks Mike Pall for the patch._
-    * Fix state restore when recording __concat metamethod. _Thanks Mike Pall for the patch._
-    * Gracefully handle broken custom allocator. _Thanks Mike Pall for the patch._
-    * Improve CLI signal handling on POSIX. _Thanks Mike Pall for the patch._
-    * Initialize unused value when specializing to cdata metatable. _Thanks Mike Pall for the patch._
-    * macOS: Add support for Apple hardened runtime. _Thanks Mike Pall for the patch._
-    * macOS: Fix Apple hardened runtime support and put behind build option. _Thanks Mike Pall for the patch._
-    * macOS: Fix support for Apple hardened runtime. _Thanks Mike Pall for the patch._
-    * Merge from upstream v2.1. _Thanks lijunlong for the patch._
-    * Prevent Clang UB 'optimization' which breaks integerness checks. _Thanks Mike Pall for the patch._
-    * Remove Cygwin from docs, since it's not a supported target. _Thanks Mike Pall for the patch._
-    * REVERT: Change handling of nil value markers in template tables. _Thanks Mike Pall for the patch._
-    * Use dylib extension for iOS installs, too. _Thanks Mike Pall for the patch._
-    * Windows: Add lua52compat option to msvcbuild.bat. _Thanks Mike Pall for the patch._
-    * Windows: Allow mixed builds with msvcbuild.bat. _Thanks Mike Pall for the patch._
-    * Windows: Clarify installation directory layout. _Thanks Mike Pall for the patch._
-    * x64: Add support for CET IBT. _Thanks Mike Pall for the patch._
-    * x86/x64: Don't use undefined MUL/IMUL zero flag. _Thanks Mike Pall for the patch._
+    * 为 fp:seek() 的参数新增字符串类型兼容性自动转换。_感谢 Mike Pall 提供补丁。_
+    * 新增对 GNU/Hurd 平台的构建支持。_感谢 Mike Pall 提供补丁。_
+    * ARM64：修复结构体按值传递的调用约定问题。_感谢 Mike Pall 提供补丁。_
+    * ARM：修复软浮点模式下 math.min()/math.max() 的计算错误。_感谢 Mike Pall 提供补丁。_
+    * 修复从快照恢复时因栈溢出错误导致程序计数器超出有效范围的问题。_感谢 Mike Pall 提供补丁。_
+    * 修复 JIT trace 清除后字节码补丁被重复撤销的问题。_感谢 Mike Pall 提供补丁。_
+    * 缺陷修复：修复了提交 538a82133ad 引入的 table.clone 功能失效问题。_感谢 lijunlong 提供补丁。_
+    * 调整模板表中 nil 值标记的处理方式。_感谢 Mike Pall 提供补丁。_
+    * FFI：新增 int128_t、uint128_t、__int128 等 128 位整数预声明类型。_感谢 Mike Pall 提供补丁。_
+    * FFI：修复 CType 的悬空引用问题。_感谢 Mike Pall 提供补丁。_
+    * 修复 load* 系列函数中的错误生成逻辑。_感谢 Mike Pall 提供补丁。_
+    * 修复模板表中 nil 值标记的处理逻辑。_感谢 Mike Pall 提供补丁。_
+    * 修复对新创建缓冲区执行 io.write() 时的错误。_感谢 Mike Pall 提供补丁。_
+    * 修复向上递归过程中 JIT 槽溢出的问题。_感谢 Mike Pall 提供补丁。_
+    * 修复错误处理过程中的错误上报逻辑。_感谢 Mike Pall 提供补丁。_
+    * 修复记录 __concat 元方法时的状态恢复问题。_感谢 Mike Pall 提供补丁。_
+    * 妥善处理已损坏的自定义内存分配器。_感谢 Mike Pall 提供补丁。_
+    * 改进在 POSIX 系统上 CLI 的信号处理机制。_感谢 Mike Pall 提供补丁。_
+    * 修复针对 cdata 元表进行 JIT 类型特化时未初始化部分值的问题。_感谢 Mike Pall 提供补丁。_
+    * macOS：新增对 Apple Hardened Runtime 的支持。_感谢 Mike Pall 提供补丁。_
+    * macOS：修复 Apple Hardened Runtime 的支持，并将其改为通过编译选项按需启用。_感谢 Mike Pall 提供补丁。_
+    * macOS：进一步修复对 Apple Hardened Runtime 的支持。_感谢 Mike Pall 提供补丁。_
+    * 从上游 v2.1 版本合并代码。_感谢 lijunlong 提供补丁。_
+    * 阻止 Clang 将未定义行为（UB）当作"优化"手段，避免破坏整数类型检查逻辑。_感谢 Mike Pall 提供补丁。_
+    * 从文档中移除 Cygwin，该平台已不再受支持。_感谢 Mike Pall 提供补丁。_
+    * 撤销：对模板表中 nil 值标记处理方式的调整。_感谢 Mike Pall 提供补丁。_
+    * iOS 安装包同样改用 dylib 扩展名。_感谢 Mike Pall 提供补丁。_
+    * Windows：为 msvcbuild.bat 新增 lua52compat 编译选项。_感谢 Mike Pall 提供补丁。_
+    * Windows：支持通过 msvcbuild.bat 进行混合构建。_感谢 Mike Pall 提供补丁。_
+    * Windows：完善安装目录结构说明。_感谢 Mike Pall 提供补丁。_
+    * x64：新增对 Intel CET IBT（间接分支跟踪）的支持。_感谢 Mike Pall 提供补丁。_
+    * x86/x64：避免使用 MUL/IMUL 指令中未定义的零标志位行为。_感谢 Mike Pall 提供补丁。_
 
 * [lua-resty-redis](https://github.com/openresty/lua-resty-redis)
-    * bugfix: connection is closed after the blpop and brpop calls time out. _Thanks 冉朋 for the patch._
-    * docs: fix typo in README.markdown. _Thanks hms5232 for the patch._
-    * optimize: return setmetatable is NYI which can not be jit compiled. (#287) _Thanks Zero King for the patch._
+    * 缺陷修复：修复了 blpop/brpop 调用超时后连接被意外关闭的问题。_感谢冉朋提供补丁。_
+    * 文档：修复 README.markdown 中的拼写错误。_感谢 hms5232 提供补丁。_
+    * 优化：`return setmetatable` 属于 LuaJIT 中尚未实现 JIT 编译的操作（NYI，Not Yet Implemented），此次进行了优化处理。(#287) _感谢 Zero King 提供补丁。_
 
 * [xss-nginx-module](https://github.com/openresty/xss-nginx-module)
-    * feature: add dynamic build support. _Thanks Su Yang for the patch._
+    * 新功能：新增动态模块构建支持。_感谢 Su Yang 提供补丁。_
 
 * [lua-upstream-nginx-module](https://github.com/openresty/lua-upstream-nginx-module)
-    * doc: small typo fixes in the docs for get_servers. _Thanks chronolaw for the patch._
+    * 文档：修复 get_servers 相关文档中的拼写错误。_感谢 chronolaw 提供补丁。_
 
 * [lua-resty-lock](https://github.com/openresty/lua-resty-lock)
-    * doc: correct package status in README.markdown. _Thanks jumper047 for the patch._
+    * 文档：更正 README.markdown 中关于包状态的错误描述。_感谢 jumper047 提供补丁。_
 
 * [ngx_devel_kit](https://github.com/simplresty/ngx_devel_kit)
-    * src/ndk.h: Do not #error if 'NDK' is undefined _Thanks Simpl for the patch._
-    * src/ndk.h: do not #error if 'NDK' is undefined _Thanks Zurab Kvachadze for the patch._
-    * src/ndk.h: Update version _Thanks Simpl for the patch._
+    * src/ndk.h：当 `NDK` 未定义时，不再触发 `#error` 编译错误。_感谢 Simpl 提供补丁。_
+    * src/ndk.h：当 `NDK` 未定义时，不再触发 `#error` 编译错误。_感谢 Zurab Kvachadze 提供补丁。_
+    * src/ndk.h：更新版本号。_感谢 Simpl 提供补丁。_
 
 * [headers-more-nginx-module](https://github.com/openresty/headers-more-nginx-module)
-    * bugfix: didn't set next to NULL for the output header. _Thanks lijunlong for the patch._
-    * Move the LICENSE content to a separate file. _Thanks uhliarik for the patch._
+    * 缺陷修复：修复了输出响应头链表中 next 指针未置为 NULL 的问题。_感谢 lijunlong 提供补丁。_
+    * 将 LICENSE 文件内容独立存放至单独文件中。_感谢 uhliarik 提供补丁。_
 
 * [rds-csv-nginx-module](https://github.com/openresty/rds-csv-nginx-module)
-    * bugfix: change bit filed member type to unsigned to suppress the warning. _Thanks lijunlong for the patch._
+    * 缺陷修复：将位域成员的类型改为 unsigned，以消除相关编译警告。_感谢 lijunlong 提供补丁。_
 
 * [lua-resty-shell](https://github.com/openresty/lua-resty-shell)
-    * doc: add a description of the default value of the max_size parameter. _Thanks lijunlong for the patch._
-    * README.md: add info about default timeout (#21) _Thanks Jeffrey 'jf' Lim for the patch._
+    * 文档：补充 max_size 参数默认值的说明。_感谢 lijunlong 提供补丁。_
+    * README.md：新增关于默认超时时间的说明 (#21)。_感谢 Jeffrey 'jf' Lim 提供补丁。_
 
 * [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql)
-    * bugfix: mysql driver doesn't handle well server side query timeout (Query execution was interrupted). _Thanks Nir Nahum for the patch._
+    * 缺陷修复：修复了 MySQL 驱动未能正确处理服务端查询超时（即"查询执行被中断"错误）的问题。_感谢 Nir Nahum 提供补丁。_
 
 * [resty-cli](https://github.com/openresty/resty-cli)
-    * feature: add new option --load-module. _Thanks lijunlong for the patch._
-    * feature: resty: implemented the --dump-nginx-conf option to print out the generated configuration. _Thanks 罗泽轩 for the patch._
+    * 新功能：新增 --load-module 命令行选项。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 --dump-nginx-conf 选项，可将 resty 自动生成的 nginx 配置打印输出。_感谢罗泽轩提供补丁。_
 
 * [opm](https://github.com/openresty/opm)
-    * opm: revamp options. _Thanks Dmitry Meyer for the patch._
-    * doc: fixed wrong example of user command line arguments. _Thanks Johnny Wang for the patch._
+    * opm：对命令行选项体系进行全面重构。_感谢 Dmitry Meyer 提供补丁。_
+    * 文档：修复了用户命令行参数的示例错误。_感谢 Johnny Wang 提供补丁。_
+    

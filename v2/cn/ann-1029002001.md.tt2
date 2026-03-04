@@ -1,125 +1,105 @@
 [% major_ver = "1.29.2"; version = major_ver _ ".1" -%]
 <!---
-    @title         OpenResty [% version %] Released
+    @title         OpenResty [% version %] 正式发布
 --->
 
-We are happy to announce the new formal release, [% version %], of the
-OpenResty web platform based on NGINX and LuaJIT.
+我们荣幸地宣布，基于 NGINX 和 LuaJIT 的 OpenResty Web 平台 [% version %] 版本现已正式发布。
 
-[Download this version here](download.html).
+[点击此处下载](download.html)。
 
-The (portable) source code distribution, the Win32/Win64 binary
-distributions, and the pre-built binary Linux packages for Ubuntu,
-Debian, Fedora, CentOS, RHEL, OpenSUSE, Amazon Linux are provided on this
-[Download page](download.html).
+此[下载页面](download.html)提供了可移植的源代码分发包、Win32/Win64 二进制分发包，以及为 Ubuntu、Debian、Fedora、CentOS、RHEL、OpenSUSE、Amazon Linux 等系统预编译的二进制软件包。
 
-# Version highlights
+# 版本亮点
 
-* Nginx core
-    * Upgrade from nginx 1.27.1 to 1.29.2.
+* Nginx 核心
+    * 从 nginx 1.27.1 升级至 1.29.2。
 
 * OpenSSL
-    * upgraded from version 3.4.1 to 3.5.4.
+    * 从 3.4.1 版本升级至 3.5.5 版本。
 
 * PCRE
-    * upgraded from version 10.44 to 10.46.
+    * 从 10.44 版本升级至 10.47 版本。
 
 * [lua-nginx-module](https://github.com/openresty/lua-nginx-module)
-    * feature: added ngx_http_lua_ffi_ssl_get_client_hello_ext_present().
-    * feature: add function to bypass HTTP conditional request checks
-    * feature: add lua_ssl_key_log directive.
-    * feature: add ngx_http_lua_ffi_req_shared_ssl_ciphers().
-    * feature: add sock:getfd().
-    * feature: Export three functions for manipulating ngx_http_lua_co_ctx_t structures.
-    * feature: ngx_http_lua_ffi_ssl_get_client_hello_ciphers().
-    * feature: proxy_ssl_verify_by_lua directives.
-    * feature: support tcp binding ip:port or ip of ipv4 or ipv6
+    * 新增：`ngx_http_lua_ffi_ssl_get_client_hello_ext_present()` 函数。
+    * 新增：用于绕过 HTTP 条件请求检查的函数。
+    * 新增：`lua_ssl_key_log` 指令。
+    * 新增：`ngx_http_lua_ffi_req_shared_ssl_ciphers()` 函数。
+    * 新增：`sock:getfd()` 方法。
+    * 新增：导出三个用于操作 `ngx_http_lua_co_ctx_t` 结构体的函数。
+    * 新增：`ngx_http_lua_ffi_ssl_get_client_hello_ciphers()` 函数。
+    * 新增：`proxy_ssl_verify_by_lua` 指令。
+    * 新增：支持 TCP 绑定到 `ip:port` 或 IPv4/IPv6 地址。
 
 * [stream-lua-nginx-module](https://github.com/openresty/stream-lua-nginx-module)
-    * feature: add lua_ssl_key_log directive to log client connection SSL keys in the tcpsock:sslhandshake method. Keys are logged in the SSLKEYLOGFILE format compatible with Wireshark.
-    * feature: add ngx_stream_lua_ffi_get_req_ssl_pointer() for stream subsystem.
-    * feature: add ngx_stream_lua_ffi_req_dst_addr().
-    * feature: add support for nginx-1.29.2.
-    * feature: add support for nginx-1.29.2.
-    * feature: add support for tcp/udp bind.
-    * feature: ngx_stream_lua_ffi_req_shared_ssl_ciphers().
-    * feature: proxy_ssl_verify_by_lua directives.
+    * 新增：`lua_ssl_key_log` 指令，用于在 `tcpsock:sslhandshake` 方法中记录客户端连接的 SSL 密钥。密钥将以 Wireshark 兼容的 SSLKEYLOGFILE 格式进行记录。
+    * 新增：为 stream 子系统添加 `ngx_stream_lua_ffi_get_req_ssl_pointer()` 函数。
+    * 新增：`ngx_stream_lua_ffi_req_dst_addr()` 函数。
+    * 新增：对 TCP/UDP 绑定的支持。
+    * 新增：`ngx_stream_lua_ffi_req_shared_ssl_ciphers()` 函数。
+    * 新增：`proxy_ssl_verify_by_lua` 指令。
 
 * [lua-resty-core](https://github.com/openresty/lua-resty-core)
-    * feature: add bind support for the stream subsystem.
-    * feature: add bypass_if_checks method to ngx.resp
-    * feature: add get_req_ssl_pointer() for stream subsystem.
-    * feature: add ngx.req.get_original_addr.
-    * feature: add sock:getfd().
-    * feature: add ssl.get_shared_ssl_ciphers for stream subsystem.
-    * feature: add support for nginx-1.29.2.
-    * feature: add support for  ssl.get_req_shared_ssl_ciphers()
-    * feature: get_client_hello_ciphers()
-    * feature: proxy_ssl_verify_by_lua directives.
-    * feature: add get_client_hello_ext_present
+    * 新增：为 stream 子系统添加绑定支持。
+    * 新增：向 `ngx.resp` 添加 `bypass_if_checks` 方法。
+    * 新增：为 stream 子系统添加 `get_req_ssl_pointer()` 方法。
+    * 新增：`ngx.req.get_original_addr` 方法。
+    * 新增：`sock:getfd()` 方法。
+    * 新增：为 stream 子系统添加 `ssl.get_shared_ssl_ciphers` 方法。
+    * 新增：对 `ssl.get_req_shared_ssl_ciphers()` 的支持。
+    * 新增：`get_client_hello_ciphers()` 方法。
+    * 新增：`proxy_ssl_verify_by_lua` 指令。
+    * 新增：`get_client_hello_ext_present` 方法。
 
-* luajit2
-    * Add compatibility string coercion for fp:seek() argument.
-    * Add GNU/Hurd build support.
-    * ARM64: Fix pass-by-value struct calling conventions.
-    * ARM: Fix soft-float math.min()/math.max().
-    * Avoid out-of-range PC for stack overflow error from snapshot restore.
-    * Avoid out-of-range PC for stack overflow error from snapshot restore.
-    * Avoid unpatching bytecode twice after a trace flush.
-    * bugfix: table.clone can't work after commit 538a82133ad.
-    * Change handling of nil value markers in template tables.
-    * Change handling of nil value markers in template tables.
-    * FFI: Add pre-declared int128_t, uint128_t, __int128 types.
-    * FFI: Fix dangling CType references (again).
-    * FFI: Fix dangling CType references.
-    * Fix error generation in load*.
-    * Fix handling of nil value markers in template tables.
-    * Fix io.write() of newly created buffer.
-    * Fix JIT slot overflow during up-recursion.
-    * Fix reporting of an error during error handling.
+* luajit2 [luajit2](https://github.com/openresty/luajit2)
+    * ARM64: 修复按值传递结构体的调用约定。
+    * ARM: 修复软浮点 `math.min()`/`math.max()` 的问题。
+    * FFI: 修复悬空的 CType 引用。
+    * FFI: 新增预声明的 `int128_t`、`uint128_t`、`__int128` 类型。
+    * 修复: 为 `fp:seek()` 的参数增加对字符串的兼容性强制转换。
+    * 修复: `load*` 中的错误生成问题。
+    * 修复向上递归期间的 JIT slot 溢出问题。
+    * 修复在错误处理过程中的错误报告问题。
+    * 修复对新创建缓冲区的 `io.write()` 调用。
+    * 修复模板表中 `nil` 值标记的处理问题。
+    * 修复：commit `538a82133ad` 后 `table.clone` 无法正常工作的问题。
+    * 修复：避免在 trace flush 后重复移除字节码补丁。
+    * 修复：避免在从快照恢复时，因堆栈溢出错误导致程序计数器（PC）越界。
+    * 修改模板表中 `nil` 值标记的处理方式。
+    * 新增 GNU/Hurd 构建支持。
 
 * [lua-resty-redis](https://github.com/openresty/lua-resty-redis)
-    * bugfix: connection is closed after the blpop and brpop calls time out.
-    * docs: fix typo in README.markdown.
-    * optimize: return setmetatable is NYI which can not be jit compiled.
+    * 修复：`blpop` 和 `brpop` 调用超时后导致连接关闭的问题。
+    * 文档：修复 `README.markdown` 中的一处拼写错误。
+    * 优化：`setmetatable` 的返回值为 NYI (Not Yet Implemented)，导致无法进行 JIT 编译。
 
 * [headers-more-nginx-module](https://github.com/openresty/headers-more-nginx-module)
-    * bugfix: didn't set next to NULL for the output header.
-    * Move the LICENSE content to a separate file.
-
+    * 修复：未将输出 header 的 `next` 指针设置为 NULL 的问题。
+    * 文档：将 `LICENSE` 内容移动到独立文件中。
 
 * [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql)
-    * bugfix: mysql driver doesn't handle well server side query timeout (Query execution was interrupted).
+    * 修复：mysql 驱动未能正确处理服务器端查询超时（“Query execution was interrupted”）的问题。
 
-# Full Change logs
+# 完整更新日志
 
-Complete change logs since the last (formal) release, [1.27.1.2](ann-1027001001.html),
-can be browsed in the page [Change Log for [% major_ver %].x](changelog-1029002.html).
+相较于上一个正式版本 [1.27.1.2](ann-1027001001.html)，您可以在 [[% major_ver %].x 更新日志](changelog-1029002.html) 页面浏览完整的变更记录。
 
-# Testing
+# 测试
 
-We have run extensive testing on our Amazon EC2 test cluster and
-ensured that all the components (including the Nginx core) play well
-together. The latest test report can always be found here:
+我们在 Amazon EC2 测试集群上进行了广泛的测试，确保所有组件（包括 Nginx 核心）都能协同稳定运行。最新的测试报告可随时在此处查阅：
 
 https://qa.openresty.org/
 
-We also always run our OpenResty Edge commercial software based on the
-latest open source version of OpenResty in our own global CDN network
-(dubbed "mini CDN") powering our openresty.org and openresty.com
-websites. See https://openresty.com/ for more details.
+此外，我们自己的全球 CDN 网络（我们称之为“迷你 CDN”）也始终基于最新开源版本的 OpenResty 来运行我们的 OpenResty Edge 商业软件，为 `openresty.org` 和 `openresty.com` 网站提供动力。更多详情请访问 https://openresty.com/。
 
-# Community Support
+# 社区支持
 
-See the [Community Page](https://openresty.org/cn/community.html).
+请访问[社区页面](https://openresty.org/en/community.html)。
 
-# Commercial Support
+# 商业支持
 
-Commercial technical support and real-time noninvasive online monitoring and profiling
-solution is provided through the official [OpenResty XRay](https://openresty.com/cn/xray/)
-product.
+我们通过官方的 [OpenResty XRay](https://openresty.com/en/xray/) 产品，提供商业技术支持以及实时、非侵入式的在线监控和性能剖析解决方案。
 
-# Feedback
+# 反馈
 
-Feedback on this release is more than welcome. Feel free to create new
-[GitHub issues](https://github.com/openresty/openresty/issues) or send emails to one of our [mailing lists](https://openresty.org/cn/community.html#mailing-lists).
+我们欢迎任何关于此版本的反馈。您可以在 [GitHub issues](https://github.com/openresty/openresty/issues) 创建新的 issue，或发送邮件到我们的[邮件列表](https://openresty.org/en/community.html#mailing-lists)。
