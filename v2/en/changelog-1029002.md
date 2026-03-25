@@ -4,6 +4,110 @@
     @created       2026-02-28 14:33 GMT
 --->
 
+# Version 1.29.2.3 - 25 Mar 2025
+
+* backported patches from [nginx](https://nginx.org/en/security_advisories.html)
+    * CVE-2026-27654: Buffer overflow in ngx_http_dav_module
+    * CVE-2026-27784: Buffer overflow in the ngx_http_mp4_module
+    * CVE-2026-32647: Buffer overflow in the ngx_http_mp4_module
+    * CVE-2026-27651: NULL pointer dereference while using CRAM-MD5 or APOP
+    * CVE-2026-28753: Injection in auth_http and XCLIENT
+    * CVE-2026-28755: OCSP result bypass in stream
+    * CVE-2026-1642: SSL upstream injection
+
+* upgraded [lua-nginx-module](https://github.com/openresty/lua-nginx-module) to v0.10.30rc2
+    * feature: add ffi ngx_http_lua_ffi_socket_tcp_get_ssl_pointer() and ffi ngx_http_lua_ffi_socket_tcp_get_ssl_ctx(). _Thanks lijunlong for the patch._
+    * feature: add new API: tcpsock:getsslsession. _Thanks lijunlong for the patch._
+    * feature: add ngx_http_lua_ffi_get_upstream_ssl_pointer. _Thanks lijunlong for the patch._
+    * feature: add precontent_by_lua directives _Thanks Hanada for the patch._
+    * feature: add server random and master key fetch api. _Thanks xiangwei for the patch._
+    * feature: add socket options keepintvl and keepcnt for tcp. _Thanks lijunlong for the patch._
+    * feature: proxy_ssl_verify_by_lua* directives _Thanks willmafh for the patch._
+    * feature: update to version v0.1.30. _Thanks lijunlong for the patch._
+    * optimize: add compatibility for freenginx. _Thanks Sergey A. Osokin for the patch._
+    * optimize: add upstream server information to the error log of cosocket. _Thanks lijunlong for the patch._
+    * bugfix: clear wait timer in ngx_http_lua_pipe_proc_wait_cleanup to prevent SIGSEGV on QUIC connection close _Thanks Jun Ouyang for the patch._
+    * bugfix: failed to build proxy_ssl* with openssl 1.0.2. _Thanks lijunlong for the patch._
+    * bugfix: fix the compatibility issue for freenginx. _Thanks Y.Horie for the patch._
+    * bugfix: prevent NULL dereference in SSL cache by ensuring old_cycle is set _Thanks Jun Ouyang for the patch._
+    * bugfix: prevent use-after-free crash in ngx_http_lua_pipe by ensuring connections are closed before pool destruction in quic connection close path. _Thanks Jun Ouyang for the patch._
+    * bugfix: prevent uthread crash by checking coroutine reference before deletion. _Thanks Jun Ouyang for the patch._
+    * doc: fixed typo. _Thanks leslie for the patch._
+    * doc: typo fixes and delete incorrect statements. _Thanks willmafh for the patch._
+    * doc: update copyright. _Thanks lijunlong for the patch._
+    * test: fix flaky test at boringssl environment. _Thanks Jun Ouyang for the patch._
+
+* upgraded [stream-lua-nginx-module](https://github.com/openresty/stream-lua-nginx-module)
+    * feature: add ffi api ngx_stream_lua_ffi_socket_tcp_getfd. _Thanks lijunlong for the patch._
+    * feature: add ffi functions ngx_stream_lua_ffi_socket_tcp_get_ssl_pointer() and ngx_stream_lua_ffi_socket_tcp_get_ssl_ctx(). _Thanks lijunlong for the patch._
+    * feature: add new API: tcpsock:get_ssl_session. _Thanks lijunlong for the patch._
+    * feature: add ngx_stream_lua_ffi_get_upstream_ssl_pointer. _Thanks lijunlong for the patch._
+    * feature: add socket options keepintvl and keepcnt for tcp. _Thanks lijunlong for the patch._
+    * feature: implement serversslhandshake method on downstream sockets (#392) _Thanks Rob Mueller for the patch._
+    * feature: proxy_ssl_certificate_by_lua directives _Thanks willmafh for the patch._
+    * feature: update version to v0.0.18. _Thanks lijunlong for the patch._
+    * optimize: add compatibility for freenginx. _Thanks Sergey A. Osokin for the patch._
+    * optimize: add upstream server information to the error log of cosocket. _Thanks lijunlong for the patch._
+    * bugfix: didn't close cosocket when nginx shutdown timer has been triggered. _Thanks lijunlong for the patch._
+    * bugfix: failed to build with old ssl. _Thanks lijunlong for the patch._
+    * bugfix: prevent uthread crash by checking coroutine reference before deletion. _Thanks Jun Ouyang for the patch._
+    * bugfix: supress clang warning. _Thanks lijunlong for the patch._
+
+* upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core) to v0.1.33rc2
+    * feature: add fetch server random and master key lua api _Thanks mengxiangwei for the patch._
+    * feature: add new API: tcpsock:getsslsession. _Thanks lijunlong for the patch._
+    * feature: add precontent_by_lua directives. _Thanks Hanada for the patch._
+    * feature: add socket options keepintvl and keepcnt for tcp. _Thanks lijunlong for the patch._
+    * feature: add sock:getsslpointer() and sock:getsslctx(). _Thanks lijunlong for the patch._
+    * feature: add ssl.get_upstream_ssl_pointer. _Thanks lijunlong for the patch._
+    * feature: add tcpsock.getfd() for stream subsystem. _Thanks lijunlong for the patch._
+    * feature: proxy_ssl_certificate_by_lua directives _Thanks willmafh for the patch._
+    * optimize: more detail error message when loading wrong lua-nginx-module. _Thanks lijunlong for the patch._
+    * bugfix: failed to load socket.lua when building without ssl. _Thanks lijunlong for the patch._
+    * doc: typo fixes. _Thanks Chrono for the patch._
+
+* upgraded [luajit2](https://github.com/openresty/luajit2) to v2.1-20260311
+    * Add ffi.abi("dualnum"). _Thanks Mike Pall for the patch._
+    * Allow mcode allocations outside of the jump range to the support code. _Thanks Mike Pall for the patch._
+    * ARM64: Enable unaligned accesses if indicated by the toolchain. _Thanks Mike Pall for the patch._
+    * ARM64: Fix disassembly of >2GB branch targets. _Thanks Mike Pall for the patch._
+    * ARM64: Fix disassembly of certain sub-word-size loads/stores. _Thanks Mike Pall for the patch._
+    * ARM64: More fixes for ARM BTI. _Thanks Mike Pall for the patch._
+    * Avoid recording interference due to invocation of VM hooks. _Thanks Mike Pall for the patch._
+    * Back out MSVC LJ_CONSTF declaration. _Thanks Mike Pall for the patch._
+    * bcsave.lua: add ppc64 and ppc64le mappings _Thanks Piotr Kubaj for the patch._
+    * bugfix: failed to build with LUA_USE_TRACE_LOGS defined. _Thanks lijunlong for the patch._
+    * DUALNUM: Add missing type conversion for FORI slots. _Thanks Mike Pall for the patch._
+    * DUALNUM: Fix narrowing of unary minus. _Thanks Mike Pall for the patch._
+    * DUALNUM: Fix recording of loops broken by previous change. _Thanks Mike Pall for the patch._
+    * DUALNUM: Improve/fix edge cases of unary minus. _Thanks Mike Pall for the patch._
+    * ELF/Mach-O: Force default visibility for public API functions. _Thanks Mike Pall for the patch._
+    * FFI: Avoid dangling cts->L. _Thanks Mike Pall for the patch._
+    * FFI: Fix constructor index resolution in JIT compiler. _Thanks Mike Pall for the patch._
+    * Fix compiler warning. _Thanks Mike Pall for the patch._
+    * Fix edge cases when generating IR for string.byte/sub/find. _Thanks Mike Pall for the patch._
+    * Fix edge cases when recording string.byte/sub. _Thanks Mike Pall for the patch._
+    * Fix G->jit_base relocation on stack resize. _Thanks Mike Pall for the patch._
+    * Fix minilua undefined behavior in bit.tohex. _Thanks Mike Pall for the patch._
+    * Fix MSVC LJ_CONSTF declaration. _Thanks Mike Pall for the patch._
+    * Fix string.format for limited precision FP conversions. _Thanks Mike Pall for the patch._
+    * Ignore PDB files for git. _Thanks Mike Pall for the patch._
+    * Implement double-to-integer conversions for s390x (#256) _Thanks Ilya Leoshkevich for the patch._
+    * macOS: Change Mach-O object file layout required by XCode 15.0. _Thanks Mike Pall for the patch._
+    * MIPS64: Avoid unaligned load in lj_vm_exit_interp. _Thanks Mike Pall for the patch._
+    * PPC: Fix soft-float lj_num2u64(). _Thanks Mike Pall for the patch._
+    * Prevent recording of loops with -0 step or NaN values. _Thanks Mike Pall for the patch._
+    * Prevent snapshot purge while recording a function header. _Thanks Mike Pall for the patch._
+    * Remove compiler flag for FP conversions. Now unnecessary. _Thanks Mike Pall for the patch._
+    * Remove pointless GCC/MSVC const function attributes. _Thanks Mike Pall for the patch._
+    * Run VM events and finalizers in separate state. _Thanks Mike Pall for the patch._
+    * s390x: simplify ceil/floor code (#246) _Thanks J. Neuschäfer for the patch._
+    * Unify Lua number to FFI integer conversions. _Thanks Mike Pall for the patch._
+    * x64/!LJ_GC64: The allocation limit is required for a no-JIT build, too. _Thanks Mike Pall for the patch._
+    * x86/x64: Backport fix for math.min()/math.max() argument check. _Thanks Mike Pall for the patch._
+
+# Version 1.29.2.1 - 14 Jan 2025
+
 * Nginx core
     * Upgrade from nginx 1.27.1 to 1.29.2.
 

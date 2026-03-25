@@ -1,0 +1,111 @@
+[% major_ver = "1.29.2"; version = major_ver _ ".3" -%]
+<!---
+    @title         OpenResty [% version %] 正式发布
+--->
+
+我们荣幸地宣布，基于 NGINX 和 LuaJIT 的 OpenResty Web 平台 [% version %] 版本现已正式发布。
+
+[点击此处下载](download.html)。
+
+此[下载页面](download.html)提供了可移植的源代码分发包以及为 Ubuntu、Debian、Fedora、CentOS、RHEL、OpenSUSE、Amazon Linux 等系统预编译的二进制软件包。
+
+# 版本亮点
+
+* 移植 [nginx](https://nginx.org/en/security_advisories.html) 的漏洞补丁
+    * CVE-2026-27654: Buffer overflow in ngx_http_dav_module
+    * CVE-2026-27784: Buffer overflow in the ngx_http_mp4_module
+    * CVE-2026-32647: Buffer overflow in the ngx_http_mp4_module
+    * CVE-2026-27651: NULL pointer dereference while using CRAM-MD5 or APOP
+    * CVE-2026-28753: Injection in auth_http and XCLIENT
+    * CVE-2026-28755: OCSP result bypass in stream
+    * CVE-2026-1642: SSL upstream injection
+
+* 升级 [lua-nginx-module](https://github.com/openresty/lua-nginx-module) 至 v0.10.30rc2
+    * 新增：添加 FFI 函数 `ngx_http_lua_ffi_socket_tcp_get_ssl_pointer()` 和 `ngx_http_lua_ffi_socket_tcp_get_ssl_ctx()`。
+    * 新增：添加新 API `tcpsock:getsslsession`。
+    * 新增：添加 `ngx_http_lua_ffi_get_upstream_ssl_pointer`。
+    * 新增：添加 `precontent_by_lua` 指令。
+    * 新增：添加获取服务器随机数和主密钥的 API。
+    * 新增：为 TCP 套接字添加 `keepintvl` 和 `keepcnt` 选项。
+    * 新增：`proxy_ssl_verify_by_lua*` 指令。
+    * 新增：更新至 v0.1.30 版本。
+    * 优化：在 cosocket 的错误日志中添加上游服务器信息。
+    * 修复：在 `ngx_http_lua_pipe_proc_wait_cleanup` 中清除等待定时器，以防止 QUIC 连接关闭时的 SIGSEGV 错误。
+    * 修复：通过确保设置 `old_cycle` 来防止 SSL 缓存中的空指针解引用。
+    * 修复：在 QUIC 连接关闭路径中，确保连接在池销毁之前关闭，以防止 `ngx_http_lua_pipe` 中的 use-after-free 崩溃。
+    * 修复：在删除协程引用之前检查协程引用，以防止 uthread 崩溃。
+
+* 升级 [stream-lua-nginx-module](https://github.com/openresty/stream-lua-nginx-module)
+    * 新增：添加 FFI API `ngx_stream_lua_ffi_socket_tcp_getfd`。
+    * 新增：添加 FFI 函数 `ngx_stream_lua_ffi_socket_tcp_get_ssl_pointer()` 和 `ngx_stream_lua_ffi_socket_tcp_get_ssl_ctx()`。
+    * 新增：添加新 API `tcpsock:get_ssl_session`。
+    * 新增：添加 `ngx_stream_lua_ffi_get_upstream_ssl_pointer`。
+    * 新增：为 TCP 套接字添加 `keepintvl` 和 `keepcnt` 选项。
+    * 新增：在下游套接字上实现 `serversslhandshake` 方法。
+    * 新增：`proxy_ssl_certificate_by_lua` 指令。
+    * 优化：在 cosocket 的错误日志中添加上游服务器信息。
+    * 修复：当 nginx 关闭定时器触发时未关闭 cosocket 的问题。
+    * 修复：在删除协程引用之前检查协程引用，以防止 uthread 崩溃。
+
+* 升级 [lua-resty-core](https://github.com/openresty/lua-resty-core) 至 v0.1.33rc2
+    * 新增：添加获取服务器随机数和主密钥的 Lua API。
+    * 新增：添加新 API `tcpsock:getsslsession`。
+    * 新增：添加 `precontent_by_lua` 指令。
+    * 新增：为 TCP 套接字添加 `keepintvl` 和 `keepcnt` 选项。
+    * 新增：添加 `sock:getsslpointer()` 和 `sock:getsslctx()`。
+    * 新增：添加 `ssl.get_upstream_ssl_pointer`。
+    * 新增：为 stream 子系统添加 `tcpsock.getfd()`。
+    * 新增：`proxy_ssl_certificate_by_lua` 指令。
+
+* 升级 [luajit2](https://github.com/openresty/luajit2) 至 v2.1-20260311
+    * 新增：`ffi.abi("dualnum")`。
+    * 允许在跳转范围之外分配 mcode 以支持代码。
+    * ARM64：如果工具链指示，启用非对齐访问。
+    * ARM64：修复大于 2GB 分支目标的反汇编。
+    * ARM64：修复某些子字长加载/存储的反汇编。
+    * ARM64：更多 ARM BTI 修复。
+    * 避免记录由于 VM 钩子调用导致的干扰。
+    * 回退 MSVC LJ_CONSTF 声明。
+    * 修复：修复使用 `LUA_USE_TRACE_LOGS` 定义时的构建失败问题。
+    * DUALNUM：为 FORI 槽添加缺失的类型转换。
+    * DUALNUM：改进/修复一元减法的边缘情况。
+    * FFI：避免悬空的 `cts->L`。
+    * FFI：修复 JIT 编译器中的构造函数索引解析。
+    * 修复编译器警告。
+    * 修复为 `string.byte/sub/find` 生成 IR 时的边缘情况。
+    * 修复记录 `string.byte/sub` 时的边缘情况。
+    * 修复栈调整时的 `G->jit_base` 重定位。
+    * 修复 minilua 中 `bit.tohex` 的未定义行为。
+    * 修复 MSVC LJ_CONSTF 声明。
+    * 修复有限精度浮点数转换的 `string.format`。
+    * 实现 s390x 的双精度到整数转换。
+    * 防止记录带有 -0 步长或 NaN 值的循环。
+    * 防止在记录函数头时清除快照。
+    * 移除 FP 转换的编译器标志（现已不必要）。
+    * 移除无意义的 GCC/MSVC const 函数属性。
+    * 在单独的状态中运行 VM 事件和终结器。
+    * 统一 Lua 数字到 FFI 整数的转换。
+    * x64/!LJ_GC64：无 JIT 构建也需要分配限制。
+    * x86/x64：反向移植 `math.min()`/`math.max()` 参数检查的修复。
+
+相较于上一个正式版本 [1.29.2.1](ann-1029002001.html)，您可以在 [[% major_ver %].x 更新日志](changelog-1029003.html) 页面浏览完整的变更记录。
+
+# 测试
+
+我们在 Amazon EC2 测试集群上进行了广泛的测试，确保所有组件（包括 Nginx 核心）都能协同稳定运行。最新的测试报告可随时在此处查阅：
+
+https://qa.openresty.org/
+
+此外，我们自己的全球 CDN 网络（我们称之为“迷你 CDN”）也始终基于最新开源版本的 OpenResty 来运行我们的 OpenResty Edge 商业软件，为 `openresty.org` 和 `openresty.com` 网站提供动力。更多详情请访问 https://openresty.com/。
+
+# 社区支持
+
+请访问[社区页面](https://openresty.org/en/community.html)。
+
+# 商业支持
+
+我们通过官方的 [OpenResty XRay](https://openresty.com/en/xray/) 产品，提供商业技术支持以及实时、非侵入式的在线监控和性能剖析解决方案。
+
+# 反馈
+
+我们欢迎任何关于此版本的反馈。您可以在 [GitHub issues](https://github.com/openresty/openresty/issues) 创建新的 issue，或发送邮件到我们的[邮件列表](https://openresty.org/en/community.html#mailing-lists)。

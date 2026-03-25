@@ -4,6 +4,110 @@
     @created       2026-02-28 14:33 GMT
 --->
 
+# 版本 1.29.2.3 - 2025年3月25日
+
+* 移植 [nginx](https://nginx.org/en/security_advisories.html) 的漏洞补丁
+    * CVE-2026-27654: Buffer overflow in ngx_http_dav_module
+    * CVE-2026-27784: Buffer overflow in the ngx_http_mp4_module
+    * CVE-2026-32647: Buffer overflow in the ngx_http_mp4_module
+    * CVE-2026-27651: NULL pointer dereference while using CRAM-MD5 or APOP
+    * CVE-2026-28753: Injection in auth_http and XCLIENT
+    * CVE-2026-28755: OCSP result bypass in stream
+    * CVE-2026-1642: SSL upstream injection
+
+* 升级 [lua-nginx-module](https://github.com/openresty/lua-nginx-module) 至 v0.10.30rc2
+    * 新功能：新增 FFI 函数 `ngx_http_lua_ffi_socket_tcp_get_ssl_pointer()` 和 `ngx_http_lua_ffi_socket_tcp_get_ssl_ctx()`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 API `tcpsock:getsslsession`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `ngx_http_lua_ffi_get_upstream_ssl_pointer`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `precontent_by_lua` 指令。_感谢 Hanada 提供补丁。_
+    * 新功能：新增获取服务器随机数和主密钥的 API。_感谢 xiangwei 提供补丁。_
+    * 新功能：为 TCP 套接字新增 `keepintvl` 和 `keepcnt` 选项。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `proxy_ssl_verify_by_lua*` 指令。_感谢 willmafh 提供补丁。_
+    * 新功能：更新至 v0.1.30 版本。_感谢 lijunlong 提供补丁。_
+    * 优化：新增对 freenginx 的兼容性支持。_感谢 Sergey A. Osokin 提供补丁。_
+    * 优化：在 cosocket 的错误日志中添加上游服务器信息。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：在 `ngx_http_lua_pipe_proc_wait_cleanup` 中清除等待定时器，以防止 QUIC 连接关闭时的 SIGSEGV 错误。_感谢 Jun Ouyang 提供补丁。_
+    * 缺陷修复：修复使用 OpenSSL 1.0.2 构建 `proxy_ssl*` 时失败的问题。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：修复 freenginx 的兼容性问题。_感谢 Y.Horie 提供补丁。_
+    * 缺陷修复：通过确保设置 `old_cycle` 来防止 SSL 缓存中的空指针解引用。_感谢 Jun Ouyang 提供补丁。_
+    * 缺陷修复：在 QUIC 连接关闭路径中，确保连接在池销毁之前关闭，以防止 `ngx_http_lua_pipe` 中的 use-after-free 崩溃。_感谢 Jun Ouyang 提供补丁。_
+    * 缺陷修复：在删除协程引用之前检查协程引用，以防止 uthread 崩溃。_感谢 Jun Ouyang 提供补丁。_
+    * 文档：修复拼写错误。_感谢 leslie 提供补丁。_
+    * 文档：修复拼写错误并删除不正确的陈述。_感谢 willmafh 提供补丁。_
+    * 文档：更新版权声明。_感谢 lijunlong 提供补丁。_
+    * 测试：修复 BoringSSL 环境下的不稳定测试。_感谢 Jun Ouyang 提供补丁。_
+
+* 升级 [stream-lua-nginx-module](https://github.com/openresty/stream-lua-nginx-module)
+    * 新功能：新增 FFI API `ngx_stream_lua_ffi_socket_tcp_getfd`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 FFI 函数 `ngx_stream_lua_ffi_socket_tcp_get_ssl_pointer()` 和 `ngx_stream_lua_ffi_socket_tcp_get_ssl_ctx()`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 API `tcpsock:get_ssl_session`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `ngx_stream_lua_ffi_get_upstream_ssl_pointer`。_感谢 lijunlong 提供补丁。_
+    * 新功能：为 TCP 套接字新增 `keepintvl` 和 `keepcnt` 选项。_感谢 lijunlong 提供补丁。_
+    * 新功能：在下游套接字上实现 `serversslhandshake` 方法 (#392)。_感谢 Rob Mueller 提供补丁。_
+    * 新功能：新增 `proxy_ssl_certificate_by_lua` 指令。_感谢 willmafh 提供补丁。_
+    * 新功能：更新版本至 v0.0.18。_感谢 lijunlong 提供补丁。_
+    * 优化：新增对 freenginx 的兼容性支持。_感谢 Sergey A. Osokin 提供补丁。_
+    * 优化：在 cosocket 的错误日志中添加上游服务器信息。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：修复当 nginx 关闭定时器触发时未关闭 cosocket 的问题。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：修复使用旧版本 SSL 构建失败的问题。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：在删除协程引用之前检查协程引用，以防止 uthread 崩溃。_感谢 Jun Ouyang 提供补丁。_
+    * 缺陷修复：消除 clang 警告。_感谢 lijunlong 提供补丁。_
+
+* 升级 [lua-resty-core](https://github.com/openresty/lua-resty-core) 至 v0.1.33rc2
+    * 新功能：新增获取服务器随机数和主密钥的 Lua API。_感谢 mengxiangwei 提供补丁。_
+    * 新功能：新增 API `tcpsock:getsslsession`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `precontent_by_lua` 指令。_感谢 Hanada 提供补丁。_
+    * 新功能：为 TCP 套接字新增 `keepintvl` 和 `keepcnt` 选项。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `sock:getsslpointer()` 和 `sock:getsslctx()`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `ssl.get_upstream_ssl_pointer`。_感谢 lijunlong 提供补丁。_
+    * 新功能：为 Stream 子系统新增 `tcpsock.getfd()`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `proxy_ssl_certificate_by_lua` 指令。_感谢 willmafh 提供补丁。_
+    * 优化：加载错误的 lua-nginx-module 时提供更详细的错误信息。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：修复无 SSL 构建时无法加载 socket.lua 的问题。_感谢 lijunlong 提供补丁。_
+    * 文档：修复拼写错误。_感谢 Chrono 提供补丁。_
+
+* 升级 [luajit2](https://github.com/openresty/luajit2) 至 v2.1-20260311
+    * 新增 `ffi.abi("dualnum")`。_感谢 Mike Pall 提供补丁。_
+    * 允许在跳转范围之外分配 mcode 以支持代码。_感谢 Mike Pall 提供补丁。_
+    * ARM64：如果工具链指示，启用非对齐访问。_感谢 Mike Pall 提供补丁。_
+    * ARM64：修复大于 2GB 分支目标的反汇编。_感谢 Mike Pall 提供补丁。_
+    * ARM64：修复某些子字长加载/存储的反汇编。_感谢 Mike Pall 提供补丁。_
+    * ARM64：更多 ARM BTI 修复。_感谢 Mike Pall 提供补丁。_
+    * 避免记录由于 VM 钩子调用导致的干扰。_感谢 Mike Pall 提供补丁。_
+    * 回退 MSVC LJ_CONSTF 声明。_感谢 Mike Pall 提供补丁。_
+    * bcsave.lua：新增 ppc64 和 ppc64le 映射。_感谢 Piotr Kubaj 提供补丁。_
+    * 缺陷修复：修复使用 `LUA_USE_TRACE_LOGS` 定义时的构建失败问题。_感谢 lijunlong 提供补丁。_
+    * DUALNUM：为 FORI 槽添加缺失的类型转换。_感谢 Mike Pall 提供补丁。_
+    * DUALNUM：修复一元减法的窄化问题。_感谢 Mike Pall 提供补丁。_
+    * DUALNUM：修复因之前变更导致的循环记录问题。_感谢 Mike Pall 提供补丁。_
+    * DUALNUM：改进/修复一元减法的边缘情况。_感谢 Mike Pall 提供补丁。_
+    * ELF/Mach-O：强制公共 API 函数的默认可见性。_感谢 Mike Pall 提供补丁。_
+    * FFI：避免悬空的 `cts->L`。_感谢 Mike Pall 提供补丁。_
+    * FFI：修复 JIT 编译器中的构造函数索引解析。_感谢 Mike Pall 提供补丁。_
+    * 修复编译器警告。_感谢 Mike Pall 提供补丁。_
+    * 修复为 `string.byte/sub/find` 生成 IR 时的边缘情况。_感谢 Mike Pall 提供补丁。_
+    * 修复记录 `string.byte/sub` 时的边缘情况。_感谢 Mike Pall 提供补丁。_
+    * 修复栈调整时的 `G->jit_base` 重定位。_感谢 Mike Pall 提供补丁。_
+    * 修复 minilua 中 `bit.tohex` 的未定义行为。_感谢 Mike Pall 提供补丁。_
+    * 修复 MSVC LJ_CONSTF 声明。_感谢 Mike Pall 提供补丁。_
+    * 修复有限精度浮点数转换的 `string.format`。_感谢 Mike Pall 提供补丁。_
+    * 忽略 PDB 文件的 git 跟踪。_感谢 Mike Pall 提供补丁。_
+    * 实现 s390x 的双精度到整数转换。_感谢 Ilya Leoshkevich 提供补丁。_
+    * macOS：更改 Mach-O 目标文件布局以满足 XCode 15.0 要求。_感谢 Mike Pall 提供补丁。_
+    * MIPS64：避免 `lj_vm_exit_interp` 中的非对齐加载。_感谢 Mike Pall 提供补丁。_
+    * PPC：修复软浮点 `lj_num2u64()`。_感谢 Mike Pall 提供补丁。_
+    * 防止记录带有 -0 步长或 NaN 值的循环。_感谢 Mike Pall 提供补丁。_
+    * 防止在记录函数头时清除快照。_感谢 Mike Pall 提供补丁。_
+    * 移除 FP 转换的编译器标志（现已不必要）。_感谢 Mike Pall 提供补丁。_
+    * 移除无意义的 GCC/MSVC const 函数属性。_感谢 Mike Pall 提供补丁。_
+    * 在单独的状态中运行 VM 事件和终结器。_感谢 Mike Pall 提供补丁。_
+    * s390x：简化 ceil/floor 代码。_感谢 J. Neuschäfer 提供补丁。_
+    * 统一 Lua 数字到 FFI 整数的转换。_感谢 Mike Pall 提供补丁。_
+    * x64/!LJ_GC64：无 JIT 构建也需要分配限制。_感谢 Mike Pall 提供补丁。_
+    * x86/x64：反向移植 `math.min()`/`math.max()` 参数检查的修复。_感谢 Mike Pall 提供补丁。_
+
+# 版本 1.29.2.1 - 2025年1月14日
+
 * Nginx 核心
     * 从 nginx 1.27.1 升级至 1.29.2。
 
