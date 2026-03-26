@@ -64,7 +64,7 @@ Sometimes, users may want to download old releases.
 [% ver = "1.29.2.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
-[变更列表](changelog-1029002.html) - 04 Jan 2026
+[Changes](changelog-1029002.html) - 04 Jan 2026
 [% ver = "1.27.1.2" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
