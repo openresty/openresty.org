@@ -10,24 +10,24 @@
       <picture>
         <source srcset="../images/logo.webp" type="image/webp"/><img class="news-img" src="../images/logo.png"/>
       </picture></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1027001001.html">OpenResty 1.27.1.2</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1027001002.html">OpenResty 1.27.1.2</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-keepalive/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-keepalive.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-keepalive/?src=org_news" target="_blank">从 9万 QPS 到 6千：一次压测暴露的 15 倍性能黑洞，我们如何用 OpenResty XRay 定位根因</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-vulnerability-scanning/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-vulnerability-scanning.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-vulnerability-scanning/?src=org_news" target="_blank">版本号之困：OpenResty XRay 如何破解漏洞扫描中的误报难题</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/why-edge-waf/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/why-edge-waf.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/why-edge-waf/?src=org_news" target="_blank">深入了解 OpenResty Edge WAF：入门、进阶到架构</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-ann-26.2.1/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-logo.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-ann-26.2.1/?src=org_news" target="_blank">OpenResty XRay 26.2.1 版正式发布</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/luajit-plus/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/luajit-plus.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/luajit-plus/?src=org_news" target="_blank">从被动囤积到主动治理：如何破解 LuaJIT“伪内存泄漏”</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-proxy-protocol/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-proxy-protocol.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-proxy-protocol/?src=org_news" target="_blank">OpenResty Edge 客户端真实 IP 全链路传递指南</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/why-edge-webhook/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/why-edge-webhook.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/why-edge-webhook/?src=org_news" target="_blank">借助 OpenResty Edge Webhook 构建“少即是多”的事件驱动运维</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-dynamic-advantage/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-dynamic-advantage.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-dynamic-advantage/?src=org_news" target="_blank">不改代码、不重启服务：OpenResty XRay 如何对生产环境做全栈动态追踪</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-p99/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-p99.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-p99/?src=org_news" target="_blank">我们如何在一个 500k QPS 的 OpenResty 网关中定位 244 毫秒的性能异常</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/what-is-openresty-edge/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/what-is-openresty-edge.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/what-is-openresty-edge/?src=org_news" target="_blank">OpenResty Edge: 驾驭现代分布式架构的全能型企业网关</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-or-comparison/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-or-comparison.jpg" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-or-comparison/?src=org_news" target="_blank">从开源 OpenResty 到 OpenResty Edge：如何在高性能架构上实现“企业级”进化？</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/what-is-openresty-xray/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/what-is-openresty-xray.jpg" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/what-is-openresty-xray/?src=org_news" target="_blank">OpenResty XRay 是什么</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>

@@ -11,6 +11,46 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper-container" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-vulnerability-scanning/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-vulnerability-scanning.jpg"><img class="article-img" src="../images/header-images/xray-vulnerability-scanning.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Binary Evidence-Driven Vulnerability Scanning: Eliminating False Positives with OpenResty XRay</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-ann-26.2.1/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-logo.jpg"><img class="article-img" src="../images/header-images/xray-logo.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty XRay Version 26.2.1. Now Available</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-proxy-protocol/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-proxy-protocol.jpg"><img class="article-img" src="../images/header-images/edge-proxy-protocol.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">End-to-End Client Real IP Passthrough in OpenResty Edge</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-dynamic-advantage/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-dynamic-advantage.jpg"><img class="article-img" src="../images/header-images/xray-dynamic-advantage.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">How OpenResty XRay Enables Full-Stack Dynamic Tracing in Production</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/what-is-openresty-edge/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/what-is-openresty-edge.jpg"><img class="article-img" src="../images/header-images/what-is-openresty-edge.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">What is OpenResty Edge</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/what-is-openresty-xray/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/what-is-openresty-xray.jpg"><img class="article-img" src="../images/header-images/what-is-openresty-xray.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Introduction to OpenResty XRay</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-gslb-what/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-gslb-what.jpg"><img class="article-img" src="../images/header-images/edge-gslb-what.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty Edge Design Notes: Bringing Global Traffic Scheduling Back to the Application Layer</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/nginx-prod-mem-leak/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/nginx-prod-mem-leak.jpg"><img class="article-img" src="../images/header-images/nginx-prod-mem-leak.jpg" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">Hunting Down a Silent Memory Leak in OpenResty Without a Reboot</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-keepalive/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/xray-keepalive.jpg"><img class="article-img" src="../images/header-images/xray-keepalive.jpg" loading="lazy"/></div>
             <div class="article-text">
@@ -70,46 +110,6 @@
             <div class="blog-img" data-pic="/header-images/edge-zstd.jpg"><img class="article-img" src="../images/header-images/edge-zstd.jpg" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Performance Takes a Leap Forward: OpenResty Edge Now Supports zstd Compression</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-acme-module/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-acme-module.jpg"><img class="article-img" src="../images/header-images/edge-acme-module.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">How OpenResty Edge Automates SSL/TLS Certificate Management with ACME Protocol</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/mem-leak-c-process/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/mem-leak-c-module.jpg"><img class="article-img" src="../images/header-images/mem-leak-c-module.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">How to use OpenResty XRay to quickly pinpoint memory leaks in C++ process</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/java-func-probe/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/java-func-probe.jpg"><img class="article-img" src="../images/header-images/java-func-probe.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Building a Non-Invasive Java Function Profiler with OpenResty XRay</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-agentic-observability/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-agentic-observability.jpg"><img class="article-img" src="../images/header-images/xray-agentic-observability.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">How OpenResty XRay Pinpoints the Toughest Problems with Minimal Data</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/perl-mem-leak/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/perl-mem-leak.jpg"><img class="article-img" src="../images/header-images/perl-mem-leak.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">OpenResty XRay Reduces Usage to 40% with a Flame Graph for Financial Services</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/nodejs-func-probe/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/nodejs-func-probe.jpg"><img class="article-img" src="../images/header-images/nodejs-func-probe.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">How OpenResty XRay's Node.js Function Probes Enable a New Monitoring Paradigm</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-mirror-request/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-mirror-request.jpg"><img class="article-img" src="../images/header-images/edge-mirror-request.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Enabling Mirror Request Functionality with OpenResty Edge</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-lua-io/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-lua-io.jpg"><img class="article-img" src="../images/header-images/xray-lua-io.jpg" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">Application Lagging? OpenResty XRay: Instantly Uncover the Truth Behind 75ms Blockages</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
