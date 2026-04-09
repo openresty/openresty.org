@@ -177,26 +177,26 @@ For `x86_64` or `amd64` systems:
 
  - For Ubuntu 18 ~ 20
 ```bash
-echo "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main" \
+echo "deb https://openresty.org/package/ubuntu $(lsb_release -sc) main" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
 ```
 
  - For Ubuntu 22 or above
 ```bash
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/openresty.gpg] http://openresty.org/package/ubuntu $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/openresty.list > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/openresty.gpg] https://openresty.org/package/ubuntu $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/openresty.list > /dev/null
 ```
 
 And for `arm64` or `aarch64` systems:
 
  - For Ubuntu 18 ~ 20
 ```bash
-echo "deb http://openresty.org/package/arm64/ubuntu $(lsb_release -sc) main" \
+echo "deb https://openresty.org/package/arm64/ubuntu $(lsb_release -sc) main" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
 ```
 
  - For Ubuntu 22 or above
 ```bash
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/openresty.gpg] http://openresty.org/package/arm64/ubuntu $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/openresty.list > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/openresty.gpg] https://openresty.org/package/arm64/ubuntu $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/openresty.list > /dev/null
 ```
 
 Step 4: update the APT index:
@@ -264,7 +264,7 @@ For `x86_64` or `amd64` systems:
 ```bash
 codename=`grep -Po 'VERSION="[0-9]+ \(\K[^)]+' /etc/os-release`
 
-echo "deb http://openresty.org/package/debian $codename openresty" \
+echo "deb https://openresty.org/package/debian $codename openresty" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
 ```
 
@@ -273,7 +273,7 @@ And for `arm64` or `aarch64` systems:
 ```bash
 codename=`grep -Po 'VERSION="[0-9]+ \(\K[^)]+' /etc/os-release`
 
-echo "deb http://openresty.org/package/arm64/debian $codename openresty" \
+echo "deb https://openresty.org/package/arm64/debian $codename openresty" \
     | sudo tee /etc/apt/sources.list.d/openresty.list
 ```
 
@@ -753,14 +753,14 @@ You can enable the `openresty` repository on your Alpine system like below:
 
 ```bash
 # first, let's add the public key used to sign the repo:
-wget 'http://openresty.org/package/admin@openresty.com-5ea678a6.rsa.pub'
+wget 'https://openresty.org/package/admin@openresty.com-5ea678a6.rsa.pub'
 sudo mv 'admin@openresty.com-5ea678a6.rsa.pub' /etc/apk/keys/
 
 # then, add the repo:
 . /etc/os-release
 MAJOR_VER=`echo $VERSION_ID | sed 's/\.[0-9]\+$//'`
 
-echo "http://openresty.org/package/alpine/v$MAJOR_VER/main" \
+echo "https://openresty.org/package/alpine/v$MAJOR_VER/main" \
     | sudo tee -a /etc/apk/repositories
 
 # update the local index cache:

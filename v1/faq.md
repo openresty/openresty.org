@@ -48,7 +48,7 @@ How should I report a problem?
 ------------------------------
 
 Whenever you run into a problem, you are encouraged to report to the openresty-en (English) mailing list or the openresty (Chinese)
-mailing list (depending on your language). See the [Community](http://openresty.org/#Community) page
+mailing list (depending on your language). See the [Community](https://openresty.org/#Community) page
 for more details. But please don't cross-post.
 
 You are highly recommended to provide as much details as possible while reporting a problem, for example,
@@ -325,7 +325,7 @@ Yichun Zhang (agentzh)
 See Also
 ========
 
-* [openresty.org](http://openresty.org)
+* [openresty.org](https://openresty.org)
 
 [Back to TOC](#table-of-contents)
 
