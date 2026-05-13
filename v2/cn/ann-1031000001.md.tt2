@@ -1,0 +1,177 @@
+[% major_ver = "1.31.0"; version = major_ver _ ".1" -%]
+<!---
+    @title         OpenResty [% version %] 正式发布
+--->
+
+我们荣幸地宣布，基于 NGINX 和 LuaJIT 的 OpenResty Web 平台 [% version %] 版本现已正式发布。
+
+[点击此处下载](download.html)。
+
+此[下载页面](download.html)提供了可移植的源代码分发包，以及为 Ubuntu、Debian、Fedora、CentOS、RHEL、OpenSUSE、Amazon Linux 等系统预编译的二进制软件包。
+
+# 版本亮点
+
+* Nginx 核心
+    * 从 nginx 1.29.2 升级至 1.31.0。
+
+* OpenSSL
+    * 从 3.5.5 版本升级至 3.5.6 版本。
+
+* 升级 [lua-nginx-module](https://github.com/openresty/lua-nginx-module) 至 v0.10.31
+    * 新功能：新增 FFI 函数 `ngx_http_lua_ffi_socket_tcp_get_ssl_pointer()` 和 `ngx_http_lua_ffi_socket_tcp_get_ssl_ctx()`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 API `tcpsock:getsslsession`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `ngx_http_lua_ffi_get_upstream_ssl_pointer`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `precontent_by_lua` 指令。_感谢 Hanada 提供补丁。_
+    * 新功能：新增获取服务器随机数和主密钥的 API。_感谢 xiangwei 提供补丁。_
+    * 新功能：为 TCP 套接字新增 `keepintvl` 和 `keepcnt` 选项。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `proxy_ssl_verify_by_lua*` 指令。_感谢 willmafh 提供补丁。_
+    * 新功能：支持 cosocket TLS 握手时使用自定义的可信 CA 存储。(#2495) _感谢 Walker Zhao 提供补丁。_
+    * 缺陷修复：在 `nginx -T` 中新增配置转储支持。_感谢 Y.Horie 提供补丁。_
+    * 缺陷修复：在 `ngx_http_lua_pipe_proc_wait_cleanup` 中清除等待定时器，以防止 QUIC 连接关闭时的 SIGSEGV 错误。_感谢 Jun Ouyang 提供补丁。_
+    * 缺陷修复：修复 freenginx 的兼容性问题。_感谢 Y.Horie 提供补丁。_
+    * 缺陷修复：修复 config 中的拼写错误。_感谢 xuruidong 提供补丁。_
+    * 缺陷修复：通过确保设置 `old_cycle` 来防止 SSL 缓存中的空指针解引用。_感谢 Jun Ouyang 提供补丁。_
+    * 缺陷修复：防止 worker 关闭期间事件定时器红黑树中的 SIGSEGV 错误。_感谢 Gabriel Clima 提供补丁。_
+    * 缺陷修复：在 QUIC 连接关闭路径中，确保连接在连接池销毁之前关闭，以防止 `ngx_http_lua_pipe` 中的 use-after-free 崩溃。_感谢 Jun Ouyang 提供补丁。_
+    * 缺陷修复：在删除协程引用之前进行检查，以防止 uthread 崩溃。_感谢 Jun Ouyang 提供补丁。_
+    * 变更：允许 `ngx.header['WWW-Authenticate']` 使用 table 设置多个值。_感谢 BotoX 提供补丁。_
+    * 优化：新增对 freenginx 的兼容性支持。_感谢 Sergey A. Osokin 提供补丁。_
+    * 优化：在 cosocket 的错误日志中添加上游服务器信息。_感谢 lijunlong 提供补丁。_
+
+* 升级 [stream-lua-nginx-module](https://github.com/openresty/stream-lua-nginx-module) 至 v0.0.19
+    * 新功能：新增 FFI API `ngx_stream_lua_ffi_socket_tcp_getfd`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 FFI 函数 `ngx_stream_lua_ffi_socket_tcp_get_ssl_pointer()` 和 `ngx_stream_lua_ffi_socket_tcp_get_ssl_ctx()`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 API `tcpsock:get_ssl_session`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `ngx_stream_lua_ffi_get_upstream_ssl_pointer`。_感谢 lijunlong 提供补丁。_
+    * 新功能：为 UDP cosocket 绑定本地端口新增 reuseport 支持。_感谢 lijunlong 提供补丁。_
+    * 新功能：为 TCP 套接字新增 `keepintvl` 和 `keepcnt` 选项。_感谢 lijunlong 提供补丁。_
+    * 新功能：在下游套接字上实现 `serversslhandshake` 方法 (#392)。_感谢 Rob Mueller 提供补丁。_
+    * 新功能：新增 `proxy_ssl_certificate_by_lua` 指令。_感谢 willmafh 提供补丁。_
+    * 新功能：支持 cosocket TLS 握手时使用自定义的可信 CA 存储。(#401) _感谢 Walker Zhao 提供补丁。_
+    * 优化：在 cosocket 的错误日志中添加上游服务器信息。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：修复当 nginx 关闭定时器触发时未关闭 cosocket 的问题。_感谢 lijunlong 提供补丁。_
+    * 缺陷修复：在删除协程引用之前进行检查，以防止 uthread 崩溃。_感谢 Jun Ouyang 提供补丁。_
+
+* 升级 [lua-resty-core](https://github.com/openresty/lua-resty-core) 至 v0.1.34rc2
+    * 新功能：新增获取服务器随机数和主密钥的 Lua API。_感谢 mengxiangwei 提供补丁。_
+    * 新功能：新增 API `tcpsock:getsslsession`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `precontent_by_lua` 指令。_感谢 Hanada 提供补丁。_
+    * 新功能：为 TCP 套接字新增 `keepintvl` 和 `keepcnt` 选项。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `sock:getsslpointer()` 和 `sock:getsslctx()`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `ssl.get_upstream_ssl_pointer`。_感谢 lijunlong 提供补丁。_
+    * 新功能：为 stream 子系统新增 `tcpsock.getfd()`。_感谢 lijunlong 提供补丁。_
+    * 新功能：新增 `tcpsock:settrustedstore()`，支持为每次握手设置可信 CA。_感谢 Walker Zhao 提供补丁。_
+    * 新功能：新增 `proxy_ssl_certificate_by_lua` 指令。_感谢 willmafh 提供补丁。_
+    * 新功能：为 stream 子系统支持 `tcpsock:settrustedstore()`。_感谢 Walker Zhao 提供补丁。_
+
+* 升级 [luajit2](https://github.com/openresty/luajit2) 至 v2.1-20260415
+    * 新增 `ffi.abi("dualnum")`。_感谢 Mike Pall 提供补丁。_
+    * 允许在跳转范围之外分配 mcode 以支持代码。_感谢 Mike Pall 提供补丁。_
+    * ARM64：如果工具链指示，启用非对齐访问。_感谢 Mike Pall 提供补丁。_
+    * ARM64：修复大于 2GB 分支目标的反汇编。_感谢 Mike Pall 提供补丁。_
+    * ARM64：修复某些子字长加载/存储的反汇编。_感谢 Mike Pall 提供补丁。_
+    * ARM64：更多 ARM BTI 修复。_感谢 Mike Pall 提供补丁。_
+    * 避免记录由于 VM 钩子调用导致的干扰。_感谢 Mike Pall 提供补丁。_
+    * 避免对内部注册表键使用次正规数。_感谢 Mike Pall 提供补丁。_
+    * 回退 MSVC LJ_CONSTF 声明。_感谢 Mike Pall 提供补丁。_
+    * bcsave.lua：新增 ppc64 和 ppc64le 映射。_感谢 Piotr Kubaj 提供补丁。_
+    * 缺陷修复：修复使用 `LUA_USE_TRACE_LOGS` 定义时的构建失败问题。_感谢 lijunlong 提供补丁。_
+    * DUALNUM：为 FORI 槽添加缺失的类型转换。_感谢 Mike Pall 提供补丁。_
+    * DUALNUM：修复一元减法的窄化问题。_感谢 Mike Pall 提供补丁。_
+    * DUALNUM：修复因之前变更导致的循环记录问题。_感谢 Mike Pall 提供补丁。_
+    * DUALNUM：改进/修复一元减法的边缘情况。_感谢 Mike Pall 提供补丁。_
+    * ELF/Mach-O：强制公共 API 函数的默认可见性。_感谢 Mike Pall 提供补丁。_
+    * FFI：避免悬空的 `cts->L`。_感谢 Mike Pall 提供补丁。_
+    * FFI：修复 JIT 编译器中的构造函数索引解析。_感谢 Mike Pall 提供补丁。_
+    * FFI：修复 64 位平台上的指针差值运算。_感谢 Mike Pall 提供补丁。_
+    * FFI：缩小压缩位域的容器。_感谢 Mike Pall 提供补丁。_
+    * 修复编译器警告。_感谢 Mike Pall 提供补丁。_
+    * 修复为 `string.byte/sub/find` 生成 IR 时的边缘情况。_感谢 Mike Pall 提供补丁。_
+    * 修复记录 `string.byte/sub` 时的边缘情况。_感谢 Mike Pall 提供补丁。_
+    * 修复栈调整时的 `G->jit_base` 重定位。_感谢 Mike Pall 提供补丁。_
+    * 修复 minilua 中 `bit.tohex` 的未定义行为。_感谢 Mike Pall 提供补丁。_
+    * 修复 MSVC LJ_CONSTF 声明。_感谢 Mike Pall 提供补丁。_
+    * 修复有限精度浮点数转换的 `string.format`。_感谢 Mike Pall 提供补丁。_
+    * 修复终结器中 VM 事件的错误处理。_感谢 Mike Pall 提供补丁。_
+    * 忽略 PDB 文件的 git 跟踪。_感谢 Mike Pall 提供补丁。_
+    * 实现 s390x 的双精度到整数转换 (#256)。_感谢 Ilya Leoshkevich 提供补丁。_
+    * macOS：更改 Mach-O 目标文件布局以满足 XCode 15.0 要求。_感谢 Mike Pall 提供补丁。_
+    * MIPS64：避免 `lj_vm_exit_interp` 中的非对齐加载。_感谢 Mike Pall 提供补丁。_
+    * PPC：修复软浮点 `lj_num2u64()`。_感谢 Mike Pall 提供补丁。_
+    * 防止 `unpack()` 中的误报 sanitizer 警告。_感谢 Mike Pall 提供补丁。_
+    * 防止记录带有 -0 步长或 NaN 值的循环。_感谢 Mike Pall 提供补丁。_
+    * 防止在记录函数头时清除快照。_感谢 Mike Pall 提供补丁。_
+    * 移除 FP 转换的编译器标志（现已不必要）。_感谢 Mike Pall 提供补丁。_
+    * 移除无意义的 GCC/MSVC const 函数属性。_感谢 Mike Pall 提供补丁。_
+    * 在单独的状态中运行 VM 事件和终结器。_感谢 Mike Pall 提供补丁。_
+    * s390x：简化 ceil/floor 代码 (#246)。_感谢 J. Neuschäfer 提供补丁。_
+    * 统一 Lua 数字到 FFI 整数的转换。_感谢 Mike Pall 提供补丁。_
+    * x64/!LJ_GC64：无 JIT 构建也需要分配限制。_感谢 Mike Pall 提供补丁。_
+    * x86/x64：反向移植 `math.min()`/`math.max()` 参数检查的修复。_感谢 Mike Pall 提供补丁。_
+
+* 升级 [ngx_postgres](https://github.com/openresty/ngx_postgres) 至 v1.1
+    * 缺陷修复：在被其他模块包装时恢复 postgres 的 peer 数据。_感谢 lijunlong 提供补丁。_
+
+* 升级 [lua-resty-mysql](https://github.com/openresty/lua-resty-mysql) 至 v0.30
+    * 新功能：新增对 ed25519 的支持。_感谢 lijunlong 提供补丁。_
+
+* 升级 [lua-resty-string](https://github.com/openresty/lua-resty-string) 至 v0.17
+    * 新功能：新增 AES-256-CTR 绑定并复用缓冲区。_感谢 ^_^ 提供补丁。_
+
+* 升级 [lua-cjson](https://github.com/openresty/lua-cjson) 至 v2.1.0.17
+    * 缺陷修复：修复解码超出 `lua_Integer` 范围的数字时被截断的问题 (#116)。_感谢 James McCoy 提供补丁。_
+    * 新功能：新增在解码时允许注释的选项。_感谢 skewb1k 提供补丁。_
+    * 新功能：新增对编码输出进行缩进的选项。_感谢 skewb1k 提供补丁。_
+    * 缺陷修复：消除显式将指针转换为 int 的警告。_感谢 Deyan Dobromirov 提供补丁。_
+
+* 升级 [drizzle-nginx-module](https://github.com/openresty/drizzle-nginx-module) 至 v0.1.13
+    * 缺陷修复：将 peer 数据存储在模块 ctx 中，以便在上游包装器中得以保留 (#52)。_感谢 lijunlong 提供补丁。_
+
+# Nginx 重大变更
+
+本版本基于 nginx 1.31.0 核心，其 upstream 模块包含若干重要的行为变更。从早期版本升级的用户请特别留意以下内容：
+
+* [`proxy_http_version`](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_http_version)
+  指令的默认值已从 `1.0` 修改为 `1.1`。
+* 自 nginx 1.29.7 起，upstream 的 keepalive 连接默认启用，每个 worker 进程默认的连接数上限为 32。
+* 如果你在 `balancer_by_lua_block` 中使用
+  [`ngx.balancer.enable_keepalive`](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/balancer.md#enable_keepalive)
+  API 来管理上游 keepalive 连接，请勿在对应的 `upstream {}` 块中同时配置 nginx 的
+  [`keepalive`](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive)
+  指令。这两种机制相互冲突，不可同时使用。
+* 自 nginx 1.29.4 起，请求行、`Host` 请求头以及 HTTP/2 / HTTP/3 中
+  `:authority` 伪头里 host 和 port 的校验改为严格遵循 RFC 3986。具体表现为：
+    * host 部分只允许 `unreserved`（`A-Z a-z 0-9 - . _ ~`）、`pct-encoded`
+      和 `sub-delims`（`! $ & ' ( ) * + , ; =`）字符；不再接受空格、控制字符以及
+      其他非 ASCII 字符。
+    * IPv6 字面量必须使用方括号包裹，例如 `[::1]:8080`。
+    * port 部分只允许纯数字；空端口（如 `example.com:`）或包含字母的端口
+      （如 `example.com:80a`）会被直接拒绝。
+    * HTTP/2 / HTTP/3 客户端构造请求时，`:authority` 伪头同样受此约束。
+  升级前请自查所有可能向 OpenResty 发送非标准 `Host` / `:authority` 的来源
+  （内部 RPC 框架、服务网格 sidecar、压测工具、手工构造的 HTTP 客户端等），
+  否则原本能通的请求可能会返回 400。
+
+# 完整更新日志
+
+相较于上一个正式版本 [1.29.2.1](ann-1029002001.html)，您可以在 [[% major_ver %].x 更新日志](changelog-1029003.html) 页面浏览完整的变更记录。
+
+# 测试
+
+我们在 Amazon EC2 测试集群上进行了广泛的测试，确保所有组件（包括 Nginx 核心）都能协同稳定运行。最新的测试报告可随时在此处查阅：
+
+https://qa.openresty.org/
+
+此外，我们自己的全球 CDN 网络（我们称之为“迷你 CDN”）也始终基于最新开源版本的 OpenResty 来运行我们的 OpenResty Edge 商业软件，为 `openresty.org` 和 `openresty.com` 网站提供动力。更多详情请访问 https://openresty.com/。
+
+# 社区支持
+
+请访问[社区页面](https://openresty.org/en/community.html)。
+
+# 商业支持
+
+我们通过官方的 [OpenResty XRay](https://openresty.com/en/xray/) 产品，提供商业技术支持以及实时、非侵入式的在线监控和性能剖析解决方案。
+
+# 反馈
+
+我们欢迎任何关于此版本的反馈。您可以在 [GitHub issues](https://github.com/openresty/openresty/issues) 创建新的 issue，或发送邮件到我们的[邮件列表](https://openresty.org/en/community.html#mailing-lists)。

@@ -54,13 +54,17 @@ install it.
 
 ##  Lastest release
 
+[% ver = "1.31.0.1" -%]
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
+&nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
+[Changes](changelog-1031000.html) - 13 May 2026
+
+##  Legacy releases
+Sometimes, users may want to download old releases.
 [% ver = "1.29.2.3" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 [Changes](changelog-1029002.html) - 25 Mar 2026
-
-##  Legacy releases
-Sometimes, users may want to download old releases.
 [% ver = "1.29.2.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
