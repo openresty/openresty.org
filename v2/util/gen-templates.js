@@ -16,6 +16,9 @@ const height = 260;
 let pics = new Set();
 let picsExists;
 
+const youtubeApiKey = process.env.YOUTUBE_API_KEY;
+const youtubeChannelId = process.env.YOUTUBE_CHANNEL_ID;
+
 async function genSlideTemplate(lang) {
   let postInfos = [];
   let news = [];
@@ -61,7 +64,7 @@ async function genSlideTemplate(lang) {
 
 async function genEnVideos() {
   const playlists = [];
-  const data = await http.get('https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyANu5r1u3Zt6RKS9j9NiYsJEXvo-UBFiww&channelId=UCXVmwF-UCScv2ftsGoMqxhw&part=snippet');
+  const data = await http.get(`https://www.googleapis.com/youtube/v3/playlists?key=${youtubeApiKey}&channelId=${youtubeChannelId}&part=snippet`);
   const allLists = data.data.items;
   const shownList = allLists.filter(list => list.snippet.title !== 'OpenResty Con 2018');
   const sortedList = ['OpenResty Tutorials', 'OpenResty Edge', 'OpenResty Showman']
@@ -71,7 +74,7 @@ async function genEnVideos() {
     const {snippet, id} = item;
     const {title} = snippet;
     const videos = [];
-    const videosData = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyANu5r1u3Zt6RKS9j9NiYsJEXvo-UBFiww&playlistId=${id}&maxResults=100&part=snippet`);
+    const videosData = await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?key=${youtubeApiKey}&playlistId=${id}&maxResults=100&part=snippet`);
 
     videosData.data.items.forEach(video => {
       const {title, resourceId, publishedAt} = video.snippet;
