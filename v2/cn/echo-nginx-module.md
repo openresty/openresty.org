@@ -15,6 +15,6 @@ various meta data accessing.
 Basically it provides various utilities that help testing and debugging of other
 modules by trivially emulating different kinds of faked subrequest locations.
 
-Documentation: http://wiki.nginx.org/HttpEchoModule
+Documentation: https://wiki.nginx.org/HttpEchoModule
 
 Project page: https://github.com/agentzh/echo-nginx-module

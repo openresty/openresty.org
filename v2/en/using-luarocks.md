@@ -7,7 +7,7 @@
 **WARNING! This page is deprecated.
 Use of LuaRocks with OpenResty is strongly discouraged since OpenResty provides its own package manager, [OPM](https://opm.openresty.org).**
 
-This sample demonstrates usage of [LuaRocks](http://www.luarocks.org/) with
+This sample demonstrates usage of [LuaRocks](https://www.luarocks.org/) with
 [OpenResty](openresty.html). It's been tested on Linux and Mac OS X, with the
 standard Lua interpreter or with [LuaJIT](luajit.html).
 
@@ -30,7 +30,7 @@ As of this writing, the latest version is `2.3.0`, but we'll use `2.0.13` for
 compatibility throughout this sample.
 
 ```
-wget http://luarocks.org/releases/luarocks-2.0.13.tar.gz
+wget https://luarocks.org/releases/luarocks-2.0.13.tar.gz
 tar -xzvf luarocks-2.0.13.tar.gz
 cd luarocks-2.0.13/
 ./configure --prefix=/usr/local/openresty/luajit \

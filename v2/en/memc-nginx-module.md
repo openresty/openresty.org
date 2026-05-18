@@ -17,7 +17,7 @@ of subrequests or independent fake requests.
 
 Documentation: https://github.com/agentzh/memc-nginx-module#readme
 
-Project page: http://github.com/agentzh/memc-nginx-module
+Project page: https://github.com/agentzh/memc-nginx-module
 
 When used in conjunction with [LuaNginxModule](lua-nginx-module.html), it is
 recommended to use [LuaRestyMemcachedLibrary](lua-resty-memcached-library.html) instead

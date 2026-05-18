@@ -11,13 +11,13 @@ Please [join us here](https://join.slack.com/t/openresty-community/shared_invite
 #  Mailing Lists
 
 ##  English Mailing List
-* Post Archive: http://groups.google.com/group/openresty-en
+* Post Archive: https://groups.google.com/group/openresty-en
 * Subscribing: send an empty email to `openresty-en+subscribe@googlegroups.com`
 * Posting: send emails to `openresty-en@googlegroups.com`
 * Unsuscribing: send emails to `openresty-en+unsubscribe@googlegroups.com`
 
 ##  Chinese Mailing List
-* Post Archive: http://groups.google.com/group/openresty
+* Post Archive: https://groups.google.com/group/openresty
 * Subscribing: send an empty email to `openresty+subscribe@googlegroups.com`
 * Posting: send emails to `openresty@googlegroups.com`
 * Unsuscribing: send emails to `openresty+unsubscribe@googlegroups.com`

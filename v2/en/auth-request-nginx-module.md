@@ -8,6 +8,6 @@
     @changes       2
 --->
 
-Introduction: http://www.ruby-forum.com/topic/205063
+Introduction: https://www.ruby-forum.com/topic/205063
 
-Project page: http://mdounin.ru/hg/ngx_http_auth_request_module/
+Project page: https://mdounin.ru/hg/ngx_http_auth_request_module/

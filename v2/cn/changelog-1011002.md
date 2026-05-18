@@ -19,7 +19,7 @@
 * doc: updated the LuaJIT restydoc indexes to the latest version.
 * upgraded [resty-cli](https://github.com/openresty/resty-cli#readme) to 0.19.
     * feature: resty: added new command-line option `--errlog-level LEVEL`. thanks Michal Cichra for the patch.
-    * feature: resty: added new command-line option `--rr` to use `rr record` to run the underlying C process. this is for [Mozilla rr](http://rr-project.org/) recording.
+    * feature: resty: added new command-line option `--rr` to use `rr record` to run the underlying C process. this is for [Mozilla rr](https://rr-project.org/) recording.
     * feature: resty: added new command-line option `--gdb` to use gdb to run the underlying C process.
     * feature: resty: implemented the `--http-conf CONF` command-line option.
     * feature: added the `--ns IP` command line options to override system (or google) nameservers. thanks Aapo Talvensaari for the patch.
@@ -54,7 +54,7 @@
     * feature: added new Lua module [ngx.process](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#readme) which has functions [type()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#type) and [enable_privileged_agent()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#enable_privileged_agent). thanks Yuansheng Wang for the patch.
     * feature: added new Lua module [ngx.errlog](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#readme) which provides Lua API to capture [nginx](nginx.html) error log data on Lua land. thanks Yuansheng Wang for the patch.
     * feature: added the new [signal_graceful_exit()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#signal_graceful_exit) function to the [ngx.process](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#readme) Lua module.
-    * feature: [ngx.errlog](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#readme): added the [get_sys_filter_level()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#get_sys_filter_level) API function to get the "system" error log filtering level defined in [nginx](nginx.html).conf's [error_log](http://nginx.org/r/error_log) directive. thanks spacewander for the patch.
+    * feature: [ngx.errlog](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#readme): added the [get_sys_filter_level()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#get_sys_filter_level) API function to get the "system" error log filtering level defined in [nginx](nginx.html).conf's [error_log](https://nginx.org/r/error_log) directive. thanks spacewander for the patch.
     * bugfix: [ngx.re](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#readme): [split()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#split) might enter infinite loops when the regex yields matches with empty captures. thanks Thibault Charbonnier for the patch.
     * optimize: simplified the "BOOL and true or false" expressions. thanks Evgeny S for the patch.
     * doc: [ngx.ssl](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#readme): added performace notes for [set_priv_key()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#set_priv_key) and [set_cert()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#set_cert). thanks Filip Slavik for the patch.
@@ -92,7 +92,7 @@
     * feature: fixed compilation errors with [nginx](nginx.html) 1.9.1+. thanks Vadim A. Misbakh-Soloviov for the original patch.
     * feature: fixed the compilation errors with [nginx](nginx.html) 1.11.6+.
 * upgraded LuaJIT to v2.1-20170808: https://github.com/openresty/luajit2/tags
-    * bugfix: [FFI](http://luajit.org/ext_ffi.html) C parsers could not parse some C constructs like `__attribute((aligned(N)))` and `#pragma`. decoupled hash functions used in comparison (hardcoded) and string table. thanks Shuxin Yang for the patch. this bug had first appeared in v2.1-20170405 (or OpenResty 1.11.2.3).
+    * bugfix: [FFI](https://luajit.org/ext_ffi.html) C parsers could not parse some C constructs like `__attribute((aligned(N)))` and `#pragma`. decoupled hash functions used in comparison (hardcoded) and string table. thanks Shuxin Yang for the patch. this bug had first appeared in v2.1-20170405 (or OpenResty 1.11.2.3).
     * bugfix: fixed a clang warning in `lj_str.c` regarding unused `str_fastcmp()` when macro `LUAJIT_USE_VALGRIND` is defined.
     * imported Mike Pall's latest changes:
         * bugfix: added missing `LJ_MAX_JSLOTS` check, which might lead to JIT stack overflow when exceeding this limit. tracked down the Mozilla rr tool. already merged in upstream LuaJIT.
@@ -103,7 +103,7 @@
         * MIPS: Fix handling of spare long-range jump slots.
         * MIPS: Use precise search for exit jump patching.
         * Add FOLD rules for mixed BAND/BOR with constants.
-        * [FFI](http://luajit.org/ext_ffi.html): Compile bitfield loads/stores.
+        * [FFI](https://luajit.org/ext_ffi.html): Compile bitfield loads/stores.
         * Add workaround for MSVC 2015 stdio changes.
         * MIPS64: Fix stores of MULTRES.
         * MIPS64: Fix write barrier in `BC_USETV`.
@@ -134,7 +134,7 @@
     * feature: `tcpsock:connect()`: allows the `options_table` argument being nil. thanks Dejiang Zhu for the patch.
     * feature: added support for the 303 status code in [ngx.redirect()](https://github.com/openresty/lua-nginx-module#ngxredirect). thanks Tom Thorogood for the patch.
     * bugfix: C API: `ngx_http_lua_add_package_preload()` might not take effect when lua_code_cache is off. thanks jimtan for the patch.
-    * bugfix: [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block): the number of retres might exceed the limit of [proxy_next_upstream_tries](http://nginx.org/r/proxy_next_upstream_tries) or alike.
+    * bugfix: [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block): the number of retres might exceed the limit of [proxy_next_upstream_tries](https://nginx.org/r/proxy_next_upstream_tries) or alike.
     * bugfix: setting response headers would change the `Content-Type` response header. thanks leafo for the report and Ming Wen for the patch.
     * bugfix: tcp cosockets: `sslhandshake()`: typo in the error message. thanks detailyang for the patch.
     * bugfix: typo fix in C POST args handler debug log. thanks Robert Paprocki for the patch.
@@ -192,7 +192,7 @@
     * imported Mike Pall's latest changes:
         * Add some more changes and extensions from Lua 5.2.
         * Remove old Lua 5.0 compatibility defines.
-        * [FFI](http://luajit.org/ext_ffi.html): Fix FOLD rules for `int64_t` comparisons.
+        * [FFI](https://luajit.org/ext_ffi.html): Fix FOLD rules for `int64_t` comparisons.
         * ARM64: Add big-endian support.
         * x64/`LJ_GC64`: Fix `emit_loadk64()`.
         * `LJ_GC64`: Fix `BC_CALLM` snapshot handling.
@@ -247,7 +247,7 @@
 
 * feature: added new command-line utility, [opm](https://github.com/openresty/opm#readme) of version 0.02, for managing community contributed [OpenResty packages](https://opm.openresty.org/).
 * change: now we enable `-DLUAJIT_ENABLE_LUA52COMPAT` in our bundled LuaJIT build by default, which can be disabled by `./configure --without-luajit-lua52`.
-note that this change may introduce some minor backeward incompatibilities on the Lua land, see http://luajit.org/extensions.html#lua52 for more details.
+note that this change may introduce some minor backeward incompatibilities on the Lua land, see https://luajit.org/extensions.html#lua52 for more details.
 * win32: upgraded OpenSSL to 1.0.2j.
 * win32: enabled http v2, http addition, http gzip static, http sub, and several other standard [nginx](nginx.html) modules by default.
 * updated the help text of `./configure --help` to sync with the new [nginx](nginx.html) 1.11.2 core.
@@ -349,7 +349,7 @@ disabled via the `--without-lua_resty_limit_traffic` option of the `./configure`
 #  Version 1.11.2.1 - 24 August 2016
 
 * upgraded the [Nginx](nginx.html) core to 1.11.2.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https://nginx.org/en/CHANGES
 * feature: bundled the sess_set_get_cb_yield patch for OpenSSL to support the [ssl_session_fetch_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_session_fetch_by_lua_block) directives of [ngx_lua](https://github.com/openresty/lua-nginx-module#readme).
 * win32: we now use pcre 8.39 and openssl 1.0.2h in our official build.
 * feature: applied the `ssl_pending_session.patch` to the [nginx](nginx.html) core to support the [ssl_session_fetch_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_session_fetch_by_lua_block) and [ssl_session_store_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_session_store_by_lua_block) in [ngx_lua](https://github.com/openresty/lua-nginx-module#readme).
@@ -371,7 +371,7 @@ be used in the same way as the redis commands of the same names. Essentially we 
 Dejiang Zhu for the patch.
     * feature: implemented [ssl_session_fetch_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_session_fetch_by_lua_block) and [ssl_session_store_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_session_store_by_lua_block) configuration directives for doing (distributed) caching of SSL sessions (via SSL session IDs) for downstream connections. thanks Zi Lin for the patches.
     * feature: added pure C API for setting upstream request connect/send/read timeouts in [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block) on a per session basis. thanks Jianhao Dai for the original patch.
-    * feature: ssl: add [FFI](http://luajit.org/ext_ffi.html) functions to parse certs and private keys to cdata. With the current [FFI](http://luajit.org/ext_ffi.html) functions the certificate chain and the private key are parsed from DER every time they are set into the SSL state. Now we can cache the parsed certs and private keys as cdata objects directly. These new functions make it possible to avoid the DER -> OpenSSL parsing. Thanks Alessandro Ghedini for the patch.
+    * feature: ssl: add [FFI](https://luajit.org/ext_ffi.html) functions to parse certs and private keys to cdata. With the current [FFI](https://luajit.org/ext_ffi.html) functions the certificate chain and the private key are parsed from DER every time they are set into the SSL state. Now we can cache the parsed certs and private keys as cdata objects directly. These new functions make it possible to avoid the DER -> OpenSSL parsing. Thanks Alessandro Ghedini for the patch.
     * feature: [shdict:incr()](https://github.com/openresty/lua-nginx-module#ngxshareddictincr): added the optional `init` argument to allow intializing nonexistent keys with an initial value.
     * feature: allow [tcpsock:setkeepalive()](https://github.com/openresty/lua-nginx-module#tcpsocksetkeepalive) to receive nil args. thanks Thibault Charbonnier for the patch.
     * bugfix: `*_by_lua_file`: did not support absolute file paths on non-UNIX systems like Win32. thanks Someguynamedpie for the report and the original patch.
@@ -420,6 +420,6 @@ Now $echo_client_request_headers always evaluates to an empty value (not found) 
 * upgraded [ngx_set_misc](https://github.com/openresty/set-misc-nginx-module#readme) to 0.31.
     * bugfix: the [set_sha1](https://github.com/openresty/set-misc-nginx-module#set_sha1) directive is always disabled when working with [nginx](nginx.html) 1.11.2+ due to recent changes in the new [nginx](nginx.html) cores.
 * upgraded [ngx_encrypted_session](https://github.com/openresty/encrypted-session-nginx-module#readme) to 0.06.
-    * doc: we do require [ngx_http_ssl_module](http://nginx.org/en/docs/http/ngx_http_ssl_module.html) to work properly.
+    * doc: we do require [ngx_http_ssl_module](https://nginx.org/en/docs/http/ngx_http_ssl_module.html) to work properly.
 
 See [ChangeLog 1.9.15](changelog-1009015.html) for change log for [OpenResty](openresty.html) 1.9.15.x.

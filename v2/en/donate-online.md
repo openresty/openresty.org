@@ -43,7 +43,7 @@ alt="Donate with PayPal">
 #  Donate with AliPay (支付宝)
 
 If you're in China, it's usually more convenient to send donation is to send
-money via the [AliPay](http://www.alipay.com/) to my account `yichun0511@gmail.com` or
+money via the [AliPay](https://www.alipay.com/) to my account `yichun0511@gmail.com` or
 just scan the following QR code in your AliPay cellphone app:
 
 <html>

@@ -10,4 +10,4 @@ the [Nginx](nginx.html) event model by means of cosockets and [Nginx](nginx.html
 
 Documentation: https://github.com/openresty/lua-nginx-module#readme
 
-Project page: http://github.com/openresty/lua-nginx-module
+Project page: https://github.com/openresty/lua-nginx-module

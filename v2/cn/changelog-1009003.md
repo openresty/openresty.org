@@ -21,14 +21,14 @@ to the build system. See the document for more details: https://github.com/openr
     * bugfix: we might return the wrong shm zone in the public C API function `ngx_http_lua_find_zone()`. thanks qlee001 for the report.
     * bugfix: the user specified `./configure`'s `--with-cc-opt` and `--with-ld-opt` might override the `LUAJIT_INC`/`LUAJIT_LIB` and `LUA_INC`/`LUA_LIB` environment settings. thanks Julian Gonggrijp for the report.
     * bugfix: setting builtin request header `Upgrade` via [ngx.req.set_header](https://github.com/openresty/lua-nginx-module#ngxreqset_header) and etc might not take effect with some builtin nginx modules.
-    * bugfix: setting builtin request headers `Depth`, `Destination`, `Overwrite`, and `Date` via [ngx.req.set_header()](https://github.com/openresty/lua-nginx-module#ngxreqset_header) and etc might not take effect at least with [ngx_http_dav_module](http://nginx.org/en/docs/http/ngx_http_dav_module.html). thanks Igor Clark for the report.
+    * bugfix: setting builtin request headers `Depth`, `Destination`, `Overwrite`, and `Date` via [ngx.req.set_header()](https://github.com/openresty/lua-nginx-module#ngxreqset_header) and etc might not take effect at least with [ngx_http_dav_module](https://nginx.org/en/docs/http/ngx_http_dav_module.html). thanks Igor Clark for the report.
     * bugfix: fixed typos due to copy&paste mistakes in some error messages.
     * bugfix: fixed one `-Wmaybe-uninitialized` warning when compiling with `gcc -Os`.
     * bugfix: use of shared dicts resulted in (unwanted) registrations of shared dict metatables on *all* the lightuserdata in the Lua space. thanks helloyi for the report and patch.
     * bugfix: if a 3rd-party module calls `ngx_http_conf_get_module_srv_conf` to fetch its current `srv_conf` construct in its `merge_srv_conf` callback, then use of [init_worker_by_lua](https://github.com/openresty/lua-nginx-module#init_worker_by_lua) might lead to segmentation faults (the same also applied to merge_loc_conf). thanks chiyouhen for the report and patch.
     * bugfix: the `if_unmodified_since` "shortcut" field in `ngx_http_headers_in_t` was first added in nginx 0.9.2.
     * bugfix: [ngx.req.clear_header](https://github.com/openresty/lua-nginx-module#ngxreqclear_header)/[ngx.req.set_header](https://github.com/openresty/lua-nginx-module#ngxreqset_header): we did not update the shortcut fields in `ngx_http_headers_in_t` added since nginx 1.3.3 which may confuse other nginx modules accessing them.
-    * bugfix: setting `Content-Type` response values including "; charset=xxx" via the [ngx.header](https://github.com/openresty/lua-nginx-module#ngxheaderheader) API might bypass the MIME type checks in other nginx modules like [ngx_gzip](http://nginx.org/en/docs/http/ngx_http_gzip_module.html). thanks Andreas Fischer for the report.
+    * bugfix: setting `Content-Type` response values including "; charset=xxx" via the [ngx.header](https://github.com/openresty/lua-nginx-module#ngxheaderheader) API might bypass the MIME type checks in other nginx modules like [ngx_gzip](https://nginx.org/en/docs/http/ngx_http_gzip_module.html). thanks Andreas Fischer for the report.
     * bugfix: typo fixes in some debug logging messages. thanks doujiang for the patch.
     * optimize: fixed the hash-table initial sizes of the cosocket metatables. thanks ops-dev-cn for the patch.
     * tests: removed the useless "use lib" directives from the Perl test files. thanks Markus Linnala for the report.
@@ -41,7 +41,7 @@ to the build system. See the document for more details: https://github.com/openr
     * feature: `upstream.get_servers(server_name)` now returns the server name (if any) as well, which can be the domain name if the user puts it in `nginx.conf`. thanks Hung Nguyen for the request.
 * upgraded [Headers More Nginx Module](headers-more-nginx-module.html) to 0.28.
     * bugfix: fixed errors and warnings with C compilers without variadic macro support.
-    * bugfix: setting (builtin) request headers `Upgrade`, `Depth`, `Destination`, `Overwrite`, and `Date` might not take effect in standard nginx modules like [ngx_http_proxy](http://nginx.org/en/docs/http/ngx_http_proxy_module.html) and [ngx_http_dav](http://nginx.org/en/docs/http/ngx_http_dav_module.html).
+    * bugfix: setting (builtin) request headers `Upgrade`, `Depth`, `Destination`, `Overwrite`, and `Date` might not take effect in standard nginx modules like [ngx_http_proxy](https://nginx.org/en/docs/http/ngx_http_proxy_module.html) and [ngx_http_dav](https://nginx.org/en/docs/http/ngx_http_dav_module.html).
     * bugfix: when the response header `Content-Type` contains parameters like "; charset=utf-8", the `-t MIME-List` options did not work as expected at all. thanks Joseph Bartels for the report.
     * bugfix: clearing input headers `If-Unmodified-Since`, `If-Match`, and `If-None-Match` did not clear the builtin "shortcut" fields in `ngx_http_headers_in_t` which might confuse other nginx modules like `ngx_http_not_modified_filter_module`. The first header gets "shortcuts" fields since nginx 0.9.2 while the latter two since nginx 1.3.3.
 * upgraded [Iconv Nginx Module](iconv-nginx-module.html) to 0.13.
@@ -88,7 +88,7 @@ to the build system. See the document for more details: https://github.com/openr
 
 #  Version 1.9.3.1 - 12 August 2015
 * upgraded the [Nginx](nginx.html) core to 1.9.3.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https://nginx.org/en/CHANGES
 * bugfix: `./configure --help`: fixed the usage text for the `--with-debug` option.
 thanks Kipras Mancevičius for the report.
 * bugfix: link failures with OpenSSL might happen on 64-bit Mac OS X when the

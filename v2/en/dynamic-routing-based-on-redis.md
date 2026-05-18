@@ -66,7 +66,7 @@ http {
                 ngx.var.target = host
             ';
 
-            proxy_pass http://$target;
+            proxy_pass https://$target;
         }
     }
 }

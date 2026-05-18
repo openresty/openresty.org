@@ -12,7 +12,7 @@
 
 * OpenResty × Open Talk (23 March 2019 2:00 PM at Beijing, China)
 
-    http://www.huodongxing.com/event/2481310558700
+    https://www.huodongxing.com/event/2481310558700
 
 * OpenResty × Open Talk (11 May 2019 2:00 PM at Wuhan, China)
 

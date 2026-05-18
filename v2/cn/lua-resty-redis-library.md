@@ -8,7 +8,7 @@
     @changes       1
 --->
 
-Lua [Redis](http://redis.io/) client driver for [Lua Nginx Module](lua-nginx-module.html) based
+Lua [Redis](https://redis.io/) client driver for [Lua Nginx Module](lua-nginx-module.html) based
 on the cosocket API.
 
 Project homepage: https://github.com/agentzh/lua-resty-redis

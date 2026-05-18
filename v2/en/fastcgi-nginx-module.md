@@ -9,4 +9,4 @@
 --->
 
 This is a standard [Nginx](nginx.html) module for talking to the remote FastCGI
-servers: http://wiki.nginx.org/HttpFastcgiModule
+servers: https://wiki.nginx.org/HttpFastcgiModule

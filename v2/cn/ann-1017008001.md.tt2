@@ -45,7 +45,7 @@ The highlights of this release candidate are:
     * Made the `coroutine.wrap()` API propagate errors to its parent coroutine,
       aligning with standard Lua behavior. This change may be breaking for some
       applications relying on the previous - but invalid - behavior of [ngx_lua](https://github.com/openresty/lua-nginx-module#readme).
-    * Fixed several compilation errors for static PCRE builds and [LuaJIT](https://github.com/openresty/luajit2#readme) [FFI](http://luajit.org/ext_ffi.html)
+    * Fixed several compilation errors for static PCRE builds and [LuaJIT](https://github.com/openresty/luajit2#readme) [FFI](https://luajit.org/ext_ffi.html)
       checks.
 * [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module#readme)
     * Ported many features from the
@@ -62,7 +62,7 @@ The highlights of this release candidate are:
         * Added the `pool_size` and `backlog` options to the [tcpsock:connect()](https://github.com/openresty/lua-nginx-module#tcpsockconnect) API.
         * Enabled many FFI-based APIs for the stream subsystem including
           `ngx.worker.*`, `ngx.var`, `ngx.ctx`, and many more...
-        * Fixed several compilation errors for static PCRE builds and [LuaJIT](https://github.com/openresty/luajit2#readme) [FFI](http://luajit.org/ext_ffi.html)
+        * Fixed several compilation errors for static PCRE builds and [LuaJIT](https://github.com/openresty/luajit2#readme) [FFI](https://luajit.org/ext_ffi.html)
           checks.
         * Ported more features and bugfixes from previous releases of the
           [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) module...

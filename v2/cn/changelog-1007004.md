@@ -11,7 +11,7 @@
 
 #  Version 1.7.4.1 - 9 October 2014
 * upgraded the [Nginx](nginx.html) core to 1.7.4.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https://nginx.org/en/CHANGES
 * feature: added a new command-line utility, `resty`, to run Lua code or Lua
 files (for [OpenResty](openresty.html)) directly from the command-line. it is
 installed into the "<prefix>/bin" directory. prodded by Vitaly Kosenko. This
@@ -63,7 +63,7 @@ to prevent potential file permission issues.
     * bugfix: we did not use `lua_checkstack()` to prevent Lua stack overflow in our own C-land Lua backtrace generator.
     * bugfix: fixed an incorrect error message. thanks aviramc for the patch.
     * bugfix: for statically linked [LuaJIT](luajit.html), we need to pass `-ldl` to the linker. thanks cf2012 for the report.
-    * bugfix: the [tcp_nodelay](http://nginx.org/en/docs/http/ngx_http_core_module.html#tcp_nodelay) directive configuration was not honored by upstream TCP cosockets, which could lead to extra delays for small messages. thanks Shun Zhang for reporting this issue.
+    * bugfix: the [tcp_nodelay](https://nginx.org/en/docs/http/ngx_http_core_module.html#tcp_nodelay) directive configuration was not honored by upstream TCP cosockets, which could lead to extra delays for small messages. thanks Shun Zhang for reporting this issue.
     * bugfix: fixed build failures with OpenSSL older than 0.9.8f. thanks FFCZ for the report.
     * bugfix: compilation failed with nginx 1.3.6 or older. this regression had appeared in the v0.9.11 release.
     * bugfix: compilation failed with nginx 0.9.x.

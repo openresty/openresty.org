@@ -52,9 +52,9 @@ Same as the devel release 1.0.11.27.
     * bugfix: incorrectly used `ngx_conf_log_error` by feeding `NGX_ERROR` as the first argument, as reported by runner-mei in [github issue #92](https://github.com/chaoslawful/lua-nginx-module/issues/92).
     * bugfix: spelling errors in Lua exception message text.
 * upgraded [Echo Nginx Module](echo-nginx-module.html) to 0.38rc2.
-    * bugfix: [$echo_request_body](http://wiki.nginx.org/HttpEchoModule#.24echo_request_body) variable was not able to work on arbitrary request body chains (i.e., more than 2 chain links), just like the standard [$request_body](http://wiki.nginx.org/HttpCoreModule#.24request_body) variable that only processes the first two chain links. now [$echo_request_body](http://wiki.nginx.org/HttpEchoModule#.24echo_request_body) no longer has this limitation.
+    * bugfix: [$echo_request_body](https://wiki.nginx.org/HttpEchoModule#.24echo_request_body) variable was not able to work on arbitrary request body chains (i.e., more than 2 chain links), just like the standard [$request_body](https://wiki.nginx.org/HttpCoreModule#.24request_body) variable that only processes the first two chain links. now [$echo_request_body](https://wiki.nginx.org/HttpEchoModule#.24echo_request_body) no longer has this limitation.
 * applied the upstream_pipelining patch to the nginx core, as discussed here:
-http://mailman.nginx.org/pipermail/nginx-devel/2012-March/002040.html this patch
+https://mailman.nginx.org/pipermail/nginx-devel/2012-March/002040.html this patch
 is required at least for the pipelined requests support in nginx upstream modules.
 
 #  Mainline Version 1.0.11.25 - 16 March 2012
@@ -62,16 +62,16 @@ is required at least for the pipelined requests support in nginx upstream module
 in a disclosure of previously freed memory if upstream server returned specially
 crafted response, potentially exposing sensitive information.
 * upgraded [Srcache Nginx Module](srcache-nginx-module.html) to 0.13rc6.
-    * bugfix: fixed a typo in an error message text for response truncation check in [srcache_store](http://wiki.nginx.org/HttpSRCacheModule#srcache_store).
+    * bugfix: fixed a typo in an error message text for response truncation check in [srcache_store](https://wiki.nginx.org/HttpSRCacheModule#srcache_store).
 
 #  Mainline Version 1.0.11.23 - 15 March 2012
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc19.
-    * feature: added new directive [lua_http10_buffering](http://wiki.nginx.org/HttpLuaModule#lua_http10_buffering) which is `on` by default.
+    * feature: added new directive [lua_http10_buffering](https://wiki.nginx.org/HttpLuaModule#lua_http10_buffering) which is `on` by default.
     * feature: added new constant `ngx.DECLINED`.
-    * bugfix: [access_by_lua](http://wiki.nginx.org/HttpLuaModule#access_by_lua) could not work with the `satisfy any` configuration.
-    * bugfix: now we recycle the special flush buffer and chain link for [ngx.flush](http://wiki.nginx.org/HttpLuaModule#ngx.flush) to prevent request-scoped memory leaks when emitting long data streams to the downstream.
+    * bugfix: [access_by_lua](https://wiki.nginx.org/HttpLuaModule#access_by_lua) could not work with the `satisfy any` configuration.
+    * bugfix: now we recycle the special flush buffer and chain link for [ngx.flush](https://wiki.nginx.org/HttpLuaModule#ngx.flush) to prevent request-scoped memory leaks when emitting long data streams to the downstream.
 * upgraded [Srcache Nginx Module](srcache-nginx-module.html) to 0.13rc5.
-    * feature: now [srcache_store](http://wiki.nginx.org/HttpSRCacheModule#srcache_store) discards responses that are obviously truncated when the actual output data is shorter than what is declared in its `Content-Length` response header. thanks Greg Grensteiner.
+    * feature: now [srcache_store](https://wiki.nginx.org/HttpSRCacheModule#srcache_store) discards responses that are obviously truncated when the actual output data is shorter than what is declared in its `Content-Length` response header. thanks Greg Grensteiner.
     * bugfix: the access phase handler actually ran in a phase later than the `access` phase.
     * bugfix: HTTP HEAD requests that lead to a cache hits would cause memory issues like invalid reads.
 * upgraded [Lua Resty Redis Library](lua-resty-redis-library.html) to 0.08.
@@ -79,7 +79,7 @@ crafted response, potentially exposing sensitive information.
 
 #  Mainline Version 1.0.11.21 - 7 March 2012
 * upgraded [Lua Resty Redis Library](lua-resty-redis-library.html) to 0.07.
-    * feature: added the [evalsha](http://redis.io/commands/eval) command to the redis command table. thanks Chris Love.
+    * feature: added the [evalsha](https://redis.io/commands/eval) command to the redis command table. thanks Chris Love.
 * upgraded [Lua Resty String Library](lua-resty-string-library.html) to 0.05.
     * feature: added new modules `resty.sha224`, `resty.sha256`, `resty.sha384`, and `resty.sha512` to exposes the OpenSSL API for the complete `SHA-2` hash function set. thanks @lhmwzy.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc17.
@@ -106,7 +106,7 @@ which is enabled by default.
 which is enabled by default.
 * bugfix: no longer enable `-DLUAJIT_USE_VALGRIND` for [LuaJIT](luajit.html) when
 `--with-debug` option is specified.
-* bugfix: applied the official [hotfix #1 patch](http://luajit.org/download/beta9_hotfix1.patch) for
+* bugfix: applied the official [hotfix #1 patch](https://luajit.org/download/beta9_hotfix1.patch) for
 [LuaJIT](luajit.html) 2.0.0 beta9.
 * feature: raised the default `NGX_HTTP_MAX_SUBREQUESTS` to 200, in sync with
 the official repository.
@@ -146,20 +146,20 @@ and [Redis2 Nginx Module](redis-2-nginx-module.html) to 0.08rc3, allowing enabli
 
 #  Mainline Version 1.0.11.11 - 14 February 2012
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc7.
-    * bugfix: cosocket API could not be used before [ngx.location.capture](http://wiki.nginx.org/HttpLuaModule#ngx.location.capture) and its friends for fast network access: [tcpsock:send()](http://wiki.nginx.org/HttpLuaModule#tcpsock:send) method did not reset `u->waiting` properly. thanks 欧远宁.
+    * bugfix: cosocket API could not be used before [ngx.location.capture](https://wiki.nginx.org/HttpLuaModule#ngx.location.capture) and its friends for fast network access: [tcpsock:send()](https://wiki.nginx.org/HttpLuaModule#tcpsock:send) method did not reset `u->waiting` properly. thanks 欧远宁.
 
 #  Mainline Version 1.0.11.9 - 13 February 2012
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc6.
     * bugfix: could not compile with nginx 0.8.x. thanks 欧远宁. this bug had appeared in [Lua Nginx Module](lua-nginx-module.html) v0.5.0rc1.
-    * feature: added the [ngx.sha1_bin](http://wiki.nginx.org/HttpLuaModule#ngx.sha1_bin) method which returns the binary form of the `SHA-1` digest.
-    * bugfix: we incorrectly allowed `ngx.null` in the string table argument to [cosocket:send()](http://wiki.nginx.org/HttpLuaModule#tcpsock:send) method.
-    * feature: allow use of ngx.null in [ngx.log()](http://wiki.nginx.org/HttpLuaModule#ngx.log) and [print()](http://wiki.nginx.org/HttpLuaModule#print) arguments.
+    * feature: added the [ngx.sha1_bin](https://wiki.nginx.org/HttpLuaModule#ngx.sha1_bin) method which returns the binary form of the `SHA-1` digest.
+    * bugfix: we incorrectly allowed `ngx.null` in the string table argument to [cosocket:send()](https://wiki.nginx.org/HttpLuaModule#tcpsock:send) method.
+    * feature: allow use of ngx.null in [ngx.log()](https://wiki.nginx.org/HttpLuaModule#ngx.log) and [print()](https://wiki.nginx.org/HttpLuaModule#print) arguments.
 * added Piotr Sikora's [Coolkit Nginx Module](coolkit-nginx-module.html) 0.2rc1
 to the bundle, which is also enabled by default.
 
 #  Mainline Version 1.0.11.7 - 7 February 2012
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc5.
-    * feature: added constant `ngx.null` which is a `NULL` light userdata to represent `nil` values in Lua tables and etc. this is compatible with at least [lua-cjson](http://www.kyne.com.au/~mark/software/lua-cjson.php) library's `cjson.null` constant.
+    * feature: added constant `ngx.null` which is a `NULL` light userdata to represent `nil` values in Lua tables and etc. this is compatible with at least [lua-cjson](https://www.kyne.com.au/~mark/software/lua-cjson.php) library's `cjson.null` constant.
 
 #  Mainline Version 1.0.11.5 - 7 February 2012
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc4.
@@ -167,19 +167,19 @@ to the bundle, which is also enabled by default.
 
 #  Mainline Version 1.0.11.3 - 6 February 2012
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc3.
-    * feature: now [tcpsocket:send()](http://wiki.nginx.org/HttpLuaModule#tcpsock:send) method supports lua tables of string fragments which can save unnecessary string concatenation operations on the Lua land that are usually quite expensive.
+    * feature: now [tcpsocket:send()](https://wiki.nginx.org/HttpLuaModule#tcpsock:send) method supports lua tables of string fragments which can save unnecessary string concatenation operations on the Lua land that are usually quite expensive.
     * bugfix: fixed issues in debugging logs for the cosocket API.
-    * feature: added user flags support to the [shared dictionary API](http://wiki.nginx.org/HttpLuaModule#ngx.shared.DICT). thanks Brian Akins.
+    * feature: added user flags support to the [shared dictionary API](https://wiki.nginx.org/HttpLuaModule#ngx.shared.DICT). thanks Brian Akins.
 * upgraded [Lua Redis Parser Library](lua-redis-parser-library.html) to 0.09rc6.
     * bugfix: remove unneeded string push operations. thanks Brian Akins.
 
 #  Mainline Version 1.0.11.1 - 2 February 2012
 * upgraded the [Nginx](nginx.html) core to 1.0.11.
-    * see the changes here: http://nginx.org/en/CHANGES-1.0
+    * see the changes here: https://nginx.org/en/CHANGES-1.0
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc1.
-    * feature: implemented the coroutine-based TCP and Unix Domain client socket API (aka the "cosocket" API) that is mostly compatible with the [LuaSocket](http://w3.impa.br/~diego/software/luasocket/tcp.html) library.
+    * feature: implemented the coroutine-based TCP and Unix Domain client socket API (aka the "cosocket" API) that is mostly compatible with the [LuaSocket](https://w3.impa.br/~diego/software/luasocket/tcp.html) library.
     * feature: implemented built-in connection pool support for the cosocket API.
-    * feature: added new function [ngx.req.socket()](http://wiki.nginx.org/HttpLuaModule#ngx.req.socket) to return a cosocket object for the downstream connection so as to do streaming request body reading. thanks Taylor Weibley for sponsoring the development work.
+    * feature: added new function [ngx.req.socket()](https://wiki.nginx.org/HttpLuaModule#ngx.req.socket) to return a cosocket object for the downstream connection so as to do streaming request body reading. thanks Taylor Weibley for sponsoring the development work.
     * optimization: optimized the chain-link and buf recycle logic for the subrequest API and make it share free buffers with the cosocket API.
 * upgraded [Postgres Nginx Module](postgres-nginx-module.html) to 0.9.
     * bugfix: Fix compatibility with poll, select and /dev/poll event models.

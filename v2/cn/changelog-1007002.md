@@ -11,7 +11,7 @@
 
 #  Version 1.7.2.1 - 12 July 2014
 * upgraded the [Nginx](nginx.html) core to 1.7.2.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https://nginx.org/en/CHANGES
 * upgraded [LuaJIT](luajit.html) to v2.1-20140707: https://github.com/openresty/luajit2/tags
     * imported Mike Pall's latest bug fixes and other changes:
         * feature: compile debug.getmetatable(). Thanks to Karel Tuma.
@@ -24,7 +24,7 @@
     * feature: [resty.core.regex](https://github.com/openresty/lua-resty-core#restycoreregex): use `resty.lrucache` for the compiled regex cache for [ngx.re.find](https://github.com/openresty/lua-nginx-module#ngxrefind) and [ngx.re.match](https://github.com/openresty/lua-nginx-module#ngxrematch) in order to prevent pathalogical performance when the number of regexes has exceeded [lua_regex_cache_max_entries](https://github.com/openresty/lua-nginx-module/#lua_regex_cache_max_entries).
     * optimize: [resty.core.regex](https://github.com/openresty/lua-resty-core#restycoreregex): removed one obsolete assertion that was for a [LuaJIT](luajit.html) bug (already fixed).
 * upgraded [Lua Resty DNS Library](lua-resty-dns-library.html) to 0.12.
-    * feature: added support for the SRV resource record type (see [RFC 2782](http://www.ietf.org/rfc/rfc2782.txt)). thanks Torbjörn Norinder for the patch.
+    * feature: added support for the SRV resource record type (see [RFC 2782](https://www.ietf.org/rfc/rfc2782.txt)). thanks Torbjörn Norinder for the patch.
 * upgraded [Lua Resty Upstream Healthcheck Library](lua-resty-upstream-healthcheck-library.html) to 0.02.
     * bugfix: for bad status lines, we could throw out the "bad argument #2 to 'sub'" error, reported by George Bashi.
     * doc: avoided using the `\r\n` sequence in Lua long brackets because Lua would squeeze it to `\n`, unfortunately. thanks George Bashi for the report.
@@ -37,11 +37,11 @@
     * feature: added new API function [ngx.thread.kill()](https://github.com/openresty/lua-nginx-module/#ngxthreadkill) for killing a user "light thread". thanks aviramc for the original patch.
     * bugfix: the "coroutine" module table introduced by `require('coroutine')` was not working in our Lua context. thanks Paul K and Pierre-Yves Gérardy for the report.
     * bugfix: fixed the initial size of the ngx.worker table and the misleading comment due to a copy&paste mistake. thanks Suraj Jaiswal for the report.
-    * bugfix: the "coctx cleanup" handler might not be called before being overidden by other operations. this could happen when failing to yield in an error handler (for [xpcall](http://www.lua.org/manual/5.1/manual.html#pdf-xpcall)).
+    * bugfix: the "coctx cleanup" handler might not be called before being overidden by other operations. this could happen when failing to yield in an error handler (for [xpcall](https://www.lua.org/manual/5.1/manual.html#pdf-xpcall)).
     * bugfix: fixed an incorrect error message. thanks doujiang for the patch.
     * bugfix: fixed a compilation error regression when using the Microsoft Visual C/C++ compiler. thanks itpp16 for the patch.
     * bugfix: we should use `c->buffered & NGX_HTTP_LOWLEVEL_BUFFERED` instead of `c->buffered` for testing if the downstream connection is busy writing.
-    * bugfix: we did not handle an out-of-memory case in [ngx.req.set_body_data()](http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_data).
+    * bugfix: we did not handle an out-of-memory case in [ngx.req.set_body_data()](https://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_data).
     * bugfix: ngx_http_lua_chain_get_free_buf(): avoided returning zero-sized memory bufs.
     * bugfix: [body_filter_by_lua*](https://github.com/openresty/lua-nginx-module#body_filter_by_lua): we might incorrectly pass zero-size bufs (in the form of "special sync bufs") at the beginning of a chain, which could get stuck in the buffer of `ngx_http_writer_filter_module` (or in other words, being "busy") while could still get recycled in the content handler (like [content_by_lua](https://github.com/openresty/lua-nginx-module#content_by_lua)), leading to buffer corruptions. thanks westhood for the report and patch.
     * bugfix: we did not clear all the fields in the `ngx_buf_t` C struct when recycling chain link buffers.
@@ -59,7 +59,7 @@
     * bugfix: the "unknown option for echo_subrequest_async" error was thrown when [Nginx](nginx.html) variables were used in both the "method" argument and URI argument of the [echo_subrequest](https://github.com/openresty/echo-nginx-module#echo_subrequest) directive (and etc). thanks Utkarsh Upadhyay for the report.
     * bugfix: fixed a misleading error message.
 * upgraded [Srcache Nginx Module](srcache-nginx-module.html) to 0.28.
-    * feature: log an error message when [srcache_store](http://wiki.nginx.org/HttpSRCacheModule#srcache_store) subrequest has an error or returns a bad HTTP status code. thanks Yann Coleu for the report.
+    * feature: log an error message when [srcache_store](https://wiki.nginx.org/HttpSRCacheModule#srcache_store) subrequest has an error or returns a bad HTTP status code. thanks Yann Coleu for the report.
     * doc: typo fix from javasboy.
 * upgraded [Memc Nginx Module](memc-nginx-module.html) to 0.15.
     * bugfix: we did not log error messages for invalid values of `$memc_flags`, `$memc_exptime`, and `$memc_value`, leading to hard-to-debug HTTP 400 status errors. thanks Yann Coleu for the report.

@@ -8,7 +8,7 @@
     @changes       3
 --->
 
-Lua [MySQL](http://en.wikipedia.org/wiki/MySQL) client driver for [Lua Nginx Module](lua-nginx-module.html) based
+Lua [MySQL](https://en.wikipedia.org/wiki/MySQL) client driver for [Lua Nginx Module](lua-nginx-module.html) based
 on the cosocket API.
 
 Project homepage: https://github.com/agentzh/lua-resty-mysql

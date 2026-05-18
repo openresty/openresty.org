@@ -25,9 +25,9 @@ each component project.
 For example, one of the core components, [Lua Nginx Module](lua-nginx-module.html),
 has its official code repository hosted on [GitHub](github.html) as well: https://github.com/openresty/lua-nginx-module
 
-Another core component, the [Nginx](nginx.html) core, is developed by the [Nginx company](http://nginx.com).
+Another core component, the [Nginx](nginx.html) core, is developed by the [Nginx company](https://nginx.com).
 And the opensource development of the [Nginx](nginx.html) core usually happens
-on the official [nginx-devel mailing list](http://mailman.nginx.org/mailman/listinfo/nginx-devel).
+on the official [nginx-devel mailing list](https://mailman.nginx.org/mailman/listinfo/nginx-devel).
 But also keep in mind that the [OpenResty](openresty.html) bundle also maintains
 [a set of small patches](https://github.com/agentzh/ngx_openresty/tree/master/patches/) for
 the [Nginx](nginx.html) core to fix some urgent bugs or add a few really important
@@ -40,9 +40,9 @@ See the [Community](community.html) page for more details. You are always welcom
 to join us there.
 
 The maintainer of the [OpenResty](openresty.html) bundle periodically runs a
-big test cluster on [Amazon EC2](http://aws.amazon.com/ec2/) where the test
+big test cluster on [Amazon EC2](https://aws.amazon.com/ec2/) where the test
 suite of each component bundled is run against the latest [Nginx](nginx.html) releases.
-You can always check out the test reports on the [qa.openresty.org site](http://qa.openresty.org).
+You can always check out the test reports on the [qa.openresty.org site](https://qa.openresty.org).
 You can read the [detailed documentation]( for this EC2 test cluster if you want
 to run and/or hack on it yourself.
 

@@ -37,12 +37,12 @@
 
 #  Mainline Version 1.0.10.47 - 29 January 2012
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.4.1rc4.
-    * bugfix: `ngx_http_lua_header_filter_init` was called with an argument which actually accepts none. this could cause compilation errors at least with gcc 4.3.4 as reported in github [issue #80](http://github.com/openresty/lua-nginx-module/issues/80). thanks bigplum (Simon).
+    * bugfix: `ngx_http_lua_header_filter_init` was called with an argument which actually accepts none. this could cause compilation errors at least with gcc 4.3.4 as reported in github [issue #80](https://github.com/openresty/lua-nginx-module/issues/80). thanks bigplum (Simon).
 
 #  Mainline Version 1.0.10.45 - 19 January 2012
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.4.1rc3.
     * bugfix: fixed all the warnings from the `clang` static analyzer.
-    * bugfix: [ngx.exit](http://wiki.nginx.org/HttpLuaModule#ngx.exit), [ngx.redirect](http://wiki.nginx.org/HttpLuaModule#ngx.redirect), [ngx.exec](http://wiki.nginx.org/HttpLuaModule#ngx.exec), and [ngx.req.set_uri(uri, true)](http://wiki.nginx.org/HttpLuaModule#ngx.req.set_uri) could return (they should never return as per the documentation). this bug had appeared in ngx_lua v0.3.1rc4 and ngx_openresty 1.0.6.13. thanks [@cyberty](http://weibo.com/cyberty) for reporting it.
+    * bugfix: [ngx.exit](https://wiki.nginx.org/HttpLuaModule#ngx.exit), [ngx.redirect](https://wiki.nginx.org/HttpLuaModule#ngx.redirect), [ngx.exec](https://wiki.nginx.org/HttpLuaModule#ngx.exec), and [ngx.req.set_uri(uri, true)](https://wiki.nginx.org/HttpLuaModule#ngx.req.set_uri) could return (they should never return as per the documentation). this bug had appeared in ngx_lua v0.3.1rc4 and ngx_openresty 1.0.6.13. thanks [@cyberty](https://weibo.com/cyberty) for reporting it.
     * feature: allow use of the `DDEBUG` macro from the outside (via the `-D DDEBUG=1` cc opton).
 * upgraded [Drizzle Nginx Module](drizzle-nginx-module.html) to v0.1.2rc6.
     * bugfix: fixed all the warnings from the `clang` static analyzer.
@@ -106,43 +106,43 @@ for `./configure`.
 
 #  Mainline Version 1.0.10.39 - 4 January 2012
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.3.1rc45.
-    * bugfix: [ngx.req.get_uri_args](http://wiki.nginx.org/HttpLuaModule#ngx.req.get_uri_args) and [ngx.req.get_post_args](http://wiki.nginx.org/HttpLuaModule#ngx.req.get_post_args) now only parse up to 100 arguments by default. but one can specify the optional argument to these two methods to specify a custom maximum number of args. thanks Tzury Bar Yochay for reporting this.
-    * bugfix:  [ngx.req.get_headers](http://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers) now only parse up to 100 request headers by default. but one can specify the optional argument to this method to specify a custom maximum number of headers.
+    * bugfix: [ngx.req.get_uri_args](https://wiki.nginx.org/HttpLuaModule#ngx.req.get_uri_args) and [ngx.req.get_post_args](https://wiki.nginx.org/HttpLuaModule#ngx.req.get_post_args) now only parse up to 100 arguments by default. but one can specify the optional argument to these two methods to specify a custom maximum number of args. thanks Tzury Bar Yochay for reporting this.
+    * bugfix:  [ngx.req.get_headers](https://wiki.nginx.org/HttpLuaModule#ngx.req.get_headers) now only parse up to 100 request headers by default. but one can specify the optional argument to this method to specify a custom maximum number of headers.
 
 #  Mainline Version 1.0.10.37 - 30 December 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.3.1rc43.
-    * bugfix: removing builtin headers via [ngx.req.clear_header](http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header) and its equivalent in huge request headers with 20+ entries could result in data loss. thanks Chris Dumoulin for the patch in [github issue #6](https://github.com/openresty/headers-more-nginx-module/issues/6).
+    * bugfix: removing builtin headers via [ngx.req.clear_header](https://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header) and its equivalent in huge request headers with 20+ entries could result in data loss. thanks Chris Dumoulin for the patch in [github issue #6](https://github.com/openresty/headers-more-nginx-module/issues/6).
     * bugfix: could not compile with [Nginx](nginx.html) 1.1.12+ because [Nginx](nginx.html) 1.1.12 changed its regex API. now we call PCRE API directly and require at least PCRE 8.21 for the PCRE JIT support in our `ngx.re` API (since PCRE 8.20 had a bug in its JIT engine that it did not honor `pcre_malloc` and `pcre_free` at all).
 
 #  Mainline Version 1.0.10.35 - 30 December 2011
 * upgraded [Headers More Nginx Module](headers-more-nginx-module.html) to v0.16rc7.
     * bugfix: removing builtin headers in huge request headers with 20+ entries could result in data loss. thanks Chris Dumoulin for the patch in [github issue #6](https://github.com/openresty/headers-more-nginx-module/issues/6).
 * bugfix: the `install` phony target did not depend on the `all` phony target
-in the Makefile generated by `./configure`. thanks [姚伟斌](http://weibo.com/yaoweibin) for
+in the Makefile generated by `./configure`. thanks [姚伟斌](https://weibo.com/yaoweibin) for
 reporting this issue.
 
 #  Mainline Version 1.0.10.33 - 29 December 2011
 * bugfix: the `./configure` script's  `--add-module` option did not accept relative
-path values. thanks [姚伟斌](http://weibo.com/yaoweibin) for the patch.
+path values. thanks [姚伟斌](https://weibo.com/yaoweibin) for the patch.
 
 #  Mainline Version 1.0.10.31 - 25 December 2011
 * upgraded [LuaJIT](luajit.html) to 2.0.0beta9.
-    * changes: http://luajit.org/changes.html
+    * changes: https://luajit.org/changes.html
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.3.1rc42.
-    * bugfix: [ngx.req.set_header](http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header) might cause invalid memory reads because [Nginx](nginx.html) request header values must be null terminated. thanks Maxim Dounin.
+    * bugfix: [ngx.req.set_header](https://wiki.nginx.org/HttpLuaModule#ngx.req.set_header) might cause invalid memory reads because [Nginx](nginx.html) request header values must be null terminated. thanks Maxim Dounin.
     * bugfix: `ngx.var.VARIABLE` might evaluate to nil even if there is a valid value because the [Nginx](nginx.html) variable value's `valid` flag might not be initialized properly. this bad had appeared in v0.3.1rc40.
 * upgraded [Headers More Nginx Module](headers-more-nginx-module.html) to v0.16rc6.
-    * bugfix: the [more_set_input_headers](http://wiki.nginx.org/HttpHeadersMoreModule#more_set_headers) directive might cause invalid memory reads because [Nginx](nginx.html) request header values must be null terminated. thanks Maxim Dounin.
+    * bugfix: the [more_set_input_headers](https://wiki.nginx.org/HttpHeadersMoreModule#more_set_headers) directive might cause invalid memory reads because [Nginx](nginx.html) request header values must be null terminated. thanks Maxim Dounin.
 
 #  Mainline Version 1.0.10.29 - 17 December 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.3.1rc41.
-    * bugfix: [ngx.req.set_header](http://wiki.nginx.org/HttpLuaModule#ngx.req.set_header) and [ngx.req.clear_header](http://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header) did not handle the `Accept-Encoding` request headers properly. thanks 天街夜色.
+    * bugfix: [ngx.req.set_header](https://wiki.nginx.org/HttpLuaModule#ngx.req.set_header) and [ngx.req.clear_header](https://wiki.nginx.org/HttpLuaModule#ngx.req.clear_header) did not handle the `Accept-Encoding` request headers properly. thanks 天街夜色.
 * upgraded [Headers More Nginx Module](headers-more-nginx-module.html) to 0.16rc5.
-    * bugfix: [more_set_input_headers](http://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers) and [more_clear_input_headers](http://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers) did not handle the `Accept-Encoding` request headers properly. thanks 天街夜色.
+    * bugfix: [more_set_input_headers](https://wiki.nginx.org/HttpHeadersMoreModule#more_set_input_headers) and [more_clear_input_headers](https://wiki.nginx.org/HttpHeadersMoreModule#more_clear_input_headers) did not handle the `Accept-Encoding` request headers properly. thanks 天街夜色.
 
 #  Mainline Version 1.0.10.27 - 16 December 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.3.1rc40.
-    * bugfix: `ngx.flush(true)` could not be used before I/O calls like [ngx.location.capture](http://wiki.nginx.org/HttpLuaModule#ngx.location.capture). this bug had appeared in v0.3.1rc34.
+    * bugfix: `ngx.flush(true)` could not be used before I/O calls like [ngx.location.capture](https://wiki.nginx.org/HttpLuaModule#ngx.location.capture). this bug had appeared in v0.3.1rc34.
     * bugfix: `ngx.var.VARIABLE` did not evaluate to `nil` when the [Nginx](nginx.html) variable's `valid` flag is `0`.
     * docs: various documentation improvements. thanks [Nginx](nginx.html) User.
     * bugfix: there were various places where we did not check the pointer returned by the memory allocator.
@@ -151,11 +151,11 @@ path values. thanks [姚伟斌](http://weibo.com/yaoweibin) for the patch.
     * src: converted `CRLF` in the source files and test files to `LF`.
 * bugfix: some old version of shell `cp` command does not support trailing slashes
 in the destination argument and could break our `./configure` script. thanks
-[姚伟斌](http://weibo.com/yaoweibin) for reporting it.
+[姚伟斌](https://weibo.com/yaoweibin) for reporting it.
 
 #  Mainline Version 1.0.10.25 - 14 December 2011
 * upgraded [Srcache Nginx Module](srcache-nginx-module.html) to v0.13rc3.
-    * bugfix: fixed a regression with [Xss Nginx Module](xss-nginx-module.html) for cache hits. this bug had appeared in v0.13rc1. thanks [万珣新](http://weibo.com/liseen).
+    * bugfix: fixed a regression with [Xss Nginx Module](xss-nginx-module.html) for cache hits. this bug had appeared in v0.13rc1. thanks [万珣新](https://weibo.com/liseen).
     * bugfix: we did not cache the `Location` response header at all for `301`/`302` responses.
     * bugfix: we should not blindly cache the `Accept-Ranges: bytes` response headers regardless of the actual current requests.
 * upgraded [Xss Nginx Module](xss-nginx-module.html) to v0.03rc8.
@@ -210,7 +210,7 @@ thanks Maxim Dounin for the patch's patch.
 
 #  Mainline Version 1.0.10.17 - 26 November 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.3.1rc36.
-    * bugfix: fixed the `ngx_log_debugN` macros which failed to compile without `--with-debug`. thanks [@ldmiao](http://weibo.com/ldmiao) for reporting it.
+    * bugfix: fixed the `ngx_log_debugN` macros which failed to compile without `--with-debug`. thanks [@ldmiao](https://weibo.com/ldmiao) for reporting it.
 
 #  Mainline Version 1.0.10.15 - 26 November 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.3.1rc35.
@@ -218,12 +218,12 @@ thanks Maxim Dounin for the patch's patch.
 
 #  Mainline Version 1.0.10.13 - 25 November 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.3.1rc34.
-    * feature: added `wait` boolean argument to [ngx.flush()](http://wiki.nginx.org/HttpLuaModule#ngx.flush) to support synchronous flushing; `ngx.flush(true)` will not return until all the data has been flushed into the system send buffer or the send timeout has expired.
+    * feature: added `wait` boolean argument to [ngx.flush()](https://wiki.nginx.org/HttpLuaModule#ngx.flush) to support synchronous flushing; `ngx.flush(true)` will not return until all the data has been flushed into the system send buffer or the send timeout has expired.
 
 #  Mainline Version 1.0.10.11 - 24 November 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.3.1rc33.
-    * feature: added new Lua API [ngx.now](http://wiki.nginx.org/HttpLuaModule#ngx.now) to return the current time (including the ms part as the decimal part). thanks 林青.
-    * feature: added new Lua API [ngx.update_time](http://wiki.nginx.org/HttpLuaModule#ngx.update_time) to forcibly updating nginx's time cache.
+    * feature: added new Lua API [ngx.now](https://wiki.nginx.org/HttpLuaModule#ngx.now) to return the current time (including the ms part as the decimal part). thanks 林青.
+    * feature: added new Lua API [ngx.update_time](https://wiki.nginx.org/HttpLuaModule#ngx.update_time) to forcibly updating nginx's time cache.
     * docs: massive documentation improvement done by [Nginx](nginx.html) User.
 
 #  Mainline Version 1.0.10.9 - 24 November 2011
@@ -236,17 +236,17 @@ thanks Maxim Dounin for the patch's patch.
 
 #  Mainline Version 1.0.10.7 - 23 November 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.3.1rc31.
-    * feature: added opions `copy_all_vars` and `vars` to [ngx.location.capture](http://wiki.nginx.org/HttpLuaModule#ngx.location.capture) and [ngx.location.capture_multi](http://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi). thanks Marcus Clyne for the patch.
-    * bugfix: fixed a bad regression in [ngx.location.capture_multi](http://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi) when the request option table is specified. this bug had appeared in ngx_lua 0.3.1rc26 and ngx_openresty 1.0.9.1.
+    * feature: added opions `copy_all_vars` and `vars` to [ngx.location.capture](https://wiki.nginx.org/HttpLuaModule#ngx.location.capture) and [ngx.location.capture_multi](https://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi). thanks Marcus Clyne for the patch.
+    * bugfix: fixed a bad regression in [ngx.location.capture_multi](https://wiki.nginx.org/HttpLuaModule#ngx.location.capture_multi) when the request option table is specified. this bug had appeared in ngx_lua 0.3.1rc26 and ngx_openresty 1.0.9.1.
 
 #  Mainline Version 1.0.10.5 - 21 November 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.3.1rc30.
-    * feature: added new regex options `"j"` and `"d"` to [ngx.re.match](http://wiki.nginx.org/HttpLuaModule#ngx.re.match), [ngx.re.gmatch](http://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch), [ngx.re.sub](http://wiki.nginx.org/HttpLuaModule#ngx.re.sub), and [ngx.re.gsub](http://wiki.nginx.org/HttpLuaModule#ngx.re.gsub)  so as to enable the PCRE [JIT mode](http://www.manpagez.com/man/3/pcrejit/) and DFA mode, respectively. thanks [@姜大炮](http://weibo.com/egis) for providing the patch.
+    * feature: added new regex options `"j"` and `"d"` to [ngx.re.match](https://wiki.nginx.org/HttpLuaModule#ngx.re.match), [ngx.re.gmatch](https://wiki.nginx.org/HttpLuaModule#ngx.re.gmatch), [ngx.re.sub](https://wiki.nginx.org/HttpLuaModule#ngx.re.sub), and [ngx.re.gsub](https://wiki.nginx.org/HttpLuaModule#ngx.re.gsub)  so as to enable the PCRE [JIT mode](https://www.manpagez.com/man/3/pcrejit/) and DFA mode, respectively. thanks [@姜大炮](https://weibo.com/egis) for providing the patch.
 
 #  Mainline Version 1.0.10.3 - 17 November 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.3.1rc29.
-    * feature: added [ngx.hmac_sha1](http://wiki.nginx.org/HttpLuaModule#ngx.hmac_sha1). thanks [drdrxp](http://weibo.com/drdrxp).
-    * docs: documented the long-existent [ngx.md5](http://wiki.nginx.org/HttpLuaModule#ngx.md5) and [ngx.md5_bin](http://wiki.nginx.org/HttpLuaModule#ngx.md5_bin) APIs.
+    * feature: added [ngx.hmac_sha1](https://wiki.nginx.org/HttpLuaModule#ngx.hmac_sha1). thanks [drdrxp](https://weibo.com/drdrxp).
+    * docs: documented the long-existent [ngx.md5](https://wiki.nginx.org/HttpLuaModule#ngx.md5) and [ngx.md5_bin](https://wiki.nginx.org/HttpLuaModule#ngx.md5_bin) APIs.
     * docs: massive documentation improvements. thanks [Nginx](nginx.html) User.
 
 #  Mainline Version 1.0.10.1 - 16 November 2011

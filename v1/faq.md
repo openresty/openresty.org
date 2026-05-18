@@ -48,7 +48,7 @@ How should I report a problem?
 ------------------------------
 
 Whenever you run into a problem, you are encouraged to report to the openresty-en (English) mailing list or the openresty (Chinese)
-mailing list (depending on your language). See the [Community](http://openresty.org/#Community) page
+mailing list (depending on your language). See the [Community](https://openresty.org/#Community) page
 for more details. But please don't cross-post.
 
 You are highly recommended to provide as much details as possible while reporting a problem, for example,
@@ -58,7 +58,7 @@ You are highly recommended to provide as much details as possible while reportin
 operating system, the version of your OpenResty (or the versions of your Nginx, ngx\_lua,
 Lua/LuaJIT and other modules used if you are not using the OpenResty bundle),
 * a minimal and standalone example that can reliably reproduce the issue on our side, and
-* enable the Nginx/OpenResty's [debugging logs](http://nginx.org/en/docs/debugging_log.html) and
+* enable the Nginx/OpenResty's [debugging logs](https://nginx.org/en/docs/debugging_log.html) and
 provide the *complete* logs for the guilty request you performed (the same `./configure --with-debug` command line also applies perfectly well to the OpenResty bundle).
 
 The more details you provide, the more likely and faster we can help you out. Most of the time,
@@ -144,7 +144,7 @@ separate `.lua` files. This is not allowed and it must be inefficient even if it
 
 The recommended way to organize your Lua code base is to use Lua's own module mechanism:
 
-http://www.lua.org/manual/5.1/manual.html#5.3
+https://www.lua.org/manual/5.1/manual.html#5.3
 
 You can put your unrelated Lua code into separate Lua module files, for example,
 
@@ -194,7 +194,7 @@ Can I use custom loggers in Lua?
 
 Yes, sure. You have multiple options:
 
-1. Write a custom Lua logger library manipulating files with [LuaJIT FFI](http://luajit.org/ext_ffi.html) directly. You need to access the low level file I/O
+1. Write a custom Lua logger library manipulating files with [LuaJIT FFI](https://luajit.org/ext_ffi.html) directly. You need to access the low level file I/O
 syscalls like `open`, `write`, and `close` without going through libc's buffered I/O layer. This is important because
 this can ensure atomicity when multiple (worker) processes are appending data to the same file (in the appending mode).
 You can share the resulting file descriptors (fd) returned from the `open` syscall on the NGINX worker process level
@@ -284,7 +284,7 @@ location = /sub {
 }
 ```
 
-Here you specify all the timeout thresholds provided by the [ngx_proxy](http://nginx.org/en/docs/http/ngx_http_proxy_module.html)
+Here you specify all the timeout thresholds provided by the [ngx_proxy](https://nginx.org/en/docs/http/ngx_http_proxy_module.html)
 module in the (internal) location (`= /sub`) accessed by your subrequest.
 
 [Back to TOC](#table-of-contents)
@@ -294,7 +294,7 @@ Can I access remote URLs via ngx.locaiton.capture or alike?
 
 Yes, but not directly. The subrequest API targets nginx's "locations". So you need a dedicated
 location (be it "internal" or not) and configure the standard
-[ngx_proxy](http://nginx.org/en/docs/http/ngx_http_proxy_module.html) module there.
+[ngx_proxy](https://nginx.org/en/docs/http/ngx_http_proxy_module.html) module there.
 
 Alternatively, you may consider using one of the `lua-resty-http*` libraries contributed
 by the community. To name a few:
@@ -325,7 +325,7 @@ Yichun Zhang (agentzh)
 See Also
 ========
 
-* [openresty.org](http://openresty.org)
+* [openresty.org](https://openresty.org)
 
 [Back to TOC](#table-of-contents)
 

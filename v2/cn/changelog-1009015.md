@@ -7,7 +7,7 @@
 #  Version 1.9.15.1 - 3 June 2016
 
 * upgraded the [Nginx](nginx.html) core to 1.9.15.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https://nginx.org/en/CHANGES
 * bugfix: applied the patch for nginx security advisory (CVE-2016-4450) to the nginx 1.9.15 core.
 * feature: added restydoc documentation indexes for the official [nginx](nginx.html) core and most of the official openresty components.
 * upgraded [ngx_lua](https://github.com/openresty/ -nginx-module#readme) to 0.10.5.
@@ -26,7 +26,7 @@ of [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_
     * bugfix: `*_by_lua_block`: fixed Lua long bracket parsing at buffer boundaries. thanks Maxim Ivanov and Tom Thorogood for the report.
     * bugfix: [ngx.req.append_body()](https://github.com/openresty/lua-nginx-module#ngxreqappend_body) might enter infinite loops when
 [ngx.req.init_body()](https://github.com/openresty/lua-nginx-module#ngxreqinit_body) has not specified a buffer size and the request
-header `Content-Length` is 0 (or [client_body_buffer_size](http://nginx.org/r/client_body_buffer_size) is configured to 0).
+header `Content-Length` is 0 (or [client_body_buffer_size](https://nginx.org/r/client_body_buffer_size) is configured to 0).
 thanks Hai for the report and Dejiang Zhu for the patch.
     * bugfix: [ngx.re.match](https://github.com/openresty/lua-nginx-module#ngxrematch): the 5th argument hid the 4th one.
 thanks iorichina for the report and rako9000 for the original patch.
@@ -35,7 +35,7 @@ thanks iorichina for the report and rako9000 for the original patch.
     * bugfix: fixed a memory leak in [cert_pem_to_der()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#cert_pem_to_der), caught by valgrind.
     * bugfix: ignore unexpected closing long-brackets in `*_by_lua_block` directives. thanks Thibault Charbonnier for the patch.
     * bugfix: changing peers in [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block)
-might lead to stale values of [$upstream_addr](http://nginx.org/en/docs/http/ngx_http_upstream_module.html#var_upstream_addr).
+might lead to stale values of [$upstream_addr](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#var_upstream_addr).
     * bugfix: clear errors in [ngx.ssl](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#readme)
 and [ngx.ocsp](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ocsp.md#readme) functions to avoid flooding [nginx](nginx.html) error logs. thanks Hamish for the original patch.
     * bugfix: [tcpsock:sslhandshake()](https://github.com/openresty/lua-nginx-module#tcpsocksslhandshake)
@@ -44,7 +44,7 @@ did not correctly check argument count. thanks Ilya Shipitsin for the report.
 accepts up to 5 arguments now (including the object itself).
     * bugfix: assignment to [ngx.status](https://github.com/openresty/lua-nginx-module#ngxstatus)
 might not affect subsequent [ngx.status](https://github.com/openresty/lua-nginx-module#ngxstatus)
-reads when [error_page](http://nginx.org/r/error_page) had already
+reads when [error_page](https://nginx.org/r/error_page) had already
 taken place. thanks wangwei4514 for the report.
     * refactor: refactored the implementation of the [ngx.semaphore](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md#readme) API.
 thanks Weixie Cui for the patch.
@@ -52,7 +52,7 @@ thanks Weixie Cui for the patch.
 * upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core#readme) to 0.1.6.
     * feature: implemented [ngx.worker.id()](https://github.com/openresty/lua-nginx-module#ngxworkerid)
 and [ngx.worker.count()](https://github.com/openresty/lua-nginx-module#ngxworkercount)
-with [FFI](http://luajit.org/ext_ffi.html). thanks Yuansheng Wang for the patch.
+with [FFI](https://luajit.org/ext_ffi.html). thanks Yuansheng Wang for the patch.
     * bugfix: Lua's tail-call optimization might unexpectedly make
 [ngx.semaphore](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md#readme) objects
 get garbage-collected prematurely even when there're still waiters.
@@ -69,7 +69,7 @@ argument of `wait()` in more detail.
     * bugfix: when the `AD` and `CD` bits are set in the DNS responses as per RFC 2065, they would erroneously be treated as a part
 of the error code (`RCODE`). thanks Celebi Lui for the report and patch.
 * upgraded [lua-resty-memcached](https://github.com/openresty/lua-resty-memcached#readme) to 0.14.
-    * optimize: reduced [table.concat()](http://www.lua.org/manual/5.1/manual.html#pdf-table.concat) calls
+    * optimize: reduced [table.concat()](https://www.lua.org/manual/5.1/manual.html#pdf-table.concat) calls
 while constructing memcached requests, which can lead to fewer Lua string creation operations.
     * bugfix: `get()` did not return server error responses. thanks Lorenz Bauer for the report.
     * bugfix: `gets()` did not return server error responses. thanks Lorenz Bauer for the report.
@@ -95,7 +95,7 @@ files in user-specified directories, which can be used by the restydoc tool.
     * imported Mike Pall's latest changes:
         * Rollback due to `HREFK` + load fwd must restore guardemit state.
         * Always merge snapshots without instructions inbetween.
-        * [FFI](http://luajit.org/ext_ffi.html): Parse `#line NN` and `#NN`.
+        * [FFI](https://luajit.org/ext_ffi.html): Parse `#line NN` and `#NN`.
         * MIPS: Switch to dual-number mode. Fix soft-float interpreter.
         * PS4: Switch default build to amalgamated and `LJ_GC64` mode.
         * MIPS: Add soft-float support to JIT compiler backend.
@@ -124,8 +124,8 @@ Enforce 128TB `LJ_GC64` limit for > 47 bit memory layouts (ARM64).
         * Fix GCC 6 -Wmisleading-indentation warnings.
         * Constrain value range of `lj_ir_kptr()` to unsigned 32 bit pointers.
 * upgraded [ngx_srcache](https://github.com/openresty/srcache-nginx-module#readme) to 0.31.
-    * bugfix: this module should not depend on builtin modules like [ngx_http_ssi](http://nginx.org/en/docs/http/ngx_http_ssi_module.html)
-and [ngx_http_addition](http://nginx.org/en/docs/http/ngx_http_addition_module.html) to pull
+    * bugfix: this module should not depend on builtin modules like [ngx_http_ssi](https://nginx.org/en/docs/http/ngx_http_ssi_module.html)
+and [ngx_http_addition](https://nginx.org/en/docs/http/ngx_http_addition_module.html) to pull
 in the ngx_http_postpone module to function properly. thanks Dejiang Zhu for the original patch.
     * feature: this module can now be compiled as a dynamic module with [NGINX](nginx.html) 1.9.11+ via the
 `--with-dynamic-module=PATH` option of `./configure`. thanks Hiroaki Nakamura for the original patch.

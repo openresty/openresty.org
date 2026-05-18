@@ -46,7 +46,7 @@ The following components are bundled by this release:
 
 #  Mainline Version 1.0.5.1rc13 - 1 September 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.2.1rc21.
-    * added the `header_filter_by_lua` and `header_filter_by_lua_file` directives: http://wiki.nginx.org/HttpLuaModule#header_filter_by_lua
+    * added the `header_filter_by_lua` and `header_filter_by_lua_file` directives: https://wiki.nginx.org/HttpLuaModule#header_filter_by_lua
     * fixed issues with HTTP 1.0 HEAD requests.
 * upgraded [Echo Nginx Module](echo-nginx-module.html) to 0.37rc2
     * fixed issues when errors happen in a downstream output filter.
@@ -66,13 +66,13 @@ it by default.
 
 #  Mainline Version 1.0.5.1rc10 - 29 August 2011
 * upgraded [Lua Redis Parser Library](lua-redis-parser-library.html) to 0.09rc5.
-    * added wiki documentation page for this Lua library: http://wiki.nginx.org/LuaRedisParser
-    * added the `typename` method for converting the numeric type values returned by `parse_reply` and `parse_replies` to textual type names: http://wiki.nginx.org/LuaRedisParser#typename
+    * added wiki documentation page for this Lua library: https://wiki.nginx.org/LuaRedisParser
+    * added the `typename` method for converting the numeric type values returned by `parse_reply` and `parse_replies` to textual type names: https://wiki.nginx.org/LuaRedisParser#typename
 
 #  Mainline Version 1.0.5.1rc9 - 27 August 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.2.1rc19.
     * implemented the `o` regex option (i.e., the compile-once flag as Perl's `/o` modifier) for all the `ngx.re.*` API.
-    * added new directive `lua_regex_cache_max_entries` to control the upper limit of the worker-process-level compiled-regex cache enabled by the `o` regex option: http://wiki.nginx.org/HttpLuaModule#lua_regex_cache_max_entries
+    * added new directive `lua_regex_cache_max_entries` to control the upper limit of the worker-process-level compiled-regex cache enabled by the `o` regex option: https://wiki.nginx.org/HttpLuaModule#lua_regex_cache_max_entries
     * now we add `ngx` and `ndk` table into `package.loaded` such that the user can write `local ngx = require 'ngx'` and `local ndk = require 'ndk'`. thanks @Lance.
 
 #  Mainline Version 1.0.5.1rc8 - 26 August 2011
@@ -90,7 +90,7 @@ it by default.
 
 #  Mainline Version 1.0.5.1rc5 - 24 August 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.2.1rc15.
-    * implemented the `ngx.re.gsub()` regex API for Lua: http://wiki.nginx.org/NginxHttpLuaModule#ngx.re.gsub
+    * implemented the `ngx.re.gsub()` regex API for Lua: https://wiki.nginx.org/NginxHttpLuaModule#ngx.re.gsub
 
 #  Mainline Version 1.0.5.1rc4 - 24 August 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.2.1rc14.
@@ -98,22 +98,22 @@ it by default.
 
 #  Mainline Version 1.0.5.1rc3 - 24 August 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.2.1rc13.
-    * implemented the `ngx.re.sub()` regex API for Lua: http://wiki.nginx.org/NginxHttpLuaModule#ngx.re.sub
+    * implemented the `ngx.re.sub()` regex API for Lua: https://wiki.nginx.org/NginxHttpLuaModule#ngx.re.sub
     * added support for anchored match modifier `a` to `ngx.re.match`, `ngx.re.gmatch`, and `ngx.re.sub`.
 * upgraded [Drizzle Nginx Module](drizzle-nginx-module.html) to v0.1.1rc4
-    * added new wiki documentation page: http://wiki.nginx.org/NginxHttpDrizzleModule
+    * added new wiki documentation page: https://wiki.nginx.org/NginxHttpDrizzleModule
     * documented the `$drizzle_thread_id` variable.
     * added lots of debug outputs (enabled by the `--with-debug` option while building [Nginx](nginx.html) or [OpenResty](openresty.html)), inspired by github issue #10.
 
 #  Mainline Version 1.0.5.1rc2 - 18 August 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.2.1rc12.
-    * implemented the `ngx.re.gmatch()` regex API for Lua: http://wiki.nginx.org/NginxHttpLuaModule#ngx.re.gmatch
+    * implemented the `ngx.re.gmatch()` regex API for Lua: https://wiki.nginx.org/NginxHttpLuaModule#ngx.re.gmatch
 
 #  Mainline Version 1.0.5.1rc1 - 17 August 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.2.1rc11.
     * now `ngx.ctx = {...} ` assignment is supported.
     * made setting `ngx.header.HEADER` after sending out response headers throw out a Lua exception to help debugging issues like github issue #49. thanks Bill Donahue (ikhoyo).
-    * implemented the `ngx.re.match()` regex API for Lua: http://wiki.nginx.org/NginxHttpLuaModule#ngx.re.match
+    * implemented the `ngx.re.match()` regex API for Lua: https://wiki.nginx.org/NginxHttpLuaModule#ngx.re.match
 
 #  Stable Release 1.0.5.0 - 16 August 2011
 This release is the same as 1.0.5.0rc7.
@@ -149,7 +149,7 @@ The following components are bundled by this release:
 
 #  Mainline Version 1.0.5.0rc6 - 12 August 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.2.1rc8.
-    * now `ngx.print` and `ngx.say` allow (nested) array-like table arguments. the array elements in them will be sent piece by piece. this will avoid string concatenation for templating engines like [ltp](http://www.savarese.com/software/ltp/).
+    * now `ngx.print` and `ngx.say` allow (nested) array-like table arguments. the array elements in them will be sent piece by piece. this will avoid string concatenation for templating engines like [ltp](https://www.savarese.com/software/ltp/).
 
 #  Mainline Version 1.0.5.0rc5 - 12 August 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to v0.2.1rc7.

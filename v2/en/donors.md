@@ -30,8 +30,8 @@ me and send me your company or personal logos.
 
 ![V Site](/images/v-site2.png)
 
-[![Kugou Music](/images/kugou-music.jpg)](http://www.kugou.com/)
+[![Kugou Music](/images/kugou-music.jpg)](https://www.kugou.com/)
 
 [![Kong](/images/kong-logo.png)](https://www.konghq.com/)
 
-[![Vlion](/images/vlion.png)](http://www.vlion.cn/)
+[![Vlion](/images/vlion.png)](https://www.vlion.cn/)

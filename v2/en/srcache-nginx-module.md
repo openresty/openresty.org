@@ -18,4 +18,4 @@ subrequests used by this module.
 
 Documentation page: https://github.com/agentzh/srcache-nginx-module#readme
 
-Project page: http://github.com/agentzh/srcache-nginx-module
+Project page: https://github.com/agentzh/srcache-nginx-module

@@ -119,10 +119,10 @@ thanks aseiot for the report.
 
 #  Version 1.7.10.1 - 28 February 2015
 * upgraded the [Nginx](nginx.html) core to 1.7.10.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https://nginx.org/en/CHANGES
 * bugfix: applied the upstream_filter_finalize patch to the nginx core to fix
 corrupted `$upstream_response_time` variable values when `filter_finalize` and
-[error_page](http://nginx.org/r/error_page) are both used. thanks Daniel Bento
+[error_page](https://nginx.org/r/error_page) are both used. thanks Daniel Bento
 for the report and Maxim Dounin for the patch.
 * bugfix: ./configure: added `--without-http_upstream_least_conn_module` and
 `--without-http_upstream_keepalive_module` to the usage text (for `--help`)
@@ -146,7 +146,7 @@ cores. thanks Seyhun Cavus for the report.
     * optimize: [header_filter_by_lua*](https://github.com/openresty/lua-nginx-module#header_filter_by_lua): removed a piece of useless code. thanks Zi Lin for the report.
     * doc: emphasized the capability of using nginx variables in the Lua file path in [content_by_lua_file](https://github.com/openresty/lua-nginx-module#content_by_lua_file)/[rewrite_by_lua_file](https://github.com/openresty/lua-nginx-module#content_by_lua_file)/[access_by_lua_file](https://github.com/openresty/lua-nginx-module#access_by_lua).
 * upgraded [Srcache Nginx Module](srcache-nginx-module.html) to 0.29.
-    * bugfix: upon cache hits, we might let the nginx core's header filter module overwrite the `Location` response header's values like "/foo/bar" to the fully-qualified form (like "http://test.com/foo/bar"). thanks AlexClineBB for the report.
+    * bugfix: upon cache hits, we might let the nginx core's header filter module overwrite the `Location` response header's values like "/foo/bar" to the fully-qualified form (like "https://test.com/foo/bar"). thanks AlexClineBB for the report.
 * upgraded [Resty CLI](resty-cli.html) to 0.02.
     * bugfix: we did not explicitly specify the pid file path, which may conflict with the default pid path if the user compiles nginx with the `--pid-path=PATH` ./configure option. thanks fancyrabbit for the report.
 See [ChangeLog 1.7.7](changelog-1007007.html) for change log for [OpenResty](openresty.html) 1.7.7.x.

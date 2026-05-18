@@ -50,7 +50,7 @@ Complete change logs since the last release candidate, [1.15.8.1 RC1](ann-101500
 * bugfix: win32/win64: the error log buffer size was merely 2048 bytes, and is now updated to 4096 bytes.
 * upgraded [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) to 0.10.15.
     * feature: implemented the [lua_load_resty_core](https://github.com/openresty/lua-nginx-module#lua_load_resty_core) directive which loads `resty.core` by default. _Thanks Thibault Charbonnier for the patch._
-    * bugfix: [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme): fixed a segfault when [error_log](http://nginx.org/r/error_log) is configured with syslog. _Thanks spacewander for the patch._
+    * bugfix: [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme): fixed a segfault when [error_log](https://nginx.org/r/error_log) is configured with syslog. _Thanks spacewander for the patch._
     * bugfix: [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme): cleared the pending event after aborting the uthread. _Thanks spacewander for the patch._
 * upgraded [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module#readme) to 0.0.7.
     * feature: implemented the [lua_load_resty_core](https://github.com/openresty/lua-nginx-module#lua_load_resty_core) directive which loads `resty.core` by default. _Thanks Thibault Charbonnier for the patch._

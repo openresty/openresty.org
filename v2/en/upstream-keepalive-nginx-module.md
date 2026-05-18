@@ -15,4 +15,4 @@ connections.
 
 Documentation: https://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive
 
-Project page: http://mdounin.ru/hg/ngx_http_upstream_keepalive/
+Project page: https://mdounin.ru/hg/ngx_http_upstream_keepalive/

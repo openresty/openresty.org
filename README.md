@@ -20,7 +20,7 @@ Description
 
 This repository holds the source code and configurations for the [official OpenResty site](https://openresty.org/).
 
-This site is a dynamic web application built entirely upon the OpenResty stack, backed by the [PostgreSQL](http://www.postgresql.org/)
+This site is a dynamic web application built entirely upon the OpenResty stack, backed by the [PostgreSQL](https://www.postgresql.org/)
 database management system.
 
 The latest generation of this site is under the `v2/` directory of this repository.
@@ -28,9 +28,9 @@ The latest generation of this site is under the `v2/` directory of this reposito
 Building
 ========
 
-You need to install both OpenResty and [PostgreSQL](http://www.postgresql.org/) 9.x, obviously.
+You need to install both OpenResty and [PostgreSQL](https://www.postgresql.org/) 9.x, obviously.
 
-You need to install [pandoc](http://pandoc.org/), [marked](https://marked.js.org/), [cheerio](http://www.npmjs.com/package/cheerio), [axios](https://www.axios.com/), [pug](https://pugjs.org) and [sharp](https://www.npmjs.com/package/sharp) to your system.
+You need to install [pandoc](https://pandoc.org/), [marked](https://marked.js.org/), [cheerio](https://www.npmjs.com/package/cheerio), [axios](https://www.axios.com/), [pug](https://pugjs.org) and [sharp](https://www.npmjs.com/package/sharp) to your system.
 On Mac OS X, for example, it's as simple as
 
 ```bash

@@ -19,7 +19,7 @@ domain names (with a trailing dot).
 * optimize: shortened the `Server` response header string "ngx_openresty" to
 "openresty".
 * upgraded the [Nginx](nginx.html) core to 1.5.8.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https:///nginx.org/en/CHANGES
 * upgraded [LuaJIT](luajit.html) to v2.1-20140109.
     * bugfix: fixed ABC (Array Bounds Check) elimination. (Mike Pall)
     * bugfix: fixed MinGW build. (Mike Pall)

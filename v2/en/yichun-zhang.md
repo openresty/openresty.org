@@ -10,4 +10,4 @@
 
 agentzh, 章亦春, the maintainer of this OpenResty bundle.
 
-Homepage: http://agentzh.org
+Homepage: https://agentzh.org

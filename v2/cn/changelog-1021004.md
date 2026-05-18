@@ -195,7 +195,7 @@
 # Version 1.21.4.1 - 18 May 2022
 
 * upgraded the [nginx](nginx.html) core to 1.21.4.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https://nginx.org/en/CHANGES
 
 * win32/win64: upgraded zlib to 1.2.12.
 * win32/win64: upgraded OpenSSL to 1.1.1n.
@@ -295,7 +295,7 @@
     * MIPS64: Fix soft-float IR_TOSTR.
     * MIPS: Fix register allocation in assembly of HREF.
     * Windows/x64: Document MSVC flags for C++ exception interoperability.
-    * [FFI](http://luajit.org/ext_ffi.html): Ensure returned string is alive in ffi.typeinfo().
+    * [FFI](https://luajit.org/ext_ffi.html): Ensure returned string is alive in ffi.typeinfo().
     * bugfix: fixed merge error which was introduced by commit 63dee93f4e. _Thanks lijunlong for the patch._
     * OSX/ARM64: Disable unwind info.
     * Fix stack allocation after on-trace stack check.
@@ -303,8 +303,8 @@
     * Ensure ITERN forward progress on interpreter bailout.
     * ARM64: Reorder interpreter stack frame and fix unwinding.
     * Don't bail out to interpreter to JLOOP originating from ITERN.
-    * [FFI](http://luajit.org/ext_ffi.html): Don't load PC from non-function object in [FFI](http://luajit.org/ext_ffi.html) continuation.
-    * [FFI](http://luajit.org/ext_ffi.html): Fix missing cts->L initialization in argv2ctype().
+    * [FFI](https://luajit.org/ext_ffi.html): Don't load PC from non-function object in [FFI](https://luajit.org/ext_ffi.html) continuation.
+    * [FFI](https://luajit.org/ext_ffi.html): Fix missing cts->L initialization in argv2ctype().
     * OSX/ARM64: Disable external unwinding for now.
     * Compile table traversals: next(), pairs(), BC_ISNEXT/BC_ITERN. This work sponsored by OpenResty INC.
     * Use IR_HIOP for generalized two-register returns.
@@ -336,10 +336,10 @@
     * Fix MinGW static build.
     * Fix dependencies.
     * Fix IR_BUFHDR assembly.
-    * [FFI](http://luajit.org/ext_ffi.html): Support [FFI](http://luajit.org/ext_ffi.html) numbers in string.format() and buf:putf().
+    * [FFI](https://luajit.org/ext_ffi.html): Support [FFI](https://luajit.org/ext_ffi.html) numbers in string.format() and buf:putf().
     * ARM64: More improvements to the generation of immediates.
-    * Abstract out on-demand loading of [FFI](http://luajit.org/ext_ffi.html) library.
-    * [FFI](http://luajit.org/ext_ffi.html): Fix dangling reference to CType.
+    * Abstract out on-demand loading of [FFI](https://luajit.org/ext_ffi.html) library.
+    * [FFI](https://luajit.org/ext_ffi.html): Fix dangling reference to CType.
     * PPC/PS3: Fix BC_ADD*/BC_SUB*.
     * Fix use-def analysis for vararg functions.
     * Fix use-def analysis for BC_VARG.
@@ -360,7 +360,7 @@
     * OSX: Fix build by hardcoding external frame unwinding.
     * Reorganize lightuserdata interning code.
     * Upgrade docs to HTML5. It's about time.
-    * [FFI](http://luajit.org/ext_ffi.html): Handle zero-fill of struct-of-NYI.
+    * [FFI](https://luajit.org/ext_ffi.html): Handle zero-fill of struct-of-NYI.
     * ARM64: Improve generation of immediates.
     * Detect inconsistent renames even in the presence of sunk values.
     * Handle on-trace OOM errors from helper functions.

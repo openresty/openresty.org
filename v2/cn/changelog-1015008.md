@@ -21,7 +21,7 @@ See the [HackerOne report](https://hackerone.com/reports/513236) for more detail
 # Version 1.15.8.1 - 16 May 2019
 
 * upgraded the [nginx](nginx.html) core to 1.15.8.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https://nginx.org/en/CHANGES
 * change: we now enable the GC64 mode by default in our bundled [LuaJIT](https://github.com/openresty/luajit2#readme) build for x86_64 architectures; this can be disabled using `--without-luajit-gc64`. _Thanks Thibault Charbonnier for the patch._
 * feature: bundled the [lua-tablepool](https://github.com/openresty/lua-tablepool#readme) library.
 * feature: bundled the [lua-resty-signal](https://github.com/openresty/lua-resty-signal#readme) library. _Thanks [OpenResty Inc.](https://openresty.com/) for supporting this work._
@@ -42,8 +42,8 @@ See the [HackerOne report](https://hackerone.com/reports/513236) for more detail
     * feature: implemented the [tcpsock:receiveany()](https://github.com/openresty/lua-nginx-module#tcpsockreceiveany) upstream cosocket API. _Thanks spacewander for the patch._
     * feature: added support for the [nginx](nginx.html) builtin Link header, which allows for specifying multiple values for this header. _Thanks tokers and Thibault Charbonnier for the patch._
     * feature: errors are now logged when timers fail to run. _Thanks spacewander for the patch._
-    * feature: added an [FFI](http://luajit.org/ext_ffi.html) API to support the [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme) API provided by [lua-resty-core](https://github.com/openresty/lua-resty-core#readme). _Thanks [OpenResty Inc.](https://openresty.com/) for supporting this work and spacewander for the development of the patch._
-    * feature: added an [FFI](http://luajit.org/ext_ffi.html) API for retrieving `env` directives values from [init_by_lua*](https://github.com/openresty/lua-nginx-module#init_by_lua). _Thanks Thibault Charbonnier for the patch._
+    * feature: added an [FFI](https://luajit.org/ext_ffi.html) API to support the [ngx.pipe](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/pipe.md#readme) API provided by [lua-resty-core](https://github.com/openresty/lua-resty-core#readme). _Thanks [OpenResty Inc.](https://openresty.com/) for supporting this work and spacewander for the development of the patch._
+    * feature: added an [FFI](https://luajit.org/ext_ffi.html) API for retrieving `env` directives values from [init_by_lua*](https://github.com/openresty/lua-nginx-module#init_by_lua). _Thanks Thibault Charbonnier for the patch._
     * change: we no longer support the standard Lua 5.1 interpreter (PUC-Rio Lua). It is now strongly recommended to use the OpenResty [LuaJIT](https://github.com/openresty/luajit2#readme) releases, bundled with the official OpenResty releases.
     * change: we now avoid running [init_by_lua*](https://github.com/openresty/lua-nginx-module#init_by_lua) in signaller processes and when testing the [nginx](nginx.html) configuration. _Thanks spacewander for the patch._
     * change: we now print an alert when a non openresty-specific version of [LuaJIT](https://github.com/openresty/luajit2#readme) is detected since many optimizations would be missing. _Thanks Thibault Charbonnier for the patch._
@@ -69,7 +69,7 @@ See the [HackerOne report](https://hackerone.com/reports/513236) for more detail
     * feature: enabled resty.core.shdict support. _Thanks Datong Sun for the patch._
     * feature: enabled [ngx.semaphore](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/semaphore.md#readme) support. _Thanks Datong Sun for the patch._
     * feature: enabled [ngx.errlog](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#readme) support. _Thanks Thibault Charbonnier for the patch._
-    * feature: added an [FFI](http://luajit.org/ext_ffi.html) API for retrieving `env` directives values from [init_by_lua*](https://github.com/openresty/lua-nginx-module#init_by_lua). _Thanks Thibault Charbonnier for the patch._
+    * feature: added an [FFI](https://luajit.org/ext_ffi.html) API for retrieving `env` directives values from [init_by_lua*](https://github.com/openresty/lua-nginx-module#init_by_lua). _Thanks Thibault Charbonnier for the patch._
     * change: we now avoid running [init_by_lua*](https://github.com/openresty/lua-nginx-module#init_by_lua) in signaller processes and when testing the [nginx](nginx.html) configuration. _Thanks Thibault Charbonnier for the patch._
     * change: we now print an alert when a non openresty-specific version of [LuaJIT](https://github.com/openresty/luajit2#readme) is detected since many optimizations would be missing. _Thanks Thibault Charbonnier for the patch._
     * misc: re-rendered all files to include newly added template header. _Thanks Datong Sun for the patch._
@@ -85,7 +85,7 @@ See the [HackerOne report](https://hackerone.com/reports/513236) for more detail
     * change: we now require OpenResty's [LuaJIT](https://github.com/openresty/luajit2#readme) branch to work properly on ARM64 since we make use of the [thread.exdata](https://github.com/openresty/luajit2#threadexdata) Lua API.
     * change: increased stack level on subsystem violation error to expose the offending module. _Thanks Datong Sun for the patch._
     * change: updated calls to `error()` to be thrown from the user's stack level. _Thanks Thibault Charbonnier for the patch._
-    * feature: implemented the `ndk.*` API with [FFI](http://luajit.org/ext_ffi.html).
+    * feature: implemented the `ndk.*` API with [FFI](https://luajit.org/ext_ffi.html).
     * bugfix: ensured `resty.core` can be loaded in [nginx](https://openresty.org/en/nginx.html) < 1.11.7. _Thanks Thibault Charbonnier for the patch._
     * bugfix: ensured `resty.core` can be loaded in binaries without PCRE support. _Thanks Thibault Charbonnier for the patch._
     * bugfix: regex: disabled PCRE JIT compilation and regex caching in [init_by_lua*](https://github.com/openresty/lua-nginx-module#init_by_lua) when running on macOS. _Thanks Datong Sun for the patch.
@@ -134,9 +134,9 @@ See the [HackerOne report](https://hackerone.com/reports/513236) for more detail
         * DynASM/x86: Add FMA3 instructions.
         * PPC/NetBSD: Fix endianess check.
         * x86/x64: Check for jcc when using xor r,r in emit_loadi().
-        * [FFI](http://luajit.org/ext_ffi.html): Make FP to U64 conversions match JIT backend behavior.
+        * [FFI](https://luajit.org/ext_ffi.html): Make FP to U64 conversions match JIT backend behavior.
         * Bump copyright date to 2018.
-        * [FFI](http://luajit.org/ext_ffi.html): Add tonumber() specialization for failed conversions.
+        * [FFI](https://luajit.org/ext_ffi.html): Add tonumber() specialization for failed conversions.
         * Give expected results for negative non-base-10 numbers in tonumber().
 * upgraded [lua-resty-lrucache](https://github.com/openresty/lua-resty-lrucache#readme) to 0.09.
     * optimize: fixed misuses of Lua global variables in our Lua code (caught by the new version of the lj-releng tool).

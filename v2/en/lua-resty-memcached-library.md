@@ -8,7 +8,7 @@
     @changes       4
 --->
 
-Lua [Memcached](http://memcached.org/) client driver for [Lua Nginx Module](lua-nginx-module.html) based
+Lua [Memcached](https://memcached.org/) client driver for [Lua Nginx Module](lua-nginx-module.html) based
 on the cosocket API.
 
 Project homepage: https://github.com/agentzh/lua-resty-memcached

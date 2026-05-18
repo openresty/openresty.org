@@ -110,7 +110,7 @@ the current working directory.
 We can use curl to access our new web service that says HelloWorld:
 
 ```
-curl http://localhost:8080/
+curl https://localhost:8080/
 ```
 
 If everything is okay, we should get the output
@@ -119,7 +119,7 @@ If everything is okay, we should get the output
 <p>hello, world</p>
 ```
 
-You can surely point your favorite web browser to the location `http://localhost:8080/`.
+You can surely point your favorite web browser to the location `https://localhost:8080/`.
 
 ## Test performance
 See [Benchmark](benchmark.html) for details.
@@ -128,4 +128,4 @@ See [Benchmark](benchmark.html) for details.
 # Where to go from here
 
 View the documentation of each component at the [Components](components.html) page
-and find [Nginx](nginx.html) related stuff on the [Nginx Wiki site](http://wiki.nginx.org/).
+and find [Nginx](nginx.html) related stuff on the [Nginx Wiki site](https://wiki.nginx.org/).

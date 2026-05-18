@@ -7,7 +7,7 @@
 
 #  Version 1.7.0.1 - 7 June 2014
 * upgraded the [Nginx](nginx.html) core to 1.7.0.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https:///nginx.org/en/CHANGES
 * feature: bundled new Lua library, [Lua Resty Lrucache Library](lua-resty-lrucache-library.html),
 which is also enabled by default. see https://github.com/openresty/lua-resty-lrucache#readme
 for more details. thanks Shuxin Yang for the help.
@@ -56,6 +56,6 @@ for more details. thanks Shuxin Yang for the help.
 versions of the nginx core already have it. thanks LazyZhu for the report.
 * bugfix: applied our patch for the nginx core to fix the long standing memory
 fragmentation issue for blocks larger than the page size in the nginx slab allocator:
-http://mailman.nginx.org/pipermail/nginx-devel/2014-May/005316.html thanks Shuxin
+https:///mailman.nginx.org/pipermail/nginx-devel/2014-May/005316.html thanks Shuxin
 Yang for the help.
 See [ChangeLog 1.5.12](changelog-1005012.html) for change log for [OpenResty](openresty.html) 1.5.12.x.

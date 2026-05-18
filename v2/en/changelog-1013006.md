@@ -8,11 +8,11 @@
 * win32: now we build our official 32-bit Windows binary packages for OpenResty using the MSYS2/MinGW toolchain.
 * win32: upgraded pcre to 8.42 and openssl to 1.1.0h.
 * optimize: now the openresty build system (`./configure`) automatically patches the resty command-line utility to use its own [nginx](nginx.html) binary so that it does not have to compute it at runtime (which is a bit expensive). this saves about 10ms (from for total 20ms to 10ms) for resty's startup time, as measured on a mid-2015 MBP. That's 50% reduction in total startup time! Yay!
-* win32/win64: enabled [ngx_stream_ssl_preread_module](http://nginx.org/en/docs/stream/ngx_stream_ssl_preread_module.html) in our binary builds.
+* win32/win64: enabled [ngx_stream_ssl_preread_module](https:///nginx.org/en/docs/stream/ngx_stream_ssl_preread_module.html) in our binary builds.
 * bugfix: ./configure: relative paths in --add-dynamic-module=PATH option did not work. thanks catatsuy for the patch.
 * feature: added a patch for the [nginx](nginx.html) core to add the `local=on` and `local=/path/to/resolv.conf` options to the standard "resolver" config directive.  This can enable the use of system-level nameserver configurations of /etc/resolv.conf, for example, in nginx's own nonblocking DNS resolver. thanks Datong Sun for the patch.
 * feature: added the `socket_cloexec` patch to ensure most of the [nginx](nginx.html) connections could be closed before child process terminates. thanks spacewander for the patch.
-* feature: added patches to the [nginx](nginx.html) core to make sure [ngx_stream_ssl_preread_module](http://nginx.org/en/docs/stream/ngx_stream_ssl_preread_module.html) will not skip the rest of the preread phase when SNI server name parsing was successful. thanks Datong Sun for the patch.
+* feature: added patches to the [nginx](nginx.html) core to make sure [ngx_stream_ssl_preread_module](https:///nginx.org/en/docs/stream/ngx_stream_ssl_preread_module.html) will not skip the rest of the preread phase when SNI server name parsing was successful. thanks Datong Sun for the patch.
 * feature: ./configure: updated the stream subsystem related options from [nginx](nginx.html) 1.13.6. thanks hy05190134 for the patch.
 * feature: added the SSL `sess_set_get_cb` yielding support patch for OpenSSL 1.1.0d and beyond. thanks spacewander for the patch.
 * feature: applied the `init_cycle_pool_release` patch to [nginx](nginx.html) 1.13.6+ cores to make it valgrind or asan clean.
@@ -45,7 +45,7 @@
     * bugfix: we did not always free up all connections when cleaning up socket pools. thanks spacewander for the patch.
     * bugfix: use of lua-resty-core's [ngx.re](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#readme) API in [init_by_lua*](https://github.com/openresty/lua-nginx-module#init_by_lua) might lead to memory issues during [nginx](nginx.html) HUP reload when no [lua_shared_dict](https://github.com/openresty/lua-nginx-module#lua_shared_dict) directives are used and the regex cache is enabled.
     * change: switched to `SSL_version()` calls from `TLS1_get_version()`. `TLS1_get_version` is a simple wrapper for `SSL_version` that returns 0 when used with DTLS. However, it was removed from BoringSSL in 2015 so instead use `SSL_version` directly. Note: BoringSSL is never an officially supported target for this module. `ngx_http_lua_ffi_ssl_get_tls1_version` can never be reached with DTLS so the behaviour is the same. thanks Tom Thorogood for the patch.
-    * optimize: switched exptime argument type to 'long' in the shdict [FFI](http://luajit.org/ext_ffi.html) API to mitigate potential overflows. thanks Thibault Charbonnier for the patch.
+    * optimize: switched exptime argument type to 'long' in the shdict [FFI](https:///luajit.org/ext_ffi.html) API to mitigate potential overflows. thanks Thibault Charbonnier for the patch.
     * optimize: avoided the string copy in `ngx_http_lua_ffi_req_get_method_name()`.
     * optimize: corrected the initial table size of req socket objects. thanks spacewander for the patch.
     * optimize: destroy the Lua VM and avoid running any [init_worker_by_lua*](https://github.com/openresty/lua-nginx-module#init_worker_by_lua) code inside cache helper processes. thanks spacewander for the patch.
@@ -58,7 +58,7 @@
     * doc: fixed a typo in a code comment. thanks Alex Zhang for the patch.
 * upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core#readme) to 0.1.15.
     * feature: implemented [ngx.resp](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/resp.md#readme) module and its function add_header(). The [ngx.resp](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/resp.md#readme) module's `add_header` works like the `add_header` [Nginx](nginx.html) directive.  Unlike the `ngx.header.HEADER=` API, this method appends new header to the old one instead of overriding any existing ones.  Unlike the `add_header` directive, this method overrides the builtin header instead of appending to it. thanks spacewander for the patch.
-    * feature: the [FFI](http://luajit.org/ext_ffi.html) version of the [ngx.req.get_uri_args()](https://github.com/openresty/lua-nginx-module#ngxreqget_uri_args) and [ngx.req.get_headers()](https://github.com/openresty/lua-nginx-module#ngxreqget_headers) API functions now would return an error string, "truncated", when the input exceeds the `max_args`/`max_headers` limits.
+    * feature: the [FFI](https:///luajit.org/ext_ffi.html) version of the [ngx.req.get_uri_args()](https://github.com/openresty/lua-nginx-module#ngxreqget_uri_args) and [ngx.req.get_headers()](https://github.com/openresty/lua-nginx-module#ngxreqget_headers) API functions now would return an error string, "truncated", when the input exceeds the `max_args`/`max_headers` limits.
     * bugfix: [ngx.re](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#readme): fixed a `split()` corner case when successtive separator characters are at the end of the subject string.
     * bugfix: shdict: switched exptime argument type to 'long' to mitigate potential overflows.
     * bugfix: [ngx.ssl.session](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl/session.md#readme): avoided memory leaks when calling set_serialized_session repeatly. thanks spacewander for the patch.
@@ -66,14 +66,14 @@
     * change: replaced `return error()` with `error()` to avoid stack unwinding upon Lua exceptions. this should give much better Lua backtrace for the errors. thanks spacewander for the patch.
     * bugfix: [ngx.re](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#readme): fixed a split() edge-case when using control characters in the regex. thanks Thibault Charbonnier for the patch.
     * feature: [shdict:incr](https://github.com/openresty/lua-nginx-module#ngxshareddictincr)(): added the "init_ttl" argument to set the ttl of values when they are first created via the "init" argument. thanks Thibault Charbonnier for the patch.
-    * feature: re-implemented the remaining time related Lua APIs with [FFI](http://luajit.org/ext_ffi.html) (like ngx.update_time, ngx.http_time, ngx.parse_http_time, and etc.). thanks spacewander for the patch.
+    * feature: re-implemented the remaining time related Lua APIs with [FFI](https:///luajit.org/ext_ffi.html) (like ngx.update_time, ngx.http_time, ngx.parse_http_time, and etc.). thanks spacewander for the patch.
     * feature: [ngx.errlog](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/errlog.md#readme): added the raw_log() API function to allow the building of custom logging facilities. thanks Thibault Charbonnier for the patch.
     * feature: added new API function `get_master_pid()` to the [ngx.process](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/process.md#readme) module. thanks chronolaw for the patch.
     * doc: typo fixes from chronolaw.
-    * feature: added new resty.core.phase module to include the pure [FFI](http://luajit.org/ext_ffi.html) version of the [ngx.get_phase()](https://github.com/openresty/lua-nginx-module#ngxget_phase) API. thanks Robert Paprocki for the patch.
+    * feature: added new resty.core.phase module to include the pure [FFI](https:///luajit.org/ext_ffi.html) version of the [ngx.get_phase()](https://github.com/openresty/lua-nginx-module#ngxget_phase) API. thanks Robert Paprocki for the patch.
     * feature: added new ngx.base64 Lua module with the functions encode_base64url() and decode_base64url(). thanks Datong Sn for the patch.
     * bugfix: resty.core.var: ngx.var.VAR assignment might over-read the error msg buffer. thanks Ka-Hing Cheung for the patch.
-    * optimize: use plain text [string.find](http://www.lua.org/manual/5.1/manual.html#pdf-string.find) calls when we mean it.
+    * optimize: use plain text [string.find](https:///www.lua.org/manual/5.1/manual.html#pdf-string.find) calls when we mean it.
     * feature: [ngx.ssl](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md#readme): added new raw_client_addr() Lua API function. thanks 王军伟 for the patch.
 * upgraded [lua-cjson](https://github.com/openresty/lua-cjson#readme) to 2.1.0.6.
     * optimize: improved forward-compatibility with older versions of Lua/LuaJIT. thanks Thibault Charbonnier for the patch.
@@ -127,7 +127,7 @@
         * Fix rechaining of pseudo-resurrected string keys.
         * Clear stack after `print_jit_status()` in CLI.
         * Fix GCC 7 `-Wimplicit-fallthrough` warnings.
-        * [FFI](http://luajit.org/ext_ffi.html): Don't assert on `#1LL` (Lua 5.2 compatibility mode only).
+        * [FFI](https:///luajit.org/ext_ffi.html): Don't assert on `#1LL` (Lua 5.2 compatibility mode only).
         * MIPS64: Fix soft-float +-0.0 vs. +-0.0 comparison.
         * Fix LuaJIT API docs for `LUAJIT_MODE_*`.
         * Fix ARMv8 (32 bit subset) detection.
@@ -143,7 +143,7 @@
 # Version 1.13.6.1 - 13 November 2017
 
 * upgraded the [Nginx](nginx.html) core to 1.13.6.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https:///nginx.org/en/CHANGES
 * bundled the new component, [ngx_stream_lua_module](https://github.com/openresty/stream-lua-nginx-module) 0.0.4, which is also enabled by default. One can disable this 3rd-party [Nginx](nginx.html) C module by passing `--without-stream_lua_module` to the `./configure` script. We provide compatible Lua API with [ngx_lua](https://github.com/openresty/lua-nginx-module#readme) wherever it makes sense. Currently we support [content_by_lua*](https://github.com/openresty/lua-nginx-module#content_by_lua), preread_by_lua* (similar to [ngx_lua](https://github.com/openresty/lua-nginx-module#readme)'s [access_by_lua*](https://github.com/openresty/lua-nginx-module#access_by_lua) ), [log_by_lua*](https://github.com/openresty/lua-nginx-module#log_by_lua), and [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block) in the stream subsystem. thanks Mashape Inc. for sponsoring the [OpenResty Inc.](https://openresty.com) team to do the development work on rewriting [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module#readme) for recent [nginx](nginx.html) core version.
 * change: applied a patch to the [nginx](nginx.html) core to make sure the "server" header in HTTP/2 response shows "openresty" when the `server_tokens` diretive is turned off.
 * feature: added [nginx](nginx.html) core patches needed by [ngx_stream_lua_module](https://github.com/openresty/stream-lua-nginx-module#readme)'s [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block).
@@ -159,11 +159,11 @@
     * bugfix: [tcpsock:settimeout](https://github.com/openresty/lua-nginx-module#tcpsocksettimeout), [tcpsock:settimeouts](https://github.com/openresty/lua-nginx-module#tcpsocksettimeouts): throws an error when the timeout argument values overflow. Here we only support timeout values no greater than the max value of a 32 bits integer. thanks spacewander for the patch.
     * doc: added "413 Request Entity Too Large" to the possible short circuit response list. thanks Datong Sun for the patch.
 * upgraded [lua-resty-core](https://github.com/openresty/lua-resty-core#readme) to 0.1.13.
-    * feature: [ngx.balancer](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/balancer.md#readme) now supports the [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module#readme); also disabled all the other [FFI](http://luajit.org/ext_ffi.html) APIs for the stream subsystem for now.
+    * feature: [ngx.balancer](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/balancer.md#readme) now supports the [ngx_stream_lua](https://github.com/openresty/stream-lua-nginx-module#readme); also disabled all the other [FFI](https:///luajit.org/ext_ffi.html) APIs for the stream subsystem for now.
     * feature: [resty.core.shdict](https://github.com/openresty/lua-resty-core/blob/master/lib/resty/core/shdict.md#readme): added new methods [shdict:free_space](https://github.com/openresty/lua-nginx-module#ngxshareddictfree_space)() and [shdict:capacity](https://github.com/openresty/lua-nginx-module#ngxshareddictcapacity)(). thanks Hiroaki Nakamura for the patch.
-    * feature: implemented the [ngx.re.gmatch](https://github.com/openresty/lua-nginx-module#ngxregmatch) function with [FFI](http://luajit.org/ext_ffi.html). thanks spacewander for the patch.
+    * feature: implemented the [ngx.re.gmatch](https://github.com/openresty/lua-nginx-module#ngxregmatch) function with [FFI](https:///luajit.org/ext_ffi.html). thanks spacewander for the patch.
     * bugfix: [ngx.re](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#readme): fix an edge-case where [re.split()](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/re.md#split) might not destroy compiled regexes. thanks Thibault Charbonnier for the patch.
-    * feature: implemented the [shdict:ttl](https://github.com/openresty/lua-nginx-module#ngxshareddictttl)() and [shdict:expire](https://github.com/openresty/lua-nginx-module#ngxshareddictexpire)() API functions using [FFI](http://luajit.org/ext_ffi.html).
+    * feature: implemented the [shdict:ttl](https://github.com/openresty/lua-nginx-module#ngxshareddictttl)() and [shdict:expire](https://github.com/openresty/lua-nginx-module#ngxshareddictexpire)() API functions using [FFI](https:///luajit.org/ext_ffi.html).
 * upgraded [lua-resty-dns](https://github.com/openresty/lua-resty-dns#readme) to 0.20.
     * feature: allows `RRTYPE` values larger than 255. thanks Peter Wu for the patch.
 * upgraded [lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic#readme) to 0.05.

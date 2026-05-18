@@ -19,6 +19,6 @@ This module is not enabled by default, and you need to specify the `--with-http_
 while [building OpenResty](installation.html). This [Nginx](nginx.html) module
 requires libiconv to be installed into your system.
 
-Use cases: http://forum.nginx.org/read.php?2,206658,207119
+Use cases: https://forum.nginx.org/read.php?2,206658,207119
 
 Project page: https://github.com/calio/iconv-nginx-module

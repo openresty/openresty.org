@@ -11,4 +11,4 @@
 我们在亚马逊EC2的集群中,运行有针对所有组件的回归测试（包含其他第三方[Nginx](nginx.html)模块）。
 最新的测试报告可以随时到此查阅：
 
-http://qa.openresty.org/
+https://qa.openresty.org/

@@ -73,7 +73,7 @@ brew install openresty/brew/openresty
 brew untap homebrew/nginx
 ```
 
-推荐您使用一些软件管理工具先安装PCRE, 比如说 [Homebrew](http://mxcl.github.com/homebrew/):
+推荐您使用一些软件管理工具先安装PCRE, 比如说 [Homebrew](https://mxcl.github.com/homebrew/):
 
 ```bash
 brew update

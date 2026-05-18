@@ -10,7 +10,7 @@
 
 [LuaJIT](luajit.html) is a Just-In-Time Compiler for the Lua programming language.
 
-Homepage: http://luajit.org/luajit.html
+Homepage: https://luajit.org/luajit.html
 
 [LuaJIT](luajit.html) is enabled by default since [OpenResty](openresty.html) 1.5.8.1.
 Please explicitly specify the `--with-luajit` option while configuring [OpenResty](openresty.html) older

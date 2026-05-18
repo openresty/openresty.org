@@ -12,7 +12,7 @@
 
 使用 LuaRocks
 
-这个示例中展示了在 [OpenResty](openresty.html) 中使用 [LuaRocks](http://www.luarocks.org/) 。这个示例已经在
+这个示例中展示了在 [OpenResty](openresty.html) 中使用 [LuaRocks](https://www.luarocks.org/) 。这个示例已经在
 Linux 和 Mac OS X 下，通过 Lua 解释器与 [LuaJIT](luajit.html) 的测试。
 
 LuaRocks 是一个部署和管理 Lua 模块的系统。
@@ -23,7 +23,7 @@ LuaRocks 是一个部署和管理 Lua 模块的系统。
 #  安装 LuaRocks
 首先让我们来安装 LuaRocks:
 
-请您从 http://www.luarocks.org/en/Download 下载最新版本的 LuaRocks
+请您从 https://www.luarocks.org/en/Download 下载最新版本的 LuaRocks
 . 当写这篇文章的时候,最新版本为 `2.0.4.1`（译注：目前最新版本已经更新到了2.0.5）,
 在这个示例中我们将使用这个版本。（译注:如果您在安装了2.0.6版本的
 LuaRocks，请记得填写正确的Lua解释器的地址,无论您使用 Lua
@@ -31,7 +31,7 @@ LuaRocks，请记得填写正确的Lua解释器的地址,无论您使用 Lua
 能找到它,否则 LuaRocks 可能报错）
 
 ```
-wget http://luarocks.org/releases/luarocks-2.0.4.1.tar.gz
+wget https://luarocks.org/releases/luarocks-2.0.4.1.tar.gz
 tar -xzvf luarocks-2.0.4.1.tar.gz
 cd luarocks-2.0.4.1/
 ./configure
@@ -137,7 +137,7 @@ ulimit -n1024   # increase the maximal fd count limit per process
 现在我们通过`curl` 工具或者任意兼容HTTP协议的浏览器测试我们的应用:
 
 ```
-curl http://localhost/luarocks
+curl https://localhost/luarocks
 ```
 
 我们在第一次运行的时候得到以下的内容:
@@ -160,7 +160,7 @@ bar loaded
 现在，让我们来做一些基准测试吧:
 
 ```
-ab -c10 -n50000 http://127.0.0.1/luarocks
+ab -c10 -n50000 https://127.0.0.1/luarocks
 ```
 
 测试在是我的 Thinkpad T400 笔记本上进行的(Core2Duo T9600 CPU),

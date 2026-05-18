@@ -15,5 +15,5 @@ This is an enhanced version of the standard headers module because it provides
 more utilities like resetting or clearing "builtin headers" like Content-Type,
 Content-Length, and Server. 
 
-Documentation: http://wiki.nginx.org/HttpHeadersMoreModule
-Project page: http://github.com/agentzh/headers-more-nginx-module
+Documentation: https://wiki.nginx.org/HttpHeadersMoreModule
+Project page: https://github.com/agentzh/headers-more-nginx-module

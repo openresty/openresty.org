@@ -53,6 +53,6 @@ cd /path/to/ngx_openresty-VERSION/
 ```
 
 
-Documentation page: http://wiki.nginx.org/HttpDrizzleModule
+Documentation page: https://wiki.nginx.org/HttpDrizzleModule
 
 Project page: https://github.com/openresty/drizzle-nginx-module

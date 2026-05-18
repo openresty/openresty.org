@@ -16,7 +16,7 @@ it does tell us where the ceiling is.
 The HelloWorld server based on [OpenResty](openresty.html) is described in the
 [GettingStarted](getting-started.html) document.
 
-Below is the result using the command `http_load -p 10 -s 5 http://localhost:8080/` on
+Below is the result using the command `http_load -p 10 -s 5 https://localhost:8080/` on
 my ThinkPad T400 laptop with ngx_openresty 1.0.10.1:
 
 ```
@@ -46,7 +46,7 @@ HTTP response codes:
   code 200 -- 29703
 ```
 
-And [node.js](http://nodejs.org/) v0.6.1 yields 10k r/s:
+And [node.js](https://nodejs.org/) v0.6.1 yields 10k r/s:
 
 ```
 51206 fetches, 10 max parallel, 614472 bytes, in 5 seconds
@@ -65,12 +65,12 @@ The memory footprint of the `node` process under load is 629m  VIRT, 50m RES.
 Note that Mac OS X Lion has known issues that need to be fixed on your system
 before attempting to replicate our benchmark results.
 
-In brief, raise the number of  available ephemeral ports using [this fix](http://serverfault.com/questions/145907/does-mac-os-x-throttle-the-rate-of-socket-creation).
+In brief, raise the number of  available ephemeral ports using [this fix](https://serverfault.com/questions/145907/does-mac-os-x-throttle-the-rate-of-socket-creation).
 
-Compile an up-to-date version of ab (Apache's benchmark tool) according to [this post](http://superuser.com/questions/323840/apache-bench-test-erroron-os-x-apr-socket-recv-connection-reset-by-peer-54).
+Compile an up-to-date version of ab (Apache's benchmark tool) according to [this post](https://superuser.com/questions/323840/apache-bench-test-erroron-os-x-apr-socket-recv-connection-reset-by-peer-54).
 
-Then, `ab -k -c10 -n10000 -t1 -r 'http://127.0.0.1:8080/'` will deliver benchmark
+Then, `ab -k -c10 -n10000 -t1 -r 'https://127.0.0.1:8080/'` will deliver benchmark
 results.
 
-Otherwise use an alternative lightweight HTTP load-testing tool [weighttp](http://redmine.lighttpd.net/projects/weighttp/wiki) and
-the invocation `weighttp -k -c10 -n10000 'http://127.0.0.1:8080/'` for benchmarking.
+Otherwise use an alternative lightweight HTTP load-testing tool [weighttp](https://redmine.lighttpd.net/projects/weighttp/wiki) and
+the invocation `weighttp -k -c10 -n10000 'https://127.0.0.1:8080/'` for benchmarking.

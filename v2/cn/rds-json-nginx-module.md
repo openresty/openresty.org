@@ -11,4 +11,4 @@
 This is an output filter module that formats Resty DBD Streams (RDS) generated
 by ngx_drizzle and others to JSON streams.
 
-Project page: http://github.com/agentzh/rds-json-nginx-module
+Project page: https://github.com/agentzh/rds-json-nginx-module

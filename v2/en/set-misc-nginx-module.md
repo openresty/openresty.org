@@ -9,7 +9,7 @@
 --->
 
 This module adds various `set_xxx` directives added to [Nginx](nginx.html)'s
-[rewrite module](http://wiki.nginx.org/NginxHttpRewriteModule) (MD5/SHA1, SQL/JSON
+[rewrite module](https://wiki.nginx.org/NginxHttpRewriteModule) (MD5/SHA1, SQL/JSON
 quoting, and many more).
 
 Every directive provided by this module can be mixed freely with other nginx
@@ -18,4 +18,4 @@ rewrite module's
 
 Documentation: https://github.com/agentzh/set-misc-nginx-module#readme
 
-Project page: http://github.com/agentzh/set-misc-nginx-module
+Project page: https://github.com/agentzh/set-misc-nginx-module

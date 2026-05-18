@@ -15,5 +15,5 @@ It allows you to define a custom REST interface to your memcached servers or
 access memcached in a very efficient way from within the nginx server by means
 of subrequests or independent fake requests. 
 
-Documentation: http://wiki.nginx.org/HttpMemcModule
-Project page: http://github.com/agentzh/memc-nginx-module
+Documentation: https://wiki.nginx.org/HttpMemcModule
+Project page: https://github.com/agentzh/memc-nginx-module

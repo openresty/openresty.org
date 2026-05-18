@@ -11,8 +11,8 @@
 
 #  Stable Release 1.0.8.26 - 3 November 2011
 * now we require `gmake` (`Gnu make`) for `*BSD` systems even if [LuaJIT](luajit.html) is
-not enabled. thanks [@lhmwzy](http://weibo.com/lhmwzy).
-* upgraded the official [hotfix patch #4](http://www.lua.org/ftp/patch-lua-5.1.4-4) for
+not enabled. thanks [@lhmwzy](https://weibo.com/lhmwzy).
+* upgraded the official [hotfix patch #4](https://www.lua.org/ftp/patch-lua-5.1.4-4) for
 the standard Lua 5.1.4 interpreter.
 [Components](components.html) bundled in this release:
 * LuaJIT-2.0.0-beta8
@@ -53,8 +53,8 @@ the standard Lua 5.1.4 interpreter.
 
 #  Mainline Version 1.0.8.21 - 26 October 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.3.1rc21.
-    * feature: added new directive `lua_shared_dict`: http://wiki.nginx.org/HttpLuaModule#lua_shared_dict
-    * feature: added Lua API for the shm-based dictionary: http://wiki.nginx.org/HttpLuaModule#ngx.shared.DICT
+    * feature: added new directive `lua_shared_dict`: https://wiki.nginx.org/HttpLuaModule#lua_shared_dict
+    * feature: added Lua API for the shm-based dictionary: https://wiki.nginx.org/HttpLuaModule#ngx.shared.DICT
 * upgraded [Echo Nginx Module](echo-nginx-module.html) to 0.37rc7.
     * bugfix: fixed a memory issue in both `echo_sleep` and `echo_blocking_sleep`: we should not pass `ngx_str_t` strings to `atof()` which expects C strings.
 
@@ -66,13 +66,13 @@ the standard Lua 5.1.4 interpreter.
 #  Mainline Version 1.0.8.17 - 22 October 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.3.1rc19.
     * feature: now we apply the patch to the nginx core so as to allow main request body modifications: https://github.com/agentzh/ngx_openresty/blob/master/patches/nginx-1.0.8-allow_request_body_updating.patch
-    * feature: added new Lua API `ngx.req.set_body_file()`: http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_file
-    * feature: added new Lua API `ngx.req.set_body_data()`: http://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_data
+    * feature: added new Lua API `ngx.req.set_body_file()`: https://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_file
+    * feature: added new Lua API `ngx.req.set_body_data()`: https://wiki.nginx.org/HttpLuaModule#ngx.req.set_body_data
     * bugfix: `lua_need_request_body` should not skip requests with methods other than `POST` and `PUT`. thanks [Nginx](nginx.html) User.
 
 #  Mainline Version 1.0.8.15 - 19 October 2011
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.3.1rc17.
-    * feature: added new Lua functions `ngx.req.read_body()`, `ngx.req.discard_body()`, `ngx.req.get_body_data()`, and `ngx.req.get_body_file()`. see the docs here: http://wiki.nginx.org/HttpLuaModule#ngx.req.read_body
+    * feature: added new Lua functions `ngx.req.read_body()`, `ngx.req.discard_body()`, `ngx.req.get_body_data()`, and `ngx.req.get_body_file()`. see the docs here: https://wiki.nginx.org/HttpLuaModule#ngx.req.read_body
     * bugfix: fixed hanging issues when using `ngx.exec()` within `rewrite_by_lua` and `access_by_lua`. thanks [Nginx](nginx.html) User for reporting it.
 
 #  Mainline Version 1.0.8.13 - 16 October 2011
@@ -148,7 +148,7 @@ contexts in `ngx_http_named_location`.
     * bugfix: fixed compatibility with nginx 1.1.4+.
 * upgraded [Set Misc Nginx Module](set-misc-nginx-module.html) to v0.22rc3.
     * minor code cleanup.
-* applied the patch for the variable-header-ignore-no-hash issue. see http://forum.nginx.org/read.php?29,216062
+* applied the patch for the variable-header-ignore-no-hash issue. see https://forum.nginx.org/read.php?29,216062
 for details.
 * based on [OpenResty](openresty.html) 1.0.6.22 and upgraded the [Nginx](nginx.html) core
 to 1.0.8.

@@ -99,13 +99,13 @@ while (<$in>) {
             "$pre\[$txt$parens](https://github.com/openresty/stream-lua-nginx-module#$anchor)$post"
             !xges;
 
-    $c += s! (\s) ( ngx_http_(ssi|ssl||addition) (?: [_ ] module)? ) ( [\s,.:;?] ) !$1\[$2](http://nginx.org/en/docs/http/ngx_http_${3}_module.html)$4!gxs;
+    $c += s! (\s) ( ngx_http_(ssi|ssl||addition) (?: [_ ] module)? ) ( [\s,.:;?] ) !$1\[$2](https://nginx.org/en/docs/http/ngx_http_${3}_module.html)$4!gxs;
 
-    $c += s! (\s) ( ngx_stream_(ssl(?:_preread)?) (?: [_ ] module)? ) ( [\s,.:;?] ) !$1\[$2](http://nginx.org/en/docs/stream/ngx_stream_${3}_module.html)$4!gxs;
+    $c += s! (\s) ( ngx_stream_(ssl(?:_preread)?) (?: [_ ] module)? ) ( [\s,.:;?] ) !$1\[$2](https://nginx.org/en/docs/stream/ngx_stream_${3}_module.html)$4!gxs;
 
-    $c += s! (\s) FFI ( [\s,.:;?] ) !$1\[FFI](http://luajit.org/ext_ffi.html)$2!gxs;
+    $c += s! (\s) FFI ( [\s,.:;?] ) !$1\[FFI](https://luajit.org/ext_ffi.html)$2!gxs;
 
-    $c += s! (\s) \$(upstream_addr) ( [\s,.:;?] ) !$1\[\$$2](http://nginx.org/en/docs/http/ngx_http_upstream_module.html#var_$2)$3!gxs;
+    $c += s! (\s) \$(upstream_addr) ( [\s,.:;?] ) !$1\[\$$2](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#var_$2)$3!gxs;
 
     $c += s! (\s) ssl\.(cert_pem_to_der|parse_pem_cert|priv_key_pem_to_der|parse_pem_priv_key|set_cert|set_priv_key) ( (?:\(\))? ) ( [\s,.:;?] ) !
             my ($pre, $txt, $parens, $post) = ($1, $2, $3, $4);
@@ -166,9 +166,9 @@ while (<$in>) {
             !egx;
 
     $c += s! (\s) (opm|resty-cli|lua-cjson|lua-tablepool|lua-redis-parser|lua-resty-(?:core|memcached|mysql|redis|dns|lock|lrucache|websocket|upload|limit-traffic|signal|shell|upstream-healthcheck)) ( [\s,.:;?] ) !$1\[$2](https://github.com/openresty/$2#readme)$3!gxs;
-    $c += s! (\s) (error_log|proxy_pass|proxy_next_upstream_tries|error_page|client_body_buffer_size) ( [\s,.:;?] ) !$1\[$2](http://nginx.org/r/$2)$3!gxs;
+    $c += s! (\s) (error_log|proxy_pass|proxy_next_upstream_tries|error_page|client_body_buffer_size) ( [\s,.:;?] ) !$1\[$2](https://nginx.org/r/$2)$3!gxs;
 
-    $c += s! (\s) (table\.concat|string\.find) ( (?:\(\))? ) ( [\s,.:;?] ) !$1\[$2$3](http://www.lua.org/manual/5.1/manual.html#pdf-$2)$4!gxs;
+    $c += s! (\s) (table\.concat|string\.find) ( (?:\(\))? ) ( [\s,.:;?] ) !$1\[$2$3](https://www.lua.org/manual/5.1/manual.html#pdf-$2)$4!gxs;
 
     $c += s! (\s) ( table\. (?:isempty
                              |isarray

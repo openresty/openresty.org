@@ -12,7 +12,7 @@
 # Version 1.25.3.1 - 04 Jan 2024
 
 * upgraded the [Nginx](nginx.html) core to 1.25.3.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https://nginx.org/en/CHANGES
 * win32/win64:
     * upgraded OpenSSL to 1.1.1w.
     * upgraded Zlib to 1.3.
@@ -76,20 +76,20 @@
     * x86/x64: Add more red zone checks to assembler backend.
     * Add stack check to pcall/xpcall.
     * Invalidate SCEV entry when returning to lower frame.
-    * [FFI](http://luajit.org/ext_ffi.html): Fix pragma push stack limit check and throw on overflow.
+    * [FFI](https://luajit.org/ext_ffi.html): Fix pragma push stack limit check and throw on overflow.
     * ARM64: Fix disassembly of ldp/stp offsets and U12 loads.
     * Check for upvalue state transition in IR_UREFO.
     * x64: Properly fix __call metamethod return dispatch.
     * Windows/x86: _BitScan*64 are only available on 64-bit archs.
     * Add 'cc' file type for saving bytecode.
     * FFI/Windows: Fix type declaration for int64_t and uint64_t.
-    * [FFI](http://luajit.org/ext_ffi.html): Fix dangling reference to CType in carith_checkarg().
+    * [FFI](https://luajit.org/ext_ffi.html): Fix dangling reference to CType in carith_checkarg().
     * DynASM/ARM64: Support ldp/stp of q registers.
     * ARM64: Use ADR and ADRP to form constants, fix IR_HREF code generation for constant FP keys, and Fuse negative 32 bit constants into arithmetic ops again.
     * ARM64: Unify constant register handling in interpreter.
-    * ARM: Fix register hint for [FFI](http://luajit.org/ext_ffi.html) calls with FP results.
+    * ARM: Fix register hint for [FFI](https://luajit.org/ext_ffi.html) calls with FP results.
     * ARM64: Restore fp before sp in C stack unwinders.
-    * [FFI](http://luajit.org/ext_ffi.html): Fix ffi.abi("pauth").
+    * [FFI](https://luajit.org/ext_ffi.html): Fix ffi.abi("pauth").
     * Maintain chain invariant in DCE.
     * LJ_FR2: Fix stack checks in vararg calls.
     * Follow-up fix for stack overflow handling cleanup.
@@ -103,7 +103,7 @@
     * IR_MIN/IR_MAX is non-commutative due to underlying FPU ops.
     * Windows: Call C++ destructors without compiling with /EHa, Pass scratch CONTEXT record to RtlUnwindEx.
     * ARM64: External unwinder already restores non-volatile registers.
-    * [FFI](http://luajit.org/ext_ffi.html): Fix 64-bit shift fold rules.
+    * [FFI](https://luajit.org/ext_ffi.html): Fix 64-bit shift fold rules.
     * Fix Cygwin build.
     * bugfix: Update s390x support.
     * Allow path overrides in genversion.lua with minilua, too.
@@ -117,7 +117,7 @@
     * ARM64: Fix register allocation for IR_*LOAD.
     * Update external MSDN URL in code.
     * FFI/ARM64/OSX: Handle non-standard OSX C calling conventions.
-    * [FFI](http://luajit.org/ext_ffi.html): Unify stack setup for C calls in interpreter.
+    * [FFI](https://luajit.org/ext_ffi.html): Unify stack setup for C calls in interpreter.
     * ARM64: Prevent STP fusion for conditional code emitted by TBAR and Fix LDP/STP fusing for unaligned accesses.
     * Handle table unsinking in the presence of IRFL_TAB_NOMM.
     * Use fallback name for install files without valid .git or .relver.

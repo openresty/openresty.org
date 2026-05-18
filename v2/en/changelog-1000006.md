@@ -121,7 +121,7 @@ thanks NginxUser.
 * upgraded [Headers More Nginx Module](headers-more-nginx-module.html) to v0.16rc2.
     * fixed a bug when setting a multi-value response header to a single value: the single value will be repeated on each old value.
 * applied the patch from Maxim Dounin to fix a bug in the standard ngx_gzip
-module when dealing with empty flush buffers: http://mailman.nginx.org/pipermail/nginx-devel/2011-February/000730.html
+module when dealing with empty flush buffers: https://mailman.nginx.org/pipermail/nginx-devel/2011-February/000730.html
 * updated the no-pool-patch to eliminate the `-Wset-but-not-used` warnings issued
 by gcc 4.6.0.
 

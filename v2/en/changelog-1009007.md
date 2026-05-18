@@ -19,7 +19,7 @@ to compilation errors. thanks Tao Huang for the report.
     * feature: added HTTP 2.0 support to [ngx.req.http_version()](https://github.com/openresty/lua-nginx-module#ngxreqhttp_version).
     * feature: this module can now be built as a "dynamic module" with NGINX 1.9.11+ via the `--add-dynamic-module=PATH` option of `./configure`.
     * bugfix: [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block) did not respect "lua_code_cache off". thanks XI WANG for the report and Dejiang Zhu for the patch.
-    * bugfix: hot loop might happen when [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block) was used with the [keepalive](http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive) directive. thanks GhostZch for the report.
+    * bugfix: hot loop might happen when [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block) was used with the [keepalive](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive) directive. thanks GhostZch for the report.
     * bugfix: [balancer_by_lua*](https://github.com/openresty/lua-nginx-module#balancer_by_lua_block) might crash the nginx worker when SSL (https) is used for upstream connections. thanks Alistair Wooldrige for the report.
     * bugfix: [stream-typed cosockets](https://github.com/openresty/lua-nginx-module#ngxsockettcp): we did not set the "error" field of the `ngx_connection_t` object which MIGHT lead to socket leaks.
     * bugfix: avoided a potential memory issue when the request handler is aborted prematurely (via [ngx.exit](https://github.com/openresty/lua-nginx-module#ngxexit), for example) while a light thread is still waiting on [ngx.flush(true)](https://github.com/openresty/lua-nginx-module#ngxflush).
@@ -74,13 +74,13 @@ to compilation errors. thanks Tao Huang for the report.
 
 #  Version 1.9.7.3 - 28 January 2016
 * bugfix: backported the security fixes in NGINX core's DNS resolver for CVE-2016-0742,
-CVE-2016-0746, and CVE-2016-0747. See  http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html
+CVE-2016-0746, and CVE-2016-0747. See  https://mailman.nginx.org/pipermail/nginx/2016-January/049700.html
 for more details.
 * change: renamed the source distribution name from `ngx_openresty` to just
 `openresty`.
 
 #  Version 1.9.7.2 - 21 January 2016
-* feature: applied the [ssl_cert_cb_yield patch](http://mailman.nginx.org/pipermail/nginx-devel/2016-January/007748.html) to the bundled version of the NGINX core to allow yielding in OpenSSL's [SSL_CTX_set_cert_cb()](https://www.openssl.org/docs/manmaster/ssl/SSL_set_cert_cb.html) callbacks (needed by [Lua Nginx Module](lua-nginx-module.html)'s [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block)
+* feature: applied the [ssl_cert_cb_yield patch](https://mailman.nginx.org/pipermail/nginx-devel/2016-January/007748.html) to the bundled version of the NGINX core to allow yielding in OpenSSL's [SSL_CTX_set_cert_cb()](https://www.openssl.org/docs/manmaster/ssl/SSL_set_cert_cb.html) callbacks (needed by [Lua Nginx Module](lua-nginx-module.html)'s [ssl_certificate_by_lua*](https://github.com/openresty/lua-nginx-module#ssl_certificate_by_lua_block)
 directives, for example).
 * bugfix: the `./configure` options `--with-dtrace-probes` and `--with-stream` did
 not work together and led to compilation failures.
@@ -106,7 +106,7 @@ not work together and led to compilation failures.
 
 #  Version 1.9.7.1 - 25 December 2015
 * upgraded the [Nginx](nginx.html) core to 1.9.7.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https://nginx.org/en/CHANGES
 * `./configure`: now we automatically set the environment `MACOSX_DEPLOYMENT_TARGET` to
 the current Mac OS X version (unless the environment is already set) to ensure
 the [LuaJIT](luajit.html) build uses the current versions of the system libraries.

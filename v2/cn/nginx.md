@@ -9,4 +9,4 @@
 --->
 
 [Nginx](nginx.html) is a free, open-source, high-performance HTTP server and
-reverse proxy, as well as an IMAP/POP3 proxy server. See its homepage: http://nginx.org.
+reverse proxy, as well as an IMAP/POP3 proxy server. See its homepage: https://nginx.org.

@@ -78,7 +78,7 @@ http {
                 ngx.var.target = server
             ';
 
-            proxy_pass http://$target;
+            proxy_pass https://$target;
         }
     }
 }

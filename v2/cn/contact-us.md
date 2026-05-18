@@ -21,7 +21,7 @@
 + 订阅: 请发邮件至 openresty+subscribe@googlegroups.com
 + 发言: 请发邮件到 openresty@googlegroups.com
 + 退订: 请发邮件至 openresty+unsubscribe@googlegroups.com
-+ 详情: http://groups.google.com/group/openresty
++ 详情: https://groups.google.com/group/openresty
 + 仓库: https://github.com/agentzh/ngx_openresty
 + 提案: https://github.com/agentzh/ngx_openresty/issues
 + 中文版维基: https://openresty.org/cn/

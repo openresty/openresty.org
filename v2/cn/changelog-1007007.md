@@ -38,7 +38,7 @@ project: https://github.com/openresty/resty-cli
     * bugfix: resty.lrucache.pureffi: set(): it did not update to the new value at all if the key had an existing value (either stale or not). thanks Shuxin Yang for the patch.
 * upgraded [Lua Resty Web Socket Library](lua-resty-web-socket-library.html) to 0.05.
     * feature: [resty.websocket.client](https://github.com/openresty/lua-resty-websocket#restywebsocketclient): added support for SSL/TLS connections (i.e., the `wss://` scheme). thanks Vladislav Manchev for the patch.
-    * doc: mentioned the [bitop](http://bitop.luajit.org/index.html) library dependency when using the standard Lua 5.1 interpreter (this is not needed for [LuaJIT](luajit.html) because it is already built in). thanks Laurent Arnoud for the patch.
+    * doc: mentioned the [bitop](https://bitop.luajit.org/index.html) library dependency when using the standard Lua 5.1 interpreter (this is not needed for [LuaJIT](luajit.html) because it is already built in). thanks Laurent Arnoud for the patch.
 * upgraded [LuaJIT](luajit.html) to v2.1-20150120:  https://github.com/openresty/luajit2/tags
     * imported Mike Pall's latest changes:
         * bugfix: don't compile `IR_RETF` after `CALLT` to ff with side effects.
@@ -62,7 +62,7 @@ was disabled. thanks anod221 for the report.
 
 #  Version 1.7.7.1 - 6 December 2014
 * upgraded the [Nginx](nginx.html) core to 1.7.7.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https://nginx.org/en/CHANGES
 * bugfix: applied a patch to the nginx core to fix the memory invalid reads
 when exceeding the pre-configured limits in an `ngx_hash_t` hash table.
 * bugfix: applied a patch to the nginx core to fix a memory invalid read regression
@@ -87,13 +87,13 @@ thanks Dominic for the suggestion.
     * feature: the error logger used by ngx.timer.at handlers now outputs the "client: xxx, server: xxx" context info for the original (true) request creating the timer.
     * feature: added nginx configuration file names and line numbers to the rewrite/access/content/log_by_lua directives' Lua chunk names in order to simplify debugging.
     * feature: [ngx.flush(true)](https://github.com/openresty/lua-nginx-module#ngxflush) now returns the "timeout" and "client aborted" errors to the Lua land for the cases that writing to the client is timed out or the client closes the connection prematurely, respectively.
-    * feature: [ngx.flush(true)](https://github.com/openresty/lua-nginx-module#ngxflush) can now wait on delayed events due to nginx's [limit_rate](http://nginx.org/en/docs/http/ngx_http_core_module.html#limit_rate) config directive or [$limit_rate](http://nginx.org/en/docs/http/ngx_http_core_module.html#var_limit_rate) variable settings. thanks Shafreeck Sea for the original patch.
+    * feature: [ngx.flush(true)](https://github.com/openresty/lua-nginx-module#ngxflush) can now wait on delayed events due to nginx's [limit_rate](https://nginx.org/en/docs/http/ngx_http_core_module.html#limit_rate) config directive or [$limit_rate](https://nginx.org/en/docs/http/ngx_http_core_module.html#var_limit_rate) variable settings. thanks Shafreeck Sea for the original patch.
     * bugfix: [ngx.flush()](https://github.com/openresty/lua-nginx-module#ngxflush), [ngx.eof()](https://github.com/openresty/lua-nginx-module#ngxeof), and some other things did not update busy/free chains after calling the output filters.
     * bugfix: ngx_gzip/ngx_gunzip module filters might cause [ngx.flush(true)](https://github.com/openresty/lua-nginx-module#ngxflush) to hang until timeout for nginx 1.7.7+ (and some other old versions of nginx). thanks Maxim Dounin for the help.
     * bugfix: [ngx.get_phase()](https://github.com/openresty/lua-nginx-module#ngxget_phase) did not work in the context of [init_worker_by_lua*](https://github.com/openresty/lua-nginx-module#init_worker_by_lua).
-    * bugfix: use of [ngx.flush(true)](https://github.com/openresty/lua-nginx-module#ngxflush) with the [limit_rate](http://nginx.org/en/docs/http/ngx_http_core_module.html#limit_rate) config directive or the [$limit_rate](http://nginx.org/en/docs/http/ngx_http_core_module.html#var_limit_rate) variable may hang the request forever for large volumn of output data. thanks Shafreeck Sea for the report.
+    * bugfix: use of [ngx.flush(true)](https://github.com/openresty/lua-nginx-module#ngxflush) with the [limit_rate](https://nginx.org/en/docs/http/ngx_http_core_module.html#limit_rate) config directive or the [$limit_rate](https://nginx.org/en/docs/http/ngx_http_core_module.html#var_limit_rate) variable may hang the request forever for large volumn of output data. thanks Shafreeck Sea for the report.
     * bugfix: compilation error when PCRE is disabled in the nginx build. thanks Ivan Cekov for the report.
-    * bugfix: when syslog was enabled in the [error_log](http://nginx.org/en/docs/ngx_core_module.html#error_log) directive for nginx 1.7.1+, use of [init_worker_by_lua](https://github.com/openresty/lua-nginx-module#init_worker_by_lua) or [ngx.timer.at()](https://github.com/openresty/lua-nginx-module#ngxtimerat) would lead to segmentation faults. thanks shun.zhang for the report.
+    * bugfix: when syslog was enabled in the [error_log](https://nginx.org/en/docs/ngx_core_module.html#error_log) directive for nginx 1.7.1+, use of [init_worker_by_lua](https://github.com/openresty/lua-nginx-module#init_worker_by_lua) or [ngx.timer.at()](https://github.com/openresty/lua-nginx-module#ngxtimerat) would lead to segmentation faults. thanks shun.zhang for the report.
     * bugfix: fixed compilation error with nginx 1.7.5+ because nginx 1.7.5+ changes the API in the events subsystem. thanks Charles R. Portwood II and Mathieu Le Marec for the report.
     * bugfix: [ngx.req.raw_header()](https://github.com/openresty/lua-nginx-module#ngxreqraw_header): buffer overflow and the "buffer error" exception might happen for massively pipelined downstream requests. thanks Dane Knecht for the report.
     * bugfix: [ngx.req.raw_header()](https://github.com/openresty/lua-nginx-module#ngxreqraw_header): we might change nginx's internal buffer pointers, which might cause bad side-effects.

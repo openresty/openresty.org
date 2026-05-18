@@ -118,7 +118,7 @@
     * feature: added support specifying timeouts in the `ngx_pipe.spawn()` API. _Thanks spacewander for the patch._
     * feature: added support for specifying environment variables in the `ngx_pipe.spawn()` API. _Thanks spacewander for the patch._
     * feature: allowed for calling `ngx_pipe.shutdown()` on a sub-process when a light thread is waiting on it. _Thanks spacewander for the patch._
-    * feature: implemented `ngx.crc32_short()` and `ngx.crc32_long()` via [FFI](http://luajit.org/ext_ffi.html). _Thanks Thibault Charbonnier for the patch._
+    * feature: implemented `ngx.crc32_short()` and `ngx.crc32_long()` via [FFI](https://luajit.org/ext_ffi.html). _Thanks Thibault Charbonnier for the patch._
     * feature: ensured loading the `ngx.re` module without PCRE produces a friendly error. _Thanks Thibault Charbonnier for the patch._
     * feature: enabled the FFI-based API for all `ngx.worker.*` APIs in the stream subsystem. _Thanks Thibault Charbonnier for the patch._
     * feature: enabled the FFI-based API for `ngx.var` in the stream subsystem. _Thanks Thibault Charbonnier for the patch._
@@ -149,9 +149,9 @@
     * doc: mentioned the increase in the maximum number of upvalues in the miscellaneous section.
     * doc: reworded the description of the [table.isempty](https://github.com/openresty/luajit2#tableisempty) API.
     * imported Mike Pall's latest changes:
-        * Properly fix pointer diff in [string.find()](http://www.lua.org/manual/5.1/manual.html#pdf-string.find).
+        * Properly fix pointer diff in [string.find()](https://www.lua.org/manual/5.1/manual.html#pdf-string.find).
         * x64: Enable `LJ_GC64` mode by default.
-        * [FFI](http://luajit.org/ext_ffi.html): Eliminate hardcoded string hashes.
+        * [FFI](https://luajit.org/ext_ffi.html): Eliminate hardcoded string hashes.
         * Fix interaction between profiler hooks and finalizers.
         * Don't use STRREF for pointer diff in [string.find()](https://www.lua.org/manual/5.1/manual.html#pdf-string.find).
         * Fix `tonumber("-0")`.
@@ -160,8 +160,8 @@
         * Add stricter check for `print()` vs. `tostring()` shortcut.
         * Prevent integer overflow while parsing long strings.
         * Fix stack check when recording BC_VARG.
-        * [FFI](http://luajit.org/ext_ffi.html): Add missing write barrier on C library index update.
-        * [FFI](http://luajit.org/ext_ffi.html): Workaround for platform dlerror() returning NULL.
+        * [FFI](https://luajit.org/ext_ffi.html): Add missing write barrier on C library index update.
+        * [FFI](https://luajit.org/ext_ffi.html): Workaround for platform dlerror() returning NULL.
         * OSX: Use `__thread` attribute.
         * OSX: Don't set a default `MACOSX_DEPLOYMENT_TARGET`.
         * Build MinGW import library, too.

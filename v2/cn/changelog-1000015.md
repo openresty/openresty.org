@@ -11,13 +11,13 @@
 
 #  Mainline Version 1.0.15.5 - 16 May 2012
 * upgraded [LuaJIT](luajit.html) to 2.0.0beta10.
-    * see changes here: http://luajit.org/changes.html
+    * see changes here: https://luajit.org/changes.html
 * feature: added the `--with-luajit-xcflags=FLAGS` option to `./configure` to
 add more C compiler options to [LuaJIT](luajit.html)'s build system.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc28.
-    * bugfix: [ngx.req.socket()](http://wiki.nginx.org/HttpLuaModule#ngx.req.socket) did not honor the `Expect: 100-continue` request header and could hang. thanks Matthieu Tourne for the patch in [pull request #107](https://github.com/chaoslawful/lua-nginx-module/pull/107).
-    * bugfix: the [ngx.req.socket()](http://wiki.nginx.org/HttpLuaModule#ngx.req.socket) object (i.e., the downstream cosocket object) did not work with HTTP 1.1 pipelined requests at all.
-    * bugfix: the [ngx.req.socket()](http://wiki.nginx.org/HttpLuaModule#ngx.req.socket) object might lose the last part of the request body when receiving data. this regression had appeared in v0.5.0rc25. thanks Matthieu Tourne for reporting it.
+    * bugfix: [ngx.req.socket()](https://wiki.nginx.org/HttpLuaModule#ngx.req.socket) did not honor the `Expect: 100-continue` request header and could hang. thanks Matthieu Tourne for the patch in [pull request #107](https://github.com/chaoslawful/lua-nginx-module/pull/107).
+    * bugfix: the [ngx.req.socket()](https://wiki.nginx.org/HttpLuaModule#ngx.req.socket) object (i.e., the downstream cosocket object) did not work with HTTP 1.1 pipelined requests at all.
+    * bugfix: the [ngx.req.socket()](https://wiki.nginx.org/HttpLuaModule#ngx.req.socket) object might lose the last part of the request body when receiving data. this regression had appeared in v0.5.0rc25. thanks Matthieu Tourne for reporting it.
     * feature: detailed backtraces (Lua callstack) will be automatically printed to `error.log` when the user Lua code is interrupted by Lua exceptions. thanks Matthieu Tourne for the patch in [pull request #107](https://github.com/chaoslawful/lua-nginx-module/pull/107).
     * optimize: removed dead code found by Simon Liu via scan-build.
 * upgraded [Rds Csv Nginx Module](rds-csv-nginx-module.html) to 0.05rc2.
@@ -31,16 +31,16 @@ add more C compiler options to [LuaJIT](luajit.html)'s build system.
 which is also enabled by default. thanks Zhu Feng for requesting this.
 * upgraded [Lua Nginx Module](lua-nginx-module.html) to 0.5.0rc27.
     * bugfix: nginx could crash on request finalization when running the cosocket cleanup handle due to the lack of check of the `ctx` pointer. thanks shaneeb for reporting this in [github issue #110](https://github.com/chaoslawful/lua-nginx-module/issues/110).
-    * bugfix: [ngx.req.get_body_data()](http://wiki.nginx.org/HttpLuaModule#ngx.req.get_body_data) could not handle multi-buffer request bodies and discarded the body data after the first buffer.
-    * bugfix: [ngx.ctx](http://wiki.nginx.org/HttpLuaModule#ngx.ctx) was not accessible at all in `set_by_lua*`. thanks Pierre.
+    * bugfix: [ngx.req.get_body_data()](https://wiki.nginx.org/HttpLuaModule#ngx.req.get_body_data) could not handle multi-buffer request bodies and discarded the body data after the first buffer.
+    * bugfix: [ngx.ctx](https://wiki.nginx.org/HttpLuaModule#ngx.ctx) was not accessible at all in `set_by_lua*`. thanks Pierre.
     * bugfix: fixed typo "on-array", which should be "non-array", in an error message.
-    * optimize: now [ngx.log](http://wiki.nginx.org/HttpLuaModule#ngx.log) is much faster when the log level argument is lower than the actual [error_log](http://wiki.nginx.org/CoreModule#error_log) level specified in nginx.conf. thanks Matthieu Tourne for providing the patch.
+    * optimize: now [ngx.log](https://wiki.nginx.org/HttpLuaModule#ngx.log) is much faster when the log level argument is lower than the actual [error_log](https://wiki.nginx.org/CoreModule#error_log) level specified in nginx.conf. thanks Matthieu Tourne for providing the patch.
     * optimize: now we call `ngx_http_lua_socket_finalize` in `cosocket:setkeepalive()` to help buffer reuse.
 * upgraded [Set Misc Nginx Module](set-misc-nginx-module.html) to 0.22rc8.
-    * feature: added new directives [set_secure_random_alphanum](http://wiki.nginx.org/HttpSetMiscModule#set_secure_random_alphanum) and [set_secure_random_lcalpha|http://wiki.nginx.org/HttpSetMiscModule#set_secure_random_lcalpha]() for generating cryptographically strong random strings based on the `/dev/urandom` device. thanks Jeremy Wohl for the patch.
+    * feature: added new directives [set_secure_random_alphanum](https://wiki.nginx.org/HttpSetMiscModule#set_secure_random_alphanum) and [set_secure_random_lcalpha|https://wiki.nginx.org/HttpSetMiscModule#set_secure_random_lcalpha]() for generating cryptographically strong random strings based on the `/dev/urandom` device. thanks Jeremy Wohl for the patch.
 * upgraded [Srcache Nginx Module](srcache-nginx-module.html) to 0.13rc8.
     * bugfix: the `Content-Length` response header for HEAD requests should leave intact when cache hits happen.
-    * bugfix: the [srcache_store](http://wiki.nginx.org/HttpSRCacheModule#srcache_store) subrequest did not set the `Content-Length` request header properly for multi-buffer request bodies. thanks Feibo Lee for submitting the patch.
+    * bugfix: the [srcache_store](https://wiki.nginx.org/HttpSRCacheModule#srcache_store) subrequest did not set the `Content-Length` request header properly for multi-buffer request bodies. thanks Feibo Lee for submitting the patch.
     * feature: HTTP conditional GET requests are now supported (both `If-Modified-Since` and `If-Unmodified-Since` request headers are properly handled). thanks Nginx_User777.
 * upgraded [Lua Redis Parser Library](lua-redis-parser-library.html) to v0.09.
     * feature: added `redis.parser._VERSION`.
@@ -53,8 +53,8 @@ which is also enabled by default. thanks Zhu Feng for requesting this.
 * upgraded [Lua Resty Upload Library](lua-resty-upload-library.html) to 0.03.
     * feature: now the raw headers for each part are also returned, as suggested by zou2062 in [github issue #1](https://github.com/agentzh/lua-resty-upload/issues/1).
 * applied the patch for a bug in `ngx_http_named_location` to the nginx core:
-http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002166.html
-* applied the patch for a bug in the filter finalizer to the nginx core: http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002190.html
+https://mailman.nginx.org/pipermail/nginx-devel/2012-May/002166.html
+* applied the patch for a bug in the filter finalizer to the nginx core: https://mailman.nginx.org/pipermail/nginx-devel/2012-May/002190.html
 
 #  Mainline Version 1.0.15.1 - 29 April 2012
 * upgraded the [Nginx](nginx.html) core to 1.0.15.
@@ -76,8 +76,8 @@ http://mailman.nginx.org/pipermail/nginx-devel/2012-May/002166.html
 * upgraded [Rds Json Nginx Module](rds-json-nginx-module.html) to v0.12rc8.
     * bugfix: Microsoft C compilers complained about missing declarations of the type `int8_t`. now we explicitly include `stdint.h`. thanks runner-mei for reporting this issue in [github issue #3](https://github.com/agentzh/rds-json-nginx-module/issues/3).
 * upgraded [Set Misc Nginx Module](set-misc-nginx-module.html) to 0.22rc7.
-    * bugfix: we should omit the [set_sha1](http://wiki.nginx.org/HttpSetMiscModule#set_sha1) directive when we do not have any SHA1 libraries (including OpenSSL) installed. thanks runner-mei for reporting this in [github issue #9](https://github.com/agentzh/set-misc-nginx-module/issues/9).
-    * feature: added new config directive [set_rotate](http://wiki.nginx.org/HttpSetMiscModule#set_rotate).
+    * bugfix: we should omit the [set_sha1](https://wiki.nginx.org/HttpSetMiscModule#set_sha1) directive when we do not have any SHA1 libraries (including OpenSSL) installed. thanks runner-mei for reporting this in [github issue #9](https://github.com/agentzh/set-misc-nginx-module/issues/9).
+    * feature: added new config directive [set_rotate](https://wiki.nginx.org/HttpSetMiscModule#set_rotate).
 * upgraded [Drizzle Nginx Module](drizzle-nginx-module.html) to 0.1.2rc7.
     * bugfix: reading data on a reused MySQL connection (coming from the connection pool) could hang due to the inactive read event when `poll` event API is used in nginx.
 * upgraded [Lua Resty MySQL Library](lua-resty-mysql-library.html) to 0.07.

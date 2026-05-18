@@ -15,7 +15,7 @@ You can override the existing installation tree but you still need to restart
 your running [Nginx](nginx.html) server from the new executable. Usually we
 do something like this:
 
-http://wiki.nginx.org/CommandLine#Upgrading_To_a_New_Binary_On_The_Fly
+https://wiki.nginx.org/CommandLine#Upgrading_To_a_New_Binary_On_The_Fly
 
 You can also just stop your current [Nginx](nginx.html) server and start it
 from scratch again if you don't care about the down time in between.

@@ -14,6 +14,6 @@ including the redis pipelining support.
 
 This module returns the raw TCP response from the redis server.
 
-Documentation wiki page: http://wiki.nginx.org/HttpRedis2Module
+Documentation wiki page: https://wiki.nginx.org/HttpRedis2Module
 
 Project page: https://github.com/agentzh/redis2-nginx-module

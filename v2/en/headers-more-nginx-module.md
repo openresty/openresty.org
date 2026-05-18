@@ -16,4 +16,4 @@ more utilities like resetting or clearing "builtin headers" like Content-Type,
 Content-Length, and Server. 
 
 Documentation: https://github.com/agentzh/headers-more-nginx-module#readme
-Project page: http://github.com/agentzh/headers-more-nginx-module
+Project page: https://github.com/agentzh/headers-more-nginx-module

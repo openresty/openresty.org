@@ -19,19 +19,19 @@
 
 * Pushing [Nginx](nginx.html) to its limit with Lua
 
-     http://blog.cloudflare.com/pushing-nginx-to-its-limit-with-lua
+     https://blog.cloudflare.com/pushing-nginx-to-its-limit-with-lua
 * Day 41 - Setting up ngx_openresty (WAS: testing Test::[Nginx](nginx.html))
 
-     http://www.nginx-discovery.com/2011/03/day-41-setting-up-ngxopenresty-was.html
+     https://www.nginx-discovery.com/2011/03/day-41-setting-up-ngxopenresty-was.html
 
 #  中文文章
 * An introduction to [OpenResty](openresty.html)
 
-     http://wdicc.com/intro-openresty/
+     https://wdicc.com/intro-openresty/
 * [Nginx](nginx.html) 3rd-Party Module Experiments Journal
 
-     http://chenxiaoyu.org/2011/10/30/nginx-modules/
+     https://chenxiaoyu.org/2011/10/30/nginx-modules/
 * Recommending [OpenResty](openresty.html) - An [Nginx](nginx.html) Version
 with Fully Capable Addons
 
-     http://wendal.net/338.html
+     https://wendal.net/338.html

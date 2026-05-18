@@ -12,6 +12,6 @@ The lua-redis-parser library implements a thin and fast redis raw response parse
 that constructs corresponding lua data strucutres, as well as a function that
 constructs redis raw requests.
 
-Documentation page: http://wiki.nginx.org/LuaRedisParser
+Documentation page: https://wiki.nginx.org/LuaRedisParser
 
 Project homepage: https://github.com/agentzh/lua-redis-parser

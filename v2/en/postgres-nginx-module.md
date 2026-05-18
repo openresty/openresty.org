@@ -18,4 +18,4 @@ This module is not enabled by default, and you need to specify the `--with-http_
 while [building OpenResty](installation.html). This [Nginx](nginx.html) module
 requires libpq to be installed into your system.
 
-Project page: http://github.com/FRiCKLE/ngx_postgres
+Project page: https://github.com/FRiCKLE/ngx_postgres

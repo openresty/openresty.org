@@ -62,7 +62,7 @@
 # Version 1.27.1.1 - 16 Oct 2024
 
 * upgraded the [nginx](nginx.html) core to 1.27.1
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https://nginx.org/en/CHANGES
 * upgraded [lua-nginx-module](https://github.com/openresty/lua-nginx-module) to 0.10.27
     * bugfix: fixed keepalive error in cosocket. _Thanks lijunlong for the patch._
     * bugfix: ensure compatibility with older nginx versions lacking TLS 1.3 support. _Thanks lijunlong for the patch._

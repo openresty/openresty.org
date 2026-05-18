@@ -12,4 +12,4 @@ We run extensive regression testing for all our components (as well as other 3rd
 [Nginx](nginx.html) modules) on an Amazon EC2 cluster. The latest test report
 can always be viewed here:
 
-http://qa.openresty.org/
+https://qa.openresty.org/

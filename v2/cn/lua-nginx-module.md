@@ -25,6 +25,6 @@ threads (aka Lua coroutines). And Lua modules loaded are persistent on the nginx
 worker process level. So the memory footprint is quite small even when your
 nginx worker process is handling 10K requests at the same time.
 
-Documentation: http://wiki.nginx.org/HttpLuaModule
+Documentation: https://wiki.nginx.org/HttpLuaModule
 
-Project page: http://github.com/openresty/lua-nginx-module
+Project page: https://github.com/openresty/lua-nginx-module

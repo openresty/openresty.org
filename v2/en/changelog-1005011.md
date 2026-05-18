@@ -7,12 +7,12 @@
 
 #  Version 1.5.11.1 - 30 March 2014
 * upgraded [LuaJIT](luajit.html) to v2.1-20140330.
-    * feature: included Mike Pall's new "trace stitching" feature that can compile around most of the [NYI items](http://wiki.luajit.org/NYI). thanks [CloudFlare Inc.](http://www.cloudflare.com/) for sponsoring the development. This helps compiling more Lua code. For example, it gives 10% ~ 40% speedup in simple test cases of [Lua Resty MySQL Library](lua-resty-mysql-library.html) out of the box.
+    * feature: included Mike Pall's new "trace stitching" feature that can compile around most of the [NYI items](https://wiki.luajit.org/NYI). thanks [CloudFlare Inc.](https://www.cloudflare.com/) for sponsoring the development. This helps compiling more Lua code. For example, it gives 10% ~ 40% speedup in simple test cases of [Lua Resty MySQL Library](lua-resty-mysql-library.html) out of the box.
     * bugfix: included all the new bug fixes from Mike Pall, most of which are very obscure bugs in the JIT compiler hidden for years.
     * relaxed the hard-coded heuristic limit further to 100 for loopunroll.
     * feature: applied John Marino's patch for compiling [LuaJIT](luajit.html) on DragonFlyBSD. thanks lhmwzy for proposing the patch.
 * upgraded the [Nginx](nginx.html) core to 1.5.11.
-    * see the changes here: http://nginx.org/en/CHANGES
+    * see the changes here: https://nginx.org/en/CHANGES
 * bugfix: applied the patch to the NGINX core for the latest SPDY security vulnerability
 (CVE-2014-0133).
 * feature: added support for DragonFlyBSD to `./configure`. thanks lhmwzy for
@@ -56,7 +56,7 @@ at least in recent Mac OS X systems. thanks Hamish Forbes for the report.
     * bugfix: the `unsubscribe`/`subscribe` commands could not be called after [read_reply()](https://github.com/agentzh/lua-resty-redis#read_reply) returned "timeout". thanks doujiang for the patch.
     * bugfix: we incorrectly allowed reusing redis connections in the "subscribed" state. thanks doujiang for the patch.
 * upgraded [Lua Cjson Library](lua-cjson-library.html) to 2.1.0.1.
-    * rebased on lua-cjson 2.1.0: http://www.kyne.com.au/~mark/software/NEWS-lua-cjson.txt the most notable new feature is the `cjson.safe` module.
+    * rebased on lua-cjson 2.1.0: https://www.kyne.com.au/~mark/software/NEWS-lua-cjson.txt the most notable new feature is the `cjson.safe` module.
     * feature: applied Jiale Zhi's patch to add the new config function `encode_empty_table_as_object` so that we can encode empty Lua tables into empty JSON arrays.
 * upgraded [Srcache Nginx Module](srcache-nginx-module.html) to 0.26.
     * bugfix: HEAD requests might result in response bodies.

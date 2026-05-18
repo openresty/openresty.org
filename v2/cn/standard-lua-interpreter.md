@@ -11,4 +11,4 @@
 The standard Lua interpreter is enabled by default. If [LuaJIT](luajit.html) is
 enabled, this interpreter will be disabled automatically.
 
-See Lua's homepage: http://www.lua.org/
+See Lua's homepage: https://www.lua.org/

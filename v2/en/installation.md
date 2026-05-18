@@ -124,7 +124,7 @@ brew untap homebrew/nginx
 ```
 
 You're recommended to install prerequisites PCRE and OpenSSL using some package
-management tool, like [Homebrew](http://mxcl.github.com/homebrew/):
+management tool, like [Homebrew](https:///mxcl.github.com/homebrew/):
 
 ```bash
 brew update

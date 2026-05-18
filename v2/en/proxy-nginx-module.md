@@ -9,4 +9,4 @@
 --->
 
 This is a standard [Nginx](nginx.html) module for talking to remote HTTP or
-HTTPS servers: http://wiki.nginx.org/HttpProxyModule
+HTTPS servers: https://wiki.nginx.org/HttpProxyModule

@@ -16,6 +16,6 @@ this module to provide a concrete caching storage backend. But technically,
 any modules that provide a REST interface can be used as the fetching and storage
 subrequests used by this module.
 
-Documentation page: http://wiki.nginx.org/HttpSRCacheModule
+Documentation page: https://wiki.nginx.org/HttpSRCacheModule
 
-Project page: http://github.com/agentzh/srcache-nginx-module
+Project page: https://github.com/agentzh/srcache-nginx-module
