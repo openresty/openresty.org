@@ -1,0 +1,41 @@
+[% major_ver = "1.29.2"; version = major_ver _ ".4" -%]
+<!---
+    @title         OpenResty [% version %] 正式发布
+--->
+
+我们荣幸地宣布，基于 NGINX 和 LuaJIT 的 OpenResty Web 平台 [% version %] 版本现已正式发布。
+
+[点击此处下载](download.html)。
+
+此[下载页面](download.html)提供了可移植的源代码分发包以及为 Ubuntu、Debian、Fedora、CentOS、RHEL、OpenSUSE、Amazon Linux 等系统预编译的二进制软件包。
+
+# 版本亮点
+
+* 移植 [nginx](https://nginx.org/en/security_advisories.html) 的漏洞补丁
+    * [CVE-2026-42945](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42945): Buffer overflow in the ngx_http_rewrite_module
+    * [CVE-2026-42946](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42946): Buffer overread in the ngx_http_scgi_module and ngx_http_uwsgi_module
+    * [CVE-2026-42934](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-42934): Buffer overread in the ngx_http_charset_module
+    * [CVE-2026-40460](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-40460): HTTP/3 address spoofing
+    * [CVE-2026-40701](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-40701): resolver use-after-free in OCSP
+
+相较于上一个正式版本 [1.29.2.3](ann-1029002003.html)，您可以在 [[% major_ver %].x 更新日志](changelog-1029002.html) 页面浏览完整的变更记录。
+
+# 测试
+
+我们在 Amazon EC2 测试集群上进行了广泛的测试，确保所有组件（包括 Nginx 核心）都能协同稳定运行。最新的测试报告可随时在此处查阅：
+
+https://qa.openresty.org/
+
+此外，我们自己的全球 CDN 网络（我们称之为“迷你 CDN”）也始终基于最新开源版本的 OpenResty 来运行我们的 OpenResty Edge 商业软件，为 `openresty.org` 和 `openresty.com` 网站提供动力。更多详情请访问 https://openresty.com/。
+
+# 社区支持
+
+请访问[社区页面](https://openresty.org/en/community.html)。
+
+# 商业支持
+
+我们通过官方的 [OpenResty XRay](https://openresty.com/en/xray/) 产品，提供商业技术支持以及实时、非侵入式的在线监控和性能剖析解决方案。
+
+# 反馈
+
+我们欢迎任何关于此版本的反馈。您可以在 [GitHub issues](https://github.com/openresty/openresty/issues) 创建新的 issue，或发送邮件到我们的[邮件列表](https://openresty.org/en/community.html#mailing-lists)。
