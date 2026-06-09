@@ -47,7 +47,7 @@ money via the [AliPay](https://www.alipay.com/) to my account `yichun0511@gmail.
 just scan the following QR code in your AliPay cellphone app:
 
 <html>
-<img src="/images/alipay-qrcode.png" width="150">
+<img src="/images/alipay-qrcode.webp" width="150">
 </html>
 
 # Donate with Purchase
@@ -55,7 +55,7 @@ just scan the following QR code in your AliPay cellphone app:
 You can also support us by buying stuff on [The OpenResty Shop](https://openresty.threadless.com/designs/open-source-openresty/).
 
 <html>
-<img src="/images/t-shirt.png" width="150">
+<img src="/images/t-shirt.webp" width="150">
 </html>
 
 Any amounts will be highly appreciated!

@@ -8,19 +8,19 @@ Donors donating more than 150,000 USD are listed here to express
 our appreciation. If you have ever donated more than 150,000 USD, please contact
 me and send me your company or personal logos.
 
-[![Smartisan](/images/logo-smartisan.png)](https://www.smartisan.com/)
+[![Smartisan](/images/logo-smartisan.webp)](https://www.smartisan.com/)
 
 Donors donating more than 5000 USD are listed here to express
 our appreciation. If you have ever donated more than 5000 USD, please contact
 me and send me your company or personal logos.
 
-[![Volka](/images/logo-volka.png)](https://volka.social)
+[![Volka](/images/logo-volka.webp)](https://volka.social)
 
 Donors donating more than 2000 USD are listed here to express
 our appreciation. If you have ever donated more than 2000 USD, please contact
 me and send me your company or personal logos.
 
-[![PowerDNS](/images/pdns.png)](https://www.powerdns.com)
+[![PowerDNS](/images/pdns.webp)](https://www.powerdns.com)
 
 Donors donating more than 1000 USD are listed here to express
 our appreciation. If you have ever donated more than 1000 USD, please contact
@@ -28,10 +28,10 @@ me and send me your company or personal logos.
 
 [![Qunar](/images/qunar-logo.jpg)](https://www.qunar.com)
 
-![V Site](/images/v-site2.png)
+![V Site](/images/v-site2.webp)
 
 [![Kugou Music](/images/kugou-music.jpg)](https://www.kugou.com/)
 
-[![Kong](/images/kong-logo.png)](https://www.konghq.com/)
+[![Kong](/images/kong-logo.webp)](https://www.konghq.com/)
 
-[![Vlion](/images/vlion.png)](https://www.vlion.cn/)
+[![Vlion](/images/vlion.webp)](https://www.vlion.cn/)

@@ -415,7 +415,7 @@ header[role="header"] .enterprise-button .link-title {
   INTRO
 =======================================================================================*/
 #intro {
-  background: #446d44 url(../images/bg-grid.png) top left;
+  background: #446d44 url(../images/bg-grid.webp) top left;
   min-height: 150px;
   color: #f9fcf9;
 }
@@ -432,7 +432,7 @@ header[role="header"] .enterprise-button .link-title {
 @media (min-width: 768px) {
   #intro .text {
     padding-right: 300px;
-    background: url(../images/media-server.png) bottom right no-repeat;
+    background: url(../images/media-server.webp) bottom right no-repeat;
   }
 }
 #intro .text p {
@@ -465,7 +465,7 @@ header[role="header"] .enterprise-button .link-title {
   background-clip: padding-box;
   font-size: 12px;
   padding: 0 10px 0 40px;
-  background: rgba(255, 255, 255, 0.9) url(../images/ico-search.png) 15px 50% no-repeat;
+  background: rgba(255, 255, 255, 0.9) url(../images/ico-search.webp) 15px 50% no-repeat;
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
   -moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
   -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
@@ -530,7 +530,7 @@ header[role="header"] .enterprise-button .link-title {
   display: none;
 }
 #main .item header .options .trigger {
-  background: url(../images/ico-more.png) center center no-repeat;
+  background: url(../images/ico-more.webp) center center no-repeat;
   width: 44px;
   height: 44px;
   text-indent: -9999em;
@@ -782,10 +782,10 @@ header[role="header"] .enterprise-button .link-title {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 .sidebar.sleft ul.buttons li a.rss {
-  background: #fd9f13 url(../images/ico-rss.png) 12px 50% no-repeat;
+  background: #fd9f13 url(../images/ico-rss.webp) 12px 50% no-repeat;
 }
 .sidebar.sleft ul.buttons li .paypal {
-  background: #006492 url(../images/ico-paypal.png) 12px 50% no-repeat;
+  background: #006492 url(../images/ico-paypal.webp) 12px 50% no-repeat;
 }
 .sidebar.sright {
   overflow: hidden;
@@ -830,13 +830,13 @@ header[role="header"] .enterprise-button .link-title {
   color: #8a948a;
 }
 .sidebar.sright .options .first li a.close-all {
-  background: url(../images/ico-close-all.png) 50% 24px no-repeat;
+  background: url(../images/ico-close-all.webp) 50% 24px no-repeat;
 }
 .sidebar.sright .options .first li a.permaview {
-  background: url(../images/ico-permaview.png) 50% 24px no-repeat;
+  background: url(../images/ico-permaview.webp) 50% 24px no-repeat;
 }
 .sidebar.sright .options .first li a.more-options {
-  background: url(../images/ico-more-options.png) 50% 24px no-repeat;
+  background: url(../images/ico-more-options.webp) 50% 24px no-repeat;
 }
 .sidebar.sright .options .first li a:hover {
   color: #3e423e;
@@ -968,7 +968,7 @@ hr.footer-sep {
 .xray-modal-content .header {
   border-radius: 0.3rem 0.3rem 0 0;
   height: 270px;
-  background-image: url('../images/background.png');
+  background-image: url('../images/background.webp');
   display: flex;
   flex-direction: column;
   justify-content: center;

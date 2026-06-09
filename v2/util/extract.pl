@@ -300,9 +300,9 @@ _EOC_
         }
     }
 
-    $out =~ s{src="[^"]*donate-with-alipay\.png"}{src="/images/donate-with-alipay\.png"}g;
+    $out =~ s{src="[^"]*donate-with-alipay\.webp"}{src="/images/donate-with-alipay\.webp"}g;
     $out =~ s{src="[^"]*donate_button_paypal_01\.gif"}{src="/images/donate_paypal\.gif"}g;
-    $out =~ s{src="[^"]*alipay-qrcode\.png"}{src="/images/alipay-qrcode.png"}g;
+    $out =~ s{src="[^"]*alipay-qrcode\.webp"}{src="/images/alipay-qrcode.webp"}g;
     $out =~ s{src="[^"]*kugou-music\.jpg"}{src="/images/kugou-music.jpg"}g;
 
     $out = reformat_md($out);

@@ -8,4 +8,4 @@
     @changes       3
 --->
 
-This site's RSS  feed is available at https://openresty.org/index.xml ![image](feed-icon-28x28.png).
+This site's RSS  feed is available at https://openresty.org/index.xml ![image](feed-icon-28x28.webp).
