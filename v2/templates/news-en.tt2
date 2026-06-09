@@ -12,22 +12,22 @@
       </picture></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1029002005.html">OpenResty 1.29.2.5</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/edge-inner-traffic/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-inner-traffic.jpg" loading="lazy"/></a>
+  <div class="news-item"><a href="https://blog.openresty.com/en/edge-inner-traffic/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-inner-traffic.webp" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-inner-traffic/?src=org_news" target="_blank">Taming Internal Traffic Chaos with OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/xray-ann-26.5.11/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-logo.jpg" loading="lazy"/></a>
+  <div class="news-item"><a href="https://blog.openresty.com/en/xray-ann-26.5.11/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-logo.webp" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/xray-ann-26.5.11/?src=org_news" target="_blank">OpenResty XRay Version 26.5.11. Now Available</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/edge-db-backup/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-db-backup.jpg" loading="lazy"/></a>
+  <div class="news-item"><a href="https://blog.openresty.com/en/edge-db-backup/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-db-backup.webp" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-db-backup/?src=org_news" target="_blank">OpenResty Edge Data Protection: From Scheduled Backups to Automatic Failover</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/edge-k8s-what/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-k8s-what.jpg" loading="lazy"/></a>
+  <div class="news-item"><a href="https://blog.openresty.com/en/edge-k8s-what/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-k8s-what.webp" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/edge-k8s-what/?src=org_news" target="_blank">Automating Kubernetes Gateway Node Lifecycle with OpenResty Edge</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/what-edge-yaml/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/what-edge-yaml.jpg" loading="lazy"/></a>
+  <div class="news-item"><a href="https://blog.openresty.com/en/what-edge-yaml/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/what-edge-yaml.webp" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/what-edge-yaml/?src=org_news" target="_blank">Managing OpenResty Edge Configuration with YAML and Git: A Practical Guide to `edge2yaml`</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
-  <div class="news-item"><a href="https://blog.openresty.com/en/xray-vulnerability-scanning/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-vulnerability-scanning.jpg" loading="lazy"/></a>
+  <div class="news-item"><a href="https://blog.openresty.com/en/xray-vulnerability-scanning/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-vulnerability-scanning.webp" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/xray-vulnerability-scanning/?src=org_news" target="_blank">Binary Evidence-Driven Vulnerability Scanning: Eliminating False Positives with OpenResty XRay</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
