@@ -97,8 +97,8 @@ PATH environment.
 You're recommended to install the following packages using apt-get:
 
 ```bash
-apt-get install libpcre3-dev \
-    libssl-dev perl make build-essential curl
+apt-get install libpcre2-dev libssl-dev \
+    perl make build-essential curl zlib1g-dev
 ```
 
 ### Fedora and RedHat users
