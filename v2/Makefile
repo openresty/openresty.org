@@ -19,6 +19,7 @@ css_file = $(patsubst %.less, %.css, $(less_file))
 
 extract_pl = ./util/extract.pl
 gendata_pl = ./util/gen-data.pl
+gensitemap_pl = ./util/gen-sitemap.pl
 msginit_pl = ./util/msginit.pl
 msgfmt_pl = ./util/msgfmt.pl
 
@@ -103,12 +104,18 @@ $(tsv_files): $(html_files) $(txt_files) $(gendata_pl)
 	$(gendata_pl) en
 	$(gendata_pl) cn
 
+.PHONY: sitemap
+sitemap: sitemap.xml
+
+sitemap.xml: $(tsv_files) $(gensitemap_pl)
+	$(gensitemap_pl)
+
 .PHONY: initdb
-initdb: $(tsv_files)
+initdb: $(tsv_files) sitemap.xml
 	psql -Uopenresty openresty_org -v "ON_ERROR_STOP=1" -f init.sql
 
 .PHONY: deploy
-deploy:
+deploy: sitemap.xml
 	ls $(tsv_files)
 	psql -Uopenresty openresty_org -v "ON_ERROR_STOP=1" -f init.sql
 
