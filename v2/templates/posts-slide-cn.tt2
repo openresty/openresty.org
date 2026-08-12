@@ -11,105 +11,105 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-private-cdn-live-streaming/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-private-cdn-live-streaming.webp"><img class="article-img" src="../images/header-images/edge-private-cdn-live-streaming.webp" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">直播私有 CDN 选型：为什么平时能跑的架构，扛不住顶级赛事的峰值？</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-ann-26.7.15/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-logo.webp"><img class="article-img" src="../images/header-images/xray-logo.webp" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty XRay 26.7.15 版正式发布</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/openresty-xray-ai-assistant/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/openresty-xray-ai-assistant.webp"><img class="article-img" src="../images/header-images/openresty-xray-ai-assistant.webp" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty XRay AI 助手：让每一份分析数据都能开口说话</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/private-libs/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/private-libs.webp"><img class="article-img" src="../images/header-images/private-libs.webp" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty 私有库：高性能 Lua 与 Nginx 模块</p>
+            </div></a></div>
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-hls-live-streaming/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/edge-hls-live-streaming.webp"><img class="article-img" src="../images/header-images/edge-hls-live-streaming.webp" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">扛住顶级体育赛事直播：在 OpenResty Edge 中构建 HLS 视频直播分发层</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-inner-traffic/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-inner-traffic.webp"><img class="article-img" src="../images/header-images/edge-inner-traffic.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/edge-inner-traffic.webp"><img class="article-img" src="../images/header-images/edge-inner-traffic.webp" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">内部流量治理的演进：OpenResty Edge 在微服务架构中的工程实践</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-ann-26.5.11/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-logo.webp"><img class="article-img" src="../images/header-images/xray-logo.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/xray-logo.webp"><img class="article-img" src="../images/header-images/xray-logo.webp" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty XRay 26.5.11 版正式发布</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-db-backup/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-db-backup.webp"><img class="article-img" src="../images/header-images/edge-db-backup.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/edge-db-backup.webp"><img class="article-img" src="../images/header-images/edge-db-backup.webp" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty Edge 数据保护指南：从定时备份到自动故障转移</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-k8s-what/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-k8s-what.webp"><img class="article-img" src="../images/header-images/edge-k8s-what.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/edge-k8s-what.webp"><img class="article-img" src="../images/header-images/edge-k8s-what.webp" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">OpenResty Edge × Kubernetes：从“能用”到“好用”，构建企业级云原生网关的最后一公里</p>
+              <p class="blog-title">OpenResty Edge × Kubernetes：从”能用”到”好用”，构建企业级云原生网关的最后一公里</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/what-edge-yaml/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/what-edge-yaml.webp"><img class="article-img" src="../images/header-images/what-edge-yaml.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/what-edge-yaml.webp"><img class="article-img" src="../images/header-images/what-edge-yaml.webp" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">`edge2yaml` 发布：OpenResty Edge 配置的导入、导出与 GitOps 集成</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-vulnerability-scanning/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-vulnerability-scanning.webp"><img class="article-img" src="../images/header-images/xray-vulnerability-scanning.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/xray-vulnerability-scanning.webp"><img class="article-img" src="../images/header-images/xray-vulnerability-scanning.webp" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">版本号之困：OpenResty XRay 如何破解漏洞扫描中的误报难题</p>
+              <p class="blog-title">二进制漏洞扫描：识别 Backport 补丁，消除误报</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-ann-26.2.1/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-logo.webp"><img class="article-img" src="../images/header-images/xray-logo.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/xray-logo.webp"><img class="article-img" src="../images/header-images/xray-logo.webp" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty XRay 26.2.1 版正式发布</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-proxy-protocol/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-proxy-protocol.webp"><img class="article-img" src="../images/header-images/edge-proxy-protocol.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/edge-proxy-protocol.webp"><img class="article-img" src="../images/header-images/edge-proxy-protocol.webp" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty Edge 客户端真实 IP 全链路传递指南</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-dynamic-advantage/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-dynamic-advantage.webp"><img class="article-img" src="../images/header-images/xray-dynamic-advantage.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/xray-dynamic-advantage.webp"><img class="article-img" src="../images/header-images/xray-dynamic-advantage.webp" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">不改代码、不重启服务：OpenResty XRay 如何对生产环境做全栈动态追踪</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/what-is-openresty-edge/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/what-is-openresty-edge.webp"><img class="article-img" src="../images/header-images/what-is-openresty-edge.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/what-is-openresty-edge.webp"><img class="article-img" src="../images/header-images/what-is-openresty-edge.webp" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">OpenResty Edge: 驾驭现代分布式架构的全能型企业网关</p>
+              <p class="blog-title">OpenResty Edge：私有 CDN、通用网关与 WAF 一体化平台</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/what-is-openresty-xray/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/what-is-openresty-xray.webp"><img class="article-img" src="../images/header-images/what-is-openresty-xray.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/what-is-openresty-xray.webp"><img class="article-img" src="../images/header-images/what-is-openresty-xray.webp" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty XRay 是什么</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-gslb-what/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-gslb-what.webp"><img class="article-img" src="../images/header-images/edge-gslb-what.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/edge-gslb-what.webp"><img class="article-img" src="../images/header-images/edge-gslb-what.webp" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">OpenResty Edge GSLB 设计手记：让流量调度回归“应用层”</p>
+              <p class="blog-title">GSLB 详解：全局负载均衡如何工作，以及 DNS 调度为何在真实流量下失灵</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/nginx-prod-mem-leak/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/nginx-prod-mem-leak.webp"><img class="article-img" src="../images/header-images/nginx-prod-mem-leak.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/nginx-prod-mem-leak.webp"><img class="article-img" src="../images/header-images/nginx-prod-mem-leak.webp" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">一次无法重启的 Nginx 内存泄漏，我们是如何在生产环境把它抓出来的</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-keepalive/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-keepalive.webp"><img class="article-img" src="../images/header-images/xray-keepalive.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/xray-keepalive.webp"><img class="article-img" src="../images/header-images/xray-keepalive.webp" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">从 9万 QPS 到 6千：一次压测暴露的 15 倍性能黑洞，我们如何用 OpenResty XRay 定位根因</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/why-edge-waf/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/why-edge-waf.webp"><img class="article-img" src="../images/header-images/why-edge-waf.webp" loading="lazy" alt=""/></div>
+            <div class="blog-img" data-pic="/header-images/why-edge-waf.webp"><img class="article-img" src="../images/header-images/why-edge-waf.webp" loading="lazy"/></div>
             <div class="article-text">
-              <p class="blog-title">深入了解 OpenResty Edge WAF：入门、进阶到架构</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/luajit-plus/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/luajit-plus.webp"><img class="article-img" src="../images/header-images/luajit-plus.webp" loading="lazy" alt=""/></div>
-            <div class="article-text">
-              <p class="blog-title">从被动囤积到主动治理：如何破解 LuaJIT“伪内存泄漏”</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/why-edge-webhook/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/why-edge-webhook.webp"><img class="article-img" src="../images/header-images/why-edge-webhook.webp" loading="lazy" alt=""/></div>
-            <div class="article-text">
-              <p class="blog-title">借助 OpenResty Edge Webhook 构建“少即是多”的事件驱动运维</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/xray-p99/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-p99.webp"><img class="article-img" src="../images/header-images/xray-p99.webp" loading="lazy" alt=""/></div>
-            <div class="article-text">
-              <p class="blog-title">我们如何在一个 500k QPS 的 OpenResty 网关中定位 244 毫秒的性能异常</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-or-comparison/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-or-comparison.webp"><img class="article-img" src="../images/header-images/edge-or-comparison.webp" loading="lazy" alt=""/></div>
-            <div class="article-text">
-              <p class="blog-title">从开源 OpenResty 到 OpenResty Edge：如何在高性能架构上实现“企业级”进化？</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/cn/edge-cdn-benefit/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-cdn-benefit.webp"><img class="article-img" src="../images/header-images/edge-cdn-benefit.webp" loading="lazy" alt=""/></div>
-            <div class="article-text">
-              <p class="blog-title">为什么越来越多企业需要建立私有 CDN</p>
+              <p class="blog-title">WAF 性能测试：OpenResty Edge 比 ModSecurity 快 3.7–10 倍（208 条规则）</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>
@@ -241,7 +241,7 @@
     }
   
     @media (min-width: 575px) {
-    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+      .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
         margin: 0 10px;
       }
     }

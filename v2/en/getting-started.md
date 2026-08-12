@@ -1,5 +1,6 @@
 <!---
     @title         Getting Started
+    @description   Get started with OpenResty®: set up your first project, write a Hello World with Lua in Nginx, connect to MySQL and Memcached, and test with the resty CLI.
     @creator       Yichun Zhang
     @created       2011-06-20 11:39 GMT
 --->

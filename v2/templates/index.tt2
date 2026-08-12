@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-        <title>OpenResty® - [% IF lang == 'cn' %]开源 Web 平台[% ELSE %]Open Source Web Platform[% END %]</title>
+        <title>[% c.l("OpenResty® - Open-Source Web Platform Based on Nginx and LuaJIT") %]</title>
+        <meta name="description" content="[% c.l("OpenResty® turns Nginx into a full-fledged web app server with LuaJIT. Build high-performance gateways, APIs, and web services — powering 21M+ websites worldwide. Free and open source.") %]">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
 	<link href='https://openresty.org/css/fonts.css' rel='stylesheet' type='text/css'>
 	<!--

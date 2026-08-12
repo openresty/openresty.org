@@ -1,5 +1,6 @@
 <!---
     @title         下载
+    @description   下载 OpenResty® 源码包（含 PGP 签名）、官方 Linux 预编译包（Ubuntu/Debian/CentOS/RHEL 等）、Docker 镜像、Windows 二进制文件及 macOS homebrew。
     @creator       章亦春
     @created       2021-06-04 08:25 GMT
 --->

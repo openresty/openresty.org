@@ -1,5 +1,6 @@
 <!---
     @title         安装
+    @description   在 Linux（Ubuntu/Debian/CentOS/RHEL/Fedora/Alpine/Amazon Linux）上通过官方预编译包安装 OpenResty®，macOS 使用 homebrew。提供 Docker 镜像与源码编译指南。
     @creator       Yichun Zhang
     @created       2011-06-21 04:40 GMT
 --->

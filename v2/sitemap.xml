@@ -345,7 +345,7 @@
   </url>
   <url>
     <loc>https://openresty.org/en/community.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-08-12</lastmod>
   </url>
   <url>
     <loc>https://openresty.org/en/components.html</loc>
@@ -377,7 +377,7 @@
   </url>
   <url>
     <loc>https://openresty.org/en/download.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-08-12</lastmod>
   </url>
   <url>
     <loc>https://openresty.org/en/drizzle-nginx-module.html</loc>
@@ -425,7 +425,7 @@
   </url>
   <url>
     <loc>https://openresty.org/en/getting-started.html</loc>
-    <lastmod>2026-05-18</lastmod>
+    <lastmod>2026-08-12</lastmod>
   </url>
   <url>
     <loc>https://openresty.org/en/git-workflow.html</loc>
@@ -445,7 +445,7 @@
   </url>
   <url>
     <loc>https://openresty.org/en/installation.html</loc>
-    <lastmod>2026-05-18</lastmod>
+    <lastmod>2026-08-12</lastmod>
   </url>
   <url>
     <loc>https://openresty.org/en/libdrizzle.html</loc>
@@ -980,7 +980,7 @@
   </url>
   <url>
     <loc>https://openresty.org/cn/community.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-08-12</lastmod>
   </url>
   <url>
     <loc>https://openresty.org/cn/components.html</loc>
@@ -1008,7 +1008,7 @@
   </url>
   <url>
     <loc>https://openresty.org/cn/download.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-08-12</lastmod>
   </url>
   <url>
     <loc>https://openresty.org/cn/drizzle-nginx-module.html</loc>
@@ -1056,7 +1056,7 @@
   </url>
   <url>
     <loc>https://openresty.org/cn/installation.html</loc>
-    <lastmod>2026-05-18</lastmod>
+    <lastmod>2026-08-12</lastmod>
   </url>
   <url>
     <loc>https://openresty.org/cn/libdrizzle.html</loc>

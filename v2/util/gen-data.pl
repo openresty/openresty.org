@@ -203,13 +203,23 @@ sub dump_rows {
               quote_value($r, 'modifier'), "\t",
               $r->{modifier_link} // "\\N", "\t",
               quote_value($r, 'modified'), "\t",
-              quote_value($r, 'changes'),
+              quote_value($r, 'changes'), "\t",
+              quote_optional_value($r, 'description'),
               "\n";
     }
 
     close $out;
 
     scalar @$rows;
+}
+
+sub quote_optional_value {
+    my ($r, $k) = @_;
+
+    if (!$r->{$k}) {
+        return "\\N";
+    }
+    return quote_value($r, $k);
 }
 
 sub quote_value {

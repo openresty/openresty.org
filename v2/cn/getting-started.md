@@ -1,5 +1,6 @@
 <!---
     @title         Getting Started
+    @description   OpenResty® 快速入门：搭建第一个项目、用 Lua 在 Nginx 中编写 Hello World、连接 MySQL 与 Memcached，并使用 resty CLI 测试。
     @creator       Yichun Zhang
     @created       2011-06-20 11:39 GMT
     @modifier      Yichun Zhang

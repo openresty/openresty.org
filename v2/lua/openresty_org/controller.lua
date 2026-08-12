@@ -276,6 +276,7 @@ function _M.run()
                                 modifier_link = rec.modifier_link,
                                 created = rec.created,
                                 title = rec.title,
+                                description = rec.description,
                                 body = rec.html_body,
                                 timeline = timeline,
                                 lang = assert(lang),

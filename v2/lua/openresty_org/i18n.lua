@@ -25,6 +25,8 @@ local trans_cn = {
     ["Official Forum"] = "官方论坛",
     ["OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT."] = "OpenResty<sup>&reg;</sup> 是一款基于 NGINX 和 LuaJIT 的 Web 平台。",
     ["OpenResty<sup>&reg;</sup> is a registered trademark owned by <a href=\"https://openresty.com/\">OpenResty Inc</a>."] = "OpenResty<sup>&reg;</sup> 是 <a href=\"https://openresty.com/\">OpenResty Inc</a> 公司所有的注册商标。",
+    ["OpenResty® - Open-Source Web Platform Based on Nginx and LuaJIT"] = "OpenResty® - 基于 Nginx 与 LuaJIT 的开源 Web 平台",
+    ["OpenResty® turns Nginx into a full-fledged web app server with LuaJIT. Build high-performance gateways, APIs, and web services — powering 21M+ websites worldwide. Free and open source."] = "OpenResty® 将 Nginx 变为全功能 Web 应用服务器，内置 LuaJIT 运行时。用于构建高性能网关、API 和 Web 服务，驱动全球超 2100 万网站。完全免费开源。",
     ["Please adjust your search query and try again."] = "请调整您的搜索查询并重试。",
     ["Query too long (more than %d bytes)."] = "查词太长了（已经超出 %d 字节）。",
     ["Scalable Web Platform by Extending NGINX with Lua"] = "通过 Lua 扩展 NGINX 实现的可伸缩的 Web 平台",

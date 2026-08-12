@@ -69,11 +69,19 @@ msgstr "官方论坛"
 msgid  "Try OpenResty XRay"
 msgstr "试用 OpenResty XRay"
 
-#: templates/index.tt2:27
+#: templates/index.tt2:5
+msgid  "OpenResty® - Open-Source Web Platform Based on Nginx and LuaJIT"
+msgstr "OpenResty® - 基于 Nginx 与 LuaJIT 的开源 Web 平台"
+
+#: templates/index.tt2:6
+msgid  "OpenResty® turns Nginx into a full-fledged web app server with LuaJIT. Build high-performance gateways, APIs, and web services — powering 21M+ websites worldwide. Free and open source."
+msgstr "OpenResty® 将 Nginx 变为全功能 Web 应用服务器，内置 LuaJIT 运行时。用于构建高性能网关、API 和 Web 服务，驱动全球超 2100 万网站。完全免费开源。"
+
+#: templates/index.tt2:28
 msgid  "OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT."
 msgstr "OpenResty<sup>&reg;</sup> 是一款基于 NGINX 和 LuaJIT 的 Web 平台。"
 
-#: templates/index.tt2:34
+#: templates/index.tt2:35
 msgid  "Search OpenResty.org"
 msgstr "搜索 OpenResty.org 中文站"
 
