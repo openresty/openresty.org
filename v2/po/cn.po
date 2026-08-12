@@ -1,31 +1,31 @@
 #. TRANSLATORS: Please leave %s, %d, and etc as is, because it is needed by the program.
 #. Thank you for contributing to this project.
 
-#: lua/openresty_org/controller.lua:174
+#: lua/openresty_org/controller.lua:173
 msgid  "Bad search query"
 msgstr "非法的搜索查询"
 
-#: lua/openresty_org/controller.lua:175
+#: lua/openresty_org/controller.lua:174
 msgid  "No query provided."
 msgstr "没有提供任何搜索词。"
 
-#: lua/openresty_org/controller.lua:180
+#: lua/openresty_org/controller.lua:179
 msgid  "Query too long (more than %d bytes)."
 msgstr "查词太长了（已经超出 %d 字节）。"
 
-#: lua/openresty_org/controller.lua:189
+#: lua/openresty_org/controller.lua:188
 msgid  "No search results found"
 msgstr "没有找到任何匹配的记录"
 
-#: lua/openresty_org/controller.lua:190
+#: lua/openresty_org/controller.lua:189
 msgid  "Please adjust your search query and try again."
 msgstr "请调整您的搜索查询并重试。"
 
-#: lua/openresty_org/controller.lua:202
+#: lua/openresty_org/controller.lua:201
 msgid  "Search Result"
 msgstr "搜索结果"
 
-#: lua/openresty_org/controller.lua:223
+#: lua/openresty_org/controller.lua:222
 msgid  "Video Tutorials"
 msgstr "视频教程"
 
@@ -70,14 +70,18 @@ msgid  "Try OpenResty XRay"
 msgstr "试用 OpenResty XRay"
 
 #: templates/index.tt2:5
-msgid  "OpenResty&reg; - Open source"
-msgstr "OpenResty&reg; - 开源官方站"
+msgid  "OpenResty® - Open-Source Web Platform Based on Nginx and LuaJIT"
+msgstr "OpenResty® - 基于 Nginx 与 LuaJIT 的开源 Web 平台"
 
-#: templates/index.tt2:28
+#: templates/index.tt2:6
+msgid  "OpenResty® turns Nginx into a full-fledged web app server with LuaJIT. Build high-performance gateways, APIs, and web services — powering 21M+ websites worldwide. Free and open source."
+msgstr "OpenResty® 将 Nginx 变为全功能 Web 应用服务器，内置 LuaJIT 运行时。用于构建高性能网关、API 和 Web 服务，驱动全球超 2100 万网站。完全免费开源。"
+
+#: templates/index.tt2:29
 msgid  "OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT."
 msgstr "OpenResty<sup>&reg;</sup> 是一款基于 NGINX 和 LuaJIT 的 Web 平台。"
 
-#: templates/index.tt2:35
+#: templates/index.tt2:36
 msgid  "Search OpenResty.org"
 msgstr "搜索 OpenResty.org 中文站"
 

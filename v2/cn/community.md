@@ -1,5 +1,6 @@
 <!---
     @title         Community
+    @description   加入 OpenResty® 社区：Slack 工作区、英文和中文邮件列表（Google Groups）、GitHub 代码仓库，以及 Libera.Chat 上的 IRC 频道。
     @creator       Yichun Zhang
     @created       2012-08-04 23:04 GMT
 --->

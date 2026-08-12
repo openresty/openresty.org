@@ -94,7 +94,7 @@ function _M.get_home(lang, id)
 end
 
 function _M.get_post(lang, id)
-    local res = query_db("select title, modifier, modifier_link, to_char(created, 'dd Mon yyyy') as created, "
+    local res = query_db("select title, description, modifier, modifier_link, to_char(created, 'dd Mon yyyy') as created, "
                          .. "to_char(modified, 'dd Mon yyyy') as modified, "
                          .. "extract(epoch from modified) as last_modified, html_body from posts_" .. lang
                          .. " where id = " .. id)

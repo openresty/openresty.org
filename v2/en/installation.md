@@ -1,5 +1,6 @@
 <!---
     @title         Installation
+    @description   Install OpenResty® on Linux (Ubuntu/Debian/CentOS/RHEL/Fedora/Alpine/Amazon Linux) via official pre-built packages or homebrew on macOS. Docker images and source build instructions included.
     @creator       Yichun Zhang
     @created       2011-06-21 04:40 GMT
 --->

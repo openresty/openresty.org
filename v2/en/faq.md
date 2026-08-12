@@ -1,5 +1,6 @@
 <!---
     @title         Frequently Asked Questions
+    @description   Answers to common OpenResty® questions: how it relates to Nginx mainline releases, the tick-tock release model, LuaJIT bundling, production readiness, and where to get help.
     @creator       Yichun Zhang
     @created       Sat Jun 13 16:59:32 2015 +0800
     @modifier      Yichun Zhang
