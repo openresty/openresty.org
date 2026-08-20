@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://openresty.org/sitemap.xml
+Sitemap: https://openresty.org/en/sitemap.xml
+Sitemap: https://openresty.org/cn/sitemap.xml
