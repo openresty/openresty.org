@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const {marked} = require('marked');
+
+(async () => {
+
+// marked is ESM-only; dynamic import() keeps this script working on
+// Node versions without require(esm) support.
+const {marked} = await import('marked');
 const renderer = new marked.Renderer();
 const defaultHtmlRenderer = renderer.html;
 const defaultLinkRenderer = renderer.link;
@@ -105,3 +110,5 @@ fs.open(infile, 'r', function (err, fd) {
         }));
     });
 });
+
+})();

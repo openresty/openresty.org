@@ -171,7 +171,25 @@ end
 
 -- Inject the JSON-LD blocks into rendered HTML, just before </head>
 -- (falling back to </body>, then appending).
+-- the template engine returns the rendered page as a (possibly nested)
+-- array of string chunks, as accepted by ngx.print; flatten it to a string
+local function flatten(chunks, out)
+    for i = 1, #chunks do
+        local c = chunks[i]
+        if type(c) == "table" then
+            flatten(c, out)
+        else
+            out[#out + 1] = c
+        end
+    end
+    return out
+end
+
 function _M.inject(html, jsonld)
+    if type(html) == "table" then
+        html = table.concat(flatten(html, {}))
+    end
+
     if not jsonld or jsonld == "" then
         return html
     end

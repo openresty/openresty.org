@@ -3,6 +3,7 @@ local _M = {}
 local view = require "openresty_org.view"
 local model = require "openresty_org.model"
 local structured_data = require "openresty_org.structured_data"
+local hreflang = require "openresty_org.hreflang"
 local cjson = require "cjson"
 local i18n_class = require "openresty_org.i18n"
 
@@ -68,7 +69,8 @@ local function search_error(i18n, main_menu, timeline, query, title, msg, lang)
                                 lang = assert(lang),
                               },
                               i18n)
-    ngx.print(structured_data.inject(html, structured_data.organization()))
+    ngx.print(structured_data.inject(html, structured_data.organization()
+        .. "\n" .. hreflang.links({ permlink = "search" })))
 end
 
 local function get_videos_html(lang, i18n)
@@ -180,7 +182,8 @@ function _M.run()
                                     lang = assert(lang),
                                   },
                                   i18n)
-        ngx.print(structured_data.inject(html, structured_data.home(lang)))
+        ngx.print(structured_data.inject(html, structured_data.home(lang)
+            .. "\n" .. hreflang.links({})))
         return
     end
 
@@ -233,7 +236,8 @@ function _M.run()
                                     lang = assert(lang),
                                   },
                                   i18n)
-        ngx.print(structured_data.inject(html, structured_data.organization()))
+        ngx.print(structured_data.inject(html, structured_data.organization()
+            .. "\n" .. hreflang.links({ permlink = "search" })))
         return
     end
 
@@ -253,7 +257,8 @@ function _M.run()
                                     lang = assert(lang),
                                   },
                                   i18n)
-        ngx.print(structured_data.inject(html, structured_data.organization()))
+        ngx.print(structured_data.inject(html, structured_data.organization()
+            .. "\n" .. hreflang.links({ permlink = "videos" })))
         return
     end
 
@@ -284,11 +289,19 @@ function _M.run()
                               },
                               i18n)
 
+    local other_lang = lang == 'en' and 'cn' or 'en'
+    local other_posts = model.get_post_list(other_lang)
+    local has_counterpart = other_posts[tag] ~= nil
+
     ngx.print(structured_data.inject(html, structured_data.page({
         lang = lang,
         permlink = tag,
         title = rec.title,
         description = rec.description,
+    }) .. "\n" .. hreflang.links({
+        permlink = tag,
+        en_exists = (lang == 'en') or has_counterpart,
+        cn_exists = (lang == 'cn') or has_counterpart,
     })))
 end
 
