@@ -2,6 +2,7 @@ local _M = {}
 
 local view = require "openresty_org.view"
 local model = require "openresty_org.model"
+local structured_data = require "openresty_org.structured_data"
 local cjson = require "cjson"
 local i18n_class = require "openresty_org.i18n"
 
@@ -67,7 +68,7 @@ local function search_error(i18n, main_menu, timeline, query, title, msg, lang)
                                 lang = assert(lang),
                               },
                               i18n)
-    ngx.print(html)
+    ngx.print(structured_data.inject(html, structured_data.organization()))
 end
 
 local function get_videos_html(lang, i18n)
@@ -179,7 +180,7 @@ function _M.run()
                                     lang = assert(lang),
                                   },
                                   i18n)
-        ngx.print(html)
+        ngx.print(structured_data.inject(html, structured_data.home(lang)))
         return
     end
 
@@ -232,7 +233,7 @@ function _M.run()
                                     lang = assert(lang),
                                   },
                                   i18n)
-        ngx.print(html)
+        ngx.print(structured_data.inject(html, structured_data.organization()))
         return
     end
 
@@ -252,7 +253,7 @@ function _M.run()
                                     lang = assert(lang),
                                   },
                                   i18n)
-        ngx.print(html)
+        ngx.print(structured_data.inject(html, structured_data.organization()))
         return
     end
 
@@ -283,7 +284,12 @@ function _M.run()
                               },
                               i18n)
 
-    ngx.print(html)
+    ngx.print(structured_data.inject(html, structured_data.page({
+        lang = lang,
+        permlink = tag,
+        title = rec.title,
+        description = rec.description,
+    })))
 end
 
 return _M
