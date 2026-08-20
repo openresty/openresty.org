@@ -1,5 +1,6 @@
 <!---
     @title         Lua Resty Redis Library
+    @description   A cosocket-based Redis client library providing highly concurrent Redis access from OpenResty® applications, with connection pooling and pipelining.
     @creator       Yichun Zhang
     @created       2012-02-29 07:35 GMT
     @modifier      Yichun Zhang

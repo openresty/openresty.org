@@ -1,6 +1,7 @@
 [% major_ver = "1.27.1"; version = major_ver _ ".1" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: based on Nginx 1.27.1, with OpenSSL 3.0.15, LuaJIT 2.1-20240815, and updates to lua-resty-websocket and lua-resty-redis.
 --->
 
 We are happy to announce the new formal release, [% version %], of the

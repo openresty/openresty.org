@@ -1,5 +1,6 @@
 <!---
     @title         FastCGI Nginx Module
+    @description   The standard Nginx module for communicating with remote FastCGI servers, bundled with OpenResty® for proxying requests to FastCGI applications.
     @creator       Yichun Zhang
     @created       2012-09-13 18:29 GMT
     @modifier      Yichun Zhang

@@ -1,6 +1,7 @@
 [% VER = "1.21.4.1"; RC = 2 -%]
 <!---
-    @title         OpenResty [% VER %] RC[% RC %] is out
+    @title         OpenResty [% VER %] RC[% RC %] 发布
+    @description   OpenResty [% VER %] RC[% RC %] 候选版本发布，供社区测试：修复事件释放后仍调用已发布事件处理器及 ngx.pipe 超时的问题，并从 LuaJIT 上游合入多项修复。
     @created       2022-03-07 00:00 GMT
     @modified      2022-03-07 00:00 GMT
 --->

@@ -1,7 +1,8 @@
 [% VER = "1.19.9.1"; RC = 1 -%]
 [% major_ver = '1.19.9' -%]
 <!---
-    @title         OpenResty [% VER %] RC[% RC %] is out
+    @title         OpenResty [% VER %] RC[% RC %] 发布
+    @description   OpenResty [% VER %] RC[% RC %] 候选版本发布，供社区测试：基于 Nginx 1.19.9 核心，引入 LUAJIT_TEST_FIXED_ORDER 宏，并为 stream 子系统实现 ngx.process API。
 --->
 
 We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],

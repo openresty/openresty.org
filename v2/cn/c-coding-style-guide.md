@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty® C 代码风格指南
+    @description   OpenResty® C 代码风格指南：遵循 NGINX 代码风格，涵盖命名约定、typedef 后缀等规范，提交补丁须遵守。
 --->
 
 OpenResty 在它的 C 语言模块里遵循 NGINX 的代码风格，比如 OpenResty 自己的那些 NGINX 插件

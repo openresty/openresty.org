@@ -1,5 +1,6 @@
 <!---
     @title         Drizzle Nginx Module
+    @description   An Nginx upstream module that talks to MySQL and Drizzle database servers through the libdrizzle client library in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-06-21 08:22 GMT
     @modifier      Yichun Zhang

@@ -1,5 +1,6 @@
 <!---
-    @title         Lua Rds Parser Library
+    @title         Lua Rds Parser 库
+    @description   lua-rds-parser 用于将 Drizzle/Postgres 模块生成的 Resty-DBD-Stream（RDS）数据解析为 Lua 数据结构，纯 C 实现，速度快且内存占用低。
     @creator       Yichun Zhang
     @created       2011-08-31 07:38 GMT
     @modifier      Yichun Zhang

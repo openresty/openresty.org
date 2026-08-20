@@ -1,5 +1,6 @@
 <!---
-    @title         Drizzle Nginx Module
+    @title         Drizzle Nginx 模块
+    @description   drizzle-nginx-module 是基于 libdrizzle 的 Nginx upstream 模块，可与 MySQL/Drizzle 数据库直接通信，并以 RDS 流格式返回查询结果。
     @creator       Yichun Zhang
     @created       2011-06-21 08:22 GMT
     @modifier      Yichun Zhang

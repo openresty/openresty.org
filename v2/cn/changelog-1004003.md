@@ -1,5 +1,6 @@
 <!---
-    @title         ChangeLog 1.4.3
+    @title         变更日志 1.4.3
+    @description   OpenResty® 1.4.3 版本的完整变更日志，记录 Nginx 核心、LuaJIT 及各 lua-resty-* 组件的更新与修复。
     @creator       Yichun Zhang
     @created       2013-10-29 20:41 GMT
     @modifier      Yichun Zhang

@@ -1,5 +1,6 @@
 <!---
-    @title         OpenResty 1.15.8.3 Released
+    @title         OpenResty 1.15.8.3 正式发布
+    @description   OpenResty® 1.15.8.3 补丁版本发布：修复 Nginx 核心与 ngx_http_lua 模块的内存内容泄露漏洞，并将 PCRE 升级至 8.44、OpenSSL 升级至 1.1.0l。
     @creator       Yichun Zhang
 --->
 

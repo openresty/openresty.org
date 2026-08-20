@@ -1,5 +1,6 @@
 <!---
-    @title         Rds Json Nginx Module
+    @title         Rds Json Nginx 模块
+    @description   rds-json-nginx-module 是一个输出过滤器，将 ngx_drizzle 等模块生成的 Resty DBD Streams（RDS）数据格式化为 JSON 流。
     @creator       Yichun Zhang
     @created       2011-06-21 08:39 GMT
     @modifier      Yichun Zhang

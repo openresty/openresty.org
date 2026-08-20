@@ -1,5 +1,6 @@
 <!---
     @title         Proxy Nginx Module
+    @description   The standard Nginx module for talking to remote HTTP and HTTPS servers, bundled with OpenResty® for reverse proxying.
     @creator       Yichun Zhang
     @created       2012-09-13 18:28 GMT
     @modifier      Yichun Zhang

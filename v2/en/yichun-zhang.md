@@ -1,5 +1,6 @@
 <!---
     @title         Yichun Zhang
+    @description   About Yichun Zhang (agentzh, 章亦春), the creator and maintainer of OpenResty®, with a link to his homepage.
     @creator       Yichun Zhang
     @created       2011-06-21 09:14 GMT
     @modifier      Yichun Zhang

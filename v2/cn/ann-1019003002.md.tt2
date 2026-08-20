@@ -1,6 +1,7 @@
 [% major_ver = "1.19.3"; version = major_ver _ ".2" -%]
 <!---
-    @title         OpenResty [% version %] Released
+    @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 补丁版本发布：修复 Nginx 解析器中的安全漏洞（CVE-2021-23017），并将 Win32/Win64 平台的 OpenSSL 升级至 1.1.1k。
 --->
 
 OpenResty [% version %] is a patch release addressing a security vulnerability

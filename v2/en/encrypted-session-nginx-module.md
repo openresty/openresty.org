@@ -1,5 +1,6 @@
 <!---
     @title         Encrypted Session Nginx Module
+    @description   Provides AES-256-with-MAC encryption and decryption for Nginx variables, enabling simple login and access-control features in OpenResty® applications.
     @creator       Yichun Zhang
     @created       2011-06-21 08:34 GMT
     @modifier      Yichun Zhang

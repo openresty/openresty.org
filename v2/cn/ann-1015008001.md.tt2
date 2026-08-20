@@ -1,5 +1,6 @@
 <!---
-    @title         OpenResty 1.15.8.1 Released
+    @title         OpenResty 1.15.8.1 正式发布
+    @description   OpenResty® 1.15.8.1 正式发布：基于 Nginx 核心 1.15.8，新增 ARM64 支持，默认加载 resty.core，并引入 lua-resty-shell、lua-resty-signal、lua-tablepool 等新库。
     @creator       Yichun Zhang
 --->
 

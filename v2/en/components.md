@@ -1,5 +1,6 @@
 <!---
     @title         Components
+    @description   A list of all components bundled with OpenResty®, including LuaJIT and various Nginx modules, with notes on which are enabled by default.
     @creator       Yichun Zhang
     @created       2011-06-21 04:24 GMT
 --->

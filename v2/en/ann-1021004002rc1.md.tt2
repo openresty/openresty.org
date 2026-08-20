@@ -1,6 +1,7 @@
 [% VER = "1.21.4.2"; RC = 1 -%]
 <!---
     @title         OpenResty [% VER %] RC[% RC %] is out
+    @description   OpenResty® [% VER %] RC[% RC %] release candidate for community testing: with LuaJIT fixes, monotonic time APIs, and an Apple Silicon FFI workaround.
     @created       2023-04-17 00:00 GMT
     @modified      2023-04-17 00:00 GMT
 --->

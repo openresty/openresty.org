@@ -1,5 +1,6 @@
 <!---
     @title         Lua Resty Core Library
+    @description   Reimplements the Lua API of lua-nginx-module using LuaJIT FFI, providing lower-overhead implementations of core OpenResty® Lua APIs.
     @creator       Yichun Zhang
     @created       2013-12-14 22:59 GMT
     @modifier      Yichun Zhang

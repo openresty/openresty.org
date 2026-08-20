@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty®  RPM 包
+    @description   OpenResty® 官方 RPM 包说明：适用于 CentOS 与 RHEL 的 Yum 资源库，涵盖 openresty 核心服务与 resty 命令行工具。
 --->
 
 OpenResty 官方 Yum 资源库提供下面的 RPM 包。

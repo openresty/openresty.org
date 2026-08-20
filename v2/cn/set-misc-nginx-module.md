@@ -1,5 +1,6 @@
 <!---
-    @title         Set Misc Nginx Module
+    @title         Set Misc Nginx 模块
+    @description   set-misc-nginx-module 为 Nginx 的 rewrite 模块添加多种 set_xxx 指令，如 MD5/SHA1 摘要、SQL/JSON 转义等，扩展配置能力。
     @creator       Yichun Zhang
     @created       2011-06-21 08:36 GMT
     @modifier      Yichun Zhang

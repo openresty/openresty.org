@@ -2,6 +2,7 @@
 [% major_ver = '1.17.8' -%]
 <!---
     @title         OpenResty [% VER %] RC[% RC %] is out
+    @description   OpenResty® [% VER %] RC[% RC %] release candidate for community testing: based on Nginx 1.17.8, with OpenSSL 1.1.1 support and lua-resty-core now mandatory.
 --->
 
 We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],

@@ -1,5 +1,6 @@
 <!---
     @title         LuaJIT
+    @description   LuaJIT 是 Lua 语言的即时（JIT）编译器，OpenResty® 使用其优化过的分支 luajit2，以大幅提升 Lua 代码的执行性能。
     @creator       Yichun Zhang
     @created       2011-06-21 08:16 GMT
     @modifier      Yichun Zhang

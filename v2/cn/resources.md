@@ -1,5 +1,6 @@
 <!---
-    @title         Resources
+    @title         学习资源
+    @description   OpenResty® 学习资源：汇集官方博客及内存管理、LuaJIT GC64 等主题的英文与中文文章链接。
     @creator       Yichun Zhang
     @created       2011-10-24 05:51 GMT
 --->

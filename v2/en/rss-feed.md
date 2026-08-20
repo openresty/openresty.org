@@ -1,5 +1,6 @@
 <!---
     @title         RSSFeed
+    @description   Subscribe to OpenResty® website updates: this page provides the site's RSS feed URL for reading the latest news in your feed reader.
     @creator       Yichun Zhang
     @created       2011-06-21 07:35 GMT
     @modifier      Yichun Zhang

@@ -1,5 +1,6 @@
 <!---
-    @title         Memc Nginx Module
+    @title         Memc Nginx 模块
+    @description   memc-nginx-module 扩展了标准 memcached 模块，支持几乎完整的 memcached ASCII 协议，可通过子请求高效访问 memcached 并定义 REST 接口。
     @creator       Yichun Zhang
     @created       2011-06-21 08:30 GMT
     @modifier      Yichun Zhang

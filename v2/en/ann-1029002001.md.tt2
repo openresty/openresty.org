@@ -1,6 +1,7 @@
 [% major_ver = "1.29.2"; version = major_ver _ ".1" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: based on Nginx 1.29.2, with OpenSSL 3.5.5, PCRE 10.47, and new lua-nginx-module and stream-lua-nginx-module features.
 --->
 
 We are happy to announce the new formal release, [% version %], of the

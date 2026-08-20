@@ -1,5 +1,6 @@
 <!---
     @title         Enterprise Solutions
+    @description   OpenResty Inc.'s enterprise solutions: OpenResty XRay APM, OpenResty Edge traffic management, and OpenResty Showman video tutorial tools.
     @creator       Yichun Zhang
     @created       2013-08-03 04:25 GMT
 --->

@@ -1,5 +1,6 @@
 <!---
     @title         ChangeLog 1.2.4
+    @description   Complete change log for OpenResty® 1.2.4, listing updates and fixes to the Nginx core, LuaJIT, and bundled components.
     @creator       Yichun Zhang
     @created       2012-10-14 19:13 GMT
     @modifier      Yichun Zhang

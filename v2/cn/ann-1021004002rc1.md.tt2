@@ -1,6 +1,7 @@
 [% VER = "1.21.4.2"; RC = 1 -%]
 <!---
-    @title         OpenResty [% VER %] RC[% RC %] is out
+    @title         OpenResty [% VER %] RC[% RC %] 发布
+    @description   OpenResty [% VER %] RC[% RC %] 候选版本发布，供社区测试：新增 resty.core.time 单调时间 API，支持 Apple Silicon FFI，并为 lua-resty-websocket 增加 mTLS 客户端证书、lua-resty-memcached 增加流水线接口。
     @created       2023-04-17 00:00 GMT
     @modified      2023-04-17 00:00 GMT
 --->

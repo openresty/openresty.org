@@ -1,6 +1,7 @@
 [% VER = "1.21.4.1"; RC = 1 -%]
 <!---
-    @title         OpenResty [% VER %] RC[% RC %] is out
+    @title         OpenResty [% VER %] RC[% RC %] 发布
+    @description   OpenResty [% VER %] RC[% RC %] 候选版本发布，供社区测试：基于 Nginx 1.21.4 核心，LuaJIT 支持哈希表遍历的 JIT 编译与 string.buffer API，并新增 ngx.run_worker_thread、ssl_client_hello_by_lua* 等特性。
     @created       2022-01-27 00:00 GMT
     @modified      2022-01-27 00:00 GMT
 --->

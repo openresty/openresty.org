@@ -1,5 +1,6 @@
 <!---
     @title         Quality Assurance
+    @description   Quality assurance for OpenResty®: extensive regression testing of all components on an Amazon EC2 cluster with published reports.
     @creator       Yichun Zhang
     @created       2012-04-29 02:40 GMT
     @modifier      Yichun Zhang

@@ -1,5 +1,6 @@
 <!---
     @title         GitHub
+    @description   OpenResty® 的 GitHub 信息：介绍基于 git 的社交编程平台 GitHub 及其主页地址。
     @creator       Yichun Zhang
     @created       2011-06-21 04:20 GMT
     @modifier      Yichun Zhang

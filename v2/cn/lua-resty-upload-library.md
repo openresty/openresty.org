@@ -1,5 +1,6 @@
 <!---
-    @title         Lua Resty Upload Library
+    @title         Lua Resty Upload 库
+    @description   lua-resty-upload 是基于 cosocket 的 HTTP 文件上传流式读取与解析库，可高效处理 multipart 上传而不占用过多内存。
     @creator       Yichun Zhang
     @created       2012-11-12 02:13 GMT
     @modifier      Yichun Zhang

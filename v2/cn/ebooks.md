@@ -1,5 +1,6 @@
 <!---
-    @title         eBooks
+    @title         电子书
+    @description   OpenResty® 电子书下载：提供《Programming OpenResty》与 agentzh 的 Nginx 教程，含 HTML、MOBI、EPUB、PDF 格式。
     @creator       Zoom Quiet
     @created       2012-05-29 14:21 GMT
     @modifier      Zoom Quiet

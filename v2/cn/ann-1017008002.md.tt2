@@ -1,6 +1,7 @@
 [% major_ver = "1.17.8"; version = major_ver _ ".2" -%]
 <!---
-    @title         OpenResty [% version %] Released
+    @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 正式发布：基于 Nginx 核心 1.17.8，支持 OpenSSL 1.1.1，默认加载 lua-resty-core 并切换到 FFI 实现。
     @creator       Yichun Zhang
 --->
 

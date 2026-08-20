@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty®  Linux Packages
+    @description   Official pre-built OpenResty® packages for Ubuntu, Debian, CentOS, and RHEL, with supported versions and architectures.
 --->
 
 OpenResty<sup>&reg;</sup> provides official pre-built packages for the following Linux distributions and versions.

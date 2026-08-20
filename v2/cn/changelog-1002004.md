@@ -1,5 +1,6 @@
 <!---
-    @title         ChangeLog 1.2.4
+    @title         变更日志 1.2.4
+    @description   OpenResty® 1.2.4 版本的完整变更日志，记录 Nginx 核心、LuaJIT 及各 lua-resty-* 组件的更新与修复。
     @creator       Yichun Zhang
     @created       2012-10-14 20:36 GMT
     @modifier      Yichun Zhang

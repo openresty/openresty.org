@@ -1,5 +1,6 @@
 <!---
     @title         GitHub
+    @description   A brief introduction to GitHub, the social coding platform used to host the OpenResty® project's repositories.
     @creator       Yichun Zhang
     @created       2011-06-21 04:20 GMT
     @modifier      Yichun Zhang

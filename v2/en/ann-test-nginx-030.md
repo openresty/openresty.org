@@ -1,5 +1,6 @@
 <!---
     @title         Test::Nginx 0.30 Released
+    @description   Test::Nginx 0.30 released: adds TEST_NGINX_FAST_SHUTDOWN, environment expansion in tcp_listen, and fixes for stream ports and HTTP trailer parsing.
     @creator       Jiahao Wang
 --->
 

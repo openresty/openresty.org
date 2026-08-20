@@ -1,6 +1,7 @@
 [% VER = "1.15.8.1"; RC = 2 -%]
 <!---
     @title         OpenResty [% VER %] RC[% RC %] is out
+    @description   OpenResty® [% VER %] RC[% RC %] release candidate for community testing: based on Nginx 1.15.8, now loading resty.core by default and upgrading ngx_lua to 0.10.15.
 --->
 
 We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],

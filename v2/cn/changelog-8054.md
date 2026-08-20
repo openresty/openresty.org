@@ -1,5 +1,6 @@
 <!---
-    @title         ChangeLog 8054
+    @title         变更日志 8054
+    @description   OpenResty® 0.8.54 版本的完整变更日志，记录 Nginx 核心、LuaJIT 及各 lua-resty-* 组件的更新与修复。
     @creator       Yichun Zhang
     @created       2011-06-21 04:31 GMT
     @modifier      Yichun Zhang

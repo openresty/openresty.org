@@ -1,6 +1,7 @@
 [% VER = "1.15.8.1"; RC = 1 -%]
 <!---
     @title         OpenResty [% VER %] RC[% RC %] is out
+    @description   OpenResty® [% VER %] RC[% RC %] release candidate for community testing: based on Nginx 1.15.8, adding ARM64 support and new lua-resty-shell and lua-resty-signal libraries.
 --->
 
 We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],

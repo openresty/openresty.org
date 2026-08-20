@@ -1,6 +1,7 @@
 [% VER = "1.21.4.1"; RC = 3 -%]
 <!---
-    @title         OpenResty [% VER %] RC[% RC %] is out
+    @title         OpenResty [% VER %] RC[% RC %] 发布
+    @description   OpenResty [% VER %] RC[% RC %] 候选版本发布，供社区测试：修复 LuaJIT 中 Lua 表遍历提前结束的问题。
     @created       2022-04-18 00:00 GMT
     @modified      2022-04-18 00:00 GMT
 --->

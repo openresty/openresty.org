@@ -1,5 +1,6 @@
 <!---
-    @title         Quality Assurance
+    @title         质量保证
+    @description   OpenResty® 质量保证：介绍在亚马逊 EC2 集群上对所有组件运行的回归测试，并提供最新测试报告地址。
     @creator       Zoom Quiet
     @created       2012-05-29 14:37 GMT
     @modifier      Zoom Quiet

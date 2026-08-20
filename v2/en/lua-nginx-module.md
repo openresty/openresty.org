@@ -1,5 +1,6 @@
 <!---
     @title         Lua Nginx Module
+    @description   lua-nginx-module is the core OpenResty® module that embeds Lua/LuaJIT into Nginx, letting you run Lua code in every request-processing phase.
     @creator       Yichun Zhang
     @created       2011-06-21 08:26 GMT
 --->

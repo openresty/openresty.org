@@ -1,6 +1,7 @@
 [% VER = "1.21.4.1"; RC = 3 -%]
 <!---
     @title         OpenResty [% VER %] RC[% RC %] is out
+    @description   OpenResty® [% VER %] RC[% RC %] release candidate for community testing: fixes a LuaJIT bug where Lua table iteration terminated early.
     @created       2022-04-18 00:00 GMT
     @modified      2022-04-18 00:00 GMT
 --->

@@ -1,5 +1,6 @@
 <!---
-    @title         OpenResty 1.15.8.2 Released
+    @title         OpenResty 1.15.8.2 正式发布
+    @description   OpenResty® 1.15.8.2 补丁版本发布：修复 HTTP/2 协议中可能导致过高内存与 CPU 占用的安全漏洞（CVE-2019-9511、CVE-2019-9513、CVE-2019-9516）。
     @creator       Thibault Charbonnier
 --->
 

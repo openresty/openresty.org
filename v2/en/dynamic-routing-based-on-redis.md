@@ -1,5 +1,6 @@
 <!---
     @title         Dynamic Routing Based On Redis
+    @description   Sample showing how to route requests to different HTTP backends based on the User-Agent header using Redis and Lua in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-07-27 04:02 GMT
     @modifier      Yichun Zhang

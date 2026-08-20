@@ -1,5 +1,6 @@
 <!---
     @title         Iconv Nginx Module
+    @description   Uses libiconv to convert character encodings via the set_iconv and iconv_filter directives, working on variables or response bodies in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-06-21 09:04 GMT
     @modifier      Yichun Zhang

@@ -1,6 +1,7 @@
 [% major_ver = "1.27.1"; version = major_ver _ ".2" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: backports the CVE-2025-23419 fix, upgrades OpenSSL to 3.4.1 and PCRE to 10.44, and adds ngx.resp.set_status to lua-nginx-module.
 --->
 
 We are happy to announce the new formal release, [% version %], of the

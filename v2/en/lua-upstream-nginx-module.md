@@ -1,5 +1,6 @@
 <!---
     @title         Lua Upstream Nginx Module
+    @description   An Nginx C module that exposes a Lua API to lua-nginx-module for managing classic Nginx upstreams from Lua code in OpenResty®.
     @creator       Yichun Zhang
     @created       2014-03-30 20:50 GMT
     @modifier      Yichun Zhang

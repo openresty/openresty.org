@@ -1,6 +1,7 @@
 [% major_ver = "1.29.2"; version = major_ver _ ".3" -%]
 <!---
     @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 正式发布：移植多项 Nginx 安全补丁（CVE-2026-27654 等），并升级 lua-nginx-module 至 v0.10.30rc2、lua-resty-core 至 v0.1.33rc2、luajit2 至 v2.1-20260311。
 --->
 
 我们荣幸地宣布，基于 NGINX 和 LuaJIT 的 OpenResty Web 平台 [% version %] 版本现已正式发布。

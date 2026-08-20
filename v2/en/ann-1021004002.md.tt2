@@ -1,6 +1,7 @@
 [% major_ver = "1.21.4"; version = major_ver _ ".2" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: with LuaJIT fixes, monotonic time APIs in resty.core.time, an Apple Silicon FFI workaround, and lua-resty-websocket mTLS support.
     @creator       Jiahao Wang
     @created       2023-07-19 04:47 GMT
 --->

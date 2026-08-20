@@ -1,5 +1,6 @@
 <!---
-    @title         Srcache Nginx Module
+    @title         Srcache Nginx 模块
+    @description   srcache-nginx-module 为任意 Nginx location 提供透明的缓存层，通常配合 memc-nginx-module 作为缓存存储后端使用。
     @creator       Yichun Zhang
     @created       2011-06-21 09:07 GMT
     @modifier      Yichun Zhang

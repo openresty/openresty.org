@@ -1,5 +1,6 @@
 <!---
-    @title         Components
+    @title         组件
+    @description   OpenResty® 组件列表：介绍构建 OpenResty® 所用的各 Nginx 模块与 Lua 库，及通过编译选项启用默认未开启组件的方法。
     @creator       Yichun Zhang
     @created       2011-06-21 04:24 GMT
 --->

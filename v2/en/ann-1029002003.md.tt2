@@ -1,6 +1,7 @@
 [% major_ver = "1.29.2"; version = major_ver _ ".3" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: backports multiple nginx security patches and upgrades lua-nginx-module to v0.10.30rc2.
 --->
 
 We are happy to announce the new formal release, [% version %], of the

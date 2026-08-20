@@ -1,6 +1,7 @@
 [% major_ver = "1.21.4"; version = major_ver _ ".3" -%]
 <!---
-    @title         OpenResty [% version %] Released
+    @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 补丁版本发布：修复 Nginx HTTP/2 处理中的安全漏洞，缓解 HTTP/2 Rapid Reset 攻击（CVE-2023-44487）。
 --->
 
 OpenResty [% version %] is a patch release addressing a security vulnerability

@@ -1,5 +1,6 @@
 <!---
-    @title         ChangeLog 1.9.3
+    @title         变更日志 1.9.3
+    @description   OpenResty® 1.9.3 版本的完整变更日志，记录 Nginx 核心、LuaJIT 及各 lua-resty-* 组件的更新与修复。
     @creator       Yichun Zhang
     @created       2015-08-12 10:34 GMT
     @modifier      Yichun Zhang

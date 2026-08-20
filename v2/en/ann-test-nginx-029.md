@@ -1,5 +1,6 @@
 <!---
     @title         Test::Nginx 0.29 Released
+    @description   Test::Nginx 0.29 released: adds TEST_NGINX_RAND_PORT_XXX for random ports, plus fixes for check-leak mode and server_addr_for_client logging.
     @creator       Yichun Zhang
 --->
 

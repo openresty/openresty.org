@@ -1,5 +1,6 @@
 <!---
     @title         Test::Nginx 0.27 Released
+    @description   Test::Nginx 0.27 released: adds --- reload_fails, gen_dgram_request, and shutdown_error_log sections, plus an HTTP/2 test mode and check-leak improvements.
     @creator       Yichun Zhang
 --->
 

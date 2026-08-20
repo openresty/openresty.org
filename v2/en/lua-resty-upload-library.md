@@ -1,5 +1,6 @@
 <!---
     @title         Lua Resty Upload Library
+    @description   A streaming reader and parser for HTTP file uploads based on lua-nginx-module's cosocket API, for handling multipart uploads in OpenResty®.
     @creator       Yichun Zhang
     @created       2012-02-29 07:39 GMT
     @modifier      Yichun Zhang

@@ -1,5 +1,6 @@
 <!---
-    @title         Lua Resty Web Socket Library
+    @title         Lua Resty Web Socket 库
+    @description   lua-resty-websocket 基于 cosocket 实现了非阻塞的 WebSocket 服务端与客户端，为 OpenResty® 应用提供 WebSocket 支持。
     @creator       Yichun Zhang
     @created       2013-09-30 06:58 GMT
     @modifier      Yichun Zhang

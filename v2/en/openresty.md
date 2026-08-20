@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty®
+    @description   Overview of OpenResty®: a full-fledged web platform integrating Nginx, LuaJIT, Lua libraries, and third-party modules for scalable web apps.
     @creator       Yichun Zhang
     @created       2011-06-21 04:03 GMT
 --->

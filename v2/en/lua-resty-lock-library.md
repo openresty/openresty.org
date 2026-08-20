@@ -1,5 +1,6 @@
 <!---
     @title         Lua Resty Lock Library
+    @description   Implements a simple nonblocking mutex lock API over lua-nginx-module shared memory dictionaries, useful for avoiding dog-pile effects in OpenResty®.
     @creator       Yichun Zhang
     @created       2013-09-30 06:22 GMT
     @modifier      Yichun Zhang

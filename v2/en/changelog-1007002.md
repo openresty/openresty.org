@@ -1,5 +1,6 @@
 <!---
     @title         ChangeLog 1.7.2
+    @description   Complete change log for OpenResty® 1.7.2, listing updates and fixes to the Nginx core, LuaJIT, and bundled components.
     @creator       Yichun Zhang
     @created       2014-07-01 05:08 GMT
 --->

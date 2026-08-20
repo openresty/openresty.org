@@ -1,5 +1,6 @@
 <!---
     @title         Lua Rds Parser Library
+    @description   A pure-C Lua library that parses Resty-DBD-Stream formatted data from the drizzle and postgres modules into Lua data structures in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-08-31 07:38 GMT
     @modifier      Yichun Zhang

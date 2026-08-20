@@ -1,5 +1,6 @@
 <!---
-    @title         Rds Csv Nginx Module
+    @title         Rds Csv Nginx 模块
+    @description   rds-csv-nginx-module 是一个高效的输出过滤器，将 Drizzle/Postgres 模块生成的 RDS 数据流式转换为 RFC 4180 兼容的 CSV 格式。
     @creator       Yichun Zhang
     @created       2011-08-31 07:42 GMT
     @modifier      Yichun Zhang

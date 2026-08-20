@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty Deb 安装包
+    @description   OpenResty® 官方 Deb 安装包说明：适用于 Ubuntu 与 Debian，涵盖 openresty 核心服务、resty 命令行工具及服务管理命令。
 --->
 
 OpenResty 官方 [APT 包仓库](linux-packages.html)提供下面的 deb 包 (适用于 Ubuntu 和 Debian)。

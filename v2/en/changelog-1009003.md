@@ -1,5 +1,6 @@
 <!---
     @title         ChangeLog 1.9.3
+    @description   Complete change log for OpenResty® 1.9.3, listing updates and fixes to the Nginx core, LuaJIT, and bundled components.
     @creator       Yichun Zhang
     @created       2015-07-31 03:33 GMT
     @modifier      Yichun Zhang

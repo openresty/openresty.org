@@ -1,5 +1,6 @@
 <!---
     @title         Donate Online
+    @description   Donate to the OpenResty® Software Foundation: large grants by email or one-time donations via PayPal.
     @creator       Yichun Zhang
     @created       2012-01-11 07:32 GMT
     @modifier      Yichun Zhang

@@ -1,5 +1,6 @@
 <!---
     @title         Array Var Nginx Module
+    @description   Adds support for array variables to Nginx config files, letting you use arrays of variables in OpenResty® configurations.
     @creator       Yichun Zhang
     @created       2011-06-21 08:19 GMT
     @modifier      Yichun Zhang

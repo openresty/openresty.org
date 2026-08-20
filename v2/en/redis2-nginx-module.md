@@ -1,5 +1,6 @@
 <!---
     @title         Redis2 Nginx Module
+    @description   An Nginx upstream module that makes Nginx talk to Redis 2.x servers non-blockingly, implementing the full Redis 2.0 protocol with pipelining in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-06-21 08:47 GMT
     @modifier      YichunZhang

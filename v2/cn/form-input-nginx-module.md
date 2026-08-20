@@ -1,5 +1,6 @@
 <!---
-    @title         Form Input Nginx Module
+    @title         Form Input Nginx 模块
+    @description   form-input-nginx-module 读取 application/x-www-form-urlencoded 编码的 POST/PUT 请求体，并将表单参数解析为 Nginx 变量。
     @creator       Yichun Zhang
     @created       2011-06-21 09:01 GMT
     @modifier      Yichun Zhang

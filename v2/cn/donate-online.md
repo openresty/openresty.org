@@ -1,5 +1,6 @@
 <!---
     @title         在线捐助
+    @description   OpenResty® 在线捐助方式：介绍通过 PayPal、支付宝或购买周边产品支持 OpenResty® 开发的途径。
     @creator       Zoom Quiet
     @created       2012-05-29 14:32 GMT
 --->

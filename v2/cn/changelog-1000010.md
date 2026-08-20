@@ -1,5 +1,6 @@
 <!---
-    @title         ChangeLog 1.0.10
+    @title         变更日志 1.0.10
+    @description   OpenResty® 1.0.10 版本的完整变更日志，记录 Nginx 核心、LuaJIT 及各 lua-resty-* 组件的更新与修复。
     @creator       Yichun Zhang
     @created       2012-05-13 13:46 GMT
     @modifier      Yichun Zhang

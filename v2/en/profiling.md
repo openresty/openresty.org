@@ -1,5 +1,6 @@
 <!---
     @title         Profiling
+    @description   Profiling OpenResty® applications to analyze and optimize performance, using commercial tools like OpenResty XRay.
     @creator       Yichun Zhang
     @created       2014-04-29 19:14 GMT
     @modifier      Yichun Zhang

@@ -1,6 +1,7 @@
 [% major_ver = "1.19.3"; version = major_ver _ ".1" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: based on Nginx 1.19.3, with LuaJIT updates, recycled light-thread GC objects, new thread.exdata2 API, and exit_worker_by support.
 --->
 
 We are happy to announce the new formal release, [% version %], of the

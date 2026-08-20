@@ -1,5 +1,6 @@
 <!---
-    @title         Benchmark
+    @title         性能基准测试
+    @description   OpenResty® 性能基准测试：以 HelloWorld 服务为例，使用 ab 压测工具展示并发连接数与请求吞吐量结果。
     @creator       Yichun Zhang
     @created       2011-06-21 05:50 GMT
     @modifier      Yichun Zhang

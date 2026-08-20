@@ -1,6 +1,7 @@
 [% major_ver = "1.29.2"; version = major_ver _ ".1" -%]
 <!---
     @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 正式发布：Nginx 核心升级至 1.29.2，OpenSSL 升级至 3.5.5、PCRE 升级至 10.47，并新增 lua_ssl_key_log、proxy_ssl_verify_by_lua 等指令。
 --->
 
 我们荣幸地宣布，基于 NGINX 和 LuaJIT 的 OpenResty Web 平台 [% version %] 版本现已正式发布。

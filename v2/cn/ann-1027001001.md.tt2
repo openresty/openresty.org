@@ -1,6 +1,7 @@
 [% major_ver = "1.27.1"; version = major_ver _ ".1" -%]
 <!---
-    @title         OpenResty [% version %] Released
+    @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 正式发布：基于 Nginx 核心 1.27.1，升级 OpenSSL 至 3.0.15、PCRE 至 10.42、LuaJIT 至 2.1-20240815，并更新 lua-resty-websocket、lua-resty-redis 等组件。
 --->
 
 We are happy to announce the new formal release, [% version %], of the

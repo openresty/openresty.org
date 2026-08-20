@@ -1,5 +1,6 @@
 <!---
-    @title         Test::Nginx 0.27 Released
+    @title         Test::Nginx 0.27 发布
+    @description   Test::Nginx 0.27 发布：OpenResty 官方的 Nginx 测试框架新增 --- reload_fails 与 --- gen_dgram_request 测试段，并放宽 Server 响应头解析规则。
     @creator       Yichun Zhang
 --->
 

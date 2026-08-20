@@ -1,6 +1,7 @@
 [% major_ver = "1.21.4"; version = major_ver _ ".3" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: patch release fixing the NGINX HTTP/2 Rapid Reset vulnerability CVE-2023-44487.
 --->
 
 OpenResty [% version %] is a patch release addressing a security vulnerability

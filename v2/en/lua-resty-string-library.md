@@ -1,5 +1,6 @@
 <!---
     @title         Lua Resty String Library
+    @description   Provides string utilities and common hash functions (MD5, SHA-1, etc.) for lua-nginx-module in OpenResty® applications.
     @creator       Yichun Zhang
     @created       2012-02-29 07:38 GMT
     @modifier      Yichun Zhang

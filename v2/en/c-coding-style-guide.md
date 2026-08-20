@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty® C Coding Style Guide
+    @description   The formal C coding style guideline for OpenResty®, covering naming conventions, code layout, and requirements for contributed patches.
 --->
 
 OpenResty follows NGINX's coding style in its C language components, like

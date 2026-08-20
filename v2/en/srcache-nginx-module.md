@@ -1,5 +1,6 @@
 <!---
     @title         Srcache Nginx Module
+    @description   Provides a transparent caching layer for arbitrary Nginx locations, using subrequests to a cache backend like memcached in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-06-21 09:07 GMT
     @modifier      Yichun Zhang

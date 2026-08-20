@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty®  Alpine APK Packages
+    @description   Install OpenResty® on Alpine Linux: the official APK repository provides the openresty core server, resty CLI tool, and companion packages.
 --->
 
 The OpenResty official APK repositories provide the following Alpine APK packages.

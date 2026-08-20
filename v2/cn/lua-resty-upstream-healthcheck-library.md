@@ -1,5 +1,6 @@
 <!---
-    @title         Lua Resty Upstream Healthcheck Library
+    @title         Lua Resty Upstream Healthcheck 库
+    @description   lua-resty-upstream-healthcheck 是纯 Lua 实现的 Nginx upstream 服务器健康检查器，可主动探测后端状态并按结果调整负载均衡。
     @creator       Yichun Zhang
     @created       2014-03-31 05:13 GMT
     @modifier      Yichun Zhang

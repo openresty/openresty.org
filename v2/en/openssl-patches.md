@@ -1,5 +1,6 @@
 <!---
     @title         OpenSSL patches by OpenResty
+    @description   Patches to the OpenSSL source tree that enable yielding operations in OpenResty®'s ssl_session_fetch_by_lua and ssl_certificate_by_lua directives.
     @creator       Yichun Zhang
 --->
 

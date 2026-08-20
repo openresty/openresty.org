@@ -1,6 +1,7 @@
 [% major_ver = "1.17.8"; version = major_ver _ ".1" -%]
 <!---
     @title         OpenResty 1.17.8.1 Released
+    @description   OpenResty® 1.17.8.1 released: first based on Nginx 1.17.8, with OpenSSL 1.1.1 support, PUC-Rio Lua dropped, and lua-resty-core now mandatory.
     @creator       Yichun Zhang
 --->
 

@@ -1,6 +1,7 @@
 [% major_ver = "1.19.9"; version = major_ver _ ".1" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: based on Nginx 1.19.9, with LuaJIT updates, the new LUAJIT_TEST_FIXED_ORDER macro, and ngx.process API for the stream subsystem.
     @creator       Johnny Wang
     @created       2021-08-06 06:49 GMT
 --->

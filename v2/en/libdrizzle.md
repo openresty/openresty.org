@@ -1,5 +1,6 @@
 <!---
     @title         libdrizzle
+    @description   The client and protocol C library for the Drizzle database project, used by drizzle-nginx-module to talk to MySQL and Drizzle servers in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-06-21 08:42 GMT
     @modifier      Yichun Zhang

@@ -1,5 +1,6 @@
 <!---
-    @title         Dynamic Routing Based On Redis
+    @title         基于 Redis 的动态路由
+    @description   OpenResty® 示例：基于 Redis 的动态路由，按请求 User-Agent 头分发到不同 HTTP 后端，附完整 nginx.conf 代码。
     @creator       Yichun Zhang
     @created       2011-07-27 04:02 GMT
     @modifier      Yichun Zhang

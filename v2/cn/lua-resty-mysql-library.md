@@ -1,5 +1,6 @@
 <!---
-    @title         Lua Resty MySQL Library
+    @title         Lua Resty MySQL 库
+    @description   lua-resty-mysql 是基于 cosocket 的 MySQL 客户端驱动，为 OpenResty® 应用提供非阻塞的 MySQL 访问。
     @creator       Yichun Zhang
     @created       2012-10-17 23:04 GMT
     @modifier      Yichun Zhang

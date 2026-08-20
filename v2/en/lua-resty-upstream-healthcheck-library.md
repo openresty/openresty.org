@@ -1,5 +1,6 @@
 <!---
     @title         Lua Resty Upstream Healthcheck Library
+    @description   A pure-Lua health checker for Nginx upstream servers, enabling periodic active health checks of backend nodes in OpenResty®.
     @creator       Yichun Zhang
     @created       2014-03-30 20:47 GMT
     @modifier      Yichun Zhang

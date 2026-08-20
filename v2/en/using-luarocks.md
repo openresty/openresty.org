@@ -1,5 +1,6 @@
 <!---
     @title         Using LuaRocks
+    @description   Demonstrates how to use LuaRocks, the Lua module package manager, with OpenResty®; deprecated in favor of the OPM package manager.
     @creator       Yichun Zhang
     @created       2011-08-07 02:32 GMT
 --->

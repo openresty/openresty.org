@@ -1,5 +1,6 @@
 <!---
-    @title         Coolkit Nginx Module
+    @title         Coolkit Nginx 模块
+    @description   coolkit-nginx-module 是一组小而实用的 Nginx 附加模块集合，为 OpenResty® 提供多种轻量级的通用功能扩展。
     @creator       Yichun Zhang
     @created       2013-09-30 07:00 GMT
     @modifier      Yichun Zhang

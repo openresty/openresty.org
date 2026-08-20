@@ -1,6 +1,7 @@
 [% major_ver = "1.19.3"; version = major_ver _ ".1" -%]
 <!---
-    @title         OpenResty [% version %] Released
+    @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 正式发布：基于 Nginx 核心 1.19.3，升级 LuaJIT，回收轻量线程 GC 对象，并新增 exit_worker_by*、balancer.recreate_request、ngx.ssl.server_port() 等 API。
 --->
 
 We are happy to announce the new formal release, [% version %], of the
