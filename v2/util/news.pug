@@ -3,7 +3,7 @@
     a(href="ann-1031001001.html")
       picture
         source(srcset="../images/logo.webp" type="image/webp")
-        img.news-img(src="../images/logo.webp")
+        img.news-img(src="../images/logo.webp" alt="OpenResty" loading="lazy")
     .news-description
       strong.news-hint [% c.l("New!") %]&nbsp;
       a(href="ann-1031001001.html") OpenResty 1.31.1.1
@@ -12,7 +12,7 @@
     a(href="ann-1029002005.html")
       picture
         source(srcset="../images/logo.webp" type="image/webp")
-        img.news-img(src="../images/logo.webp")
+        img.news-img(src="../images/logo.webp" alt="OpenResty" loading="lazy")
     .news-description
       strong.news-hint [% c.l("New!") %]&nbsp;
       a(href="ann-1029002005.html") OpenResty 1.29.2.5
@@ -21,7 +21,7 @@
   each val in news
     .news-item
       a(href=`${val.href}?src=org_news` target="_blank")
-        img.news-img(src=`../images${val.pic}` loading="lazy")
+        img.news-img(src=`../images${val.pic}` alt=val.title loading="lazy")
       .news-description
         strong.news-hint [% c.l("New!") %]
         span &nbsp;[% c.l("New blog post") %]&nbsp;

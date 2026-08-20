@@ -12,7 +12,7 @@
           .swiper-slide
             a.article-item(href=`${val.href}?src=org` data-modal)
               .blog-img(data-pic=`${val.pic}`)
-                img.article-img(src=`../images${val.pic}` loading="lazy")
+                img.article-img(src=`../images${val.pic}` alt=val.title loading="lazy")
               .article-text
                 p.blog-title= val.title
       .swiper-pagination

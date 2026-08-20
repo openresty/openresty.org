@@ -1,7 +1,7 @@
 <header role="header">
         <p class="site-name left">
             <a href=".">
-                <img src="/images/logo.webp" width="64" alt="OpenResty">
+                <img src="/images/logo.webp" width="64" alt="OpenResty logo" loading="eager">
             </a>
         </p>
 
@@ -11,15 +11,15 @@
         </p><!-- / site-name -->
         <p class="right link">
                 <a href="https://github.com/openresty/" title="Contribute on GitHub">
-                        <img src="/images/ico-github.webp" alt="">
+                        <img src="/images/ico-github.webp" alt="GitHub" loading="eager">
                         <span class="link-title">[% c.l("Contribute on GitHub") %]</span>
                 </a>
                 <a href="https://forum.openresty.us/" title="[% c.l("Official Forum") %]">
-                        <img class="dark-img" src="/images/flarum.webp" alt="">
+                        <img class="dark-img" src="/images/flarum.webp" alt="OpenResty Forum" loading="eager">
                         <span class="link-title">[% c.l("Official Forum") %]</span>
                 </a>
                 <a role="button" href="https://openresty.com/en/xray/request-demo/?src=org_top" class="enterprise-button" type="button" title="[% c.l("Try OpenResty XRay") %]">
-                        <img src="/images/rocket.svg" alt="">
+                        <img src="/images/rocket.svg" alt="Try OpenResty XRay" loading="eager">
                         <span class="link-title">[% c.l("Try OpenResty XRay") %]</span>
                 </a>
         </p><!-- / links -->

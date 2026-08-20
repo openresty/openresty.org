@@ -5,6 +5,7 @@ const {marked} = require('marked');
 const renderer = new marked.Renderer();
 const defaultHtmlRenderer = renderer.html;
 const defaultLinkRenderer = renderer.link;
+const defaultImageRenderer = renderer.image;
 const punctuation =
     /[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g;
 
@@ -72,6 +73,12 @@ renderer.heading = function ({tokens, depth, text}) {
         + '<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>'
         + '</a>' + heading
         + '</h' + depth + '>\n';
+};
+
+// add loading="lazy" to all markdown images (below-the-fold article images)
+renderer.image = function (token) {
+    const html = defaultImageRenderer.call(this, token);
+    return html.replace(/>$/, ' loading="lazy">');
 };
 
 const args = process.argv.slice(2);

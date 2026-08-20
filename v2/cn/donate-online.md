@@ -33,7 +33,7 @@ alt="用 PayPal 捐助">
 `yichun0511@gmail.com` , 或是在手机“支付宝”应用中扫一扫下面这个二维码捐款：
 
 <html>
-<img src="/images/alipay-qrcode.webp" width="150" alt="OpenResty 支付宝捐赠二维码">
+<img src="/images/alipay-qrcode.webp" width="150" alt="OpenResty 支付宝捐赠二维码" loading="lazy">
 </html>
 
 # 通过购买周边产品捐助
@@ -41,7 +41,7 @@ alt="用 PayPal 捐助">
 您也可以通过在 [OpenResty 商城](https://openresty.threadless.com/designs/open-source-openresty/) 购买周边产品支持我们。
 
 <html>
-<img src="/images/t-shirt.webp" width="150" alt="OpenResty T 恤">
+<img src="/images/t-shirt.webp" width="150" alt="OpenResty T 恤" loading="lazy">
 </html>
 
 任何数额都不胜感激！

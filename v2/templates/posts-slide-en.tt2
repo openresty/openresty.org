@@ -12,102 +12,102 @@
     <div class="swiper" id="article-carousel">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/edge-private-cdn-live-streaming/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-private-cdn-live-streaming.webp"><img class="article-img" src="../images/header-images/edge-private-cdn-live-streaming.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/edge-private-cdn-live-streaming.webp"><img class="article-img" src="../images/header-images/edge-private-cdn-live-streaming.webp" alt="OpenResty Edge private CDN live streaming" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">CDN for Live Streaming: Surviving Peak Events Without Peak-Event Bills</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/xray-ann-26.7.15/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-logo.webp"><img class="article-img" src="../images/header-images/xray-logo.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/xray-logo.webp"><img class="article-img" src="../images/header-images/xray-logo.webp" alt="OpenResty XRay logo" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty XRay Version 26.7.15. Now Available</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/openresty-xray-ai-assistant/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/openresty-xray-ai-assistant.webp"><img class="article-img" src="../images/header-images/openresty-xray-ai-assistant.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/openresty-xray-ai-assistant.webp"><img class="article-img" src="../images/header-images/openresty-xray-ai-assistant.webp" alt="OpenResty XRay AI assistant" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty XRay AI Assistant: Making Every Piece of Analysis Data Speak</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/edge-hls-live-streaming/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-hls-live-streaming.webp"><img class="article-img" src="../images/header-images/edge-hls-live-streaming.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/edge-hls-live-streaming.webp"><img class="article-img" src="../images/header-images/edge-hls-live-streaming.webp" alt="OpenResty Edge HLS live streaming" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Building a Self-Hosted Live Streaming CDN for HLS with OpenResty Edge</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/private-libs/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/private-libs.webp"><img class="article-img" src="../images/header-images/private-libs.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/private-libs.webp"><img class="article-img" src="../images/header-images/private-libs.webp" alt="OpenResty private libraries" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty Private Libraries: High-Performance Lua &amp; Nginx Modules</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/edge-inner-traffic/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-inner-traffic.webp"><img class="article-img" src="../images/header-images/edge-inner-traffic.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/edge-inner-traffic.webp"><img class="article-img" src="../images/header-images/edge-inner-traffic.webp" alt="OpenResty Edge internal traffic" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Taming Internal Traffic Chaos with OpenResty Edge</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/xray-ann-26.5.11/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-logo.webp"><img class="article-img" src="../images/header-images/xray-logo.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/xray-logo.webp"><img class="article-img" src="../images/header-images/xray-logo.webp" alt="OpenResty XRay logo" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty XRay Version 26.5.11. Now Available</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/edge-db-backup/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-db-backup.webp"><img class="article-img" src="../images/header-images/edge-db-backup.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/edge-db-backup.webp"><img class="article-img" src="../images/header-images/edge-db-backup.webp" alt="OpenResty Edge database backup" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty Edge Data Protection: From Scheduled Backups to Automatic Failover</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/edge-k8s-what/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-k8s-what.webp"><img class="article-img" src="../images/header-images/edge-k8s-what.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/edge-k8s-what.webp"><img class="article-img" src="../images/header-images/edge-k8s-what.webp" alt="OpenResty Edge Kubernetes overview" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Automating Kubernetes Gateway Node Lifecycle with OpenResty Edge</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/what-edge-yaml/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/what-edge-yaml.webp"><img class="article-img" src="../images/header-images/what-edge-yaml.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/what-edge-yaml.webp"><img class="article-img" src="../images/header-images/what-edge-yaml.webp" alt="OpenResty Edge YAML overview" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Managing OpenResty Edge Configuration with YAML and Git: A Practical Guide to `edge2yaml`</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/xray-vulnerability-scanning/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-vulnerability-scanning.webp"><img class="article-img" src="../images/header-images/xray-vulnerability-scanning.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/xray-vulnerability-scanning.webp"><img class="article-img" src="../images/header-images/xray-vulnerability-scanning.webp" alt="OpenResty XRay vulnerability scanning" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Binary Vulnerability Scanning: Catch Backported Patches, Cut False Positives</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/xray-ann-26.2.1/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-logo.webp"><img class="article-img" src="../images/header-images/xray-logo.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/xray-logo.webp"><img class="article-img" src="../images/header-images/xray-logo.webp" alt="OpenResty XRay logo" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty XRay Version 26.2.1. Now Available</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/edge-proxy-protocol/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-proxy-protocol.webp"><img class="article-img" src="../images/header-images/edge-proxy-protocol.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/edge-proxy-protocol.webp"><img class="article-img" src="../images/header-images/edge-proxy-protocol.webp" alt="OpenResty Edge proxy protocol" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">End-to-End Client Real IP Passthrough in OpenResty Edge</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/xray-dynamic-advantage/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-dynamic-advantage.webp"><img class="article-img" src="../images/header-images/xray-dynamic-advantage.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/xray-dynamic-advantage.webp"><img class="article-img" src="../images/header-images/xray-dynamic-advantage.webp" alt="OpenResty XRay dynamic tracing advantage" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">How OpenResty XRay Enables Full-Stack Dynamic Tracing in Production</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/what-is-openresty-edge/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/what-is-openresty-edge.webp"><img class="article-img" src="../images/header-images/what-is-openresty-edge.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/what-is-openresty-edge.webp"><img class="article-img" src="../images/header-images/what-is-openresty-edge.webp" alt="What is OpenResty Edge" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">OpenResty Edge: Private CDN, Universal Gateway &amp; WAF in One Platform</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/what-is-openresty-xray/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/what-is-openresty-xray.webp"><img class="article-img" src="../images/header-images/what-is-openresty-xray.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/what-is-openresty-xray.webp"><img class="article-img" src="../images/header-images/what-is-openresty-xray.webp" alt="What is OpenResty XRay" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Introduction to OpenResty XRay</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/edge-gslb-what/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/edge-gslb-what.webp"><img class="article-img" src="../images/header-images/edge-gslb-what.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/edge-gslb-what.webp"><img class="article-img" src="../images/header-images/edge-gslb-what.webp" alt="OpenResty Edge GSLB overview" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">GSLB Explained: How Global Server Load Balancing Works — and Where DNS-Only Scheduling Fails</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/nginx-prod-mem-leak/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/nginx-prod-mem-leak.webp"><img class="article-img" src="../images/header-images/nginx-prod-mem-leak.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/nginx-prod-mem-leak.webp"><img class="article-img" src="../images/header-images/nginx-prod-mem-leak.webp" alt="Nginx production memory leak" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Hunting Down a Silent Memory Leak in OpenResty Without a Reboot</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/xray-keepalive/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-keepalive.webp"><img class="article-img" src="../images/header-images/xray-keepalive.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/xray-keepalive.webp"><img class="article-img" src="../images/header-images/xray-keepalive.webp" alt="OpenResty XRay keepalive" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Anatomy of a 15x Performance Drop: A 90k to 6k QPS Root Cause Analysis with OpenResty XRay</p>
             </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com.cn/en/why-edge-waf/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/why-edge-waf.webp"><img class="article-img" src="../images/header-images/why-edge-waf.webp" loading="lazy"/></div>
+            <div class="blog-img" data-pic="/header-images/why-edge-waf.webp"><img class="article-img" src="../images/header-images/why-edge-waf.webp" alt="Why choose OpenResty Edge WAF" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">WAF Benchmark: OpenResty Edge 3.7–10x Faster than ModSecurity (208 Rules)</p>
             </div></a></div>

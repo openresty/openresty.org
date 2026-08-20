@@ -3,7 +3,7 @@
     <div class="header">
       <div class="header-icon">
         <div class="btn-violet">
-          <img src="/images/search.svg" alt=""/>
+          <img src="/images/search.svg" alt="Search" loading="lazy"/>
         </div>
         <div class="product-name">OpenResty XRay</div>
       </div>
