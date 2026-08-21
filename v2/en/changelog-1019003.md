@@ -1,5 +1,6 @@
 <!---
     @title         ChangeLog for 1.19.3.x
+    @description   Complete change log for the OpenResty 1.19.3.x series, covering updates to the Nginx core, LuaJIT, and the lua-resty-* components.
     @creator       Johnny Wang
     @created       2021-06-04 08:27 GMT
 --->

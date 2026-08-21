@@ -1,5 +1,6 @@
 <!---
     @title         Benchmark
+    @description   Benchmark results for OpenResty® HelloWorld servers, comparing requests per second and memory footprint against nginx + php-fpm.
     @creator       Yichun Zhang
     @created       2011-06-21 05:50 GMT
     @modifier      Yichun Zhang

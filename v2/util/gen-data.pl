@@ -22,6 +22,9 @@ while (my $entity = readdir $dir) {
     my $fname = "$dirname/$entity";
     if (-f $fname && $entity =~ /(.+)\.html$/) {
         my $name = $1;
+        # This metadata-only legacy placeholder was removed from the site in
+        # 2016, but `make extract` and stale build output can recreate it.
+        next if $name eq 'release-note';
         #next if $name eq 'main-menu';
         #warn $name;
         my $rec = parse_file($name, $fname);
@@ -200,13 +203,23 @@ sub dump_rows {
               quote_value($r, 'modifier'), "\t",
               $r->{modifier_link} // "\\N", "\t",
               quote_value($r, 'modified'), "\t",
-              quote_value($r, 'changes'),
+              quote_value($r, 'changes'), "\t",
+              quote_optional_value($r, 'description'),
               "\n";
     }
 
     close $out;
 
     scalar @$rows;
+}
+
+sub quote_optional_value {
+    my ($r, $k) = @_;
+
+    if (!$r->{$k}) {
+        return "\\N";
+    }
+    return quote_value($r, $k);
 }
 
 sub quote_value {

@@ -1,5 +1,6 @@
 <!---
-    @title         Contact Us
+    @title         联系我们
+    @description   OpenResty® 联系方式：提供官方论坛与邮件列表的订阅、发言、退订方法，以及 GitHub 仓库与中文维基链接。
     @creator       Yichun Zhang
     @created       2011-06-21 04:14 GMT
     @modifier      Zoom Quiet

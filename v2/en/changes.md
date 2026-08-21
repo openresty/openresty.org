@@ -1,5 +1,6 @@
 <!---
     @title         Changes
+    @description   Index of all OpenResty® release change logs, linking to the detailed per-version change logs from 1.0.4 onward.
     @creator       Yichun Zhang
     @created       2012-07-08 18:37 GMT
 --->

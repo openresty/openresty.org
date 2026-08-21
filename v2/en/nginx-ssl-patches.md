@@ -1,5 +1,6 @@
 <!---
     @title         Nginx patches by OpenResty for SSL features
+    @description   Patches to the Nginx core that add support for yielding operations in the ssl_session_fetch_by_lua and ssl_certificate_by_lua directives in OpenResty®.
     @creator       Yichun Zhang
 --->
 

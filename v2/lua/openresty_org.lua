@@ -6,4 +6,8 @@ function _M.go()
     controller.run()
 end
 
+function _M.security_txt()
+    controller.security_txt()
+end
+
 return _M

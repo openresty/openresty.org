@@ -1,5 +1,6 @@
 <!---
-    @title         Test::Nginx 0.29 Released
+    @title         Test::Nginx 0.29 发布
+    @description   Test::Nginx 0.29 发布：OpenResty 官方的 Nginx 测试框架在检查泄漏模式中增加请求数量，新增 TEST_NGINX_RAND_PORT_XXX 随机端口变量，并修复 server_addr_for_client 的地址记录。
     @creator       Yichun Zhang
 --->
 

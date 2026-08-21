@@ -1,5 +1,6 @@
 <!---
     @title         ChangeLog for 1.21.4.x
+    @description   Complete change log for the OpenResty 1.21.4.x series, covering updates to the Nginx core, LuaJIT, and the lua-resty-* components.
     @creator       Johnny Wang
     @created       2022-05-13 06:49 GMT
 --->

@@ -1,5 +1,6 @@
 <!---
-    @title         ChangeLog for 1.19.9.x
+    @title         变更日志 1.19.9.x
+    @description   OpenResty® 1.19.9.x 系列的完整变更日志，涵盖 Nginx 核心、LuaJIT 及各 lua-resty-* 组件在该版本系列中的更新与修复。
     @creator       Johnny Wang
     @created       2021-08-06 06:49 GMT
 --->

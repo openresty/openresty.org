@@ -1,5 +1,6 @@
 <!---
     @title         Lua Resty Web Socket Library
+    @description   Implements nonblocking WebSocket server and client based on lua-nginx-module's cosocket API, for real-time communication in OpenResty®.
     @creator       Yichun Zhang
     @created       2013-09-30 06:20 GMT
     @modifier      Yichun Zhang

@@ -3,7 +3,9 @@ nginx = nginx
 md2html = ./util/fmtMd.js
 md2text = pandoc --from markdown_github-hard_line_breaks --to plain
 
-md_files := $(wildcard en/*.md cn/*.md) $(patsubst %.md.tt2,%.md,$(wildcard en/*.md.tt2 cn/*.md.tt2))
+# release-note.md is an empty legacy placeholder removed from the site in 2016.
+# `make extract` can recreate it, but it has no body to load into the database.
+md_files := $(filter-out en/release-note.md cn/release-note.md,$(wildcard en/*.md cn/*.md) $(patsubst %.md.tt2,%.md,$(wildcard en/*.md.tt2 cn/*.md.tt2)))
 html_files := $(patsubst %.md,html/%.html,$(md_files))
 txt_files := $(patsubst %.md,text/%.txt,$(md_files))
 
@@ -76,7 +78,7 @@ clean:
 .PHONY: html
 html: $(html_files)
 
-html/%.html: %.md
+html/%.html: %.md $(md2html)
 	@mkdir -p html/en html/cn
 	$(md2html) $< > $@
 
@@ -98,7 +100,7 @@ extract:
 	$(extract_pl) ../v1/cn/index.html cn
 
 .PHONY: gendata
-gendata: $(tsv_files)
+gendata: $(tsv_files) sitemap
 
 $(tsv_files): $(html_files) $(txt_files) $(gendata_pl)
 	$(gendata_pl) en
@@ -115,7 +117,7 @@ initdb: $(tsv_files) sitemap.xml
 	psql -Uopenresty openresty_org -v "ON_ERROR_STOP=1" -f init.sql
 
 .PHONY: deploy
-deploy: sitemap.xml
+deploy:
 	ls $(tsv_files)
 	psql -Uopenresty openresty_org -v "ON_ERROR_STOP=1" -f init.sql
 

@@ -1,5 +1,6 @@
 <!---
     @title         Donors
+    @description   Acknowledgment of OpenResty® donors, listing companies and individuals by donation tier together with their logos.
     @creator       Yichun Zhang
     @created       2015-08-11 10:11 GMT
 --->

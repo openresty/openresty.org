@@ -1,5 +1,6 @@
 <!---
-    @title         Iconv Nginx Module
+    @title         Iconv Nginx 模块
+    @description   iconv-nginx-module 基于 libiconv 进行字符编码转换，提供 set_iconv 与 iconv_filter 指令，可处理 Nginx 变量或作为输出过滤器处理响应体。
     @creator       Yichun Zhang
     @created       2011-06-21 09:04 GMT
     @modifier      Yichun Zhang

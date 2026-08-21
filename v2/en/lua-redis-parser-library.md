@@ -1,5 +1,6 @@
 <!---
     @title         Lua Redis Parser Library
+    @description   Implements a thin, fast Redis raw-response parser that constructs Lua data structures, plus a function to build Redis raw requests, in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-08-11 02:10 GMT
     @modifier      Yichun Zhang

@@ -1,6 +1,7 @@
 [% major_ver = "1.19.9"; version = major_ver _ ".2" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: security update disabling a LuaJIT hash optimization that could cause severe performance degradation (CVE-2024-39702).
 --->
 
 OpenResty [% version %] is a security update addressing a performance issue in

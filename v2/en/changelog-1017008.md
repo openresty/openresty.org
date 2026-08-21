@@ -1,5 +1,6 @@
 <!---
     @title         ChangeLog for 1.17.8.x
+    @description   Complete change log for the OpenResty 1.17.8.x series, covering updates to the Nginx core, LuaJIT, and the lua-resty-* components.
     @creator       Thibault Charbonnier
     @created       2020-06-30 21:32 GMT
 --->

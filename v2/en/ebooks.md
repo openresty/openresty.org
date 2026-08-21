@@ -1,5 +1,6 @@
 <!---
     @title         eBooks
+    @description   Download OpenResty® books and tutorials, including Programming OpenResty and agentzh's Nginx Tutorials in HTML, PDF, EPUB, and MOBI formats.
     @creator       Yichun Zhang
     @created       2012-01-05 15:15 GMT
 --->

@@ -1,5 +1,6 @@
 <!---
     @title         Nginx
+    @description   Nginx is a free, open-source, high-performance HTTP server and reverse proxy, the core web server at the heart of OpenResty®.
     @creator       Yichun Zhang
     @created       2011-06-21 04:22 GMT
     @modifier      Yichun Zhang

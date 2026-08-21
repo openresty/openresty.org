@@ -1,6 +1,7 @@
 [% major_ver = "1.29.2"; version = major_ver _ ".5" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: backports the nginx patch for CVE-2026-9256, a buffer overflow in the ngx_http_rewrite_module.
 --->
 
 We are happy to announce the new formal release, [% version %], of the

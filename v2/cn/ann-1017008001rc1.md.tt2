@@ -1,7 +1,8 @@
 [% VER = "1.17.8.1"; RC = 1 -%]
 [% major_ver = '1.17.8' -%]
 <!---
-    @title         OpenResty [% VER %] RC[% RC %] is out
+    @title         OpenResty [% VER %] RC[% RC %] 发布
+    @description   OpenResty [% VER %] RC[% RC %] 候选版本发布，供社区测试：基于 Nginx 1.17.8 核心，支持 OpenSSL 1.1.1，弃用 PUC-Rio Lua，并默认加载 lua-resty-core、切换到 FFI 实现。
 --->
 
 We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],

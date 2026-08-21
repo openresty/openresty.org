@@ -1,6 +1,7 @@
 [% major_ver = "1.19.9"; version = major_ver _ ".1" -%]
 <!---
-    @title         OpenResty [% version %] Released
+    @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 正式发布：基于 Nginx 核心 1.19.9，引入 LUAJIT_TEST_FIXED_ORDER 宏，并为 stream 子系统实现 ngx.process API。
     @creator       Johnny Wang
     @created       2021-08-06 06:49 GMT
 --->

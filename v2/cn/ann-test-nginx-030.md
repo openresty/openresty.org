@@ -1,5 +1,6 @@
 <!---
-    @title         Test::Nginx 0.30 Released
+    @title         Test::Nginx 0.30 发布
+    @description   Test::Nginx 0.30 发布：OpenResty 官方的 Nginx 测试框架为 stream_server_config 保留端口，支持在 --- tcp_listen 中展开环境变量，并修复用户名含连字符及 HTTP 0.9 尾随空格的问题。
     @creator       Jiahao Wang
 --->
 

@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty® Linux 包
+    @description   OpenResty® 官方 Linux 预编译包：列出 Ubuntu、Debian、CentOS、RHEL 等发行版支持的版本号与体系结构。
 --->
 
 对于下列 Linux 发行版的种类和版本号，OpenResty<sup>&reg;</sup> 提供官方的预编译包。

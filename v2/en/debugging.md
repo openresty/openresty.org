@@ -1,5 +1,6 @@
 <!---
     @title         Debugging
+    @description   Debugging OpenResty® applications: reading Nginx error logs, redirecting Lua errors, disabling the code cache, and using SystemTap tools.
     @creator       Yichun Zhang
     @created       2013-10-06 18:12 GMT
 --->

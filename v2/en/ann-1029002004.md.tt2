@@ -1,6 +1,7 @@
 [% major_ver = "1.29.2"; version = major_ver _ ".4" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: backports nginx security patches for CVE-2026-42945, CVE-2026-42946, CVE-2026-42934, CVE-2026-40460, and CVE-2026-40701.
 --->
 
 We are happy to announce the new formal release, [% version %], of the

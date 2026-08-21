@@ -1,5 +1,6 @@
 <!---
     @title         Resources
+    @description   External resources about OpenResty®: the official blog, English articles, tutorials, and third-party write-ups.
     @creator       Yichun Zhang
     @created       2011-10-24 05:51 GMT
 --->

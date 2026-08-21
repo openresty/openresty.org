@@ -1,5 +1,6 @@
 <!---
-    @title         Presentations
+    @title         演讲幻灯片
+    @description   OpenResty® 演讲幻灯片：收集章亦春关于 OpenResty® 的历次演讲，含 2011、2012 年场次及 PDF 下载链接。
     @creator       Yichun Zhang
     @created       2011-06-24 10:28 GMT
     @modifier      Zoom Quiet

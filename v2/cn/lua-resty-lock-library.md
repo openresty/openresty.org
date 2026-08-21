@@ -1,5 +1,6 @@
 <!---
-    @title         Lua Resty Lock Library
+    @title         Lua Resty Lock 库
+    @description   lua-resty-lock 基于共享内存字典实现非阻塞互斥锁，可有效消除缓存击穿等“dog-pile”效应。
     @creator       Yichun Zhang
     @created       2013-09-30 06:58 GMT
     @modifier      Yichun Zhang

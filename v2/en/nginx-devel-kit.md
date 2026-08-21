@@ -1,5 +1,6 @@
 <!---
     @title         Nginx Devel Kit
+    @description   The Nginx Development Kit extends Nginx's core functionality to serve as a basis for building other Nginx modules in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-06-21 08:27 GMT
     @modifier      Yichun Zhang

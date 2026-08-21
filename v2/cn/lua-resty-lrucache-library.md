@@ -1,5 +1,6 @@
 <!---
-    @title         Lua Resty Lrucache Library
+    @title         Lua Resty Lrucache 库
+    @description   lua-resty-lrucache 实现纯 Lua 的 LRU（最近最少使用）缓存，为 OpenResty® 应用提供进程级的内存缓存能力。
     @creator       Yichun Zhang
     @created       2014-06-07 22:54 GMT
     @modifier      Yichun Zhang

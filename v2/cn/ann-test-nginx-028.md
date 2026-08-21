@@ -1,5 +1,6 @@
 <!---
-    @title         Test::Nginx 0.28 Released
+    @title         Test::Nginx 0.28 发布
+    @description   Test::Nginx 0.28 发布：OpenResty 官方的 Nginx 测试框架降级内置的 Test::Builder，以去除对 Test2::Util 的额外依赖。
     @creator       Yichun Zhang
 --->
 

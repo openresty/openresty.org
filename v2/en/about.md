@@ -1,5 +1,6 @@
 <!---
     @title         About
+    @description   Learn about OpenResty®: the open-source web platform created by Yichun Zhang (agentzh), its history, maintainers, sponsors, and tight integration of its Nginx modules.
     @creator       Yichun Zhang
     @created       2011-06-21 04:07 GMT
     @changes       21

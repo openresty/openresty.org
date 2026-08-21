@@ -1,5 +1,6 @@
 <!---
     @title         LuaJIT
+    @description   LuaJIT is a Just-In-Time compiler for Lua, and OpenResty® uses its own optimized branch to run Lua code at high performance.
     @creator       Yichun Zhang
     @created       2011-06-21 08:16 GMT
     @modifier      Yichun Zhang

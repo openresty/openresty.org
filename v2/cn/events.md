@@ -1,5 +1,6 @@
 <!---
     @title         活动
+    @description   OpenResty® 活动信息：列出国内外相关活动，包括 OpenResty Con 2016 及各届 OpenResty × Open Talk 技术沙龙。
 --->
 
 

@@ -1,5 +1,6 @@
 <!---
-    @title         Changes
+    @title         变更历史
+    @description   OpenResty® 各版本变更日志的索引页，按版本列出每个 Release 的完整变更记录链接，便于查阅各历史版本的更新与修复。
     @creator       Yichun Zhang
     @created       2012-10-17 23:06 GMT
 --->

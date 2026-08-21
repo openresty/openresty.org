@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty 1.15.8.3 Released
+    @description   OpenResty® 1.15.8.3 released: patch release fixing security vulnerabilities in the Nginx core and ngx_http_lua, with PCRE upgraded to 8.44 and OpenSSL to 1.1.0l.
     @creator       Yichun Zhang
 --->
 

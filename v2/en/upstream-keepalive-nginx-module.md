@@ -1,5 +1,6 @@
 <!---
     @title         Upstream Keepalive Nginx Module
+    @description   A keepalive balancer module that caches backend connections for Nginx upstream servers, now part of the Nginx core and included in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-06-21 09:08 GMT
     @modifier      Yichun Zhang

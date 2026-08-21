@@ -1,5 +1,6 @@
 <!---
     @title         Lua Resty Memcached Library
+    @description   A cosocket-based Memcached client driver for lua-nginx-module, providing nonblocking, highly concurrent Memcached access from OpenResty®.
     @creator       Yichun Zhang
     @created       2012-02-29 07:32 GMT
     @modifier      Yichun Zhang

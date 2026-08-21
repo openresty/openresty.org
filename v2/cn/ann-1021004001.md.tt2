@@ -1,6 +1,7 @@
 [% major_ver = "1.21.4"; version = major_ver _ ".1" -%]
 <!---
-    @title         OpenResty [% version %] Released
+    @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 正式发布：基于 Nginx 核心 1.21.4，LuaJIT 支持哈希表遍历的 JIT 编译与 string.buffer API，并新增 ngx.run_worker_thread、ssl_client_hello_by_lua* 等特性。
     @creator       Jiahao Wang
     @created       2022-05-18 07:16 GMT
 --->

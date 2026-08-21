@@ -1,5 +1,6 @@
 <!---
-    @title         Upstream Keepalive Nginx Module
+    @title         Upstream Keepalive Nginx 模块
+    @description   upstream-keepalive-nginx-module 是一个 upstream 保活模块，为后端连接提供缓存与复用，减少与后端建立连接的延迟。
     @creator       Yichun Zhang
     @created       2011-06-21 09:08 GMT
     @modifier      Yichun Zhang

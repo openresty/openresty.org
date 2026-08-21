@@ -1,6 +1,7 @@
 [% VER = "1.15.8.1"; RC = 1 -%]
 <!---
-    @title         OpenResty [% VER %] RC[% RC %] is out
+    @title         OpenResty [% VER %] RC[% RC %] 发布
+    @description   OpenResty [% VER %] RC[% RC %] 候选版本发布，供社区测试：基于 Nginx 1.15.8 核心，新增 ARM64 支持，并引入 lua-resty-shell、lua-resty-signal、lua-tablepool 等库。
 --->
 
 We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],

@@ -1,5 +1,6 @@
 <!---
-    @title         About
+    @title         关于 OpenResty
+    @description   了解 OpenResty®：由章亦春（agentzh）创建的开源 Web 平台，及其发展历史、主要维护者、赞助者与 Nginx 模块的紧密整合。
     @creator       Yichun Zhang
     @created       2011-06-21 04:07 GMT
     @changes       17

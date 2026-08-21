@@ -1,5 +1,6 @@
 <!---
     @title         Echo Nginx Module
+    @description   Wraps Nginx internal APIs to provide streaming input/output, subrequests, timers, and metadata access for testing and debugging OpenResty® modules.
     @creator       Yichun Zhang
     @created       2011-06-21 08:24 GMT
     @modifier      Yichun Zhang

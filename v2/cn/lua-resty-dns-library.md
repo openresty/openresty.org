@@ -1,5 +1,6 @@
 <!---
-    @title         Lua Resty DNS Library
+    @title         Lua Resty DNS 库
+    @description   lua-resty-dns 是基于 cosocket API 的非阻塞 DNS 解析器，为 OpenResty® 应用提供异步的域名解析能力。
     @creator       Yichun Zhang
     @created       2012-11-12 02:14 GMT
     @modifier      Yichun Zhang

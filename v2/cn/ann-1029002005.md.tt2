@@ -1,6 +1,7 @@
 [% major_ver = "1.29.2"; version = major_ver _ ".5" -%]
 <!---
     @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 正式发布：移植 Nginx 安全补丁，修复 ngx_http_rewrite_module 中的缓冲区溢出漏洞（CVE-2026-9256）。
 --->
 
 我们荣幸地宣布，基于 NGINX 和 LuaJIT 的 OpenResty Web 平台 [% version %] 版本现已正式发布。

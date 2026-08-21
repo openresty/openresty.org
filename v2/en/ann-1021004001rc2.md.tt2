@@ -1,6 +1,7 @@
 [% VER = "1.21.4.1"; RC = 2 -%]
 <!---
     @title         OpenResty [% VER %] RC[% RC %] is out
+    @description   OpenResty® [% VER %] RC[% RC %] release candidate for community testing: fixes a posted event handler bug and a pending ngx.pipe timeout.
     @created       2022-03-07 00:00 GMT
     @modified      2022-03-07 00:00 GMT
 --->

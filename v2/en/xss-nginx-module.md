@@ -1,5 +1,6 @@
 <!---
     @title         Xss Nginx Module
+    @description   Adds cross-site AJAX support to Nginx, currently implementing cross-site GET requests as JSONP for OpenResty®.
     @creator       Yichun Zhang
     @created       2011-06-21 09:05 GMT
     @modifier      Yichun Zhang

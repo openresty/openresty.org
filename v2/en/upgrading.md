@@ -1,5 +1,6 @@
 <!---
     @title         Upgrading
+    @description   How to upgrade OpenResty® to a newer release, including restarting the Nginx server and notes on shared memory and HUP reload.
     @creator       Yichun Zhang
     @created       2013-08-26 23:21 GMT
     @modifier      Yichun Zhang

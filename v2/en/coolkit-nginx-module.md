@@ -1,5 +1,6 @@
 <!---
     @title         Coolkit Nginx Module
+    @description   A collection of small and useful Nginx add-on modules bundled with OpenResty®, providing assorted helper directives and utilities.
     @creator       Yichun Zhang
     @created       2012-02-13 12:59 GMT
     @modifier      Yichun Zhang

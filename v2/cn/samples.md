@@ -1,5 +1,6 @@
 <!---
-    @title         Samples
+    @title         示例
+    @description   OpenResty® 示例索引：列出基于 Redis 的动态请求路由与使用 LuaRocks 等示例的入口链接。
     @creator       Yichun Zhang
     @created       2011-07-27 04:00 GMT
     @modifier      Zoom Quiet

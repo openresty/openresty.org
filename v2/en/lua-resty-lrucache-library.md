@@ -1,5 +1,6 @@
 <!---
     @title         Lua Resty Lrucache Library
+    @description   Implements an efficient Lua-land LRU cache for OpenResty®, providing in-process least-recently-used caching for Lua code.
     @creator       Yichun Zhang
     @created       2014-06-01 05:55 GMT
     @modifier      Yichun Zhang

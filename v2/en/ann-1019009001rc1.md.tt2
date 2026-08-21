@@ -2,6 +2,7 @@
 [% major_ver = '1.19.9' -%]
 <!---
     @title         OpenResty [% VER %] RC[% RC %] is out
+    @description   OpenResty® [% VER %] RC[% RC %] release candidate for community testing: based on Nginx 1.19.9, with LuaJIT updates and the new ngx.process API for the stream subsystem.
 --->
 
 We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],

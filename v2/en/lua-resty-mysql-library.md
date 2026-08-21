@@ -1,5 +1,6 @@
 <!---
     @title         Lua Resty MySQL Library
+    @description   A cosocket-based MySQL client driver for lua-nginx-module, providing nonblocking, highly concurrent MySQL access from OpenResty®.
     @creator       Yichun Zhang
     @created       2012-02-29 07:33 GMT
     @modifier      Yichun Zhang

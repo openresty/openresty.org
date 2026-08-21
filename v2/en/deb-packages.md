@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty®  Deb Packages
+    @description   Install OpenResty® on Ubuntu and Debian via the official APT repositories, including the core server and companion deb packages.
 --->
 
 The OpenResty official [APT repositories](linux-packages.html) provide the following deb packages (for Ubuntu and Debian).

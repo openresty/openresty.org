@@ -1,5 +1,6 @@
 <!---
-    @title         Encrypted Session Nginx Module
+    @title         Encrypted Session Nginx 模块
+    @description   encrypted-session-nginx-module 基于 AES-256 加密 Nginx 变量，配合 set-misc 与 rewrite 指令可实现简单的用户登录与访问控制。
     @creator       Yichun Zhang
     @created       2011-06-21 08:34 GMT
     @modifier      Yichun Zhang

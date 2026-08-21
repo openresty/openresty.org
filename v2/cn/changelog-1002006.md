@@ -1,5 +1,6 @@
 <!---
-    @title         ChangeLog 1.2.6
+    @title         变更日志 1.2.6
+    @description   OpenResty® 1.2.6 版本的完整变更日志，记录 Nginx 核心、LuaJIT 及各 lua-resty-* 组件的更新与修复。
     @creator       Yichun Zhang
     @created       2013-01-05 07:32 GMT
     @modifier      Yichun Zhang

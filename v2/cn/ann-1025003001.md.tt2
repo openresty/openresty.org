@@ -1,6 +1,7 @@
 [% major_ver = "1.25.3"; version = major_ver _ ".1" -%]
 <!---
-    @title         OpenResty [% version %] Released
+    @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 正式发布：基于 Nginx 核心 1.25.3，新增 HTTP/3 与 PCRE2 支持，升级 OpenSSL 至 1.1.1w，并合入多项 LuaJIT 修复。
 --->
 
 We are happy to announce the new formal release, [% version %], of the

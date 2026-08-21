@@ -1,5 +1,6 @@
 <!---
-    @title         Redis Nginx Module
+    @title         Redis Nginx 模块
+    @description   redis-nginx-module 是让 Nginx 非阻塞访问 Redis 2.x 的 upstream 模块，接口类似标准 memcached 模块，支持 GET 与 SELECT 命令并返回解码结果。
     @creator       Yichun Zhang
     @created       2013-09-30 07:00 GMT
     @modifier      Yichun Zhang

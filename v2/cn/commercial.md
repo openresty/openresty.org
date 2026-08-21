@@ -1,5 +1,6 @@
 <!---
     @title         企业级解决方案
+    @description   OpenResty® 企业级解决方案：介绍 OpenResty Inc. 提供的 OpenResty XRay、OpenResty Edge 与 OpenResty Showman 等商业产品。
     @creator       Yichun Zhang
     @created       2013-08-03 04:25 GMT
 --->

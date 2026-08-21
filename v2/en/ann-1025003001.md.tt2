@@ -1,6 +1,7 @@
 [% major_ver = "1.25.3"; version = major_ver _ ".1" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: based on Nginx 1.25.3, adding HTTP/3 and PCRE2 support, with OpenSSL upgraded to 1.1.1w.
 --->
 
 We are happy to announce the new formal release, [% version %], of the

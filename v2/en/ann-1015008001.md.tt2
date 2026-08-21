@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty 1.15.8.1 Released
+    @description   OpenResty® 1.15.8.1 released: first based on Nginx 1.15.8, adding ARM64 support, loading resty.core by default, plus new lua-resty-shell and lua-resty-signal libraries.
     @creator       Yichun Zhang
 --->
 

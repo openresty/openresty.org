@@ -1,5 +1,6 @@
 <!---
     @title         Redis Nginx Module
+    @description   An Nginx upstream module that talks to Redis 2.x servers non-blockingly, supporting Redis GET and SELECT commands with a memcached-like interface in OpenResty®.
     @creator       Yichun Zhang
     @created       2012-05-13 04:16 GMT
     @modifier      Yichun Zhang

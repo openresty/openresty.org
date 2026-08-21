@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "official website of openresty.org",
   "dependencies": {
+    "@highlightjs/cdn-assets": "11.12.0",
     "axios": "^1.18.1",
     "cheerio": "^1.2.0",
     "marked": "18.0.7",
     "pug": "^3.0.4",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.3",
+    "swiper": "14.1.0"
   },
   "author": "",
   "license": "ISC"

@@ -1,5 +1,6 @@
 <!---
-    @title         Yichun Zhang
+    @title         章亦春
+    @description   章亦春（agentzh）简介：OpenResty® 软件包的主要作者之一，附其个人主页地址。
     @creator       Yichun Zhang
     @created       2011-06-21 09:14 GMT
     @modifier      Yichun Zhang

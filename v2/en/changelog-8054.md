@@ -1,5 +1,6 @@
 <!---
     @title         ChangeLog 8054
+    @description   Complete change log for OpenResty® 0.8.54, listing updates and fixes to the Nginx core, LuaJIT, and bundled components.
     @creator       Yichun Zhang
     @created       2011-06-21 04:31 GMT
     @modifier      Yichun Zhang

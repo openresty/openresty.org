@@ -1,5 +1,6 @@
 <!---
     @title         Build Systemtap
+    @description   Step-by-step guide to building SystemTap from source on Linux, covering prerequisites and compilation for dynamic tracing of OpenResty®.
     @creator       Yichun Zhang
     @created       2014-03-04 22:18 GMT
     @modifier      Yichun Zhang

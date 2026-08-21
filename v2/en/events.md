@@ -1,5 +1,6 @@
 <!---
     @title         Events
+    @description   Upcoming and past OpenResty® events and conferences, including OpenResty Con and Open Talk meetups.
 --->
 
 

@@ -1,5 +1,6 @@
 <!---
-    @title         Standard Lua Interpreter
+    @title         标准 Lua 解释器
+    @description   standard-lua-interpreter 是 OpenResty® 默认启用的标准 Lua 解释器，在启用 LuaJIT 时会被自动禁用。
     @creator       Yichun Zhang
     @created       2011-06-21 08:31 GMT
     @modifier      Yichun Zhang

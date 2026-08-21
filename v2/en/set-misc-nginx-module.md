@@ -1,5 +1,6 @@
 <!---
     @title         Set Misc Nginx Module
+    @description   Adds various set_xxx directives to Nginx's rewrite module, such as MD5/SHA1 hashing and SQL/JSON quoting, for use in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-06-21 08:36 GMT
     @modifier      Yichun Zhang

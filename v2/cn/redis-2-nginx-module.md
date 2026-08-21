@@ -1,5 +1,6 @@
 <!---
-    @title         Redis2 Nginx Module
+    @title         Redis2 Nginx 模块
+    @description   redis2-nginx-module 是让 Nginx 以非阻塞方式与 Redis 2.x 通信的 upstream 模块，实现完整 Redis 统一协议与流水线，并返回原始 TCP 响应。
     @creator       Yichun Zhang
     @created       2011-06-21 08:47 GMT
     @modifier      Yichun Zhang

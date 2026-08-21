@@ -1,5 +1,6 @@
 <!---
     @title         Samples
+    @description   Sample OpenResty® projects: routing MySQL queries by URI args, dynamic routing based on Redis, using LuaRocks, and more.
     @creator       Yichun Zhang
     @created       2011-07-27 04:00 GMT
 --->

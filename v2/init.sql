@@ -16,6 +16,7 @@ create table posts_en (
     modifier_link varchar(128),
     modified timestamp with time zone not null,
     changes int not null,
+    description text,
     textsearch_index_col tsvector
 );
 
@@ -33,11 +34,12 @@ create table posts_cn (
     modifier_link varchar(128),
     modified timestamp with time zone not null,
     changes int not null,
+    description text,
     textsearch_index_col tsvector
 );
 
-\copy posts_en (title, permlink, html_body, txt_body, creator, created, modifier, modifier_link, modified, changes) from 'posts-en.tsv'
-\copy posts_cn (title, permlink, html_body, txt_body, creator, created, modifier, modifier_link, modified, changes) from 'posts-cn.tsv'
+\copy posts_en (title, permlink, html_body, txt_body, creator, created, modifier, modifier_link, modified, changes, description) from 'posts-en.tsv'
+\copy posts_cn (title, permlink, html_body, txt_body, creator, created, modifier, modifier_link, modified, changes, description) from 'posts-cn.tsv'
 
 drop function if exists posts_trigger() cascade;
 

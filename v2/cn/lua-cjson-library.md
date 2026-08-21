@@ -1,5 +1,6 @@
 <!---
-    @title         Lua Cjson Library
+    @title         Lua Cjson 库
+    @description   lua-cjson 是 C 语言实现的 Lua JSON 库，为 Lua 提供快速的 JSON 解析与编码支持，是 OpenResty® 中常用的 JSON 处理组件。
     @creator       Yichun Zhang
     @created       2011-08-11 02:08 GMT
 --->

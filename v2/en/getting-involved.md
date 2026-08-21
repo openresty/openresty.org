@@ -1,5 +1,6 @@
 <!---
     @title         Getting Involved
+    @description   How to contribute to OpenResty®: its project organization, code repositories, submitting patches, reporting bugs, and mailing lists.
     @creator       Yichun Zhang
     @created       2013-08-03 04:25 GMT
     @modifier      Yichun Zhang

@@ -1,6 +1,7 @@
 [% VER = "1.15.8.1"; RC = 2 -%]
 <!---
-    @title         OpenResty [% VER %] RC[% RC %] is out
+    @title         OpenResty [% VER %] RC[% RC %] 发布
+    @description   OpenResty [% VER %] RC[% RC %] 候选版本发布，供社区测试：通过 lua_load_resty_core 指令默认加载 resty.core，并升级 LuaJIT 至 2.1-20190507、ngx_lua 至 0.10.15 等组件。
 --->
 
 We have just kicked out a new release candidate, OpenResty [% VER %] RC[% RC %],

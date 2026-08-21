@@ -1,5 +1,6 @@
 <!---
     @title         ChangeLog 1.13.6
+    @description   Complete change log for OpenResty® 1.13.6, listing updates and fixes to the Nginx core, LuaJIT, and bundled components.
 --->
 
 # Version 1.13.6.2 - 14 May 2018

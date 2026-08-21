@@ -6,21 +6,22 @@
       .sk-child.sk-bounce2
       .sk-child.sk-bounce3
   #swiper-parent.swiper-parent
-    #article-carousel.swiper-container
+    #article-carousel.swiper
       .swiper-wrapper
         each val in postInfos
           .swiper-slide
             a.article-item(href=`${val.href}?src=org` data-modal)
               .blog-img(data-pic=`${val.pic}`)
-                img.article-img(src=`../images${val.pic}` loading="lazy")
+                img.article-img(src=`../images${val.pic}` alt=val.title loading="lazy")
               .article-text
                 p.blog-title= val.title
       .swiper-pagination
     .swiper-button-next
     .swiper-button-prev
 
-#blog-modal.modal
-  iframe#blog-iframe.blog-iframe
+dialog#blog-modal.blog-modal
+  button.blog-modal-close(type="button" aria-label="Close") &times;
+  iframe#blog-iframe.blog-iframe(title="OpenResty Blog article")
 
 link(rel="stylesheet" href=`${swiperCss}`)
 script(src=`${swiperJs}`)
@@ -141,7 +142,7 @@ style.
     }
 
     @media (min-width: 575px) {
-      .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+      .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
         margin: 0 10px;
       }
     }

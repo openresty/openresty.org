@@ -1,5 +1,6 @@
 <!---
-    @title         ChangeLog 1.2.1
+    @title         变更日志 1.2.1
+    @description   OpenResty® 1.2.1 版本的完整变更日志，记录 Nginx 核心、LuaJIT 及各 lua-resty-* 组件的更新与修复。
     @creator       Zoom Quiet
     @created       2012-06-25 06:49 GMT
     @modifier      Zoom Quiet

@@ -1,5 +1,6 @@
 <!---
     @title         Routing MySQL Queries Based On URI Args
+    @description   Sample showing how to route requests to different MySQL queries based on URI arguments using Drizzle, Lua, and Rds Json Nginx modules.
     @creator       Yichun Zhang
     @created       2011-11-16 04:06 GMT
     @modifier      Yichun Zhang

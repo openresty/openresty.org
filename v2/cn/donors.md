@@ -1,5 +1,6 @@
 <!---
-    @title         Donors
+    @title         捐助者
+    @description   OpenResty® 捐助者名单：展示捐款达到一定金额的公司与个人徽标，包括 Smartisan、PowerDNS、去哪儿等赞助者。
     @creator       Yichun Zhang
     @created       2015-08-11 10:20 GMT
 --->

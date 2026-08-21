@@ -2,6 +2,8 @@ local _M = {}
 
 local view = require "openresty_org.view"
 local model = require "openresty_org.model"
+local structured_data = require "openresty_org.structured_data"
+local hreflang = require "openresty_org.hreflang"
 local cjson = require "cjson"
 local i18n_class = require "openresty_org.i18n"
 
@@ -16,6 +18,7 @@ local ngx_time = ngx.time
 local ngx_var = ngx.var
 local format = string.format
 local unescape_uri = ngx.unescape_uri
+local os_date = os.date
 local match_table = {}
 
 local repo_file = {}
@@ -39,6 +42,15 @@ local i18n_objs = {
 }
 
 local MAX_SEARCH_QUERY_LEN = 128
+local SECURITY_TXT_MAX_AGE = 24 * 60 * 60
+local SECURITY_TXT_VALIDITY = 180 * 24 * 60 * 60
+
+local security_txt = [[Contact: mailto:info@openresty.org
+Encryption: https://openresty.org/.well-known/openresty-security.asc
+Policy: https://openresty.org/.well-known/security-policy.txt
+Preferred-Languages: en, zh
+Canonical: https://openresty.org/.well-known/security.txt
+Expires: ]]
 
 local function gen_cache_control_headers(ts)
     resp_header["Last-Modified"] = http_time(tonumber(ts))
@@ -57,7 +69,8 @@ local function search_error(i18n, main_menu, timeline, query, title, msg, lang)
                                 lang = assert(lang),
                               },
                               i18n)
-    ngx.print(html)
+    ngx.print(structured_data.inject(html, structured_data.organization()
+        .. "\n" .. hreflang.links({ permlink = "search" })))
 end
 
 local function get_videos_html(lang, i18n)
@@ -65,6 +78,16 @@ local function get_videos_html(lang, i18n)
         return view.process("videos-en.tt2", {}, i18n);
     end
     return view.process("videos-cn.tt2", {}, i18n);
+end
+
+function _M.security_txt()
+    resp_header["Content-Type"] = "text/plain; charset=utf-8"
+    resp_header["Cache-Control"] =
+        "public, max-age=" .. SECURITY_TXT_MAX_AGE
+
+    local expires = os_date("!%Y-%m-%dT00:00:00Z",
+                            ngx_time() + SECURITY_TXT_VALIDITY)
+    ngx.print(security_txt, expires, "\n")
 end
 
 function _M.run()
@@ -159,7 +182,8 @@ function _M.run()
                                     lang = assert(lang),
                                   },
                                   i18n)
-        ngx.print(html)
+        ngx.print(structured_data.inject(html, structured_data.home(lang)
+            .. "\n" .. hreflang.links({})))
         return
     end
 
@@ -212,7 +236,8 @@ function _M.run()
                                     lang = assert(lang),
                                   },
                                   i18n)
-        ngx.print(html)
+        ngx.print(structured_data.inject(html, structured_data.organization()
+            .. "\n" .. hreflang.links({ permlink = "search" })))
         return
     end
 
@@ -232,7 +257,8 @@ function _M.run()
                                     lang = assert(lang),
                                   },
                                   i18n)
-        ngx.print(html)
+        ngx.print(structured_data.inject(html, structured_data.organization()
+            .. "\n" .. hreflang.links({ permlink = "videos" })))
         return
     end
 
@@ -256,13 +282,27 @@ function _M.run()
                                 modifier_link = rec.modifier_link,
                                 created = rec.created,
                                 title = rec.title,
+                                description = rec.description,
                                 body = rec.html_body,
                                 timeline = timeline,
                                 lang = assert(lang),
                               },
                               i18n)
 
-    ngx.print(html)
+    local other_lang = lang == 'en' and 'cn' or 'en'
+    local other_posts = model.get_post_list(other_lang)
+    local has_counterpart = other_posts[tag] ~= nil
+
+    ngx.print(structured_data.inject(html, structured_data.page({
+        lang = lang,
+        permlink = tag,
+        title = rec.title,
+        description = rec.description,
+    }) .. "\n" .. hreflang.links({
+        permlink = tag,
+        en_exists = (lang == 'en') or has_counterpart,
+        cn_exists = (lang == 'cn') or has_counterpart,
+    })))
 end
 
 return _M

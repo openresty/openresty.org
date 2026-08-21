@@ -1,5 +1,6 @@
 <!---
     @title         Download
+    @description   Download OpenResty® source tarballs with PGP signatures, official pre-built Linux packages for Ubuntu/Debian/CentOS/RHEL and more, Docker images, Windows binaries, and macOS homebrew formulae.
     @creator       Yichun Zhang
     @created       2011-06-21 04:25 GMT
 --->

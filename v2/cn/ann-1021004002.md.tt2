@@ -1,6 +1,7 @@
 [% major_ver = "1.21.4"; version = major_ver _ ".2" -%]
 <!---
-    @title         OpenResty [% version %] Released
+    @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 正式发布：新增 resty.core.time 单调时间 API，支持 Apple Silicon FFI，并为 lua-resty-websocket 增加 mTLS 客户端证书、lua-resty-memcached 增加流水线接口。
     @creator       Jiahao Wang
     @created       2023-07-19 04:47 GMT
 --->

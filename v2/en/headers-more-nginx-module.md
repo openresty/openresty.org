@@ -1,5 +1,6 @@
 <!---
     @title         Headers More Nginx Module
+    @description   Provides directives like more_set_headers and more_clear_headers to add, set, and clear request and response headers, including built-ins, in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-06-21 08:59 GMT
     @modifier      Yichun Zhang

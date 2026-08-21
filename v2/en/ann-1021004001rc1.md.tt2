@@ -1,6 +1,7 @@
 [% VER = "1.21.4.1"; RC = 1 -%]
 <!---
     @title         OpenResty [% VER %] RC[% RC %] is out
+    @description   OpenResty® [% VER %] RC[% RC %] release candidate for community testing: based on Nginx 1.21.4, with JIT-compiled hash-table loops and BoringSSL support.
     @created       2022-01-27 00:00 GMT
     @modified      2022-01-27 00:00 GMT
 --->

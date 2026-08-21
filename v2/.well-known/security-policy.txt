@@ -1,0 +1,18 @@
+OpenResty Coordinated Vulnerability Disclosure Policy
+
+Please report suspected security vulnerabilities privately to
+info@openresty.org. Do not include vulnerability details in a public issue
+before a coordinated disclosure date has been agreed.
+
+Sensitive reports may be encrypted with the OpenResty release PGP key:
+https://openresty.org/.well-known/openresty-security.asc
+
+Primary key fingerprint:
+2545 1EB0 8846 0026 195B D62C B550 E09E A0E9 8066
+
+Please include the affected component and version, impact, reproduction steps,
+and proof-of-concept material when available. OpenResty maintainers will work
+with the reporter to investigate, remediate, and coordinate public disclosure.
+Security fixes may be announced in release notes or project advisories.
+
+Submitting a report does not imply eligibility for a monetary reward.

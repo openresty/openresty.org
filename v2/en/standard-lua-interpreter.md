@@ -1,5 +1,6 @@
 <!---
     @title         Standard Lua Interpreter
+    @description   The standard Lua interpreter bundled with OpenResty®, enabled by default and automatically disabled when LuaJIT is used.
     @creator       Yichun Zhang
     @created       2011-06-21 08:31 GMT
     @modifier      Yichun Zhang

@@ -1,5 +1,6 @@
 <!---
     @title         Presentations
+    @description   Slides and video recordings from talks about OpenResty®, including OpenResty Con and Lua Workshop presentations.
     @creator       Yichun Zhang
     @created       2011-06-24 10:28 GMT
 --->

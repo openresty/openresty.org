@@ -7,13 +7,14 @@
      [% c.l("(") %]<a href="https://github.com/openresty/openresty.org/">
      [% c.l("view the source code of this site") %]</a>[% c.l(")") %]</p>
   <br/>
-  [% IF lang == 'cn' %]<a href="https://beian.miit.gov.cn/", target="_blank">京ICP备16021991号-1</a>[% END %]
+  [% IF lang == 'cn' %]<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">京ICP备16021991号-1</a>[% END %]
 </div>
 </div>
 
 <script src="/js/jquery.min.js"></script>
-<script src="/js/jquery.modal.min.js"></script>
-<script src="/js/highlight.pack.js"></script>
+<script src="/js/highlight.min.js"></script>
+<script src="/js/highlight-nginx.min.js"></script>
+<script src="/js/highlight-vim.min.js"></script>
 <script src="/js/main.js"></script>
 <!-- Google analytics -->
 <script type="text/javascript">

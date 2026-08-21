@@ -1,5 +1,6 @@
 <!---
     @title         Test::Nginx 0.28 Released
+    @description   Test::Nginx 0.28 released: downgrades the bundled Test::Builder to avoid the extra Test2::Util dependency.
     @creator       Yichun Zhang
 --->
 

@@ -1,6 +1,7 @@
 [% major_ver = "1.21.4"; version = major_ver _ ".1" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: based on Nginx 1.21.4, with JIT-compiled Lua hash-table loops, new string.buffer API, ngx.run_worker_thread, and BoringSSL support.
     @creator       Jiahao Wang
     @created       2022-05-18 07:16 GMT
 --->

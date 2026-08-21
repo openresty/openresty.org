@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty®  RPM Packages
+    @description   Install OpenResty® on CentOS and RHEL via the official Yum repositories, including the core server and companion RPM packages.
 --->
 
 The OpenResty official Yum repositories provide the following RPM packages.

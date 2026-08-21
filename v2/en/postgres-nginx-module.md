@@ -1,5 +1,6 @@
 <!---
     @title         Postgres Nginx Module
+    @description   An Nginx upstream module that lets Nginx communicate directly with PostgreSQL, returning results in RDS format for use in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-06-21 08:28 GMT
     @modifier      Yichun Zhang

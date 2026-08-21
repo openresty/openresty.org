@@ -1,5 +1,6 @@
 <!---
-    @title         Xss Nginx Module
+    @title         Xss Nginx 模块
+    @description   xss-nginx-module 为 Nginx 增加跨站 AJAX 支持，目前以 JSONP 方式实现跨站 GET 请求。
     @creator       Yichun Zhang
     @created       2011-06-21 09:05 GMT
     @modifier      Yichun Zhang

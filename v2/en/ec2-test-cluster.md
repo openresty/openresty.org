@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty® EC2 Test Cluster
+    @description   How the OpenResty® EC2 test cluster runs component test suites on Amazon EC2, collects logs, and generates HTML test reports.
 --->
 
 The OpenResty EC2 test cluster (we'll call it "test cluster" from now on)

@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty Alpine APK 安装包
+    @description   OpenResty® 官方 Alpine APK 安装包说明：涵盖 openresty 核心服务与 resty 命令行工具，以及服务的启动、停止与自定义前缀配置。
 --->
 
 OpenResty 官方 [APK 包仓库](linux-packages.html)提供下面的 apk 包 (适用于 Alpine 系统)。

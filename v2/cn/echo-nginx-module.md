@@ -1,5 +1,6 @@
 <!---
-    @title         Echo Nginx Module
+    @title         Echo Nginx 模块
+    @description   echo-nginx-module 封装了大量 Nginx 内部 API，用于流式输入输出、并发/串行子请求、定时器与元数据访问，主要用于测试与调试。
     @creator       Yichun Zhang
     @created       2011-06-21 08:24 GMT
     @modifier      Yichun Zhang

@@ -1,6 +1,7 @@
 [% major_ver = "1.17.8"; version = major_ver _ ".2" -%]
 <!---
     @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] released: based on Nginx core 1.17.8, with fixes and improvements across the Nginx core and bundled Lua libraries.
     @creator       Yichun Zhang
 --->
 

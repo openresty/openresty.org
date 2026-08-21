@@ -1,5 +1,6 @@
 <!---
-    @title         Lua Resty Memcached Library
+    @title         Lua Resty Memcached 库
+    @description   lua-resty-memcached 是基于 cosocket 的 Memcached 客户端驱动，为 OpenResty® 应用提供非阻塞的 Memcached 访问。
     @creator       Yichun Zhang
     @created       2012-10-17 23:04 GMT
     @modifier      Yichun Zhang

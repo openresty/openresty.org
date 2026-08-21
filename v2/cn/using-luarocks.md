@@ -1,5 +1,6 @@
 <!---
-    @title         Using LuaRocks
+    @title         使用 LuaRocks
+    @description   介绍如何在 OpenResty® 中使用 LuaRocks 部署和管理 Lua 模块（注意：官方更推荐使用 OPM）。
     @creator       Yichun Zhang
     @created       2011-08-07 02:32 GMT
     @modifier      Yichun Zhang

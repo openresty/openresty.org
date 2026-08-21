@@ -1,6 +1,7 @@
 [% major_ver = "1.19.9"; version = major_ver _ ".2" -%]
 <!---
-    @title         OpenResty [% version %] Released
+    @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 安全更新：修复 OpenResty LuaJIT 分支中哈希计算优化导致的性能问题（CVE-2024-39702）。
 --->
 
 OpenResty [% version %] is a security update addressing a performance issue in

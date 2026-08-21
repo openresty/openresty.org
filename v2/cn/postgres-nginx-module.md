@@ -1,5 +1,6 @@
 <!---
-    @title         Postgres Nginx Module
+    @title         Postgres Nginx 模块
+    @description   postgres-nginx-module 是让 Nginx 直接与 PostgreSQL 通信的 upstream 模块，查询结果以 RDS 格式生成，可配合 rds-json 等模块使用。
     @creator       Yichun Zhang
     @created       2011-06-21 08:28 GMT
     @modifier      Yichun Zhang

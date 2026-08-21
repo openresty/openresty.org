@@ -448,6 +448,38 @@ hr.footer-sep {
     height: 100%;
 }
 
+.blog-modal {
+    box-sizing: border-box;
+    width: 90%;
+    height: 85%;
+    padding: 15px 30px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #000;
+}
+
+.blog-modal::backdrop {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.blog-modal-close {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #333;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 1;
+}
+
+.blog-modal-close:focus-visible {
+    outline: 2px solid @link;
+    outline-offset: 2px;
+}
+
 /*=====================================================================================
   XRAY MODAL
 =======================================================================================*/

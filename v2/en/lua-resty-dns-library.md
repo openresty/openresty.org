@@ -1,5 +1,6 @@
 <!---
     @title         Lua Resty DNS Library
+    @description   A nonblocking cosocket-based DNS resolver for lua-nginx-module, enabling asynchronous domain name resolution in OpenResty® applications.
     @creator       Yichun Zhang
     @created       2012-08-06 06:54 GMT
     @modifier      Yichun Zhang

@@ -1,5 +1,6 @@
 <!---
-    @title         ChangeLog 1.11.2
+    @title         变更日志 1.11.2
+    @description   OpenResty® 1.11.2 版本的完整变更日志，记录 Nginx 核心、LuaJIT 及各 lua-resty-* 组件的更新与修复。
 --->
 
 # Version 1.11.2.5 - 17 August 2017

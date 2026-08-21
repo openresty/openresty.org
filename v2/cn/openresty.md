@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty®
+    @description   了解 OpenResty®：基于 Nginx 与 Lua 的高性能 Web 平台，集成丰富的 Lua 库与模块，用于构建高并发动态 Web 应用与服务。
     @creator       Yichun Zhang
     @created       2011-06-21 04:03 GMT
 --->

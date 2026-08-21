@@ -1,5 +1,6 @@
 <!---
     @title         Donate Online
+    @description   Donate to the OpenResty® Software Foundation: large grants by email or one-time donations via PayPal.
     @creator       Yichun Zhang
     @created       2012-01-11 07:32 GMT
     @modifier      Yichun Zhang
@@ -47,7 +48,7 @@ money via the [AliPay](https://www.alipay.com/) to my account `yichun0511@gmail.
 just scan the following QR code in your AliPay cellphone app:
 
 <html>
-<img src="/images/alipay-qrcode.webp" width="150">
+<img src="/images/alipay-qrcode.webp" width="150" alt="OpenResty AliPay donation QR code" loading="lazy">
 </html>
 
 # Donate with Purchase
@@ -55,7 +56,7 @@ just scan the following QR code in your AliPay cellphone app:
 You can also support us by buying stuff on [The OpenResty Shop](https://openresty.threadless.com/designs/open-source-openresty/).
 
 <html>
-<img src="/images/t-shirt.webp" width="150">
+<img src="/images/t-shirt.webp" width="150" alt="OpenResty T-shirt" loading="lazy">
 </html>
 
 Any amounts will be highly appreciated!

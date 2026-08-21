@@ -1,5 +1,6 @@
 <!---
     @title         Rds Csv Nginx Module
+    @description   An efficient output filter that converts Resty-DBD-Streams (RDS) from the drizzle and postgres modules into RFC 4180 CSV in OpenResty®.
     @creator       Yichun Zhang
     @created       2011-08-31 07:42 GMT
     @modifier      Yichun Zhang

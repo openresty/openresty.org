@@ -1,5 +1,6 @@
 <!---
     @title         Contact Us
+    @description   How to contact the OpenResty® team: join the mailing lists, email privately, or report bugs on GitHub.
     @creator       Yichun Zhang
     @created       2011-06-21 04:14 GMT
     @modifier      Yichun Zhang

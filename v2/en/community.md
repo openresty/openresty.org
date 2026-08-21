@@ -1,5 +1,6 @@
 <!---
     @title         Community
+    @description   Join the OpenResty® community: Slack workspace, English and Chinese mailing lists (Google Groups), GitHub repositories, and IRC channel on Libera.Chat.
     @creator       Yichun Zhang
     @created       2012-08-04 23:04 GMT
 --->

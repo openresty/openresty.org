@@ -1,5 +1,6 @@
 <!---
-    @title         Lua Nginx Module
+    @title         Lua Nginx 模块
+    @description   lua-nginx-module 是 OpenResty® 的核心 Nginx 模块，将 Lua/LuaJIT 引擎嵌入 Nginx，让你能在请求处理的各个阶段运行 Lua 代码。
     @creator       Yichun Zhang
     @created       2011-06-21 08:26 GMT
     @modifier      Yichun Zhang

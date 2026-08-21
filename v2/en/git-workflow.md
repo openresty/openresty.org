@@ -1,5 +1,6 @@
 <!---
     @title         Git Workflow
+    @description   Git workflow for OpenResty® contributors: commit message format and topic words, plus forking, pull requests, and rebasing rules.
     @creator       Yichun Zhang
     @created       2020-06-27 16:18 GMT
 --->

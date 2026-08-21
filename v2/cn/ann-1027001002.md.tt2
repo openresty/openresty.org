@@ -1,6 +1,7 @@
 [% major_ver = "1.27.1"; version = major_ver _ ".2" -%]
 <!---
-    @title         OpenResty [% version %] Released
+    @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 正式发布：修复 CVE-2025-23419，升级 OpenSSL 至 3.4.1、PCRE 至 10.44，并新增 ngx.resp.set_status、decode_base64mime 等特性。
 --->
 
 We are happy to announce the new formal release, [% version %], of the

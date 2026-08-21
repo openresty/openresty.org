@@ -35,22 +35,33 @@ $(document).ready(function() {
 		}
 	})
 
-	$('.article-item').on('click', function () {
-		var blogUrl = $(this).attr('href');
-		$('#blog-iframe').attr('src', blogUrl);
-		$('#blog-modal').modal({
-			fadeDuration: 500,
-			fadeDelay: 0.8,
-		});
-		return false;
-	});
+	var blogModal = document.getElementById('blog-modal');
+	var blogIframe = document.getElementById('blog-iframe');
 
-	$('#blog-modal').on($.modal.CLOSE, function () {
-		$('#blog-iframe').attr('src', '');
-	});
+	if (blogModal && blogIframe) {
+		$('.article-item').on('click', function (event) {
+			event.preventDefault();
+			blogIframe.src = $(this).attr('href');
+			blogModal.showModal();
+		});
+
+		$('.blog-modal-close').on('click', function () {
+			blogModal.close();
+		});
+
+		blogModal.addEventListener('click', function (event) {
+			if (event.target === blogModal) {
+				blogModal.close();
+			}
+		});
+
+		blogModal.addEventListener('close', function () {
+			blogIframe.src = '';
+		});
+	}
 });
 
 document.querySelectorAll('pre code:not([class])').forEach(function ($) {
 	$.className = 'no-highlight hljs';
 });
-hljs.initHighlightingOnLoad();
+hljs.highlightAll();

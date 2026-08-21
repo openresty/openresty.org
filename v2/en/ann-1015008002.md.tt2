@@ -1,5 +1,6 @@
 <!---
     @title         OpenResty 1.15.8.2 Released
+    @description   OpenResty® 1.15.8.2 released: patch release fixing HTTP/2 security advisories CVE-2019-9511, CVE-2019-9513, and CVE-2019-9516, plus new official binary repositories.
     @creator       Thibault Charbonnier
 --->
 
