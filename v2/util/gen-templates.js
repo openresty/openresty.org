@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const {writeFile, readdir, unlink} = fs.promises;
+const {writeFile, readdir} = fs.promises;
 const sharp = require('sharp');
 const cheerio = require('cheerio');
 const axios = require('axios');
@@ -175,20 +175,17 @@ async function optimizeImg(pic) {
       responseType: 'arraybuffer',
     });
 
-    // Save the original image to a local temporary file, then compress and convert it to webp
-    const originLocalPath = `./images${pic}`;
-    await writeFile(originLocalPath, response.data, 'binary');
-
+    // Compress and convert the downloaded image to webp without keeping the original
     const webpLocalPath = `./images${toWebpPath(pic)}`;
-    await compressImg(originLocalPath, webpLocalPath);
+    await compressImg(response.data, webpLocalPath);
   } catch (err) {
     console.error('optimizeImg failed:', pic, err);
   }
 }
 
-async function compressImg(srcPath, destPath) {
+async function compressImg(srcData, destPath) {
   try {
-    const data = await sharp(srcPath)
+    const data = await sharp(srcData)
       .resize({
         height,
         fit: 'contain',
@@ -199,7 +196,7 @@ async function compressImg(srcPath, destPath) {
 
     return writeFile(destPath, data);
   } catch (err) {
-    console.error(srcPath, err);
+    console.error(destPath, err);
     return null;
   }
 }

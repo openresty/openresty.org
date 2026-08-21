@@ -45,7 +45,7 @@ failed=0
 
 # Use -print0 / read -d '' to safely handle paths containing spaces
 while IFS= read -r -d '' png; do
-    webp="${png%.webp}.webp"
+    webp="${png%.*}.webp"
 
     if [ -f "$webp" ]; then
         echo "Skip (already exists): $webp"
@@ -68,13 +68,13 @@ while IFS= read -r -d '' png; do
         failed=$((failed + 1))
         rm -f "$webp"  # Clean up any incomplete file that may have been produced
     fi
-done < <(find "$ROOT_DIR" -type f -iname '*.webp' -print0)
+done < <(find "$ROOT_DIR" -type f -iname '*.png' -print0)
 
 echo "----------------------------------------"
 echo "Conversion done: $converted succeeded, $failed failed"
 
 #######################################
-# Step 2: Update .webp references in Markdown to .webp
+# Step 2: Update .png references in Markdown to .webp
 #######################################
 echo "----------------------------------------"
 echo "Updating Markdown references..."
@@ -82,17 +82,17 @@ echo "Updating Markdown references..."
 updated=0
 
 while IFS= read -r -d '' md; do
-    # Only process files that contain .webp references
-    if grep -qi '\.webp' "$md"; then
+    # Only process files that contain .png references
+    if grep -qi '\.png' "$md"; then
         echo "Update references: $md"
         if [ "$DRY_RUN" -eq 1 ]; then
             # Show the lines that would be changed
-            grep -niI '\.webp' "$md" | sed 's/^/    /'
+            grep -niI '\.png' "$md" | sed 's/^/    /'
             updated=$((updated + 1))
             continue
         fi
-        # Replace .webp / .PNG with .webp (extension only, case-insensitive)
-        sed -i -E 's/\.webp/\.webp/Ig' "$md"
+        # Replace .png / .PNG with .webp (extension only, case-insensitive)
+        sed -i -E 's/\.png/\.webp/Ig' "$md"
         updated=$((updated + 1))
     fi
 done < <(find "$ROOT_DIR" -type f -iname '*.md' -print0)
