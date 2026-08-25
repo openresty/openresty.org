@@ -543,7 +543,7 @@ Template['page.tt2'] = function (stash)
     local out = {}
     local i = 0
     i=i+1 out[i] = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n	<meta charset=\"utf-8\">\n	<title>OpenResty - "
-    i=i+1 out[i] = get(stash, 'title')
+    i=i+1 out[i] = Filter.html(get(stash, 'title'))
     i=i+1 out[i] = "</title>"
 
     if tru(get(stash, 'description')) then
@@ -665,7 +665,7 @@ Template['search-result.tt2'] = function (stash)
         i=i+1 out[i] = "\n<h2><a href=\""
         i=i+1 out[i] = get(get(stash, 'hit'), 'permlink')
         i=i+1 out[i] = ".html\">"
-        i=i+1 out[i] = get(get(stash, 'hit'), 'title')
+        i=i+1 out[i] = Filter.html(get(get(stash, 'hit'), 'title'))
         i=i+1 out[i] = "</a></h2>\n<div class=\"r\">\n"
         i=i+1 out[i] = get(get(stash, 'hit'), 'body')
         i=i+1 out[i] = "\n</div>\n"
@@ -697,14 +697,14 @@ Template['sidebar.tt2'] = function (stash)
 
             set(stash, 'prev_day', get(get(stash, 'row'), 'day'))
             i=i+1 out[i] = "\n                                    <li>\n                                            <h3>"
-            i=i+1 out[i] = get(get(stash, 'row'), 'day')
+            i=i+1 out[i] = Filter.html(get(get(stash, 'row'), 'day'))
             i=i+1 out[i] = "</h3>\n                                            <ul>"
         end
 
         i=i+1 out[i] = "\n                                                <li><a href=\""
         i=i+1 out[i] = get(get(stash, 'row'), 'permlink')
         i=i+1 out[i] = ".html\">"
-        i=i+1 out[i] = get(get(stash, 'row'), 'title')
+        i=i+1 out[i] = Filter.html(get(get(stash, 'row'), 'title'))
         i=i+1 out[i] = "</a></li>"
     end
 
