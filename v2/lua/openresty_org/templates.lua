@@ -436,48 +436,48 @@ Template['news-cn.tt2'] = function (stash)
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1031009001.html\">OpenResty 1.31.9.1</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is now released!")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/xray-ann-26.11.1/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay 26.11.1 版正式发布\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/xray-ann-26.11.1/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay 26.11.1 版正式发布\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/xray-ann-26.11.1/?src=org_news\" target=\"_blank\">OpenResty XRay 26.11.1 版正式发布</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/xray-ann-26.11.1/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">OpenResty XRay 26.11.1 版正式发布</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/edge-multi-provider-dns/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/edge-multi-provider-dns.webp\" alt=\"多服务商 DNS 冗余：以 OpenResty Edge 为唯一数据源，同步给多家 DNS 服务商\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/edge-multi-provider-dns/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/edge-multi-provider-dns.webp\" alt=\"多服务商 DNS 冗余：以 OpenResty Edge 为唯一数据源，同步给多家 DNS 服务商\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/edge-multi-provider-dns/?src=org_news\" target=\"_blank\">多服务商 DNS 冗余：以 OpenResty Edge 为唯一数据源，同步给多家 DNS 服务商</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/edge-multi-provider-dns/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">多服务商 DNS 冗余：以 OpenResty Edge 为唯一数据源，同步给多家 DNS 服务商</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/xray-ai-skill/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/xray-ai-skill.webp\" alt=\"从 AI 火焰图分析到经验证的修复：用 OpenResty XRay 驱动 Coding Agent 性能优化闭环\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/xray-ai-skill/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/xray-ai-skill.webp\" alt=\"从 AI 火焰图分析到经验证的修复：用 OpenResty XRay 驱动 Coding Agent 性能优化闭环\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/xray-ai-skill/?src=org_news\" target=\"_blank\">从 AI 火焰图分析到经验证的修复：用 OpenResty XRay 驱动 Coding Agent 性能优化闭环</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/xray-ai-skill/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">从 AI 火焰图分析到经验证的修复：用 OpenResty XRay 驱动 Coding Agent 性能优化闭环</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/xray-ann-26.9.1/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay 26.9.1 版正式发布\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/xray-ann-26.9.1/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay 26.9.1 版正式发布\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/xray-ann-26.9.1/?src=org_news\" target=\"_blank\">OpenResty XRay 26.9.1 版正式发布</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/xray-ann-26.9.1/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">OpenResty XRay 26.9.1 版正式发布</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/p99-latency/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/p99-latency.webp\" alt=\"P99 延迟：为什么平均值会骗人，以及如何诊断最慢的 1%\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/p99-latency/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/p99-latency.webp\" alt=\"P99 延迟：为什么平均值会骗人，以及如何诊断最慢的 1%\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/p99-latency/?src=org_news\" target=\"_blank\">P99 延迟：为什么平均值会骗人，以及如何诊断最慢的 1%</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/p99-latency/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">P99 延迟：为什么平均值会骗人，以及如何诊断最慢的 1%</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/flame-graphs-explained/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/flame-graphs-explained.webp\" alt=\"火焰图详解：如何读懂 CPU 火焰图，找出烧掉 CPU 的代码\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/flame-graphs-explained/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/flame-graphs-explained.webp\" alt=\"火焰图详解：如何读懂 CPU 火焰图，找出烧掉 CPU 的代码\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/flame-graphs-explained/?src=org_news\" target=\"_blank\">火焰图详解：如何读懂 CPU 火焰图，找出烧掉 CPU 的代码</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/flame-graphs-explained/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">火焰图详解：如何读懂 CPU 火焰图，找出烧掉 CPU 的代码</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
     i=i+1 out[i] = "</span></div>\n  </div>\n</div>"
 
     return out
 end
 
-MD5['news-cn.tt2'] = "fabfa948c49e20ad09de55bc9f31f805"
+MD5['news-cn.tt2'] = "9fe6d3d1f8db275147c9bb2681675253"
 
 Template['news-en.tt2'] = function (stash)
     local out = {}
@@ -486,48 +486,48 @@ Template['news-en.tt2'] = function (stash)
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1031009001.html\">OpenResty 1.31.9.1</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is now released!")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com/en/xray-ann-26.11.1/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay Version 26.11.1. Now Available\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com/en/xray-ann-26.11.1/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay Version 26.11.1. Now Available\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com/en/xray-ann-26.11.1/?src=org_news\" target=\"_blank\">OpenResty XRay Version 26.11.1. Now Available</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com/en/xray-ann-26.11.1/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">OpenResty XRay Version 26.11.1. Now Available</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com/en/edge-multi-provider-dns/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/edge-multi-provider-dns.webp\" alt=\"Multi-Provider DNS Redundancy: Stay Online When a DNS Provider Fails, Geo-Routing Intact\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com/en/edge-multi-provider-dns/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/edge-multi-provider-dns.webp\" alt=\"Multi-Provider DNS Redundancy: Stay Online When a DNS Provider Fails, Geo-Routing Intact\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com/en/edge-multi-provider-dns/?src=org_news\" target=\"_blank\">Multi-Provider DNS Redundancy: Stay Online When a DNS Provider Fails, Geo-Routing Intact</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com/en/edge-multi-provider-dns/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">Multi-Provider DNS Redundancy: Stay Online When a DNS Provider Fails, Geo-Routing Intact</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com/en/xray-ai-skill/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/xray-ai-skill.webp\" alt=\"From AI Flame Graph Analysis to Verified Fixes: A Coding-Agent Optimization Loop with OpenResty XRay\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com/en/xray-ai-skill/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/xray-ai-skill.webp\" alt=\"From AI Flame Graph Analysis to Verified Fixes: A Coding-Agent Optimization Loop with OpenResty XRay\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com/en/xray-ai-skill/?src=org_news\" target=\"_blank\">From AI Flame Graph Analysis to Verified Fixes: A Coding-Agent Optimization Loop with OpenResty XRay</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com/en/xray-ai-skill/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">From AI Flame Graph Analysis to Verified Fixes: A Coding-Agent Optimization Loop with OpenResty XRay</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com/en/xray-ann-26.9.1/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay Version 26.9.1. Now Available\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com/en/xray-ann-26.9.1/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay Version 26.9.1. Now Available\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com/en/xray-ann-26.9.1/?src=org_news\" target=\"_blank\">OpenResty XRay Version 26.9.1. Now Available</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com/en/xray-ann-26.9.1/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">OpenResty XRay Version 26.9.1. Now Available</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com/en/flame-graphs-explained/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/flame-graphs-explained.webp\" alt=\"Flame Graphs: How to Read a CPU Flame Graph and Find the Code Burning Your CPU\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com/en/flame-graphs-explained/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/flame-graphs-explained.webp\" alt=\"Flame Graphs: How to Read a CPU Flame Graph and Find the Code Burning Your CPU\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com/en/flame-graphs-explained/?src=org_news\" target=\"_blank\">Flame Graphs: How to Read a CPU Flame Graph and Find the Code Burning Your CPU</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com/en/flame-graphs-explained/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">Flame Graphs: How to Read a CPU Flame Graph and Find the Code Burning Your CPU</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com/en/p99-latency/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/p99-latency.webp\" alt=\"P99 Latency: Why Averages Lie, and How to Diagnose the Slowest 1%\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com/en/p99-latency/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/p99-latency.webp\" alt=\"P99 Latency: Why Averages Lie, and How to Diagnose the Slowest 1%\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com/en/p99-latency/?src=org_news\" target=\"_blank\">P99 Latency: Why Averages Lie, and How to Diagnose the Slowest 1%</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com/en/p99-latency/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">P99 Latency: Why Averages Lie, and How to Diagnose the Slowest 1%</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
     i=i+1 out[i] = "</span></div>\n  </div>\n</div>"
 
     return out
 end
 
-MD5['news-en.tt2'] = "47e3946366ec1d4a637b9db0bc66de3b"
+MD5['news-en.tt2'] = "6f7240a10115f1e3f64a56c4d5bd33de"
 
 Template['old-permlink-js.tt2'] = function (stash)
     local out = {}
