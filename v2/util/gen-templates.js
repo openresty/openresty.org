@@ -75,7 +75,8 @@ async function genSlideTemplate(lang) {
   const compileFunction = pug.compileFile('./util/posts-slide.pug', {pretty: true});
   const swiperCss = '/css/swiper-bundle.min.css';
   const swiperJs = '/js/swiper-bundle.min.js';
-  await writeFile(`./templates/posts-slide-${lang}.tt2`, compileFunction({postInfos, swiperCss, swiperJs}));
+  const swiperIntegrity = 'sha384-fWDmvzD7RCzxfVIdBqgyrEz+C8YjzRdHDJdRxa6EQciH3ElEYHnWQGxeeNSHuqT+';
+  await writeFile(`./templates/posts-slide-${lang}.tt2`, compileFunction({postInfos, swiperCss, swiperJs, swiperIntegrity}));
 
   const newsCompileFunction = pug.compileFile('./util/news.pug', {pretty: true});
   await writeFile(`./templates/news-${lang}.tt2`, newsCompileFunction({news}));

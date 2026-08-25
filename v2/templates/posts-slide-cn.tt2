@@ -123,7 +123,7 @@
   <iframe class="blog-iframe" id="blog-iframe" title="OpenResty Blog article"></iframe>
 </dialog>
 <link rel="stylesheet" href="/css/swiper-bundle.min.css"/>
-<script src="/js/swiper-bundle.min.js"></script>
+<script src="/js/swiper-bundle.min.js" integrity="sha384-fWDmvzD7RCzxfVIdBqgyrEz+C8YjzRdHDJdRxa6EQciH3ElEYHnWQGxeeNSHuqT+" crossorigin="anonymous"></script>
 <script>
   window.onload = function () {
     setMaxWidth();
