@@ -440,41 +440,41 @@ Template['news-cn.tt2'] = function (stash)
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1029002005.html\">OpenResty 1.29.2.5</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is now released!")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/edge-private-cdn-live-streaming/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/edge-private-cdn-live-streaming.webp\" alt=\"OpenResty Edge private CDN live streaming\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/edge-private-cdn-live-streaming/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/edge-private-cdn-live-streaming.webp\" alt=\"OpenResty Edge private CDN live streaming\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/edge-private-cdn-live-streaming/?src=org_news\" target=\"_blank\">直播私有 CDN 选型：为什么平时能跑的架构，扛不住顶级赛事的峰值？</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/edge-private-cdn-live-streaming/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">直播私有 CDN 选型：为什么平时能跑的架构，扛不住顶级赛事的峰值？</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/xray-ann-26.7.15/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay logo\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/xray-ann-26.7.15/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay logo\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/xray-ann-26.7.15/?src=org_news\" target=\"_blank\">OpenResty XRay 26.7.15 版正式发布</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/xray-ann-26.7.15/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">OpenResty XRay 26.7.15 版正式发布</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/openresty-xray-ai-assistant/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/openresty-xray-ai-assistant.webp\" alt=\"OpenResty XRay AI assistant\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/openresty-xray-ai-assistant/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/openresty-xray-ai-assistant.webp\" alt=\"OpenResty XRay AI assistant\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/openresty-xray-ai-assistant/?src=org_news\" target=\"_blank\">OpenResty XRay AI 助手：让每一份分析数据都能开口说话</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/openresty-xray-ai-assistant/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">OpenResty XRay AI 助手：让每一份分析数据都能开口说话</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/private-libs/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/private-libs.webp\" alt=\"OpenResty private libraries\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/private-libs/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/private-libs.webp\" alt=\"OpenResty private libraries\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/private-libs/?src=org_news\" target=\"_blank\">OpenResty 私有库：高性能 Lua 与 Nginx 模块</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/private-libs/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">OpenResty 私有库：高性能 Lua 与 Nginx 模块</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/edge-hls-live-streaming/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/edge-hls-live-streaming.webp\" alt=\"OpenResty Edge HLS live streaming\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/edge-hls-live-streaming/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/edge-hls-live-streaming.webp\" alt=\"OpenResty Edge HLS live streaming\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/edge-hls-live-streaming/?src=org_news\" target=\"_blank\">扛住顶级体育赛事直播：在 OpenResty Edge 中构建 HLS 视频直播分发层</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/edge-hls-live-streaming/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">扛住顶级体育赛事直播：在 OpenResty Edge 中构建 HLS 视频直播分发层</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/edge-inner-traffic/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/edge-inner-traffic.webp\" alt=\"OpenResty Edge internal traffic\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/edge-inner-traffic/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/edge-inner-traffic.webp\" alt=\"OpenResty Edge internal traffic\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/edge-inner-traffic/?src=org_news\" target=\"_blank\">内部流量治理的演进：OpenResty Edge 在微服务架构中的工程实践</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/cn/edge-inner-traffic/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">内部流量治理的演进：OpenResty Edge 在微服务架构中的工程实践</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
     i=i+1 out[i] = "</span></div>\n  </div>\n</div>"
 
@@ -494,41 +494,41 @@ Template['news-en.tt2'] = function (stash)
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1029002005.html\">OpenResty 1.29.2.5</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is now released!")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/en/edge-private-cdn-live-streaming/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/edge-private-cdn-live-streaming.webp\" alt=\"OpenResty Edge private CDN live streaming\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/en/edge-private-cdn-live-streaming/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/edge-private-cdn-live-streaming.webp\" alt=\"OpenResty Edge private CDN live streaming\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/en/edge-private-cdn-live-streaming/?src=org_news\" target=\"_blank\">CDN for Live Streaming: Surviving Peak Events Without Peak-Event Bills</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/en/edge-private-cdn-live-streaming/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">CDN for Live Streaming: Surviving Peak Events Without Peak-Event Bills</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/en/xray-ann-26.7.15/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay logo\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/en/xray-ann-26.7.15/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay logo\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/en/xray-ann-26.7.15/?src=org_news\" target=\"_blank\">OpenResty XRay Version 26.7.15. Now Available</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/en/xray-ann-26.7.15/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">OpenResty XRay Version 26.7.15. Now Available</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/en/openresty-xray-ai-assistant/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/openresty-xray-ai-assistant.webp\" alt=\"OpenResty XRay AI assistant\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/en/openresty-xray-ai-assistant/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/openresty-xray-ai-assistant.webp\" alt=\"OpenResty XRay AI assistant\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/en/openresty-xray-ai-assistant/?src=org_news\" target=\"_blank\">OpenResty XRay AI Assistant: Making Every Piece of Analysis Data Speak</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/en/openresty-xray-ai-assistant/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">OpenResty XRay AI Assistant: Making Every Piece of Analysis Data Speak</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/en/edge-hls-live-streaming/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/edge-hls-live-streaming.webp\" alt=\"OpenResty Edge HLS live streaming\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/en/edge-hls-live-streaming/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/edge-hls-live-streaming.webp\" alt=\"OpenResty Edge HLS live streaming\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/en/edge-hls-live-streaming/?src=org_news\" target=\"_blank\">Building a Self-Hosted Live Streaming CDN for HLS with OpenResty Edge</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/en/edge-hls-live-streaming/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">Building a Self-Hosted Live Streaming CDN for HLS with OpenResty Edge</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/en/private-libs/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/private-libs.webp\" alt=\"OpenResty private libraries\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/en/private-libs/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/private-libs.webp\" alt=\"OpenResty private libraries\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/en/private-libs/?src=org_news\" target=\"_blank\">OpenResty Private Libraries: High-Performance Lua &amp; Nginx Modules</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/en/private-libs/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">OpenResty Private Libraries: High-Performance Lua &amp; Nginx Modules</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/en/edge-inner-traffic/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/edge-inner-traffic.webp\" alt=\"OpenResty Edge internal traffic\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/en/edge-inner-traffic/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\"><img class=\"news-img\" src=\"../images/header-images/edge-inner-traffic.webp\" alt=\"OpenResty Edge internal traffic\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
     i=i+1 out[i] = "</strong><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New blog post")
-    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/en/edge-inner-traffic/?src=org_news\" target=\"_blank\">Taming Internal Traffic Chaos with OpenResty Edge</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</span><a href=\"https://blog.openresty.com.cn/en/edge-inner-traffic/?src=org_news\" target=\"_blank\" rel=\"noopener noreferrer\">Taming Internal Traffic Chaos with OpenResty Edge</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is published.")
     i=i+1 out[i] = "</span></div>\n  </div>\n</div>"
 
