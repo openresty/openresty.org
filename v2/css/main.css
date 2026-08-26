@@ -938,35 +938,79 @@ hr.footer-sep {
   vertical-align: top;
 }
 .blog-iframe {
+  display: block;
   width: 100%;
   height: 100%;
+  border: 0;
 }
 .blog-modal {
   box-sizing: border-box;
-  width: 90%;
-  height: 85%;
-  padding: 15px 30px;
+  width: min(1500px, calc(100vw - 48px));
+  max-width: none;
+  height: calc(100vh - 48px);
+  max-height: none;
+  margin: 24px auto;
+  padding: 0;
   border: 0;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+.blog-modal-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  z-index: 1;
+}
+.blog-modal.is-loading .blog-modal-loading {
+  display: flex;
+}
+.blog-modal-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(0, 0, 0, 0.08);
+  border-top-color: #2b5fd9;
+  border-radius: 50%;
+  animation: blog-modal-spin 0.8s linear infinite;
+}
+@keyframes blog-modal-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 .blog-modal::backdrop {
   background: rgba(0, 0, 0, 0.75);
 }
 .blog-modal-close {
   position: absolute;
-  top: 4px;
-  right: 8px;
+  top: 20px;
+  right: 28px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   border: 0;
-  background: transparent;
-  color: #333;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.06);
+  color: #444;
   cursor: pointer;
-  font-size: 30px;
-  line-height: 1;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  transition: background 0.15s, color 0.15s;
+  z-index: 2;
+}
+.blog-modal-close:hover {
+  background: rgba(0, 0, 0, 0.12);
+  color: #000;
 }
 .blog-modal-close:focus-visible {
-  outline: 2px solid #4d8d89;
+  outline: 2px solid #2b5fd9;
   outline-offset: 2px;
 }
 /*=====================================================================================
