@@ -37,6 +37,7 @@ $(document).ready(function() {
 
 	var blogModal = document.getElementById('blog-modal');
 	var blogIframe = document.getElementById('blog-iframe');
+	var blogLoading = document.getElementById('blog-modal-loading');
 
 	// Only allow the OpenResty blog origins to be embedded in the modal
 	// iframe; a compromised or hijacked RSS feed must not be able to load
@@ -57,8 +58,11 @@ $(document).ready(function() {
 			event.preventDefault();
 			var href = $(this).attr('href');
 			if (isAllowedIframeUrl(href)) {
+				blogModal.classList.add('is-loading');
 				blogIframe.src = href;
 				blogModal.showModal();
+				// keep the focus ring off the close button on open
+				blogIframe.focus();
 			}
 		});
 
@@ -72,8 +76,16 @@ $(document).ready(function() {
 			}
 		});
 
+		blogIframe.addEventListener('load', function () {
+			// ignore the load fired when src is cleared on close
+			if (blogIframe.getAttribute('src')) {
+				blogModal.classList.remove('is-loading');
+			}
+		});
+
 		blogModal.addEventListener('close', function () {
 			blogIframe.src = '';
+			blogModal.classList.remove('is-loading');
 		});
 	}
 });
