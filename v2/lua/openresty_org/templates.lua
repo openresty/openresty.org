@@ -363,9 +363,9 @@ Template['index.tt2'] = function (stash)
     local out = {}
     local i = 0
     i=i+1 out[i] = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n	<meta charset=\"utf-8\">\n        <title>"
-    i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "OpenResty® - Open-Source Web Platform Based on Nginx and LuaJIT")
+    i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "OpenResty® - High-Concurrency Web Platform Built on Nginx + LuaJIT")
     i=i+1 out[i] = "</title>\n        <meta name=\"description\" content=\""
-    i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "OpenResty® turns Nginx into a full-fledged web app server with LuaJIT. Build high-performance gateways, APIs, and web services — powering 21M+ websites worldwide. Free and open source.")
+    i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "OpenResty integrates an enhanced Nginx core, LuaJIT and quality Lua libraries so you can script Nginx in Lua and build high-performance web apps that handle massive concurrency.")
     i=i+1 out[i] = "\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes\">\n	<link href='https://openresty.org/css/fonts.css' rel='stylesheet' type='text/css'>\n	<!--\n	If you ever wanted to use LESS instead of CSS...\n	<link rel=\"stylesheet\" type=\"text/less\" href=\"/css/main.less\">\n	<script src=\"/js/less.js\"></script>\n	-->\n	<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/main.css\">\n	<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/github.css\">\n        <script>\n"
     i=i+1 out[i] = process(stash, "old-permlink-js.tt2")
     i=i+1 out[i] = "\n        </script>\n</head>\n<body>\n\n"
@@ -417,7 +417,7 @@ Template['index.tt2'] = function (stash)
     return out
 end
 
-MD5['index.tt2'] = "499c27cecd3510b260dc4362937a5632"
+MD5['index.tt2'] = "4f165be9f0b35c967b280988f825d716"
 
 Template['main-menu-buttons.tt2'] = function (stash)
     local out = {}
