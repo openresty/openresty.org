@@ -8,6 +8,7 @@ local c = {}
 function _M.process(key, stash, i18n)
     stash.c = c
     c.l = i18n.translate
+    templates.vmethods.l = function (c, s) return c.l(s) end
     return templates.process(key, stash)
 end
 
