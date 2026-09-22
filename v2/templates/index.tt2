@@ -25,7 +25,7 @@
 
 	<section id="intro">
 		<div class="text">
-			<p>[% c.l("OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT.") %]</p>
+			<p>[% c.l("OpenResty<sup>&reg;</sup> is an open-source web platform that integrates an enhanced Nginx core with LuaJIT, maintained by <a href=\"https://openresty.com/\">OpenResty Inc.</a>") %]</p>
 			<form action="search.html">
 			  <fieldset>
 			    <input type="search" name="query" id="search"

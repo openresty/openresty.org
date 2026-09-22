@@ -439,12 +439,21 @@ header[role="header"] .enterprise-button .link-title {
   line-height: 28px;
   font-size: 20px;
   margin-bottom: 32px;
+  max-width: 900px;
+  text-wrap: balance;
 }
 #intro .text p:last-child {
   margin-bottom: 0;
 }
 #intro .text p small {
   font-size: 16px;
+}
+#intro .text p a,
+#intro .text p a:visited,
+#intro .text p a:hover,
+#intro .text p a:active {
+  color: #fff;
+  text-decoration: none;
 }
 #intro form {
   margin-top: 40px;

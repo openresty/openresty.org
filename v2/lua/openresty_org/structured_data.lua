@@ -1,7 +1,9 @@
 -- Structured data (JSON-LD) generation for openresty.org pages.
 --
 -- Emits schema.org entities:
---   * Organization (site-wide)
+--   * SoftwareApplication + SoftwareSourceCode for the open-source OpenResty
+--     project itself (site-wide, @id https://openresty.org/#software),
+--     with OpenResty Inc. (https://openresty.com/#org) as its maintainer
 --   * SoftwareApplication / SoftwareSourceCode for software pages
 --   * HowTo / TechArticle for documentation & tutorial pages
 --   * BreadcrumbList (site-wide)
@@ -15,16 +17,45 @@ local _M = {}
 
 local BASE_URL = "https://openresty.org"
 
-local ORGANIZATION = {
+-- The open-source OpenResty project as a software entity. This deliberately
+-- is NOT an Organization: the company behind the project is OpenResty Inc.,
+-- whose entity (@id https://openresty.com/#org) is defined on openresty.com
+-- and is referenced here as the maintainer. Keep this block in sync with the
+-- copy in Appendix C of the entity checklist. Notes on the individual fields:
+--
+--   * @id "#software" is distinct from the company "#org" and from the
+--     "#software" ids of the commercial products (XRay, Edge);
+--   * the dual @type is required: codeRepository is only valid under
+--     SoftwareSourceCode, yet the project is also an application/runtime;
+--   * maintainer inlines @type/name/url (not a bare @id reference) so this
+--     block alone states that the maintainer is OpenResty Inc., without
+--     requiring a crawler to have seen openresty.com as well;
+--   * description is the canonical OSS definition sentence, do not reword;
+--   * sameAs lists only GitHub and the forum; the YouTube channel already
+--     belongs to the company entity on openresty.com;
+--   * license: the openresty/openresty COPYRIGHT file is BSD 2-Clause.
+local SOFTWARE = {
     ["@context"] = "https://schema.org",
-    ["@type"] = "Organization",
+    ["@type"] = { "SoftwareApplication", "SoftwareSourceCode" },
+    ["@id"] = BASE_URL .. "/#software",
     name = "OpenResty",
     url = BASE_URL .. "/",
-    logo = BASE_URL .. "/images/logo.webp",
+    description = "OpenResty is an open-source web platform that integrates "
+                  .. "an enhanced Nginx core with LuaJIT, maintained by "
+                  .. "OpenResty Inc.",
+    applicationCategory = "DeveloperApplication",
+    operatingSystem = "Linux",
+    codeRepository = "https://github.com/openresty/openresty",
+    license = "https://opensource.org/licenses/BSD-2-Clause",
     sameAs = {
         "https://github.com/openresty/",
-        "https://www.youtube.com/channel/UCXVmwF-UCScv2ftsGoMqxhw/",
         "https://forum.openresty.us/",
+    },
+    maintainer = {
+        ["@type"] = "Organization",
+        ["@id"] = "https://openresty.com/#org",
+        name = "OpenResty Inc.",
+        url = "https://openresty.com",
     },
 }
 
@@ -100,14 +131,14 @@ local function classify(permlink)
     return "WebPage"
 end
 
--- Organization block only (used on utility pages like search & videos).
-function _M.organization()
-    return script_block(ORGANIZATION)
+-- Software block only (used on utility pages like search & videos).
+function _M.software()
+    return script_block(SOFTWARE)
 end
 
--- Home page: Organization + WebSite.
+-- Home page: Software + WebSite.
 function _M.home(lang)
-    return script_block(ORGANIZATION) .. "\n" .. script_block({
+    return script_block(SOFTWARE) .. "\n" .. script_block({
         ["@context"] = "https://schema.org",
         ["@type"] = "WebSite",
         name = "OpenResty",
@@ -116,7 +147,7 @@ function _M.home(lang)
     })
 end
 
--- Content page: Organization + type-specific entity + BreadcrumbList.
+-- Content page: Software + type-specific entity + BreadcrumbList.
 function _M.page(opts)
     local lang = opts.lang or "en"
     local permlink = opts.permlink
@@ -128,7 +159,7 @@ function _M.page(opts)
         url = url .. permlink .. ".html"
     end
 
-    local blocks = { script_block(ORGANIZATION) }
+    local blocks = { script_block(SOFTWARE) }
 
     local stype = permlink and classify(permlink) or "WebPage"
     local entity = {

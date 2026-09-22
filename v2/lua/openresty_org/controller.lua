@@ -69,7 +69,7 @@ local function search_error(i18n, main_menu, timeline, query, title, msg, lang)
                                 lang = assert(lang),
                               },
                               i18n)
-    ngx.print(structured_data.inject(html, structured_data.organization()
+    ngx.print(structured_data.inject(html, structured_data.software()
         .. "\n" .. hreflang.links({ permlink = "search" })))
 end
 
@@ -236,7 +236,7 @@ function _M.run()
                                     lang = assert(lang),
                                   },
                                   i18n)
-        ngx.print(structured_data.inject(html, structured_data.organization()
+        ngx.print(structured_data.inject(html, structured_data.software()
             .. "\n" .. hreflang.links({ permlink = "search" })))
         return
     end
@@ -257,7 +257,7 @@ function _M.run()
                                     lang = assert(lang),
                                   },
                                   i18n)
-        ngx.print(structured_data.inject(html, structured_data.organization()
+        ngx.print(structured_data.inject(html, structured_data.software()
             .. "\n" .. hreflang.links({ permlink = "videos" })))
         return
     end
