@@ -373,7 +373,7 @@ Template['index.tt2'] = function (stash)
     i=i+1 out[i] = "\n\n"
     i=i+1 out[i] = process(stash, "xray-modal.tt2")
     i=i+1 out[i] = "\n\n	<section id=\"intro\">\n		<div class=\"text\">\n			<p>"
-    i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "OpenResty<sup>&reg;</sup> is a dynamic web platform based on NGINX and LuaJIT.")
+    i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "OpenResty<sup>&reg;</sup> is an open-source web platform that integrates an enhanced Nginx core with LuaJIT, maintained by <a href=\"https://openresty.com/\">OpenResty Inc.</a>")
     i=i+1 out[i] = "</p>\n			<form action=\"search.html\">\n			  <fieldset>\n			    <input type=\"search\" name=\"query\" id=\"search\""
 
     if tru(get(stash, 'search_query')) then
