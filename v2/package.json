@@ -8,6 +8,7 @@
     "cheerio": "^1.2.0",
     "marked": "18.0.7",
     "pug": "^3.0.4",
+    "sanitize-html": "2.16.0",
     "sharp": "^0.35.3",
     "swiper": "14.1.0"
   },

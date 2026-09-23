@@ -21,10 +21,12 @@
 
 dialog#blog-modal.blog-modal
   button.blog-modal-close(type="button" aria-label="Close") &times;
+  #blog-modal-loading.blog-modal-loading(role="status" aria-live="polite")
+    .blog-modal-spinner
   iframe#blog-iframe.blog-iframe(title="OpenResty Blog article")
 
-link(rel="stylesheet" href=`${swiperCss}`)
-script(src=`${swiperJs}`)
+link(rel="stylesheet" href=swiperCss)
+script(src=swiperJs integrity=swiperIntegrity crossorigin="anonymous")
 
 script.
   window.onload = function () {

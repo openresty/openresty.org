@@ -127,6 +127,18 @@ function _M.get_timeline(lang)
     return res
 end
 
+-- Escape HTML in a ts_headline result but preserve the <b>/</b> highlight
+-- markers Postgres inserts around matched terms. Any other markup is escaped
+-- so it renders as plain text instead of being interpreted as HTML.
+local function escape_html_keep_b(s)
+    s = s:gsub("&", "&amp;")
+    s = s:gsub("<", "&lt;")
+    s = s:gsub(">", "&gt;")
+    s = s:gsub("&lt;b&gt;", "<b>")
+    s = s:gsub("&lt;/b&gt;", "</b>")
+    return s
+end
+
 function _M.get_search_results(lang, query)
     -- print("search query: ", query)
     local quoted_query = quote_sql_str(query)
@@ -138,6 +150,9 @@ function _M.get_search_results(lang, query)
                          .. quoted_query .. ") q "
                          .. "where textsearch_index_col @@ q "
                          .. "order by rank desc limit 10) as foo")
+    for _, row in ipairs(res) do
+        row.body = escape_html_keep_b(row.body)
+    end
     return res
 end
 

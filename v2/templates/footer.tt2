@@ -11,10 +11,10 @@
 </div>
 </div>
 
-<script src="/js/jquery.min.js"></script>
-<script src="/js/highlight.min.js"></script>
-<script src="/js/highlight-nginx.min.js"></script>
-<script src="/js/highlight-vim.min.js"></script>
+<script src="/js/jquery.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+<script src="/js/highlight.min.js" integrity="sha384-wjfDDhOPPdjtva8vWBhWeVprSpmxisEu5aYT3q1JyACqXpdKpo3PWZTMVq24MBix" crossorigin="anonymous"></script>
+<script src="/js/highlight-nginx.min.js" integrity="sha384-fTqzvE/t2lypa5UdKpG8P3qlAUy1xlle9ZtJj8r+9V9aRP/ePjUW7IWAHlU8phrY" crossorigin="anonymous"></script>
+<script src="/js/highlight-vim.min.js" integrity="sha384-DTGwkXgxP7GFYuQl4t3iMY6owPfm43tBw2AH4LerV9I5DFgSRSDzAueQvoSykx2S" crossorigin="anonymous"></script>
 <script src="/js/main.js"></script>
 <!-- Google analytics -->
 <script type="text/javascript">

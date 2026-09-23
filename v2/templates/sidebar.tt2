@@ -30,10 +30,10 @@
                                         [%- END %]
                                         [%- prev_day = row.day %]
                                     <li>
-                                            <h3>[% row.day %]</h3>
+                                            <h3>[% row.day | html %]</h3>
                                             <ul>
                                     [%- END %]
-                                                <li><a href="[% row.permlink %].html">[% row.title %]</a></li>
+                                                <li><a href="[% row.permlink %].html">[% row.title | html %]</a></li>
                                 [%- END %]
                                             </ul>
                                     </li>

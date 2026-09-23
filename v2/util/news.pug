@@ -16,10 +16,10 @@
 
   each val in news
     .news-item
-      a(href=`${val.href}?src=org_news` target="_blank")
+      a(href=`${val.href}?src=org_news` target="_blank" rel="noopener noreferrer")
         img.news-img(src=`../images${val.pic}` alt=val.title loading="lazy")
       .news-description
         strong.news-hint [% c.l("New!") %]
         span &nbsp;[% c.l("New blog post") %]&nbsp;
-        a(href=`${val.href}?src=org_news` target="_blank")= val.title
+        a(href=`${val.href}?src=org_news` target="_blank" rel="noopener noreferrer")= val.title
         span &nbsp;[% c.l("is published.") %]
