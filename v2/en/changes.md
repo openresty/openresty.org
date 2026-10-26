@@ -5,6 +5,7 @@
     @created       2012-07-08 18:37 GMT
 --->
 
+* [Release 1.31.8.x](changelog-1031008.html)
 * [Release 1.31.1.x](changelog-1031001.html)
 * [Release 1.29.2.x](changelog-1029002.html)
 * [Release 1.27.1.x](changelog-1027001.html)

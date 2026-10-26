@@ -136,6 +136,10 @@
     <lastmod>2026-08-20</lastmod>
   </url>
   <url>
+    <loc>https://openresty.org/cn/ann-1031008001.html</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
     <loc>https://openresty.org/cn/ann-test-nginx-027.html</loc>
     <lastmod>2026-08-20</lastmod>
   </url>
@@ -328,12 +332,16 @@
     <lastmod>2026-08-20</lastmod>
   </url>
   <url>
+    <loc>https://openresty.org/cn/changelog-1031008.html</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
     <loc>https://openresty.org/cn/changelog-8054.html</loc>
     <lastmod>2011-07-08</lastmod>
   </url>
   <url>
     <loc>https://openresty.org/cn/changes.html</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://openresty.org/cn/commercial.html</loc>
@@ -369,7 +377,7 @@
   </url>
   <url>
     <loc>https://openresty.org/cn/download.html</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://openresty.org/cn/drizzle-nginx-module.html</loc>

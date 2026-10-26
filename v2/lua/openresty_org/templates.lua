@@ -417,7 +417,7 @@ Template['index.tt2'] = function (stash)
     return out
 end
 
-MD5['index.tt2'] = "4f165be9f0b35c967b280988f825d716"
+MD5['index.tt2'] = "c44c9b3c3b5570f8959845c7f415d65f"
 
 Template['main-menu-buttons.tt2'] = function (stash)
     local out = {}
@@ -432,13 +432,9 @@ MD5['main-menu-buttons.tt2'] = "e1ea5ebce9286beab7cb7b9ac45fcd70"
 Template['news-cn.tt2'] = function (stash)
     local out = {}
     local i = 0
-    i=i+1 out[i] = "\n<div class=\"news\">\n  <div class=\"news-item\"><a href=\"ann-1031001001.html\"><img class=\"news-img\" src=\"../images/logo.webp\" alt=\"OpenResty\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "\n<div class=\"news\">\n  <div class=\"news-item\"><a href=\"ann-1031008001.html\"><img class=\"news-img\" src=\"../images/logo.webp\" alt=\"OpenResty\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
-    i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1031001001.html\">OpenResty 1.31.1.1</a><span>&nbsp;"
-    i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is now released!")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"ann-1029002005.html\"><img class=\"news-img\" src=\"../images/logo.webp\" alt=\"OpenResty\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
-    i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
-    i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1029002005.html\">OpenResty 1.29.2.5</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1031008001.html\">OpenResty 1.31.8.1</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is now released!")
     i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/edge-private-cdn-live-streaming/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/edge-private-cdn-live-streaming.webp\" alt=\"OpenResty Edge private CDN live streaming\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
@@ -481,18 +477,14 @@ Template['news-cn.tt2'] = function (stash)
     return out
 end
 
-MD5['news-cn.tt2'] = "32be50a5ef7ecd63c3d8eedc45310a21"
+MD5['news-cn.tt2'] = "82fbe8b159e880faa27988adec07519a"
 
 Template['news-en.tt2'] = function (stash)
     local out = {}
     local i = 0
-    i=i+1 out[i] = "\n<div class=\"news\">\n  <div class=\"news-item\"><a href=\"ann-1031001001.html\"><img class=\"news-img\" src=\"../images/logo.webp\" alt=\"OpenResty\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "\n<div class=\"news\">\n  <div class=\"news-item\"><a href=\"ann-1031008001.html\"><img class=\"news-img\" src=\"../images/logo.webp\" alt=\"OpenResty\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
-    i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1031001001.html\">OpenResty 1.31.1.1</a><span>&nbsp;"
-    i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is now released!")
-    i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"ann-1029002005.html\"><img class=\"news-img\" src=\"../images/logo.webp\" alt=\"OpenResty\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
-    i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
-    i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1029002005.html\">OpenResty 1.29.2.5</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1031008001.html\">OpenResty 1.31.8.1</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is now released!")
     i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/en/edge-private-cdn-live-streaming/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/edge-private-cdn-live-streaming.webp\" alt=\"OpenResty Edge private CDN live streaming\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
@@ -535,7 +527,7 @@ Template['news-en.tt2'] = function (stash)
     return out
 end
 
-MD5['news-en.tt2'] = "93b392885ef51708119e02d87d27ee2b"
+MD5['news-en.tt2'] = "abb58de1fc19501671ea3b816661076a"
 
 Template['old-permlink-js.tt2'] = function (stash)
     local out = {}

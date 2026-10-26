@@ -1,19 +1,11 @@
 .news
   .news-item
-    a(href="ann-1031001001.html")
+    a(href="ann-1031008001.html")
       img.news-img(src="../images/logo.webp" alt="OpenResty" loading="lazy")
     .news-description
       strong.news-hint [% c.l("New!") %]&nbsp;
-      a(href="ann-1031001001.html") OpenResty 1.31.1.1
+      a(href="ann-1031008001.html") OpenResty 1.31.8.1
       span &nbsp;[% c.l("is now released!") %]
-  .news-item
-    a(href="ann-1029002005.html")
-      img.news-img(src="../images/logo.webp" alt="OpenResty" loading="lazy")
-    .news-description
-      strong.news-hint [% c.l("New!") %]&nbsp;
-      a(href="ann-1029002005.html") OpenResty 1.29.2.5
-      span &nbsp;[% c.l("is now released!") %]
-
   each val in news
     .news-item
       a(href=`${val.href}?src=org_news` target="_blank")
