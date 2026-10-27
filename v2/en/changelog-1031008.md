@@ -9,6 +9,16 @@
 
 * Nginx core
     * upgraded from nginx 1.31.1 to 1.31.8.
+    * **Security: incorporates 12 CVE fixes from Nginx 1.31.2 through 1.31.8**, grouped by the first fixed version:
+        * **1.31.2**: HTTP/3 use-after-free (CVE-2026-42530), HTTP/2/gRPC upstream buffer overflow
+          (CVE-2026-42055), and charset conversion buffer overread (CVE-2026-48142).
+        * **1.31.3**: Buffer overflow involving map and regex (CVE-2026-42533), memory disclosure involving
+          slice or background cache updates (CVE-2026-60005), and SSI use-after-free (CVE-2026-56434).
+        * **1.31.6**: HTTP/3 heap buffer overflow with certain OpenSSL versions and configurations (CVE-2026-90439).
+        * **1.31.7**: Buffer overflow involving alias and rewrite (CVE-2026-15176), buffer overflow during
+          variable expression evaluation (CVE-2026-93479), HTTP/3 request body injection (CVE-2026-95101),
+          TLS session ticket forgery (CVE-2026-97629), and AIO/SSI use-after-free (CVE-2026-97205).
+          See the [official Nginx security advisories](https://nginx.org/en/security_advisories.html).
 
 * OpenSSL
     * upgraded from version 3.5.6 to 3.5.9.
