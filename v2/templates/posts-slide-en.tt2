@@ -11,6 +11,11 @@
   <div class="swiper-parent" id="swiper-parent">
     <div class="swiper" id="article-carousel">
       <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-ann-26.11.1/?src=org" data-modal="data-modal">
+            <div class="blog-img" data-pic="/header-images/xray-logo.webp"><img class="article-img" src="../images/header-images/xray-logo.webp" alt="OpenResty XRay Version 26.11.1. Now Available" loading="lazy"/></div>
+            <div class="article-text">
+              <p class="blog-title">OpenResty XRay Version 26.11.1. Now Available</p>
+            </div></a></div>
         <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/edge-multi-provider-dns/?src=org" data-modal="data-modal">
             <div class="blog-img" data-pic="/header-images/edge-multi-provider-dns.webp"><img class="article-img" src="../images/header-images/edge-multi-provider-dns.webp" alt="Multi-Provider DNS Redundancy: Stay Online When a DNS Provider Fails, Geo-Routing Intact" loading="lazy"/></div>
             <div class="article-text">
@@ -105,11 +110,6 @@
             <div class="blog-img" data-pic="/header-images/xray-vulnerability-scanning.webp"><img class="article-img" src="../images/header-images/xray-vulnerability-scanning.webp" alt="Binary Vulnerability Scanning: Catch Backported Patches, Cut False Positives" loading="lazy"/></div>
             <div class="article-text">
               <p class="blog-title">Binary Vulnerability Scanning: Catch Backported Patches, Cut False Positives</p>
-            </div></a></div>
-        <div class="swiper-slide"><a class="article-item" href="https://blog.openresty.com/en/xray-ann-26.2.1/?src=org" data-modal="data-modal">
-            <div class="blog-img" data-pic="/header-images/xray-logo.webp"><img class="article-img" src="../images/header-images/xray-logo.webp" alt="OpenResty XRay Version 26.2.1. Now Available" loading="lazy"/></div>
-            <div class="article-text">
-              <p class="blog-title">OpenResty XRay Version 26.2.1. Now Available</p>
             </div></a></div>
       </div>
       <div class="swiper-pagination"></div>

@@ -3,6 +3,9 @@
   <div class="news-item"><a href="ann-1031008001.html"><img class="news-img" src="../images/logo.webp" alt="OpenResty" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1031008001.html">OpenResty 1.31.8.1</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
+  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/xray-ann-26.11.1/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-logo.webp" alt="OpenResty XRay 26.11.1 版正式发布" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/xray-ann-26.11.1/?src=org_news" target="_blank">OpenResty XRay 26.11.1 版正式发布</a><span>&nbsp;[% c.l("is published.") %]</span></div>
+  </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/edge-multi-provider-dns/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/edge-multi-provider-dns.webp" alt="多服务商 DNS 冗余：以 OpenResty Edge 为唯一数据源，同步给多家 DNS 服务商" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/edge-multi-provider-dns/?src=org_news" target="_blank">多服务商 DNS 冗余：以 OpenResty Edge 为唯一数据源，同步给多家 DNS 服务商</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
@@ -17,8 +20,5 @@
   </div>
   <div class="news-item"><a href="https://blog.openresty.com.cn/cn/flame-graphs-explained/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/flame-graphs-explained.webp" alt="火焰图详解：如何读懂 CPU 火焰图，找出烧掉 CPU 的代码" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/flame-graphs-explained/?src=org_news" target="_blank">火焰图详解：如何读懂 CPU 火焰图，找出烧掉 CPU 的代码</a><span>&nbsp;[% c.l("is published.") %]</span></div>
-  </div>
-  <div class="news-item"><a href="https://blog.openresty.com.cn/cn/openresty-xray-memory-leak-detection/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/openresty-xray-memory-leak-detection.webp" alt="生产环境内存泄漏定位：从 RSS 飙升到源码行号的分层归因" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com.cn/cn/openresty-xray-memory-leak-detection/?src=org_news" target="_blank">生产环境内存泄漏定位：从 RSS 飙升到源码行号的分层归因</a><span>&nbsp;[% c.l("is published.") %]</span></div>
   </div>
 </div>
