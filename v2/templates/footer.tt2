@@ -16,19 +16,45 @@
 <script src="/js/highlight-nginx.min.js"></script>
 <script src="/js/highlight-vim.min.js"></script>
 <script src="/js/main.js"></script>
-<!-- Google analytics -->
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-24724965-1']);
-  //_gaq.push(['_setDomainName', 'openresty.org']);
-  _gaq.push(['_trackPageview']);
-
-  var ga_f = function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  };
-  setTimeout(ga_f, 0);
-
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6MCPQPLWRT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  if (/(^|\.)openresty\.org$/.test(location.hostname)) {
+    gtag('config', 'G-6MCPQPLWRT');
+  }
+</script>
+<script>
+(function () {
+  function productOf(u) {
+    var p = u.pathname.toLowerCase();
+    if (u.hostname.indexOf('demo.xray.') === 0 || p.indexOf('/xray') !== -1) return 'xray';
+    if (p.indexOf('/edge') !== -1) return 'edge';
+    return 'other';
+  }
+  document.addEventListener('click', function (e) {
+    if (typeof gtag !== 'function') return;
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var u;
+    try { u = new URL(a.href, location.href); } catch (err) { return; }
+    var h = u.hostname;
+    var box = a.closest('header, footer, nav, aside, section[id], div[id]');
+    var params = {
+      link_url: u.href,
+      link_domain: h,
+      link_position: u.searchParams.get('src') || '(none)',
+      link_area: box ? (box.id || box.tagName.toLowerCase()) : '(body)'
+    };
+    if (/^blog\.openresty\.com(\.cn)?$/.test(h)) {
+      params.opened_in = a.classList.contains('article-item') ? 'modal' : 'page';
+      gtag('event', 'goto_blog', params);
+    } else if (/(^|\.)openresty\.com(\.cn)?$/.test(h) && !/^(doc|forum)\./.test(h)) {
+      params.product = productOf(u);
+      gtag('event', 'goto_product', params);
+    }
+  }, true);
+})();
 </script>
