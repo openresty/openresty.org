@@ -13,6 +13,7 @@
     20.04           Focal           amd64, arm64
     22.04           Jammy           amd64, arm64
     24.04           Noble           amd64, arm64
+    26.04           Resolute        amd64, arm64
 ```
 
 * [Debian](#debian)
