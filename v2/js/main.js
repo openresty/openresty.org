@@ -37,12 +37,33 @@ $(document).ready(function() {
 
 	var blogModal = document.getElementById('blog-modal');
 	var blogIframe = document.getElementById('blog-iframe');
+	var blogLoading = document.getElementById('blog-modal-loading');
+
+	// Only allow the OpenResty blog origins to be embedded in the modal
+	// iframe; a compromised or hijacked RSS feed must not be able to load
+	// an arbitrary third-party page here (clickjacking / phishing).
+	var allowedIframeHosts = ['blog.openresty.com', 'blog.openresty.com.cn'];
+
+	function isAllowedIframeUrl(url) {
+		try {
+			var host = new URL(url, window.location.origin).hostname;
+			return allowedIframeHosts.indexOf(host) !== -1;
+		} catch (e) {
+			return false;
+		}
+	}
 
 	if (blogModal && blogIframe) {
 		$('.article-item').on('click', function (event) {
 			event.preventDefault();
-			blogIframe.src = $(this).attr('href');
-			blogModal.showModal();
+			var href = $(this).attr('href');
+			if (isAllowedIframeUrl(href)) {
+				blogModal.classList.add('is-loading');
+				blogIframe.src = href;
+				blogModal.showModal();
+				// keep the focus ring off the close button on open
+				blogIframe.focus();
+			}
 		});
 
 		$('.blog-modal-close').on('click', function () {
@@ -55,8 +76,16 @@ $(document).ready(function() {
 			}
 		});
 
+		blogIframe.addEventListener('load', function () {
+			// ignore the load fired when src is cleared on close
+			if (blogIframe.getAttribute('src')) {
+				blogModal.classList.remove('is-loading');
+			}
+		});
+
 		blogModal.addEventListener('close', function () {
 			blogIframe.src = '';
+			blogModal.classList.remove('is-loading');
 		});
 	}
 });

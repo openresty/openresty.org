@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>OpenResty - [% title %]</title>
+	<title>OpenResty - [% title | html %]</title>
 [%- IF description %]
 	<meta name="description" content="[% description | html %]">
 [%- END %]
