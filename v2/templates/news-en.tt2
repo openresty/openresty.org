@@ -1,7 +1,7 @@
 
 <div class="news">
-  <div class="news-item"><a href="ann-1031008001.html"><img class="news-img" src="../images/logo.webp" alt="OpenResty" loading="lazy"/></a>
-    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1031008001.html">OpenResty 1.31.8.1</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
+  <div class="news-item"><a href="ann-1031009001.html"><img class="news-img" src="../images/logo.webp" alt="OpenResty" loading="lazy"/></a>
+    <div class="news-description"><strong class="news-hint">[% c.l("New!") %]&nbsp;</strong><a href="ann-1031009001.html">OpenResty 1.31.9.1</a><span>&nbsp;[% c.l("is now released!") %]</span></div>
   </div>
   <div class="news-item"><a href="https://blog.openresty.com/en/xray-ann-26.11.1/?src=org_news" target="_blank"><img class="news-img" src="../images/header-images/xray-logo.webp" alt="OpenResty XRay Version 26.11.1. Now Available" loading="lazy"/></a>
     <div class="news-description"><strong class="news-hint">[% c.l("New!") %]</strong><span>&nbsp;[% c.l("New blog post") %]&nbsp;</span><a href="https://blog.openresty.com/en/xray-ann-26.11.1/?src=org_news" target="_blank">OpenResty XRay Version 26.11.1. Now Available</a><span>&nbsp;[% c.l("is published.") %]</span></div>

@@ -432,9 +432,9 @@ MD5['main-menu-buttons.tt2'] = "e1ea5ebce9286beab7cb7b9ac45fcd70"
 Template['news-cn.tt2'] = function (stash)
     local out = {}
     local i = 0
-    i=i+1 out[i] = "\n<div class=\"news\">\n  <div class=\"news-item\"><a href=\"ann-1031008001.html\"><img class=\"news-img\" src=\"../images/logo.webp\" alt=\"OpenResty\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "\n<div class=\"news\">\n  <div class=\"news-item\"><a href=\"ann-1031009001.html\"><img class=\"news-img\" src=\"../images/logo.webp\" alt=\"OpenResty\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
-    i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1031008001.html\">OpenResty 1.31.8.1</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1031009001.html\">OpenResty 1.31.9.1</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is now released!")
     i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com.cn/cn/xray-ann-26.11.1/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay 26.11.1 版正式发布\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
@@ -477,14 +477,14 @@ Template['news-cn.tt2'] = function (stash)
     return out
 end
 
-MD5['news-cn.tt2'] = "6e9aa9f476198180b7294b7dd7c40f18"
+MD5['news-cn.tt2'] = "fabfa948c49e20ad09de55bc9f31f805"
 
 Template['news-en.tt2'] = function (stash)
     local out = {}
     local i = 0
-    i=i+1 out[i] = "\n<div class=\"news\">\n  <div class=\"news-item\"><a href=\"ann-1031008001.html\"><img class=\"news-img\" src=\"../images/logo.webp\" alt=\"OpenResty\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
+    i=i+1 out[i] = "\n<div class=\"news\">\n  <div class=\"news-item\"><a href=\"ann-1031009001.html\"><img class=\"news-img\" src=\"../images/logo.webp\" alt=\"OpenResty\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
-    i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1031008001.html\">OpenResty 1.31.8.1</a><span>&nbsp;"
+    i=i+1 out[i] = "&nbsp;</strong><a href=\"ann-1031009001.html\">OpenResty 1.31.9.1</a><span>&nbsp;"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "is now released!")
     i=i+1 out[i] = "</span></div>\n  </div>\n  <div class=\"news-item\"><a href=\"https://blog.openresty.com/en/xray-ann-26.11.1/?src=org_news\" target=\"_blank\"><img class=\"news-img\" src=\"../images/header-images/xray-logo.webp\" alt=\"OpenResty XRay Version 26.11.1. Now Available\" loading=\"lazy\"/></a>\n    <div class=\"news-description\"><strong class=\"news-hint\">"
     i=i+1 out[i] = (Vmethod.l or noop)(get(stash, 'c'), "New!")
@@ -527,7 +527,7 @@ Template['news-en.tt2'] = function (stash)
     return out
 end
 
-MD5['news-en.tt2'] = "2a3ec27ed0e2304ceab9236f876fcd3b"
+MD5['news-en.tt2'] = "47e3946366ec1d4a637b9db0bc66de3b"
 
 Template['old-permlink-js.tt2'] = function (stash)
     local out = {}

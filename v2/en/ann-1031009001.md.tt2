@@ -1,0 +1,40 @@
+[% major_ver = "1.31.9"; version = major_ver _ ".1" -%]
+<!---
+    @title         OpenResty [% version %] Released
+    @description   OpenResty® [% version %] includes Nginx [% major_ver %] with 10 security fixes, updated LuaJIT, and improvements to Lua TLS, locking, and encrypted sessions.
+--->
+
+OpenResty [% version %], the new release of the web platform based on NGINX and LuaJIT, is now available.
+
+Get the source distribution and find pre-built Linux packages on the [download page](download.html).
+
+# Version highlights
+
+* **Nginx [% major_ver %] incorporates 10 upstream security fixes** for HTTP/2, HTTP/3, DNS resolution, the mail proxy, HTTP routing and request body handling, and stream TLS. The core also rejects header lines without a colon and chunked request bodies with excessive framing overhead. [Nginx security advisories](https://nginx.org/en/security_advisories.html)
+* **Lua TLS APIs** now let applications select TLS ciphers and TLS 1.3 cipher suites during ClientHello processing in HTTP and stream. The updated `lua-resty-openssl` integrates with `lua-resty-core` SSL accessors and the new bundled auxiliary module.
+* **Lua shared dictionaries and locks** now support atomic ownership checks. An expired lock owner can no longer release or extend a lock acquired by another caller. Cosocket connection queues and balancer keepalive pools also received updates.
+* **LuaJIT** has been updated to v2.1-20261117 and includes fixes for FFI, JIT compilation, and DynASM.
+
+# Upgrade note
+
+`encrypted-session-nginx-module` v0.11 uses a fresh random IV and HMAC-SHA256 for new tokens. Existing tokens are rejected and users need new sessions. Upgrade all instances that exchange tokens before issuing new sessions. [Token format compatibility](https://github.com/openresty/encrypted-session-nginx-module/blob/v0.11/README.md#token-format-compatibility)
+
+# Complete change log
+
+See the [change log for [% major_ver %].x](changelog-1031009.html) for all changes since [OpenResty 1.31.8.1](ann-1031008001.html).
+
+# Testing
+
+The latest OpenResty test reports are available on the [OpenResty QA site](https://qa.openresty.org/).
+
+# Community Support
+
+See the [community page](community.html).
+
+# Commercial Support
+
+Commercial technical support and real-time, noninvasive monitoring and profiling are available through [OpenResty XRay](https://openresty.com/en/xray/).
+
+# Feedback
+
+To share feedback on this release, open an issue or write to one of the mailing lists. [GitHub issues](https://github.com/openresty/openresty/issues) · [Mailing lists](https://openresty.org/en/community.html#mailing-lists)

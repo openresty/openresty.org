@@ -1,0 +1,40 @@
+[% major_ver = "1.31.9"; version = major_ver _ ".1" -%]
+<!---
+    @title         OpenResty [% version %] 正式发布
+    @description   OpenResty® [% version %] 升级至 Nginx [% major_ver %]，纳入 10 项安全修复，并更新 LuaJIT、Lua TLS 接口、锁和加密会话功能。
+--->
+
+基于 NGINX 和 LuaJIT 的 OpenResty Web 平台现已正式发布 [% version %] 版本。
+
+源代码包和预编译的 Linux 软件包可在[下载页面](download.html)获取。
+
+# 版本亮点
+
+* **Nginx [% major_ver %] 纳入 10 项上游安全修复**，涉及 HTTP/2、HTTP/3、DNS 解析、邮件代理、HTTP 路由和请求体处理，以及 stream TLS。核心现在也会拒绝缺少冒号的头字段行和分块编码开销过大的请求体。[Nginx 安全公告](https://nginx.org/en/security_advisories.html)
+* **Lua TLS 接口**支持在 HTTP 和 stream 中处理 ClientHello 时设置 TLS 密码列表和 TLS 1.3 密码套件。新版 `lua-resty-openssl` 可使用 `lua-resty-core` 的 SSL 访问接口及新增的内置辅助模块。
+* **Lua 共享字典和锁**支持原子地检查锁的归属，防止原持有者在锁过期后释放或延长其他调用方新获取的锁。此次也更新了 cosocket 连接队列和 balancer keepalive 连接池。
+* **LuaJIT** 升级至 v2.1-20261117，包含 FFI、JIT 编译和 DynASM 修复。
+
+# 升级注意事项
+
+`encrypted-session-nginx-module` v0.11 为每个新令牌生成随机初始化向量（IV），并使用 HMAC-SHA256 对令牌进行认证。新版会拒绝现有令牌，用户需要重新建立会话。请先升级所有互相交换令牌的实例，再签发新令牌。[令牌格式兼容性](https://github.com/openresty/encrypted-session-nginx-module/blob/v0.11/README.md#token-format-compatibility)
+
+# 完整更新日志
+
+自上一正式版本 [OpenResty 1.31.8.1](ann-1031008001.html) 以来的全部变更见 [[% major_ver %].x 更新日志](changelog-1031009.html)。
+
+# 测试
+
+最新测试报告可在 [OpenResty QA 站点](https://qa.openresty.org/)查阅。
+
+# 社区支持
+
+请访问[社区页面](community.html)。
+
+# 商业支持
+
+[OpenResty XRay](https://openresty.com/en/xray/) 提供商业技术支持，以及实时、非侵入式的在线监控和性能剖析。
+
+# 反馈
+
+欢迎通过 GitHub 或邮件列表反馈本次发布的问题和建议。[GitHub Issues](https://github.com/openresty/openresty/issues) · [邮件列表](https://openresty.org/en/community.html#mailing-lists)

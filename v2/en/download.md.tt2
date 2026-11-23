@@ -53,15 +53,19 @@ You can download the source release tarballs below. After that, you can follow
 the instructions on the [Installation](installation.html) page to build and
 install it.
 
-##  Lastest release
+##  Latest release
 
+[% ver = "1.31.9.1" -%]
+* [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 6.5MB
+&nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
+[Changes](changelog-1031009.html) - 23 November 2026
+
+##  Legacy releases
+Sometimes, users may want to download old releases.
 [% ver = "1.31.8.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 6.5MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
 [Changes](changelog-1031008.html) - 26 October 2026
-
-##  Legacy releases
-Sometimes, users may want to download old releases.
 [% ver = "1.31.1.1" -%]
 * [openresty-[% ver %].tar.gz](https://openresty.org/download/openresty-[% ver %].tar.gz) &nbsp; 5.4MB
 &nbsp; [PGP](https://openresty.org/download/openresty-[% ver %].tar.gz.asc) &nbsp;
