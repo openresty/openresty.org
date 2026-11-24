@@ -3,6 +3,7 @@ set -euo pipefail
 
 # Target directory
 DEST="ec2-user@openresty.org:/home/ec2-user/openresty.org/v2"
+TEMPLATES_LUA="lua/openresty_org/templates.lua"
 
 # Sources to sync (relative to the current directory)
 SRCS=(
@@ -15,7 +16,7 @@ SRCS=(
   css
   js
   lua/openresty_org/i18n.lua
-  lua/openresty_org/templates.lua
+  "$TEMPLATES_LUA"
 )
 
 # Dry-run support:  ./sync.sh -n   preview what would sync, without writing
@@ -36,6 +37,13 @@ for s in "${SRCS[@]}"; do
     exit 1
   fi
 done
+
+# An earlier failed build can leave a file that make considers up to date.
+if [[ ! -s "$TEMPLATES_LUA" ]] \
+  || ! "${LUAJIT:-luajit}" -b "$TEMPLATES_LUA" /dev/null; then
+  echo 'Error: template validation failed. Check LuaJIT and rebuild with make -W templates/news-en.tt2 templates.' >&2
+  exit 1
+fi
 
 # Pull source changes before rsync updates tracked generated files. Otherwise
 # those local modifications can cause git pull to refuse the deployment.
@@ -62,7 +70,28 @@ ssh ec2-user@openresty.org '
     -p /home/ec2-user/backup/etc/openresty/ \
     -c /home/ec2-user/backup/etc/openresty/conf/nginx.conf \
     -t
-  sudo kill -s SIGHUP "$(cat /home/ec2-user/backup/etc/openresty/logs/nginx.pid)"
+
+  master_pid=$(cat /home/ec2-user/backup/etc/openresty/logs/nginx.pid)
+  worker_pids() {
+    pgrep -P "$master_pid" -f "^nginx: worker process[[:space:]]*$" || [ "$?" -eq 1 ]
+  }
+
+  old_workers=$(worker_pids)
+  sudo kill -s SIGHUP "$master_pid"
+
+  # Sending HUP succeeds even if init_by_lua later rejects the reload.
+  for _ in $(seq 15); do
+    sleep 1
+    current_workers=$(worker_pids)
+    for worker_pid in $current_workers; do
+      if ! printf "%s\n" "$old_workers" | grep -Fxq "$worker_pid"; then
+        exit 0
+      fi
+    done
+  done
+
+  echo "Error: OpenResty did not start a new worker after reload. Check logs/error.log under the OpenResty prefix." >&2
+  exit 1
 '
 
 echo ">> Sync complete -> $DEST"

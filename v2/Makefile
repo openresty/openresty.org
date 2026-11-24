@@ -30,8 +30,8 @@ tsv_files = posts-en.tsv posts-cn.tsv
 sitemap_files = sitemap-en.xml sitemap-cn.xml
 tpage = tpage
 
-.PRECIOUS: $(md_files)
-.DELETE_ON_ERRORS: $(templates_lua) $(patsubst %.md.tt2,%.md,$(wildcard en/*.md.tt2)) $(patsubst %.md.tt2,%.md,$(wildcard cn/*.md.tt2))
+.PRECIOUS: $(md_files) $(templates_lua)
+.DELETE_ON_ERROR:
 
 .PHONY: all
 all: templates css msgfmt
@@ -50,7 +50,13 @@ auto-templates: $(auto_tt2_files)
 templates: $(templates_lua)
 
 $(templates_lua): $(tt2_files)
-	lemplate --compile $^ > $@
+	set -e; \
+	tmp=$$(mktemp "$@.XXXXXX"); \
+	trap 'rm -f "$$tmp"' EXIT; \
+	lemplate --compile $^ > "$$tmp"; \
+	test -s "$$tmp"; \
+	chmod 644 "$$tmp"; \
+	mv -f "$$tmp" "$@"
 
 .PHONY: css
 css: $(css_file)

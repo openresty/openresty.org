@@ -80,6 +80,10 @@ and then just run
 make
 ```
 
+When deploying with `v2/sync.sh`, make the OpenResty `luajit` executable
+available in `PATH` or set `LUAJIT` to its path. The script uses LuaJIT to
+check the generated template before uploading it.
+
 The `.po` files under `po/` are for I18N (we need to support both the English and Chinese versions of this site, at least).
 These files are similar to the `.po` files used by the classic [GNU gettext](https://www.gnu.org/software/gettext/) toolchain,
 but we do not use `GNU gettext` at all.  Our `.po` files would be automatically updated according to the latest Lua source
